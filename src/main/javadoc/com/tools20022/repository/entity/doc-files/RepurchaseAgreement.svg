@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="102px" preserveAspectRatio="none" style="width:1301px;height:102px;background:#000000;" version="1.1" viewBox="0 0 1301 102" width="1301px" zoomAndPan="magnify"><defs/><g><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="185" x="5" y="17.9951">... (skipping 51 lines) ...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="278" x="5" y="34.292">+Identification &lt;i&gt;(Max35Text)&lt;/i&gt;</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="10" x="5" y="50.5889">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="395" x="5" y="66.8857">RepurchaseAgreement -up-|&gt; SecuritiesFinancing</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="1294" x="5" y="83.1826">class RepurchaseAgreement [[../RepurchaseAgreement.html{Sale of securities together with an agreement for the seller to buy back the securities at a later date.</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="0" x="10" y="99.4795"/><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="10" y="99.4795">Syntax Error?</text><!--
+@startuml
+
+hide empty members
+hide circle
+together {
+class Trade [[../Trade.html{Result of an order between at least two parties. A trade relates to the delivery of goods and services, cash or securities.}]] #FEFEEE {
++TradeDateTime <i>(ISODateTime)</i>
++ValueDate <i>(ISODate)</i>
++EndDate <i>(ISODateTime)</i>
++AllocationIndicator <i>(Max35Text)</i>
++CollateralisationType <i>(Max35Text)</i>
++BlockIndicator <i>(YesNoIndicator)</i>
++SettlementNetting <i>(NettingEligibleCode)</i>
++StartDate <i>(ISODateTime)</i>
+}
+SecuritiesTrade -up-|> Trade
+class SecuritiesTrade [[../SecuritiesTrade.html{Specifies trades linked to securities operations such as the exchange of securities, the lending of securities and the transactions related to investment funds.}]] #FEFEEE {
++TradeAmount <i>(CurrencyAndAmount)</i>
++OpeningClosingIndicator <i>(OpeningClosingCode)</i>
++TradeTransactionCondition <i>(TradeTransactionConditionCode)</i>
++Activity <i>(TransactionActivityCode)</i>
++TradeOriginationDate <i>(ISODateTime)</i>
++ClearingFeeType <i>(ClearingFeeTypeCode)</i>
++TransactionType <i>(TradeTypeCode)</i>
++LegalFramework <i>(LegalFrameworkCode)</i>
++SecuritiesTransactionType <i>(SecuritiesTransactionTypeV2Code)</i>
+}
+SecuritiesFinancing -up-|> SecuritiesTrade
+class SecuritiesFinancing [[../SecuritiesFinancing.html{Process of lending or borrowing cash or securities against securities or cash collateral. It aims at optimising liquidity, support a trading strategy, or increase settlement efficiency.}]] #FEFEEE {
++ReturnLegInstruction <i>(YesNoIndicator)</i>
++Type <i>(SecuritiesTransactionTypeV2Code)</i>
++TerminationDateTime <i>(ISODateTime)</i>
++RateChangeDateTime <i>(ISODateTime)</i>
++RevaluationIndicator <i>(YesNoIndicator)</i>
++InterestPayment <i>(YesNoIndicator)</i>
++VariableRateSupport <i>(Max35Text)</i>
++RepurchaseRate <i>(PercentageRate)</i>
++StockLoanMargin <i>(PercentageRate)</i>
++TransactionCallDelay <i>(Max3NumericText)</i>
++TotalNumberOfCollateralInstructions <i>(Max3NumericText)</i>
++DealAmount <i>(CurrencyAndAmount)</i>
++ForfeitRepurchaseAmount <i>(CurrencyAndAmount)</i>
++PremiumAmount <i>(CurrencyAndAmount)</i>
++TerminationAmountPerPieceOfCollateral <i>(CurrencyAndAmount)</i>
++TerminationTransactionAmount <i>(CurrencyAndAmount)</i>
++MaturityDateModification <i>(YesNoIndicator)</i>
++EarliestCallBackDate <i>(ISODateTime)</i>
++OpeningSettlementDate <i>(ISODateTime)</i>
++RepurchaseType <i>(RepurchaseTypeCode)</i>
++SpreadTransaction <i>(YesNoIndicator)</i>
++OpeningSettlementAmount <i>(CurrencyAndAmount)</i>
++Identification <i>(Max35Text)</i>
+}
+RepurchaseAgreement -up-|> SecuritiesFinancing
+class RepurchaseAgreement [[../RepurchaseAgreement.html{Sale of securities together with an agreement for the seller to buy back the securities at a later date.
+A repo is equivalent to a spot sale combined with a forward contract.
+For the seller of the security it is a repo; for the buyer of the security it is a reverse repurchase agreement. }]] #FEFECE {
+}
+}
+together {
+class Commission [[../Commission.html{Amount of money due to a party as compensation for a service.}]] #EEEEEE {
+}
+class TradeIdentification [[../TradeIdentification.html{Specifies the different identifications associated with a trade.}]] #EEEEEE {
+}
+TradeIdentification -[hidden]-> Commission
+class TradePartyRole [[../TradePartyRole.html{Trading party in a commercial, securities, treasury trade. This role may also represent parties which play different intermediary roles in a trade.}]] #EEEEEE {
+}
+TradePartyRole -[hidden]-> TradeIdentification
+class Obligation [[../Obligation.html{Specifies the assets (quantity of securities, goods, services, and cash amounts) that have to be delivered.}]] #EEEEEE {
+}
+Obligation -[hidden]-> TradePartyRole
+class Negotiation [[../Negotiation.html{Decision making on the transfer of a financial instrument.}]] #EEEEEE {
+}
+Negotiation -[hidden]-> Obligation
+class MasterAgreement [[../MasterAgreement.html{Agreement which defines the framework of a contract between two trading parties in different domains such as collateral, derivatives, trade..}]] #EEEEEE {
+}
+MasterAgreement -[hidden]-> Negotiation
+class System [[../System.html{Set of integrated applications that provides centralised services such as clearing, netting, reconciliation, trading and/or settlement.}]] #EEEEEE {
+}
+System -[hidden]-> MasterAgreement
+class Asset [[../Asset.html{Tangible items of value to a business.}]] #EEEEEE {
+}
+Asset -[hidden]-> System
+class Market [[../Market.html{Context or geographic environment in which trading parties execute trades.}]] #EEEEEE {
+}
+Market -[hidden]-> Asset
+class Guarantee [[../Guarantee.html{Partial or full coverage of amounts by a party other than the debtor.}]] #EEEEEE {
+}
+Guarantee -[hidden]-> Market
+class Settlement [[../Settlement.html{Process which consists in transferring the proceeds related to a trade from one party to the next one.}]] #EEEEEE {
+}
+Settlement -[hidden]-> Guarantee
+class Order [[../Order.html{Order placed by an investor to buy or sell an asset at a price specified or not.}]] #EEEEEE {
+}
+Order -[hidden]-> Settlement
+class Leg [[../Leg.html{Separate transactions which combined together form a trade.}]] #EEEEEE {
+}
+Leg -[hidden]-> Order
+class FinancialTransaction [[../FinancialTransaction.html{Process which includes the order, the execution, the settlement of trades in the financial domain.}]] #EEEEEE {
+}
+FinancialTransaction -[hidden]-> Leg
+class Reconciliation [[../Reconciliation.html{Process of matching different documents submitted by parties to a trade.}]] #EEEEEE {
+}
+Reconciliation -[hidden]-> FinancialTransaction
+}
+together {
+class SecuritiesTradeIdentification [[../SecuritiesTradeIdentification.html{Specifies the different identifications associated with a securities transaction.}]] #EEEEEE {
+}
+class SecuritiesTradeStatus [[../SecuritiesTradeStatus.html{Status of a securities trade.}]] #EEEEEE {
+}
+SecuritiesTradeStatus -[hidden]-> SecuritiesTradeIdentification
+class SecuritiesQuantity [[../SecuritiesQuantity.html{Quantity of a security.}]] #EEEEEE {
+}
+SecuritiesQuantity -[hidden]-> SecuritiesTradeStatus
+class Security [[../Security.html{Financial instruments representing a sum of rights of the investor vis-a-vis the issuer.}]] #EEEEEE {
+}
+Security -[hidden]-> SecuritiesQuantity
+class SecuritiesPricing [[../SecuritiesPricing.html{Characteristics related to the price of the security.}]] #EEEEEE {
+}
+SecuritiesPricing -[hidden]-> Security
+class SecuritiesTradePartyRole [[../SecuritiesTradePartyRole.html{Role played by a party in the context of a securities trade.}]] #EEEEEE {
+}
+SecuritiesTradePartyRole -[hidden]-> SecuritiesPricing
+class SecuritiesTradeExecution [[../SecuritiesTradeExecution.html{Transaction between two counterparties in which they agree to buy and sell a financial instrument. A trade transaction occurs with the matching of the two counterparties orders. There could be several trade transactions necessary to execute the trade.}]] #EEEEEE {
+}
+SecuritiesTradeExecution -[hidden]-> SecuritiesTradePartyRole
+class Allocation [[../Allocation.html{Distribution of the (block) trade (transactions) by the investor or investment manager to different underlying clients, ie, investment funds.}]] #EEEEEE {
+}
+Allocation -[hidden]-> SecuritiesTradeExecution
+class SecuritiesOrder [[../SecuritiesOrder.html{Intention to transfer an ownership of a financial instrument.}]] #EEEEEE {
+}
+SecuritiesOrder -[hidden]-> Allocation
+}
+together {
+class Interest [[../Interest.html{Consideration, such as amount of money,  paid or received in exchange for an asset that has been invested, loaned or borrowed for a certain period. The interest is expressed as a fixed amount or percentage of the amount upon which the interest is applied.}]] #EEEEEE {
+}
+class Spread [[../Spread.html{Margin over or under an index which determines a rate.}]] #EEEEEE {
+}
+Spread -[hidden]-> Interest
+class SecuritiesFinancingAgreement [[../SecuritiesFinancingAgreement.html{Contractual details related to the agreement between parties.}]] #EEEEEE {
+}
+SecuritiesFinancingAgreement -[hidden]-> Spread
+class BuyOrSellIndicationOfInterest [[../BuyOrSellIndicationOfInterest.html{Intention to buy or sell a financial Instrument.}]] #EEEEEE {
+}
+BuyOrSellIndicationOfInterest -[hidden]-> SecuritiesFinancingAgreement
+}
+together {
+class PaymentObligation [[../PaymentObligation.html{Obligation for the debtor to pay the creditor an amount of cash.}]] #EEEEEE {
+}
+}
+Trade - -> "*" Commission : TradeCommission
+Trade - -> "*" TradeIdentification : TradeRelatedIdentifications
+Trade - -> "1" TradePartyRole : TradePartyRole
+Trade - -> "*" Obligation : Obligation
+Trade - -> "0..1" Negotiation : RelatedNegotiation
+Trade - -> "0..1" MasterAgreement : GoverningDocument
+Trade - -> "1" System : System
+Trade - -> "1..*" Asset : Asset
+Trade - -> "1" Market : Market
+Trade - -> "1" Guarantee : Guarantee
+Trade - -> "1" Settlement : Settlement
+Trade - -> "1" Order : Order
+Trade - -> "*" Leg : Leg
+Trade - -> "1" FinancialTransaction : FinancialTransaction
+Trade - -> "1" Reconciliation : Reconciliation
+SecuritiesTrade - -> "*" SecuritiesTradeIdentification : SecuritiesTradeRelatedIdentifications
+SecuritiesTrade - -> "*" SecuritiesTradeStatus : SecuritiesTradeStatus
+SecuritiesTrade - -> "*" SecuritiesQuantity : TradeQuantity
+SecuritiesTrade - -> "*" Security : Security
+SecuritiesTrade - -> "*" SecuritiesPricing : TradePrice
+SecuritiesTrade - -> "*" SecuritiesTradePartyRole : PartyRole
+SecuritiesTrade - -> "0..1" SecuritiesFinancing : SecuritiesFinancingClosingData
+SecuritiesTrade - -> "*" SecuritiesTradeExecution : TradingExecution
+SecuritiesTrade - -> "*" Allocation : TradeAllocation
+SecuritiesTrade - -> "0..1" SecuritiesOrder : RelatedOrder
+SecuritiesTrade - -> "0..1" SecuritiesFinancing : SecuritiesFinancingOpeningData
+SecuritiesFinancing - -> "*" Interest : Interest
+SecuritiesFinancing - -> "1" Spread : RepurchaseSpread
+SecuritiesFinancing - -> "*" SecuritiesPricing : EndPrice
+SecuritiesFinancing - -> "1" SecuritiesFinancingAgreement : FinancingAgreement
+SecuritiesFinancing - -> "0..1" BuyOrSellIndicationOfInterest : RelatedIndicationOfInterest
+RepurchaseAgreement - -> "1" PaymentObligation : PaymentObligation
+Obligation - -> "1" Obligation : ParentObligation
+Negotiation - -> "0..1" System : TradingSystem
+Negotiation - -> "0..1" BuyOrSellIndicationOfInterest : IndicationOfInterest
+Negotiation - -> "*" SecuritiesOrder : SecuritiesOrder
+System - -> "1" Reconciliation : Reconciliation
+Asset - -> "*" Leg : LegAdditionalInformation
+SecuritiesQuantity - -> "1" Security : SecurityIdentification
+SecuritiesQuantity - -> "1" Security : MinimumQuantityDebt
+SecuritiesQuantity - -> "0..1" SecuritiesOrder : RelatedOrder
+SecuritiesQuantity - -> "0..1" Allocation : Allocation
+SecuritiesQuantity - -> "0..1" SecuritiesTradeExecution : SecuritiesTradeExecution
+SecuritiesQuantity - -> "0..1" SecuritiesOrder : PreviousDayOrder
+Security - -> "*" SecuritiesPricing : Pricing
+Security - -> "0..1" Spread : Spread
+Security - -> "1" SecuritiesOrder : SecuritiesOrder
+SecuritiesPricing - -> "0..1" SecuritiesTradeExecution : SecuritiesTradeExecution
+SecuritiesPricing - -> "0..1" Spread : Spread
+SecuritiesPricing - -> "0..1" SecuritiesOrder : Order
+SecuritiesPricing - -> "0..1" SecuritiesOrder : StopPriceOrder
+SecuritiesPricing - -> "0..1" Allocation : Allocation
+SecuritiesTradeExecution - -> "*" PaymentObligation : PaymentObligation
+Allocation - -> "0..1" SecuritiesOrder : SecuritiesOrder
+Spread - -> "*" BuyOrSellIndicationOfInterest : RelatedIndicationOfInterest
+Spread - -> "0..1" BuyOrSellIndicationOfInterest : IndicationOfInterest
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_151-b12
+Operating System: Linux
+OS Version: 3.13.0-110-generic
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

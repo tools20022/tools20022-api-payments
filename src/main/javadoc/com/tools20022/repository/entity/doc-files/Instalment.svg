@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="102px" preserveAspectRatio="none" style="width:1301px;height:102px;background:#000000;" version="1.1" viewBox="0 0 1301 102" width="1301px" zoomAndPan="magnify"><defs/><g><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="185" x="5" y="17.9951">... (skipping 89 lines) ...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="113" x="5" y="34.292">class Dividend</text><a target="_top" xlink:actuate="onRequest" xlink:href="../Dividend.html" xlink:show="new" xlink:title="Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, for example, in company products or property. The dividend amount is decided by the board of directors." xlink:type="simple"><text fill="#0000FF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="122" x="123" y="34.292">../Dividend.html</text><line style="stroke: #0000FF; stroke-width: 1.0;" x1="123" x2="245" y1="36.292" y2="36.292"/></a><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="81" x="250" y="34.292">#EEEEEE {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="10" x="5" y="50.5889">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="350" x="5" y="66.8857">Dividend -[hidden]-&gt; ForeignExchangeTrade</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="1294" x="5" y="83.1826">class RepurchaseAgreement [[../RepurchaseAgreement.html{Sale of securities together with an agreement for the seller to buy back the securities at a later date.</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="0" x="10" y="99.4795"/><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="10" y="99.4795">Syntax Error?</text><!--
+@startuml
+
+hide empty members
+hide circle
+together {
+class Obligation [[../Obligation.html{Specifies the assets (quantity of securities, goods, services, and cash amounts) that have to be delivered.}]] #FEFEEE {
++RequestedSettlementDate <i>(ISODateTime)</i>
++RequestedSettlementAmount <i>(CurrencyAndAmount)</i>
++Priority <i>(Max4AlphaNumericText)</i>
++ExposureType <i>(ExposureTypeV2Code)</i>
+}
+PaymentObligation -up-|> Obligation
+class PaymentObligation [[../PaymentObligation.html{Obligation for the debtor to pay the creditor an amount of cash.}]] #FEFEEE {
++Purpose <i>(PaymentPurposeCode)</i>
++RemittanceDeliveryMethod <i>(RemittanceLocationMethodCode)</i>
++Amount <i>(CurrencyAndAmount)</i>
++Percentage <i>(PercentageRate)</i>
++MaximumAmount <i>(CurrencyAndAmount)</i>
++ExpiryDate <i>(ISODateTime)</i>
++ApplicableLaw <i>(CountryCode)</i>
++PaymentDueDate <i>(ISODate)</i>
+}
+Instalment -up-|> PaymentObligation
+class Instalment [[../Instalment.html{Specifies the details of each successive payment in settlement of a debt or in an investment plan.}]] #FEFECE {
++InitialNumberOfInstalment <i>(Number)</i>
++TotalNumberOfInstalment <i>(Number)</i>
++PeriodUnit <i>(FrequencyCode)</i>
++NumberOfUnits <i>(Number)</i>
++SequenceIdentification <i>(Max70Text)</i>
++InstalmentPlanType <i>(InstalmentPlanCode)</i>
++FirstPaymentAmount <i>(CurrencyAndAmount)</i>
++FirstPaymentDate <i>(ISODateTime)</i>
+}
+}
+together {
+class Trade [[../Trade.html{Result of an order between at least two parties. A trade relates to the delivery of goods and services, cash or securities.}]] #EEEEEE {
+}
+class TransactionRisk [[../TransactionRisk.html{Calculation of the exposure amount that one party has vis-a-vis one counterparty or a central system, based on the transactions that are not yet settled.}]] #EEEEEE {
+}
+TransactionRisk -[hidden]-> Trade
+class ObligationFulfilment [[../ObligationFulfilment.html{Processes by which an obligation is extinguished fully or partially.}]] #EEEEEE {
+}
+ObligationFulfilment -[hidden]-> TransactionRisk
+}
+together {
+class Payment [[../Payment.html{Payment information and processes required to transfer cash end to end from the debtor to the creditor.}]] #EEEEEE {
+}
+class Document [[../Document.html{General information that unambiguously identifies a document, such as identification number and issue date time.}]] #EEEEEE {
+}
+Document -[hidden]-> Payment
+class ContactPoint [[../ContactPoint.html{Number, physical or virtual address, used for communication.}]] #EEEEEE {
+}
+ContactPoint -[hidden]-> Document
+class InterestManagement [[../InterestManagement.html{Management of interest which consists into calculating the interest, requesting its payment or distributing the interest proceeds.}]] #EEEEEE {
+}
+InterestManagement -[hidden]-> ContactPoint
+class CommercialTrade [[../CommercialTrade.html{Commercial details of a trade transaction between a buyer and a seller.}]] #EEEEEE {
+}
+CommercialTrade -[hidden]-> InterestManagement
+class BuyIn [[../BuyIn.html{Process in which the buyer/CCP repurchases shares of stock because the seller either failed to deliver the shares or did not deliver them in a timely fashion. The seller has to make up the price difference if the new shares are more expensive than originally agreed to.}]] #EEEEEE {
+}
+BuyIn -[hidden]-> CommercialTrade
+class CorporateActionProceedsDeliveryInstruction [[../CorporateActionProceedsDeliveryInstruction.html{Specifies the delivery instructions for the securities and cash proceeds at any stage of the Corporate Action process.}]] #EEEEEE {
+}
+CorporateActionProceedsDeliveryInstruction -[hidden]-> BuyIn
+class CollateralMovement [[../CollateralMovement.html{Provides the agreed amount and the collateral movement direction.}]] #EEEEEE {
+}
+CollateralMovement -[hidden]-> CorporateActionProceedsDeliveryInstruction
+class Demand [[../Demand.html{Document signed by the beneficiary demanding payment under a demand guarantee or standby letter of credit.}]] #EEEEEE {
+}
+Demand -[hidden]-> CollateralMovement
+class PaymentObligationPartyRole [[../PaymentObligationPartyRole.html{Role played by a party in the context of a payment obligation.}]] #EEEEEE {
+}
+PaymentObligationPartyRole -[hidden]-> Demand
+class SecuritiesTradeExecution [[../SecuritiesTradeExecution.html{Transaction between two counterparties in which they agree to buy and sell a financial instrument. A trade transaction occurs with the matching of the two counterparties orders. There could be several trade transactions necessary to execute the trade.}]] #EEEEEE {
+}
+SecuritiesTradeExecution -[hidden]-> PaymentObligationPartyRole
+class CashAccountContract [[../CashAccountContract.html{Account contract established between the organisation or the group to which the organisation belongs, and the account servicer.}]] #EEEEEE {
+}
+CashAccountContract -[hidden]-> SecuritiesTradeExecution
+class PortfolioTransfer [[../PortfolioTransfer.html{Transfer by the delivering account servicer to the receiving account servicer of a retail or institutional client portfolio. A portfolio can be any grouping of  investments, for example  stocks, bonds, options, warrants. held by an institution or an individual.}]] #EEEEEE {
+}
+PortfolioTransfer -[hidden]-> CashAccountContract
+class CurrencyOption [[../CurrencyOption.html{Right to buy (call) or sell (put) an underlying amount in one currency against another amount in another currency at a predetermined exchange rate, within a specified period of time or at a specified date and time.}]] #EEEEEE {
+}
+CurrencyOption -[hidden]-> PortfolioTransfer
+class ForeignExchangeTrade [[../ForeignExchangeTrade.html{Agreement between two parties in which one party buys a currency and the other party sells a different currency.}]] #EEEEEE {
+}
+ForeignExchangeTrade -[hidden]-> CurrencyOption
+class Dividend [[../Dividend.html{Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, for example, in company products or property. The dividend amount is decided by the board of directors.}]] #EEEEEE {
+}
+Dividend -[hidden]-> ForeignExchangeTrade
+class RepurchaseAgreement [[../RepurchaseAgreement.html{Sale of securities together with an agreement for the seller to buy back the securities at a later date.
+A repo is equivalent to a spot sale combined with a forward contract.
+For the seller of the security it is a repo; for the buyer of the security it is a reverse repurchase agreement. }]] #EEEEEE {
+}
+RepurchaseAgreement -[hidden]-> Dividend
+class Assignment [[../Assignment.html{Transfer by one party to a third party of its receivables.}]] #EEEEEE {
+}
+Assignment -[hidden]-> RepurchaseAgreement
+class BankingTransaction [[../BankingTransaction.html{Transaction executed by the client of a financial institution from/to the account serviced by the financial institution, such as mortgage payment.}]] #EEEEEE {
+}
+BankingTransaction -[hidden]-> Assignment
+class PaymentTerms [[../PaymentTerms.html{Specifies the payment terms of the obligation.}]] #EEEEEE {
+}
+PaymentTerms -[hidden]-> BankingTransaction
+}
+together {
+class InvestmentPlan [[../InvestmentPlan.html{Plan that allows investors to schedule periodical investments or divestments, according to pre-defined criteria.}]] #EEEEEE {
+}
+}
+Obligation - -> "1" Trade : Trade
+Obligation - -> "1" TransactionRisk : TransactionRisk
+Obligation - -> "1" Obligation : ParentObligation
+Obligation - -> "0..1" ObligationFulfilment : Offset
+Obligation - -> "1" ObligationFulfilment : OriginalObligationProcess
+PaymentObligation - -> "*" Payment : PaymentOffset
+PaymentObligation - -> "*" Document : AssociatedDocument
+PaymentObligation - -> "*" ContactPoint : RemittanceLocation
+PaymentObligation - -> "*" InterestManagement : Interest
+PaymentObligation - -> "1" CommercialTrade : CommercialTrade
+PaymentObligation - -> "0..1" BuyIn : PaymentSourceBuyIn
+PaymentObligation - -> "1" CorporateActionProceedsDeliveryInstruction : RelatedCorporateAction
+PaymentObligation - -> "1" CollateralMovement : RelatedCollateralMovement
+PaymentObligation - -> "1" Demand : PaymentSourceUndertakingDemand
+PaymentObligation - -> "*" PaymentObligationPartyRole : PartyRole
+PaymentObligation - -> "1" SecuritiesTradeExecution : ExecutedSecuritiesTrade
+PaymentObligation - -> "0..1" CashAccountContract : RelatedAccountClosingTerms
+PaymentObligation - -> "*" PortfolioTransfer : PaymentSourcePortfolioTransfer
+PaymentObligation - -> "0..1" CurrencyOption : PaymentSourceCurrencyOption
+PaymentObligation - -> "0..1" ForeignExchangeTrade : ExchangeRateInformation
+PaymentObligation - -> "1" Dividend : Dividend
+PaymentObligation - -> "1" RepurchaseAgreement : RepurchaseAgreement
+PaymentObligation - -> "1" Assignment : RelatedAssignment
+PaymentObligation - -> "1" BankingTransaction : BankingTransaction
+PaymentObligation - -> "1" PaymentTerms : PaymentTerms
+Instalment - -> "0..1" InvestmentPlan : InvestmentPlan
+Payment - -> "1" Payment : OriginalPayment
+Document - -> "*" ContactPoint : PlaceOfStorage
+Document - -> "*" CommercialTrade : CommercialTrade
+ContactPoint - -> "1" ContactPoint : MainContact
+CurrencyOption - -> "*" ForeignExchangeTrade : ExercisedOption
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_151-b12
+Operating System: Linux
+OS Version: 3.13.0-110-generic
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

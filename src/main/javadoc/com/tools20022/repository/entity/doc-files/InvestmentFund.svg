@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="102px" preserveAspectRatio="none" style="width:2768px;height:102px;background:#000000;" version="1.1" viewBox="0 0 2768 102" width="2768px" zoomAndPan="magnify"><defs/><g><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="185" x="5" y="17.9951">... (skipping 35 lines) ...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="221" x="5" y="34.292">class InvestmentFundFamily</text><a target="_top" xlink:actuate="onRequest" xlink:href="../InvestmentFundFamily.html" xlink:show="new" xlink:title="Group of investment funds under the same fund management company." xlink:type="simple"><text fill="#0000FF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="230" x="231" y="34.292">../InvestmentFundFamily.html</text><line style="stroke: #0000FF; stroke-width: 1.0;" x1="231" x2="461" y1="36.292" y2="36.292"/></a><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="81" x="466" y="34.292">#EEEEEE {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="10" x="5" y="50.5889">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="478" x="5" y="66.8857">InvestmentFundFamily -[hidden]-&gt; InvestmentFundPartyRole</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="2761" x="5" y="83.1826">class UmbrellaFund [[../UmbrellaFund.html{In securities, a collective investment scheme that has a contractual or a corporate form. When it has a contractual form, a fund is constituted under either the law of contract or under the trust law and thus it is not a legal entity. In its corporate form, a fund is a legal entity and is structured as a company.</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="0" x="10" y="99.4795"/><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="10" y="99.4795">Syntax Error?</text><!--
+@startuml
+
+hide empty members
+hide circle
+together {
+class InvestmentFund [[../InvestmentFund.html{Distinct pool of financial instruments managed by a single investment policy. May or not be part of an umbrella fund. The pool is issued in at least one investment fund class.}]] #FEFECE {
++FundType <i>(Max35Text)</i>
++Identification <i>(BICNonFIIdentifier)</i>
++Structure <i>(FundStructureCode)</i>
++LegalForm <i>(FundLegalFormCode)</i>
++SubFundIndicator <i>(YesNoIndicator)</i>
++EndOfFiscalYear <i>(ISODate)</i>
++AccountingYearEndDate <i>(ISODate)</i>
++FirstAccountingYearEndDate <i>(ISODate)</i>
++AuthorisedCountry <i>(CountryCode)</i>
+}
+}
+together {
+class Country [[../Country.html{Nation with its own government.}]] #EEEEEE {
+}
+class ContactPoint [[../ContactPoint.html{Number, physical or virtual address, used for communication.}]] #EEEEEE {
+}
+ContactPoint -[hidden]-> Country
+class InvestmentFundClass [[../InvestmentFundClass.html{Security that is a sub-set of an investment fund, and is governed by the same investment fund policy, for example, a dividend option or valuation currency.}]] #EEEEEE {
+}
+InvestmentFundClass -[hidden]-> ContactPoint
+class TreasuryTradingParty [[../TreasuryTradingParty.html{Party that negotiates and executes treasury transactions on its behalf or on behalf of another party.}]] #EEEEEE {
+}
+TreasuryTradingParty -[hidden]-> InvestmentFundClass
+class CustodianRole [[../CustodianRole.html{The party that safekeeps and administers assets on behalf of the owner.}]] #EEEEEE {
+}
+CustodianRole -[hidden]-> TreasuryTradingParty
+class InvestmentFundPartyRole [[../InvestmentFundPartyRole.html{Specifies roles played by a party that are linked to the handling of investment funds but not related to a specific process.}]] #EEEEEE {
+}
+InvestmentFundPartyRole -[hidden]-> CustodianRole
+class InvestmentFundFamily [[../InvestmentFundFamily.html{Group of investment funds under the same fund management company.}]] #EEEEEE {
+}
+InvestmentFundFamily -[hidden]-> InvestmentFundPartyRole
+class UmbrellaFund [[../UmbrellaFund.html{In securities, a collective investment scheme that has a contractual or a corporate form. When it has a contractual form, a fund is constituted under either the law of contract or under the trust law and thus it is not a legal entity. In its corporate form, a fund is a legal entity and is structured as a company.
+It has several distinct sub-funds which in effect are traded as individual investment funds.}]] #EEEEEE {
+}
+UmbrellaFund -[hidden]-> InvestmentFundFamily
+}
+InvestmentFund - -> "1" Country : DomicileCountry
+InvestmentFund - -> "*" ContactPoint : OrderDesk
+InvestmentFund - -> "1..*" InvestmentFundClass : InvestmentFundClass
+InvestmentFund - -> "1" TreasuryTradingParty : TreasuryTradingParty
+InvestmentFund - -> "*" CustodianRole : Custodian
+InvestmentFund - -> "*" InvestmentFundPartyRole : PartyRole
+InvestmentFund - -> "0..1" InvestmentFundFamily : Family
+InvestmentFund - -> "0..1" UmbrellaFund : UmbrellaFund
+ContactPoint - -> "1" ContactPoint : MainContact
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_151-b12
+Operating System: Linux
+OS Version: 3.13.0-110-generic
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

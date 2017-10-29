@@ -1,0 +1,339 @@
+/* Tools20022 - API for ISO 20022
+* Copyright (C) 2017 Tools20022.com - László Bukodi 
+* 
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package com.tools20022.repository.codeset;
+
+import com.tools20022.metamodel.MMCode;
+import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.repository.codeset.BalanceTypeCode;
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReference;
+
+/**
+ * Specifies the balance type.
+ * <p>
+ * <strong>Constant fields:</strong>
+ * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.BalanceTypeCode
+ * BalanceTypeCode}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.codeset.BalanceType12Code#Expected
+ * BalanceType12Code.Expected}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#OpeningAvailable
+ * BalanceType12Code.OpeningAvailable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#InterimAvailable
+ * BalanceType12Code.InterimAvailable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ClosingAvailable
+ * BalanceType12Code.ClosingAvailable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ForwardAvailable
+ * BalanceType12Code.ForwardAvailable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ClosingBooked
+ * BalanceType12Code.ClosingBooked}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#InterimBooked
+ * BalanceType12Code.InterimBooked}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#OpeningBooked
+ * BalanceType12Code.OpeningBooked}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#PreviouslyClosedBooked
+ * BalanceType12Code.PreviouslyClosedBooked}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#Information
+ * BalanceType12Code.Information}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
+ * dataDictionary} =
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
+ * example} =
+ * <ul>
+ * <li>"XPCD"</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+ * registrationStatus} =
+ * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
+ * "BalanceType12Code"</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+ * definition} = "Specifies the balance type."</li>
+ * </ul>
+ */
+public class BalanceType12Code extends BalanceTypeCode {
+
+	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Expected"</li>
+	 * </ul>
+	 */
+	public static final MMCode Expected = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Expected";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "OpeningAvailable"</li>
+	 * </ul>
+	 */
+	public static final MMCode OpeningAvailable = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "OpeningAvailable";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "InterimAvailable"</li>
+	 * </ul>
+	 */
+	public static final MMCode InterimAvailable = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "InterimAvailable";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ClosingAvailable"</li>
+	 * </ul>
+	 */
+	public static final MMCode ClosingAvailable = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ClosingAvailable";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ForwardAvailable"</li>
+	 * </ul>
+	 */
+	public static final MMCode ForwardAvailable = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ForwardAvailable";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ClosingBooked"</li>
+	 * </ul>
+	 */
+	public static final MMCode ClosingBooked = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ClosingBooked";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "InterimBooked"</li>
+	 * </ul>
+	 */
+	public static final MMCode InterimBooked = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "InterimBooked";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "OpeningBooked"</li>
+	 * </ul>
+	 */
+	public static final MMCode OpeningBooked = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "OpeningBooked";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "PreviouslyClosedBooked"</li>
+	 * </ul>
+	 */
+	public static final MMCode PreviouslyClosedBooked = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "PreviouslyClosedBooked";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+	/**
+	 * (No doc)
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.BalanceType12Code
+	 * BalanceType12Code}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Information"</li>
+	 * </ul>
+	 */
+	public static final MMCode Information = new MMCode() {
+		{
+			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Information";
+			owner_lazy = () -> BalanceType12Code.mmObject();
+		}
+	};
+
+	static public MMCodeSet mmObject() {
+		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
+			{
+				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				example = Arrays.asList("XPCD");
+				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				name = "BalanceType12Code";
+				definition = "Specifies the balance type.";
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceType12Code.Expected, com.tools20022.repository.codeset.BalanceType12Code.OpeningAvailable,
+						com.tools20022.repository.codeset.BalanceType12Code.InterimAvailable, com.tools20022.repository.codeset.BalanceType12Code.ClosingAvailable, com.tools20022.repository.codeset.BalanceType12Code.ForwardAvailable,
+						com.tools20022.repository.codeset.BalanceType12Code.ClosingBooked, com.tools20022.repository.codeset.BalanceType12Code.InterimBooked, com.tools20022.repository.codeset.BalanceType12Code.OpeningBooked,
+						com.tools20022.repository.codeset.BalanceType12Code.PreviouslyClosedBooked, com.tools20022.repository.codeset.BalanceType12Code.Information);
+				trace_lazy = () -> BalanceTypeCode.mmObject();
+			}
+		});
+		return mmObject_lazy.get();
+	}
+}

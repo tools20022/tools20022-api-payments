@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="102px" preserveAspectRatio="none" style="width:2144px;height:102px;background:#000000;" version="1.1" viewBox="0 0 2144 102" width="2144px" zoomAndPan="magnify"><defs/><g><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="185" x="5" y="17.9951">... (skipping 48 lines) ...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="201" x="5" y="34.292">class PaymentProcessing</text><a target="_top" xlink:actuate="onRequest" xlink:href="../PaymentProcessing.html" xlink:show="new" xlink:title="Specifies how a payment must be processed, for instance through which specific clearing channel." xlink:type="simple"><text fill="#0000FF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="210" x="211" y="34.292">../PaymentProcessing.html</text><line style="stroke: #0000FF; stroke-width: 1.0;" x1="211" x2="421" y1="36.292" y2="36.292"/></a><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="81" x="426" y="34.292">#EEEEEE {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="10" x="5" y="50.5889">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="382" x="5" y="66.8857">PaymentProcessing -[hidden]-&gt; VotingCondition</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="2132" x="5" y="83.1826">class AttendanceCard [[../AttendanceCard.html{Information about the attendance card which is issued for the requestor, for its underlying client or for the appointed proxy person or meeting attendee when an attendance request is included in the meeting instruction.</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="0" x="10" y="99.4795"/><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="10" y="99.4795">Syntax Error?</text><!--
+@startuml
+
+hide empty members
+hide circle
+together {
+class ContactPoint [[../ContactPoint.html{Number, physical or virtual address, used for communication.}]] #FEFEEE {
++BICAddress <i>(AnyBICIdentifier)</i>
++TemporaryIndicator <i>(YesNoIndicator)</i>
+}
+ElectronicAddress -up-|> ContactPoint
+class ElectronicAddress [[../ElectronicAddress.html{Address which is accessed by electronic means.}]] #FEFECE {
++EmailAddress <i>(Max256Text)</i>
++URLAddress <i>(Max256Text)</i>
++TelexAddress <i>(Max35Text)</i>
++TeletextAddress <i>(Max35Text)</i>
++ISDNAddress <i>(Max35Text)</i>
+}
+}
+together {
+class GenericIdentification [[../GenericIdentification.html{Information related to a non-standardised identification, such as a proprietary party identification or account identification.}]] #EEEEEE {
+}
+class InvestmentFund [[../InvestmentFund.html{Distinct pool of financial instruments managed by a single investment policy. May or not be part of an umbrella fund. The pool is issued in at least one investment fund class.}]] #EEEEEE {
+}
+InvestmentFund -[hidden]-> GenericIdentification
+class Party [[../Party.html{Entity involved in an activity.}]] #EEEEEE {
+}
+Party -[hidden]-> InvestmentFund
+class CorporateActionEvent [[../CorporateActionEvent.html{An event determined by a corporation's board of directors, that changes the existing corporate capital structure or financial condition.}]] #EEEEEE {
+}
+CorporateActionEvent -[hidden]-> Party
+class ReportingService [[../ReportingService.html{Specifies the reporting parameters that are included in the account contract which specifies the services linked to the account..}]] #EEEEEE {
+}
+ReportingService -[hidden]-> CorporateActionEvent
+class Document [[../Document.html{General information that unambiguously identifies a document, such as identification number and issue date time.}]] #EEEEEE {
+}
+Document -[hidden]-> ReportingService
+class PaymentObligation [[../PaymentObligation.html{Obligation for the debtor to pay the creditor an amount of cash.}]] #EEEEEE {
+}
+PaymentObligation -[hidden]-> Document
+class ProxyAppointmentCondition [[../ProxyAppointmentCondition.html{Conditions that must be met to appoint a proxy.}]] #EEEEEE {
+}
+ProxyAppointmentCondition -[hidden]-> PaymentObligation
+class Meeting [[../Meeting.html{Specifies the physical parameters of a general meeting. Several dates and places can be defined for a  meeting.}]] #EEEEEE {
+}
+Meeting -[hidden]-> ProxyAppointmentCondition
+class VotingCondition [[../VotingCondition.html{Specifies the different voting types, channels and premium.}]] #EEEEEE {
+}
+VotingCondition -[hidden]-> Meeting
+class PaymentProcessing [[../PaymentProcessing.html{Specifies how a payment must be processed, for instance through which specific clearing channel.}]] #EEEEEE {
+}
+PaymentProcessing -[hidden]-> VotingCondition
+class AttendanceCard [[../AttendanceCard.html{Information about the attendance card which is issued for the requestor, for its underlying client or for the appointed proxy person or meeting attendee when an attendance request is included in the meeting instruction. 
+The instructing party can specify which information must be indicated on the attendance card and to which location the attendance card must be delivered.}]] #EEEEEE {
+}
+AttendanceCard -[hidden]-> PaymentProcessing
+class InvestmentFundClassProcessingCharacteristics [[../InvestmentFundClassProcessingCharacteristics.html{Processing characteristics linked to the instrument, ie, not to  the market.}]] #EEEEEE {
+}
+InvestmentFundClassProcessingCharacteristics -[hidden]-> AttendanceCard
+}
+together {
+class Presentation [[../Presentation.html{Presentation of documents.}]] #EEEEEE {
+}
+}
+ContactPoint - -> "1" GenericIdentification : Identification
+ContactPoint - -> "1" InvestmentFund : RelatedInvestmentFund
+ContactPoint - -> "0..1" Party : RelatedParty
+ContactPoint - -> "0..1" CorporateActionEvent : RelatedCorporateActionEvent
+ContactPoint - -> "0..1" ReportingService : RelatedReportingService
+ContactPoint - -> "*" Document : StoredDocument
+ContactPoint - -> "0..1" PaymentObligation : RemittanceRelatedPayment
+ContactPoint - -> "0..1" ProxyAppointmentCondition : RelatedProxyAppointment
+ContactPoint - -> "*" Meeting : ContactPointForMeeting
+ContactPoint - -> "0..1" VotingCondition : ContactPointForVote
+ContactPoint - -> "1" ContactPoint : MainContact
+ContactPoint - -> "1" PaymentProcessing : RelatedPayment
+ContactPoint - -> "0..1" AttendanceCard : DeliveredAttendanceCard
+ContactPoint - -> "1" InvestmentFundClassProcessingCharacteristics : InvestmentFundClassProcessing
+ElectronicAddress - -> "1" Presentation : RelatedPresentation
+GenericIdentification - -> "1" Document : IdentifiedDocument
+CorporateActionEvent - -> "*" Meeting : RelatedMeeting
+Document - -> "0..1" PaymentObligation : PaymentObligation
+Document - -> "0..1" Presentation : Presentation
+ProxyAppointmentCondition - -> "0..1" Meeting : Meeting
+Meeting - -> "*" VotingCondition : VotingCondition
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_151-b12
+Operating System: Linux
+OS Version: 3.13.0-110-generic
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="102px" preserveAspectRatio="none" style="width:1493px;height:102px;background:#000000;" version="1.1" viewBox="0 0 1493 102" width="1493px" zoomAndPan="magnify"><defs/><g><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="185" x="5" y="17.9951">... (skipping 86 lines) ...</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="91" x="5" y="34.292">class Trade</text><a target="_top" xlink:actuate="onRequest" xlink:href="../Trade.html" xlink:show="new" xlink:title="Result of an order between at least two parties. A trade relates to the delivery of goods and services, cash or securities." xlink:type="simple"><text fill="#0000FF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="100" x="101" y="34.292">../Trade.html</text><line style="stroke: #0000FF; stroke-width: 1.0;" x1="101" x2="201" y1="36.292" y2="36.292"/></a><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="81" x="206" y="34.292">#EEEEEE {</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="10" x="5" y="50.5889">}</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="267" x="5" y="66.8857">Trade -[hidden]-&gt; InvestmentPlan</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="1486" x="5" y="83.1826">class Tranche [[../Tranche.html{One of a number of related assets offered as part of the same transaction. The detachment point less the attachment  point represents the maximum loss.</text><text fill="#33FF02" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="0" x="10" y="99.4795"/><text fill="#FF0000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="106" x="10" y="99.4795">Syntax Error?</text><!--
+@startuml
+
+hide empty members
+hide circle
+together {
+class Asset [[../Asset.html{Tangible items of value to a business.}]] #FEFEEE {
++ExpiryDate <i>(ISODateTime)</i>
++MaturityDate <i>(ISODateTime)</i>
++FinancialAssetCategory <i>(FinancialAssetTypeCategoryCode)</i>
++InvestmentAmount <i>(CurrencyAndAmount)</i>
++InvestmentRate <i>(PercentageRate)</i>
++EffectiveDate <i>(ISODateTime)</i>
++FinancialInstrumentSubStructure <i>(InstrumentSubStructureTypeCode)</i>
+}
+Security -up-|> Asset
+class Security [[../Security.html{Financial instruments representing a sum of rights of the investor vis-a-vis the issuer.}]] #FEFEEE {
++RegisteredDistributionCountry <i>(CountryCode)</i>
++DenominationCurrency <i>(CurrencyCode)</i>
++RegistrationForm <i>(FormOfSecurityCode)</i>
++DematerialisedIndicator <i>(YesNoIndicator)</i>
++EUSavingsDirective <i>(EUSavingsDirectiveCode)</i>
++TemporaryFinancialInstrumentIndicator <i>(YesNoIndicator)</i>
++AvailableDate <i>(ISODateTime)</i>
++DeclarationDetails <i>(Max350Text)</i>
++FungibleIndicator <i>(YesNoIndicator)</i>
++Appearance <i>(AppearanceCode)</i>
++NearTermPositionLimit <i>(Number)</i>
++ContractSettlementMonth <i>(ISOYearMonth)</i>
++MinimumTradingPricingIncrement <i>(Number)</i>
++WarrantAttachedOnDelivery <i>(YesNoIndicator)</i>
++StrippableIndicator <i>(YesNoIndicator)</i>
++FirstDealingDate <i>(ISODateTime)</i>
++RecompositionIndicator <i>(YesNoIndicator)</i>
++Series <i>(Max35Text)</i>
++PercentageOfDebtClaim <i>(PercentageRate)</i>
++CoverRate <i>(PercentageRate)</i>
++MaturityRedemption <i>(MaturityRedemptionTypeCode)</i>
++PotentialEuroSystemEligibility <i>(YesNoIndicator)</i>
++RestrictedIndicator <i>(YesNoIndicator)</i>
+}
+InvestmentFundClass -up-|> Security
+class InvestmentFundClass [[../InvestmentFundClass.html{Security that is a sub-set of an investment fund, and is governed by the same investment fund policy, for example, a dividend option or valuation currency.}]] #FEFECE {
++ClassType <i>(Max35Text)</i>
++DistributionPolicy <i>(DistributionPolicyCode)</i>
++DividendPolicy <i>(DividendPolicyCode)</i>
++DualFundIndicator <i>(YesNoIndicator)</i>
++RequestedNAVCurrency <i>(CurrencyCode)</i>
++TradingCurrency <i>(CurrencyCode)</i>
++PhysicalBearerSecurities <i>(YesNoIndicator)</i>
++DematerialisedBearerSecurities <i>(YesNoIndicator)</i>
++PhysicalRegisteredSecurities <i>(YesNoIndicator)</i>
++DematerialisedRegisteredSecurities <i>(YesNoIndicator)</i>
++ProductGroup <i>(Max140Text)</i>
++SeriesIssueIdentificationDate <i>(ISODate)</i>
++SeriesName <i>(Max35Text)</i>
++NewIssueIndicator <i>(YesNoIndicator)</i>
++TopUpAmount <i>(CurrencyAndAmount)</i>
++HoldBackAmount <i>(CurrencyAndAmount)</i>
++HoldBackReleaseDate <i>(ISODate)</i>
++LotDescription <i>(Max350Text)</i>
++UnderlyingAssetType <i>(FinancialInstrumentProductTypeCode)</i>
++InvestorType <i>(InvestorTypeCode)</i>
++OutstandingUnits <i>(DecimalNumber)</i>
+}
+}
+together {
+class Derivative [[../Derivative.html{Specifies the parameters of a derivative instrument based on a specific asset.}]] #EEEEEE {
+}
+class AssetHolding [[../AssetHolding.html{Specifies in terms of value and quantity the assets.}]] #EEEEEE {
+}
+AssetHolding -[hidden]-> Derivative
+class AssetClassification [[../AssetClassification.html{Other classification type of the security, ie, other than ISO 10962.}]] #EEEEEE {
+}
+AssetClassification -[hidden]-> AssetHolding
+class AssetPartyRole [[../AssetPartyRole.html{Specifies roles played by a party that are linked to the handling of assets but not related to a specific process.}]] #EEEEEE {
+}
+AssetPartyRole -[hidden]-> AssetClassification
+class Issuance [[../Issuance.html{Preparation/bringing to market of a security (also known as primary market or Initial Public Offering (IPO) issuance).}]] #EEEEEE {
+}
+Issuance -[hidden]-> AssetPartyRole
+class Portfolio [[../Portfolio.html{Wrapper for a specific product or a specific sub-product owned by a set of beneficial owners.}]] #EEEEEE {
+}
+Portfolio -[hidden]-> Issuance
+class InvestmentPlan [[../InvestmentPlan.html{Plan that allows investors to schedule periodical investments or divestments, according to pre-defined criteria.}]] #EEEEEE {
+}
+InvestmentPlan -[hidden]-> Portfolio
+class Trade [[../Trade.html{Result of an order between at least two parties. A trade relates to the delivery of goods and services, cash or securities.}]] #EEEEEE {
+}
+Trade -[hidden]-> InvestmentPlan
+class Tranche [[../Tranche.html{One of a number of related assets offered as part of the same transaction. The detachment point less the attachment  point represents the maximum loss.
+}]] #EEEEEE {
+}
+Tranche -[hidden]-> Trade
+class Leg [[../Leg.html{Separate transactions which combined together form a trade.}]] #EEEEEE {
+}
+Leg -[hidden]-> Tranche
+class StandingSettlementInstruction [[../StandingSettlementInstruction.html{Settlement instruction database information.}]] #EEEEEE {
+}
+StandingSettlementInstruction -[hidden]-> Leg
+}
+together {
+class SecuritiesIdentification [[../SecuritiesIdentification.html{Unique and unambiguous identifier of a security, assigned under a formal or proprietary identification scheme.}]] #EEEEEE {
+}
+class SecuritiesQuantity [[../SecuritiesQuantity.html{Quantity of a security.}]] #EEEEEE {
+}
+SecuritiesQuantity -[hidden]-> SecuritiesIdentification
+class SecuritiesRelatedFees [[../SecuritiesRelatedFees.html{Fees related to securities trades.}]] #EEEEEE {
+}
+SecuritiesRelatedFees -[hidden]-> SecuritiesQuantity
+class SecuritiesPricing [[../SecuritiesPricing.html{Characteristics related to the price of the security.}]] #EEEEEE {
+}
+SecuritiesPricing -[hidden]-> SecuritiesRelatedFees
+class SecuritiesAccount [[../SecuritiesAccount.html{Account to or from which a securities entry is made.}]] #EEEEEE {
+}
+SecuritiesAccount -[hidden]-> SecuritiesPricing
+class TradingMarket [[../TradingMarket.html{Context or geographic environment in which trading parties may meet in order to negotiate and execute trades among themselves. It also identifies the primary market where an asset is issued.}]] #EEEEEE {
+}
+TradingMarket -[hidden]-> SecuritiesAccount
+class BasicSecuritiesRegistration [[../BasicSecuritiesRegistration.html{Information related to registration of securities.}]] #EEEEEE {
+}
+BasicSecuritiesRegistration -[hidden]-> TradingMarket
+class SecuritiesRestriction [[../SecuritiesRestriction.html{Restrictions applicable to the security.}]] #EEEEEE {
+}
+SecuritiesRestriction -[hidden]-> BasicSecuritiesRegistration
+class CorporateActionEvent [[../CorporateActionEvent.html{An event determined by a corporation's board of directors, that changes the existing corporate capital structure or financial condition.}]] #EEEEEE {
+}
+CorporateActionEvent -[hidden]-> SecuritiesRestriction
+class Spread [[../Spread.html{Margin over or under an index which determines a rate.}]] #EEEEEE {
+}
+Spread -[hidden]-> CorporateActionEvent
+class Dividend [[../Dividend.html{Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, for example, in company products or property. The dividend amount is decided by the board of directors.}]] #EEEEEE {
+}
+Dividend -[hidden]-> Spread
+class SecuritiesBalance [[../SecuritiesBalance.html{Net position of a segregated holding, in a single security, within the overall position held in a securities account. A securities balance is calculated from the sum of securities' receipts minus the sum of securities' deliveries.}]] #EEEEEE {
+}
+SecuritiesBalance -[hidden]-> Dividend
+class Rating [[../Rating.html{Assessment of securities credit and investment risk.}]] #EEEEEE {
+}
+Rating -[hidden]-> SecuritiesBalance
+class CouponAttached [[../CouponAttached.html{Physical certificates representing rights attached to the physical certificates representing a security.}]] #EEEEEE {
+}
+CouponAttached -[hidden]-> Rating
+class Sector [[../Sector.html{Type of business of the organisation, for example, pharmaceutical.}]] #EEEEEE {
+}
+Sector -[hidden]-> CouponAttached
+class SecuritiesTax [[../SecuritiesTax.html{Amount of money due to the government or tax authority, according to various pre-defined parameters such as thresholds or income.}]] #EEEEEE {
+}
+SecuritiesTax -[hidden]-> Sector
+class SecuritiesTrade [[../SecuritiesTrade.html{Specifies trades linked to securities operations such as the exchange of securities, the lending of securities and the transactions related to investment funds.}]] #EEEEEE {
+}
+SecuritiesTrade -[hidden]-> SecuritiesTax
+class Jurisdiction [[../Jurisdiction.html{Specifies the jurisdiction (country, county, state, province, city).}]] #EEEEEE {
+}
+Jurisdiction -[hidden]-> SecuritiesTrade
+class SecuritiesPartyRole [[../SecuritiesPartyRole.html{Specifies roles played by a party that are linked to the handling of securities but not related to a specific process.}]] #EEEEEE {
+}
+SecuritiesPartyRole -[hidden]-> Jurisdiction
+class SecuritiesStatus [[../SecuritiesStatus.html{Specifies the status of the security within its lifecycle.}]] #EEEEEE {
+}
+SecuritiesStatus -[hidden]-> SecuritiesPartyRole
+class SecuritiesModification [[../SecuritiesModification.html{Modification of the reference data of a security or of the organisation that issued it.}]] #EEEEEE {
+}
+SecuritiesModification -[hidden]-> SecuritiesStatus
+class RedemptionSchedule [[../RedemptionSchedule.html{Describes the reason and terms for early partial or total redemption, amortisation or extension of an issue.}]] #EEEEEE {
+}
+RedemptionSchedule -[hidden]-> SecuritiesModification
+class SecuritiesSettlement [[../SecuritiesSettlement.html{Settlement of the securities in a securities transaction, that is, the instruction to deliver or receive securities, involving the payment of an amount of money or not.}]] #EEEEEE {
+}
+SecuritiesSettlement -[hidden]-> RedemptionSchedule
+class SecuritiesTransfer [[../SecuritiesTransfer.html{Completion of a securities settlement instruction, wherein securities are delivered/debited from a securities account and received/credited to the designated securities account.}]] #EEEEEE {
+}
+SecuritiesTransfer -[hidden]-> SecuritiesSettlement
+class AgentCorporateActionStandingInstruction [[../AgentCorporateActionStandingInstruction.html{Set-up at the issuer (agent) of a standing instruction originating from the CSD Participants. These standing instructions allow the participant to indicate details for the distribution of the outturn resources of a CA event outside of the CSD. A standing instruction can be accepted or rejected by the issuer (agent) and a CSD participant can amend or cancel a standing instruction.}]] #EEEEEE {
+}
+AgentCorporateActionStandingInstruction -[hidden]-> SecuritiesTransfer
+class Quote [[../Quote.html{Indicates whether the quote details are indicated as an offer, a bid or a mid of a security, commodity, currency (the latter being an average of the offer and the bid).}]] #EEEEEE {
+}
+Quote -[hidden]-> AgentCorporateActionStandingInstruction
+class SecuritiesOrder [[../SecuritiesOrder.html{Intention to transfer an ownership of a financial instrument.}]] #EEEEEE {
+}
+SecuritiesOrder -[hidden]-> Quote
+class VariableInterest [[../VariableInterest.html{Specifies the estimated interest rate and the parameters used for determining its value.}]] #EEEEEE {
+}
+VariableInterest -[hidden]-> SecuritiesOrder
+class SecuritiesConversion [[../SecuritiesConversion.html{Conversion exchange of securities, generally convertible bonds or preferred equities, into another form of securities, usually common equities.}]] #EEEEEE {
+}
+SecuritiesConversion -[hidden]-> VariableInterest
+class ComponentSecurity [[../ComponentSecurity.html{Security which forms a component of another security, for example, underlying.}]] #EEEEEE {
+}
+ComponentSecurity -[hidden]-> SecuritiesConversion
+class MarginCall [[../MarginCall.html{Specifies the calculation and the resulting margin and independent amount needed to cover the risk exposure of one party versus another.}]] #EEEEEE {
+}
+MarginCall -[hidden]-> ComponentSecurity
+class Party [[../Party.html{Entity involved in an activity.}]] #EEEEEE {
+}
+Party -[hidden]-> MarginCall
+}
+together {
+class InvestmentFund [[../InvestmentFund.html{Distinct pool of financial instruments managed by a single investment policy. May or not be part of an umbrella fund. The pool is issued in at least one investment fund class.}]] #EEEEEE {
+}
+class InvestmentFundClassProcessingCharacteristics [[../InvestmentFundClassProcessingCharacteristics.html{Processing characteristics linked to the instrument, ie, not to  the market.}]] #EEEEEE {
+}
+InvestmentFundClassProcessingCharacteristics -[hidden]-> InvestmentFund
+class InvestmentAccount [[../InvestmentAccount.html{Account between an investor(s) and a fund manager or a fund. The account can contain holdings in any investment fund or investment fund class managed (or distributed) by the fund manager, within the same fund family.}]] #EEEEEE {
+}
+InvestmentAccount -[hidden]-> InvestmentFundClassProcessingCharacteristics
+class NetAssetValueCalculation [[../NetAssetValueCalculation.html{Calculation of the net asset value for an investment fund/fund class.}]] #EEEEEE {
+}
+NetAssetValueCalculation -[hidden]-> InvestmentAccount
+class InvestmentFundTransaction [[../InvestmentFundTransaction.html{Process of buying, selling, switching or transferring fund units.}]] #EEEEEE {
+}
+InvestmentFundTransaction -[hidden]-> NetAssetValueCalculation
+class Equalisation [[../Equalisation.html{Part of an investor's subscription amount that is held by the fund in order to pay incentive / performance fees at the end of the fiscal year.}]] #EEEEEE {
+}
+Equalisation -[hidden]-> InvestmentFundTransaction
+class GenericIdentification [[../GenericIdentification.html{Information related to a non-standardised identification, such as a proprietary party identification or account identification.}]] #EEEEEE {
+}
+GenericIdentification -[hidden]-> Equalisation
+class Reinvestment [[../Reinvestment.html{Parameters of the reinvestment of the income on the fund.}]] #EEEEEE {
+}
+Reinvestment -[hidden]-> GenericIdentification
+}
+Asset - -> "*" Derivative : Derivative
+Asset - -> "*" AssetHolding : AssetValue
+Asset - -> "*" AssetClassification : AssetClassification
+Asset - -> "0..1" AssetPartyRole : AssetPartyRole
+Asset - -> "1..*" Issuance : Issuance
+Asset - -> "0..1" Portfolio : Portfolio
+Asset - -> "0..1" InvestmentPlan : InvestmentPlan
+Asset - -> "*" Trade : Trade
+Asset - -> "1" Tranche : Tranche
+Asset - -> "*" Leg : LegAdditionalInformation
+Asset - -> "1" StandingSettlementInstruction : StandingSettlementInstruction
+Security - -> "*" SecuritiesIdentification : Identification
+Security - -> "*" SecuritiesQuantity : SecuritiesQuantity
+Security - -> "*" SecuritiesRelatedFees : Fees
+Security - -> "*" SecuritiesPricing : Pricing
+Security - -> "1" SecuritiesAccount : SecuritiesAccount
+Security - -> "*" TradingMarket : TradingMarket
+Security - -> "*" TradingMarket : PlaceOfListing
+Security - -> "*" BasicSecuritiesRegistration : Registration
+Security - -> "*" SecuritiesRestriction : Restriction
+Security - -> "*" CorporateActionEvent : CorporateEvent
+Security - -> "0..1" Spread : Spread
+Security - -> "*" Dividend : Dividend
+Security - -> "1" SecuritiesBalance : Balance
+Security - -> "*" Rating : Rating
+Security - -> "*" CouponAttached : CouponAttached
+Security - -> "1" Sector : Sector
+Security - -> "*" SecuritiesTax : TaxDetails
+Security - -> "1" SecuritiesTrade : SecuritiesTrade
+Security - -> "1" Jurisdiction : RegistrationJurisdiction
+Security - -> "*" SecuritiesPartyRole : PartyRole
+Security - -> "*" SecuritiesStatus : SecurityStatus
+Security - -> "0..1" SecuritiesModification : Modification
+Security - -> "*" RedemptionSchedule : RedemptionSchedule
+Security - -> "*" SecuritiesSettlement : SecuritiesSettlement
+Security - -> "1" SecuritiesTransfer : SecuritiesTransfer
+Security - -> "*" AgentCorporateActionStandingInstruction : CorporateActionStandingInstructions
+Security - -> "0..1" Quote : Quote
+Security - -> "1" SecuritiesOrder : SecuritiesOrder
+Security - -> "0..1" VariableInterest : RelatedVariableInterest
+Security - -> "*" SecuritiesConversion : Conversion
+Security - -> "*" ComponentSecurity : ComponentSecurity
+Security - -> "1" MarginCall : RelatedMarginCall
+Security - -> "1" Party : CloseLink
+Security - -> "1" SecuritiesQuantity : MinimumQuantity
+InvestmentFundClass - -> "1" InvestmentFund : InvestmentFund
+InvestmentFundClass - -> "1..*" InvestmentFundClassProcessingCharacteristics : ProcessingCharacteristics
+InvestmentFundClass - -> "*" InvestmentAccount : InvestmentAccount
+InvestmentFundClass - -> "0..1" NetAssetValueCalculation : NetAssetValueCalculation
+InvestmentFundClass - -> "*" InvestmentFundTransaction : InvestmentFundTransaction
+InvestmentFundClass - -> "0..1" Equalisation : Equalisation
+InvestmentFundClass - -> "1" GenericIdentification : FundClassification
+InvestmentFundClass - -> "1" Reinvestment : Reinvestment
+Derivative - -> "1" SecuritiesPricing : Tick
+Derivative - -> "1" SecuritiesPricing : ExercisePrice
+Issuance - -> "1" SecuritiesQuantity : IssueNominalAmount
+Issuance - -> "1" CorporateActionEvent : EventInformation
+Issuance - -> "1" SecuritiesPricing : OriginalIssueDiscount
+Issuance - -> "1" TradingMarket : IssuePlace
+Issuance - -> "1" SecuritiesQuantity : Minimum
+Portfolio - -> "1" InvestmentPlan : InvestmentPlan
+Portfolio - -> "1" InvestmentAccount : Account
+Trade - -> "*" Leg : Leg
+SecuritiesIdentification - -> "1" GenericIdentification : GenericIdentification
+SecuritiesIdentification - -> "*" TradingMarket : ApplicableTradingMarket
+SecuritiesIdentification - -> "1" SecuritiesIdentification : PrimeIdentification
+SecuritiesQuantity - -> "0..1" SecuritiesTransfer : SecuritiesTransfer
+SecuritiesQuantity - -> "0..1" SecuritiesSettlement : SecuritiesSettlement
+SecuritiesQuantity - -> "*" SecuritiesConversion : MinimumExercisableQuantitySecuritiesConversion
+SecuritiesQuantity - -> "0..1" SecuritiesConversion : MinimumExercisableMultipleQuantitySecuritiesConversion
+SecuritiesQuantity - -> "0..1" SecuritiesBalance : AggregateQuantityBalance
+SecuritiesQuantity - -> "1" CorporateActionEvent : RelatedEventForFractionalQuantity
+SecuritiesQuantity - -> "*" SecuritiesConversion : MaximumExercisableQuantitySecuritiesConversion
+SecuritiesQuantity - -> "1" CorporateActionEvent : CorporateActionEvent
+SecuritiesQuantity - -> "0..1" SecuritiesBalance : RelatedSubBalance
+SecuritiesQuantity - -> "0..1" SecuritiesBalance : AvailableQuantityBalance
+SecuritiesQuantity - -> "0..1" SecuritiesTrade : Trade
+SecuritiesQuantity - -> "1" SecuritiesConversion : RatioDenominatorSecuritiesConversion
+SecuritiesQuantity - -> "1" SecuritiesConversion : RatioNumeratorSecuritiesConversion
+SecuritiesQuantity - -> "1" TradingMarket : MinimumTradedQuantityMarket
+SecuritiesQuantity - -> "0..1" SecuritiesOrder : RelatedOrder
+SecuritiesQuantity - -> "1" CorporateActionEvent : RelatedCorporateActionEvent
+SecuritiesQuantity - -> "0..1" SecuritiesOrder : PreviousDayOrder
+SecuritiesQuantity - -> "0..1" Quote : MaximumQuantityRelatedQuote
+SecuritiesQuantity - -> "0..1" SecuritiesBalance : UnavailableQuantityBalance
+SecuritiesQuantity - -> "1" TradingMarket : MaximumTradedQuantityMarket
+SecuritiesQuantity - -> "1" Quote : QuantityRelatedQuote
+SecuritiesQuantity - -> "1" Quote : MinimumQuantityRelatedQuote
+SecuritiesQuantity - -> "1" NetAssetValueCalculation : NetAssetValueCalculation
+SecuritiesQuantity - -> "1" SecuritiesSettlement : RelatedTurnaroundSettlement
+SecuritiesPricing - -> "1" SecuritiesConversion : RelatedSecuritiesConversion
+SecuritiesPricing - -> "0..1" SecuritiesTrade : SecuritiesTrade
+SecuritiesPricing - -> "*" NetAssetValueCalculation : NetAssetValueCalculation
+SecuritiesPricing - -> "0..1" Spread : Spread
+SecuritiesPricing - -> "0..1" SecuritiesOrder : Order
+SecuritiesPricing - -> "0..1" SecuritiesOrder : StopPriceOrder
+SecuritiesPricing - -> "1" RedemptionSchedule : PriceChangeRedemptionSchedule
+SecuritiesPricing - -> "1" RedemptionSchedule : RelatedRedemptionSchedule
+SecuritiesPricing - -> "0..1" Quote : PreviousClosingPriceRelatedQuote
+SecuritiesPricing - -> "0..1" Quote : RequestedPriceRelatedQuote
+SecuritiesPricing - -> "0..1" Quote : PriceRelatedQuote
+SecuritiesPricing - -> "0..1" Quote : MarketPriceRelatedQuote
+SecuritiesAccount - -> "1" InvestmentAccount : RelatedInvestmentAccount
+SecuritiesAccount - -> "*" SecuritiesTransfer : RelatedTransfer
+SecuritiesAccount - -> "1" SecuritiesPartyRole : SecuritiesPartyRole
+SecuritiesAccount - -> "*" SecuritiesBalance : SecuritiesBalance
+SecuritiesAccount - -> "0..1" SecuritiesOrder : RelatedOrder
+TradingMarket - -> "0..1" SecuritiesOrder : RelatedOrder
+SecuritiesRestriction - -> "1..*" Jurisdiction : Jurisdiction
+CorporateActionEvent - -> "*" SecuritiesModification : SecuritiesModification
+SecuritiesBalance - -> "0..1" SecuritiesBalance : MainSecuritiesBalance
+SecuritiesTax - -> "1" Jurisdiction : Jurisdiction
+SecuritiesTrade - -> "0..1" SecuritiesOrder : RelatedOrder
+SecuritiesSettlement - -> "1" SecuritiesTransfer : TransferOperation
+InvestmentAccount - -> "*" InvestmentFundTransaction : InvestmentFundTransaction
+@enduml
+
+PlantUML version 1.2017.16(Sun Sep 03 12:53:37 CEST 2017)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_151-b12
+Operating System: Linux
+OS Version: 3.13.0-110-generic
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
