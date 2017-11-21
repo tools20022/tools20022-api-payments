@@ -19,12 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CreditDebitCode;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to identify the underlying batches.
@@ -36,26 +42,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BatchInformation2#MessageIdentification
- * BatchInformation2.MessageIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.BatchInformation2#mmMessageIdentification
+ * BatchInformation2.mmMessageIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BatchInformation2#PaymentInformationIdentification
- * BatchInformation2.PaymentInformationIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.BatchInformation2#mmPaymentInformationIdentification
+ * BatchInformation2.mmPaymentInformationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BatchInformation2#NumberOfTransactions
- * BatchInformation2.NumberOfTransactions}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BatchInformation2#TotalAmount
- * BatchInformation2.TotalAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.BatchInformation2#mmNumberOfTransactions
+ * BatchInformation2.mmNumberOfTransactions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BatchInformation2#CreditDebitIndicator
- * BatchInformation2.CreditDebitIndicator}</li>
+ * {@linkplain com.tools20022.repository.msg.BatchInformation2#mmTotalAmount
+ * BatchInformation2.mmTotalAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.BatchInformation2#mmCreditDebitIndicator
+ * BatchInformation2.mmCreditDebitIndicator}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,9 +73,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Set of elements used to identify the underlying batches."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BatchInformation2", propOrder = {"messageIdentification", "paymentInformationIdentification", "numberOfTransactions", "totalAmount", "creditDebitIndicator"})
 public class BatchInformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text messageIdentification;
 	/**
 	 * Point to point reference, as assigned by the sending party, to
 	 * unambiguously identify the batch of transactions.
@@ -99,19 +109,20 @@ public class BatchInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute MessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BatchInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "MsgId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
 			definition = "Point to point reference, as assigned by the sending party, to unambiguously identify the batch of transactions.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text paymentInformationIdentification;
 	/**
 	 * Unique identification, as assigned by a sending party, to unambiguously
 	 * identify the payment information group within the message.
@@ -142,19 +153,20 @@ public class BatchInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PaymentInformationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPaymentInformationIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BatchInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "PmtInfId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentInformationIdentification";
 			definition = "Unique identification, as assigned by a sending party, to unambiguously identify the payment information group within the message.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max15NumericText numberOfTransactions;
 	/**
 	 * Number of individual transactions included in the batch.
 	 * <p>
@@ -183,19 +195,20 @@ public class BatchInformation2 {
 	 * definition} = "Number of individual transactions included in the batch."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute NumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumberOfTransactions = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BatchInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfTxs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactions";
 			definition = "Number of individual transactions included in the batch.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount totalAmount;
 	/**
 	 * Total amount of money reported in the batch entry.
 	 * <p>
@@ -224,19 +237,20 @@ public class BatchInformation2 {
 	 * definition} = "Total amount of money reported in the batch entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BatchInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmount";
 			definition = "Total amount of money reported in the batch entry.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected CreditDebitCode creditDebitIndicator;
 	/**
 	 * Indicates whether the batch entry is a credit or a debit entry.
 	 * <p>
@@ -266,16 +280,16 @@ public class BatchInformation2 {
 	 * "Indicates whether the batch entry is a credit or a debit entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BatchInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "CdtDbtInd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the batch entry is a credit or a debit entry.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
 	};
@@ -283,14 +297,59 @@ public class BatchInformation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BatchInformation2.MessageIdentification, com.tools20022.repository.msg.BatchInformation2.PaymentInformationIdentification,
-						com.tools20022.repository.msg.BatchInformation2.NumberOfTransactions, com.tools20022.repository.msg.BatchInformation2.TotalAmount, com.tools20022.repository.msg.BatchInformation2.CreditDebitIndicator);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(BatchInformation2.mmMessageIdentification, BatchInformation2.mmPaymentInformationIdentification, BatchInformation2.mmNumberOfTransactions, BatchInformation2.mmTotalAmount,
+						BatchInformation2.mmCreditDebitIndicator);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BatchInformation2";
 				definition = "Set of elements used to identify the underlying batches.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "MsgId")
+	public Max35Text getMessageIdentification() {
+		return messageIdentification;
+	}
+
+	public void setMessageIdentification(Max35Text messageIdentification) {
+		this.messageIdentification = messageIdentification;
+	}
+
+	@XmlElement(name = "PmtInfId")
+	public Max35Text getPaymentInformationIdentification() {
+		return paymentInformationIdentification;
+	}
+
+	public void setPaymentInformationIdentification(Max35Text paymentInformationIdentification) {
+		this.paymentInformationIdentification = paymentInformationIdentification;
+	}
+
+	@XmlElement(name = "NbOfTxs")
+	public Max15NumericText getNumberOfTransactions() {
+		return numberOfTransactions;
+	}
+
+	public void setNumberOfTransactions(Max15NumericText numberOfTransactions) {
+		this.numberOfTransactions = numberOfTransactions;
+	}
+
+	@XmlElement(name = "TtlAmt")
+	public ActiveOrHistoricCurrencyAndAmount getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(ActiveOrHistoricCurrencyAndAmount totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	@XmlElement(name = "CdtDbtInd")
+	public CreditDebitCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
 	}
 }

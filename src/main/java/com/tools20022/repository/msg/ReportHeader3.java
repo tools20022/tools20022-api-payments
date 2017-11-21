@@ -19,9 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.BankServicesBillingStatementV02;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides header details on the report.
@@ -33,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReportHeader3#ReportIdentification
- * ReportHeader3.ReportIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.ReportHeader3#mmReportIdentification
+ * ReportHeader3.mmReportIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReportHeader3#MessagePagination
- * ReportHeader3.MessagePagination}</li>
+ * {@linkplain com.tools20022.repository.msg.ReportHeader3#mmMessagePagination
+ * ReportHeader3.mmMessagePagination}</li>
  * </ul>
  * </li>
  * <li>
@@ -45,15 +52,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#ReportHeader
- * BankServicesBillingStatementV02.ReportHeader}</li>
+ * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#mmReportHeader
+ * BankServicesBillingStatementV02.mmReportHeader}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,9 +71,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides header details on the report."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ReportHeader3", propOrder = {"reportIdentification", "messagePagination"})
 public class ReportHeader3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text reportIdentification;
 	/**
 	 * Identification of a report billing statement.
 	 * <p>
@@ -93,19 +103,20 @@ public class ReportHeader3 {
 	 * definition} = "Identification of a report billing statement."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ReportIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmReportIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReportHeader3.mmObject();
 			isDerived = false;
 			xmlTag = "RptId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReportIdentification";
 			definition = "Identification of a report billing statement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Pagination messagePagination;
 	/**
 	 * Provides details on the page number of the message.<br>
 	 * <br>
@@ -137,31 +148,49 @@ public class ReportHeader3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute MessagePagination = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMessagePagination = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReportHeader3.mmObject();
 			isDerived = false;
 			xmlTag = "MsgPgntn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessagePagination";
 			definition = "Provides details on the page number of the message.\r\n\r\nUsage: The pagination of the message is only allowed when agreed between the parties.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			complexType_lazy = () -> Pagination.mmObject();
+			minOccurs = 0;
+			complexType_lazy = () -> com.tools20022.repository.msg.Pagination.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportHeader3.ReportIdentification, com.tools20022.repository.msg.ReportHeader3.MessagePagination);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.BankServicesBillingStatementV02.ReportHeader);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(ReportHeader3.mmReportIdentification, ReportHeader3.mmMessagePagination);
+				messageBuildingBlock_lazy = () -> Arrays.asList(BankServicesBillingStatementV02.mmReportHeader);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportHeader3";
 				definition = "Provides header details on the report.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RptId", required = true)
+	public Max35Text getReportIdentification() {
+		return reportIdentification;
+	}
+
+	public void setReportIdentification(Max35Text reportIdentification) {
+		this.reportIdentification = reportIdentification;
+	}
+
+	@XmlElement(name = "MsgPgntn")
+	public Pagination getMessagePagination() {
+		return messagePagination;
+	}
+
+	public void setMessagePagination(com.tools20022.repository.msg.Pagination messagePagination) {
+		this.messagePagination = messagePagination;
 	}
 }

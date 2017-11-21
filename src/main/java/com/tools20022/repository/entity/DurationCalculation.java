@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CalculationTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,22 +40,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DurationCalculation#RelatedSecuritiesPricing
- * DurationCalculation.RelatedSecuritiesPricing}</li>
+ * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmRelatedSecuritiesPricing
+ * DurationCalculation.mmRelatedSecuritiesPricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DurationCalculation#VariableInterest
- * DurationCalculation.VariableInterest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DurationCalculation#Years
- * DurationCalculation.Years}</li>
+ * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmVariableInterest
+ * DurationCalculation.mmVariableInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DurationCalculation#mmYears
+ * DurationCalculation.mmYears}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DurationCalculation#CalculationType
- * DurationCalculation.CalculationType}</li>
+ * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmCalculationType
+ * DurationCalculation.mmCalculationType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DurationCalculation#ValueDate
- * DurationCalculation.ValueDate}</li>
+ * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmValueDate
+ * DurationCalculation.mmValueDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DurationCalculation#ValuePeriod
- * DurationCalculation.ValuePeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmValuePeriod
+ * DurationCalculation.mmValuePeriod}</li>
  * </ul>
  * </li>
  * <li>
@@ -63,18 +63,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#DurationCalculation
- * SecuritiesPricing.DurationCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmDurationCalculation
+ * SecuritiesPricing.mmDurationCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#DurationCalculation
- * VariableInterest.DurationCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmDurationCalculation
+ * VariableInterest.mmDurationCalculation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,6 +90,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class DurationCalculation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesPricing relatedSecuritiesPricing;
 	/**
 	 * Securities pricing for which a duration calculation is specified.
 	 * <p>
@@ -98,8 +99,8 @@ public class DurationCalculation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#DurationCalculation
-	 * SecuritiesPricing.DurationCalculation}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmDurationCalculation
+	 * SecuritiesPricing.mmDurationCalculation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -124,20 +125,21 @@ public class DurationCalculation {
 	 * "Securities pricing for which a duration calculation is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DurationCalculation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesPricing";
 			definition = "Securities pricing for which a duration calculation is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.DurationCalculation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmDurationCalculation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected VariableInterest variableInterest;
 	/**
 	 * Variable interest used for the calculation.
 	 * <p>
@@ -146,8 +148,8 @@ public class DurationCalculation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.VariableInterest#DurationCalculation
-	 * VariableInterest.DurationCalculation}</li>
+	 * {@linkplain com.tools20022.repository.entity.VariableInterest#mmDurationCalculation
+	 * VariableInterest.mmDurationCalculation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -171,20 +173,21 @@ public class DurationCalculation {
 	 * definition} = "Variable interest used for the calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd VariableInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DurationCalculation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableInterest";
 			definition = "Variable interest used for the calculation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmDurationCalculation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.DurationCalculation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Number years;
 	/**
 	 * Result of the duration calculation measured in number of years.
 	 * <p>
@@ -211,18 +214,27 @@ public class DurationCalculation {
 	 * "Result of the duration calculation measured in number of years."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Years = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmYears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DurationCalculation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Years";
 			definition = "Result of the duration calculation measured in number of years.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DurationCalculation.class.getMethod("getYears", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CalculationTypeCode calculationType;
 	/**
 	 * Specifies the type of calculation.
 	 * <p>
@@ -249,18 +261,27 @@ public class DurationCalculation {
 	 * definition} = "Specifies the type of calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CalculationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCalculationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DurationCalculation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationType";
 			definition = "Specifies the type of calculation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CalculationTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DurationCalculation.class.getMethod("getCalculationType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime valueDate;
 	/**
 	 * Date/time on which the calculation is based, eg, valuation on October 1
 	 * (price date) based on price of September 19 ( value date).
@@ -289,18 +310,27 @@ public class DurationCalculation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DurationCalculation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date/time on which the calculation is based, eg, valuation on October 1 (price date) based on price of September 19 ( value date).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DurationCalculation.class.getMethod("getValueDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod valuePeriod;
 	/**
 	 * Period on which the calculation is based.
 	 * <p>
@@ -327,32 +357,93 @@ public class DurationCalculation {
 	 * definition} = "Period on which the calculation is based."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ValuePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmValuePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DurationCalculation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuePeriod";
 			definition = "Period on which the calculation is based.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> DateTimePeriod.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return DurationCalculation.class.getMethod("getValuePeriod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DurationCalculation";
 				definition = "Calculation of the price sensitivity of a fixed-income security to a change in interest rates.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.DurationCalculation, com.tools20022.repository.entity.VariableInterest.DurationCalculation);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DurationCalculation.RelatedSecuritiesPricing, com.tools20022.repository.entity.DurationCalculation.VariableInterest,
-						com.tools20022.repository.entity.DurationCalculation.Years, com.tools20022.repository.entity.DurationCalculation.CalculationType, com.tools20022.repository.entity.DurationCalculation.ValueDate,
-						com.tools20022.repository.entity.DurationCalculation.ValuePeriod);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmDurationCalculation, com.tools20022.repository.entity.VariableInterest.mmDurationCalculation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DurationCalculation.mmRelatedSecuritiesPricing, com.tools20022.repository.entity.DurationCalculation.mmVariableInterest,
+						com.tools20022.repository.entity.DurationCalculation.mmYears, com.tools20022.repository.entity.DurationCalculation.mmCalculationType, com.tools20022.repository.entity.DurationCalculation.mmValueDate,
+						com.tools20022.repository.entity.DurationCalculation.mmValuePeriod);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return DurationCalculation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesPricing getRelatedSecuritiesPricing() {
+		return relatedSecuritiesPricing;
+	}
+
+	public void setRelatedSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing relatedSecuritiesPricing) {
+		this.relatedSecuritiesPricing = relatedSecuritiesPricing;
+	}
+
+	public VariableInterest getVariableInterest() {
+		return variableInterest;
+	}
+
+	public void setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
+		this.variableInterest = variableInterest;
+	}
+
+	public Number getYears() {
+		return years;
+	}
+
+	public void setYears(Number years) {
+		this.years = years;
+	}
+
+	public CalculationTypeCode getCalculationType() {
+		return calculationType;
+	}
+
+	public void setCalculationType(CalculationTypeCode calculationType) {
+		this.calculationType = calculationType;
+	}
+
+	public ISODateTime getValueDate() {
+		return valueDate;
+	}
+
+	public void setValueDate(ISODateTime valueDate) {
+		this.valueDate = valueDate;
+	}
+
+	public DateTimePeriod getValuePeriod() {
+		return valuePeriod;
+	}
+
+	public void setValuePeriod(com.tools20022.repository.entity.DateTimePeriod valuePeriod) {
+		this.valuePeriod = valuePeriod;
 	}
 }

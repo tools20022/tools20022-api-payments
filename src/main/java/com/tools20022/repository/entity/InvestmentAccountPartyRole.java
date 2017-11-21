@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FATCAFormTypeCode;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.AccountPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies roles played by a party that are related to an investment account.
@@ -40,20 +41,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#OwnershipBeneficiaryRate
- * InvestmentAccountPartyRole.OwnershipBeneficiaryRate}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#mmOwnershipBeneficiaryRate
+ * InvestmentAccountPartyRole.mmOwnershipBeneficiaryRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#InvestmentAccount
- * InvestmentAccountPartyRole.InvestmentAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#mmInvestmentAccount
+ * InvestmentAccountPartyRole.mmInvestmentAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#FATCAFormType
- * InvestmentAccountPartyRole.FATCAFormType}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#mmFATCAFormType
+ * InvestmentAccountPartyRole.mmFATCAFormType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#FATCAStatus
- * InvestmentAccountPartyRole.FATCAStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#mmFATCAStatus
+ * InvestmentAccountPartyRole.mmFATCAStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#CRSStatus
- * InvestmentAccountPartyRole.CRSStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountPartyRole#mmCRSStatus
+ * InvestmentAccountPartyRole.mmCRSStatus}</li>
  * </ul>
  * </li>
  * <li>
@@ -61,14 +62,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccount#InvestmentAccountPartyRole
- * InvestmentAccount.InvestmentAccountPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmInvestmentAccountPartyRole
+ * InvestmentAccount.mmInvestmentAccountPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FATCAStatus#InvestmentAccountParty
- * FATCAStatus.InvestmentAccountParty}</li>
+ * {@linkplain com.tools20022.repository.entity.FATCAStatus#mmInvestmentAccountParty
+ * FATCAStatus.mmInvestmentAccountParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CRSStatus#InvestmentAccountParty
- * CRSStatus.InvestmentAccountParty}</li>
+ * {@linkplain com.tools20022.repository.entity.CRSStatus#mmInvestmentAccountParty
+ * CRSStatus.mmInvestmentAccountParty}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -77,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,6 +95,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentAccountPartyRole extends AccountPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate ownershipBeneficiaryRate;
 	/**
 	 * Percentage of ownership or of beneficial ownership of the shares/units in
 	 * the account. All subsequent subscriptions and or redemptions will be
@@ -124,18 +126,27 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OwnershipBeneficiaryRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOwnershipBeneficiaryRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OwnershipBeneficiaryRate";
 			definition = "Percentage of ownership or of beneficial ownership of the shares/units in the account. All subsequent subscriptions and or redemptions will be allocated using the same percentage.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountPartyRole.class.getMethod("getOwnershipBeneficiaryRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount;
 	/**
 	 * Specifies the account for which the party plays a role. It is derived
 	 * from the association between AccountPartyRole and Account.
@@ -145,8 +156,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#InvestmentAccountPartyRole
-	 * InvestmentAccount.InvestmentAccountPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmInvestmentAccountPartyRole
+	 * InvestmentAccount.mmInvestmentAccountPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -172,19 +183,20 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Specifies the account for which the party plays a role. It is derived from the association between AccountPartyRole and Account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.InvestmentAccountPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected FATCAFormTypeCode fATCAFormType;
 	/**
 	 * Type of Foreign Account Tax Compliance Act (FATCA) form submitted by the
 	 * investor.
@@ -214,18 +226,27 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FATCAFormType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFATCAFormType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCAFormType";
 			definition = "Type of Foreign Account Tax Compliance Act (FATCA) form submitted by the investor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FATCAFormTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountPartyRole.class.getMethod("getFATCAFormType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.FATCAStatus> fATCAStatus;
 	/**
 	 * Foreign Account Tax Compliance Act (FATCA) status of the investor.
 	 * <p>
@@ -234,8 +255,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.FATCAStatus#InvestmentAccountParty
-	 * FATCAStatus.InvestmentAccountParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.FATCAStatus#mmInvestmentAccountParty
+	 * FATCAStatus.mmInvestmentAccountParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -260,19 +281,20 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * "Foreign Account Tax Compliance Act (FATCA) status of the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FATCAStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFATCAStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FATCAStatus";
 			definition = "Foreign Account Tax Compliance Act (FATCA) status of the investor.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmInvestmentAccountParty;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.FATCAStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.FATCAStatus.InvestmentAccountParty;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CRSStatus cRSStatus;
 	/**
 	 * Common Reporting Standard (CRS) status of the investor.
 	 * <p>
@@ -281,8 +303,8 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CRSStatus#InvestmentAccountParty
-	 * CRSStatus.InvestmentAccountParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.CRSStatus#mmInvestmentAccountParty
+	 * CRSStatus.mmInvestmentAccountParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -306,36 +328,81 @@ public class InvestmentAccountPartyRole extends AccountPartyRole {
 	 * definition} = "Common Reporting Standard (CRS) status of the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CRSStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCRSStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CRSStatus";
 			definition = "Common Reporting Standard (CRS) status of the investor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmInvestmentAccountParty;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CRSStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CRSStatus.InvestmentAccountParty;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountPartyRole";
 				definition = "Specifies roles played by a party that are related to an investment account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.InvestmentAccountPartyRole, com.tools20022.repository.entity.FATCAStatus.InvestmentAccountParty,
-						com.tools20022.repository.entity.CRSStatus.InvestmentAccountParty);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountPartyRole, com.tools20022.repository.entity.FATCAStatus.mmInvestmentAccountParty,
+						com.tools20022.repository.entity.CRSStatus.mmInvestmentAccountParty);
 				superType_lazy = () -> AccountPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountPartyRole.OwnershipBeneficiaryRate, com.tools20022.repository.entity.InvestmentAccountPartyRole.InvestmentAccount,
-						com.tools20022.repository.entity.InvestmentAccountPartyRole.FATCAFormType, com.tools20022.repository.entity.InvestmentAccountPartyRole.FATCAStatus,
-						com.tools20022.repository.entity.InvestmentAccountPartyRole.CRSStatus);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountPartyRole.mmOwnershipBeneficiaryRate, com.tools20022.repository.entity.InvestmentAccountPartyRole.mmInvestmentAccount,
+						com.tools20022.repository.entity.InvestmentAccountPartyRole.mmFATCAFormType, com.tools20022.repository.entity.InvestmentAccountPartyRole.mmFATCAStatus,
+						com.tools20022.repository.entity.InvestmentAccountPartyRole.mmCRSStatus);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentAccountPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PercentageRate getOwnershipBeneficiaryRate() {
+		return ownershipBeneficiaryRate;
+	}
+
+	public void setOwnershipBeneficiaryRate(PercentageRate ownershipBeneficiaryRate) {
+		this.ownershipBeneficiaryRate = ownershipBeneficiaryRate;
+	}
+
+	public List<InvestmentAccount> getInvestmentAccount() {
+		return investmentAccount;
+	}
+
+	public void setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
+		this.investmentAccount = investmentAccount;
+	}
+
+	public FATCAFormTypeCode getFATCAFormType() {
+		return fATCAFormType;
+	}
+
+	public void setFATCAFormType(FATCAFormTypeCode fATCAFormType) {
+		this.fATCAFormType = fATCAFormType;
+	}
+
+	public List<FATCAStatus> getFATCAStatus() {
+		return fATCAStatus;
+	}
+
+	public void setFATCAStatus(List<com.tools20022.repository.entity.FATCAStatus> fATCAStatus) {
+		this.fATCAStatus = fATCAStatus;
+	}
+
+	public CRSStatus getCRSStatus() {
+		return cRSStatus;
+	}
+
+	public void setCRSStatus(com.tools20022.repository.entity.CRSStatus cRSStatus) {
+		this.cRSStatus = cRSStatus;
 	}
 }

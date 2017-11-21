@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.SequenceTypeCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,17 +37,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SequenceType2Code#Recurring
- * SequenceType2Code.Recurring}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.SequenceType2Code#OneOff
- * SequenceType2Code.OneOff}</li>
+ * {@linkplain com.tools20022.repository.codeset.SequenceType2Code#mmRecurring
+ * SequenceType2Code.mmRecurring}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.SequenceType2Code#mmOneOff
+ * SequenceType2Code.mmOneOff}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class SequenceType2Code extends SequenceTypeCode {
 	 * name} = "Recurring"</li>
 	 * </ul>
 	 */
-	public static final MMCode Recurring = new MMCode() {
+	public static final MMCode mmRecurring = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Recurring";
 			owner_lazy = () -> SequenceType2Code.mmObject();
 		}
@@ -106,9 +108,9 @@ public class SequenceType2Code extends SequenceTypeCode {
 	 * name} = "OneOff"</li>
 	 * </ul>
 	 */
-	public static final MMCode OneOff = new MMCode() {
+	public static final MMCode mmOneOff = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OneOff";
 			owner_lazy = () -> SequenceType2Code.mmObject();
 		}
@@ -117,12 +119,12 @@ public class SequenceType2Code extends SequenceTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("RCUR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SequenceType2Code";
 				definition = "Specifies whether a once off transaction is covered or whether recurring transactions are covered.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SequenceType2Code.Recurring, com.tools20022.repository.codeset.SequenceType2Code.OneOff);
+				code_lazy = () -> Arrays.asList(SequenceType2Code.mmRecurring, SequenceType2Code.mmOneOff);
 				trace_lazy = () -> SequenceTypeCode.mmObject();
 			}
 		});

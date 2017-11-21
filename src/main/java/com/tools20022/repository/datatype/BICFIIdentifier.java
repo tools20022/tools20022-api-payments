@@ -18,6 +18,8 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,11 +34,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMIdentifierSet#getIdentificationScheme
  * identificationScheme} = "SWIFT; BICIdentifier"</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
+ * "[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -62,12 +66,13 @@ public class BICFIIdentifier {
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CHASUS33");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BICFIIdentifier";
 				definition = "Code allocated to a financial institution by the ISO 9362 Registration Authority as described in ISO 9362 \"Banking - Banking telecommunication messages - Business identifier code (BIC)\".";
 				identificationScheme = "SWIFT; BICIdentifier";
+				pattern = "[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}";
 			}
 		});
 		return mmObject_lazy.get();

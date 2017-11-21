@@ -19,9 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06;
+import com.tools20022.repository.entity.PaymentExecution;
 import com.tools20022.repository.entity.PaymentInstruction;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Identifies the underlying (group of) transaction(s) to which the
@@ -34,11 +43,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction16#OriginalGroupInformationAndCancellation
- * UnderlyingTransaction16.OriginalGroupInformationAndCancellation}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction16#mmOriginalGroupInformationAndCancellation
+ * UnderlyingTransaction16.mmOriginalGroupInformationAndCancellation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction16#TransactionInformation
- * UnderlyingTransaction16.TransactionInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingTransaction16#mmTransactionInformation
+ * UnderlyingTransaction16.mmTransactionInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -49,15 +58,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#Underlying
- * FIToFIPaymentCancellationRequestV06.Underlying}</li>
+ * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#mmUnderlying
+ * FIToFIPaymentCancellationRequestV06.mmUnderlying}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,9 +79,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "UnderlyingTransaction16", propOrder = {"originalGroupInformationAndCancellation", "transactionInformation"})
 public class UnderlyingTransaction16 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected OriginalGroupHeader6 originalGroupInformationAndCancellation;
 	/**
 	 * Provides information on the original message, to which the cancellation
 	 * refers.
@@ -107,21 +119,22 @@ public class UnderlyingTransaction16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalGroupInformationAndCancellation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalGroupInformationAndCancellation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> UnderlyingTransaction16.mmObject();
 			businessComponentTrace_lazy = () -> PaymentInstruction.mmObject();
+			componentContext_lazy = () -> UnderlyingTransaction16.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlGrpInfAndCxl";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalGroupInformationAndCancellation";
 			definition = "Provides information on the original message, to which the cancellation refers.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> OriginalGroupHeader6.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.OriginalGroupHeader6.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.PaymentTransaction75> transactionInformation;
 	/**
 	 * Provides information on the original transactions to which the
 	 * cancellation request message refers.
@@ -134,8 +147,8 @@ public class UnderlyingTransaction16 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentExecution#Payment
-	 * PaymentExecution.Payment}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentExecution#mmPayment
+	 * PaymentExecution.mmPayment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -156,33 +169,51 @@ public class UnderlyingTransaction16 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd TransactionInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTransactionInformation = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentExecution.mmPayment;
 			componentContext_lazy = () -> UnderlyingTransaction16.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentExecution.Payment;
 			isDerived = false;
 			xmlTag = "TxInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionInformation";
 			definition = "Provides information on the original transactions to which the cancellation request message refers.";
 			minOccurs = 0;
-			type_lazy = () -> PaymentTransaction75.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PaymentTransaction75.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnderlyingTransaction16.OriginalGroupInformationAndCancellation, com.tools20022.repository.msg.UnderlyingTransaction16.TransactionInformation);
+				messageElement_lazy = () -> Arrays.asList(UnderlyingTransaction16.mmOriginalGroupInformationAndCancellation, UnderlyingTransaction16.mmTransactionInformation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(FIToFIPaymentCancellationRequestV06.mmUnderlying);
 				trace_lazy = () -> PaymentInstruction.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06.Underlying);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingTransaction16";
 				definition = "Identifies the underlying (group of) transaction(s) to which the investigation applies.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlGrpInfAndCxl")
+	public OriginalGroupHeader6 getOriginalGroupInformationAndCancellation() {
+		return originalGroupInformationAndCancellation;
+	}
+
+	public void setOriginalGroupInformationAndCancellation(com.tools20022.repository.msg.OriginalGroupHeader6 originalGroupInformationAndCancellation) {
+		this.originalGroupInformationAndCancellation = originalGroupInformationAndCancellation;
+	}
+
+	@XmlElement(name = "TxInf")
+	public List<PaymentTransaction75> getTransactionInformation() {
+		return transactionInformation;
+	}
+
+	public void setTransactionInformation(List<com.tools20022.repository.msg.PaymentTransaction75> transactionInformation) {
+		this.transactionInformation = transactionInformation;
 	}
 }

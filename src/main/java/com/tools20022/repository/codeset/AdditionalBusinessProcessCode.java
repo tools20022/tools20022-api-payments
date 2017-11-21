@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,54 +33,54 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#AutomaticMarketClaim
- * AdditionalBusinessProcessCode.AutomaticMarketClaim}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmAutomaticMarketClaim
+ * AdditionalBusinessProcessCode.mmAutomaticMarketClaim}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#SubjectToTransformation
- * AdditionalBusinessProcessCode.SubjectToTransformation}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmSubjectToTransformation
+ * AdditionalBusinessProcessCode.mmSubjectToTransformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#CancelUnderlyingTrades
- * AdditionalBusinessProcessCode.CancelUnderlyingTrades}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmCancelUnderlyingTrades
+ * AdditionalBusinessProcessCode.mmCancelUnderlyingTrades}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NoAutomaticMarketClaimsAndTransformations
- * AdditionalBusinessProcessCode.NoAutomaticMarketClaimsAndTransformations}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmNoAutomaticMarketClaimsAndTransformations
+ * AdditionalBusinessProcessCode.mmNoAutomaticMarketClaimsAndTransformations}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NoSplitElection
- * AdditionalBusinessProcessCode.NoSplitElection}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmNoSplitElection
+ * AdditionalBusinessProcessCode.mmNoSplitElection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#SchemeOrPlanOfArrangement
- * AdditionalBusinessProcessCode.SchemeOrPlanOfArrangement}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmSchemeOrPlanOfArrangement
+ * AdditionalBusinessProcessCode.mmSchemeOrPlanOfArrangement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#ClaimOrCompensation
- * AdditionalBusinessProcessCode.ClaimOrCompensation}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmClaimOrCompensation
+ * AdditionalBusinessProcessCode.mmClaimOrCompensation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#TaxRefund
- * AdditionalBusinessProcessCode.TaxRefund}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmTaxRefund
+ * AdditionalBusinessProcessCode.mmTaxRefund}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#NotificationOfReversal
- * AdditionalBusinessProcessCode.NotificationOfReversal}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmNotificationOfReversal
+ * AdditionalBusinessProcessCode.mmNotificationOfReversal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#Consent
- * AdditionalBusinessProcessCode.Consent}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmConsent
+ * AdditionalBusinessProcessCode.mmConsent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#PartialMandatoryPutRedemption
- * AdditionalBusinessProcessCode.PartialMandatoryPutRedemption}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmPartialMandatoryPutRedemption
+ * AdditionalBusinessProcessCode.mmPartialMandatoryPutRedemption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#FullPrefunding
- * AdditionalBusinessProcessCode.FullPrefunding}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmFullPrefunding
+ * AdditionalBusinessProcessCode.mmFullPrefunding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#PartialPreFunding
- * AdditionalBusinessProcessCode.PartialPreFunding}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmPartialPreFunding
+ * AdditionalBusinessProcessCode.mmPartialPreFunding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#RequiredAction
- * AdditionalBusinessProcessCode.RequiredAction}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdditionalBusinessProcessCode#mmRequiredAction
+ * AdditionalBusinessProcessCode.mmRequiredAction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -124,9 +126,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AutomaticMarketClaim = new MMCode() {
+	public static final MMCode mmAutomaticMarketClaim = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AutomaticMarketClaim";
 			definition = "Will automatically give rise to market claims by the account servicer, for example, a Central Securities Depository (CSD).";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -158,9 +160,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SubjectToTransformation = new MMCode() {
+	public static final MMCode mmSubjectToTransformation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubjectToTransformation";
 			definition = "As a result of the corporate action, all transactions in the underlying security will be cancelled by the system and replaced with transactions in the outturn resource(s).";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -191,9 +193,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode CancelUnderlyingTrades = new MMCode() {
+	public static final MMCode mmCancelUnderlyingTrades = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelUnderlyingTrades";
 			definition = "As a result of the corporate action, all transactions in the underlying security will be cancelled by the system.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -225,9 +227,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NoAutomaticMarketClaimsAndTransformations = new MMCode() {
+	public static final MMCode mmNoAutomaticMarketClaimsAndTransformations = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoAutomaticMarketClaimsAndTransformations";
 			definition = "Event will not automatically give rise to market claims and transformations by the account servicer, for example, a Central Securities Depository (CSD).";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -257,9 +259,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NoSplitElection = new MMCode() {
+	public static final MMCode mmNoSplitElection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoSplitElection";
 			definition = "Issuer only allows a single option to be selected per designated holding.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -290,9 +292,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SchemeOrPlanOfArrangement = new MMCode() {
+	public static final MMCode mmSchemeOrPlanOfArrangement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SchemeOrPlanOfArrangement";
 			definition = "Component event of a scheme/plan of arrangement: a reorganisation of a company or a group of companies, and their capital.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -321,9 +323,9 @@ public class AdditionalBusinessProcessCode {
 	 * "Relates to a claim on the associated corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMCode ClaimOrCompensation = new MMCode() {
+	public static final MMCode mmClaimOrCompensation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClaimOrCompensation";
 			definition = "Relates to a claim on the associated corporate action event.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -354,9 +356,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TaxRefund = new MMCode() {
+	public static final MMCode mmTaxRefund = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxRefund";
 			definition = "Relates to a tax refund from the authorities on the associated corporate action event.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -384,9 +386,9 @@ public class AdditionalBusinessProcessCode {
 	 * definition} = "Indicates a preadvice of movement reversal."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotificationOfReversal = new MMCode() {
+	public static final MMCode mmNotificationOfReversal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotificationOfReversal";
 			definition = "Indicates a preadvice of movement reversal.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -417,9 +419,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Consent = new MMCode() {
+	public static final MMCode mmConsent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Consent";
 			definition = "Relates to a consent within a corporate action event other than a Consent event (:22F::CAEV//CONS).";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -452,9 +454,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PartialMandatoryPutRedemption = new MMCode() {
+	public static final MMCode mmPartialMandatoryPutRedemption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialMandatoryPutRedemption";
 			definition = "Partial mandatory exchange of a portion of bonds where the exchanged securities are usually remarketed. The issuer may offer holders the right to retain instead of exchanging their securities. A lottery will be used to determine eligibility for the event.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -486,9 +488,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FullPrefunding = new MMCode() {
+	public static final MMCode mmFullPrefunding = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FullPrefunding";
 			definition = "Full pre-funding of a debt instrument by the issuer prior to original maturity when the issuer deposits assets in trust. Applicable only in the frame of a partial defeasance corporate action event.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -523,9 +525,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PartialPreFunding = new MMCode() {
+	public static final MMCode mmPartialPreFunding = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialPreFunding";
 			definition = "Partial pre-funding of a debt instrument prior to maturity drawn through a lottery process. One new security is issued with an earlier maturity date for the refunded (called portion) and the other new security is issued with the original maturity date for the non refunded (remaining) portion. Applicable only in the frame of a partial defeasance corporate action event. ";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -556,9 +558,9 @@ public class AdditionalBusinessProcessCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RequiredAction = new MMCode() {
+	public static final MMCode mmRequiredAction = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequiredAction";
 			definition = "Proceeds / entitlements of the mandatory event can only be paid if specified action is taken by the account owner.";
 			owner_lazy = () -> AdditionalBusinessProcessCode.mmObject();
@@ -569,18 +571,15 @@ public class AdditionalBusinessProcessCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACLA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalBusinessProcessCode";
 				definition = "Specifies the additional business process linked to a corporate action event such as an automatic market claim.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AdditionalBusinessProcessCode.AutomaticMarketClaim, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.SubjectToTransformation,
-						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.CancelUnderlyingTrades, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.NoAutomaticMarketClaimsAndTransformations,
-						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.NoSplitElection, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.SchemeOrPlanOfArrangement,
-						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.ClaimOrCompensation, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.TaxRefund,
-						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.NotificationOfReversal, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.Consent,
-						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.PartialMandatoryPutRedemption, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.FullPrefunding,
-						com.tools20022.repository.codeset.AdditionalBusinessProcessCode.PartialPreFunding, com.tools20022.repository.codeset.AdditionalBusinessProcessCode.RequiredAction);
+				code_lazy = () -> Arrays.asList(AdditionalBusinessProcessCode.mmAutomaticMarketClaim, AdditionalBusinessProcessCode.mmSubjectToTransformation, AdditionalBusinessProcessCode.mmCancelUnderlyingTrades,
+						AdditionalBusinessProcessCode.mmNoAutomaticMarketClaimsAndTransformations, AdditionalBusinessProcessCode.mmNoSplitElection, AdditionalBusinessProcessCode.mmSchemeOrPlanOfArrangement,
+						AdditionalBusinessProcessCode.mmClaimOrCompensation, AdditionalBusinessProcessCode.mmTaxRefund, AdditionalBusinessProcessCode.mmNotificationOfReversal, AdditionalBusinessProcessCode.mmConsent,
+						AdditionalBusinessProcessCode.mmPartialMandatoryPutRedemption, AdditionalBusinessProcessCode.mmFullPrefunding, AdditionalBusinessProcessCode.mmPartialPreFunding, AdditionalBusinessProcessCode.mmRequiredAction);
 			}
 		});
 		return mmObject_lazy.get();

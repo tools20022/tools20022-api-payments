@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,22 +31,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#ParForPar
- * LegSwapTypeCode.ParForPar}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#ModifiedDuration
- * LegSwapTypeCode.ModifiedDuration}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#Risk
- * LegSwapTypeCode.Risk}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#Proceeds
- * LegSwapTypeCode.Proceeds}</li>
+ * {@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#mmParForPar
+ * LegSwapTypeCode.mmParForPar}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#mmModifiedDuration
+ * LegSwapTypeCode.mmModifiedDuration}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#mmRisk
+ * LegSwapTypeCode.mmRisk}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LegSwapTypeCode#mmProceeds
+ * LegSwapTypeCode.mmProceeds}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,9 +89,9 @@ public class LegSwapTypeCode {
 	 * "Type of leg involved in a swap whose purpose is to exchange principal."</li>
 	 * </ul>
 	 */
-	public static final MMCode ParForPar = new MMCode() {
+	public static final MMCode mmParForPar = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParForPar";
 			definition = "Type of leg involved in a swap whose purpose is to exchange principal.";
 			owner_lazy = () -> LegSwapTypeCode.mmObject();
@@ -119,9 +122,9 @@ public class LegSwapTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ModifiedDuration = new MMCode() {
+	public static final MMCode mmModifiedDuration = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModifiedDuration";
 			definition = "Type of leg involved in a swap whose purpose is to exchange price volatility.";
 			owner_lazy = () -> LegSwapTypeCode.mmObject();
@@ -152,9 +155,9 @@ public class LegSwapTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Risk = new MMCode() {
+	public static final MMCode mmRisk = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Risk";
 			definition = "Type of leg involved in a swap whose purpose is to increase the credit quality and reduce the default risk. Also known as quality swap.";
 			owner_lazy = () -> LegSwapTypeCode.mmObject();
@@ -186,9 +189,9 @@ public class LegSwapTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Proceeds = new MMCode() {
+	public static final MMCode mmProceeds = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proceeds";
 			definition = "Type of leg involved in a swap structured in the sale of a financial instrument and the simultaneous purchase of another instrument with the proceeds from the sale.";
 			owner_lazy = () -> LegSwapTypeCode.mmObject();
@@ -199,13 +202,12 @@ public class LegSwapTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PFPR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegSwapTypeCode";
 				definition = "Indicates the type of leg structuring a swap.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LegSwapTypeCode.ParForPar, com.tools20022.repository.codeset.LegSwapTypeCode.ModifiedDuration, com.tools20022.repository.codeset.LegSwapTypeCode.Risk,
-						com.tools20022.repository.codeset.LegSwapTypeCode.Proceeds);
+				code_lazy = () -> Arrays.asList(LegSwapTypeCode.mmParForPar, LegSwapTypeCode.mmModifiedDuration, LegSwapTypeCode.mmRisk, LegSwapTypeCode.mmProceeds);
 			}
 		});
 		return mmObject_lazy.get();

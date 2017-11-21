@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.codeset.ProductTypeCode;
 import com.tools20022.repository.datatype.CFIOct2015Identifier;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,42 +39,43 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassification#ClassificationType
- * AssetClassification.ClassificationType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AssetClassification#Asset
- * AssetClassification.Asset}</li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassification#mmClassificationType
+ * AssetClassification.mmClassificationType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AssetClassification#mmAsset
+ * AssetClassification.mmAsset}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassification#Language
- * AssetClassification.Language}</li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassification#mmLanguage
+ * AssetClassification.mmLanguage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassification#AssetClassScheme
- * AssetClassification.AssetClassScheme}</li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassification#mmAssetClassScheme
+ * AssetClassification.mmAssetClassScheme}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassification#ProductType
- * AssetClassification.ProductType}</li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassification#mmProductType
+ * AssetClassification.mmProductType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassification#Strategy
- * AssetClassification.Strategy}</li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassification#mmStrategy
+ * AssetClassification.mmStrategy}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Asset#AssetClassification
- * Asset.AssetClassification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#AssetClassification
- * Scheme.AssetClassification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Asset#mmAssetClassification
+ * Asset.mmAssetClassification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassStrategy#AssetClass
- * AssetClassStrategy.AssetClass}</li>
+ * {@linkplain com.tools20022.repository.entity.Scheme#mmAssetClassification
+ * Scheme.mmAssetClassification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassStrategy#mmAssetClass
+ * AssetClassStrategy.mmAssetClass}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,6 +90,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AssetClassification {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CFIOct2015Identifier classificationType;
 	/**
 	 * Classification type of the financial instrument, as per the ISO
 	 * Classification of Financial Instrument (CFI) codification, for example,
@@ -119,18 +121,27 @@ public class AssetClassification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClassificationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClassificationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AssetClassification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassificationType";
 			definition = "Classification type of the financial instrument, as per the ISO Classification of Financial Instrument (CFI) codification, for example, common share with voting rights, fully paid, or registered.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CFIOct2015Identifier.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AssetClassification.class.getMethod("getClassificationType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Asset asset;
 	/**
 	 * Asset for which classification information is provided.
 	 * <p>
@@ -139,8 +150,8 @@ public class AssetClassification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Asset#AssetClassification
-	 * Asset.AssetClassification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Asset#mmAssetClassification
+	 * Asset.mmAssetClassification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -163,20 +174,21 @@ public class AssetClassification {
 	 * definition} = "Asset for which classification information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Asset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AssetClassification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Asset";
 			definition = "Asset for which classification information is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmAssetClassification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.AssetClassification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LanguageCode language;
 	/**
 	 * Language in which the asset classification is expressed.
 	 * <p>
@@ -202,18 +214,27 @@ public class AssetClassification {
 	 * definition} = "Language in which the asset classification is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Language = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AssetClassification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which the asset classification is expressed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AssetClassification.class.getMethod("getLanguage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Scheme assetClassScheme;
 	/**
 	 * Information regarding the entity that assigns the asset classification.
 	 * <p>
@@ -222,8 +243,8 @@ public class AssetClassification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Scheme#AssetClassification
-	 * Scheme.AssetClassification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Scheme#mmAssetClassification
+	 * Scheme.mmAssetClassification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -248,20 +269,21 @@ public class AssetClassification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssetClassScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssetClassScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AssetClassification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetClassScheme";
 			definition = "Information regarding the entity that assigns the asset classification.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Scheme.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.AssetClassification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmAssetClassification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 		}
 	};
+	protected ProductTypeCode productType;
 	/**
 	 * Identifies the product type.
 	 * <p>
@@ -288,18 +310,27 @@ public class AssetClassification {
 	 * definition} = "Identifies the product type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ProductType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProductType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AssetClassification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductType";
 			definition = "Identifies the product type.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ProductTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AssetClassification.class.getMethod("getProductType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AssetClassStrategy strategy;
 	/**
 	 * Strategy related to a class of assets.
 	 * <p>
@@ -308,8 +339,8 @@ public class AssetClassification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AssetClassStrategy#AssetClass
-	 * AssetClassStrategy.AssetClass}</li>
+	 * {@linkplain com.tools20022.repository.entity.AssetClassStrategy#mmAssetClass
+	 * AssetClassStrategy.mmAssetClass}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -333,35 +364,88 @@ public class AssetClassification {
 	 * definition} = "Strategy related to a class of assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Strategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AssetClassification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Strategy related to a class of assets.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> AssetClassStrategy.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.AssetClass;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmAssetClass;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassification";
 				definition = "Other classification type of the security, ie, other than ISO 10962.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.AssetClassification, com.tools20022.repository.entity.Scheme.AssetClassification,
-						com.tools20022.repository.entity.AssetClassStrategy.AssetClass);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassification.ClassificationType, com.tools20022.repository.entity.AssetClassification.Asset,
-						com.tools20022.repository.entity.AssetClassification.Language, com.tools20022.repository.entity.AssetClassification.AssetClassScheme, com.tools20022.repository.entity.AssetClassification.ProductType,
-						com.tools20022.repository.entity.AssetClassification.Strategy);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmAssetClassification, com.tools20022.repository.entity.Scheme.mmAssetClassification,
+						com.tools20022.repository.entity.AssetClassStrategy.mmAssetClass);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassification.mmClassificationType, com.tools20022.repository.entity.AssetClassification.mmAsset,
+						com.tools20022.repository.entity.AssetClassification.mmLanguage, com.tools20022.repository.entity.AssetClassification.mmAssetClassScheme, com.tools20022.repository.entity.AssetClassification.mmProductType,
+						com.tools20022.repository.entity.AssetClassification.mmStrategy);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AssetClassification.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CFIOct2015Identifier getClassificationType() {
+		return classificationType;
+	}
+
+	public void setClassificationType(CFIOct2015Identifier classificationType) {
+		this.classificationType = classificationType;
+	}
+
+	public Asset getAsset() {
+		return asset;
+	}
+
+	public void setAsset(com.tools20022.repository.entity.Asset asset) {
+		this.asset = asset;
+	}
+
+	public LanguageCode getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(LanguageCode language) {
+		this.language = language;
+	}
+
+	public Scheme getAssetClassScheme() {
+		return assetClassScheme;
+	}
+
+	public void setAssetClassScheme(com.tools20022.repository.entity.Scheme assetClassScheme) {
+		this.assetClassScheme = assetClassScheme;
+	}
+
+	public ProductTypeCode getProductType() {
+		return productType;
+	}
+
+	public void setProductType(ProductTypeCode productType) {
+		this.productType = productType;
+	}
+
+	public AssetClassStrategy getStrategy() {
+		return strategy;
+	}
+
+	public void setStrategy(com.tools20022.repository.entity.AssetClassStrategy strategy) {
+		this.strategy = strategy;
 	}
 }

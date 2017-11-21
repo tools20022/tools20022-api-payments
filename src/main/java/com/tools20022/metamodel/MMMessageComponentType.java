@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.function.Supplier;
 import java.util.List;
@@ -29,6 +31,21 @@ import java.util.Optional;
  * MessageComponent, ExternalSchema, UserDefined or ChoiceComponent
  */
 public interface MMMessageComponentType extends MMTopLevelDictionaryEntry, MMLogicalType, MMMessageConcept {
+
+	/**
+	 * The MessageBuildingBlock that is the context for this
+	 * MessageComponentType
+	 */
+	public final static MetamodelAttribute<MMMessageComponentType, List<MMMessageBuildingBlock>> messageBuildingBlockAttribute = newAttribute();
+	/**
+	 * A property indicating the absense of a semantic relationship to a
+	 * BusinessComponent, i.e. it is not derived from a BusinessComponent
+	 */
+	public final static MetamodelAttribute<MMMessageComponentType, Boolean> isTechnicalAttribute = newAttribute();
+	/**
+	 * The BusinessComponent that this MessageComponentType is derived from.
+	 */
+	public final static MetamodelAttribute<MMMessageComponentType, Optional<MMBusinessComponent>> traceAttribute = newAttribute();
 
 	public static MetamodelType<MMMessageComponentType> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMMessageComponentType.class);

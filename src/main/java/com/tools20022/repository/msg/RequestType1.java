@@ -19,11 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.TransactionRequestType1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max500Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the original transaction number.
@@ -34,20 +41,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.RequestType1#Number
- * RequestType1.Number}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RequestType1#Type
- * RequestType1.Type}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RequestType1#mmNumber
+ * RequestType1.mmNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RequestType1#mmType
+ * RequestType1.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RequestType1#AdditionalInformation
- * RequestType1.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.RequestType1#mmAdditionalInformation
+ * RequestType1.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the original transaction number."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RequestType1", propOrder = {"number", "type", "additionalInformation"})
 public class RequestType1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text number;
 	/**
 	 * Idetifies the transaction number.
 	 * <p>
@@ -87,19 +97,20 @@ public class RequestType1 {
 	 * definition} = "Idetifies the transaction number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Number = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> RequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Number";
 			definition = "Idetifies the transaction number.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected List<TransactionRequestType1Code> type;
 	/**
 	 * Identifies the type of information request related to an original
 	 * transaction number as a code.
@@ -130,18 +141,19 @@ public class RequestType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> RequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Identifies the type of information request related to an original transaction number as a code.";
 			minOccurs = 1;
 			simpleType_lazy = () -> TransactionRequestType1Code.mmObject();
 		}
 	};
+	protected Max500Text additionalInformation;
 	/**
 	 * Additional information, in free text form, to complement the requested
 	 * information.
@@ -171,16 +183,16 @@ public class RequestType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> RequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Additional information, in free text form, to complement the requested information.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
 		}
 	};
@@ -188,13 +200,40 @@ public class RequestType1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RequestType1.Number, com.tools20022.repository.msg.RequestType1.Type, com.tools20022.repository.msg.RequestType1.AdditionalInformation);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(RequestType1.mmNumber, RequestType1.mmType, RequestType1.mmAdditionalInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RequestType1";
 				definition = "Specifies the original transaction number.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Nb", required = true)
+	public Max35Text getNumber() {
+		return number;
+	}
+
+	public void setNumber(Max35Text number) {
+		this.number = number;
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public List<TransactionRequestType1Code> getType() {
+		return type;
+	}
+
+	public void setType(List<TransactionRequestType1Code> type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max500Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max500Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

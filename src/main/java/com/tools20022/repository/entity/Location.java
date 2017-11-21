@@ -17,10 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Organisation12;
+import com.tools20022.repository.msg.OrganisationModification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies a place.
@@ -34,48 +40,48 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Location#NativePerson
- * Location.NativePerson}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#System
- * Location.System}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#DomiciledParty
- * Location.DomiciledParty}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmNativePerson
+ * Location.mmNativePerson}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmSystem
+ * Location.mmSystem}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmDomiciledParty
+ * Location.mmDomiciledParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Location#OperatingOrganisation
- * Location.OperatingOrganisation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#Address
- * Location.Address}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#IssuedDocument
- * Location.IssuedDocument}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#Incoterms
- * Location.Incoterms}</li>
+ * {@linkplain com.tools20022.repository.entity.Location#mmOperatingOrganisation
+ * Location.mmOperatingOrganisation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmAddress
+ * Location.mmAddress}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmIssuedDocument
+ * Location.mmIssuedDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmIncoterms
+ * Location.mmIncoterms}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Location#DepartureTransportParameters
- * Location.DepartureTransportParameters}</li>
+ * {@linkplain com.tools20022.repository.entity.Location#mmDepartureTransportParameters
+ * Location.mmDepartureTransportParameters}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Location#DestinationTransportParameters
- * Location.DestinationTransportParameters}</li>
+ * {@linkplain com.tools20022.repository.entity.Location#mmDestinationTransportParameters
+ * Location.mmDestinationTransportParameters}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Location#InsuranceCertificate
- * Location.InsuranceCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#Party
- * Location.Party}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#RelatedExpiry
- * Location.RelatedExpiry}</li>
+ * {@linkplain com.tools20022.repository.entity.Location#mmInsuranceCertificate
+ * Location.mmInsuranceCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmParty
+ * Location.mmParty}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmRelatedExpiry
+ * Location.mmRelatedExpiry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Location#RelatedJurisdiction
- * Location.RelatedJurisdiction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#Identification
- * Location.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#TaxableParty
- * Location.TaxableParty}</li>
+ * {@linkplain com.tools20022.repository.entity.Location#mmRelatedJurisdiction
+ * Location.mmRelatedJurisdiction}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmIdentification
+ * Location.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmTaxableParty
+ * Location.mmTaxableParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Location#RegisteredOrganisation
- * Location.RegisteredOrganisation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#RelatedTransport
- * Location.RelatedTransport}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#TimeZone
- * Location.TimeZone}</li>
+ * {@linkplain com.tools20022.repository.entity.Location#mmRegisteredOrganisation
+ * Location.mmRegisteredOrganisation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmRelatedTransport
+ * Location.mmRelatedTransport}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmTimeZone
+ * Location.mmTimeZone}</li>
  * </ul>
  * </li>
  * <li>
@@ -83,53 +89,55 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentifiedLocation
- * GenericIdentification.IdentifiedLocation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Party#Domicile
- * Party.Domicile}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Party#Residence
- * Party.Residence}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Party#Location
- * Party.Location}</li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentifiedLocation
+ * GenericIdentification.mmIdentifiedLocation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmDomicile
+ * Party.mmDomicile}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmResidence
+ * Party.mmResidence}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmLocation
+ * Party.mmLocation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Organisation#PlaceOfOperation
- * Organisation.PlaceOfOperation}</li>
+ * {@linkplain com.tools20022.repository.entity.Organisation#mmPlaceOfOperation
+ * Organisation.mmPlaceOfOperation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Organisation#PlaceOfRegistration
- * Organisation.PlaceOfRegistration}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PostalAddress#Location
- * PostalAddress.Location}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UTCOffset#Location
- * UTCOffset.Location}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#PlaceOfBirth
- * Person.PlaceOfBirth}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#PlaceOfIssue
- * Document.PlaceOfIssue}</li>
+ * {@linkplain com.tools20022.repository.entity.Organisation#mmPlaceOfRegistration
+ * Organisation.mmPlaceOfRegistration}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PostalAddress#mmLocation
+ * PostalAddress.mmLocation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.UTCOffset#mmLocation
+ * UTCOffset.mmLocation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmPlaceOfBirth
+ * Person.mmPlaceOfBirth}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmPlaceOfIssue
+ * Document.mmPlaceOfIssue}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#ClaimsPayableAt
- * InsuranceCertificate.ClaimsPayableAt}</li>
- * <li>{@linkplain com.tools20022.repository.entity.System#Location
- * System.Location}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Expiry#ExpiryPlace
- * Expiry.ExpiryPlace}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Jurisdiction#Identification
- * Jurisdiction.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Transport#PlaceOfDeparture
- * Transport.PlaceOfDeparture}</li>
+ * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#mmClaimsPayableAt
+ * InsuranceCertificate.mmClaimsPayableAt}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.System#mmLocation
+ * System.mmLocation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Expiry#mmExpiryPlace
+ * Expiry.mmExpiryPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Transport#PlaceOfDestination
- * Transport.PlaceOfDestination}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Transport#TransitLocation
- * Transport.TransitLocation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Incoterms#Location
- * Incoterms.Location}</li>
+ * {@linkplain com.tools20022.repository.entity.Jurisdiction#mmIdentification
+ * Jurisdiction.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Transport#mmPlaceOfDeparture
+ * Transport.mmPlaceOfDeparture}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Transport#mmPlaceOfDestination
+ * Transport.mmPlaceOfDestination}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Transport#mmTransitLocation
+ * Transport.mmTransitLocation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Incoterms#mmLocation
+ * Incoterms.mmLocation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -143,6 +151,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Location {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Person nativePerson;
 	/**
 	 * Person for which a birth place is specified.
 	 * <p>
@@ -151,8 +160,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Person#PlaceOfBirth
-	 * Person.PlaceOfBirth}</li>
+	 * {@linkplain com.tools20022.repository.entity.Person#mmPlaceOfBirth
+	 * Person.mmPlaceOfBirth}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -174,20 +183,21 @@ public class Location {
 	 * definition} = "Person for which a birth place is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NativePerson = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNativePerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NativePerson";
 			definition = "Person for which a birth place is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Person.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Person.PlaceOfBirth;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmPlaceOfBirth;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 		}
 	};
+	protected System system;
 	/**
 	 * System for which a location is specified.
 	 * <p>
@@ -195,8 +205,9 @@ public class Location {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.System#Location
-	 * System.Location}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.System#mmLocation
+	 * System.mmLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -218,20 +229,21 @@ public class Location {
 	 * definition} = "System for which a location is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd System = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which a location is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.System.mmLocation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.System.Location;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Party domiciledParty;
 	/**
 	 * Party which is domiciled in a specific location.
 	 * <p>
@@ -239,8 +251,9 @@ public class Location {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Party#Domicile
-	 * Party.Domicile}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Party#mmDomicile
+	 * Party.mmDomicile}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -262,20 +275,21 @@ public class Location {
 	 * definition} = "Party which is domiciled in a specific location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DomiciledParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDomiciledParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomiciledParty";
 			definition = "Party which is domiciled in a specific location.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmDomicile;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.Domicile;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Organisation operatingOrganisation;
 	/**
 	 * Organisation which has its operations in a specific location.
 	 * <p>
@@ -284,8 +298,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#PlaceOfOperation
-	 * Organisation.PlaceOfOperation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmPlaceOfOperation
+	 * Organisation.mmPlaceOfOperation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -309,20 +323,21 @@ public class Location {
 	 * "Organisation which has its operations in a specific location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OperatingOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOperatingOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OperatingOrganisation";
 			definition = "Organisation which has its operations in a specific location.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Organisation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.PlaceOfOperation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmPlaceOfOperation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PostalAddress> address;
 	/**
 	 * Information that locates and identifies a specific address.
 	 * <p>
@@ -331,8 +346,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PostalAddress#Location
-	 * PostalAddress.Location}</li>
+	 * {@linkplain com.tools20022.repository.entity.PostalAddress#mmLocation
+	 * PostalAddress.mmLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -344,11 +359,11 @@ public class Location {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Organisation12#OperationalAddress
-	 * Organisation12.OperationalAddress}</li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation12#mmOperationalAddress
+	 * Organisation12.mmOperationalAddress}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OrganisationModification1#OperationalAddress
-	 * OrganisationModification1.OperationalAddress}</li>
+	 * {@linkplain com.tools20022.repository.msg.OrganisationModification1#mmOperationalAddress
+	 * OrganisationModification1.mmOperationalAddress}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -367,20 +382,21 @@ public class Location {
 	 * "Information that locates and identifies a specific address."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Address = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAddress = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Organisation12.OperationalAddress, com.tools20022.repository.msg.OrganisationModification1.OperationalAddress);
-			elementContext_lazy = () -> Location.mmObject();
+			derivation_lazy = () -> Arrays.asList(Organisation12.mmOperationalAddress, OrganisationModification1.mmOperationalAddress);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Address";
 			definition = "Information that locates and identifies a specific address.";
 			minOccurs = 0;
-			type_lazy = () -> PostalAddress.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.Location;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmLocation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Document> issuedDocument;
 	/**
 	 * Document which was issued at a specific location.
 	 * <p>
@@ -389,8 +405,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Document#PlaceOfIssue
-	 * Document.PlaceOfIssue}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmPlaceOfIssue
+	 * Document.mmPlaceOfIssue}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -412,19 +428,20 @@ public class Location {
 	 * definition} = "Document which was issued at a specific location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IssuedDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedDocument";
 			definition = "Document which was issued at a specific location.";
 			minOccurs = 0;
-			type_lazy = () -> Document.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.PlaceOfIssue;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmPlaceOfIssue;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Incoterms> incoterms;
 	/**
 	 * Incoterms associated with a location.
 	 * <p>
@@ -433,8 +450,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Incoterms#Location
-	 * Incoterms.Location}</li>
+	 * {@linkplain com.tools20022.repository.entity.Incoterms#mmLocation
+	 * Incoterms.mmLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -457,19 +474,20 @@ public class Location {
 	 * definition} = "Incoterms associated with a location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Incoterms = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIncoterms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Incoterms";
 			definition = "Incoterms associated with a location.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Incoterms.mmLocation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Incoterms.Location;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Transport departureTransportParameters;
 	/**
 	 * Transport parameters linked to a place of departure.
 	 * <p>
@@ -478,8 +496,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Transport#PlaceOfDeparture
-	 * Transport.PlaceOfDeparture}</li>
+	 * {@linkplain com.tools20022.repository.entity.Transport#mmPlaceOfDeparture
+	 * Transport.mmPlaceOfDeparture}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -502,20 +520,21 @@ public class Location {
 	 * definition} = "Transport parameters linked to a place of departure."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DepartureTransportParameters = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDepartureTransportParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepartureTransportParameters";
 			definition = "Transport parameters linked to a place of departure.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Transport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.PlaceOfDeparture;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmPlaceOfDeparture;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 		}
 	};
+	protected Transport destinationTransportParameters;
 	/**
 	 * Transport parameters linked to a place of destination.
 	 * <p>
@@ -524,8 +543,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Transport#PlaceOfDestination
-	 * Transport.PlaceOfDestination}</li>
+	 * {@linkplain com.tools20022.repository.entity.Transport#mmPlaceOfDestination
+	 * Transport.mmPlaceOfDestination}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -548,20 +567,21 @@ public class Location {
 	 * definition} = "Transport parameters linked to a place of destination."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DestinationTransportParameters = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDestinationTransportParameters = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DestinationTransportParameters";
 			definition = "Transport parameters linked to a place of destination.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Transport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.PlaceOfDestination;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmPlaceOfDestination;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 		}
 	};
+	protected InsuranceCertificate insuranceCertificate;
 	/**
 	 * Insurance for which the claims are payable at a specific location.
 	 * <p>
@@ -570,8 +590,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#ClaimsPayableAt
-	 * InsuranceCertificate.ClaimsPayableAt}</li>
+	 * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#mmClaimsPayableAt
+	 * InsuranceCertificate.mmClaimsPayableAt}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -596,20 +616,21 @@ public class Location {
 	 * "Insurance for which the claims are payable at a specific location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InsuranceCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceCertificate";
 			definition = "Insurance for which the claims are payable at a specific location.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmClaimsPayableAt;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.ClaimsPayableAt;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Party party;
 	/**
 	 * Party which resides in a specific location.
 	 * <p>
@@ -617,8 +638,9 @@ public class Location {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Party#Residence
-	 * Party.Residence}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Party#mmResidence
+	 * Party.mmResidence}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -640,20 +662,21 @@ public class Location {
 	 * definition} = "Party which resides in a specific location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Party = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Party";
 			definition = "Party which resides in a specific location.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmResidence;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.Residence;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Expiry relatedExpiry;
 	/**
 	 * Expiry information which contains an expiry location.
 	 * <p>
@@ -662,8 +685,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Expiry#ExpiryPlace
-	 * Expiry.ExpiryPlace}</li>
+	 * {@linkplain com.tools20022.repository.entity.Expiry#mmExpiryPlace
+	 * Expiry.mmExpiryPlace}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -685,20 +708,21 @@ public class Location {
 	 * definition} = "Expiry information which contains an expiry location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedExpiry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedExpiry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedExpiry";
 			definition = "Expiry information which contains an expiry location.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Expiry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Expiry.ExpiryPlace;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Expiry.mmExpiryPlace;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Expiry.mmObject();
 		}
 	};
+	protected Jurisdiction relatedJurisdiction;
 	/**
 	 * Jurisdiction of the location.
 	 * <p>
@@ -707,8 +731,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Jurisdiction#Identification
-	 * Jurisdiction.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Jurisdiction#mmIdentification
+	 * Jurisdiction.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -731,20 +755,21 @@ public class Location {
 	 * definition} = "Jurisdiction of the location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedJurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedJurisdiction";
 			definition = "Jurisdiction of the location.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Jurisdiction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.Identification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmIdentification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.GenericIdentification> identification;
 	/**
 	 * Identifies the location, for instance, the name of an airport, a county,
 	 * a state, a province or a city by a code or a text. eg LHR for London
@@ -755,8 +780,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentifiedLocation
-	 * GenericIdentification.IdentifiedLocation}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentifiedLocation
+	 * GenericIdentification.mmIdentifiedLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -782,19 +807,20 @@ public class Location {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Identification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identifies the location, for instance, the name of an airport, a county, a state, a province or a city by a code or a text. eg LHR for London Heathrow airport.";
 			minOccurs = 0;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentifiedLocation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentifiedLocation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected Party taxableParty;
 	/**
 	 * Party which is taxable at a specific location
 	 * <p>
@@ -802,8 +828,9 @@ public class Location {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Party#Location
-	 * Party.Location}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Party#mmLocation
+	 * Party.mmLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -825,20 +852,21 @@ public class Location {
 	 * definition} = "Party which is taxable at a specific location"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TaxableParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTaxableParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxableParty";
 			definition = "Party which is taxable at a specific location";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmLocation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.Location;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Organisation registeredOrganisation;
 	/**
 	 * Organisation which is registered at that location.
 	 * <p>
@@ -847,8 +875,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#PlaceOfRegistration
-	 * Organisation.PlaceOfRegistration}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmPlaceOfRegistration
+	 * Organisation.mmPlaceOfRegistration}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -871,20 +899,21 @@ public class Location {
 	 * definition} = "Organisation which is registered at that location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RegisteredOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRegisteredOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredOrganisation";
 			definition = "Organisation which is registered at that location.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Organisation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.PlaceOfRegistration;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmPlaceOfRegistration;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
 		}
 	};
+	protected Transport relatedTransport;
 	/**
 	 * Transport process for which a transit location is specified.
 	 * <p>
@@ -893,8 +922,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Transport#TransitLocation
-	 * Transport.TransitLocation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Transport#mmTransitLocation
+	 * Transport.mmTransitLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -918,20 +947,21 @@ public class Location {
 	 * "Transport process for which a transit location is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedTransport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransport";
 			definition = "Transport process for which a transit location is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Transport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.TransitLocation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmTransitLocation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.UTCOffset> timeZone;
 	/**
 	 * Offset of the time before or after 00:00 hour UTC.
 	 * <p>
@@ -940,8 +970,8 @@ public class Location {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.UTCOffset#Location
-	 * UTCOffset.Location}</li>
+	 * {@linkplain com.tools20022.repository.entity.UTCOffset#mmLocation
+	 * UTCOffset.mmLocation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -964,41 +994,191 @@ public class Location {
 	 * definition} = "Offset of the time before or after 00:00 hour UTC."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TimeZone = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTimeZone = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Location.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TimeZone";
 			definition = "Offset of the time before or after 00:00 hour UTC.";
 			minOccurs = 0;
-			type_lazy = () -> UTCOffset.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.UTCOffset.Location;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmLocation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.UTCOffset.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Location";
 				definition = "Specifies a place.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.IdentifiedLocation, com.tools20022.repository.entity.Party.Domicile, com.tools20022.repository.entity.Party.Residence,
-						com.tools20022.repository.entity.Party.Location, com.tools20022.repository.entity.Organisation.PlaceOfOperation, com.tools20022.repository.entity.Organisation.PlaceOfRegistration,
-						com.tools20022.repository.entity.PostalAddress.Location, com.tools20022.repository.entity.UTCOffset.Location, com.tools20022.repository.entity.Person.PlaceOfBirth,
-						com.tools20022.repository.entity.Document.PlaceOfIssue, com.tools20022.repository.entity.InsuranceCertificate.ClaimsPayableAt, com.tools20022.repository.entity.System.Location,
-						com.tools20022.repository.entity.Expiry.ExpiryPlace, com.tools20022.repository.entity.Jurisdiction.Identification, com.tools20022.repository.entity.Transport.PlaceOfDeparture,
-						com.tools20022.repository.entity.Transport.PlaceOfDestination, com.tools20022.repository.entity.Transport.TransitLocation, com.tools20022.repository.entity.Incoterms.Location);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.NativePerson, com.tools20022.repository.entity.Location.System, com.tools20022.repository.entity.Location.DomiciledParty,
-						com.tools20022.repository.entity.Location.OperatingOrganisation, com.tools20022.repository.entity.Location.Address, com.tools20022.repository.entity.Location.IssuedDocument,
-						com.tools20022.repository.entity.Location.Incoterms, com.tools20022.repository.entity.Location.DepartureTransportParameters, com.tools20022.repository.entity.Location.DestinationTransportParameters,
-						com.tools20022.repository.entity.Location.InsuranceCertificate, com.tools20022.repository.entity.Location.Party, com.tools20022.repository.entity.Location.RelatedExpiry,
-						com.tools20022.repository.entity.Location.RelatedJurisdiction, com.tools20022.repository.entity.Location.Identification, com.tools20022.repository.entity.Location.TaxableParty,
-						com.tools20022.repository.entity.Location.RegisteredOrganisation, com.tools20022.repository.entity.Location.RelatedTransport, com.tools20022.repository.entity.Location.TimeZone);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentifiedLocation, com.tools20022.repository.entity.Party.mmDomicile,
+						com.tools20022.repository.entity.Party.mmResidence, com.tools20022.repository.entity.Party.mmLocation, com.tools20022.repository.entity.Organisation.mmPlaceOfOperation,
+						com.tools20022.repository.entity.Organisation.mmPlaceOfRegistration, com.tools20022.repository.entity.PostalAddress.mmLocation, com.tools20022.repository.entity.UTCOffset.mmLocation,
+						com.tools20022.repository.entity.Person.mmPlaceOfBirth, com.tools20022.repository.entity.Document.mmPlaceOfIssue, com.tools20022.repository.entity.InsuranceCertificate.mmClaimsPayableAt,
+						com.tools20022.repository.entity.System.mmLocation, com.tools20022.repository.entity.Expiry.mmExpiryPlace, com.tools20022.repository.entity.Jurisdiction.mmIdentification,
+						com.tools20022.repository.entity.Transport.mmPlaceOfDeparture, com.tools20022.repository.entity.Transport.mmPlaceOfDestination, com.tools20022.repository.entity.Transport.mmTransitLocation,
+						com.tools20022.repository.entity.Incoterms.mmLocation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.mmNativePerson, com.tools20022.repository.entity.Location.mmSystem, com.tools20022.repository.entity.Location.mmDomiciledParty,
+						com.tools20022.repository.entity.Location.mmOperatingOrganisation, com.tools20022.repository.entity.Location.mmAddress, com.tools20022.repository.entity.Location.mmIssuedDocument,
+						com.tools20022.repository.entity.Location.mmIncoterms, com.tools20022.repository.entity.Location.mmDepartureTransportParameters, com.tools20022.repository.entity.Location.mmDestinationTransportParameters,
+						com.tools20022.repository.entity.Location.mmInsuranceCertificate, com.tools20022.repository.entity.Location.mmParty, com.tools20022.repository.entity.Location.mmRelatedExpiry,
+						com.tools20022.repository.entity.Location.mmRelatedJurisdiction, com.tools20022.repository.entity.Location.mmIdentification, com.tools20022.repository.entity.Location.mmTaxableParty,
+						com.tools20022.repository.entity.Location.mmRegisteredOrganisation, com.tools20022.repository.entity.Location.mmRelatedTransport, com.tools20022.repository.entity.Location.mmTimeZone);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Location.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Person getNativePerson() {
+		return nativePerson;
+	}
+
+	public void setNativePerson(com.tools20022.repository.entity.Person nativePerson) {
+		this.nativePerson = nativePerson;
+	}
+
+	public System getSystem() {
+		return system;
+	}
+
+	public void setSystem(com.tools20022.repository.entity.System system) {
+		this.system = system;
+	}
+
+	public Party getDomiciledParty() {
+		return domiciledParty;
+	}
+
+	public void setDomiciledParty(com.tools20022.repository.entity.Party domiciledParty) {
+		this.domiciledParty = domiciledParty;
+	}
+
+	public Organisation getOperatingOrganisation() {
+		return operatingOrganisation;
+	}
+
+	public void setOperatingOrganisation(com.tools20022.repository.entity.Organisation operatingOrganisation) {
+		this.operatingOrganisation = operatingOrganisation;
+	}
+
+	public List<PostalAddress> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<com.tools20022.repository.entity.PostalAddress> address) {
+		this.address = address;
+	}
+
+	public List<Document> getIssuedDocument() {
+		return issuedDocument;
+	}
+
+	public void setIssuedDocument(List<com.tools20022.repository.entity.Document> issuedDocument) {
+		this.issuedDocument = issuedDocument;
+	}
+
+	public List<Incoterms> getIncoterms() {
+		return incoterms;
+	}
+
+	public void setIncoterms(List<com.tools20022.repository.entity.Incoterms> incoterms) {
+		this.incoterms = incoterms;
+	}
+
+	public Transport getDepartureTransportParameters() {
+		return departureTransportParameters;
+	}
+
+	public void setDepartureTransportParameters(com.tools20022.repository.entity.Transport departureTransportParameters) {
+		this.departureTransportParameters = departureTransportParameters;
+	}
+
+	public Transport getDestinationTransportParameters() {
+		return destinationTransportParameters;
+	}
+
+	public void setDestinationTransportParameters(com.tools20022.repository.entity.Transport destinationTransportParameters) {
+		this.destinationTransportParameters = destinationTransportParameters;
+	}
+
+	public InsuranceCertificate getInsuranceCertificate() {
+		return insuranceCertificate;
+	}
+
+	public void setInsuranceCertificate(com.tools20022.repository.entity.InsuranceCertificate insuranceCertificate) {
+		this.insuranceCertificate = insuranceCertificate;
+	}
+
+	public Party getParty() {
+		return party;
+	}
+
+	public void setParty(com.tools20022.repository.entity.Party party) {
+		this.party = party;
+	}
+
+	public Expiry getRelatedExpiry() {
+		return relatedExpiry;
+	}
+
+	public void setRelatedExpiry(com.tools20022.repository.entity.Expiry relatedExpiry) {
+		this.relatedExpiry = relatedExpiry;
+	}
+
+	public Jurisdiction getRelatedJurisdiction() {
+		return relatedJurisdiction;
+	}
+
+	public void setRelatedJurisdiction(com.tools20022.repository.entity.Jurisdiction relatedJurisdiction) {
+		this.relatedJurisdiction = relatedJurisdiction;
+	}
+
+	public List<GenericIdentification> getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(List<com.tools20022.repository.entity.GenericIdentification> identification) {
+		this.identification = identification;
+	}
+
+	public Party getTaxableParty() {
+		return taxableParty;
+	}
+
+	public void setTaxableParty(com.tools20022.repository.entity.Party taxableParty) {
+		this.taxableParty = taxableParty;
+	}
+
+	public Organisation getRegisteredOrganisation() {
+		return registeredOrganisation;
+	}
+
+	public void setRegisteredOrganisation(com.tools20022.repository.entity.Organisation registeredOrganisation) {
+		this.registeredOrganisation = registeredOrganisation;
+	}
+
+	public Transport getRelatedTransport() {
+		return relatedTransport;
+	}
+
+	public void setRelatedTransport(com.tools20022.repository.entity.Transport relatedTransport) {
+		this.relatedTransport = relatedTransport;
+	}
+
+	public List<UTCOffset> getTimeZone() {
+		return timeZone;
+	}
+
+	public void setTimeZone(List<com.tools20022.repository.entity.UTCOffset> timeZone) {
+		this.timeZone = timeZone;
 	}
 }

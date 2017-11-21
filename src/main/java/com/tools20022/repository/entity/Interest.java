@@ -17,20 +17,19 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.InterestRate2Choice;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.codeset.InterestTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.PercentageRate;
-import com.tools20022.repository.msg.InterestPaymentDateRange1;
-import com.tools20022.repository.msg.InterestRateContractTerm1;
-import com.tools20022.repository.msg.InterestRecord1;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Consideration, such as amount of money, paid or received in exchange for an
@@ -48,105 +47,62 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#AccruedInterestAmount
- * Interest.AccruedInterestAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmAccruedInterestAmount
+ * Interest.mmAccruedInterestAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#InterestCalculation
- * Interest.InterestCalculation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#Amount
- * Interest.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#Rate Interest.Rate}
- * </li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmInterestCalculation
+ * Interest.mmInterestCalculation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmAmount
+ * Interest.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmRate
+ * Interest.mmRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedCashProceedsDefinition
- * Interest.RelatedCashProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedCashProceedsDefinition
+ * Interest.mmRelatedCashProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#SecuritiesFinancing
- * Interest.SecuritiesFinancing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#InterestTax
- * Interest.InterestTax}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmSecuritiesFinancing
+ * Interest.mmSecuritiesFinancing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmInterestTax
+ * Interest.mmInterestTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#CreditDebitIndicator
- * Interest.CreditDebitIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#CashEntry
- * Interest.CashEntry}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#PaymentDate
- * Interest.PaymentDate}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmCreditDebitIndicator
+ * Interest.mmCreditDebitIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmCashEntry
+ * Interest.mmCashEntry}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmPaymentDate
+ * Interest.mmPaymentDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedInterestManagement
- * Interest.RelatedInterestManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedInterestManagement
+ * Interest.mmRelatedInterestManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedUndertakingAmount
- * Interest.RelatedUndertakingAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedUndertakingAmount
+ * Interest.mmRelatedUndertakingAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedDebitCreditFacility
- * Interest.RelatedDebitCreditFacility}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedDebitCreditFacility
+ * Interest.mmRelatedDebitCreditFacility}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#SecuritiesSettlement
- * Interest.SecuritiesSettlement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#InterestName
- * Interest.InterestName}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmSecuritiesSettlement
+ * Interest.mmSecuritiesSettlement}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmInterestName
+ * Interest.mmInterestName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedAssetHolding
- * Interest.RelatedAssetHolding}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#Deposit
- * Interest.Deposit}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#AccountBalance
- * Interest.AccountBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedAssetHolding
+ * Interest.mmRelatedAssetHolding}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmDeposit
+ * Interest.mmDeposit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmAccountBalance
+ * Interest.mmAccountBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedAccountContract
- * Interest.RelatedAccountContract}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedAccountContract
+ * Interest.mmRelatedAccountContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedNetAssetValueCalculation
- * Interest.RelatedNetAssetValueCalculation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#TypeOfInterest
- * Interest.TypeOfInterest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#RelatedPaymentCard
- * Interest.RelatedPaymentCard}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedNetAssetValueCalculation
+ * Interest.mmRelatedNetAssetValueCalculation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmTypeOfInterest
+ * Interest.mmTypeOfInterest}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForInterestName
- * GenericIdentification.IdentificationForInterestName}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#Interest
- * NetAssetValueCalculation.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Tax#Interest Tax.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountContract#Interest
- * AccountContract.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PaymentCard#Interest
- * PaymentCard.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CashEntry#Interest
- * CashEntry.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AssetHolding#Interest
- * AssetHolding.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Balance#Interest
- * Balance.Interest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#AccruedInterest
- * SecuritiesSettlement.AccruedInterest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InterestCalculation#Interest
- * InterestCalculation.Interest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#Interest
- * SecuritiesFinancing.Interest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#Interest
- * CashProceedsDefinition.Interest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DebitCreditFacility#CashAccountInterest
- * DebitCreditFacility.CashAccountInterest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UndertakingAmount#Interest
- * UndertakingAmount.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Deposit#Interest
- * Deposit.Interest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.InterestManagement#Interest
- * InterestManagement.Interest}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedPaymentCard
+ * Interest.mmRelatedPaymentCard}</li>
  * </ul>
  * </li>
  * <li>
@@ -164,10 +120,57 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForInterestName
+ * GenericIdentification.mmIdentificationForInterestName}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#mmInterest
+ * NetAssetValueCalculation.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Tax#mmInterest
+ * Tax.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountContract#mmInterest
+ * AccountContract.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PaymentCard#mmInterest
+ * PaymentCard.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CashEntry#mmInterest
+ * CashEntry.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AssetHolding#mmInterest
+ * AssetHolding.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Balance#mmInterest
+ * Balance.mmInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmAccruedInterest
+ * SecuritiesSettlement.mmAccruedInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmInterest
+ * InterestCalculation.mmInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmInterest
+ * SecuritiesFinancing.mmInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmInterest
+ * CashProceedsDefinition.mmInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DebitCreditFacility#mmCashAccountInterest
+ * DebitCreditFacility.mmCashAccountInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingAmount#mmInterest
+ * UndertakingAmount.mmInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Deposit#mmInterest
+ * Deposit.mmInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InterestManagement#mmInterest
+ * InterestManagement.mmInterest}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -183,6 +186,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Interest {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount accruedInterestAmount;
 	/**
 	 * Interest amount that has accrued in between coupon payment periods.
 	 * <p>
@@ -209,18 +213,27 @@ public class Interest {
 	 * "Interest amount that has accrued in between coupon payment periods."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AccruedInterestAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAccruedInterestAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccruedInterestAmount";
 			definition = "Interest amount that has accrued in between coupon payment periods.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Interest.class.getMethod("getAccruedInterestAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.InterestCalculation> interestCalculation;
 	/**
 	 * Calculation parameters used to obtain the interest amount.
 	 * <p>
@@ -229,8 +242,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#Interest
-	 * InterestCalculation.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmInterest
+	 * InterestCalculation.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -241,21 +254,23 @@ public class Interest {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#Type
-	 * InterestRecord1.Type}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#Rate
-	 * InterestRecord1.Rate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountStatement6#Interest
-	 * AccountStatement6.Interest}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountReport19#Interest
-	 * AccountReport19.Interest}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#mmType
+	 * InterestRecord1.mmType}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#mmRate
+	 * InterestRecord1.mmRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountNotification12#Interest
-	 * AccountNotification12.Interest}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.ReportEntry8#Interest
-	 * ReportEntry8.Interest}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.EntryTransaction8#Interest
-	 * EntryTransaction8.Interest}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountStatement6#mmInterest
+	 * AccountStatement6.mmInterest}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.AccountReport19#mmInterest
+	 * AccountReport19.mmInterest}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AccountNotification12#mmInterest
+	 * AccountNotification12.mmInterest}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.ReportEntry8#mmInterest
+	 * ReportEntry8.mmInterest}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmInterest
+	 * EntryTransaction8.mmInterest}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -274,22 +289,22 @@ public class Interest {
 	 * "Calculation parameters used to obtain the interest amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestCalculation = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestRecord1.Type, com.tools20022.repository.msg.InterestRecord1.Rate, com.tools20022.repository.msg.AccountStatement6.Interest,
-					com.tools20022.repository.msg.AccountReport19.Interest, com.tools20022.repository.msg.AccountNotification12.Interest, com.tools20022.repository.msg.ReportEntry8.Interest,
-					com.tools20022.repository.msg.EntryTransaction8.Interest);
-			elementContext_lazy = () -> Interest.mmObject();
+			derivation_lazy = () -> Arrays.asList(InterestRecord1.mmType, InterestRecord1.mmRate, AccountStatement6.mmInterest, AccountReport19.mmInterest, AccountNotification12.mmInterest, ReportEntry8.mmInterest,
+					EntryTransaction8.mmInterest);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestCalculation";
 			definition = "Calculation parameters used to obtain the interest amount.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount amount;
 	/**
 	 * Amount of money representing interest payments.
 	 * <p>
@@ -303,8 +318,8 @@ public class Interest {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#Amount
-	 * InterestRecord1.Amount}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#mmAmount
+	 * InterestRecord1.mmAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -322,19 +337,28 @@ public class Interest {
 	 * definition} = "Amount of money representing interest payments."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestRecord1.Amount);
-			elementContext_lazy = () -> Interest.mmObject();
+			derivation_lazy = () -> Arrays.asList(InterestRecord1.mmAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money representing interest payments.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Interest.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate rate;
 	/**
 	 * The actual interest rate used for the payment of the interest for the
 	 * specified interest period.
@@ -350,8 +374,8 @@ public class Interest {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.InterestRate2Choice#Fixed
-	 * InterestRate2Choice.Fixed}</li>
+	 * {@linkplain com.tools20022.repository.choice.InterestRate2Choice#mmFixed
+	 * InterestRate2Choice.mmFixed}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -371,19 +395,28 @@ public class Interest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Rate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InterestRate2Choice.Fixed);
-			elementContext_lazy = () -> Interest.mmObject();
+			derivation_lazy = () -> Arrays.asList(InterestRate2Choice.mmFixed);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "The actual interest rate used for the payment of the interest for the specified interest period.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Interest.class.getMethod("getRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.CashProceedsDefinition> relatedCashProceedsDefinition;
 	/**
 	 * Cash proceeds definition for which an interest is provided.
 	 * <p>
@@ -392,8 +425,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#Interest
-	 * CashProceedsDefinition.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmInterest
+	 * CashProceedsDefinition.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -418,19 +451,20 @@ public class Interest {
 	 * "Cash proceeds definition for which an interest is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCashProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCashProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashProceedsDefinition";
 			definition = "Cash proceeds definition for which an interest is provided.";
 			minOccurs = 0;
-			type_lazy = () -> CashProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesFinancing> securitiesFinancing;
 	/**
 	 * Specifies the financing trade on which this interest apply.
 	 * <p>
@@ -439,8 +473,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#Interest
-	 * SecuritiesFinancing.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmInterest
+	 * SecuritiesFinancing.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -464,19 +498,20 @@ public class Interest {
 	 * "Specifies the financing trade on which this interest apply."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesFinancing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesFinancing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesFinancing";
 			definition = "Specifies the financing trade on which this interest apply.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Tax interestTax;
 	/**
 	 * Specifies the tax on interest.
 	 * <p>
@@ -484,8 +519,8 @@ public class Interest {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Tax#Interest
-	 * Tax.Interest}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Tax#mmInterest
+	 * Tax.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -495,10 +530,10 @@ public class Interest {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountInterest3#Tax
-	 * AccountInterest3.Tax}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#Tax
-	 * InterestRecord1.Tax}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.AccountInterest3#mmTax
+	 * AccountInterest3.mmTax}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.InterestRecord1#mmTax
+	 * InterestRecord1.mmTax}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -516,21 +551,22 @@ public class Interest {
 	 * definition} = "Specifies the tax on interest."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestTax = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountInterest3.Tax, com.tools20022.repository.msg.InterestRecord1.Tax);
-			elementContext_lazy = () -> Interest.mmObject();
+			derivation_lazy = () -> Arrays.asList(AccountInterest3.mmTax, InterestRecord1.mmTax);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestTax";
 			definition = "Specifies the tax on interest.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Tax.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
 		}
 	};
+	protected DebitCreditCode creditDebitIndicator;
 	/**
 	 * Indicates whether the interest is a debit or credit.
 	 * <p>
@@ -556,18 +592,27 @@ public class Interest {
 	 * definition} = "Indicates whether the interest is a debit or credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the interest is a debit or credit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Interest.class.getMethod("getCreditDebitIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CashEntry cashEntry;
 	/**
 	 * Entry which contains the interest.
 	 * <p>
@@ -576,8 +621,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashEntry#Interest
-	 * CashEntry.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashEntry#mmInterest
+	 * CashEntry.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -600,20 +645,21 @@ public class Interest {
 	 * definition} = "Entry which contains the interest."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashEntry";
 			definition = "Entry which contains the interest.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashEntry.mmInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashEntry.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODate paymentDate;
 	/**
 	 * Date of the next interest payment.
 	 * <p>
@@ -627,11 +673,11 @@ public class Interest {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InterestPaymentDateRange1#ExpectedDate
-	 * InterestPaymentDateRange1.ExpectedDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.InterestPaymentDateRange1#mmExpectedDate
+	 * InterestPaymentDateRange1.mmExpectedDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InterestPaymentDateRange1#DueDate
-	 * InterestPaymentDateRange1.DueDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.InterestPaymentDateRange1#mmDueDate
+	 * InterestPaymentDateRange1.mmDueDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -649,19 +695,28 @@ public class Interest {
 	 * definition} = "Date of the next interest payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestPaymentDateRange1.ExpectedDate, com.tools20022.repository.msg.InterestPaymentDateRange1.DueDate);
-			elementContext_lazy = () -> Interest.mmObject();
+			derivation_lazy = () -> Arrays.asList(InterestPaymentDateRange1.mmExpectedDate, InterestPaymentDateRange1.mmDueDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date of the next interest payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Interest.class.getMethod("getPaymentDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InterestManagement relatedInterestManagement;
 	/**
 	 * Management of interest which consists into calculating the interest,
 	 * requesting its payment or distributing the interest proceeds.
@@ -671,8 +726,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InterestManagement#Interest
-	 * InterestManagement.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestManagement#mmInterest
+	 * InterestManagement.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -697,20 +752,21 @@ public class Interest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedInterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterestManagement";
 			definition = "Management of interest which consists into calculating the interest, requesting its payment or distributing the interest proceeds.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InterestManagement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestManagement.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
 		}
 	};
+	protected UndertakingAmount relatedUndertakingAmount;
 	/**
 	 * Undertaking amount for which an interest is specified.
 	 * <p>
@@ -719,8 +775,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.UndertakingAmount#Interest
-	 * UndertakingAmount.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.UndertakingAmount#mmInterest
+	 * UndertakingAmount.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -743,20 +799,21 @@ public class Interest {
 	 * definition} = "Undertaking amount for which an interest is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedUndertakingAmount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedUndertakingAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedUndertakingAmount";
 			definition = "Undertaking amount for which an interest is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> UndertakingAmount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.UndertakingAmount.mmObject();
 		}
 	};
+	protected DebitCreditFacility relatedDebitCreditFacility;
 	/**
 	 * Debit and credit facilities on which the interest applies.
 	 * <p>
@@ -765,8 +822,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DebitCreditFacility#CashAccountInterest
-	 * DebitCreditFacility.CashAccountInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.DebitCreditFacility#mmCashAccountInterest
+	 * DebitCreditFacility.mmCashAccountInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -790,20 +847,21 @@ public class Interest {
 	 * "Debit and credit facilities on which the interest applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedDebitCreditFacility = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedDebitCreditFacility = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDebitCreditFacility";
 			definition = "Debit and credit facilities on which the interest applies.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> DebitCreditFacility.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.CashAccountInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmCashAccountInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DebitCreditFacility.mmObject();
 		}
 	};
+	protected SecuritiesSettlement securitiesSettlement;
 	/**
 	 * Securities settlement process for which an accrued interest is specified.
 	 * <p>
@@ -812,8 +870,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#AccruedInterest
-	 * SecuritiesSettlement.AccruedInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmAccruedInterest
+	 * SecuritiesSettlement.mmAccruedInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -839,20 +897,21 @@ public class Interest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Securities settlement process for which an accrued interest is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmAccruedInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.AccruedInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected GenericIdentification interestName;
 	/**
 	 * Interest rate expressed as a rate name.
 	 * <p>
@@ -861,8 +920,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForInterestName
-	 * GenericIdentification.IdentificationForInterestName}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForInterestName
+	 * GenericIdentification.mmIdentificationForInterestName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -886,20 +945,21 @@ public class Interest {
 	 * definition} = "Interest rate expressed as a rate name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestName = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestName";
 			definition = "Interest rate expressed as a rate name.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentificationForInterestName;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForInterestName;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected AssetHolding relatedAssetHolding;
 	/**
 	 * Asset holding on which interest is paid.
 	 * <p>
@@ -908,8 +968,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AssetHolding#Interest
-	 * AssetHolding.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.AssetHolding#mmInterest
+	 * AssetHolding.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -932,20 +992,21 @@ public class Interest {
 	 * definition} = "Asset holding on which interest is paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedAssetHolding = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedAssetHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAssetHolding";
 			definition = "Asset holding on which interest is paid.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AssetHolding.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetHolding.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
 		}
 	};
+	protected Deposit deposit;
 	/**
 	 * Deposit for which an interest is specified.
 	 * <p>
@@ -954,8 +1015,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Deposit#Interest
-	 * Deposit.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.Deposit#mmInterest
+	 * Deposit.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -977,20 +1038,21 @@ public class Interest {
 	 * definition} = "Deposit for which an interest is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Deposit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDeposit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deposit";
 			definition = "Deposit for which an interest is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Deposit.mmInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Deposit.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Balance accountBalance;
 	/**
 	 * Balance for which an interest is calculated.
 	 * <p>
@@ -999,8 +1061,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Balance#Interest
-	 * Balance.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.Balance#mmInterest
+	 * Balance.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1022,20 +1084,21 @@ public class Interest {
 	 * definition} = "Balance for which an interest is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountBalance";
 			definition = "Balance for which an interest is calculated.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Balance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Balance.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Balance.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
 		}
 	};
+	protected AccountContract relatedAccountContract;
 	/**
 	 * Account contract for which interest parameters are specified.
 	 * <p>
@@ -1044,8 +1107,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountContract#Interest
-	 * AccountContract.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountContract#mmInterest
+	 * AccountContract.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1069,20 +1132,21 @@ public class Interest {
 	 * "Account contract for which interest parameters are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccountContract";
 			definition = "Account contract for which interest parameters are specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AccountContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountContract.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountContract.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
 		}
 	};
+	protected NetAssetValueCalculation relatedNetAssetValueCalculation;
 	/**
 	 * Net asset value calculation for which an accrued interest is specified.
 	 * <p>
@@ -1091,8 +1155,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#Interest
-	 * NetAssetValueCalculation.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#mmInterest
+	 * NetAssetValueCalculation.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1118,20 +1182,21 @@ public class Interest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedNetAssetValueCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedNetAssetValueCalculation";
 			definition = "Net asset value calculation for which an accrued interest is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> NetAssetValueCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
 		}
 	};
+	protected InterestTypeCode typeOfInterest;
 	/**
 	 * Specifies the type of interest associated with a trade.
 	 * <p>
@@ -1157,18 +1222,27 @@ public class Interest {
 	 * definition} = "Specifies the type of interest associated with a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TypeOfInterest = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTypeOfInterest = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfInterest";
 			definition = "Specifies the type of interest associated with a trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> InterestTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Interest.class.getMethod("getTypeOfInterest", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PaymentCard relatedPaymentCard;
 	/**
 	 * Payment card for which interest on due amounts is specified.
 	 * <p>
@@ -1177,8 +1251,8 @@ public class Interest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentCard#Interest
-	 * PaymentCard.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentCard#mmInterest
+	 * PaymentCard.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1202,45 +1276,226 @@ public class Interest {
 	 * "Payment card for which interest on due amounts is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedPaymentCard = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedPaymentCard = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Interest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedPaymentCard";
 			definition = "Payment card for which interest on due amounts is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PaymentCard.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentCard.Interest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Interest";
 				definition = "Consideration, such as amount of money,  paid or received in exchange for an asset that has been invested, loaned or borrowed for a certain period. The interest is expressed as a fixed amount or percentage of the amount upon which the interest is applied.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.IdentificationForInterestName, com.tools20022.repository.entity.NetAssetValueCalculation.Interest,
-						com.tools20022.repository.entity.Tax.Interest, com.tools20022.repository.entity.AccountContract.Interest, com.tools20022.repository.entity.PaymentCard.Interest, com.tools20022.repository.entity.CashEntry.Interest,
-						com.tools20022.repository.entity.AssetHolding.Interest, com.tools20022.repository.entity.Balance.Interest, com.tools20022.repository.entity.SecuritiesSettlement.AccruedInterest,
-						com.tools20022.repository.entity.InterestCalculation.Interest, com.tools20022.repository.entity.SecuritiesFinancing.Interest, com.tools20022.repository.entity.CashProceedsDefinition.Interest,
-						com.tools20022.repository.entity.DebitCreditFacility.CashAccountInterest, com.tools20022.repository.entity.UndertakingAmount.Interest, com.tools20022.repository.entity.Deposit.Interest,
-						com.tools20022.repository.entity.InterestManagement.Interest);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Interest.AccruedInterestAmount, com.tools20022.repository.entity.Interest.InterestCalculation, com.tools20022.repository.entity.Interest.Amount,
-						com.tools20022.repository.entity.Interest.Rate, com.tools20022.repository.entity.Interest.RelatedCashProceedsDefinition, com.tools20022.repository.entity.Interest.SecuritiesFinancing,
-						com.tools20022.repository.entity.Interest.InterestTax, com.tools20022.repository.entity.Interest.CreditDebitIndicator, com.tools20022.repository.entity.Interest.CashEntry,
-						com.tools20022.repository.entity.Interest.PaymentDate, com.tools20022.repository.entity.Interest.RelatedInterestManagement, com.tools20022.repository.entity.Interest.RelatedUndertakingAmount,
-						com.tools20022.repository.entity.Interest.RelatedDebitCreditFacility, com.tools20022.repository.entity.Interest.SecuritiesSettlement, com.tools20022.repository.entity.Interest.InterestName,
-						com.tools20022.repository.entity.Interest.RelatedAssetHolding, com.tools20022.repository.entity.Interest.Deposit, com.tools20022.repository.entity.Interest.AccountBalance,
-						com.tools20022.repository.entity.Interest.RelatedAccountContract, com.tools20022.repository.entity.Interest.RelatedNetAssetValueCalculation, com.tools20022.repository.entity.Interest.TypeOfInterest,
-						com.tools20022.repository.entity.Interest.RelatedPaymentCard);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForInterestName, com.tools20022.repository.entity.NetAssetValueCalculation.mmInterest,
+						com.tools20022.repository.entity.Tax.mmInterest, com.tools20022.repository.entity.AccountContract.mmInterest, com.tools20022.repository.entity.PaymentCard.mmInterest,
+						com.tools20022.repository.entity.CashEntry.mmInterest, com.tools20022.repository.entity.AssetHolding.mmInterest, com.tools20022.repository.entity.Balance.mmInterest,
+						com.tools20022.repository.entity.SecuritiesSettlement.mmAccruedInterest, com.tools20022.repository.entity.InterestCalculation.mmInterest, com.tools20022.repository.entity.SecuritiesFinancing.mmInterest,
+						com.tools20022.repository.entity.CashProceedsDefinition.mmInterest, com.tools20022.repository.entity.DebitCreditFacility.mmCashAccountInterest, com.tools20022.repository.entity.UndertakingAmount.mmInterest,
+						com.tools20022.repository.entity.Deposit.mmInterest, com.tools20022.repository.entity.InterestManagement.mmInterest);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Interest.mmAccruedInterestAmount, com.tools20022.repository.entity.Interest.mmInterestCalculation, com.tools20022.repository.entity.Interest.mmAmount,
+						com.tools20022.repository.entity.Interest.mmRate, com.tools20022.repository.entity.Interest.mmRelatedCashProceedsDefinition, com.tools20022.repository.entity.Interest.mmSecuritiesFinancing,
+						com.tools20022.repository.entity.Interest.mmInterestTax, com.tools20022.repository.entity.Interest.mmCreditDebitIndicator, com.tools20022.repository.entity.Interest.mmCashEntry,
+						com.tools20022.repository.entity.Interest.mmPaymentDate, com.tools20022.repository.entity.Interest.mmRelatedInterestManagement, com.tools20022.repository.entity.Interest.mmRelatedUndertakingAmount,
+						com.tools20022.repository.entity.Interest.mmRelatedDebitCreditFacility, com.tools20022.repository.entity.Interest.mmSecuritiesSettlement, com.tools20022.repository.entity.Interest.mmInterestName,
+						com.tools20022.repository.entity.Interest.mmRelatedAssetHolding, com.tools20022.repository.entity.Interest.mmDeposit, com.tools20022.repository.entity.Interest.mmAccountBalance,
+						com.tools20022.repository.entity.Interest.mmRelatedAccountContract, com.tools20022.repository.entity.Interest.mmRelatedNetAssetValueCalculation, com.tools20022.repository.entity.Interest.mmTypeOfInterest,
+						com.tools20022.repository.entity.Interest.mmRelatedPaymentCard);
 				derivationComponent_lazy = () -> Arrays.asList(InterestRecord1.mmObject(), InterestRateContractTerm1.mmObject(), InterestRate2Choice.mmObject(), InterestPaymentDateRange1.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Interest.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getAccruedInterestAmount() {
+		return accruedInterestAmount;
+	}
+
+	public void setAccruedInterestAmount(CurrencyAndAmount accruedInterestAmount) {
+		this.accruedInterestAmount = accruedInterestAmount;
+	}
+
+	public List<InterestCalculation> getInterestCalculation() {
+		return interestCalculation;
+	}
+
+	public void setInterestCalculation(List<com.tools20022.repository.entity.InterestCalculation> interestCalculation) {
+		this.interestCalculation = interestCalculation;
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public PercentageRate getRate() {
+		return rate;
+	}
+
+	public void setRate(PercentageRate rate) {
+		this.rate = rate;
+	}
+
+	public List<CashProceedsDefinition> getRelatedCashProceedsDefinition() {
+		return relatedCashProceedsDefinition;
+	}
+
+	public void setRelatedCashProceedsDefinition(List<com.tools20022.repository.entity.CashProceedsDefinition> relatedCashProceedsDefinition) {
+		this.relatedCashProceedsDefinition = relatedCashProceedsDefinition;
+	}
+
+	public List<SecuritiesFinancing> getSecuritiesFinancing() {
+		return securitiesFinancing;
+	}
+
+	public void setSecuritiesFinancing(List<com.tools20022.repository.entity.SecuritiesFinancing> securitiesFinancing) {
+		this.securitiesFinancing = securitiesFinancing;
+	}
+
+	public Tax getInterestTax() {
+		return interestTax;
+	}
+
+	public void setInterestTax(com.tools20022.repository.entity.Tax interestTax) {
+		this.interestTax = interestTax;
+	}
+
+	public DebitCreditCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
+	}
+
+	public CashEntry getCashEntry() {
+		return cashEntry;
+	}
+
+	public void setCashEntry(com.tools20022.repository.entity.CashEntry cashEntry) {
+		this.cashEntry = cashEntry;
+	}
+
+	public ISODate getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(ISODate paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	public InterestManagement getRelatedInterestManagement() {
+		return relatedInterestManagement;
+	}
+
+	public void setRelatedInterestManagement(com.tools20022.repository.entity.InterestManagement relatedInterestManagement) {
+		this.relatedInterestManagement = relatedInterestManagement;
+	}
+
+	public UndertakingAmount getRelatedUndertakingAmount() {
+		return relatedUndertakingAmount;
+	}
+
+	public void setRelatedUndertakingAmount(com.tools20022.repository.entity.UndertakingAmount relatedUndertakingAmount) {
+		this.relatedUndertakingAmount = relatedUndertakingAmount;
+	}
+
+	public DebitCreditFacility getRelatedDebitCreditFacility() {
+		return relatedDebitCreditFacility;
+	}
+
+	public void setRelatedDebitCreditFacility(com.tools20022.repository.entity.DebitCreditFacility relatedDebitCreditFacility) {
+		this.relatedDebitCreditFacility = relatedDebitCreditFacility;
+	}
+
+	public SecuritiesSettlement getSecuritiesSettlement() {
+		return securitiesSettlement;
+	}
+
+	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+		this.securitiesSettlement = securitiesSettlement;
+	}
+
+	public GenericIdentification getInterestName() {
+		return interestName;
+	}
+
+	public void setInterestName(com.tools20022.repository.entity.GenericIdentification interestName) {
+		this.interestName = interestName;
+	}
+
+	public AssetHolding getRelatedAssetHolding() {
+		return relatedAssetHolding;
+	}
+
+	public void setRelatedAssetHolding(com.tools20022.repository.entity.AssetHolding relatedAssetHolding) {
+		this.relatedAssetHolding = relatedAssetHolding;
+	}
+
+	public Deposit getDeposit() {
+		return deposit;
+	}
+
+	public void setDeposit(com.tools20022.repository.entity.Deposit deposit) {
+		this.deposit = deposit;
+	}
+
+	public Balance getAccountBalance() {
+		return accountBalance;
+	}
+
+	public void setAccountBalance(com.tools20022.repository.entity.Balance accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+
+	public AccountContract getRelatedAccountContract() {
+		return relatedAccountContract;
+	}
+
+	public void setRelatedAccountContract(com.tools20022.repository.entity.AccountContract relatedAccountContract) {
+		this.relatedAccountContract = relatedAccountContract;
+	}
+
+	public NetAssetValueCalculation getRelatedNetAssetValueCalculation() {
+		return relatedNetAssetValueCalculation;
+	}
+
+	public void setRelatedNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation relatedNetAssetValueCalculation) {
+		this.relatedNetAssetValueCalculation = relatedNetAssetValueCalculation;
+	}
+
+	public InterestTypeCode getTypeOfInterest() {
+		return typeOfInterest;
+	}
+
+	public void setTypeOfInterest(InterestTypeCode typeOfInterest) {
+		this.typeOfInterest = typeOfInterest;
+	}
+
+	public PaymentCard getRelatedPaymentCard() {
+		return relatedPaymentCard;
+	}
+
+	public void setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
+		this.relatedPaymentCard = relatedPaymentCard;
 	}
 }

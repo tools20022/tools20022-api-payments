@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.VariationTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,15 +39,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AutomaticVariation#Undertaking
- * AutomaticVariation.Undertaking}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AutomaticVariation#Type
- * AutomaticVariation.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.AutomaticVariation#mmUndertaking
+ * AutomaticVariation.mmUndertaking}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AutomaticVariation#mmType
+ * AutomaticVariation.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AutomaticVariation#VariationAmount
- * AutomaticVariation.VariationAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AutomaticVariation#Trigger
- * AutomaticVariation.Trigger}</li>
+ * {@linkplain com.tools20022.repository.entity.AutomaticVariation#mmVariationAmount
+ * AutomaticVariation.mmVariationAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AutomaticVariation#mmTrigger
+ * AutomaticVariation.mmTrigger}</li>
  * </ul>
  * </li>
  * <li>
@@ -55,17 +56,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Undertaking#PredefinedVariation
- * Undertaking.PredefinedVariation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Trigger#AutomaticVariation
- * Trigger.AutomaticVariation}</li>
+ * {@linkplain com.tools20022.repository.entity.Undertaking#mmPredefinedVariation
+ * Undertaking.mmPredefinedVariation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Trigger#mmAutomaticVariation
+ * Trigger.mmAutomaticVariation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,6 +83,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AutomaticVariation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Undertaking undertaking;
 	/**
 	 * Undertaking for which a predefined variation is specified.
 	 * <p>
@@ -89,8 +92,8 @@ public class AutomaticVariation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Undertaking#PredefinedVariation
-	 * Undertaking.PredefinedVariation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Undertaking#mmPredefinedVariation
+	 * Undertaking.mmPredefinedVariation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -115,20 +118,21 @@ public class AutomaticVariation {
 	 * "Undertaking for which a predefined variation is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Undertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AutomaticVariation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a predefined variation is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmPredefinedVariation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.PredefinedVariation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected VariationTypeCode type;
 	/**
 	 * Type of predefined variation.
 	 * <p>
@@ -155,18 +159,27 @@ public class AutomaticVariation {
 	 * definition} = "Type of predefined variation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AutomaticVariation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of predefined variation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> VariationTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AutomaticVariation.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount variationAmount;
 	/**
 	 * Variation specified as a monetary amount increase or decrease to the
 	 * undertaking amount.
@@ -196,18 +209,27 @@ public class AutomaticVariation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VariationAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVariationAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AutomaticVariation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariationAmount";
 			definition = "Variation specified as a monetary amount increase or decrease to the undertaking amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AutomaticVariation.class.getMethod("getVariationAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Trigger trigger;
 	/**
 	 * Trigger that causes the variation to come into effect.
 	 * <p>
@@ -216,8 +238,8 @@ public class AutomaticVariation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Trigger#AutomaticVariation
-	 * Trigger.AutomaticVariation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Trigger#mmAutomaticVariation
+	 * Trigger.mmAutomaticVariation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -240,33 +262,70 @@ public class AutomaticVariation {
 	 * definition} = "Trigger that causes the variation to come into effect."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Trigger = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTrigger = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AutomaticVariation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trigger";
 			definition = "Trigger that causes the variation to come into effect.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Trigger.mmAutomaticVariation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Trigger.AutomaticVariation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AutomaticVariation";
 				definition = "Predefined variations that may be attributable to an undertaking such as a guarantee or standby letter of credit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.PredefinedVariation, com.tools20022.repository.entity.Trigger.AutomaticVariation);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AutomaticVariation.Undertaking, com.tools20022.repository.entity.AutomaticVariation.Type,
-						com.tools20022.repository.entity.AutomaticVariation.VariationAmount, com.tools20022.repository.entity.AutomaticVariation.Trigger);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmPredefinedVariation, com.tools20022.repository.entity.Trigger.mmAutomaticVariation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AutomaticVariation.mmUndertaking, com.tools20022.repository.entity.AutomaticVariation.mmType,
+						com.tools20022.repository.entity.AutomaticVariation.mmVariationAmount, com.tools20022.repository.entity.AutomaticVariation.mmTrigger);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AutomaticVariation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Undertaking getUndertaking() {
+		return undertaking;
+	}
+
+	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = undertaking;
+	}
+
+	public VariationTypeCode getType() {
+		return type;
+	}
+
+	public void setType(VariationTypeCode type) {
+		this.type = type;
+	}
+
+	public CurrencyAndAmount getVariationAmount() {
+		return variationAmount;
+	}
+
+	public void setVariationAmount(CurrencyAndAmount variationAmount) {
+		this.variationAmount = variationAmount;
+	}
+
+	public Trigger getTrigger() {
+		return trigger;
+	}
+
+	public void setTrigger(com.tools20022.repository.entity.Trigger trigger) {
+		this.trigger = trigger;
 	}
 }

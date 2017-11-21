@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.StandardMetamodel2013;
@@ -33,6 +35,27 @@ import java.util.Optional;
  */
 public class MMMessageDefinitionIdentifier implements MMModelEntity {
 
+	/**
+	 * part of a MessageDefinitionIdentifier describing the BusinessArea to
+	 * which the MessageDefinition using this MessageDefinitionIdentifier
+	 * belongs
+	 */
+	public final static MetamodelAttribute<MMMessageDefinitionIdentifier, String> businessAreaAttribute = newAttribute();
+	/**
+	 * function and purpose for which a MessageInstance described by a
+	 * MessageDefinition can be used
+	 */
+	public final static MetamodelAttribute<MMMessageDefinitionIdentifier, String> messageFunctionalityAttribute = newAttribute();
+	/**
+	 * a variation of a messageFunctionality, whereby MessageDefinitions that
+	 * are based on this MessageDefinition are compliant to the
+	 * MessageDefinition from which this MessageDefinition is derived.
+	 */
+	public final static MetamodelAttribute<MMMessageDefinitionIdentifier, String> flavourAttribute = newAttribute();
+	/**
+	 * identifies the version of the MessageDefinition
+	 */
+	public final static MetamodelAttribute<MMMessageDefinitionIdentifier, String> versionAttribute = newAttribute();
 	protected MMMessageDefinition container;
 	protected String businessArea;
 	protected String messageFunctionality;

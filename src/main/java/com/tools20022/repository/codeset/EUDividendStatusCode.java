@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,21 +33,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#DividendInScope
- * EUDividendStatusCode.DividendInScope}</li>
+ * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#mmDividendInScope
+ * EUDividendStatusCode.mmDividendInScope}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#DividendOutScope
- * EUDividendStatusCode.DividendOutScope}</li>
+ * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#mmDividendOutScope
+ * EUDividendStatusCode.mmDividendOutScope}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#DividendUnknown
- * EUDividendStatusCode.DividendUnknown}</li>
+ * {@linkplain com.tools20022.repository.codeset.EUDividendStatusCode#mmDividendUnknown
+ * EUDividendStatusCode.mmDividendUnknown}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +90,9 @@ public class EUDividendStatusCode {
 	 * definition} = "Dividend is in the scope of the directive."</li>
 	 * </ul>
 	 */
-	public static final MMCode DividendInScope = new MMCode() {
+	public static final MMCode mmDividendInScope = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendInScope";
 			definition = "Dividend is in the scope of the directive.";
 			owner_lazy = () -> EUDividendStatusCode.mmObject();
@@ -118,9 +120,9 @@ public class EUDividendStatusCode {
 	 * definition} = "Dividend is out of the scope of the directive."</li>
 	 * </ul>
 	 */
-	public static final MMCode DividendOutScope = new MMCode() {
+	public static final MMCode mmDividendOutScope = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendOutScope";
 			definition = "Dividend is out of the scope of the directive.";
 			owner_lazy = () -> EUDividendStatusCode.mmObject();
@@ -150,9 +152,9 @@ public class EUDividendStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode DividendUnknown = new MMCode() {
+	public static final MMCode mmDividendUnknown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DividendUnknown";
 			definition = "Unknown whether the dividend is in or out of the scope of the directive.";
 			owner_lazy = () -> EUDividendStatusCode.mmObject();
@@ -163,13 +165,12 @@ public class EUDividendStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DIVI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EUDividendStatusCode";
 				definition = "Specifies whether the dividend is in the scope of the European directive on taxation of savings income in the form of interest payments.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EUDividendStatusCode.DividendInScope, com.tools20022.repository.codeset.EUDividendStatusCode.DividendOutScope,
-						com.tools20022.repository.codeset.EUDividendStatusCode.DividendUnknown);
+				code_lazy = () -> Arrays.asList(EUDividendStatusCode.mmDividendInScope, EUDividendStatusCode.mmDividendOutScope, EUDividendStatusCode.mmDividendUnknown);
 			}
 		});
 		return mmObject_lazy.get();

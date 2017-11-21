@@ -20,10 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.RegisteredContract;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the details on the regulatory notification.
@@ -35,17 +43,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#TransactionNotificationIdentification
- * RegulatoryReportingNotification1.TransactionNotificationIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmTransactionNotificationIdentification
+ * RegulatoryReportingNotification1.mmTransactionNotificationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#AccountOwner
- * RegulatoryReportingNotification1.AccountOwner}</li>
+ * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmAccountOwner
+ * RegulatoryReportingNotification1.mmAccountOwner}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#AccountServicer
- * RegulatoryReportingNotification1.AccountServicer}</li>
+ * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmAccountServicer
+ * RegulatoryReportingNotification1.mmAccountServicer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#TransactionCertificate
- * RegulatoryReportingNotification1.TransactionCertificate}</li>
+ * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmTransactionCertificate
+ * RegulatoryReportingNotification1.mmTransactionCertificate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -56,15 +64,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01#TransactionNotification
- * PaymentRegulatoryInformationNotificationV01.TransactionNotification}</li>
+ * {@linkplain com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01#mmTransactionNotification
+ * PaymentRegulatoryInformationNotificationV01.mmTransactionNotification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,9 +83,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides the details on the regulatory notification."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RegulatoryReportingNotification1", propOrder = {"transactionNotificationIdentification", "accountOwner", "accountServicer", "transactionCertificate"})
 public class RegulatoryReportingNotification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text transactionNotificationIdentification;
 	/**
 	 * Unique and unambiguous identification of the transaction notification.
 	 * <p>
@@ -90,8 +101,8 @@ public class RegulatoryReportingNotification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
-	 * RegisteredContract.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+	 * RegisteredContract.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -111,20 +122,21 @@ public class RegulatoryReportingNotification1 {
 	 * "Unique and unambiguous identification of the transaction notification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TransactionNotificationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTransactionNotificationIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Identification;
 			isDerived = false;
 			xmlTag = "TxNtfctnId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionNotificationIdentification";
 			definition = "Unique and unambiguous identification of the transaction notification.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected PartyIdentification77 accountOwner;
 	/**
 	 * Party that legally owns the cash account.
 	 * <p>
@@ -136,8 +148,8 @@ public class RegulatoryReportingNotification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#ReportingParty
-	 * RegisteredContract.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmReportingParty
+	 * RegisteredContract.mmReportingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -156,21 +168,22 @@ public class RegulatoryReportingNotification1 {
 	 * definition} = "Party that legally owns the cash account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd AccountOwner = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAccountOwner = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmReportingParty;
 			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.ReportingParty;
 			isDerived = false;
 			xmlTag = "AcctOwnr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountOwner";
 			definition = "Party that legally owns the cash account.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification77.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
 		}
 	};
+	protected BranchAndFinancialInstitutionIdentification5 accountServicer;
 	/**
 	 * Party that manages the account on behalf of the account owner, that is
 	 * manages the registration and booking of entries on the account,
@@ -186,8 +199,8 @@ public class RegulatoryReportingNotification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#RegistrationAgent
-	 * RegisteredContract.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmRegistrationAgent
+	 * RegisteredContract.mmRegistrationAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -208,21 +221,22 @@ public class RegulatoryReportingNotification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd AccountServicer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAccountServicer = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.RegistrationAgent;
 			isDerived = false;
 			xmlTag = "AcctSvcr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountServicer";
 			definition = "Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.TransactionCertificate1> transactionCertificate;
 	/**
 	 * Certificate against which all currency control transactions are
 	 * registered.
@@ -236,8 +250,8 @@ public class RegulatoryReportingNotification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Certificate
-	 * RegisteredContract.Certificate}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmCertificate
+	 * RegisteredContract.mmCertificate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -258,34 +272,70 @@ public class RegulatoryReportingNotification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd TransactionCertificate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTransactionCertificate = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmCertificate;
 			componentContext_lazy = () -> RegulatoryReportingNotification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Certificate;
 			isDerived = false;
 			xmlTag = "TxCert";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionCertificate";
 			definition = "Certificate against which all currency control transactions are registered.";
 			minOccurs = 1;
-			type_lazy = () -> TransactionCertificate1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TransactionCertificate1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegulatoryReportingNotification1.TransactionNotificationIdentification, com.tools20022.repository.msg.RegulatoryReportingNotification1.AccountOwner,
-						com.tools20022.repository.msg.RegulatoryReportingNotification1.AccountServicer, com.tools20022.repository.msg.RegulatoryReportingNotification1.TransactionCertificate);
+				messageElement_lazy = () -> Arrays.asList(RegulatoryReportingNotification1.mmTransactionNotificationIdentification, RegulatoryReportingNotification1.mmAccountOwner, RegulatoryReportingNotification1.mmAccountServicer,
+						RegulatoryReportingNotification1.mmTransactionCertificate);
+				messageBuildingBlock_lazy = () -> Arrays.asList(PaymentRegulatoryInformationNotificationV01.mmTransactionNotification);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01.TransactionNotification);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReportingNotification1";
 				definition = "Provides the details on the regulatory notification.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "TxNtfctnId", required = true)
+	public Max35Text getTransactionNotificationIdentification() {
+		return transactionNotificationIdentification;
+	}
+
+	public void setTransactionNotificationIdentification(Max35Text transactionNotificationIdentification) {
+		this.transactionNotificationIdentification = transactionNotificationIdentification;
+	}
+
+	@XmlElement(name = "AcctOwnr", required = true)
+	public PartyIdentification77 getAccountOwner() {
+		return accountOwner;
+	}
+
+	public void setAccountOwner(com.tools20022.repository.msg.PartyIdentification77 accountOwner) {
+		this.accountOwner = accountOwner;
+	}
+
+	@XmlElement(name = "AcctSvcr", required = true)
+	public BranchAndFinancialInstitutionIdentification5 getAccountServicer() {
+		return accountServicer;
+	}
+
+	public void setAccountServicer(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 accountServicer) {
+		this.accountServicer = accountServicer;
+	}
+
+	@XmlElement(name = "TxCert", required = true)
+	public List<TransactionCertificate1> getTransactionCertificate() {
+		return transactionCertificate;
+	}
+
+	public void setTransactionCertificate(List<com.tools20022.repository.msg.TransactionCertificate1> transactionCertificate) {
+		this.transactionCertificate = transactionCertificate;
 	}
 }

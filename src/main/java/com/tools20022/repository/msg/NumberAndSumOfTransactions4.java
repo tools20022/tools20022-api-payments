@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max15NumericText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements providing the total sum of entries.
@@ -34,21 +40,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.NumberAndSumOfTransactions4#NumberOfEntries
- * NumberAndSumOfTransactions4.NumberOfEntries}</li>
+ * {@linkplain com.tools20022.repository.msg.NumberAndSumOfTransactions4#mmNumberOfEntries
+ * NumberAndSumOfTransactions4.mmNumberOfEntries}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.NumberAndSumOfTransactions4#Sum
- * NumberAndSumOfTransactions4.Sum}</li>
+ * {@linkplain com.tools20022.repository.msg.NumberAndSumOfTransactions4#mmSum
+ * NumberAndSumOfTransactions4.mmSum}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.NumberAndSumOfTransactions4#TotalNetEntry
- * NumberAndSumOfTransactions4.TotalNetEntry}</li>
+ * {@linkplain com.tools20022.repository.msg.NumberAndSumOfTransactions4#mmTotalNetEntry
+ * NumberAndSumOfTransactions4.mmTotalNetEntry}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Set of elements providing the total sum of entries."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "NumberAndSumOfTransactions4", propOrder = {"numberOfEntries", "sum", "totalNetEntry"})
 public class NumberAndSumOfTransactions4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max15NumericText numberOfEntries;
 	/**
 	 * Number of individual entries included in the report.
 	 * <p>
@@ -90,19 +99,20 @@ public class NumberAndSumOfTransactions4 {
 	 * definition} = "Number of individual entries included in the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute NumberOfEntries = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumberOfEntries = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> NumberAndSumOfTransactions4.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfNtries";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfEntries";
 			definition = "Number of individual entries included in the report.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 	};
+	protected DecimalNumber sum;
 	/**
 	 * Total of all individual entries included in the report.
 	 * <p>
@@ -131,19 +141,20 @@ public class NumberAndSumOfTransactions4 {
 	 * definition} = "Total of all individual entries included in the report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Sum = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSum = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> NumberAndSumOfTransactions4.mmObject();
 			isDerived = false;
 			xmlTag = "Sum";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Sum";
 			definition = "Total of all individual entries included in the report.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	protected AmountAndDirection35 totalNetEntry;
 	/**
 	 * Resulting debit or credit amount of the netted amounts for all debit and
 	 * credit entries.
@@ -175,31 +186,57 @@ public class NumberAndSumOfTransactions4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalNetEntry = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalNetEntry = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> NumberAndSumOfTransactions4.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNetNtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalNetEntry";
 			definition = "Resulting debit or credit amount of the netted amounts for all debit and credit entries.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			complexType_lazy = () -> AmountAndDirection35.mmObject();
+			minOccurs = 0;
+			complexType_lazy = () -> com.tools20022.repository.msg.AmountAndDirection35.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NumberAndSumOfTransactions4.NumberOfEntries, com.tools20022.repository.msg.NumberAndSumOfTransactions4.Sum,
-						com.tools20022.repository.msg.NumberAndSumOfTransactions4.TotalNetEntry);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(NumberAndSumOfTransactions4.mmNumberOfEntries, NumberAndSumOfTransactions4.mmSum, NumberAndSumOfTransactions4.mmTotalNetEntry);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NumberAndSumOfTransactions4";
 				definition = "Set of elements providing the total sum of entries.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "NbOfNtries")
+	public Max15NumericText getNumberOfEntries() {
+		return numberOfEntries;
+	}
+
+	public void setNumberOfEntries(Max15NumericText numberOfEntries) {
+		this.numberOfEntries = numberOfEntries;
+	}
+
+	@XmlElement(name = "Sum")
+	public DecimalNumber getSum() {
+		return sum;
+	}
+
+	public void setSum(DecimalNumber sum) {
+		this.sum = sum;
+	}
+
+	@XmlElement(name = "TtlNetNtry")
+	public AmountAndDirection35 getTotalNetEntry() {
+		return totalNetEntry;
+	}
+
+	public void setTotalNetEntry(com.tools20022.repository.msg.AmountAndDirection35 totalNetEntry) {
+		this.totalNetEntry = totalNetEntry;
 	}
 }

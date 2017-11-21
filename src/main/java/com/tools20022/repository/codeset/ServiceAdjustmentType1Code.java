@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceAdjustmentType1Code#Compensable
- * ServiceAdjustmentType1Code.Compensable}</li>
+ * {@linkplain com.tools20022.repository.codeset.ServiceAdjustmentType1Code#mmCompensable
+ * ServiceAdjustmentType1Code.mmCompensable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceAdjustmentType1Code#NonCompensable
- * ServiceAdjustmentType1Code.NonCompensable}</li>
+ * {@linkplain com.tools20022.repository.codeset.ServiceAdjustmentType1Code#mmNonCompensable
+ * ServiceAdjustmentType1Code.mmNonCompensable}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -77,9 +79,9 @@ public class ServiceAdjustmentType1Code {
 	 * name} = "Compensable"</li>
 	 * </ul>
 	 */
-	public static final MMCode Compensable = new MMCode() {
+	public static final MMCode mmCompensable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Compensable";
 			owner_lazy = () -> ServiceAdjustmentType1Code.mmObject();
 		}
@@ -100,9 +102,9 @@ public class ServiceAdjustmentType1Code {
 	 * name} = "NonCompensable"</li>
 	 * </ul>
 	 */
-	public static final MMCode NonCompensable = new MMCode() {
+	public static final MMCode mmNonCompensable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonCompensable";
 			owner_lazy = () -> ServiceAdjustmentType1Code.mmObject();
 		}
@@ -111,12 +113,12 @@ public class ServiceAdjustmentType1Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("COMP");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceAdjustmentType1Code";
 				definition = "Defines the type of allowed service adjustment.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ServiceAdjustmentType1Code.Compensable, com.tools20022.repository.codeset.ServiceAdjustmentType1Code.NonCompensable);
+				code_lazy = () -> Arrays.asList(ServiceAdjustmentType1Code.mmCompensable, ServiceAdjustmentType1Code.mmNonCompensable);
 			}
 		});
 		return mmObject_lazy.get();

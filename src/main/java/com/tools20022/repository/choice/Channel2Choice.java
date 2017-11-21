@@ -19,10 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CommunicationMethod3Code;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Presentation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies a channel type.
@@ -33,17 +40,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.Channel2Choice#Code
- * Channel2Choice.Code}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Channel2Choice#Proprietary
- * Channel2Choice.Proprietary}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Channel2Choice#mmCode
+ * Channel2Choice.mmCode}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Channel2Choice#mmProprietary
+ * Channel2Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -54,9 +62,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a channel type."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Channel2Choice", propOrder = {"code", "proprietary"})
 public class Channel2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected CommunicationMethod3Code code;
 	/**
 	 * Specifies a channel by means of a code.
 	 * <p>
@@ -70,8 +81,8 @@ public class Channel2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Presentation#CommunicationMethod
-	 * Presentation.CommunicationMethod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Presentation#mmCommunicationMethod
+	 * Presentation.mmCommunicationMethod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -90,20 +101,21 @@ public class Channel2Choice {
 	 * definition} = "Specifies a channel by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
 			componentContext_lazy = () -> Channel2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Presentation.CommunicationMethod;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Specifies a channel by means of a code.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethod3Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Specifies a channel by means of a text.
 	 * <p>
@@ -116,8 +128,8 @@ public class Channel2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Presentation#CommunicationMethod
-	 * Presentation.CommunicationMethod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Presentation#mmCommunicationMethod
+	 * Presentation.mmCommunicationMethod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -136,17 +148,17 @@ public class Channel2Choice {
 	 * definition} = "Specifies a channel by means of a text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
 			componentContext_lazy = () -> Channel2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Presentation.CommunicationMethod;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Specifies a channel by means of a text.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -154,13 +166,31 @@ public class Channel2Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Channel2Choice.Code, com.tools20022.repository.choice.Channel2Choice.Proprietary);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(Channel2Choice.mmCode, Channel2Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Channel2Choice";
 				definition = "Specifies a channel type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public CommunicationMethod3Code getCode() {
+		return code;
+	}
+
+	public void setCode(CommunicationMethod3Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

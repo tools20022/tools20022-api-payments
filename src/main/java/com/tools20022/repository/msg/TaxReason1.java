@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.datatype.Max10Text;
 import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Reason why the service is taxed.
@@ -34,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxReason1#Code
- * TaxReason1.Code}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxReason1#Explanation
- * TaxReason1.Explanation}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxReason1#mmCode
+ * TaxReason1.mmCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxReason1#mmExplanation
+ * TaxReason1.mmExplanation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -45,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -57,9 +63,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Reason why the service is taxed."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TaxReason1", propOrder = {"code", "explanation"})
 public class TaxReason1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max10Text code;
 	/**
 	 * Reason why the service is taxed, in a coded form.
 	 * <p>
@@ -86,19 +95,20 @@ public class TaxReason1 {
 	 * definition} = "Reason why the service is taxed, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> TaxReason1.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Reason why the service is taxed, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max10Text.mmObject();
 		}
 	};
+	protected Max105Text explanation;
 	/**
 	 * Reason why the service is taxed, in a free-text form.
 	 * <p>
@@ -125,16 +135,16 @@ public class TaxReason1 {
 	 * definition} = "Reason why the service is taxed, in a free-text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Explanation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmExplanation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> TaxReason1.mmObject();
 			isDerived = false;
 			xmlTag = "Expltn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Explanation";
 			definition = "Reason why the service is taxed, in a free-text form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
 	};
@@ -142,14 +152,32 @@ public class TaxReason1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxReason1.Code, com.tools20022.repository.msg.TaxReason1.Explanation);
+				messageElement_lazy = () -> Arrays.asList(TaxReason1.mmCode, TaxReason1.mmExplanation);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxReason1";
 				definition = "Reason why the service is taxed.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public Max10Text getCode() {
+		return code;
+	}
+
+	public void setCode(Max10Text code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Expltn", required = true)
+	public Max105Text getExplanation() {
+		return explanation;
+	}
+
+	public void setExplanation(Max105Text explanation) {
+		this.explanation = explanation;
 	}
 }

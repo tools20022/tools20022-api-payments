@@ -20,9 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.pain.MandateCancellationRequestV05;
 import com.tools20022.repository.choice.OriginalMandate4Choice;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Identifies the mandate to be cancelled.
@@ -34,17 +42,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateCancellation5#OriginalMessageInformation
- * MandateCancellation5.OriginalMessageInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateCancellation5#mmOriginalMessageInformation
+ * MandateCancellation5.mmOriginalMessageInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateCancellation5#CancellationReason
- * MandateCancellation5.CancellationReason}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateCancellation5#mmCancellationReason
+ * MandateCancellation5.mmCancellationReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateCancellation5#OriginalMandate
- * MandateCancellation5.OriginalMandate}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateCancellation5#mmOriginalMandate
+ * MandateCancellation5.mmOriginalMandate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateCancellation5#SupplementaryData
- * MandateCancellation5.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateCancellation5#mmSupplementaryData
+ * MandateCancellation5.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
@@ -52,15 +60,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateCancellationRequestV05#UnderlyingCancellationDetails
- * MandateCancellationRequestV05.UnderlyingCancellationDetails}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateCancellationRequestV05#mmUnderlyingCancellationDetails
+ * MandateCancellationRequestV05.mmUnderlyingCancellationDetails}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,9 +79,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifies the mandate to be cancelled."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "MandateCancellation5", propOrder = {"originalMessageInformation", "cancellationReason", "originalMandate", "supplementaryData"})
 public class MandateCancellation5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected OriginalMessageInformation1 originalMessageInformation;
 	/**
 	 * Provides information on the original message.
 	 * <p>
@@ -101,20 +112,21 @@ public class MandateCancellation5 {
 	 * definition} = "Provides information on the original message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalMessageInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalMessageInformation = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> MandateCancellation5.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMessageInformation";
 			definition = "Provides information on the original message.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> OriginalMessageInformation1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 		}
 	};
+	protected PaymentCancellationReason1 cancellationReason;
 	/**
 	 * Provides detailed information on the cancellation reason.
 	 * <p>
@@ -143,20 +155,21 @@ public class MandateCancellation5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd CancellationReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCancellationReason = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> MandateCancellation5.mmObject();
 			isDerived = false;
 			xmlTag = "CxlRsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CancellationReason";
 			definition = "Provides detailed information on the cancellation reason.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PaymentCancellationReason1.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PaymentCancellationReason1.mmObject();
 		}
 	};
+	protected OriginalMandate4Choice originalMandate;
 	/**
 	 * Provides the original mandate data.
 	 * <p>
@@ -184,20 +197,21 @@ public class MandateCancellation5 {
 	 * definition} = "Provides the original mandate data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalMandate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> MandateCancellation5.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMndt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMandate";
 			definition = "Provides the original mandate data.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> OriginalMandate4Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> OriginalMandate4Choice.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -229,31 +243,66 @@ public class MandateCancellation5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute SupplementaryData = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSupplementaryData = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> MandateCancellation5.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
-			complexType_lazy = () -> SupplementaryData1.mmObject();
+			complexType_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateCancellation5.OriginalMessageInformation, com.tools20022.repository.msg.MandateCancellation5.CancellationReason,
-						com.tools20022.repository.msg.MandateCancellation5.OriginalMandate, com.tools20022.repository.msg.MandateCancellation5.SupplementaryData);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.pain.MandateCancellationRequestV05.UnderlyingCancellationDetails);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(MandateCancellation5.mmOriginalMessageInformation, MandateCancellation5.mmCancellationReason, MandateCancellation5.mmOriginalMandate, MandateCancellation5.mmSupplementaryData);
+				messageBuildingBlock_lazy = () -> Arrays.asList(MandateCancellationRequestV05.mmUnderlyingCancellationDetails);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateCancellation5";
 				definition = "Identifies the mandate to be cancelled.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlMsgInf")
+	public OriginalMessageInformation1 getOriginalMessageInformation() {
+		return originalMessageInformation;
+	}
+
+	public void setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
+		this.originalMessageInformation = originalMessageInformation;
+	}
+
+	@XmlElement(name = "CxlRsn", required = true)
+	public PaymentCancellationReason1 getCancellationReason() {
+		return cancellationReason;
+	}
+
+	public void setCancellationReason(com.tools20022.repository.msg.PaymentCancellationReason1 cancellationReason) {
+		this.cancellationReason = cancellationReason;
+	}
+
+	@XmlElement(name = "OrgnlMndt", required = true)
+	public OriginalMandate4Choice getOriginalMandate() {
+		return originalMandate;
+	}
+
+	public void setOriginalMandate(OriginalMandate4Choice originalMandate) {
+		this.originalMandate = originalMandate;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
 	}
 }

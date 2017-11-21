@@ -17,11 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CardPaymentPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PaymentContext3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Party entitled by a card issuer to use a card.
@@ -36,16 +41,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardholderRole#Authentication
- * CardholderRole.Authentication}</li>
+ * {@linkplain com.tools20022.repository.entity.CardholderRole#mmAuthentication
+ * CardholderRole.mmAuthentication}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Authentication#Cardholder
- * Authentication.Cardholder}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Authentication#mmCardholder
+ * Authentication.mmCardholder}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -55,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,6 +75,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CardholderRole extends CardPaymentPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Authentication> authentication;
 	/**
 	 * Data related to the authentication of the cardholder.
 	 * <p>
@@ -78,8 +84,8 @@ public class CardholderRole extends CardPaymentPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Authentication#Cardholder
-	 * Authentication.Cardholder}</li>
+	 * {@linkplain com.tools20022.repository.entity.Authentication#mmCardholder
+	 * Authentication.mmCardholder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -91,8 +97,8 @@ public class CardholderRole extends CardPaymentPartyRole {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentContext3#AuthenticationMethod
-	 * PaymentContext3.AuthenticationMethod}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentContext3#mmAuthenticationMethod
+	 * PaymentContext3.mmAuthenticationMethod}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -111,33 +117,46 @@ public class CardholderRole extends CardPaymentPartyRole {
 	 * definition} = "Data related to the authentication of the cardholder."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Authentication = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAuthentication = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentContext3.AuthenticationMethod);
-			elementContext_lazy = () -> CardholderRole.mmObject();
+			derivation_lazy = () -> Arrays.asList(PaymentContext3.mmAuthenticationMethod);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardholderRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Authentication";
 			definition = "Data related to the authentication of the cardholder.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Authentication.mmCardholder;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Authentication.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Authentication.Cardholder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderRole";
 				definition = "Party entitled by a card issuer to use a card.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Authentication.Cardholder);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Authentication.mmCardholder);
 				superType_lazy = () -> CardPaymentPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardholderRole.Authentication);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardholderRole.mmAuthentication);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CardholderRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Authentication> getAuthentication() {
+		return authentication;
+	}
+
+	public void setAuthentication(List<com.tools20022.repository.entity.Authentication> authentication) {
+		this.authentication = authentication;
 	}
 }

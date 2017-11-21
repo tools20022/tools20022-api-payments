@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,39 +34,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#WithholdTax
- * TaxWithholdingMethodCode.WithholdTax}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmWithholdTax
+ * TaxWithholdingMethodCode.mmWithholdTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#ReportTax
- * TaxWithholdingMethodCode.ReportTax}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmReportTax
+ * TaxWithholdingMethodCode.mmReportTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#TaxCertificate
- * TaxWithholdingMethodCode.TaxCertificate}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmTaxCertificate
+ * TaxWithholdingMethodCode.mmTaxCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#WithholdTaxAndReport
- * TaxWithholdingMethodCode.WithholdTaxAndReport}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmWithholdTaxAndReport
+ * TaxWithholdingMethodCode.mmWithholdTaxAndReport}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#WithholdingCorporateTax
- * TaxWithholdingMethodCode.WithholdingCorporateTax}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmWithholdingCorporateTax
+ * TaxWithholdingMethodCode.mmWithholdingCorporateTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#Exempt
- * TaxWithholdingMethodCode.Exempt}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmExempt
+ * TaxWithholdingMethodCode.mmExempt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#Accountant
- * TaxWithholdingMethodCode.Accountant}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmAccountant
+ * TaxWithholdingMethodCode.mmAccountant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#InvestmentCompany
- * TaxWithholdingMethodCode.InvestmentCompany}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmInvestmentCompany
+ * TaxWithholdingMethodCode.mmInvestmentCompany}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#MinorityInterestTax
- * TaxWithholdingMethodCode.MinorityInterestTax}</li>
+ * {@linkplain com.tools20022.repository.codeset.TaxWithholdingMethodCode#mmMinorityInterestTax
+ * TaxWithholdingMethodCode.mmMinorityInterestTax}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -107,9 +109,9 @@ public class TaxWithholdingMethodCode {
 	 * definition} = "Tax is withheld at source."</li>
 	 * </ul>
 	 */
-	public static final MMCode WithholdTax = new MMCode() {
+	public static final MMCode mmWithholdTax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithholdTax";
 			definition = "Tax is withheld at source.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -140,9 +142,9 @@ public class TaxWithholdingMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ReportTax = new MMCode() {
+	public static final MMCode mmReportTax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportTax";
 			definition = "Tax information is reported to the tax authorities and therefore not withheld at source.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -174,9 +176,9 @@ public class TaxWithholdingMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TaxCertificate = new MMCode() {
+	public static final MMCode mmTaxCertificate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxCertificate";
 			definition = "Tax certificate is provided by the beneficiary from its tax authority in its country of residence. Therefore, the obligation of withholding tax is waived and tax information will be reported to the tax authorities.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -207,9 +209,9 @@ public class TaxWithholdingMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode WithholdTaxAndReport = new MMCode() {
+	public static final MMCode mmWithholdTaxAndReport = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithholdTaxAndReport";
 			definition = "Tax is withheld at source and the tax information is also reported to the tax authorities.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -237,9 +239,9 @@ public class TaxWithholdingMethodCode {
 	 * definition} = "Withholding tax is applied to a corporate."</li>
 	 * </ul>
 	 */
-	public static final MMCode WithholdingCorporateTax = new MMCode() {
+	public static final MMCode mmWithholdingCorporateTax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WithholdingCorporateTax";
 			definition = "Withholding tax is applied to a corporate.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -267,9 +269,9 @@ public class TaxWithholdingMethodCode {
 	 * definition} = "Dividend tax is exempt."</li>
 	 * </ul>
 	 */
-	public static final MMCode Exempt = new MMCode() {
+	public static final MMCode mmExempt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Exempt";
 			definition = "Dividend tax is exempt.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -297,9 +299,9 @@ public class TaxWithholdingMethodCode {
 	 * definition} = "Dividend tax is exempt according to the accountant."</li>
 	 * </ul>
 	 */
-	public static final MMCode Accountant = new MMCode() {
+	public static final MMCode mmAccountant = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Accountant";
 			definition = "Dividend tax is exempt according to the accountant.";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -327,9 +329,9 @@ public class TaxWithholdingMethodCode {
 	 * definition} = "Withholding tax is applied to an investment company. "</li>
 	 * </ul>
 	 */
-	public static final MMCode InvestmentCompany = new MMCode() {
+	public static final MMCode mmInvestmentCompany = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentCompany";
 			definition = "Withholding tax is applied to an investment company. ";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -357,9 +359,9 @@ public class TaxWithholdingMethodCode {
 	 * definition} = "Minority interest tax is withheld. "</li>
 	 * </ul>
 	 */
-	public static final MMCode MinorityInterestTax = new MMCode() {
+	public static final MMCode mmMinorityInterestTax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinorityInterestTax";
 			definition = "Minority interest tax is withheld. ";
 			owner_lazy = () -> TaxWithholdingMethodCode.mmObject();
@@ -370,16 +372,14 @@ public class TaxWithholdingMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("WTHD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxWithholdingMethodCode";
 				definition = "Specified the method by which the tax on the interests is to be processed i.e. either withheld at source or reported to tax authorities or a tax certificate has been provided by the beneficiary.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TaxWithholdingMethodCode.WithholdTax, com.tools20022.repository.codeset.TaxWithholdingMethodCode.ReportTax,
-						com.tools20022.repository.codeset.TaxWithholdingMethodCode.TaxCertificate, com.tools20022.repository.codeset.TaxWithholdingMethodCode.WithholdTaxAndReport,
-						com.tools20022.repository.codeset.TaxWithholdingMethodCode.WithholdingCorporateTax, com.tools20022.repository.codeset.TaxWithholdingMethodCode.Exempt,
-						com.tools20022.repository.codeset.TaxWithholdingMethodCode.Accountant, com.tools20022.repository.codeset.TaxWithholdingMethodCode.InvestmentCompany,
-						com.tools20022.repository.codeset.TaxWithholdingMethodCode.MinorityInterestTax);
+				code_lazy = () -> Arrays.asList(TaxWithholdingMethodCode.mmWithholdTax, TaxWithholdingMethodCode.mmReportTax, TaxWithholdingMethodCode.mmTaxCertificate, TaxWithholdingMethodCode.mmWithholdTaxAndReport,
+						TaxWithholdingMethodCode.mmWithholdingCorporateTax, TaxWithholdingMethodCode.mmExempt, TaxWithholdingMethodCode.mmAccountant, TaxWithholdingMethodCode.mmInvestmentCompany,
+						TaxWithholdingMethodCode.mmMinorityInterestTax);
 			}
 		});
 		return mmObject_lazy.get();

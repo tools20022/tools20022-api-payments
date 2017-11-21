@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,17 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ShareRankingCode#Dividend
- * ShareRankingCode.Dividend}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ShareRankingCode#PariPassu
- * ShareRankingCode.PariPassu}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ShareRankingCode#mmDividend
+ * ShareRankingCode.mmDividend}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ShareRankingCode#mmPariPassu
+ * ShareRankingCode.mmPariPassu}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -81,9 +85,9 @@ public class ShareRankingCode {
 	 * definition} = "Payable on the date specified."</li>
 	 * </ul>
 	 */
-	public static final MMCode Dividend = new MMCode() {
+	public static final MMCode mmDividend = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dividend";
 			definition = "Payable on the date specified.";
 			owner_lazy = () -> ShareRankingCode.mmObject();
@@ -112,9 +116,9 @@ public class ShareRankingCode {
 	 * "Pari Passu. With equal rights as other shares of the company."</li>
 	 * </ul>
 	 */
-	public static final MMCode PariPassu = new MMCode() {
+	public static final MMCode mmPariPassu = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PariPassu";
 			definition = "Pari Passu. With equal rights as other shares of the company.";
 			owner_lazy = () -> ShareRankingCode.mmObject();
@@ -125,12 +129,12 @@ public class ShareRankingCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DIVI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ShareRankingCode";
 				definition = "Specifies whether the shares are ranking for dividend or pari passu.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ShareRankingCode.Dividend, com.tools20022.repository.codeset.ShareRankingCode.PariPassu);
+				code_lazy = () -> Arrays.asList(ShareRankingCode.mmDividend, ShareRankingCode.mmPariPassu);
 			}
 		});
 		return mmObject_lazy.get();

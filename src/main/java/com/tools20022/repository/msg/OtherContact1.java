@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max128Text;
 import com.tools20022.repository.datatype.Max4Text;
 import com.tools20022.repository.entity.ContactPoint;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Communication device number or electronic address used for communication.
@@ -34,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.OtherContact1#ChannelType
- * OtherContact1.ChannelType}</li>
- * <li>{@linkplain com.tools20022.repository.msg.OtherContact1#Identification
- * OtherContact1.Identification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OtherContact1#mmChannelType
+ * OtherContact1.mmChannelType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OtherContact1#mmIdentification
+ * OtherContact1.mmIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Communication device number or electronic address used for communication."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "OtherContact1", propOrder = {"channelType", "identification"})
 public class OtherContact1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max4Text channelType;
 	/**
 	 * Method used to contact the financial institution’s contact for the
 	 * specific tax region.
@@ -91,19 +100,20 @@ public class OtherContact1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ChannelType = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmChannelType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> OtherContact1.mmObject();
 			isDerived = false;
 			xmlTag = "ChanlTp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChannelType";
 			definition = "Method used to contact the financial institution’s contact for the specific tax region.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max4Text.mmObject();
 		}
 	};
+	protected Max128Text identification;
 	/**
 	 * Communication value such as phone number or email address.
 	 * <p>
@@ -116,8 +126,8 @@ public class OtherContact1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPoint#Identification
-	 * ContactPoint.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPoint#mmIdentification
+	 * ContactPoint.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -136,17 +146,17 @@ public class OtherContact1 {
 	 * "Communication value such as phone number or email address."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> ContactPoint.mmIdentification;
 			componentContext_lazy = () -> OtherContact1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.ContactPoint.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Communication value such as phone number or email address.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max128Text.mmObject();
 		}
 	};
@@ -154,14 +164,32 @@ public class OtherContact1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OtherContact1.ChannelType, com.tools20022.repository.msg.OtherContact1.Identification);
+				messageElement_lazy = () -> Arrays.asList(OtherContact1.mmChannelType, OtherContact1.mmIdentification);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OtherContact1";
 				definition = "Communication device number or electronic address used for communication.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ChanlTp", required = true)
+	public Max4Text getChannelType() {
+		return channelType;
+	}
+
+	public void setChannelType(Max4Text channelType) {
+		this.channelType = channelType;
+	}
+
+	@XmlElement(name = "Id")
+	public Max128Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max128Text identification) {
+		this.identification = identification;
 	}
 }

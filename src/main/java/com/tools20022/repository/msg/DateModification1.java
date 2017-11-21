@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.ISODate;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of change to a date.
@@ -34,17 +40,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DateModification1#ModificationCode
- * DateModification1.ModificationCode}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DateModification1#Date
- * DateModification1.Date}</li>
+ * {@linkplain com.tools20022.repository.msg.DateModification1#mmModificationCode
+ * DateModification1.mmModificationCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DateModification1#mmDate
+ * DateModification1.mmDate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -55,9 +61,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of change to a date."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DateModification1", propOrder = {"modificationCode", "date"})
 public class DateModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Modification1Code modificationCode;
 	/**
 	 * Specifies the type of change.
 	 * <p>
@@ -86,19 +95,20 @@ public class DateModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DateModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationCode";
 			definition = "Specifies the type of change.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	protected ISODate date;
 	/**
 	 * Date.
 	 * <p>
@@ -126,16 +136,16 @@ public class DateModification1 {
 	 * definition} = "Date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Date = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DateModification1.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
@@ -143,13 +153,31 @@ public class DateModification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DateModification1.ModificationCode, com.tools20022.repository.msg.DateModification1.Date);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(DateModification1.mmModificationCode, DateModification1.mmDate);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DateModification1";
 				definition = "Specifies the type of change to a date.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ModCd")
+	public Modification1Code getModificationCode() {
+		return modificationCode;
+	}
+
+	public void setModificationCode(Modification1Code modificationCode) {
+		this.modificationCode = modificationCode;
+	}
+
+	@XmlElement(name = "Dt", required = true)
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
 	}
 }

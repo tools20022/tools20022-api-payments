@@ -19,10 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06;
+import com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max15NumericText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides details of the number of transactions and the control sum of the
@@ -35,10 +43,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ControlData1#NumberOfTransactions
- * ControlData1.NumberOfTransactions}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ControlData1#ControlSum
- * ControlData1.ControlSum}</li>
+ * {@linkplain com.tools20022.repository.msg.ControlData1#mmNumberOfTransactions
+ * ControlData1.mmNumberOfTransactions}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ControlData1#mmControlSum
+ * ControlData1.mmControlSum}</li>
  * </ul>
  * </li>
  * <li>
@@ -46,18 +54,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#ControlData
- * CustomerPaymentCancellationRequestV06.ControlData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#mmControlData
+ * CustomerPaymentCancellationRequestV06.mmControlData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#ControlData
- * FIToFIPaymentCancellationRequestV06.ControlData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#mmControlData
+ * FIToFIPaymentCancellationRequestV06.mmControlData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,9 +78,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ControlData1", propOrder = {"numberOfTransactions", "controlSum"})
 public class ControlData1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max15NumericText numberOfTransactions;
 	/**
 	 * Number of individual transactions contained in the message.
 	 * <p>
@@ -101,19 +112,20 @@ public class ControlData1 {
 	 * "Number of individual transactions contained in the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute NumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumberOfTransactions = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ControlData1.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfTxs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactions";
 			definition = "Number of individual transactions contained in the message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 	};
+	protected DecimalNumber controlSum;
 	/**
 	 * Total of all individual amounts included in the message, irrespective of
 	 * currencies.
@@ -144,16 +156,16 @@ public class ControlData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ControlSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmControlSum = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ControlData1.mmObject();
 			isDerived = false;
 			xmlTag = "CtrlSum";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ControlSum";
 			definition = "Total of all individual amounts included in the message, irrespective of currencies.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
@@ -161,14 +173,32 @@ public class ControlData1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ControlData1.NumberOfTransactions, com.tools20022.repository.msg.ControlData1.ControlSum);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06.ControlData, com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06.ControlData);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(ControlData1.mmNumberOfTransactions, ControlData1.mmControlSum);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CustomerPaymentCancellationRequestV06.mmControlData, FIToFIPaymentCancellationRequestV06.mmControlData);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ControlData1";
 				definition = "Provides details of the number of transactions and the control sum of the message.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "NbOfTxs", required = true)
+	public Max15NumericText getNumberOfTransactions() {
+		return numberOfTransactions;
+	}
+
+	public void setNumberOfTransactions(Max15NumericText numberOfTransactions) {
+		this.numberOfTransactions = numberOfTransactions;
+	}
+
+	@XmlElement(name = "CtrlSum")
+	public DecimalNumber getControlSum() {
+		return controlSum;
+	}
+
+	public void setControlSum(DecimalNumber controlSum) {
+		this.controlSum = controlSum;
 	}
 }

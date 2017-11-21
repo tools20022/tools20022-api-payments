@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DemandStatusCode;
 import com.tools20022.repository.codeset.ExternalUndertakingStatusCategoryCode;
 import com.tools20022.repository.codeset.UndertakingStatusCode;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,22 +40,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingStatus#Undertaking
- * UndertakingStatus.Undertaking}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingStatus#mmUndertaking
+ * UndertakingStatus.mmUndertaking}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingStatus#DemandStatus
- * UndertakingStatus.DemandStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UndertakingStatus#Status
- * UndertakingStatus.Status}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingStatus#mmDemandStatus
+ * UndertakingStatus.mmDemandStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.UndertakingStatus#mmStatus
+ * UndertakingStatus.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingStatus#UndertakingStatusReason
- * UndertakingStatus.UndertakingStatusReason}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingStatus#mmUndertakingStatusReason
+ * UndertakingStatus.mmUndertakingStatusReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingStatus#StatusCategory
- * UndertakingStatus.StatusCategory}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingStatus#mmStatusCategory
+ * UndertakingStatus.mmStatusCategory}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingStatus#PresentationStatus
- * UndertakingStatus.PresentationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingStatus#mmPresentationStatus
+ * UndertakingStatus.mmPresentationStatus}</li>
  * </ul>
  * </li>
  * <li>
@@ -63,11 +63,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Undertaking#UndertakingStatus
- * Undertaking.UndertakingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.Undertaking#mmUndertakingStatus
+ * Undertaking.mmUndertakingStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingStatusReason#UndertakingStatus
- * UndertakingStatusReason.UndertakingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingStatusReason#mmUndertakingStatus
+ * UndertakingStatusReason.mmUndertakingStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -75,8 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,6 +90,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class UndertakingStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Undertaking undertaking;
 	/**
 	 * Undertaking for which a status is specified.
 	 * <p>
@@ -98,8 +99,8 @@ public class UndertakingStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Undertaking#UndertakingStatus
-	 * Undertaking.UndertakingStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.Undertaking#mmUndertakingStatus
+	 * Undertaking.mmUndertakingStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -123,20 +124,21 @@ public class UndertakingStatus extends Status {
 	 * definition} = "Undertaking for which a status is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Undertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> UndertakingStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a status is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmUndertakingStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.UndertakingStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DemandStatusCode demandStatus;
 	/**
 	 * Processing status reported by the applicant.
 	 * <p>
@@ -163,18 +165,27 @@ public class UndertakingStatus extends Status {
 	 * definition} = "Processing status reported by the applicant."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DemandStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDemandStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DemandStatus";
 			definition = "Processing status reported by the applicant.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DemandStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingStatus.class.getMethod("getDemandStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected UndertakingStatusCode status;
 	/**
 	 * Status of the undertaking.
 	 * <p>
@@ -201,18 +212,27 @@ public class UndertakingStatus extends Status {
 	 * definition} = "Status of the undertaking."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Status = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of the undertaking.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> UndertakingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingStatus.class.getMethod("getStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected UndertakingStatusReason undertakingStatusReason;
 	/**
 	 * Specifies the reason for the status. it is derived from the association
 	 * between Status and StatusReason.
@@ -222,8 +242,8 @@ public class UndertakingStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.UndertakingStatusReason#UndertakingStatus
-	 * UndertakingStatusReason.UndertakingStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.UndertakingStatusReason#mmUndertakingStatus
+	 * UndertakingStatusReason.mmUndertakingStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -250,20 +270,21 @@ public class UndertakingStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd UndertakingStatusReason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUndertakingStatusReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> UndertakingStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UndertakingStatusReason";
 			definition = "Specifies the reason for the status. it is derived from the association between Status and StatusReason.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmUndertakingStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.UndertakingStatusReason.UndertakingStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ExternalUndertakingStatusCategoryCode statusCategory;
 	/**
 	 * Specifies the category of the status.
 	 * <p>
@@ -290,18 +311,27 @@ public class UndertakingStatus extends Status {
 	 * definition} = "Specifies the category of the status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StatusCategory = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStatusCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StatusCategory";
 			definition = "Specifies the category of the status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalUndertakingStatusCategoryCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingStatus.class.getMethod("getStatusCategory", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected UndertakingStatusCode presentationStatus;
 	/**
 	 * Status of the presentation.
 	 * <p>
@@ -328,32 +358,94 @@ public class UndertakingStatus extends Status {
 	 * definition} = "Status of the presentation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PresentationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPresentationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PresentationStatus";
 			definition = "Status of the presentation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> UndertakingStatusCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingStatus.class.getMethod("getPresentationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingStatus";
 				definition = "Status of the undertaking.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.UndertakingStatus, com.tools20022.repository.entity.UndertakingStatusReason.UndertakingStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmUndertakingStatus, com.tools20022.repository.entity.UndertakingStatusReason.mmUndertakingStatus);
 				superType_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UndertakingStatus.Undertaking, com.tools20022.repository.entity.UndertakingStatus.DemandStatus, com.tools20022.repository.entity.UndertakingStatus.Status,
-						com.tools20022.repository.entity.UndertakingStatus.UndertakingStatusReason, com.tools20022.repository.entity.UndertakingStatus.StatusCategory, com.tools20022.repository.entity.UndertakingStatus.PresentationStatus);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UndertakingStatus.mmUndertaking, com.tools20022.repository.entity.UndertakingStatus.mmDemandStatus,
+						com.tools20022.repository.entity.UndertakingStatus.mmStatus, com.tools20022.repository.entity.UndertakingStatus.mmUndertakingStatusReason, com.tools20022.repository.entity.UndertakingStatus.mmStatusCategory,
+						com.tools20022.repository.entity.UndertakingStatus.mmPresentationStatus);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return UndertakingStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Undertaking getUndertaking() {
+		return undertaking;
+	}
+
+	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = undertaking;
+	}
+
+	public DemandStatusCode getDemandStatus() {
+		return demandStatus;
+	}
+
+	public void setDemandStatus(DemandStatusCode demandStatus) {
+		this.demandStatus = demandStatus;
+	}
+
+	public UndertakingStatusCode getStatus() {
+		return status;
+	}
+
+	public void setStatus(UndertakingStatusCode status) {
+		this.status = status;
+	}
+
+	public UndertakingStatusReason getUndertakingStatusReason() {
+		return undertakingStatusReason;
+	}
+
+	public void setUndertakingStatusReason(com.tools20022.repository.entity.UndertakingStatusReason undertakingStatusReason) {
+		this.undertakingStatusReason = undertakingStatusReason;
+	}
+
+	public ExternalUndertakingStatusCategoryCode getStatusCategory() {
+		return statusCategory;
+	}
+
+	public void setStatusCategory(ExternalUndertakingStatusCategoryCode statusCategory) {
+		this.statusCategory = statusCategory;
+	}
+
+	public UndertakingStatusCode getPresentationStatus() {
+		return presentationStatus;
+	}
+
+	public void setPresentationStatus(UndertakingStatusCode presentationStatus) {
+		this.presentationStatus = presentationStatus;
 	}
 }

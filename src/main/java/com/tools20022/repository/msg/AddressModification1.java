@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.entity.PostalAddress;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of change to the address.
@@ -34,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AddressModification1#ModificationCode
- * AddressModification1.ModificationCode}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AddressModification1#Address
- * AddressModification1.Address}</li>
+ * {@linkplain com.tools20022.repository.msg.AddressModification1#mmModificationCode
+ * AddressModification1.mmModificationCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AddressModification1#mmAddress
+ * AddressModification1.mmAddress}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +64,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of change to the address."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AddressModification1", propOrder = {"modificationCode", "address"})
 public class AddressModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Modification1Code modificationCode;
 	/**
 	 * Specifies the type of change.
 	 * <p>
@@ -89,19 +98,20 @@ public class AddressModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AddressModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationCode";
 			definition = "Specifies the type of change.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	protected PostalAddress6 address;
 	/**
 	 * Postal address.
 	 * <p>
@@ -134,32 +144,50 @@ public class AddressModification1 {
 	 * definition} = "Postal address."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Address = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAddress = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AddressModification1.mmObject();
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
+			componentContext_lazy = () -> AddressModification1.mmObject();
 			isDerived = false;
 			xmlTag = "Adr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Address";
 			definition = "Postal address.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> PostalAddress6.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.PostalAddress6.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AddressModification1.ModificationCode, com.tools20022.repository.msg.AddressModification1.Address);
+				messageElement_lazy = () -> Arrays.asList(AddressModification1.mmModificationCode, AddressModification1.mmAddress);
 				trace_lazy = () -> PostalAddress.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AddressModification1";
 				definition = "Specifies the type of change to the address.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ModCd")
+	public Modification1Code getModificationCode() {
+		return modificationCode;
+	}
+
+	public void setModificationCode(Modification1Code modificationCode) {
+		this.modificationCode = modificationCode;
+	}
+
+	@XmlElement(name = "Adr", required = true)
+	public PostalAddress6 getAddress() {
+		return address;
+	}
+
+	public void setAddress(com.tools20022.repository.msg.PostalAddress6 address) {
+		this.address = address;
 	}
 }

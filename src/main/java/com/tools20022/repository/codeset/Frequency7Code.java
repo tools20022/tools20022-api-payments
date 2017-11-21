@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.FrequencyCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,32 +34,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.codeset.FrequencyCode FrequencyCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Annual
- * Frequency7Code.Annual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Daily
- * Frequency7Code.Daily}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Monthly
- * Frequency7Code.Monthly}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Quarterly
- * Frequency7Code.Quarterly}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#SemiAnnual
- * Frequency7Code.SemiAnnual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#TenDays
- * Frequency7Code.TenDays}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmAnnual
+ * Frequency7Code.mmAnnual}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmDaily
+ * Frequency7Code.mmDaily}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmMonthly
+ * Frequency7Code.mmMonthly}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmQuarterly
+ * Frequency7Code.mmQuarterly}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Frequency7Code#TriggeredByMovement
- * Frequency7Code.TriggeredByMovement}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#Weekly
- * Frequency7Code.Weekly}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#IntraDay
- * Frequency7Code.IntraDay}</li>
+ * {@linkplain com.tools20022.repository.codeset.Frequency7Code#mmSemiAnnual
+ * Frequency7Code.mmSemiAnnual}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmTenDays
+ * Frequency7Code.mmTenDays}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.Frequency7Code#mmTriggeredByMovement
+ * Frequency7Code.mmTriggeredByMovement}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmWeekly
+ * Frequency7Code.mmWeekly}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency7Code#mmIntraDay
+ * Frequency7Code.mmIntraDay}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -93,9 +96,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "Annual"</li>
 	 * </ul>
 	 */
-	public static final MMCode Annual = new MMCode() {
+	public static final MMCode mmAnnual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Annual";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -116,9 +119,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "Daily"</li>
 	 * </ul>
 	 */
-	public static final MMCode Daily = new MMCode() {
+	public static final MMCode mmDaily = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Daily";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -139,9 +142,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "Monthly"</li>
 	 * </ul>
 	 */
-	public static final MMCode Monthly = new MMCode() {
+	public static final MMCode mmMonthly = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Monthly";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -162,9 +165,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "Quarterly"</li>
 	 * </ul>
 	 */
-	public static final MMCode Quarterly = new MMCode() {
+	public static final MMCode mmQuarterly = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Quarterly";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -185,9 +188,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "SemiAnnual"</li>
 	 * </ul>
 	 */
-	public static final MMCode SemiAnnual = new MMCode() {
+	public static final MMCode mmSemiAnnual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiAnnual";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -208,9 +211,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "TenDays"</li>
 	 * </ul>
 	 */
-	public static final MMCode TenDays = new MMCode() {
+	public static final MMCode mmTenDays = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TenDays";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -231,9 +234,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "TriggeredByMovement"</li>
 	 * </ul>
 	 */
-	public static final MMCode TriggeredByMovement = new MMCode() {
+	public static final MMCode mmTriggeredByMovement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TriggeredByMovement";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -254,9 +257,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "Weekly"</li>
 	 * </ul>
 	 */
-	public static final MMCode Weekly = new MMCode() {
+	public static final MMCode mmWeekly = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Weekly";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -277,9 +280,9 @@ public class Frequency7Code extends FrequencyCode {
 	 * name} = "IntraDay"</li>
 	 * </ul>
 	 */
-	public static final MMCode IntraDay = new MMCode() {
+	public static final MMCode mmIntraDay = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntraDay";
 			owner_lazy = () -> Frequency7Code.mmObject();
 		}
@@ -288,14 +291,13 @@ public class Frequency7Code extends FrequencyCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("YEAR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency7Code";
 				definition = "Specifies the regularity of an event.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Frequency7Code.Annual, com.tools20022.repository.codeset.Frequency7Code.Daily, com.tools20022.repository.codeset.Frequency7Code.Monthly,
-						com.tools20022.repository.codeset.Frequency7Code.Quarterly, com.tools20022.repository.codeset.Frequency7Code.SemiAnnual, com.tools20022.repository.codeset.Frequency7Code.TenDays,
-						com.tools20022.repository.codeset.Frequency7Code.TriggeredByMovement, com.tools20022.repository.codeset.Frequency7Code.Weekly, com.tools20022.repository.codeset.Frequency7Code.IntraDay);
+				code_lazy = () -> Arrays.asList(Frequency7Code.mmAnnual, Frequency7Code.mmDaily, Frequency7Code.mmMonthly, Frequency7Code.mmQuarterly, Frequency7Code.mmSemiAnnual, Frequency7Code.mmTenDays,
+						Frequency7Code.mmTriggeredByMovement, Frequency7Code.mmWeekly, Frequency7Code.mmIntraDay);
 				trace_lazy = () -> FrequencyCode.mmObject();
 			}
 		});

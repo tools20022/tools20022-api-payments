@@ -19,9 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.AccountIdentification4Choice;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.Organisation;
+import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the details of the identification information.
@@ -33,14 +42,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#Party
- * IdentificationInformation2.Party}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#mmParty
+ * IdentificationInformation2.mmParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#Account
- * IdentificationInformation2.Account}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#mmAccount
+ * IdentificationInformation2.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#Agent
- * IdentificationInformation2.Agent}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#mmAgent
+ * IdentificationInformation2.mmAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides the details of the identification information."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "IdentificationInformation2", propOrder = {"party", "account", "agent"})
 public class IdentificationInformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PartyIdentification43 party;
 	/**
 	 * Account owner that owes an amount of money or to whom an amount of money
 	 * is due.
@@ -75,8 +87,8 @@ public class IdentificationInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -97,21 +109,22 @@ public class IdentificationInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Party = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> IdentificationInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "Pty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Party";
 			definition = "Account owner that owes an amount of money or to whom an amount of money is due.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected AccountIdentification4Choice account;
 	/**
 	 * Unambiguous identification of the account of a party.
 	 * <p>
@@ -124,8 +137,8 @@ public class IdentificationInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Account#Identification
-	 * Account.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmIdentification
+	 * Account.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -144,21 +157,22 @@ public class IdentificationInformation2 {
 	 * definition} = "Unambiguous identification of the account of a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Account = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAccount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Account.mmIdentification;
 			componentContext_lazy = () -> IdentificationInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Account.Identification;
 			isDerived = false;
 			xmlTag = "Acct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Unambiguous identification of the account of a party.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> AccountIdentification4Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
 	};
+	protected BranchAndFinancialInstitutionIdentification5 agent;
 	/**
 	 * Financial institution servicing an account for a party.
 	 * <p>
@@ -171,8 +185,8 @@ public class IdentificationInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#OrganisationIdentification
-	 * Organisation.OrganisationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmOrganisationIdentification
+	 * Organisation.mmOrganisationIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -191,34 +205,60 @@ public class IdentificationInformation2 {
 	 * definition} = "Financial institution servicing an account for a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Agent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
 			componentContext_lazy = () -> IdentificationInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Organisation.OrganisationIdentification;
 			isDerived = false;
 			xmlTag = "Agt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Agent";
 			definition = "Financial institution servicing an account for a party.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IdentificationInformation2.Party, com.tools20022.repository.msg.IdentificationInformation2.Account,
-						com.tools20022.repository.msg.IdentificationInformation2.Agent);
-				trace_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(IdentificationInformation2.mmParty, IdentificationInformation2.mmAccount, IdentificationInformation2.mmAgent);
+				trace_lazy = () -> Account.mmObject();
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationInformation2";
 				definition = "Provides the details of the identification information.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Pty")
+	public PartyIdentification43 getParty() {
+		return party;
+	}
+
+	public void setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+		this.party = party;
+	}
+
+	@XmlElement(name = "Acct")
+	public AccountIdentification4Choice getAccount() {
+		return account;
+	}
+
+	public void setAccount(AccountIdentification4Choice account) {
+		this.account = account;
+	}
+
+	@XmlElement(name = "Agt")
+	public BranchAndFinancialInstitutionIdentification5 getAgent() {
+		return agent;
+	}
+
+	public void setAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 agent) {
+		this.agent = agent;
 	}
 }

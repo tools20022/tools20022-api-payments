@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.SecuritiesPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,10 +38,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegistrarRole#RegistrarAccount
- * RegistrarRole.RegistrarAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RegistrarRole#RegisterName
- * RegistrarRole.RegisterName}</li>
+ * {@linkplain com.tools20022.repository.entity.RegistrarRole#mmRegistrarAccount
+ * RegistrarRole.mmRegistrarAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegistrarRole#mmRegisterName
+ * RegistrarRole.mmRegisterName}</li>
  * </ul>
  * </li>
  * <li>
@@ -49,8 +50,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#RelatedRegistrar
- * SecuritiesAccount.RelatedRegistrar}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmRelatedRegistrar
+ * SecuritiesAccount.mmRelatedRegistrar}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -60,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RegistrarRole extends SecuritiesPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesAccount registrarAccount;
 	/**
 	 * Account at the registrar where financial instruments are registered.
 	 * <p>
@@ -84,8 +86,8 @@ public class RegistrarRole extends SecuritiesPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#RelatedRegistrar
-	 * SecuritiesAccount.RelatedRegistrar}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmRelatedRegistrar
+	 * SecuritiesAccount.mmRelatedRegistrar}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -110,20 +112,21 @@ public class RegistrarRole extends SecuritiesPartyRole {
 	 * "Account at the registrar where financial instruments are registered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RegistrarAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRegistrarAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RegistrarRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrarAccount";
 			definition = "Account at the registrar where financial instruments are registered.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmRelatedRegistrar;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.RelatedRegistrar;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text registerName;
 	/**
 	 * Name of the register managed by a registration authority.
 	 * <p>
@@ -150,31 +153,60 @@ public class RegistrarRole extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegisterName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegisterName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RegistrarRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegistrarRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisterName";
 			definition = "Name of the register managed by a registration authority.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegistrarRole.class.getMethod("getRegisterName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegistrarRole";
 				definition = "Party responsible for keeping track of the owners of securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.RelatedRegistrar);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmRelatedRegistrar);
 				superType_lazy = () -> SecuritiesPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegistrarRole.RegistrarAccount, com.tools20022.repository.entity.RegistrarRole.RegisterName);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegistrarRole.mmRegistrarAccount, com.tools20022.repository.entity.RegistrarRole.mmRegisterName);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return RegistrarRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesAccount getRegistrarAccount() {
+		return registrarAccount;
+	}
+
+	public void setRegistrarAccount(com.tools20022.repository.entity.SecuritiesAccount registrarAccount) {
+		this.registrarAccount = registrarAccount;
+	}
+
+	public Max35Text getRegisterName() {
+		return registerName;
+	}
+
+	public void setRegisterName(Max35Text registerName) {
+		this.registerName = registerName;
 	}
 }

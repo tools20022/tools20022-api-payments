@@ -18,7 +18,9 @@
 package com.tools20022.repository.area;
 
 import com.tools20022.metamodel.MMBusinessArea;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.pain.*;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -74,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
- * GeneratedRepository.catalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
+ * GeneratedRepository.mmcatalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,8 +97,8 @@ public class PaymentsInitiationLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> com.tools20022.repository.GeneratedRepository.catalogue;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Payments Initiation - Latest version - master";
 				definition = "Messages that support the initiation of a payment from the ordering customer to a financial institution that services a cash account and reporting its status";
 				messageDefinition_lazy = () -> Arrays.asList(MandateAcceptanceReportV05.mmObject(), MandateAmendmentRequestV05.mmObject(), MandateInitiationRequestV05.mmObject(), CustomerCreditTransferInitiationV08.mmObject(),

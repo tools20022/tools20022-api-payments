@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionCancellationReasonCode#Processing
- * CorporateActionCancellationReasonCode.Processing}</li>
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionCancellationReasonCode#mmProcessing
+ * CorporateActionCancellationReasonCode.mmProcessing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionCancellationReasonCode#Withrawal
- * CorporateActionCancellationReasonCode.Withrawal}</li>
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionCancellationReasonCode#mmWithrawal
+ * CorporateActionCancellationReasonCode.mmWithrawal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class CorporateActionCancellationReasonCode {
 	 * definition} = "Cancellation due to a processing error."</li>
 	 * </ul>
 	 */
-	public static final MMCode Processing = new MMCode() {
+	public static final MMCode mmProcessing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Processing";
 			definition = "Cancellation due to a processing error.";
 			owner_lazy = () -> CorporateActionCancellationReasonCode.mmObject();
@@ -116,9 +118,9 @@ public class CorporateActionCancellationReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Withrawal = new MMCode() {
+	public static final MMCode mmWithrawal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Withrawal";
 			definition = "Cancellation due to the corporate action event being cancelled by the issuer.";
 			owner_lazy = () -> CorporateActionCancellationReasonCode.mmObject();
@@ -129,12 +131,12 @@ public class CorporateActionCancellationReasonCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PROC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionCancellationReasonCode";
 				definition = "Specifies reasons for cancellation of a corporate action event.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CorporateActionCancellationReasonCode.Processing, com.tools20022.repository.codeset.CorporateActionCancellationReasonCode.Withrawal);
+				code_lazy = () -> Arrays.asList(CorporateActionCancellationReasonCode.mmProcessing, CorporateActionCancellationReasonCode.mmWithrawal);
 			}
 		});
 		return mmObject_lazy.get();

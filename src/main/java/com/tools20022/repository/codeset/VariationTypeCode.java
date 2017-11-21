@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,17 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.VariationTypeCode#Increase
- * VariationTypeCode.Increase}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.VariationTypeCode#Decrease
- * VariationTypeCode.Decrease}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.VariationTypeCode#mmIncrease
+ * VariationTypeCode.mmIncrease}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.VariationTypeCode#mmDecrease
+ * VariationTypeCode.mmDecrease}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,9 +84,9 @@ public class VariationTypeCode {
 	 * definition} = "Increase to undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode Increase = new MMCode() {
+	public static final MMCode mmIncrease = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Increase";
 			definition = "Increase to undertaking amount.";
 			owner_lazy = () -> VariationTypeCode.mmObject();
@@ -110,9 +114,9 @@ public class VariationTypeCode {
 	 * definition} = "Decrease to undertaking amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode Decrease = new MMCode() {
+	public static final MMCode mmDecrease = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Decrease";
 			definition = "Decrease to undertaking amount.";
 			owner_lazy = () -> VariationTypeCode.mmObject();
@@ -123,12 +127,12 @@ public class VariationTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("INCR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VariationTypeCode";
 				definition = "Specifies the type of variation.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.VariationTypeCode.Increase, com.tools20022.repository.codeset.VariationTypeCode.Decrease);
+				code_lazy = () -> Arrays.asList(VariationTypeCode.mmIncrease, VariationTypeCode.mmDecrease);
 			}
 		});
 		return mmObject_lazy.get();

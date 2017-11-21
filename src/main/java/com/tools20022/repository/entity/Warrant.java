@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.WarrantStyleCode;
 import com.tools20022.repository.datatype.BaseOneRate;
 import com.tools20022.repository.entity.Security;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,14 +39,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Warrant#SubscriptionPrice
- * Warrant.SubscriptionPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Warrant#Multiplier
- * Warrant.Multiplier}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Warrant#Style Warrant.Style}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Warrant#WarrantParity
- * Warrant.WarrantParity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Warrant#mmSubscriptionPrice
+ * Warrant.mmSubscriptionPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Warrant#mmMultiplier
+ * Warrant.mmMultiplier}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Warrant#mmStyle
+ * Warrant.mmStyle}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Warrant#mmWarrantParity
+ * Warrant.mmWarrantParity}</li>
  * </ul>
  * </li>
  * <li>
@@ -54,10 +54,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedWarrant
- * SecuritiesPricing.RelatedWarrant}</li>
- * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#warrant
- * QuantityRatio.warrant}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedWarrant
+ * SecuritiesPricing.mmRelatedWarrant}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#mmwarrant
+ * QuantityRatio.mmwarrant}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -65,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Warrant extends Security {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesPricing subscriptionPrice;
 	/**
 	 * Pre-determined price at which the holder of a warrant is entitled to buy
 	 * the underlying instrument.
@@ -91,8 +92,8 @@ public class Warrant extends Security {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedWarrant
-	 * SecuritiesPricing.RelatedWarrant}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedWarrant
+	 * SecuritiesPricing.mmRelatedWarrant}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -117,20 +118,21 @@ public class Warrant extends Security {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SubscriptionPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSubscriptionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Warrant.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionPrice";
 			definition = "Pre-determined price at which the holder of a warrant is entitled to buy the underlying instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.RelatedWarrant;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedWarrant;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected BaseOneRate multiplier;
 	/**
 	 * Specifies the ratio or multiply factor used to convert from contracts to
 	 * shares.
@@ -158,18 +160,27 @@ public class Warrant extends Security {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Multiplier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMultiplier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Warrant.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Multiplier";
 			definition = "Specifies the ratio or multiply factor used to convert from contracts to shares.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Warrant.class.getMethod("getMultiplier", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected WarrantStyleCode style;
 	/**
 	 * Specifies the expiration style of the warrant.
 	 * <p>
@@ -195,18 +206,27 @@ public class Warrant extends Security {
 	 * definition} = "Specifies the expiration style of the warrant."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Style = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStyle = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Warrant.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Style";
 			definition = "Specifies the expiration style of the warrant.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> WarrantStyleCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Warrant.class.getMethod("getStyle", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected QuantityRatio warrantParity;
 	/**
 	 * Provides the ratio between the quantity of warrants and the quantity of
 	 * underlying securities.
@@ -216,8 +236,8 @@ public class Warrant extends Security {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.QuantityRatio#warrant
-	 * QuantityRatio.warrant}</li>
+	 * {@linkplain com.tools20022.repository.entity.QuantityRatio#mmwarrant
+	 * QuantityRatio.mmwarrant}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -242,34 +262,71 @@ public class Warrant extends Security {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd WarrantParity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmWarrantParity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Warrant.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WarrantParity";
 			definition = "Provides the ratio between the quantity of warrants and the quantity of underlying securities. ";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> QuantityRatio.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.warrant;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmwarrant;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Warrant";
 				definition = "Financial instrument that gives the holder the right to purchase shares or bonds at a given price within a specified time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.RelatedWarrant, com.tools20022.repository.entity.QuantityRatio.warrant);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmRelatedWarrant, com.tools20022.repository.entity.QuantityRatio.mmwarrant);
 				superType_lazy = () -> Security.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Warrant.SubscriptionPrice, com.tools20022.repository.entity.Warrant.Multiplier, com.tools20022.repository.entity.Warrant.Style,
-						com.tools20022.repository.entity.Warrant.WarrantParity);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Warrant.mmSubscriptionPrice, com.tools20022.repository.entity.Warrant.mmMultiplier, com.tools20022.repository.entity.Warrant.mmStyle,
+						com.tools20022.repository.entity.Warrant.mmWarrantParity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Warrant.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesPricing getSubscriptionPrice() {
+		return subscriptionPrice;
+	}
+
+	public void setSubscriptionPrice(com.tools20022.repository.entity.SecuritiesPricing subscriptionPrice) {
+		this.subscriptionPrice = subscriptionPrice;
+	}
+
+	public BaseOneRate getMultiplier() {
+		return multiplier;
+	}
+
+	public void setMultiplier(BaseOneRate multiplier) {
+		this.multiplier = multiplier;
+	}
+
+	public WarrantStyleCode getStyle() {
+		return style;
+	}
+
+	public void setStyle(WarrantStyleCode style) {
+		this.style = style;
+	}
+
+	public QuantityRatio getWarrantParity() {
+		return warrantParity;
+	}
+
+	public void setWarrantParity(com.tools20022.repository.entity.QuantityRatio warrantParity) {
+		this.warrantParity = warrantParity;
 	}
 }

@@ -17,10 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Services which consists in notifying the investor or its agent of a corporate
@@ -37,26 +41,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#SecuritiesAccount
- * CorporateActionServicing.SecuritiesAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmSecuritiesAccount
+ * CorporateActionServicing.mmSecuritiesAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionEventNotification
- * CorporateActionServicing.CorporateActionEventNotification}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionEventNotification
+ * CorporateActionServicing.mmCorporateActionEventNotification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionDistribution
- * CorporateActionServicing.CorporateActionDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionDistribution
+ * CorporateActionServicing.mmCorporateActionDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionOptionServicing
- * CorporateActionServicing.CorporateActionOptionServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionOptionServicing
+ * CorporateActionServicing.mmCorporateActionOptionServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#Event
- * CorporateActionServicing.Event}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmEvent
+ * CorporateActionServicing.mmEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionElection
- * CorporateActionServicing.CorporateActionElection}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionElection
+ * CorporateActionServicing.mmCorporateActionElection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionEntitlement
- * CorporateActionServicing.CorporateActionEntitlement}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionEntitlement
+ * CorporateActionServicing.mmCorporateActionEntitlement}</li>
  * </ul>
  * </li>
  * <li>
@@ -64,26 +68,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#CorporateActionServicing
- * SecuritiesAccount.CorporateActionServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmCorporateActionServicing
+ * SecuritiesAccount.mmCorporateActionServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#RelatedServicing
- * CorporateActionNotification.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#mmRelatedServicing
+ * CorporateActionNotification.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Services
- * CorporateActionEvent.Services}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmServices
+ * CorporateActionEvent.mmServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement#RelatedServicing
- * CorporateActionEntitlement.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement#mmRelatedServicing
+ * CorporateActionEntitlement.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionElection#RelatedServicing
- * CorporateActionElection.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionElection#mmRelatedServicing
+ * CorporateActionElection.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#RelatedServicing
- * CorporateActionDistribution.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#mmRelatedServicing
+ * CorporateActionDistribution.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#RelatedServicing
- * CorporateActionOptionServicing.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#mmRelatedServicing
+ * CorporateActionOptionServicing.mmRelatedServicing}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -96,8 +100,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,6 +117,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionServicing {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
 	 * Account on which the entitlement is calculated.
 	 * <p>
@@ -121,8 +126,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#CorporateActionServicing
-	 * SecuritiesAccount.CorporateActionServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmCorporateActionServicing
+	 * SecuritiesAccount.mmCorporateActionServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -146,19 +151,20 @@ public class CorporateActionServicing {
 	 * definition} = "Account on which the entitlement is calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Account on which the entitlement is calculated.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmCorporateActionServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.CorporateActionServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionNotification> corporateActionEventNotification;
 	/**
 	 * Service which consists in notifying the investor or its agent of a
 	 * corporate event.
@@ -168,8 +174,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#RelatedServicing
-	 * CorporateActionNotification.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#mmRelatedServicing
+	 * CorporateActionNotification.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -196,19 +202,20 @@ public class CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionEventNotification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionEventNotification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEventNotification";
 			definition = "Service which consists in notifying the investor or its agent of a corporate event.";
 			minOccurs = 0;
-			type_lazy = () -> CorporateActionNotification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionDistribution> corporateActionDistribution;
 	/**
 	 * Distribution of cash or securities as a result of a corporate action
 	 * election.
@@ -218,8 +225,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#RelatedServicing
-	 * CorporateActionDistribution.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#mmRelatedServicing
+	 * CorporateActionDistribution.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -246,19 +253,20 @@ public class CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "Distribution of cash or securities as a result of a corporate action election.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing;
 	/**
 	 * Service which consists in notifying the investor or its entitlement per
 	 * option.
@@ -268,8 +276,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#RelatedServicing
-	 * CorporateActionOptionServicing.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#mmRelatedServicing
+	 * CorporateActionOptionServicing.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -296,19 +304,20 @@ public class CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionOptionServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionOptionServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOptionServicing";
 			definition = "Service which consists in notifying the investor or its entitlement per option.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOptionServicing.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionOptionServicing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOptionServicing.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionEvent> event;
 	/**
 	 * Specifies the event which is at the origin of the action.
 	 * <p>
@@ -317,8 +326,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Services
-	 * CorporateActionEvent.Services}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmServices
+	 * CorporateActionEvent.mmServices}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -344,19 +353,20 @@ public class CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Event = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Event";
 			definition = "Specifies the event which is at the origin of the action.";
 			minOccurs = 0;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.Services;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmServices;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionElection> corporateActionElection;
 	/**
 	 * Service which consists in validating, calculating and transferring the
 	 * investor's instruction.
@@ -366,8 +376,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionElection#RelatedServicing
-	 * CorporateActionElection.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionElection#mmRelatedServicing
+	 * CorporateActionElection.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -394,19 +404,20 @@ public class CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionElection = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionElection = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionElection";
 			definition = "Service which consists in validating, calculating and transferring the investor's instruction.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionElection.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionElection.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionElection.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionEntitlement> corporateActionEntitlement;
 	/**
 	 * Calculation of the proceeds based on the balance in the account.
 	 * <p>
@@ -415,8 +426,8 @@ public class CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement#RelatedServicing
-	 * CorporateActionEntitlement.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEntitlement#mmRelatedServicing
+	 * CorporateActionEntitlement.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -442,38 +453,99 @@ public class CorporateActionServicing {
 	 * "Calculation of the proceeds based on the balance in the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEntitlement";
 			definition = "Calculation of the proceeds based on the balance in the account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEntitlement.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionServicing";
 				definition = "Services which consists in notifying the investor or its agent of a corporate event and calculating its proceeds based on its holdings.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.CorporateActionServicing, com.tools20022.repository.entity.CorporateActionNotification.RelatedServicing,
-						com.tools20022.repository.entity.CorporateActionEvent.Services, com.tools20022.repository.entity.CorporateActionEntitlement.RelatedServicing,
-						com.tools20022.repository.entity.CorporateActionElection.RelatedServicing, com.tools20022.repository.entity.CorporateActionDistribution.RelatedServicing,
-						com.tools20022.repository.entity.CorporateActionOptionServicing.RelatedServicing);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmCorporateActionServicing, com.tools20022.repository.entity.CorporateActionNotification.mmRelatedServicing,
+						com.tools20022.repository.entity.CorporateActionEvent.mmServices, com.tools20022.repository.entity.CorporateActionEntitlement.mmRelatedServicing,
+						com.tools20022.repository.entity.CorporateActionElection.mmRelatedServicing, com.tools20022.repository.entity.CorporateActionDistribution.mmRelatedServicing,
+						com.tools20022.repository.entity.CorporateActionOptionServicing.mmRelatedServicing);
 				subType_lazy = () -> Arrays.asList(MeetingServicing.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionServicing.SecuritiesAccount, com.tools20022.repository.entity.CorporateActionServicing.CorporateActionEventNotification,
-						com.tools20022.repository.entity.CorporateActionServicing.CorporateActionDistribution, com.tools20022.repository.entity.CorporateActionServicing.CorporateActionOptionServicing,
-						com.tools20022.repository.entity.CorporateActionServicing.Event, com.tools20022.repository.entity.CorporateActionServicing.CorporateActionElection,
-						com.tools20022.repository.entity.CorporateActionServicing.CorporateActionEntitlement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionServicing.mmSecuritiesAccount, com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionEventNotification,
+						com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionDistribution, com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionOptionServicing,
+						com.tools20022.repository.entity.CorporateActionServicing.mmEvent, com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionElection,
+						com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionEntitlement);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionServicing.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<SecuritiesAccount> getSecuritiesAccount() {
+		return securitiesAccount;
+	}
+
+	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = securitiesAccount;
+	}
+
+	public List<CorporateActionNotification> getCorporateActionEventNotification() {
+		return corporateActionEventNotification;
+	}
+
+	public void setCorporateActionEventNotification(List<com.tools20022.repository.entity.CorporateActionNotification> corporateActionEventNotification) {
+		this.corporateActionEventNotification = corporateActionEventNotification;
+	}
+
+	public List<CorporateActionDistribution> getCorporateActionDistribution() {
+		return corporateActionDistribution;
+	}
+
+	public void setCorporateActionDistribution(List<com.tools20022.repository.entity.CorporateActionDistribution> corporateActionDistribution) {
+		this.corporateActionDistribution = corporateActionDistribution;
+	}
+
+	public List<CorporateActionOptionServicing> getCorporateActionOptionServicing() {
+		return corporateActionOptionServicing;
+	}
+
+	public void setCorporateActionOptionServicing(List<com.tools20022.repository.entity.CorporateActionOptionServicing> corporateActionOptionServicing) {
+		this.corporateActionOptionServicing = corporateActionOptionServicing;
+	}
+
+	public List<CorporateActionEvent> getEvent() {
+		return event;
+	}
+
+	public void setEvent(List<com.tools20022.repository.entity.CorporateActionEvent> event) {
+		this.event = event;
+	}
+
+	public List<CorporateActionElection> getCorporateActionElection() {
+		return corporateActionElection;
+	}
+
+	public void setCorporateActionElection(List<com.tools20022.repository.entity.CorporateActionElection> corporateActionElection) {
+		this.corporateActionElection = corporateActionElection;
+	}
+
+	public List<CorporateActionEntitlement> getCorporateActionEntitlement() {
+		return corporateActionEntitlement;
+	}
+
+	public void setCorporateActionEntitlement(List<com.tools20022.repository.entity.CorporateActionEntitlement> corporateActionEntitlement) {
+		this.corporateActionEntitlement = corporateActionEntitlement;
 	}
 }

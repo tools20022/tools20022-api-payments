@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,30 +32,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#Annual
- * MeetingTypeClassificationCode.Annual}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#mmAnnual
+ * MeetingTypeClassificationCode.mmAnnual}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#Ordinary
- * MeetingTypeClassificationCode.Ordinary}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#mmOrdinary
+ * MeetingTypeClassificationCode.mmOrdinary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#Class
- * MeetingTypeClassificationCode.Class}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#mmClass_
+ * MeetingTypeClassificationCode.mmClass_}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#IssuerInitiated
- * MeetingTypeClassificationCode.IssuerInitiated}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#mmIssuerInitiated
+ * MeetingTypeClassificationCode.mmIssuerInitiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#VotingRightsHolderInitiated
- * MeetingTypeClassificationCode.VotingRightsHolderInitiated}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#mmVotingRightsHolderInitiated
+ * MeetingTypeClassificationCode.mmVotingRightsHolderInitiated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#Court
- * MeetingTypeClassificationCode.Court}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingTypeClassificationCode#mmCourt
+ * MeetingTypeClassificationCode.mmCourt}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -97,9 +99,9 @@ public class MeetingTypeClassificationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Annual = new MMCode() {
+	public static final MMCode mmAnnual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Annual";
 			definition = "Specifies a meeting held periodically to approve the financial statements and to elect the board members and the auditors.";
 			owner_lazy = () -> MeetingTypeClassificationCode.mmObject();
@@ -127,9 +129,9 @@ public class MeetingTypeClassificationCode {
 	 * definition} = "Specifies a meeting which is planned in the by-laws."</li>
 	 * </ul>
 	 */
-	public static final MMCode Ordinary = new MMCode() {
+	public static final MMCode mmOrdinary = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ordinary";
 			definition = "Specifies a meeting which is planned in the by-laws.";
 			owner_lazy = () -> MeetingTypeClassificationCode.mmObject();
@@ -160,9 +162,9 @@ public class MeetingTypeClassificationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Class = new MMCode() {
+	public static final MMCode mmClass_ = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Class";
 			definition = "Meeting for holders of a specific type of asset, e.g. preferred shs, bonds, ";
 			owner_lazy = () -> MeetingTypeClassificationCode.mmObject();
@@ -194,9 +196,9 @@ public class MeetingTypeClassificationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode IssuerInitiated = new MMCode() {
+	public static final MMCode mmIssuerInitiated = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IssuerInitiated";
 			definition = "Specifies that the meeting is the result of an obligation or a decision made by the issuer as opposed to voting rights holder initiated, ex. contested meeting.";
 			owner_lazy = () -> MeetingTypeClassificationCode.mmObject();
@@ -227,9 +229,9 @@ public class MeetingTypeClassificationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode VotingRightsHolderInitiated = new MMCode() {
+	public static final MMCode mmVotingRightsHolderInitiated = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VotingRightsHolderInitiated";
 			definition = "Specifies that the meeting is the result of a request or an action of a voting right holder(s), e.g. contested meeting.";
 			owner_lazy = () -> MeetingTypeClassificationCode.mmObject();
@@ -258,9 +260,9 @@ public class MeetingTypeClassificationCode {
 	 * "Specifies that the meeting is the result of a legal proceeding."</li>
 	 * </ul>
 	 */
-	public static final MMCode Court = new MMCode() {
+	public static final MMCode mmCourt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Court";
 			definition = "Specifies that the meeting is the result of a legal proceeding.";
 			owner_lazy = () -> MeetingTypeClassificationCode.mmObject();
@@ -271,14 +273,13 @@ public class MeetingTypeClassificationCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("AMET");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingTypeClassificationCode";
 				definition = "Classifies the meeting type.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MeetingTypeClassificationCode.Annual, com.tools20022.repository.codeset.MeetingTypeClassificationCode.Ordinary,
-						com.tools20022.repository.codeset.MeetingTypeClassificationCode.Class, com.tools20022.repository.codeset.MeetingTypeClassificationCode.IssuerInitiated,
-						com.tools20022.repository.codeset.MeetingTypeClassificationCode.VotingRightsHolderInitiated, com.tools20022.repository.codeset.MeetingTypeClassificationCode.Court);
+				code_lazy = () -> Arrays.asList(MeetingTypeClassificationCode.mmAnnual, MeetingTypeClassificationCode.mmOrdinary, MeetingTypeClassificationCode.mmClass_, MeetingTypeClassificationCode.mmIssuerInitiated,
+						MeetingTypeClassificationCode.mmVotingRightsHolderInitiated, MeetingTypeClassificationCode.mmCourt);
 			}
 		});
 		return mmObject_lazy.get();

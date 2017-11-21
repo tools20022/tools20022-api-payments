@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalCashAccountType1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Nature or use of the account.
@@ -34,11 +40,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.CashAccountType2Choice#Code
- * CashAccountType2Choice.Code}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CashAccountType2Choice#Proprietary
- * CashAccountType2Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.CashAccountType2Choice#mmCode
+ * CashAccountType2Choice.mmCode}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.CashAccountType2Choice#mmProprietary
+ * CashAccountType2Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Nature or use of the account."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CashAccountType2Choice", propOrder = {"code", "proprietary"})
 public class CashAccountType2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalCashAccountType1Code code;
 	/**
 	 * Account type, in a coded form.
 	 * <p>
@@ -75,8 +85,8 @@ public class CashAccountType2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#CashAccountType
-	 * CashAccount.CashAccountType}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashAccountType
+	 * CashAccount.mmCashAccountType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -95,20 +105,21 @@ public class CashAccountType2Choice {
 	 * definition} = "Account type, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashAccount.mmCashAccountType;
 			componentContext_lazy = () -> CashAccountType2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashAccount.CashAccountType;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Account type, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalCashAccountType1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Nature or use of the account in a proprietary form.
 	 * <p>
@@ -121,8 +132,8 @@ public class CashAccountType2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#CashAccountType
-	 * CashAccount.CashAccountType}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashAccountType
+	 * CashAccount.mmCashAccountType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -141,17 +152,17 @@ public class CashAccountType2Choice {
 	 * definition} = "Nature or use of the account in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashAccount.mmCashAccountType;
 			componentContext_lazy = () -> CashAccountType2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashAccount.CashAccountType;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Nature or use of the account in a proprietary form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -159,14 +170,32 @@ public class CashAccountType2Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CashAccountType2Choice.Code, com.tools20022.repository.choice.CashAccountType2Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(CashAccountType2Choice.mmCode, CashAccountType2Choice.mmProprietary);
 				trace_lazy = () -> CashAccount.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountType2Choice";
 				definition = "Nature or use of the account.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalCashAccountType1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalCashAccountType1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

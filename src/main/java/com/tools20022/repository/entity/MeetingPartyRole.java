@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CorporateActionPartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of a meeting.
@@ -35,18 +39,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.MeetingPartyRole#Meeting
- * MeetingPartyRole.Meeting}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.MeetingPartyRole#mmMeeting
+ * MeetingPartyRole.mmMeeting}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Meeting#PartyRole
- * Meeting.PartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmPartyRole
+ * Meeting.mmPartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole
+ * CorporateActionPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -56,15 +64,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * MeetingAttendeeRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole
- * CorporateActionPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MeetingPartyRole extends CorporateActionPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Meeting> meeting;
 	/**
 	 * Specifies the meeting for which a party plays a role.
 	 * <p>
@@ -86,8 +91,8 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#PartyRole
-	 * Meeting.PartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmPartyRole
+	 * Meeting.mmPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -110,33 +115,46 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 	 * definition} = "Specifies the meeting for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Meeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Specifies the meeting for which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.PartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingPartyRole";
 				definition = "Role played by a party in the context of a meeting.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.PartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmPartyRole);
 				subType_lazy = () -> Arrays.asList(AssignedProxyRole.mmObject(), MeetingAttendeeRole.mmObject());
 				superType_lazy = () -> CorporateActionPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingPartyRole.Meeting);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingPartyRole.mmMeeting);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return MeetingPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Meeting> getMeeting() {
+		return meeting;
+	}
+
+	public void setMeeting(List<com.tools20022.repository.entity.Meeting> meeting) {
+		this.meeting = meeting;
 	}
 }

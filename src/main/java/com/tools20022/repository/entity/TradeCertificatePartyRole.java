@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of issuing trade certificates.
@@ -37,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradeCertificatePartyRole#TradeCertificate
- * TradeCertificatePartyRole.TradeCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.TradeCertificatePartyRole#mmTradeCertificate
+ * TradeCertificatePartyRole.mmTradeCertificate}</li>
  * </ul>
  * </li>
  * <li>
@@ -46,8 +50,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradeCertificate#TradeCertificatePartyRole
- * TradeCertificate.TradeCertificatePartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.TradeCertificate#mmTradeCertificatePartyRole
+ * TradeCertificate.mmTradeCertificatePartyRole}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -55,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,6 +75,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TradeCertificatePartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate;
 	/**
 	 * Specifies the trade certificate issued by a party.
 	 * <p>
@@ -79,8 +84,8 @@ public class TradeCertificatePartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradeCertificate#TradeCertificatePartyRole
-	 * TradeCertificate.TradeCertificatePartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradeCertificate#mmTradeCertificatePartyRole
+	 * TradeCertificate.mmTradeCertificatePartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -104,32 +109,45 @@ public class TradeCertificatePartyRole extends Role {
 	 * definition} = "Specifies the trade certificate issued by a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradeCertificatePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradeCertificatePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCertificate";
 			definition = "Specifies the trade certificate issued by a party.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmTradeCertificatePartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.TradeCertificatePartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeCertificatePartyRole";
 				definition = "Role played by a party in the context of issuing trade certificates.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradeCertificate.TradeCertificatePartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradeCertificate.mmTradeCertificatePartyRole);
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradeCertificatePartyRole.TradeCertificate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradeCertificatePartyRole.mmTradeCertificate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TradeCertificatePartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<TradeCertificate> getTradeCertificate() {
+		return tradeCertificate;
+	}
+
+	public void setTradeCertificate(List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate) {
+		this.tradeCertificate = tradeCertificate;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,18 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.RateStatusCode#ActualRate
- * RateStatusCode.ActualRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RateStatusCode#IndicativeRate
- * RateStatusCode.IndicativeRate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RateStatusCode#mmActualRate
+ * RateStatusCode.mmActualRate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.RateStatusCode#mmIndicativeRate
+ * RateStatusCode.mmIndicativeRate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -81,9 +84,9 @@ public class RateStatusCode {
 	 * definition} = "Rate is actual."</li>
 	 * </ul>
 	 */
-	public static final MMCode ActualRate = new MMCode() {
+	public static final MMCode mmActualRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActualRate";
 			definition = "Rate is actual.";
 			owner_lazy = () -> RateStatusCode.mmObject();
@@ -111,9 +114,9 @@ public class RateStatusCode {
 	 * definition} = "Rate is indicative."</li>
 	 * </ul>
 	 */
-	public static final MMCode IndicativeRate = new MMCode() {
+	public static final MMCode mmIndicativeRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicativeRate";
 			definition = "Rate is indicative.";
 			owner_lazy = () -> RateStatusCode.mmObject();
@@ -124,12 +127,12 @@ public class RateStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACTU");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateStatusCode";
 				definition = "Specifies the type of rate.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RateStatusCode.ActualRate, com.tools20022.repository.codeset.RateStatusCode.IndicativeRate);
+				code_lazy = () -> Arrays.asList(RateStatusCode.mmActualRate, RateStatusCode.mmIndicativeRate);
 			}
 		});
 		return mmObject_lazy.get();

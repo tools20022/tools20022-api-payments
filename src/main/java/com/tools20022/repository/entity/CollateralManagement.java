@@ -17,10 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Set of operations relative to the management of collateral, variation
@@ -36,38 +40,38 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#CollateralProposal
- * CollateralManagement.CollateralProposal}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmCollateralProposal
+ * CollateralManagement.mmCollateralProposal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#CollateralValuation
- * CollateralManagement.CollateralValuation}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmCollateralValuation
+ * CollateralManagement.mmCollateralValuation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#FeesAndCommissions
- * CollateralManagement.FeesAndCommissions}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmFeesAndCommissions
+ * CollateralManagement.mmFeesAndCommissions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#InterestManagement
- * CollateralManagement.InterestManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmInterestManagement
+ * CollateralManagement.mmInterestManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#DisputeManagement
- * CollateralManagement.DisputeManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmDisputeManagement
+ * CollateralManagement.mmDisputeManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#MarginCall
- * CollateralManagement.MarginCall}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmMarginCall
+ * CollateralManagement.mmMarginCall}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#CollateralSubstitution
- * CollateralManagement.CollateralSubstitution}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmCollateralSubstitution
+ * CollateralManagement.mmCollateralSubstitution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#RiskToCover
- * CollateralManagement.RiskToCover}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmRiskToCover
+ * CollateralManagement.mmRiskToCover}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#Collateral
- * CollateralManagement.Collateral}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmCollateral
+ * CollateralManagement.mmCollateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#AgreedTerms
- * CollateralManagement.AgreedTerms}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmAgreedTerms
+ * CollateralManagement.mmAgreedTerms}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#ClearingSystem
- * CollateralManagement.ClearingSystem}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmClearingSystem
+ * CollateralManagement.mmClearingSystem}</li>
  * </ul>
  * </li>
  * <li>
@@ -75,45 +79,45 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Adjustment#CollateralManagement
- * Adjustment.CollateralManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.Adjustment#mmCollateralManagement
+ * Adjustment.mmCollateralManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ClearingSystem#CollateralManagement
- * ClearingSystem.CollateralManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.ClearingSystem#mmCollateralManagement
+ * ClearingSystem.mmCollateralManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Collateral#CollateralManagement
- * Collateral.CollateralManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralManagement
+ * Collateral.mmCollateralManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#RelatedManagementProcess
- * CollateralValuation.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmRelatedManagementProcess
+ * CollateralValuation.mmRelatedManagementProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralAgreement#RiskCoverage
- * CollateralAgreement.RiskCoverage}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralAgreement#mmRiskCoverage
+ * CollateralAgreement.mmRiskCoverage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MarginCall#RelatedManagementProcess
- * MarginCall.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.MarginCall#mmRelatedManagementProcess
+ * MarginCall.mmRelatedManagementProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralProposal#RelatedManagementProcess
- * CollateralProposal.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralProposal#mmRelatedManagementProcess
+ * CollateralProposal.mmRelatedManagementProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralSubstitution#RelatedManagementProcess
- * CollateralSubstitution.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralSubstitution#mmRelatedManagementProcess
+ * CollateralSubstitution.mmRelatedManagementProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CollateralManagement
- * ExposureCalculation.CollateralManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCollateralManagement
+ * ExposureCalculation.mmCollateralManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisputeManagement#RelatedManagementProcess
- * DisputeManagement.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.DisputeManagement#mmRelatedManagementProcess
+ * DisputeManagement.mmRelatedManagementProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#CollateralManagement
- * CollateralInterestAdministration.CollateralManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#mmCollateralManagement
+ * CollateralInterestAdministration.mmCollateralManagement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -129,6 +133,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CollateralManagement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.CollateralProposal> collateralProposal;
 	/**
 	 * Specifies collateral proposed to the counterparty.
 	 * <p>
@@ -137,8 +142,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralProposal#RelatedManagementProcess
-	 * CollateralProposal.RelatedManagementProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralProposal#mmRelatedManagementProcess
+	 * CollateralProposal.mmRelatedManagementProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -162,19 +167,20 @@ public class CollateralManagement {
 	 * definition} = "Specifies collateral proposed to the counterparty."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CollateralProposal = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateralProposal = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralProposal";
 			definition = "Specifies collateral proposed to the counterparty.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmRelatedManagementProcess;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralProposal.RelatedManagementProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CollateralValuation> collateralValuation;
 	/**
 	 * Provides details about the valuation of each piece of collateral that is
 	 * posted.
@@ -184,8 +190,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralValuation#RelatedManagementProcess
-	 * CollateralValuation.RelatedManagementProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmRelatedManagementProcess
+	 * CollateralValuation.mmRelatedManagementProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -211,19 +217,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CollateralValuation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateralValuation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralValuation";
 			definition = "Provides details about the valuation of each piece of collateral that is posted.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmRelatedManagementProcess;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralValuation.RelatedManagementProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Adjustment> feesAndCommissions;
 	/**
 	 * Specifies the amount of money paid for the provision of financial
 	 * services.
@@ -233,8 +240,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#CollateralManagement
-	 * Adjustment.CollateralManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmCollateralManagement
+	 * Adjustment.mmCollateralManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -260,19 +267,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FeesAndCommissions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFeesAndCommissions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FeesAndCommissions";
 			definition = "Specifies the amount of money paid for the provision of financial services.";
 			minOccurs = 0;
-			type_lazy = () -> Adjustment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.CollateralManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmCollateralManagement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CollateralInterestAdministration> interestManagement;
 	/**
 	 * Calculation and request of interest linked to collateral.
 	 * <p>
@@ -281,8 +289,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#CollateralManagement
-	 * CollateralInterestAdministration.CollateralManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#mmCollateralManagement
+	 * CollateralInterestAdministration.mmCollateralManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -308,19 +316,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InterestManagement";
 			definition = "Calculation and request of interest linked to collateral.";
 			minOccurs = 0;
-			type_lazy = () -> CollateralInterestAdministration.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.CollateralManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmCollateralManagement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.DisputeManagement> disputeManagement;
 	/**
 	 * Provides the dispute details on the variation margin and/or the
 	 * segregated independent amount.
@@ -330,8 +339,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DisputeManagement#RelatedManagementProcess
-	 * DisputeManagement.RelatedManagementProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.DisputeManagement#mmRelatedManagementProcess
+	 * DisputeManagement.mmRelatedManagementProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -357,19 +366,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DisputeManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDisputeManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputeManagement";
 			definition = "Provides the dispute details on the variation margin and/or the segregated independent amount.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmRelatedManagementProcess;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DisputeManagement.RelatedManagementProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.MarginCall> marginCall;
 	/**
 	 * Calculation of the variation margin and independent amount needed to
 	 * cover the risk exposure of one party versus another.
@@ -379,8 +389,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MarginCall#RelatedManagementProcess
-	 * MarginCall.RelatedManagementProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.MarginCall#mmRelatedManagementProcess
+	 * MarginCall.mmRelatedManagementProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -406,19 +416,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MarginCall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMarginCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginCall";
 			definition = "Calculation of the  variation margin and independent amount needed to cover the risk exposure of one party versus another.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.mmRelatedManagementProcess;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.RelatedManagementProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CollateralSubstitution> collateralSubstitution;
 	/**
 	 * Request of a substitution of collateral by specifying the collateral to
 	 * be returned and proposing the new type(s) of collateral to be delivered.
@@ -428,8 +439,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralSubstitution#RelatedManagementProcess
-	 * CollateralSubstitution.RelatedManagementProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralSubstitution#mmRelatedManagementProcess
+	 * CollateralSubstitution.mmRelatedManagementProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -456,19 +467,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CollateralSubstitution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateralSubstitution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralSubstitution";
 			definition = "Request of a substitution of collateral by specifying the collateral to be returned and proposing the new type(s) of collateral to be delivered.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmRelatedManagementProcess;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralSubstitution.RelatedManagementProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ExposureCalculation riskToCover;
 	/**
 	 * Risk which is the source of the collateral management processes.
 	 * <p>
@@ -477,8 +489,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CollateralManagement
-	 * ExposureCalculation.CollateralManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCollateralManagement
+	 * ExposureCalculation.mmCollateralManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -503,20 +515,21 @@ public class CollateralManagement {
 	 * "Risk which is the source of the collateral management processes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RiskToCover = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRiskToCover = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RiskToCover";
 			definition = "Risk which is the source of the collateral management processes.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ExposureCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.CollateralManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCollateralManagement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Collateral> collateral;
 	/**
 	 * Description of the collateral which is related to the different
 	 * management processes.
@@ -526,8 +539,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Collateral#CollateralManagement
-	 * Collateral.CollateralManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralManagement
+	 * Collateral.mmCollateralManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -553,19 +566,20 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Collateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Collateral";
 			definition = "Description of the collateral which is related to the different management processes.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmCollateralManagement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.CollateralManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CollateralAgreement agreedTerms;
 	/**
 	 * Specifies the terms bilaterally agreed by the parties related to the
 	 * collateral processes.
@@ -575,8 +589,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralAgreement#RiskCoverage
-	 * CollateralAgreement.RiskCoverage}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralAgreement#mmRiskCoverage
+	 * CollateralAgreement.mmRiskCoverage}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -602,20 +616,21 @@ public class CollateralManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AgreedTerms = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAgreedTerms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AgreedTerms";
 			definition = "Specifies the terms bilaterally agreed by the parties related to the collateral processes.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CollateralAgreement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.RiskCoverage;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmRiskCoverage;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralAgreement.mmObject();
 		}
 	};
+	protected ClearingSystem clearingSystem;
 	/**
 	 * Clearing system involved in the collateral management process.
 	 * <p>
@@ -624,8 +639,8 @@ public class CollateralManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ClearingSystem#CollateralManagement
-	 * ClearingSystem.CollateralManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.ClearingSystem#mmCollateralManagement
+	 * ClearingSystem.mmCollateralManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -650,40 +665,134 @@ public class CollateralManagement {
 	 * "Clearing system involved in the collateral management process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClearingSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClearingSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClearingSystem";
 			definition = "Clearing system involved in the collateral management process.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmCollateralManagement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.CollateralManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralManagement";
 				definition = "Set of operations relative to the management of collateral, variation margins, default fund participation and independent amount.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Adjustment.CollateralManagement, com.tools20022.repository.entity.ClearingSystem.CollateralManagement,
-						com.tools20022.repository.entity.Collateral.CollateralManagement, com.tools20022.repository.entity.CollateralValuation.RelatedManagementProcess, com.tools20022.repository.entity.CollateralAgreement.RiskCoverage,
-						com.tools20022.repository.entity.MarginCall.RelatedManagementProcess, com.tools20022.repository.entity.CollateralProposal.RelatedManagementProcess,
-						com.tools20022.repository.entity.CollateralSubstitution.RelatedManagementProcess, com.tools20022.repository.entity.ExposureCalculation.CollateralManagement,
-						com.tools20022.repository.entity.DisputeManagement.RelatedManagementProcess, com.tools20022.repository.entity.CollateralInterestAdministration.CollateralManagement);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralManagement.CollateralProposal, com.tools20022.repository.entity.CollateralManagement.CollateralValuation,
-						com.tools20022.repository.entity.CollateralManagement.FeesAndCommissions, com.tools20022.repository.entity.CollateralManagement.InterestManagement,
-						com.tools20022.repository.entity.CollateralManagement.DisputeManagement, com.tools20022.repository.entity.CollateralManagement.MarginCall,
-						com.tools20022.repository.entity.CollateralManagement.CollateralSubstitution, com.tools20022.repository.entity.CollateralManagement.RiskToCover, com.tools20022.repository.entity.CollateralManagement.Collateral,
-						com.tools20022.repository.entity.CollateralManagement.AgreedTerms, com.tools20022.repository.entity.CollateralManagement.ClearingSystem);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Adjustment.mmCollateralManagement, com.tools20022.repository.entity.ClearingSystem.mmCollateralManagement,
+						com.tools20022.repository.entity.Collateral.mmCollateralManagement, com.tools20022.repository.entity.CollateralValuation.mmRelatedManagementProcess,
+						com.tools20022.repository.entity.CollateralAgreement.mmRiskCoverage, com.tools20022.repository.entity.MarginCall.mmRelatedManagementProcess,
+						com.tools20022.repository.entity.CollateralProposal.mmRelatedManagementProcess, com.tools20022.repository.entity.CollateralSubstitution.mmRelatedManagementProcess,
+						com.tools20022.repository.entity.ExposureCalculation.mmCollateralManagement, com.tools20022.repository.entity.DisputeManagement.mmRelatedManagementProcess,
+						com.tools20022.repository.entity.CollateralInterestAdministration.mmCollateralManagement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralManagement.mmCollateralProposal, com.tools20022.repository.entity.CollateralManagement.mmCollateralValuation,
+						com.tools20022.repository.entity.CollateralManagement.mmFeesAndCommissions, com.tools20022.repository.entity.CollateralManagement.mmInterestManagement,
+						com.tools20022.repository.entity.CollateralManagement.mmDisputeManagement, com.tools20022.repository.entity.CollateralManagement.mmMarginCall,
+						com.tools20022.repository.entity.CollateralManagement.mmCollateralSubstitution, com.tools20022.repository.entity.CollateralManagement.mmRiskToCover,
+						com.tools20022.repository.entity.CollateralManagement.mmCollateral, com.tools20022.repository.entity.CollateralManagement.mmAgreedTerms, com.tools20022.repository.entity.CollateralManagement.mmClearingSystem);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CollateralManagement.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<CollateralProposal> getCollateralProposal() {
+		return collateralProposal;
+	}
+
+	public void setCollateralProposal(List<com.tools20022.repository.entity.CollateralProposal> collateralProposal) {
+		this.collateralProposal = collateralProposal;
+	}
+
+	public List<CollateralValuation> getCollateralValuation() {
+		return collateralValuation;
+	}
+
+	public void setCollateralValuation(List<com.tools20022.repository.entity.CollateralValuation> collateralValuation) {
+		this.collateralValuation = collateralValuation;
+	}
+
+	public List<Adjustment> getFeesAndCommissions() {
+		return feesAndCommissions;
+	}
+
+	public void setFeesAndCommissions(List<com.tools20022.repository.entity.Adjustment> feesAndCommissions) {
+		this.feesAndCommissions = feesAndCommissions;
+	}
+
+	public List<CollateralInterestAdministration> getInterestManagement() {
+		return interestManagement;
+	}
+
+	public void setInterestManagement(List<com.tools20022.repository.entity.CollateralInterestAdministration> interestManagement) {
+		this.interestManagement = interestManagement;
+	}
+
+	public List<DisputeManagement> getDisputeManagement() {
+		return disputeManagement;
+	}
+
+	public void setDisputeManagement(List<com.tools20022.repository.entity.DisputeManagement> disputeManagement) {
+		this.disputeManagement = disputeManagement;
+	}
+
+	public List<MarginCall> getMarginCall() {
+		return marginCall;
+	}
+
+	public void setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
+		this.marginCall = marginCall;
+	}
+
+	public List<CollateralSubstitution> getCollateralSubstitution() {
+		return collateralSubstitution;
+	}
+
+	public void setCollateralSubstitution(List<com.tools20022.repository.entity.CollateralSubstitution> collateralSubstitution) {
+		this.collateralSubstitution = collateralSubstitution;
+	}
+
+	public ExposureCalculation getRiskToCover() {
+		return riskToCover;
+	}
+
+	public void setRiskToCover(com.tools20022.repository.entity.ExposureCalculation riskToCover) {
+		this.riskToCover = riskToCover;
+	}
+
+	public List<Collateral> getCollateral() {
+		return collateral;
+	}
+
+	public void setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
+		this.collateral = collateral;
+	}
+
+	public CollateralAgreement getAgreedTerms() {
+		return agreedTerms;
+	}
+
+	public void setAgreedTerms(com.tools20022.repository.entity.CollateralAgreement agreedTerms) {
+		this.agreedTerms = agreedTerms;
+	}
+
+	public ClearingSystem getClearingSystem() {
+		return clearingSystem;
+	}
+
+	public void setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
+		this.clearingSystem = clearingSystem;
 	}
 }

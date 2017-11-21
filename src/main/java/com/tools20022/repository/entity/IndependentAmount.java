@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,17 +38,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IndependentAmount#RelatedRiskCalculation
- * IndependentAmount.RelatedRiskCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.IndependentAmount#mmRelatedRiskCalculation
+ * IndependentAmount.mmRelatedRiskCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IndependentAmount#IndependentAmountPerTrade
- * IndependentAmount.IndependentAmountPerTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.IndependentAmount#mmIndependentAmountPerTrade
+ * IndependentAmount.mmIndependentAmountPerTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IndependentAmount#IndependentAmountValueAtRisk
- * IndependentAmount.IndependentAmountValueAtRisk}</li>
+ * {@linkplain com.tools20022.repository.entity.IndependentAmount#mmIndependentAmountValueAtRisk
+ * IndependentAmount.mmIndependentAmountValueAtRisk}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IndependentAmount#IndependentAmountNetOpenPosition
- * IndependentAmount.IndependentAmountNetOpenPosition}</li>
+ * {@linkplain com.tools20022.repository.entity.IndependentAmount#mmIndependentAmountNetOpenPosition
+ * IndependentAmount.mmIndependentAmountNetOpenPosition}</li>
  * </ul>
  * </li>
  * <li>
@@ -56,15 +56,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CurrentIndependentAmount
- * ExposureCalculation.CurrentIndependentAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCurrentIndependentAmount
+ * ExposureCalculation.mmCurrentIndependentAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,6 +80,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class IndependentAmount {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExposureCalculation relatedRiskCalculation;
 	/**
 	 * Risk coverage for which an independent amount is provided.
 	 * <p>
@@ -88,8 +89,8 @@ public class IndependentAmount {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CurrentIndependentAmount
-	 * ExposureCalculation.CurrentIndependentAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCurrentIndependentAmount
+	 * ExposureCalculation.mmCurrentIndependentAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -114,20 +115,21 @@ public class IndependentAmount {
 	 * "Risk coverage for which an independent amount is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedRiskCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedRiskCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> IndependentAmount.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedRiskCalculation";
 			definition = "Risk coverage for which an independent amount is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ExposureCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.CurrentIndependentAmount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCurrentIndependentAmount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 		}
 	};
+	protected ActiveCurrencyAndAmount independentAmountPerTrade;
 	/**
 	 * Independent amounts that are related to specific trades or groups of
 	 * trades.
@@ -157,18 +159,27 @@ public class IndependentAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndependentAmountPerTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndependentAmountPerTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IndependentAmount.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndependentAmountPerTrade";
 			definition = "Independent amounts that are related to specific trades or groups of trades.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IndependentAmount.class.getMethod("getIndependentAmountPerTrade", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount independentAmountValueAtRisk;
 	/**
 	 * Portfolio level independent amount which reflects portfolio change over a
 	 * short time period using statistical techniques such as volatility and
@@ -199,18 +210,27 @@ public class IndependentAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndependentAmountValueAtRisk = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndependentAmountValueAtRisk = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IndependentAmount.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndependentAmountValueAtRisk";
 			definition = "Portfolio level independent amount which reflects portfolio change over a short time period using statistical techniques such as volatility and risk factor correlations.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IndependentAmount.class.getMethod("getIndependentAmountValueAtRisk", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount independentAmountNetOpenPosition;
 	/**
 	 * Portfolio level independent amount related to FX net open position, i.e.
 	 * to the difference between assets and liabilities in a particular
@@ -242,31 +262,76 @@ public class IndependentAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndependentAmountNetOpenPosition = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndependentAmountNetOpenPosition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IndependentAmount.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndependentAmountNetOpenPosition";
 			definition = "Portfolio level independent amount related to FX net open position, i.e. to the difference between assets and liabilities in a particular currency. This may be measured on a per currency basis or the position of all currencies when calculated in base currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return IndependentAmount.class.getMethod("getIndependentAmountNetOpenPosition", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "IndependentAmount";
 				definition = "Amount applied as an add-on to the exposure usually intended to cover a possible increase in exposure before the next valuation date.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExposureCalculation.CurrentIndependentAmount);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IndependentAmount.RelatedRiskCalculation, com.tools20022.repository.entity.IndependentAmount.IndependentAmountPerTrade,
-						com.tools20022.repository.entity.IndependentAmount.IndependentAmountValueAtRisk, com.tools20022.repository.entity.IndependentAmount.IndependentAmountNetOpenPosition);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExposureCalculation.mmCurrentIndependentAmount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IndependentAmount.mmRelatedRiskCalculation, com.tools20022.repository.entity.IndependentAmount.mmIndependentAmountPerTrade,
+						com.tools20022.repository.entity.IndependentAmount.mmIndependentAmountValueAtRisk, com.tools20022.repository.entity.IndependentAmount.mmIndependentAmountNetOpenPosition);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return IndependentAmount.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ExposureCalculation getRelatedRiskCalculation() {
+		return relatedRiskCalculation;
+	}
+
+	public void setRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation relatedRiskCalculation) {
+		this.relatedRiskCalculation = relatedRiskCalculation;
+	}
+
+	public ActiveCurrencyAndAmount getIndependentAmountPerTrade() {
+		return independentAmountPerTrade;
+	}
+
+	public void setIndependentAmountPerTrade(ActiveCurrencyAndAmount independentAmountPerTrade) {
+		this.independentAmountPerTrade = independentAmountPerTrade;
+	}
+
+	public ActiveCurrencyAndAmount getIndependentAmountValueAtRisk() {
+		return independentAmountValueAtRisk;
+	}
+
+	public void setIndependentAmountValueAtRisk(ActiveCurrencyAndAmount independentAmountValueAtRisk) {
+		this.independentAmountValueAtRisk = independentAmountValueAtRisk;
+	}
+
+	public ActiveCurrencyAndAmount getIndependentAmountNetOpenPosition() {
+		return independentAmountNetOpenPosition;
+	}
+
+	public void setIndependentAmountNetOpenPosition(ActiveCurrencyAndAmount independentAmountNetOpenPosition) {
+		this.independentAmountNetOpenPosition = independentAmountNetOpenPosition;
 	}
 }

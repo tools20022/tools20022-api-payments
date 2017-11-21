@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,45 +34,45 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#AccreditedInvestor
- * BeneficiaryCertificationTypeCode.AccreditedInvestor}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmAccreditedInvestor
+ * BeneficiaryCertificationTypeCode.mmAccreditedInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#DomicileCountry
- * BeneficiaryCertificationTypeCode.DomicileCountry}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmDomicileCountry
+ * BeneficiaryCertificationTypeCode.mmDomicileCountry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#NonDomicileCountry
- * BeneficiaryCertificationTypeCode.NonDomicileCountry}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmNonDomicileCountry
+ * BeneficiaryCertificationTypeCode.mmNonDomicileCountry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#FullBeneficialOwnerBreakdown
- * BeneficiaryCertificationTypeCode.FullBeneficialOwnerBreakdown}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmFullBeneficialOwnerBreakdown
+ * BeneficiaryCertificationTypeCode.mmFullBeneficialOwnerBreakdown}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#QIBCertification
- * BeneficiaryCertificationTypeCode.QIBCertification}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmQIBCertification
+ * BeneficiaryCertificationTypeCode.mmQIBCertification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#TaxRateBreakdown
- * BeneficiaryCertificationTypeCode.TaxRateBreakdown}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmTaxRateBreakdown
+ * BeneficiaryCertificationTypeCode.mmTaxRateBreakdown}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#NonCompany
- * BeneficiaryCertificationTypeCode.NonCompany}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmNonCompany
+ * BeneficiaryCertificationTypeCode.mmNonCompany}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#BeneficialOwnerPaperwork
- * BeneficiaryCertificationTypeCode.BeneficialOwnerPaperwork}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmBeneficialOwnerPaperwork
+ * BeneficiaryCertificationTypeCode.mmBeneficialOwnerPaperwork}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#ICSDParticipantBreakdown
- * BeneficiaryCertificationTypeCode.ICSDParticipantBreakdown}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmICSDParticipantBreakdown
+ * BeneficiaryCertificationTypeCode.mmICSDParticipantBreakdown}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#NarrativeDescription
- * BeneficiaryCertificationTypeCode.NarrativeDescription}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmNarrativeDescription
+ * BeneficiaryCertificationTypeCode.mmNarrativeDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#FractionBreakdown
- * BeneficiaryCertificationTypeCode.FractionBreakdown}</li>
+ * {@linkplain com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode#mmFractionBreakdown
+ * BeneficiaryCertificationTypeCode.mmFractionBreakdown}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -117,9 +119,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AccreditedInvestor = new MMCode() {
+	public static final MMCode mmAccreditedInvestor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccreditedInvestor";
 			definition = "The holder of the security has to irrevocably certify that it is an Accredited Investor as defined in US Securities and Exchange Commission Regulation D.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -147,9 +149,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * definition} = "The holder of the security has to certify his domicile."</li>
 	 * </ul>
 	 */
-	public static final MMCode DomicileCountry = new MMCode() {
+	public static final MMCode mmDomicileCountry = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomicileCountry";
 			definition = "The holder of the security has to certify his domicile.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -180,9 +182,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NonDomicileCountry = new MMCode() {
+	public static final MMCode mmNonDomicileCountry = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonDomicileCountry";
 			definition = "The holder of the security has to certify, in line with the terms of the corporate action, that it is not domiciled in the country indicated.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -213,9 +215,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FullBeneficialOwnerBreakdown = new MMCode() {
+	public static final MMCode mmFullBeneficialOwnerBreakdown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullBeneficialOwnerBreakdown";
 			definition = "The holder of the security has to provide his beneficial owner details for disclosure/instruction purpose.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -247,9 +249,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode QIBCertification = new MMCode() {
+	public static final MMCode mmQIBCertification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QIBCertification";
 			definition = "The holder of the security has to irrevocably certify that it is a Qualified Institutional Buyer as defined in US Securities and Exchange Commission Rule 144A.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -280,9 +282,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TaxRateBreakdown = new MMCode() {
+	public static final MMCode mmTaxRateBreakdown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxRateBreakdown";
 			definition = "The holder of the security has to provide basic details on nominals and associated tax rate to be used by the account servicer.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -313,9 +315,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NonCompany = new MMCode() {
+	public static final MMCode mmNonCompany = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonCompany";
 			definition = "The holder of the security has to certify he is an Non-Company related person.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -346,9 +348,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode BeneficialOwnerPaperwork = new MMCode() {
+	public static final MMCode mmBeneficialOwnerPaperwork = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficialOwnerPaperwork";
 			definition = "Indicates if the Beneficial Owner is responsible to fill in the paperwork.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -379,9 +381,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ICSDParticipantBreakdown = new MMCode() {
+	public static final MMCode mmICSDParticipantBreakdown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ICSDParticipantBreakdown";
 			definition = "The (I)CSD has to provide its participants' details for disclosure purpose to the issuer/issuer’s agent.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -409,9 +411,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * definition} = "See narrative field for certification requirements."</li>
 	 * </ul>
 	 */
-	public static final MMCode NarrativeDescription = new MMCode() {
+	public static final MMCode mmNarrativeDescription = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NarrativeDescription";
 			definition = "See narrative field for certification requirements.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -442,9 +444,9 @@ public class BeneficiaryCertificationTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FractionBreakdown = new MMCode() {
+	public static final MMCode mmFractionBreakdown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FractionBreakdown";
 			definition = "Indicates that the rounding rule in the Fraction Disposition component at the option level can be offered at the beneficial owner level.";
 			owner_lazy = () -> BeneficiaryCertificationTypeCode.mmObject();
@@ -455,17 +457,15 @@ public class BeneficiaryCertificationTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACCI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BeneficiaryCertificationTypeCode";
 				definition = "The holder of the security has to irrevocably certify that it is a Qualified Institutional Buyer as defined in US Securities and Exchange Commission Rule 144A.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.AccreditedInvestor, com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.DomicileCountry,
-						com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.NonDomicileCountry, com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.FullBeneficialOwnerBreakdown,
-						com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.QIBCertification, com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.TaxRateBreakdown,
-						com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.NonCompany, com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.BeneficialOwnerPaperwork,
-						com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.ICSDParticipantBreakdown, com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.NarrativeDescription,
-						com.tools20022.repository.codeset.BeneficiaryCertificationTypeCode.FractionBreakdown);
+				code_lazy = () -> Arrays.asList(BeneficiaryCertificationTypeCode.mmAccreditedInvestor, BeneficiaryCertificationTypeCode.mmDomicileCountry, BeneficiaryCertificationTypeCode.mmNonDomicileCountry,
+						BeneficiaryCertificationTypeCode.mmFullBeneficialOwnerBreakdown, BeneficiaryCertificationTypeCode.mmQIBCertification, BeneficiaryCertificationTypeCode.mmTaxRateBreakdown,
+						BeneficiaryCertificationTypeCode.mmNonCompany, BeneficiaryCertificationTypeCode.mmBeneficialOwnerPaperwork, BeneficiaryCertificationTypeCode.mmICSDParticipantBreakdown,
+						BeneficiaryCertificationTypeCode.mmNarrativeDescription, BeneficiaryCertificationTypeCode.mmFractionBreakdown);
 			}
 		});
 		return mmObject_lazy.get();

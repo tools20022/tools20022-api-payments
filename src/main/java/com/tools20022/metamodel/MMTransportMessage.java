@@ -18,9 +18,14 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.GeneratedMetamodelBean;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
 import com.tools20022.core.metamodel.OrphanMetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.SameMessageTransportSystem;
 import com.tools20022.metamodel.MMMessageInstance;
 import com.tools20022.metamodel.MMMessagingEndpoint;
 import com.tools20022.metamodel.MMModelEntity;
@@ -35,6 +40,26 @@ import java.util.Optional;
  */
 public class MMTransportMessage implements OrphanMetamodelType, MMModelEntity {
 
+	/**
+	 * the sending MessagingEndpoint of a TransportMessage
+	 */
+	public final static MetamodelAttribute<MMTransportMessage, MMMessagingEndpoint> senderAttribute = newAttribute();
+	/**
+	 * the MessageInstance that is part of the TransportMessage
+	 */
+	public final static MetamodelAttribute<MMTransportMessage, MMMessageInstance> messageInstanceAttribute = newAttribute();
+	/**
+	 * the receiving MessagingEndpoint in a TransportMessage
+	 */
+	public final static MetamodelAttribute<MMTransportMessage, List<MMMessagingEndpoint>> receiverAttribute = newAttribute();
+	/**
+	 * The sender and receiver of a TransportMessage must use the same
+	 * MessageTransportSystem receiver-&gt;asBag().transportSystem =
+	 * sender.transportSystem-&gt;asBag()
+	 */
+	public final static MetamodelConstraint<MMTransportMessage> checksameMessageTransportSystem = newConstraint(b -> {
+		new SameMessageTransportSystem().accept(b);
+	});
 	protected Supplier<MMMessagingEndpoint> sender_lazy;
 	protected Supplier<MMMessageInstance> messageInstance_lazy;
 	protected Supplier<List<MMMessagingEndpoint>> receiver_lazy;

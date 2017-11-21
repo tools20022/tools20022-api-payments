@@ -18,6 +18,8 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,11 +34,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMIdentifierSet#getIdentificationScheme
  * identificationScheme} =
  * "American Banker's Association (ABA); CHIPS Participant Number"</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
+ * "CP[0-9]{4,4}"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -62,12 +66,13 @@ public class CHIPSParticipantIdentifier {
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CP1234");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CHIPSParticipantIdentifier";
 				definition = "(United States) Clearing House Interbank Payment System (CHIPS) Participant Identifier (ID). Identifies financial institutions participating on CHIPS. The CHIPS Participant ID is assigned by the New York Clearing House.";
 				identificationScheme = "American Banker's Association (ABA); CHIPS Participant Number";
+				pattern = "CP[0-9]{4,4}";
 			}
 		});
 		return mmObject_lazy.get();

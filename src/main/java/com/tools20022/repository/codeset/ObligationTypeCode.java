@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,20 +31,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#Fails
- * ObligationTypeCode.Fails}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#New
- * ObligationTypeCode.New}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#mmFails
+ * ObligationTypeCode.mmFails}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ObligationTypeCode#mmNew
+ * ObligationTypeCode.mmNew}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ObligationTypeCode#CorporateEvent
- * ObligationTypeCode.CorporateEvent}</li>
+ * {@linkplain com.tools20022.repository.codeset.ObligationTypeCode#mmCorporateEvent
+ * ObligationTypeCode.mmCorporateEvent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class ObligationTypeCode {
 	 * "Specifies that the obligation is related to a failed trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode Fails = new MMCode() {
+	public static final MMCode mmFails = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fails";
 			definition = "Specifies that the obligation is related to a failed trade.";
 			owner_lazy = () -> ObligationTypeCode.mmObject();
@@ -114,9 +116,9 @@ public class ObligationTypeCode {
 	 * definition} = "Specifies that the obligation is related to new a trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode New = new MMCode() {
+	public static final MMCode mmNew = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "New";
 			definition = "Specifies that the obligation is related to new a trade.";
 			owner_lazy = () -> ObligationTypeCode.mmObject();
@@ -145,9 +147,9 @@ public class ObligationTypeCode {
 	 * "Specifies that the obligation is related to a corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMCode CorporateEvent = new MMCode() {
+	public static final MMCode mmCorporateEvent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorporateEvent";
 			definition = "Specifies that the obligation is related to a corporate event.";
 			owner_lazy = () -> ObligationTypeCode.mmObject();
@@ -158,12 +160,12 @@ public class ObligationTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("FAIL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ObligationTypeCode";
 				definition = "Specifies the type of the obligation.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ObligationTypeCode.Fails, com.tools20022.repository.codeset.ObligationTypeCode.New, com.tools20022.repository.codeset.ObligationTypeCode.CorporateEvent);
+				code_lazy = () -> Arrays.asList(ObligationTypeCode.mmFails, ObligationTypeCode.mmNew, ObligationTypeCode.mmCorporateEvent);
 			}
 		});
 		return mmObject_lazy.get();

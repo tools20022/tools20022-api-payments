@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ProductCategoryCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,33 +37,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#Product
- * ProductCategory.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#Type
- * ProductCategory.Type}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#Category
- * ProductCategory.Category}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#mmProduct
+ * ProductCategory.mmProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#mmType
+ * ProductCategory.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#mmCategory
+ * ProductCategory.mmCategory}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductCategory#RelatedCardPaymentValidation
- * ProductCategory.RelatedCardPaymentValidation}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductCategory#mmRelatedCardPaymentValidation
+ * ProductCategory.mmRelatedCardPaymentValidation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Product#ProductCategory
- * Product.ProductCategory}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmProductCategory
+ * Product.mmProductCategory}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#DeclinedProductCode
- * CardPaymentValidation.DeclinedProductCode}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmDeclinedProductCode
+ * CardPaymentValidation.mmDeclinedProductCode}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ProductCategory {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Product product;
 	/**
 	 * Specifies the product for which a category is specified.
 	 * <p>
@@ -85,8 +86,8 @@ public class ProductCategory {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Product#ProductCategory
-	 * Product.ProductCategory}</li>
+	 * {@linkplain com.tools20022.repository.entity.Product#mmProductCategory
+	 * Product.mmProductCategory}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -109,20 +110,21 @@ public class ProductCategory {
 	 * definition} = "Specifies the product for which a category is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Product = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductCategory.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the product for which a category is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmProductCategory;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.ProductCategory;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ProductCategoryCode type;
 	/**
 	 * Specifies the type of product category by means of a code.
 	 * <p>
@@ -150,18 +152,27 @@ public class ProductCategory {
 	 * "Specifies the type of product category by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ProductCategory.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of product category by means of a code.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ProductCategoryCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ProductCategory.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text category;
 	/**
 	 * Specifies the category of a product.
 	 * <p>
@@ -187,18 +198,27 @@ public class ProductCategory {
 	 * definition} = "Specifies the category of a product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Category = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCategory = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ProductCategory.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Category";
 			definition = "Specifies the category of a product.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ProductCategory.class.getMethod("getCategory", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CardPaymentValidation relatedCardPaymentValidation;
 	/**
 	 * Validation process which declined a product code.
 	 * <p>
@@ -207,8 +227,8 @@ public class ProductCategory {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#DeclinedProductCode
-	 * CardPaymentValidation.DeclinedProductCode}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmDeclinedProductCode
+	 * CardPaymentValidation.mmDeclinedProductCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -233,33 +253,70 @@ public class ProductCategory {
 	 * definition} = "Validation process which declined a product code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductCategory.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPaymentValidation";
 			definition = "Validation process which declined a product code.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CardPaymentValidation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.DeclinedProductCode;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmDeclinedProductCode;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCategory";
 				definition = "Specifies the category of the product.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.ProductCategory, com.tools20022.repository.entity.CardPaymentValidation.DeclinedProductCode);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductCategory.Product, com.tools20022.repository.entity.ProductCategory.Type, com.tools20022.repository.entity.ProductCategory.Category,
-						com.tools20022.repository.entity.ProductCategory.RelatedCardPaymentValidation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmProductCategory, com.tools20022.repository.entity.CardPaymentValidation.mmDeclinedProductCode);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductCategory.mmProduct, com.tools20022.repository.entity.ProductCategory.mmType, com.tools20022.repository.entity.ProductCategory.mmCategory,
+						com.tools20022.repository.entity.ProductCategory.mmRelatedCardPaymentValidation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ProductCategory.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(com.tools20022.repository.entity.Product product) {
+		this.product = product;
+	}
+
+	public ProductCategoryCode getType() {
+		return type;
+	}
+
+	public void setType(ProductCategoryCode type) {
+		this.type = type;
+	}
+
+	public Max35Text getCategory() {
+		return category;
+	}
+
+	public void setCategory(Max35Text category) {
+		this.category = category;
+	}
+
+	public CardPaymentValidation getRelatedCardPaymentValidation() {
+		return relatedCardPaymentValidation;
+	}
+
+	public void setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
+		this.relatedCardPaymentValidation = relatedCardPaymentValidation;
 	}
 }

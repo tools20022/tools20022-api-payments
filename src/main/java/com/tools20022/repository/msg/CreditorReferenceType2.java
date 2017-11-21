@@ -20,12 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.CreditorReferenceType1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.DocumentIssuer;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of creditor reference.
@@ -37,10 +43,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CreditorReferenceType2#CodeOrProprietary
- * CreditorReferenceType2.CodeOrProprietary}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CreditorReferenceType2#Issuer
- * CreditorReferenceType2.Issuer}</li>
+ * {@linkplain com.tools20022.repository.msg.CreditorReferenceType2#mmCodeOrProprietary
+ * CreditorReferenceType2.mmCodeOrProprietary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CreditorReferenceType2#mmIssuer
+ * CreditorReferenceType2.mmIssuer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of creditor reference."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CreditorReferenceType2", propOrder = {"codeOrProprietary", "issuer"})
 public class CreditorReferenceType2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected CreditorReferenceType1Choice codeOrProprietary;
 	/**
 	 * Coded or proprietary format creditor reference type.
 	 * <p>
@@ -94,21 +104,22 @@ public class CreditorReferenceType2 {
 	 * definition} = "Coded or proprietary format creditor reference type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd CodeOrProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> CreditorReferenceType2.mmObject();
 			businessComponentTrace_lazy = () -> Document.mmObject();
+			componentContext_lazy = () -> CreditorReferenceType2.mmObject();
 			isDerived = false;
 			xmlTag = "CdOrPrtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CodeOrProprietary";
 			definition = "Coded or proprietary format creditor reference type.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CreditorReferenceType1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> CreditorReferenceType1Choice.mmObject();
 		}
 	};
+	protected Max35Text issuer;
 	/**
 	 * Entity that assigns the credit reference type.
 	 * <p>
@@ -141,17 +152,17 @@ public class CreditorReferenceType2 {
 	 * definition} = "Entity that assigns the credit reference type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Issuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> CreditorReferenceType2.mmObject();
 			businessComponentTrace_lazy = () -> DocumentIssuer.mmObject();
+			componentContext_lazy = () -> CreditorReferenceType2.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Entity that assigns the credit reference type.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -159,14 +170,32 @@ public class CreditorReferenceType2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CreditorReferenceType2.CodeOrProprietary, com.tools20022.repository.msg.CreditorReferenceType2.Issuer);
+				messageElement_lazy = () -> Arrays.asList(CreditorReferenceType2.mmCodeOrProprietary, CreditorReferenceType2.mmIssuer);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditorReferenceType2";
 				definition = "Specifies the type of creditor reference.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "CdOrPrtry", required = true)
+	public CreditorReferenceType1Choice getCodeOrProprietary() {
+		return codeOrProprietary;
+	}
+
+	public void setCodeOrProprietary(CreditorReferenceType1Choice codeOrProprietary) {
+		this.codeOrProprietary = codeOrProprietary;
+	}
+
+	@XmlElement(name = "Issr")
+	public Max35Text getIssuer() {
+		return issuer;
+	}
+
+	public void setIssuer(Max35Text issuer) {
+		this.issuer = issuer;
 	}
 }

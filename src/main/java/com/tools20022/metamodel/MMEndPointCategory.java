@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,10 @@ import java.util.Optional;
  */
 public class MMEndPointCategory implements MMTopLevelDictionaryEntry {
 
+	/**
+	 * MessageComponents that are considered to be end points.
+	 */
+	public final static MetamodelAttribute<MMEndPointCategory, List<MMMessageElementContainer>> endPointsAttribute = newAttribute();
 	protected Supplier<List<MMMessageElementContainer>> endPoints_lazy;
 	protected Supplier<MMDataDictionary> dataDictionary_lazy;
 	protected String name;

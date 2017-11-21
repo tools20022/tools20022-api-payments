@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SafekeepingPlaceCode;
 import com.tools20022.repository.entity.SecuritiesPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,19 +38,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#SafekeepingPlaceType
- * SafekeepingPlace.SafekeepingPlaceType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SafekeepingPlace#Country
- * SafekeepingPlace.Country}</li>
+ * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#mmSafekeepingPlaceType
+ * SafekeepingPlace.mmSafekeepingPlaceType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SafekeepingPlace#mmCountry
+ * SafekeepingPlace.mmCountry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#RelatedSecuritiesAccount
- * SafekeepingPlace.RelatedSecuritiesAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#mmRelatedSecuritiesAccount
+ * SafekeepingPlace.mmRelatedSecuritiesAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#SecuritiesBalance
- * SafekeepingPlace.SecuritiesBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#mmSecuritiesBalance
+ * SafekeepingPlace.mmSecuritiesBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#SecuritiesSettlement
- * SafekeepingPlace.SecuritiesSettlement}</li>
+ * {@linkplain com.tools20022.repository.entity.SafekeepingPlace#mmSecuritiesSettlement
+ * SafekeepingPlace.mmSecuritiesSettlement}</li>
  * </ul>
  * </li>
  * <li>
@@ -58,17 +58,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Country#CountryForSafekeepingPlace
- * Country.CountryForSafekeepingPlace}</li>
+ * {@linkplain com.tools20022.repository.entity.Country#mmCountryForSafekeepingPlace
+ * Country.mmCountryForSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#SafekeepingPlace
- * SecuritiesAccount.SafekeepingPlace}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSafekeepingPlace
+ * SecuritiesAccount.mmSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#RequestedSafekeepingPlace
- * SecuritiesSettlement.RequestedSafekeepingPlace}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmRequestedSafekeepingPlace
+ * SecuritiesSettlement.mmRequestedSafekeepingPlace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#SafekeepingPlace
- * SecuritiesBalance.SafekeepingPlace}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmSafekeepingPlace
+ * SecuritiesBalance.mmSafekeepingPlace}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -78,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,6 +94,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SafekeepingPlace extends SecuritiesPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SafekeepingPlaceCode safekeepingPlaceType;
 	/**
 	 * Place of safekeeping.
 	 * <p>
@@ -120,18 +121,27 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SafekeepingPlaceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSafekeepingPlaceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SafekeepingPlace.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingPlaceType";
 			definition = "Place of safekeeping.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SafekeepingPlaceCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SafekeepingPlace.class.getMethod("getSafekeepingPlaceType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Country country;
 	/**
 	 * Country where the financial instruments are/will be safekept.
 	 * <p>
@@ -140,8 +150,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Country#CountryForSafekeepingPlace
-	 * Country.CountryForSafekeepingPlace}</li>
+	 * {@linkplain com.tools20022.repository.entity.Country#mmCountryForSafekeepingPlace
+	 * Country.mmCountryForSafekeepingPlace}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -165,20 +175,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Country where the financial instruments are/will be safekept."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Country = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SafekeepingPlace.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = true;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Country";
 			definition = "Country where the financial instruments are/will be safekept.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmCountryForSafekeepingPlace;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.CountryForSafekeepingPlace;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesAccount relatedSecuritiesAccount;
 	/**
 	 * Account at the safekeeping place where financial instruments are
 	 * safekept.
@@ -188,8 +199,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#SafekeepingPlace
-	 * SecuritiesAccount.SafekeepingPlace}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSafekeepingPlace
+	 * SecuritiesAccount.mmSafekeepingPlace}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -215,20 +226,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SafekeepingPlace.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesAccount";
 			definition = "Account at the safekeeping place where financial instruments are safekept.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmSafekeepingPlace;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.SafekeepingPlace;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesBalance securitiesBalance;
 	/**
 	 * Balance which is held at a safekeeping place.
 	 * <p>
@@ -237,8 +249,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#SafekeepingPlace
-	 * SecuritiesBalance.SafekeepingPlace}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmSafekeepingPlace
+	 * SecuritiesBalance.mmSafekeepingPlace}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -262,20 +274,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Balance which is held at a safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SafekeepingPlace.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Balance which is held at a safekeeping place.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmSafekeepingPlace;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.SafekeepingPlace;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesSettlement securitiesSettlement;
 	/**
 	 * Specifies the settlement operation which uses the safekeeping place.
 	 * <p>
@@ -284,8 +297,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#RequestedSafekeepingPlace
-	 * SecuritiesSettlement.RequestedSafekeepingPlace}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmRequestedSafekeepingPlace
+	 * SecuritiesSettlement.mmRequestedSafekeepingPlace}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -311,36 +324,81 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Specifies the settlement operation which uses the safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SafekeepingPlace.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Specifies the settlement operation which uses the safekeeping place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmRequestedSafekeepingPlace;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.RequestedSafekeepingPlace;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlace";
 				definition = "Organisation used as the safekeeping place for the securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.CountryForSafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount.SafekeepingPlace,
-						com.tools20022.repository.entity.SecuritiesSettlement.RequestedSafekeepingPlace, com.tools20022.repository.entity.SecuritiesBalance.SafekeepingPlace);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmCountryForSafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount.mmSafekeepingPlace,
+						com.tools20022.repository.entity.SecuritiesSettlement.mmRequestedSafekeepingPlace, com.tools20022.repository.entity.SecuritiesBalance.mmSafekeepingPlace);
 				superType_lazy = () -> SecuritiesPartyRole.mmObject();
-				element_lazy = () -> Arrays
-						.asList(com.tools20022.repository.entity.SafekeepingPlace.SafekeepingPlaceType, com.tools20022.repository.entity.SafekeepingPlace.Country, com.tools20022.repository.entity.SafekeepingPlace.RelatedSecuritiesAccount,
-								com.tools20022.repository.entity.SafekeepingPlace.SecuritiesBalance, com.tools20022.repository.entity.SafekeepingPlace.SecuritiesSettlement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SafekeepingPlace.mmSafekeepingPlaceType, com.tools20022.repository.entity.SafekeepingPlace.mmCountry,
+						com.tools20022.repository.entity.SafekeepingPlace.mmRelatedSecuritiesAccount, com.tools20022.repository.entity.SafekeepingPlace.mmSecuritiesBalance,
+						com.tools20022.repository.entity.SafekeepingPlace.mmSecuritiesSettlement);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SafekeepingPlace.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SafekeepingPlaceCode getSafekeepingPlaceType() {
+		return safekeepingPlaceType;
+	}
+
+	public void setSafekeepingPlaceType(SafekeepingPlaceCode safekeepingPlaceType) {
+		this.safekeepingPlaceType = safekeepingPlaceType;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = country;
+	}
+
+	public SecuritiesAccount getRelatedSecuritiesAccount() {
+		return relatedSecuritiesAccount;
+	}
+
+	public void setRelatedSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount relatedSecuritiesAccount) {
+		this.relatedSecuritiesAccount = relatedSecuritiesAccount;
+	}
+
+	public SecuritiesBalance getSecuritiesBalance() {
+		return securitiesBalance;
+	}
+
+	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+		this.securitiesBalance = securitiesBalance;
+	}
+
+	public SecuritiesSettlement getSecuritiesSettlement() {
+		return securitiesSettlement;
+	}
+
+	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+		this.securitiesSettlement = securitiesSettlement;
 	}
 }

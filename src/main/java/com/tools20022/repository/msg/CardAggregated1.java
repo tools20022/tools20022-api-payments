@@ -20,13 +20,21 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.DateOrDateTimePeriodChoice;
 import com.tools20022.repository.codeset.CardPaymentServiceType2Code;
 import com.tools20022.repository.codeset.ExternalCardTransactionCategory1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.CardPayment;
+import com.tools20022.repository.entity.CardPaymentAcquiring;
+import com.tools20022.repository.entity.Payment;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Globalised card transaction entry details.
@@ -38,20 +46,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardAggregated1#AdditionalService
- * CardAggregated1.AdditionalService}</li>
+ * {@linkplain com.tools20022.repository.msg.CardAggregated1#mmAdditionalService
+ * CardAggregated1.mmAdditionalService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardAggregated1#TransactionCategory
- * CardAggregated1.TransactionCategory}</li>
+ * {@linkplain com.tools20022.repository.msg.CardAggregated1#mmTransactionCategory
+ * CardAggregated1.mmTransactionCategory}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardAggregated1#SaleReconciliationIdentification
- * CardAggregated1.SaleReconciliationIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.CardAggregated1#mmSaleReconciliationIdentification
+ * CardAggregated1.mmSaleReconciliationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardAggregated1#SequenceNumberRange
- * CardAggregated1.SequenceNumberRange}</li>
+ * {@linkplain com.tools20022.repository.msg.CardAggregated1#mmSequenceNumberRange
+ * CardAggregated1.mmSequenceNumberRange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardAggregated1#TransactionDateRange
- * CardAggregated1.TransactionDateRange}</li>
+ * {@linkplain com.tools20022.repository.msg.CardAggregated1#mmTransactionDateRange
+ * CardAggregated1.mmTransactionDateRange}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -60,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,9 +80,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Globalised card transaction entry details."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CardAggregated1", propOrder = {"additionalService", "transactionCategory", "saleReconciliationIdentification", "sequenceNumberRange", "transactionDateRange"})
 public class CardAggregated1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected CardPaymentServiceType2Code additionalService;
 	/**
 	 * Service in addition to the main service.
 	 * <p>
@@ -88,8 +99,8 @@ public class CardAggregated1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#CardPaymentService
-	 * CardPaymentAcquiring.CardPaymentService}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#mmCardPaymentService
+	 * CardPaymentAcquiring.mmCardPaymentService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -108,20 +119,21 @@ public class CardAggregated1 {
 	 * definition} = "Service in addition to the main service."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalService = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalService = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPaymentService;
 			componentContext_lazy = () -> CardAggregated1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.CardPaymentService;
 			isDerived = false;
 			xmlTag = "AddtlSvc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalService";
 			definition = "Service in addition to the main service.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> CardPaymentServiceType2Code.mmObject();
 		}
 	};
+	protected ExternalCardTransactionCategory1Code transactionCategory;
 	/**
 	 * Category code conform to ISO 18245, related to the type of services or
 	 * goods the merchant provides for the transaction.
@@ -136,7 +148,8 @@ public class CardAggregated1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Payment#Type Payment.Type}</li>
+	 * {@linkplain com.tools20022.repository.entity.Payment#mmType
+	 * Payment.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -157,20 +170,21 @@ public class CardAggregated1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TransactionCategory = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTransactionCategory = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Payment.mmType;
 			componentContext_lazy = () -> CardAggregated1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Payment.Type;
 			isDerived = false;
 			xmlTag = "TxCtgy";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionCategory";
 			definition = "Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ExternalCardTransactionCategory1Code.mmObject();
 		}
 	};
+	protected Max35Text saleReconciliationIdentification;
 	/**
 	 * Unique identification of the sales reconciliation period between the
 	 * acceptor and the acquirer. This identification might be linked to the
@@ -203,19 +217,20 @@ public class CardAggregated1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute SaleReconciliationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSaleReconciliationIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> CardAggregated1.mmObject();
 			isDerived = false;
 			xmlTag = "SaleRcncltnId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SaleReconciliationIdentification";
 			definition = "Unique identification of the sales reconciliation period between the acceptor and the acquirer. This identification might be linked to the identification of the settlement for further verification by the merchant.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected CardSequenceNumberRange1 sequenceNumberRange;
 	/**
 	 * Range of sequence numbers on which the globalisation applies.
 	 * <p>
@@ -244,20 +259,21 @@ public class CardAggregated1 {
 	 * "Range of sequence numbers on which the globalisation applies."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd SequenceNumberRange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSequenceNumberRange = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> CardAggregated1.mmObject();
 			isDerived = false;
 			xmlTag = "SeqNbRg";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SequenceNumberRange";
 			definition = "Range of sequence numbers on which the globalisation applies.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CardSequenceNumberRange1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.CardSequenceNumberRange1.mmObject();
 		}
 	};
+	protected DateOrDateTimePeriodChoice transactionDateRange;
 	/**
 	 * Date range on which the globalisation applies.
 	 * <p>
@@ -285,33 +301,78 @@ public class CardAggregated1 {
 	 * definition} = "Date range on which the globalisation applies."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd TransactionDateRange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTransactionDateRange = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> CardAggregated1.mmObject();
 			isDerived = false;
 			xmlTag = "TxDtRg";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionDateRange";
 			definition = "Date range on which the globalisation applies.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> DateOrDateTimePeriodChoice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> DateOrDateTimePeriodChoice.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardAggregated1.AdditionalService, com.tools20022.repository.msg.CardAggregated1.TransactionCategory,
-						com.tools20022.repository.msg.CardAggregated1.SaleReconciliationIdentification, com.tools20022.repository.msg.CardAggregated1.SequenceNumberRange, com.tools20022.repository.msg.CardAggregated1.TransactionDateRange);
+				messageElement_lazy = () -> Arrays.asList(CardAggregated1.mmAdditionalService, CardAggregated1.mmTransactionCategory, CardAggregated1.mmSaleReconciliationIdentification, CardAggregated1.mmSequenceNumberRange,
+						CardAggregated1.mmTransactionDateRange);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardAggregated1";
 				definition = "Globalised card transaction entry details.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "AddtlSvc")
+	public CardPaymentServiceType2Code getAdditionalService() {
+		return additionalService;
+	}
+
+	public void setAdditionalService(CardPaymentServiceType2Code additionalService) {
+		this.additionalService = additionalService;
+	}
+
+	@XmlElement(name = "TxCtgy")
+	public ExternalCardTransactionCategory1Code getTransactionCategory() {
+		return transactionCategory;
+	}
+
+	public void setTransactionCategory(ExternalCardTransactionCategory1Code transactionCategory) {
+		this.transactionCategory = transactionCategory;
+	}
+
+	@XmlElement(name = "SaleRcncltnId")
+	public Max35Text getSaleReconciliationIdentification() {
+		return saleReconciliationIdentification;
+	}
+
+	public void setSaleReconciliationIdentification(Max35Text saleReconciliationIdentification) {
+		this.saleReconciliationIdentification = saleReconciliationIdentification;
+	}
+
+	@XmlElement(name = "SeqNbRg")
+	public CardSequenceNumberRange1 getSequenceNumberRange() {
+		return sequenceNumberRange;
+	}
+
+	public void setSequenceNumberRange(com.tools20022.repository.msg.CardSequenceNumberRange1 sequenceNumberRange) {
+		this.sequenceNumberRange = sequenceNumberRange;
+	}
+
+	@XmlElement(name = "TxDtRg")
+	public DateOrDateTimePeriodChoice getTransactionDateRange() {
+		return transactionDateRange;
+	}
+
+	public void setTransactionDateRange(DateOrDateTimePeriodChoice transactionDateRange) {
+		this.transactionDateRange = transactionDateRange;
 	}
 }

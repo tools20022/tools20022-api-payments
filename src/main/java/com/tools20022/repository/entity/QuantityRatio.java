@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.DecimalNumber;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,57 +37,57 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.QuantityRatio#AdditionalQuantityForResultantSecuritiesProceedsDefinition
- * QuantityRatio.AdditionalQuantityForResultantSecuritiesProceedsDefinition}</li>
- * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#Quantity1
- * QuantityRatio.Quantity1}</li>
- * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#Quantity2
- * QuantityRatio.Quantity2}</li>
+ * {@linkplain com.tools20022.repository.entity.QuantityRatio#mmAdditionalQuantityForResultantSecuritiesProceedsDefinition
+ * QuantityRatio.mmAdditionalQuantityForResultantSecuritiesProceedsDefinition}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#mmQuantity1
+ * QuantityRatio.mmQuantity1}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#mmQuantity2
+ * QuantityRatio.mmQuantity2}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.QuantityRatio#AdditionalQuantityForSubscribedSecuritiesProceedsDefinition
- * QuantityRatio.AdditionalQuantityForSubscribedSecuritiesProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.QuantityRatio#mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition
+ * QuantityRatio.mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.QuantityRatio#NewToOldProceedsDefinition
- * QuantityRatio.NewToOldProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.QuantityRatio#mmNewToOldProceedsDefinition
+ * QuantityRatio.mmNewToOldProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.QuantityRatio#NewToUnderlyingProceedsDefinition
- * QuantityRatio.NewToUnderlyingProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.QuantityRatio#mmNewToUnderlyingProceedsDefinition
+ * QuantityRatio.mmNewToUnderlyingProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.QuantityRatio#IntermediateSecuritiesProceedsDefinition
- * QuantityRatio.IntermediateSecuritiesProceedsDefinition}</li>
- * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#warrant
- * QuantityRatio.warrant}</li>
+ * {@linkplain com.tools20022.repository.entity.QuantityRatio#mmIntermediateSecuritiesProceedsDefinition
+ * QuantityRatio.mmIntermediateSecuritiesProceedsDefinition}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.QuantityRatio#mmwarrant
+ * QuantityRatio.mmwarrant}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Warrant#WarrantParity
- * Warrant.WarrantParity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Warrant#mmWarrantParity
+ * Warrant.mmWarrantParity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#AdditionalQuantityForSubscribedResultantSecurities
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmAdditionalQuantityForSubscribedResultantSecurities
  * SecuritiesProceedsDefinition.
- * AdditionalQuantityForSubscribedResultantSecurities}</li>
+ * mmAdditionalQuantityForSubscribedResultantSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#AdditionalQuantityForExistingSecurities
- * SecuritiesProceedsDefinition.AdditionalQuantityForExistingSecurities}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmAdditionalQuantityForExistingSecurities
+ * SecuritiesProceedsDefinition.mmAdditionalQuantityForExistingSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#NewToOld
- * SecuritiesProceedsDefinition.NewToOld}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmNewToOld
+ * SecuritiesProceedsDefinition.mmNewToOld}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#NewSecuritiesToUnderlyingSecurities
- * SecuritiesProceedsDefinition.NewSecuritiesToUnderlyingSecurities}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmNewSecuritiesToUnderlyingSecurities
+ * SecuritiesProceedsDefinition.mmNewSecuritiesToUnderlyingSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#IntermediateSecuritiesToUnderlyingRatio
- * SecuritiesProceedsDefinition.IntermediateSecuritiesToUnderlyingRatio}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmIntermediateSecuritiesToUnderlyingRatio
+ * SecuritiesProceedsDefinition.mmIntermediateSecuritiesToUnderlyingRatio}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,6 +101,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class QuantityRatio {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesProceedsDefinition additionalQuantityForResultantSecuritiesProceedsDefinition;
 	/**
 	 * Securities proceeds for which an additional quantity for subscribed
 	 * resultant securities is specified.
@@ -110,9 +111,9 @@ public class QuantityRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#AdditionalQuantityForSubscribedResultantSecurities
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmAdditionalQuantityForSubscribedResultantSecurities
 	 * SecuritiesProceedsDefinition.
-	 * AdditionalQuantityForSubscribedResultantSecurities}</li>
+	 * mmAdditionalQuantityForSubscribedResultantSecurities}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -139,20 +140,21 @@ public class QuantityRatio {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AdditionalQuantityForResultantSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAdditionalQuantityForResultantSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalQuantityForResultantSecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which an additional quantity for subscribed resultant securities is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.AdditionalQuantityForSubscribedResultantSecurities;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAdditionalQuantityForSubscribedResultantSecurities;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected DecimalNumber quantity1;
 	/**
 	 * Numerator of the quotient of quantities.
 	 * <p>
@@ -179,18 +181,27 @@ public class QuantityRatio {
 	 * definition} = "Numerator of the quotient of quantities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Quantity1 = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmQuantity1 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity1";
 			definition = "Numerator of the quotient of quantities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return QuantityRatio.class.getMethod("getQuantity1", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DecimalNumber quantity2;
 	/**
 	 * Denominator of the quotient of quantities.
 	 * <p>
@@ -217,18 +228,27 @@ public class QuantityRatio {
 	 * definition} = "Denominator of the quotient of quantities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Quantity2 = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmQuantity2 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity2";
 			definition = "Denominator of the quotient of quantities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return QuantityRatio.class.getMethod("getQuantity2", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesProceedsDefinition additionalQuantityForSubscribedSecuritiesProceedsDefinition;
 	/**
 	 * Securities proceeds for which an additional quantity for existing
 	 * securities is specified.
@@ -238,8 +258,8 @@ public class QuantityRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#AdditionalQuantityForExistingSecurities
-	 * SecuritiesProceedsDefinition.AdditionalQuantityForExistingSecurities}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmAdditionalQuantityForExistingSecurities
+	 * SecuritiesProceedsDefinition.mmAdditionalQuantityForExistingSecurities}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -266,20 +286,21 @@ public class QuantityRatio {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AdditionalQuantityForSubscribedSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalQuantityForSubscribedSecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which an additional quantity for existing securities is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.AdditionalQuantityForExistingSecurities;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAdditionalQuantityForExistingSecurities;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected SecuritiesProceedsDefinition newToOldProceedsDefinition;
 	/**
 	 * Securities procceds for which a nwe to old ratio is specified.
 	 * <p>
@@ -288,8 +309,8 @@ public class QuantityRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#NewToOld
-	 * SecuritiesProceedsDefinition.NewToOld}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmNewToOld
+	 * SecuritiesProceedsDefinition.mmNewToOld}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -315,20 +336,21 @@ public class QuantityRatio {
 	 * "Securities procceds for which a nwe to old ratio is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NewToOldProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNewToOldProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewToOldProceedsDefinition";
 			definition = "Securities procceds for which a nwe to old ratio is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.NewToOld;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmNewToOld;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected SecuritiesProceedsDefinition newToUnderlyingProceedsDefinition;
 	/**
 	 * Securities proceeds for which a new to underlying ratio is specified.
 	 * <p>
@@ -337,8 +359,8 @@ public class QuantityRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#NewSecuritiesToUnderlyingSecurities
-	 * SecuritiesProceedsDefinition.NewSecuritiesToUnderlyingSecurities}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmNewSecuritiesToUnderlyingSecurities
+	 * SecuritiesProceedsDefinition.mmNewSecuritiesToUnderlyingSecurities}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -364,20 +386,21 @@ public class QuantityRatio {
 	 * "Securities proceeds for which a new to underlying ratio is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NewToUnderlyingProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNewToUnderlyingProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewToUnderlyingProceedsDefinition";
 			definition = "Securities proceeds for which a new to underlying ratio is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.NewSecuritiesToUnderlyingSecurities;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmNewSecuritiesToUnderlyingSecurities;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected SecuritiesProceedsDefinition intermediateSecuritiesProceedsDefinition;
 	/**
 	 * Securities proceeds for which a quantity of intermediate securities is
 	 * specified.
@@ -387,8 +410,8 @@ public class QuantityRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#IntermediateSecuritiesToUnderlyingRatio
-	 * SecuritiesProceedsDefinition.IntermediateSecuritiesToUnderlyingRatio}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmIntermediateSecuritiesToUnderlyingRatio
+	 * SecuritiesProceedsDefinition.mmIntermediateSecuritiesToUnderlyingRatio}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -415,20 +438,21 @@ public class QuantityRatio {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IntermediateSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIntermediateSecuritiesProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateSecuritiesProceedsDefinition";
 			definition = "Securities proceeds for which a quantity of intermediate securities is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.IntermediateSecuritiesToUnderlyingRatio;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmIntermediateSecuritiesToUnderlyingRatio;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected Warrant warrant;
 	/**
 	 * Provides the warrant for the related quantity or the underlying quantity.
 	 * <p>
@@ -437,8 +461,8 @@ public class QuantityRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Warrant#WarrantParity
-	 * Warrant.WarrantParity}</li>
+	 * {@linkplain com.tools20022.repository.entity.Warrant#mmWarrantParity
+	 * Warrant.mmWarrantParity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -463,37 +487,106 @@ public class QuantityRatio {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd warrant = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmwarrant = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> QuantityRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.QuantityRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "warrant";
 			definition = "Provides the warrant for the related quantity or the underlying quantity. ";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Warrant.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Warrant.WarrantParity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Warrant.mmWarrantParity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Warrant.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QuantityRatio";
 				definition = "Ratio expressed as a quotient of quantities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Warrant.WarrantParity, com.tools20022.repository.entity.SecuritiesProceedsDefinition.AdditionalQuantityForSubscribedResultantSecurities,
-						com.tools20022.repository.entity.SecuritiesProceedsDefinition.AdditionalQuantityForExistingSecurities, com.tools20022.repository.entity.SecuritiesProceedsDefinition.NewToOld,
-						com.tools20022.repository.entity.SecuritiesProceedsDefinition.NewSecuritiesToUnderlyingSecurities, com.tools20022.repository.entity.SecuritiesProceedsDefinition.IntermediateSecuritiesToUnderlyingRatio);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.QuantityRatio.AdditionalQuantityForResultantSecuritiesProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.Quantity1,
-						com.tools20022.repository.entity.QuantityRatio.Quantity2, com.tools20022.repository.entity.QuantityRatio.AdditionalQuantityForSubscribedSecuritiesProceedsDefinition,
-						com.tools20022.repository.entity.QuantityRatio.NewToOldProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.NewToUnderlyingProceedsDefinition,
-						com.tools20022.repository.entity.QuantityRatio.IntermediateSecuritiesProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.warrant);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Warrant.mmWarrantParity, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAdditionalQuantityForSubscribedResultantSecurities,
+						com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAdditionalQuantityForExistingSecurities, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmNewToOld,
+						com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmNewSecuritiesToUnderlyingSecurities, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmIntermediateSecuritiesToUnderlyingRatio);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.QuantityRatio.mmAdditionalQuantityForResultantSecuritiesProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.mmQuantity1,
+						com.tools20022.repository.entity.QuantityRatio.mmQuantity2, com.tools20022.repository.entity.QuantityRatio.mmAdditionalQuantityForSubscribedSecuritiesProceedsDefinition,
+						com.tools20022.repository.entity.QuantityRatio.mmNewToOldProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.mmNewToUnderlyingProceedsDefinition,
+						com.tools20022.repository.entity.QuantityRatio.mmIntermediateSecuritiesProceedsDefinition, com.tools20022.repository.entity.QuantityRatio.mmwarrant);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return QuantityRatio.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesProceedsDefinition getAdditionalQuantityForResultantSecuritiesProceedsDefinition() {
+		return additionalQuantityForResultantSecuritiesProceedsDefinition;
+	}
+
+	public void setAdditionalQuantityForResultantSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition additionalQuantityForResultantSecuritiesProceedsDefinition) {
+		this.additionalQuantityForResultantSecuritiesProceedsDefinition = additionalQuantityForResultantSecuritiesProceedsDefinition;
+	}
+
+	public DecimalNumber getQuantity1() {
+		return quantity1;
+	}
+
+	public void setQuantity1(DecimalNumber quantity1) {
+		this.quantity1 = quantity1;
+	}
+
+	public DecimalNumber getQuantity2() {
+		return quantity2;
+	}
+
+	public void setQuantity2(DecimalNumber quantity2) {
+		this.quantity2 = quantity2;
+	}
+
+	public SecuritiesProceedsDefinition getAdditionalQuantityForSubscribedSecuritiesProceedsDefinition() {
+		return additionalQuantityForSubscribedSecuritiesProceedsDefinition;
+	}
+
+	public void setAdditionalQuantityForSubscribedSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition additionalQuantityForSubscribedSecuritiesProceedsDefinition) {
+		this.additionalQuantityForSubscribedSecuritiesProceedsDefinition = additionalQuantityForSubscribedSecuritiesProceedsDefinition;
+	}
+
+	public SecuritiesProceedsDefinition getNewToOldProceedsDefinition() {
+		return newToOldProceedsDefinition;
+	}
+
+	public void setNewToOldProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition newToOldProceedsDefinition) {
+		this.newToOldProceedsDefinition = newToOldProceedsDefinition;
+	}
+
+	public SecuritiesProceedsDefinition getNewToUnderlyingProceedsDefinition() {
+		return newToUnderlyingProceedsDefinition;
+	}
+
+	public void setNewToUnderlyingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition newToUnderlyingProceedsDefinition) {
+		this.newToUnderlyingProceedsDefinition = newToUnderlyingProceedsDefinition;
+	}
+
+	public SecuritiesProceedsDefinition getIntermediateSecuritiesProceedsDefinition() {
+		return intermediateSecuritiesProceedsDefinition;
+	}
+
+	public void setIntermediateSecuritiesProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition intermediateSecuritiesProceedsDefinition) {
+		this.intermediateSecuritiesProceedsDefinition = intermediateSecuritiesProceedsDefinition;
+	}
+
+	public Warrant getwarrant() {
+		return warrant;
+	}
+
+	public void setwarrant(com.tools20022.repository.entity.Warrant warrant) {
+		this.warrant = warrant;
 	}
 }

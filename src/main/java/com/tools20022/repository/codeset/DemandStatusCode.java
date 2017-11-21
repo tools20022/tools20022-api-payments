@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,19 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.DemandStatusCode#Refused
- * DemandStatusCode.Refused}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DemandStatusCode#Extend
- * DemandStatusCode.Extend}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DemandStatusCode#PAY
- * DemandStatusCode.PAY}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DemandStatusCode#mmRefused
+ * DemandStatusCode.mmRefused}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DemandStatusCode#mmExtend
+ * DemandStatusCode.mmExtend}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DemandStatusCode#mmPAY
+ * DemandStatusCode.mmPAY}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -82,9 +84,9 @@ public class DemandStatusCode {
 	 * definition} = "Demand refused."</li>
 	 * </ul>
 	 */
-	public static final MMCode Refused = new MMCode() {
+	public static final MMCode mmRefused = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Refused";
 			definition = "Demand refused.";
 			owner_lazy = () -> DemandStatusCode.mmObject();
@@ -112,9 +114,9 @@ public class DemandStatusCode {
 	 * definition} = "Extend undertaking expiry date. "</li>
 	 * </ul>
 	 */
-	public static final MMCode Extend = new MMCode() {
+	public static final MMCode mmExtend = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Extend";
 			definition = "Extend undertaking expiry date. ";
 			owner_lazy = () -> DemandStatusCode.mmObject();
@@ -142,9 +144,9 @@ public class DemandStatusCode {
 	 * definition} = "Pay undertaking demand."</li>
 	 * </ul>
 	 */
-	public static final MMCode PAY = new MMCode() {
+	public static final MMCode mmPAY = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PAY";
 			definition = "Pay undertaking demand.";
 			owner_lazy = () -> DemandStatusCode.mmObject();
@@ -155,12 +157,12 @@ public class DemandStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("REFD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DemandStatusCode";
 				definition = "Specifies the status of the demand for payment.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DemandStatusCode.Refused, com.tools20022.repository.codeset.DemandStatusCode.Extend, com.tools20022.repository.codeset.DemandStatusCode.PAY);
+				code_lazy = () -> Arrays.asList(DemandStatusCode.mmRefused, DemandStatusCode.mmExtend, DemandStatusCode.mmPAY);
 			}
 		});
 		return mmObject_lazy.get();

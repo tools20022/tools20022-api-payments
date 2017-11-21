@@ -20,11 +20,15 @@ package com.tools20022.repository.area.camt;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.ReportHeader3;
 import com.tools20022.repository.msg.StatementGroup2;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * <b>Scope</b><br>
@@ -76,18 +80,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#ReportHeader
- * BankServicesBillingStatementV02.ReportHeader}</li>
+ * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#mmReportHeader
+ * BankServicesBillingStatementV02.mmReportHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#BillingStatementGroup
- * BankServicesBillingStatementV02.BillingStatementGroup}</li>
+ * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#mmBillingStatementGroup
+ * BankServicesBillingStatementV02.mmBillingStatementGroup}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.camt.BankServicesBillingStatementV02#identifier
- * BankServicesBillingStatementV02.identifier}</li>
+ * messageDefinitionIdentifier} = {@code camt.086.001.02}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,9 +102,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BankServicesBillingStatementV02", propOrder = {"reportHeader", "billingStatementGroup"})
 public class BankServicesBillingStatementV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected ReportHeader3 reportHeader;
 	/**
 	 * Provides header details on the billing statement report.
 	 * <p>
@@ -125,17 +130,26 @@ public class BankServicesBillingStatementV02 {
 	 * definition} = "Provides header details on the billing statement report."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock ReportHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmReportHeader = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "RptHdr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReportHeader";
 			definition = "Provides header details on the billing statement report.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> ReportHeader3.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BankServicesBillingStatementV02.class.getMethod("getReportHeader", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<StatementGroup2> billingStatementGroup;
 	/**
 	 * Group of bank services billing statements with the same sender and
 	 * receiver characteristics.
@@ -161,57 +175,75 @@ public class BankServicesBillingStatementV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock BillingStatementGroup = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmBillingStatementGroup = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "BllgStmtGrp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BillingStatementGroup";
 			definition = "Group of bank services billing statements with the same sender and receiver characteristics.";
 			minOccurs = 1;
 			complexType_lazy = () -> StatementGroup2.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "02"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "camt"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "086"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "camt";
-			messageFunctionality = "086";
-			version = "02";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return BankServicesBillingStatementV02.class.getMethod("getBillingStatementGroup", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BankServicesBillingStatementV02";
 				definition = "Scope\r\nThe BankServicesBillingStatement message is used to send from a Financial Institution (FI) to its wholesale customers (corporations, governments, institutions, etc.), information describing the FI’s billing of services rendered in the form of an electronic statement in a standardised format. The BankServicesBillingStatement is a periodic (usually end of month) recounting of all service chargeable events that occurred during a reporting cycle, typically a calendar month, along with detailed tax and currency translation information. Account balance information, although strongly recommended, is not required.\r\nUsage\r\nThe BankServicesBillingStatement message is designed to provide details related to invoices (or an advice of debit) which a financial institution may supply to its customers. The BankServicesBillingStatement is not expressly designed to be an invoice, nor to replace invoices currently in use. The message may be used as an invoice by agreement between the sender and the receiver. No regulatory or legislative requirements were considered when creating this message standard. Users of the BankServicesBillingStatement message are cautioned to be aware of any regulatory or legal requirement for invoices before replacing existing invoices.\r\nThe BankServicesBillingStatement message can supply the detail supporting separate invoices or debits but it is not the\r\ninvoice or advice of debit of record. The BankServicesBillingStatement message must accurately reflect all the charge and tax related events that occurred during the calendar month and how the FI and taxing authorities were compensated\r\nfor these events. The BankServicesBillingStatement does not ask the financial institution to revise its established pricing and billing procedures. \r\nHow, when and what the customer is actually charged for remains in place. The BankServicesBillingStatement message asks the financial institution to aggregate and report what actually happened during the calendar month.\r\nThe BankServicesBillingStatement message is intended for use with the ISO 20022 Business Application Header.";
 				rootElement = "Document";
 				xmlTag = "BkSvcsBllgStmt";
 				businessArea_lazy = () -> CashManagementLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.BankServicesBillingStatementV02.ReportHeader, com.tools20022.repository.area.camt.BankServicesBillingStatementV02.BillingStatementGroup);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.camt.BankServicesBillingStatementV02.identifier;
+				messageBuildingBlock_lazy = () -> Arrays
+						.asList(com.tools20022.repository.area.camt.BankServicesBillingStatementV02.mmReportHeader, com.tools20022.repository.area.camt.BankServicesBillingStatementV02.mmBillingStatementGroup);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "camt";
+						messageFunctionality = "086";
+						version = "02";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return BankServicesBillingStatementV02.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RptHdr", required = true)
+	public ReportHeader3 getReportHeader() {
+		return reportHeader;
+	}
+
+	public void setReportHeader(ReportHeader3 reportHeader) {
+		this.reportHeader = reportHeader;
+	}
+
+	@XmlElement(name = "BllgStmtGrp", required = true)
+	public List<StatementGroup2> getBillingStatementGroup() {
+		return billingStatementGroup;
+	}
+
+	public void setBillingStatementGroup(List<StatementGroup2> billingStatementGroup) {
+		this.billingStatementGroup = billingStatementGroup;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.086.02.02")
+	static public class Document {
+		@XmlElement(name = "BkSvcsBllgStmt", required = true)
+		public BankServicesBillingStatementV02 messageBody;
 	}
 }

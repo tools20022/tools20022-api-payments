@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.UserInterface2Code;
 import com.tools20022.repository.datatype.Max3NumericText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * The capabilities of the display components performing the transaction.
@@ -34,20 +40,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DisplayCapabilities1#DisplayType
- * DisplayCapabilities1.DisplayType}</li>
+ * {@linkplain com.tools20022.repository.msg.DisplayCapabilities1#mmDisplayType
+ * DisplayCapabilities1.mmDisplayType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DisplayCapabilities1#NumberOfLines
- * DisplayCapabilities1.NumberOfLines}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DisplayCapabilities1#LineWidth
- * DisplayCapabilities1.LineWidth}</li>
+ * {@linkplain com.tools20022.repository.msg.DisplayCapabilities1#mmNumberOfLines
+ * DisplayCapabilities1.mmNumberOfLines}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DisplayCapabilities1#mmLineWidth
+ * DisplayCapabilities1.mmLineWidth}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "The capabilities of the display components performing the transaction."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DisplayCapabilities1", propOrder = {"displayType", "numberOfLines", "lineWidth"})
 public class DisplayCapabilities1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected UserInterface2Code displayType;
 	/**
 	 * Type of display (for example merchant or cardholder).
 	 * <p>
@@ -90,19 +100,20 @@ public class DisplayCapabilities1 {
 	 * definition} = "Type of display (for example merchant or cardholder)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DisplayType = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDisplayType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DisplayCapabilities1.mmObject();
 			isDerived = false;
 			xmlTag = "DispTp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisplayType";
 			definition = "Type of display (for example merchant or cardholder).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> UserInterface2Code.mmObject();
 		}
 	};
+	protected Max3NumericText numberOfLines;
 	/**
 	 * Number of lines of the display component.
 	 * <p>
@@ -131,19 +142,20 @@ public class DisplayCapabilities1 {
 	 * definition} = "Number of lines of the display component."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute NumberOfLines = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumberOfLines = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DisplayCapabilities1.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfLines";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfLines";
 			definition = "Number of lines of the display component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
 	};
+	protected Max3NumericText lineWidth;
 	/**
 	 * Number of columns of the display component.
 	 * <p>
@@ -172,16 +184,16 @@ public class DisplayCapabilities1 {
 	 * definition} = "Number of columns of the display component."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute LineWidth = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmLineWidth = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DisplayCapabilities1.mmObject();
 			isDerived = false;
 			xmlTag = "LineWidth";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LineWidth";
 			definition = "Number of columns of the display component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
 	};
@@ -189,14 +201,40 @@ public class DisplayCapabilities1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DisplayCapabilities1.DisplayType, com.tools20022.repository.msg.DisplayCapabilities1.NumberOfLines,
-						com.tools20022.repository.msg.DisplayCapabilities1.LineWidth);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(DisplayCapabilities1.mmDisplayType, DisplayCapabilities1.mmNumberOfLines, DisplayCapabilities1.mmLineWidth);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisplayCapabilities1";
 				definition = "The capabilities of the display components performing the transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "DispTp", required = true)
+	public UserInterface2Code getDisplayType() {
+		return displayType;
+	}
+
+	public void setDisplayType(UserInterface2Code displayType) {
+		this.displayType = displayType;
+	}
+
+	@XmlElement(name = "NbOfLines", required = true)
+	public Max3NumericText getNumberOfLines() {
+		return numberOfLines;
+	}
+
+	public void setNumberOfLines(Max3NumericText numberOfLines) {
+		this.numberOfLines = numberOfLines;
+	}
+
+	@XmlElement(name = "LineWidth", required = true)
+	public Max3NumericText getLineWidth() {
+		return lineWidth;
+	}
+
+	public void setLineWidth(Max3NumericText lineWidth) {
+		this.lineWidth = lineWidth;
 	}
 }

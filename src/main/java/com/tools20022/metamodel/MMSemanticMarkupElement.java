@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMSemanticMarkup;
 import com.tools20022.metamodel.StandardMetamodel2013;
@@ -33,6 +35,14 @@ import java.util.Optional;
  */
 public class MMSemanticMarkupElement implements MMModelEntity {
 
+	/**
+	 * Name of the semantic mark-up element.
+	 */
+	public final static MetamodelAttribute<MMSemanticMarkupElement, Optional<String>> nameAttribute = newAttribute();
+	/**
+	 * Value of the semantic mark-up element.
+	 */
+	public final static MetamodelAttribute<MMSemanticMarkupElement, Optional<String>> valueAttribute = newAttribute();
 	protected MMSemanticMarkup container;
 	protected String name;
 	protected String value;

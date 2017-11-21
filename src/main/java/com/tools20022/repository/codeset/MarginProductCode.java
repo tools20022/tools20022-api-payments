@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,18 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.MarginProductCode#Equities
- * MarginProductCode.Equities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarginProductCode#FixedIncome
- * MarginProductCode.FixedIncome}</li>
+ * {@linkplain com.tools20022.repository.codeset.MarginProductCode#mmEquities
+ * MarginProductCode.mmEquities}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MarginProductCode#mmFixedIncome
+ * MarginProductCode.mmFixedIncome}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -81,9 +84,9 @@ public class MarginProductCode {
 	 * definition} = "Specifies that the margin is related to equities."</li>
 	 * </ul>
 	 */
-	public static final MMCode Equities = new MMCode() {
+	public static final MMCode mmEquities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Equities";
 			definition = "Specifies that the margin is related to equities.";
 			owner_lazy = () -> MarginProductCode.mmObject();
@@ -111,9 +114,9 @@ public class MarginProductCode {
 	 * definition} = "Specifies that the margin is related to fixed income."</li>
 	 * </ul>
 	 */
-	public static final MMCode FixedIncome = new MMCode() {
+	public static final MMCode mmFixedIncome = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FixedIncome";
 			definition = "Specifies that the margin is related to fixed income.";
 			owner_lazy = () -> MarginProductCode.mmObject();
@@ -124,12 +127,12 @@ public class MarginProductCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("EQUI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginProductCode";
 				definition = "Specifies the underlying product of the margin.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MarginProductCode.Equities, com.tools20022.repository.codeset.MarginProductCode.FixedIncome);
+				code_lazy = () -> Arrays.asList(MarginProductCode.mmEquities, MarginProductCode.mmFixedIncome);
 			}
 		});
 		return mmObject_lazy.get();

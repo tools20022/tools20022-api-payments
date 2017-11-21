@@ -19,12 +19,20 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.Organisation;
+import com.tools20022.repository.entity.PartyName;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Legally constituted organization specified for this party.
@@ -36,16 +44,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.LegalOrganisation2#Identification
- * LegalOrganisation2.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.LegalOrganisation2#Name
- * LegalOrganisation2.Name}</li>
+ * {@linkplain com.tools20022.repository.msg.LegalOrganisation2#mmIdentification
+ * LegalOrganisation2.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.LegalOrganisation2#mmName
+ * LegalOrganisation2.mmName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.LegalOrganisation2#EstablishmentDate
- * LegalOrganisation2.EstablishmentDate}</li>
+ * {@linkplain com.tools20022.repository.msg.LegalOrganisation2#mmEstablishmentDate
+ * LegalOrganisation2.mmEstablishmentDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.LegalOrganisation2#RegistrationDate
- * LegalOrganisation2.RegistrationDate}</li>
+ * {@linkplain com.tools20022.repository.msg.LegalOrganisation2#mmRegistrationDate
+ * LegalOrganisation2.mmRegistrationDate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -54,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,9 +74,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Legally constituted organization specified for this party."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "LegalOrganisation2", propOrder = {"identification", "name", "establishmentDate", "registrationDate"})
 public class LegalOrganisation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text identification;
 	/**
 	 * Unique and unambiguous identifier for an organisation that is allocated
 	 * by an institution.
@@ -82,8 +93,8 @@ public class LegalOrganisation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -104,20 +115,21 @@ public class LegalOrganisation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> LegalOrganisation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identifier for an organisation that is allocated by an institution.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max140Text name;
 	/**
 	 * Specifies the short name of the organisation.
 	 * <p>
@@ -130,8 +142,8 @@ public class LegalOrganisation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PartyName#Name
-	 * PartyName.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyName#mmName
+	 * PartyName.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -150,20 +162,21 @@ public class LegalOrganisation2 {
 	 * definition} = "Specifies the short name of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> LegalOrganisation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PartyName.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Specifies the short name of the organisation.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected ISODate establishmentDate;
 	/**
 	 * Date when the organisation was established.
 	 * <p>
@@ -176,8 +189,8 @@ public class LegalOrganisation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#EstablishmentDate
-	 * Organisation.EstablishmentDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmEstablishmentDate
+	 * Organisation.mmEstablishmentDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -196,20 +209,21 @@ public class LegalOrganisation2 {
 	 * definition} = "Date when the organisation was established."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute EstablishmentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmEstablishmentDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Organisation.mmEstablishmentDate;
 			componentContext_lazy = () -> LegalOrganisation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Organisation.EstablishmentDate;
 			isDerived = false;
 			xmlTag = "EstblishmtDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EstablishmentDate";
 			definition = "Date when the organisation was established.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected ISODate registrationDate;
 	/**
 	 * Date when the organisation was registered.
 	 * <p>
@@ -222,8 +236,8 @@ public class LegalOrganisation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#RegistrationDate
-	 * Organisation.RegistrationDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmRegistrationDate
+	 * Organisation.mmRegistrationDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -242,17 +256,17 @@ public class LegalOrganisation2 {
 	 * definition} = "Date when the organisation was registered."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RegistrationDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRegistrationDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Organisation.mmRegistrationDate;
 			componentContext_lazy = () -> LegalOrganisation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Organisation.RegistrationDate;
 			isDerived = false;
 			xmlTag = "RegnDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegistrationDate";
 			definition = "Date when the organisation was registered.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
@@ -260,15 +274,50 @@ public class LegalOrganisation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LegalOrganisation2.Identification, com.tools20022.repository.msg.LegalOrganisation2.Name,
-						com.tools20022.repository.msg.LegalOrganisation2.EstablishmentDate, com.tools20022.repository.msg.LegalOrganisation2.RegistrationDate);
+				messageElement_lazy = () -> Arrays.asList(LegalOrganisation2.mmIdentification, LegalOrganisation2.mmName, LegalOrganisation2.mmEstablishmentDate, LegalOrganisation2.mmRegistrationDate);
 				trace_lazy = () -> Organisation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalOrganisation2";
 				definition = "Legally constituted organization specified for this party.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id")
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Nm")
+	public Max140Text getName() {
+		return name;
+	}
+
+	public void setName(Max140Text name) {
+		this.name = name;
+	}
+
+	@XmlElement(name = "EstblishmtDt")
+	public ISODate getEstablishmentDate() {
+		return establishmentDate;
+	}
+
+	public void setEstablishmentDate(ISODate establishmentDate) {
+		this.establishmentDate = establishmentDate;
+	}
+
+	@XmlElement(name = "RegnDt")
+	public ISODate getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(ISODate registrationDate) {
+		this.registrationDate = registrationDate;
 	}
 }

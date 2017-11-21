@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.ServiceLevel8Choice;
 import com.tools20022.repository.codeset.ServiceLevelCode;
 import com.tools20022.repository.codeset.SWIFTServiceLevelCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,32 +41,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ServiceLevel#PaymentProcessing
- * ServiceLevel.PaymentProcessing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ServiceLevel#Code
- * ServiceLevel.Code}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ServiceLevel#Other
- * ServiceLevel.Other}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ServiceLevel#Bilateral
- * ServiceLevel.Bilateral}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentProcessing#ServiceLevel
- * PaymentProcessing.ServiceLevel}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ServiceLevel8Choice#Proprietary
- * ServiceLevel8Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.entity.ServiceLevel#mmPaymentProcessing
+ * ServiceLevel.mmPaymentProcessing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ServiceLevel#mmCode
+ * ServiceLevel.mmCode}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ServiceLevel#mmOther
+ * ServiceLevel.mmOther}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ServiceLevel#mmBilateral
+ * ServiceLevel.mmBilateral}</li>
  * </ul>
  * </li>
  * <li>
@@ -78,10 +60,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentProcessing#mmServiceLevel
+ * PaymentProcessing.mmServiceLevel}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ServiceLevel8Choice#mmProprietary
+ * ServiceLevel8Choice.mmProprietary}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,6 +97,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ServiceLevel {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PaymentProcessing paymentProcessing;
 	/**
 	 * Payment process for which a service level is specified.
 	 * <p>
@@ -105,8 +106,8 @@ public class ServiceLevel {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentProcessing#ServiceLevel
-	 * PaymentProcessing.ServiceLevel}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentProcessing#mmServiceLevel
+	 * PaymentProcessing.mmServiceLevel}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -129,20 +130,21 @@ public class ServiceLevel {
 	 * definition} = "Payment process for which a service level is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentProcessing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentProcessing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ServiceLevel.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentProcessing";
 			definition = "Payment process for which a service level is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmServiceLevel;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.ServiceLevel;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ServiceLevelCode code;
 	/**
 	 * Identification of a pre-agreed level of service between the parties in a
 	 * coded form.
@@ -158,8 +160,8 @@ public class ServiceLevel {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.ServiceLevel8Choice#Code
-	 * ServiceLevel8Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.ServiceLevel8Choice#mmCode
+	 * ServiceLevel8Choice.mmCode}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -179,19 +181,28 @@ public class ServiceLevel {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Code = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ServiceLevel8Choice.Code);
-			elementContext_lazy = () -> ServiceLevel.mmObject();
+			derivation_lazy = () -> Arrays.asList(ServiceLevel8Choice.mmCode);
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Identification of a pre-agreed level of service between the parties in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ServiceLevelCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ServiceLevel.class.getMethod("getCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SWIFTServiceLevelCode other;
 	/**
 	 * SWIFT defined service level applies to the payment instruction.
 	 * <p>
@@ -218,18 +229,27 @@ public class ServiceLevel {
 	 * "SWIFT defined service level applies to the payment instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Other = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOther = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ServiceLevel.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Other";
 			definition = "SWIFT defined service level applies to the payment instruction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SWIFTServiceLevelCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ServiceLevel.class.getMethod("getOther", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text bilateral;
 	/**
 	 * Unambiguous identification of a pre-agreed level of service between the
 	 * parties.
@@ -257,33 +277,78 @@ public class ServiceLevel {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Bilateral = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBilateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ServiceLevel.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ServiceLevel.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bilateral";
 			definition = "Unambiguous identification of a pre-agreed level of service between the parties.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return ServiceLevel.class.getMethod("getBilateral", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceLevel";
 				definition = "Agreement under which or rules under which the transaction should be processed.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentProcessing.ServiceLevel);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ServiceLevel8Choice.Proprietary);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ServiceLevel.PaymentProcessing, com.tools20022.repository.entity.ServiceLevel.Code, com.tools20022.repository.entity.ServiceLevel.Other,
-						com.tools20022.repository.entity.ServiceLevel.Bilateral);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentProcessing.mmServiceLevel);
+				derivationElement_lazy = () -> Arrays.asList(ServiceLevel8Choice.mmProprietary);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ServiceLevel.mmPaymentProcessing, com.tools20022.repository.entity.ServiceLevel.mmCode, com.tools20022.repository.entity.ServiceLevel.mmOther,
+						com.tools20022.repository.entity.ServiceLevel.mmBilateral);
 				derivationComponent_lazy = () -> Arrays.asList(ServiceLevel8Choice.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ServiceLevel.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PaymentProcessing getPaymentProcessing() {
+		return paymentProcessing;
+	}
+
+	public void setPaymentProcessing(com.tools20022.repository.entity.PaymentProcessing paymentProcessing) {
+		this.paymentProcessing = paymentProcessing;
+	}
+
+	public ServiceLevelCode getCode() {
+		return code;
+	}
+
+	public void setCode(ServiceLevelCode code) {
+		this.code = code;
+	}
+
+	public SWIFTServiceLevelCode getOther() {
+		return other;
+	}
+
+	public void setOther(SWIFTServiceLevelCode other) {
+		this.other = other;
+	}
+
+	public Max35Text getBilateral() {
+		return bilateral;
+	}
+
+	public void setBilateral(Max35Text bilateral) {
+		this.bilateral = bilateral;
 	}
 }

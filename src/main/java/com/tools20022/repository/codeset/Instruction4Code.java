@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.InstructionCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,18 +37,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Instruction4Code#PhoneNextAgent
- * Instruction4Code.PhoneNextAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.Instruction4Code#mmPhoneNextAgent
+ * Instruction4Code.mmPhoneNextAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Instruction4Code#TelecomNextAgent
- * Instruction4Code.TelecomNextAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.Instruction4Code#mmTelecomNextAgent
+ * Instruction4Code.mmTelecomNextAgent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class Instruction4Code extends InstructionCode {
 	 * name} = "PhoneNextAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode PhoneNextAgent = new MMCode() {
+	public static final MMCode mmPhoneNextAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PhoneNextAgent";
 			owner_lazy = () -> Instruction4Code.mmObject();
 		}
@@ -107,9 +109,9 @@ public class Instruction4Code extends InstructionCode {
 	 * name} = "TelecomNextAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode TelecomNextAgent = new MMCode() {
+	public static final MMCode mmTelecomNextAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TelecomNextAgent";
 			owner_lazy = () -> Instruction4Code.mmObject();
 		}
@@ -118,12 +120,12 @@ public class Instruction4Code extends InstructionCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PHOA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Instruction4Code";
 				definition = "Specifies further instructions concerning the processing of a payment instruction, provided by the sending clearing agent to the next agent(s).";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Instruction4Code.PhoneNextAgent, com.tools20022.repository.codeset.Instruction4Code.TelecomNextAgent);
+				code_lazy = () -> Arrays.asList(Instruction4Code.mmPhoneNextAgent, Instruction4Code.mmTelecomNextAgent);
 				trace_lazy = () -> InstructionCode.mmObject();
 			}
 		});

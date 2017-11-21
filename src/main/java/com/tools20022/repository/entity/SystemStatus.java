@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.MemberStatusCode;
 import com.tools20022.repository.codeset.SystemStatusCode;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,26 +38,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.SystemStatus#Status
- * SystemStatus.Status}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SystemStatus#MemberStatus
- * SystemStatus.MemberStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SystemStatus#System
- * SystemStatus.System}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SystemStatus#mmStatus
+ * SystemStatus.mmStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SystemStatus#mmMemberStatus
+ * SystemStatus.mmMemberStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SystemStatus#mmSystem
+ * SystemStatus.mmSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemStatus#SystemMemberRole
- * SystemStatus.SystemMemberRole}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemStatus#mmSystemMemberRole
+ * SystemStatus.mmSystemMemberRole}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.System#Status System.Status}
- * </li>
+ * <li>{@linkplain com.tools20022.repository.entity.System#mmStatus
+ * System.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemMemberRole#MemberStatus
- * SystemMemberRole.MemberStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemMemberRole#mmMemberStatus
+ * SystemMemberRole.mmMemberStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -65,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SystemStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SystemStatusCode status;
 	/**
 	 * Current status of a system.
 	 * <p>
@@ -107,18 +108,27 @@ public class SystemStatus extends Status {
 	 * definition} = "Current status of a system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Status = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SystemStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Current status of a system.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SystemStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SystemStatus.class.getMethod("getStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected MemberStatusCode memberStatus;
 	/**
 	 * Status of a member in a system, eg, enabled or deleted.
 	 * <p>
@@ -144,18 +154,27 @@ public class SystemStatus extends Status {
 	 * definition} = "Status of a member in a system, eg, enabled or deleted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MemberStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMemberStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SystemStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MemberStatus";
 			definition = "Status of a member in a system, eg, enabled or deleted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> MemberStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SystemStatus.class.getMethod("getMemberStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected System system;
 	/**
 	 * System for which a status is specified.
 	 * <p>
@@ -163,8 +182,8 @@ public class SystemStatus extends Status {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.System#Status
-	 * System.Status}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.System#mmStatus
+	 * System.mmStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -186,20 +205,21 @@ public class SystemStatus extends Status {
 	 * definition} = "System for which a status is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd System = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SystemStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which a status is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.System.mmStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.System.Status;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SystemMemberRole systemMemberRole;
 	/**
 	 * System member role for which a member status is specified.
 	 * <p>
@@ -208,8 +228,8 @@ public class SystemStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SystemMemberRole#MemberStatus
-	 * SystemMemberRole.MemberStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.SystemMemberRole#mmMemberStatus
+	 * SystemMemberRole.mmMemberStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -233,34 +253,71 @@ public class SystemStatus extends Status {
 	 * "System member role for which a member status is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SystemMemberRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystemMemberRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SystemStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemMemberRole";
 			definition = "System member role for which a member status is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmMemberStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.MemberStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemStatus";
 				definition = "Status of a system and the period of time during which the status is valid.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.Status, com.tools20022.repository.entity.SystemMemberRole.MemberStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.mmStatus, com.tools20022.repository.entity.SystemMemberRole.mmMemberStatus);
 				superType_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemStatus.Status, com.tools20022.repository.entity.SystemStatus.MemberStatus, com.tools20022.repository.entity.SystemStatus.System,
-						com.tools20022.repository.entity.SystemStatus.SystemMemberRole);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemStatus.mmStatus, com.tools20022.repository.entity.SystemStatus.mmMemberStatus, com.tools20022.repository.entity.SystemStatus.mmSystem,
+						com.tools20022.repository.entity.SystemStatus.mmSystemMemberRole);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SystemStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SystemStatusCode getStatus() {
+		return status;
+	}
+
+	public void setStatus(SystemStatusCode status) {
+		this.status = status;
+	}
+
+	public MemberStatusCode getMemberStatus() {
+		return memberStatus;
+	}
+
+	public void setMemberStatus(MemberStatusCode memberStatus) {
+		this.memberStatus = memberStatus;
+	}
+
+	public System getSystem() {
+		return system;
+	}
+
+	public void setSystem(com.tools20022.repository.entity.System system) {
+		this.system = system;
+	}
+
+	public SystemMemberRole getSystemMemberRole() {
+		return systemMemberRole;
+	}
+
+	public void setSystemMemberRole(com.tools20022.repository.entity.SystemMemberRole systemMemberRole) {
+		this.systemMemberRole = systemMemberRole;
 	}
 }

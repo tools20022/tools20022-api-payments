@@ -17,13 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DepositTypeCode;
 import com.tools20022.repository.entity.Money;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashCollateral5;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * An arrangement in which a lender gives money or property to a borrower, and
@@ -39,18 +41,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Deposit#DepositType
- * Deposit.DepositType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Deposit#Interest
- * Deposit.Interest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Deposit#mmDepositType
+ * Deposit.mmDepositType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Deposit#mmInterest
+ * Deposit.mmInterest}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Interest#Deposit
- * Interest.Deposit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Interest#mmDeposit
+ * Interest.mmDeposit}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -58,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Deposit extends Money {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DepositTypeCode depositType;
 	/**
 	 * Specifies whether the deposit is fixed term or call/notice.
 	 * <p>
@@ -89,8 +92,8 @@ public class Deposit extends Money {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#DepositType
-	 * CashCollateral5.DepositType}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#mmDepositType
+	 * CashCollateral5.mmDepositType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -109,19 +112,28 @@ public class Deposit extends Money {
 	 * "Specifies whether the deposit is fixed term or call/notice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DepositType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDepositType = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashCollateral5.DepositType);
-			elementContext_lazy = () -> Deposit.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmDepositType);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositType";
 			definition = "Specifies whether the deposit is fixed term or call/notice.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DepositTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Deposit.class.getMethod("getDepositType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
 	 * Interest amount linked to a deposit. It is derived from the relationship
 	 * between AssetHolding and Interest.
@@ -131,8 +143,8 @@ public class Deposit extends Money {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Interest#Deposit
-	 * Interest.Deposit}</li>
+	 * {@linkplain com.tools20022.repository.entity.Interest#mmDeposit
+	 * Interest.mmDeposit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -156,32 +168,53 @@ public class Deposit extends Money {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Interest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Deposit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest amount linked to a deposit. It is derived from the relationship between AssetHolding and Interest.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmDeposit;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.Deposit;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Deposit";
 				definition = "An arrangement in which a lender gives money or property to a borrower, and the borrower agrees to return the property or repay the money, usually along with interest, at some future point(s) in time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Interest.Deposit);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Interest.mmDeposit);
 				superType_lazy = () -> Money.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Deposit.DepositType, com.tools20022.repository.entity.Deposit.Interest);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Deposit.mmDepositType, com.tools20022.repository.entity.Deposit.mmInterest);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Deposit.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DepositTypeCode getDepositType() {
+		return depositType;
+	}
+
+	public void setDepositType(DepositTypeCode depositType) {
+		this.depositType = depositType;
+	}
+
+	public List<Interest> getInterest() {
+		return interest;
+	}
+
+	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = interest;
 	}
 }

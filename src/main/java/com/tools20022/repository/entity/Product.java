@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
-import com.tools20022.repository.msg.Product2;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Item that is offered for sale. Products can be services or goods.
@@ -39,77 +40,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Product#CardPayment
- * Product.CardPayment}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#UnitPrice
- * Product.UnitPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#ProductCategory
- * Product.ProductCategory}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#LineItem
- * Product.LineItem}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmCardPayment
+ * Product.mmCardPayment}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmUnitPrice
+ * Product.mmUnitPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmProductCategory
+ * Product.mmProductCategory}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmLineItem
+ * Product.mmLineItem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Product#ProductIdentification
- * Product.ProductIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Name Product.Name}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Description
- * Product.Description}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Origin
- * Product.Origin}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Characteristics
- * Product.Characteristics}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#NetPrice
- * Product.NetPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Quantity
- * Product.Quantity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#GrossPrice
- * Product.GrossPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Quality
- * Product.Quality}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Delivery
- * Product.Delivery}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#PurchaseOrder
- * Product.PurchaseOrder}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Tax Product.Tax}</li>
- * </ul>
+ * {@linkplain com.tools20022.repository.entity.Product#mmProductIdentification
+ * Product.mmProductIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmName
+ * Product.mmName}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmDescription
+ * Product.mmDescription}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmOrigin
+ * Product.mmOrigin}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmCharacteristics
+ * Product.mmCharacteristics}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmNetPrice
+ * Product.mmNetPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmQuantity
+ * Product.mmQuantity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmGrossPrice
+ * Product.mmGrossPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmQuality
+ * Product.mmQuality}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmDelivery
+ * Product.mmDelivery}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmPurchaseOrder
+ * Product.mmPurchaseOrder}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmTax Product.mmTax}
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Country#ProducedProducts
- * Country.ProducedProducts}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Tax#Product Tax.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CardPayment#Product
- * CardPayment.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#UnitPriceProduct
- * Price.UnitPriceProduct}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#NetPriceProduct
- * Price.NetPriceProduct}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#GrossPriceProduct
- * Price.GrossPriceProduct}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ProductIdentification#Product
- * ProductIdentification.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductQuantity#Product
- * ProductQuantity.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#Product
- * ProductCategory.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LineItem#InvoicedProduct
- * LineItem.InvoicedProduct}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#Product
- * ProductDelivery.Product}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ProductCharacteristics#Product
- * ProductCharacteristics.Product}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PurchaseOrder#Product
- * PurchaseOrder.Product}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Service Service}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Goods Goods}</li>
  * </ul>
  * </li>
  * <li>
@@ -120,10 +83,51 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.Country#mmProducedProducts
+ * Country.mmProducedProducts}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Tax#mmProduct Tax.mmProduct}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.entity.CardPayment#mmProduct
+ * CardPayment.mmProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmUnitPriceProduct
+ * Price.mmUnitPriceProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmNetPriceProduct
+ * Price.mmNetPriceProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmGrossPriceProduct
+ * Price.mmGrossPriceProduct}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ProductIdentification#mmProduct
+ * ProductIdentification.mmProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductQuantity#mmProduct
+ * ProductQuantity.mmProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductCategory#mmProduct
+ * ProductCategory.mmProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LineItem#mmInvoicedProduct
+ * LineItem.mmInvoicedProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#mmProduct
+ * ProductDelivery.mmProduct}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ProductCharacteristics#mmProduct
+ * ProductCharacteristics.mmProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PurchaseOrder#mmProduct
+ * PurchaseOrder.mmProduct}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.Service Service}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Goods Goods}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,6 +142,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Product {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CardPayment cardPayment;
 	/**
 	 * Card payment for which a product was specified.
 	 * <p>
@@ -146,8 +151,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPayment#Product
-	 * CardPayment.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPayment#mmProduct
+	 * CardPayment.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -170,20 +175,21 @@ public class Product {
 	 * definition} = "Card payment for which a product was specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardPayment";
 			definition = "Card payment for which a product was specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.mmProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Price> unitPrice;
 	/**
 	 * Price per unit of product.
 	 * <p>
@@ -192,8 +198,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Price#UnitPriceProduct
-	 * Price.UnitPriceProduct}</li>
+	 * {@linkplain com.tools20022.repository.entity.Price#mmUnitPriceProduct
+	 * Price.mmUnitPriceProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -203,31 +209,31 @@ public class Product {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.Product2#UnitPrice
-	 * Product2.UnitPrice}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Product2#mmUnitPrice
+	 * Product2.mmUnitPrice}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServicesAmount1#PricingAmount
-	 * BillingServicesAmount1.PricingAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServicesAmount1#mmPricingAmount
+	 * BillingServicesAmount1.mmPricingAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServicesAmount2#PricingAmount
-	 * BillingServicesAmount2.PricingAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServicesAmount2#mmPricingAmount
+	 * BillingServicesAmount2.mmPricingAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#UnitPrice
-	 * BillingServiceParameters2.UnitPrice}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#mmUnitPrice
+	 * BillingServiceParameters2.mmUnitPrice}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServiceAdjustment1#PriceChange
-	 * BillingServiceAdjustment1.PriceChange}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServiceAdjustment1#mmPriceChange
+	 * BillingServiceAdjustment1.mmPriceChange}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServiceAdjustment1#OriginalPrice
-	 * BillingServiceAdjustment1.OriginalPrice}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServiceAdjustment1#mmOriginalPrice
+	 * BillingServiceAdjustment1.mmOriginalPrice}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServiceAdjustment1#NewPrice
-	 * BillingServiceAdjustment1.NewPrice}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.BillingService2#Price
-	 * BillingService2.Price}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServiceAdjustment1#mmNewPrice
+	 * BillingServiceAdjustment1.mmNewPrice}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.BillingService2#mmPrice
+	 * BillingService2.mmPrice}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingService2#OriginalChargePrice
-	 * BillingService2.OriginalChargePrice}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingService2#mmOriginalChargePrice
+	 * BillingService2.mmOriginalChargePrice}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -245,22 +251,22 @@ public class Product {
 	 * definition} = "Price per unit of product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd UnitPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUnitPrice = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Product2.UnitPrice, com.tools20022.repository.msg.BillingServicesAmount1.PricingAmount, com.tools20022.repository.msg.BillingServicesAmount2.PricingAmount,
-					com.tools20022.repository.msg.BillingServiceParameters2.UnitPrice, com.tools20022.repository.msg.BillingServiceAdjustment1.PriceChange, com.tools20022.repository.msg.BillingServiceAdjustment1.OriginalPrice,
-					com.tools20022.repository.msg.BillingServiceAdjustment1.NewPrice, com.tools20022.repository.msg.BillingService2.Price, com.tools20022.repository.msg.BillingService2.OriginalChargePrice);
-			elementContext_lazy = () -> Product.mmObject();
+			derivation_lazy = () -> Arrays.asList(Product2.mmUnitPrice, BillingServicesAmount1.mmPricingAmount, BillingServicesAmount2.mmPricingAmount, BillingServiceParameters2.mmUnitPrice, BillingServiceAdjustment1.mmPriceChange,
+					BillingServiceAdjustment1.mmOriginalPrice, BillingServiceAdjustment1.mmNewPrice, BillingService2.mmPrice, BillingService2.mmOriginalChargePrice);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitPrice";
 			definition = "Price per unit of product.";
 			minOccurs = 0;
-			type_lazy = () -> Price.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Price.UnitPriceProduct;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Price.mmUnitPriceProduct;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.ProductCategory> productCategory;
 	/**
 	 * Category of the product.
 	 * <p>
@@ -269,8 +275,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductCategory#Product
-	 * ProductCategory.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductCategory#mmProduct
+	 * ProductCategory.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -293,19 +299,20 @@ public class Product {
 	 * definition} = "Category of the product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ProductCategory = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmProductCategory = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductCategory";
 			definition = "Category of the product.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductCategory.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LineItem lineItem;
 	/**
 	 * Specifies the line item in which the product is specified.
 	 * <p>
@@ -314,8 +321,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.LineItem#InvoicedProduct
-	 * LineItem.InvoicedProduct}</li>
+	 * {@linkplain com.tools20022.repository.entity.LineItem#mmInvoicedProduct
+	 * LineItem.mmInvoicedProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -338,20 +345,21 @@ public class Product {
 	 * "Specifies the line item in which the product is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd LineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLineItem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LineItem";
 			definition = "Specifies the line item in which the product is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.LineItem.mmInvoicedProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.LineItem.InvoicedProduct;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.ProductIdentification> productIdentification;
 	/**
 	 * Identification of the product.
 	 * <p>
@@ -360,8 +368,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductIdentification#Product
-	 * ProductIdentification.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductIdentification#mmProduct
+	 * ProductIdentification.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -385,19 +393,20 @@ public class Product {
 	 * definition} = "Identification of the product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ProductIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmProductIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProductIdentification";
 			definition = "Identification of the product.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ProductIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductIdentification.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text name;
 	/**
 	 * Name of a product.
 	 * <p>
@@ -411,8 +420,8 @@ public class Product {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification3#Identification
-	 * BillingServiceIdentification3.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification3#mmIdentification
+	 * BillingServiceIdentification3.mmIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -430,19 +439,28 @@ public class Product {
 	 * definition} = "Name of a product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Name = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServiceIdentification3.Identification);
-			elementContext_lazy = () -> Product.mmObject();
+			derivation_lazy = () -> Arrays.asList(BillingServiceIdentification3.mmIdentification);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of a product.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Product.class.getMethod("getName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max140Text description;
 	/**
 	 * Information about the goods and/or services of a trade transaction.
 	 * <p>
@@ -468,18 +486,27 @@ public class Product {
 	 * "Information about the goods and/or services of a trade transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Description = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Information about the goods and/or services of a trade transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Product.class.getMethod("getDescription", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Country origin;
 	/**
 	 * Country from which the product originates.
 	 * <p>
@@ -488,8 +515,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Country#ProducedProducts
-	 * Country.ProducedProducts}</li>
+	 * {@linkplain com.tools20022.repository.entity.Country#mmProducedProducts
+	 * Country.mmProducedProducts}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -511,20 +538,21 @@ public class Product {
 	 * definition} = "Country from which the product originates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Origin = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOrigin = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Origin";
 			definition = "Country from which the product originates.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Country.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.ProducedProducts;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmProducedProducts;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.ProductCharacteristics> characteristics;
 	/**
 	 * Characteristics of the product.
 	 * <p>
@@ -533,8 +561,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductCharacteristics#Product
-	 * ProductCharacteristics.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductCharacteristics#mmProduct
+	 * ProductCharacteristics.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -558,19 +586,20 @@ public class Product {
 	 * definition} = "Characteristics of the product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Characteristics = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Characteristics";
 			definition = "Characteristics of the product.";
 			minOccurs = 0;
-			type_lazy = () -> ProductCharacteristics.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmProduct;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 		}
 	};
+	protected Price netPrice;
 	/**
 	 * Net price of the goods and/or service.
 	 * <p>
@@ -579,8 +608,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Price#NetPriceProduct
-	 * Price.NetPriceProduct}</li>
+	 * {@linkplain com.tools20022.repository.entity.Price#mmNetPriceProduct
+	 * Price.mmNetPriceProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -602,20 +631,21 @@ public class Product {
 	 * definition} = "Net price of the goods and/or service."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NetPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNetPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPrice";
 			definition = "Net price of the goods and/or service.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Price.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Price.NetPriceProduct;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Price.mmNetPriceProduct;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.ProductQuantity> quantity;
 	/**
 	 * Specifies the quantity of the product.
 	 * <p>
@@ -624,8 +654,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductQuantity#Product
-	 * ProductQuantity.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductQuantity#mmProduct
+	 * ProductQuantity.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -648,19 +678,20 @@ public class Product {
 	 * definition} = "Specifies the quantity of the product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Quantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "Specifies the quantity of the product.";
 			minOccurs = 0;
-			type_lazy = () -> ProductQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmProduct;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ProductQuantity.mmObject();
 		}
 	};
+	protected Price grossPrice;
 	/**
 	 * Gross price of the goods and/or service.
 	 * <p>
@@ -669,8 +700,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Price#GrossPriceProduct
-	 * Price.GrossPriceProduct}</li>
+	 * {@linkplain com.tools20022.repository.entity.Price#mmGrossPriceProduct
+	 * Price.mmGrossPriceProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -692,20 +723,21 @@ public class Product {
 	 * definition} = "Gross price of the goods and/or service."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd GrossPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmGrossPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossPrice";
 			definition = "Gross price of the goods and/or service.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Price.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Price.GrossPriceProduct;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Price.mmGrossPriceProduct;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 		}
 	};
+	protected Max70Text quality;
 	/**
 	 * Quality of the product.
 	 * <p>
@@ -730,18 +762,27 @@ public class Product {
 	 * definition} = "Quality of the product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Quality = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmQuality = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quality";
 			definition = "Quality of the product.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Product.class.getMethod("getQuality", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ProductDelivery delivery;
 	/**
 	 * Delivery process of a product
 	 * <p>
@@ -750,8 +791,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductDelivery#Product
-	 * ProductDelivery.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmProduct
+	 * ProductDelivery.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -774,20 +815,21 @@ public class Product {
 	 * definition} = "Delivery process of a product"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Delivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Delivery";
 			definition = "Delivery process of a product";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> ProductDelivery.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmProduct;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PurchaseOrder> purchaseOrder;
 	/**
 	 * Specifies the purchase order in which a specific product is ordered.
 	 * <p>
@@ -796,8 +838,8 @@ public class Product {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PurchaseOrder#Product
-	 * PurchaseOrder.Product}</li>
+	 * {@linkplain com.tools20022.repository.entity.PurchaseOrder#mmProduct
+	 * PurchaseOrder.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -821,19 +863,20 @@ public class Product {
 	 * "Specifies the purchase order in which a specific product is ordered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PurchaseOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPurchaseOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Product.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PurchaseOrder";
 			definition = "Specifies the purchase order in which a specific product is ordered.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PurchaseOrder.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Tax> tax;
 	/**
 	 * Amount of money due to the government or tax authority, according to
 	 * various pre-defined parameters linked to the value of the goods and
@@ -843,8 +886,8 @@ public class Product {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Tax#Product
-	 * Tax.Product}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Tax#mmProduct
+	 * Tax.mmProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -855,8 +898,8 @@ public class Product {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingService2#TaxCalculation
-	 * BillingService2.TaxCalculation}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingService2#mmTaxCalculation
+	 * BillingService2.mmTaxCalculation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -876,42 +919,175 @@ public class Product {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Tax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingService2.TaxCalculation);
-			elementContext_lazy = () -> Product.mmObject();
+			derivation_lazy = () -> Arrays.asList(BillingService2.mmTaxCalculation);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tax";
 			definition = "Amount of money due to the government or tax authority, according to various pre-defined parameters linked to the value of the goods and services in a trade transaction.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.Product;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Product";
 				definition = "Item that is offered for sale. Products can be services or goods.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.ProducedProducts, com.tools20022.repository.entity.Tax.Product, com.tools20022.repository.entity.CardPayment.Product,
-						com.tools20022.repository.entity.Price.UnitPriceProduct, com.tools20022.repository.entity.Price.NetPriceProduct, com.tools20022.repository.entity.Price.GrossPriceProduct,
-						com.tools20022.repository.entity.ProductIdentification.Product, com.tools20022.repository.entity.ProductQuantity.Product, com.tools20022.repository.entity.ProductCategory.Product,
-						com.tools20022.repository.entity.LineItem.InvoicedProduct, com.tools20022.repository.entity.ProductDelivery.Product, com.tools20022.repository.entity.ProductCharacteristics.Product,
-						com.tools20022.repository.entity.PurchaseOrder.Product);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmProducedProducts, com.tools20022.repository.entity.Tax.mmProduct, com.tools20022.repository.entity.CardPayment.mmProduct,
+						com.tools20022.repository.entity.Price.mmUnitPriceProduct, com.tools20022.repository.entity.Price.mmNetPriceProduct, com.tools20022.repository.entity.Price.mmGrossPriceProduct,
+						com.tools20022.repository.entity.ProductIdentification.mmProduct, com.tools20022.repository.entity.ProductQuantity.mmProduct, com.tools20022.repository.entity.ProductCategory.mmProduct,
+						com.tools20022.repository.entity.LineItem.mmInvoicedProduct, com.tools20022.repository.entity.ProductDelivery.mmProduct, com.tools20022.repository.entity.ProductCharacteristics.mmProduct,
+						com.tools20022.repository.entity.PurchaseOrder.mmProduct);
 				subType_lazy = () -> Arrays.asList(Service.mmObject(), Goods.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.CardPayment, com.tools20022.repository.entity.Product.UnitPrice, com.tools20022.repository.entity.Product.ProductCategory,
-						com.tools20022.repository.entity.Product.LineItem, com.tools20022.repository.entity.Product.ProductIdentification, com.tools20022.repository.entity.Product.Name, com.tools20022.repository.entity.Product.Description,
-						com.tools20022.repository.entity.Product.Origin, com.tools20022.repository.entity.Product.Characteristics, com.tools20022.repository.entity.Product.NetPrice, com.tools20022.repository.entity.Product.Quantity,
-						com.tools20022.repository.entity.Product.GrossPrice, com.tools20022.repository.entity.Product.Quality, com.tools20022.repository.entity.Product.Delivery, com.tools20022.repository.entity.Product.PurchaseOrder,
-						com.tools20022.repository.entity.Product.Tax);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Product.mmCardPayment, com.tools20022.repository.entity.Product.mmUnitPrice, com.tools20022.repository.entity.Product.mmProductCategory,
+						com.tools20022.repository.entity.Product.mmLineItem, com.tools20022.repository.entity.Product.mmProductIdentification, com.tools20022.repository.entity.Product.mmName,
+						com.tools20022.repository.entity.Product.mmDescription, com.tools20022.repository.entity.Product.mmOrigin, com.tools20022.repository.entity.Product.mmCharacteristics,
+						com.tools20022.repository.entity.Product.mmNetPrice, com.tools20022.repository.entity.Product.mmQuantity, com.tools20022.repository.entity.Product.mmGrossPrice, com.tools20022.repository.entity.Product.mmQuality,
+						com.tools20022.repository.entity.Product.mmDelivery, com.tools20022.repository.entity.Product.mmPurchaseOrder, com.tools20022.repository.entity.Product.mmTax);
 				derivationComponent_lazy = () -> Arrays.asList(Product2.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Product.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CardPayment getCardPayment() {
+		return cardPayment;
+	}
+
+	public void setCardPayment(com.tools20022.repository.entity.CardPayment cardPayment) {
+		this.cardPayment = cardPayment;
+	}
+
+	public List<Price> getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(List<com.tools20022.repository.entity.Price> unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public List<ProductCategory> getProductCategory() {
+		return productCategory;
+	}
+
+	public void setProductCategory(List<com.tools20022.repository.entity.ProductCategory> productCategory) {
+		this.productCategory = productCategory;
+	}
+
+	public LineItem getLineItem() {
+		return lineItem;
+	}
+
+	public void setLineItem(com.tools20022.repository.entity.LineItem lineItem) {
+		this.lineItem = lineItem;
+	}
+
+	public List<ProductIdentification> getProductIdentification() {
+		return productIdentification;
+	}
+
+	public void setProductIdentification(List<com.tools20022.repository.entity.ProductIdentification> productIdentification) {
+		this.productIdentification = productIdentification;
+	}
+
+	public Max35Text getName() {
+		return name;
+	}
+
+	public void setName(Max35Text name) {
+		this.name = name;
+	}
+
+	public Max140Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max140Text description) {
+		this.description = description;
+	}
+
+	public Country getOrigin() {
+		return origin;
+	}
+
+	public void setOrigin(com.tools20022.repository.entity.Country origin) {
+		this.origin = origin;
+	}
+
+	public List<ProductCharacteristics> getCharacteristics() {
+		return characteristics;
+	}
+
+	public void setCharacteristics(List<com.tools20022.repository.entity.ProductCharacteristics> characteristics) {
+		this.characteristics = characteristics;
+	}
+
+	public Price getNetPrice() {
+		return netPrice;
+	}
+
+	public void setNetPrice(com.tools20022.repository.entity.Price netPrice) {
+		this.netPrice = netPrice;
+	}
+
+	public List<ProductQuantity> getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(List<com.tools20022.repository.entity.ProductQuantity> quantity) {
+		this.quantity = quantity;
+	}
+
+	public Price getGrossPrice() {
+		return grossPrice;
+	}
+
+	public void setGrossPrice(com.tools20022.repository.entity.Price grossPrice) {
+		this.grossPrice = grossPrice;
+	}
+
+	public Max70Text getQuality() {
+		return quality;
+	}
+
+	public void setQuality(Max70Text quality) {
+		this.quality = quality;
+	}
+
+	public ProductDelivery getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(com.tools20022.repository.entity.ProductDelivery delivery) {
+		this.delivery = delivery;
+	}
+
+	public List<PurchaseOrder> getPurchaseOrder() {
+		return purchaseOrder;
+	}
+
+	public void setPurchaseOrder(List<com.tools20022.repository.entity.PurchaseOrder> purchaseOrder) {
+		this.purchaseOrder = purchaseOrder;
+	}
+
+	public List<Tax> getTax() {
+		return tax;
+	}
+
+	public void setTax(List<com.tools20022.repository.entity.Tax> tax) {
+		this.tax = tax;
 	}
 }

@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.BillingChargeMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,72 +36,72 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#UnitPriced
- * BillingChargeMethod1Code.UnitPriced}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmUnitPriced
+ * BillingChargeMethod1Code.mmUnitPriced}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#StampDuty
- * BillingChargeMethod1Code.StampDuty}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmStampDuty
+ * BillingChargeMethod1Code.mmStampDuty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#BaseCharge
- * BillingChargeMethod1Code.BaseCharge}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmBaseCharge
+ * BillingChargeMethod1Code.mmBaseCharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#DiscountPrice
- * BillingChargeMethod1Code.DiscountPrice}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmDiscountPrice
+ * BillingChargeMethod1Code.mmDiscountPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#FlatCharge
- * BillingChargeMethod1Code.FlatCharge}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmFlatCharge
+ * BillingChargeMethod1Code.mmFlatCharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#ListPrice
- * BillingChargeMethod1Code.ListPrice}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmListPrice
+ * BillingChargeMethod1Code.mmListPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#MinimumCharge
- * BillingChargeMethod1Code.MinimumCharge}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmMinimumCharge
+ * BillingChargeMethod1Code.mmMinimumCharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#MaximumReduction
- * BillingChargeMethod1Code.MaximumReduction}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmMaximumReduction
+ * BillingChargeMethod1Code.mmMaximumReduction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier1
- * BillingChargeMethod1Code.Tier1}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier1
+ * BillingChargeMethod1Code.mmTier1}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier2
- * BillingChargeMethod1Code.Tier2}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier2
+ * BillingChargeMethod1Code.mmTier2}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier3
- * BillingChargeMethod1Code.Tier3}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier3
+ * BillingChargeMethod1Code.mmTier3}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier4
- * BillingChargeMethod1Code.Tier4}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier4
+ * BillingChargeMethod1Code.mmTier4}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier5
- * BillingChargeMethod1Code.Tier5}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier5
+ * BillingChargeMethod1Code.mmTier5}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier6
- * BillingChargeMethod1Code.Tier6}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier6
+ * BillingChargeMethod1Code.mmTier6}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier7
- * BillingChargeMethod1Code.Tier7}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier7
+ * BillingChargeMethod1Code.mmTier7}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier8
- * BillingChargeMethod1Code.Tier8}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier8
+ * BillingChargeMethod1Code.mmTier8}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#Tier9
- * BillingChargeMethod1Code.Tier9}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmTier9
+ * BillingChargeMethod1Code.mmTier9}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#ThresholdPrice
- * BillingChargeMethod1Code.ThresholdPrice}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmThresholdPrice
+ * BillingChargeMethod1Code.mmThresholdPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#ZonePrice
- * BillingChargeMethod1Code.ZonePrice}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmZonePrice
+ * BillingChargeMethod1Code.mmZonePrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#BalanceBased
- * BillingChargeMethod1Code.BalanceBased}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingChargeMethod1Code#mmBalanceBased
+ * BillingChargeMethod1Code.mmBalanceBased}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -135,9 +137,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "UnitPriced"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnitPriced = new MMCode() {
+	public static final MMCode mmUnitPriced = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnitPriced";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -158,9 +160,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "StampDuty"</li>
 	 * </ul>
 	 */
-	public static final MMCode StampDuty = new MMCode() {
+	public static final MMCode mmStampDuty = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StampDuty";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -181,9 +183,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "BaseCharge"</li>
 	 * </ul>
 	 */
-	public static final MMCode BaseCharge = new MMCode() {
+	public static final MMCode mmBaseCharge = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BaseCharge";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -204,9 +206,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "DiscountPrice"</li>
 	 * </ul>
 	 */
-	public static final MMCode DiscountPrice = new MMCode() {
+	public static final MMCode mmDiscountPrice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DiscountPrice";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -227,9 +229,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "FlatCharge"</li>
 	 * </ul>
 	 */
-	public static final MMCode FlatCharge = new MMCode() {
+	public static final MMCode mmFlatCharge = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FlatCharge";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -250,9 +252,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "ListPrice"</li>
 	 * </ul>
 	 */
-	public static final MMCode ListPrice = new MMCode() {
+	public static final MMCode mmListPrice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ListPrice";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -273,9 +275,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "MinimumCharge"</li>
 	 * </ul>
 	 */
-	public static final MMCode MinimumCharge = new MMCode() {
+	public static final MMCode mmMinimumCharge = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MinimumCharge";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -296,9 +298,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "MaximumReduction"</li>
 	 * </ul>
 	 */
-	public static final MMCode MaximumReduction = new MMCode() {
+	public static final MMCode mmMaximumReduction = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MaximumReduction";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -319,9 +321,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier1"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier1 = new MMCode() {
+	public static final MMCode mmTier1 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier1";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -342,9 +344,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier2"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier2 = new MMCode() {
+	public static final MMCode mmTier2 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier2";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -365,9 +367,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier3"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier3 = new MMCode() {
+	public static final MMCode mmTier3 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier3";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -388,9 +390,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier4"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier4 = new MMCode() {
+	public static final MMCode mmTier4 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier4";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -411,9 +413,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier5"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier5 = new MMCode() {
+	public static final MMCode mmTier5 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier5";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -434,9 +436,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier6"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier6 = new MMCode() {
+	public static final MMCode mmTier6 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier6";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -457,9 +459,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier7"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier7 = new MMCode() {
+	public static final MMCode mmTier7 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier7";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -480,9 +482,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier8"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier8 = new MMCode() {
+	public static final MMCode mmTier8 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier8";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -503,9 +505,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "Tier9"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tier9 = new MMCode() {
+	public static final MMCode mmTier9 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Tier9";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -526,9 +528,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "ThresholdPrice"</li>
 	 * </ul>
 	 */
-	public static final MMCode ThresholdPrice = new MMCode() {
+	public static final MMCode mmThresholdPrice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ThresholdPrice";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -549,9 +551,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "ZonePrice"</li>
 	 * </ul>
 	 */
-	public static final MMCode ZonePrice = new MMCode() {
+	public static final MMCode mmZonePrice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ZonePrice";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -572,9 +574,9 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	 * name} = "BalanceBased"</li>
 	 * </ul>
 	 */
-	public static final MMCode BalanceBased = new MMCode() {
+	public static final MMCode mmBalanceBased = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BalanceBased";
 			owner_lazy = () -> BillingChargeMethod1Code.mmObject();
 		}
@@ -583,19 +585,15 @@ public class BillingChargeMethod1Code extends BillingChargeMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("UPRC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingChargeMethod1Code";
 				definition = "Defines how the billing charge is calculated.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BillingChargeMethod1Code.UnitPriced, com.tools20022.repository.codeset.BillingChargeMethod1Code.StampDuty,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.BaseCharge, com.tools20022.repository.codeset.BillingChargeMethod1Code.DiscountPrice, com.tools20022.repository.codeset.BillingChargeMethod1Code.FlatCharge,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.ListPrice, com.tools20022.repository.codeset.BillingChargeMethod1Code.MinimumCharge,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.MaximumReduction, com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier1, com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier2,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier3, com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier4, com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier5,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier6, com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier7, com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier8,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.Tier9, com.tools20022.repository.codeset.BillingChargeMethod1Code.ThresholdPrice, com.tools20022.repository.codeset.BillingChargeMethod1Code.ZonePrice,
-						com.tools20022.repository.codeset.BillingChargeMethod1Code.BalanceBased);
+				code_lazy = () -> Arrays.asList(BillingChargeMethod1Code.mmUnitPriced, BillingChargeMethod1Code.mmStampDuty, BillingChargeMethod1Code.mmBaseCharge, BillingChargeMethod1Code.mmDiscountPrice,
+						BillingChargeMethod1Code.mmFlatCharge, BillingChargeMethod1Code.mmListPrice, BillingChargeMethod1Code.mmMinimumCharge, BillingChargeMethod1Code.mmMaximumReduction, BillingChargeMethod1Code.mmTier1,
+						BillingChargeMethod1Code.mmTier2, BillingChargeMethod1Code.mmTier3, BillingChargeMethod1Code.mmTier4, BillingChargeMethod1Code.mmTier5, BillingChargeMethod1Code.mmTier6, BillingChargeMethod1Code.mmTier7,
+						BillingChargeMethod1Code.mmTier8, BillingChargeMethod1Code.mmTier9, BillingChargeMethod1Code.mmThresholdPrice, BillingChargeMethod1Code.mmZonePrice, BillingChargeMethod1Code.mmBalanceBased);
 				trace_lazy = () -> BillingChargeMethodCode.mmObject();
 			}
 		});

@@ -18,7 +18,9 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMAmount;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ActiveOrHistoricCurrencyCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,11 +37,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * currencyIdentifierSet} =
  * {@linkplain com.tools20022.repository.codeset.ActiveOrHistoricCurrencyCode
  * ActiveOrHistoricCurrencyCode}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMDecimal#getMinInclusive
+ * minInclusive} = "0"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -65,12 +69,15 @@ public class ActiveOrHistoricCurrencyAnd13DecimalAmount {
 	final static public MMAmount mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMAmount() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("6284534.12");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActiveOrHistoricCurrencyAnd13DecimalAmount";
 				definition = "A number of monetary units specified in an active or a historic currency where the unit of currency is explicit and compliant with ISO 4217. The number of fractional digits (or minor unit of currency) is not checked as per ISO 4217: It must be lesser than or equal to 13.\nNote: The decimal separator is a dot.";
 				currencyIdentifierSet_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
+				minInclusive = "0";
+				totalDigits = 18;
+				fractionDigits = 13;
 			}
 		});
 		return mmObject_lazy.get();

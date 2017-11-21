@@ -19,11 +19,18 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentCancellationRejection2Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.InvestigationResolution;
+import com.tools20022.repository.entity.PaymentInvestigationCaseRejection;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the reason for the transaction cancellation status.
@@ -35,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice#Code
- * CancellationStatusReason2Choice.Code}</li>
+ * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice#mmCode
+ * CancellationStatusReason2Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice#Proprietary
- * CancellationStatusReason2Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.CancellationStatusReason2Choice#mmProprietary
+ * CancellationStatusReason2Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -49,8 +56,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CancellationStatusReason2Choice", propOrder = {"code", "proprietary"})
 public class CancellationStatusReason2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected PaymentCancellationRejection2Code code;
 	/**
 	 * Reason for the cancellation status, in a coded form.
 	 * <p>
@@ -78,8 +88,8 @@ public class CancellationStatusReason2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#RejectedCancellation
-	 * PaymentInvestigationCaseRejection.RejectedCancellation}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#mmRejectedCancellation
+	 * PaymentInvestigationCaseRejection.mmRejectedCancellation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -98,20 +108,21 @@ public class CancellationStatusReason2Choice {
 	 * definition} = "Reason for the cancellation status, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmRejectedCancellation;
 			componentContext_lazy = () -> CancellationStatusReason2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseRejection.RejectedCancellation;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Reason for the cancellation status, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PaymentCancellationRejection2Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Reason for the status, in a proprietary form.
 	 * <p>
@@ -124,8 +135,8 @@ public class CancellationStatusReason2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#RejectedCancellation
-	 * PaymentInvestigationCaseRejection.RejectedCancellation}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#mmRejectedCancellation
+	 * PaymentInvestigationCaseRejection.mmRejectedCancellation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -144,17 +155,17 @@ public class CancellationStatusReason2Choice {
 	 * definition} = "Reason for the status, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmRejectedCancellation;
 			componentContext_lazy = () -> CancellationStatusReason2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseRejection.RejectedCancellation;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Reason for the status, in a proprietary form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -162,14 +173,32 @@ public class CancellationStatusReason2Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CancellationStatusReason2Choice.Code, com.tools20022.repository.choice.CancellationStatusReason2Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(CancellationStatusReason2Choice.mmCode, CancellationStatusReason2Choice.mmProprietary);
 				trace_lazy = () -> InvestigationResolution.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CancellationStatusReason2Choice";
 				definition = "Specifies the reason for the transaction cancellation status.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public PaymentCancellationRejection2Code getCode() {
+		return code;
+	}
+
+	public void setCode(PaymentCancellationRejection2Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

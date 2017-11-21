@@ -20,11 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.GenericIdentification;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the details of the identification data that is advised to be
@@ -37,17 +45,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationModification2#Identification
- * IdentificationModification2.Identification}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationModification2#mmIdentification
+ * IdentificationModification2.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationModification2#OriginalPartyAndAccountIdentification
- * IdentificationModification2.OriginalPartyAndAccountIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationModification2#mmOriginalPartyAndAccountIdentification
+ * IdentificationModification2.mmOriginalPartyAndAccountIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationModification2#UpdatedPartyAndAccountIdentification
- * IdentificationModification2.UpdatedPartyAndAccountIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationModification2#mmUpdatedPartyAndAccountIdentification
+ * IdentificationModification2.mmUpdatedPartyAndAccountIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationModification2#AdditionalInformation
- * IdentificationModification2.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationModification2#mmAdditionalInformation
+ * IdentificationModification2.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -57,15 +65,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02#Modification
- * IdentificationModificationAdviceV02.Modification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02#mmModification
+ * IdentificationModificationAdviceV02.mmModification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,9 +86,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "IdentificationModification2", propOrder = {"identification", "originalPartyAndAccountIdentification", "updatedPartyAndAccountIdentification", "additionalInformation"})
 public class IdentificationModification2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text identification;
 	/**
 	 * Unique identification, as assigned by a sending party, to unambiguously
 	 * identify the party and account identification information group within
@@ -95,8 +106,8 @@ public class IdentificationModification2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -117,20 +128,21 @@ public class IdentificationModification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> IdentificationModification2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique identification, as assigned by a sending party, to unambiguously identify the party and account identification information group within the message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected IdentificationInformation2 originalPartyAndAccountIdentification;
 	/**
 	 * Provides party and/or account identification information as given in the
 	 * original message.
@@ -165,21 +177,22 @@ public class IdentificationModification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalPartyAndAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalPartyAndAccountIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> IdentificationModification2.mmObject();
 			businessComponentTrace_lazy = () -> Account.mmObject();
+			componentContext_lazy = () -> IdentificationModification2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlPtyAndAcctId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalPartyAndAccountIdentification";
 			definition = "Provides party and/or account identification information as given in the original message.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> IdentificationInformation2.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
 		}
 	};
+	protected IdentificationInformation2 updatedPartyAndAccountIdentification;
 	/**
 	 * Provides updated party and/or account identification information.
 	 * <p>
@@ -212,21 +225,22 @@ public class IdentificationModification2 {
 	 * "Provides updated party and/or account identification information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd UpdatedPartyAndAccountIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmUpdatedPartyAndAccountIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> IdentificationModification2.mmObject();
 			businessComponentTrace_lazy = () -> Account.mmObject();
+			componentContext_lazy = () -> IdentificationModification2.mmObject();
 			isDerived = false;
 			xmlTag = "UpdtdPtyAndAcctId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UpdatedPartyAndAccountIdentification";
 			definition = "Provides updated party and/or account identification information.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> IdentificationInformation2.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.IdentificationInformation2.mmObject();
 		}
 	};
+	protected Max140Text additionalInformation;
 	/**
 	 * Additional information, in free text form, to complement the modification
 	 * information.
@@ -257,16 +271,16 @@ public class IdentificationModification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> IdentificationModification2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Additional information, in free text form, to complement the modification information.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
@@ -274,16 +288,52 @@ public class IdentificationModification2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IdentificationModification2.Identification, com.tools20022.repository.msg.IdentificationModification2.OriginalPartyAndAccountIdentification,
-						com.tools20022.repository.msg.IdentificationModification2.UpdatedPartyAndAccountIdentification, com.tools20022.repository.msg.IdentificationModification2.AdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(IdentificationModification2.mmIdentification, IdentificationModification2.mmOriginalPartyAndAccountIdentification,
+						IdentificationModification2.mmUpdatedPartyAndAccountIdentification, IdentificationModification2.mmAdditionalInformation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(IdentificationModificationAdviceV02.mmModification);
 				trace_lazy = () -> Account.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02.Modification);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationModification2";
 				definition = "Provides the details of the identification data that is advised to be modified.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "OrgnlPtyAndAcctId")
+	public IdentificationInformation2 getOriginalPartyAndAccountIdentification() {
+		return originalPartyAndAccountIdentification;
+	}
+
+	public void setOriginalPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 originalPartyAndAccountIdentification) {
+		this.originalPartyAndAccountIdentification = originalPartyAndAccountIdentification;
+	}
+
+	@XmlElement(name = "UpdtdPtyAndAcctId", required = true)
+	public IdentificationInformation2 getUpdatedPartyAndAccountIdentification() {
+		return updatedPartyAndAccountIdentification;
+	}
+
+	public void setUpdatedPartyAndAccountIdentification(com.tools20022.repository.msg.IdentificationInformation2 updatedPartyAndAccountIdentification) {
+		this.updatedPartyAndAccountIdentification = updatedPartyAndAccountIdentification;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max140Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max140Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

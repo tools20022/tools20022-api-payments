@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CorporateActionServicing;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Services which consists in notifying the investor or its agent of a meeting,
@@ -38,40 +42,40 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingSpecification
- * MeetingServicing.MeetingSpecification}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingSpecification
+ * MeetingServicing.mmMeetingSpecification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingNotice
- * MeetingServicing.MeetingNotice}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingNotice
+ * MeetingServicing.mmMeetingNotice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingEntitlement
- * MeetingServicing.MeetingEntitlement}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingEntitlement
+ * MeetingServicing.mmMeetingEntitlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingInstruction
- * MeetingServicing.MeetingInstruction}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingInstruction
+ * MeetingServicing.mmMeetingInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingResultDissemination
- * MeetingServicing.MeetingResultDissemination}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingResultDissemination
+ * MeetingServicing.mmMeetingResultDissemination}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Meeting#MeetingServicing
- * Meeting.MeetingServicing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmMeetingServicing
+ * Meeting.mmMeetingServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingNotice#RelatedServicing
- * MeetingNotice.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingNotice#mmRelatedServicing
+ * MeetingNotice.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#RelatedServicing
- * MeetingEntitlement.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmRelatedServicing
+ * MeetingEntitlement.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InstructionForMeeting#RelatedServicing
- * InstructionForMeeting.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.InstructionForMeeting#mmRelatedServicing
+ * InstructionForMeeting.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#RelatedServicing
- * MeetingResultDissemination.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#mmRelatedServicing
+ * MeetingResultDissemination.mmRelatedServicing}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -81,8 +85,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,6 +102,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MeetingServicing extends CorporateActionServicing {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Meeting> meetingSpecification;
 	/**
 	 * Meeting for which services are provided.
 	 * <p>
@@ -106,8 +111,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#MeetingServicing
-	 * Meeting.MeetingServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmMeetingServicing
+	 * Meeting.mmMeetingServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -130,19 +135,20 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * definition} = "Meeting for which services are provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MeetingSpecification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeetingSpecification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingSpecification";
 			definition = "Meeting for which services are provided.";
 			minOccurs = 1;
-			type_lazy = () -> Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.MeetingServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmMeetingServicing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.MeetingNotice> meetingNotice;
 	/**
 	 * Service which consists in notifying the investor of a meeting. It may
 	 * contain details of the meeting as defined by the agent in addition to the
@@ -153,8 +159,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MeetingNotice#RelatedServicing
-	 * MeetingNotice.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.MeetingNotice#mmRelatedServicing
+	 * MeetingNotice.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -180,19 +186,20 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MeetingNotice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeetingNotice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingNotice";
 			definition = "Service which consists in notifying the investor of a meeting. It may contain details of the meeting as defined by the agent in addition to the details defined by the issuer.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingNotice.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement;
 	/**
 	 * Calculation of the entitlementbased on the balance in the account.
 	 * <p>
@@ -201,8 +208,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#RelatedServicing
-	 * MeetingEntitlement.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmRelatedServicing
+	 * MeetingEntitlement.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -227,19 +234,20 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * "Calculation of the entitlementbased on the balance in the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MeetingEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeetingEntitlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingEntitlement";
 			definition = "Calculation of the entitlementbased on the balance in the account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction;
 	/**
 	 * Service which consists in validating, calculating and transferring the
 	 * investor's instruction.
@@ -249,8 +257,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InstructionForMeeting#RelatedServicing
-	 * InstructionForMeeting.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.InstructionForMeeting#mmRelatedServicing
+	 * InstructionForMeeting.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -277,19 +285,20 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MeetingInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeetingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingInstruction";
 			definition = "Service which consists in validating, calculating and transferring the investor's instruction.";
 			minOccurs = 0;
-			type_lazy = () -> InstructionForMeeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination;
 	/**
 	 * Service which consists in distributing the results of the meeting to the
 	 * investor.
@@ -299,8 +308,8 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#RelatedServicing
-	 * MeetingResultDissemination.RelatedServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#mmRelatedServicing
+	 * MeetingResultDissemination.mmRelatedServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -327,36 +336,81 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MeetingResultDissemination = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeetingResultDissemination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingResultDissemination";
 			definition = "Service which consists in distributing the results of the meeting to the investor.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmRelatedServicing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.RelatedServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingServicing";
 				definition = "Services which consists in notifying the investor or its agent of a meeting, in validating and relaying its instructions and in calculating its entitlement based on its holdings.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.MeetingServicing, com.tools20022.repository.entity.MeetingNotice.RelatedServicing,
-						com.tools20022.repository.entity.MeetingEntitlement.RelatedServicing, com.tools20022.repository.entity.InstructionForMeeting.RelatedServicing,
-						com.tools20022.repository.entity.MeetingResultDissemination.RelatedServicing);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmMeetingServicing, com.tools20022.repository.entity.MeetingNotice.mmRelatedServicing,
+						com.tools20022.repository.entity.MeetingEntitlement.mmRelatedServicing, com.tools20022.repository.entity.InstructionForMeeting.mmRelatedServicing,
+						com.tools20022.repository.entity.MeetingResultDissemination.mmRelatedServicing);
 				superType_lazy = () -> CorporateActionServicing.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingServicing.MeetingSpecification, com.tools20022.repository.entity.MeetingServicing.MeetingNotice,
-						com.tools20022.repository.entity.MeetingServicing.MeetingEntitlement, com.tools20022.repository.entity.MeetingServicing.MeetingInstruction,
-						com.tools20022.repository.entity.MeetingServicing.MeetingResultDissemination);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingServicing.mmMeetingSpecification, com.tools20022.repository.entity.MeetingServicing.mmMeetingNotice,
+						com.tools20022.repository.entity.MeetingServicing.mmMeetingEntitlement, com.tools20022.repository.entity.MeetingServicing.mmMeetingInstruction,
+						com.tools20022.repository.entity.MeetingServicing.mmMeetingResultDissemination);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return MeetingServicing.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Meeting> getMeetingSpecification() {
+		return meetingSpecification;
+	}
+
+	public void setMeetingSpecification(List<com.tools20022.repository.entity.Meeting> meetingSpecification) {
+		this.meetingSpecification = meetingSpecification;
+	}
+
+	public List<MeetingNotice> getMeetingNotice() {
+		return meetingNotice;
+	}
+
+	public void setMeetingNotice(List<com.tools20022.repository.entity.MeetingNotice> meetingNotice) {
+		this.meetingNotice = meetingNotice;
+	}
+
+	public List<MeetingEntitlement> getMeetingEntitlement() {
+		return meetingEntitlement;
+	}
+
+	public void setMeetingEntitlement(List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement) {
+		this.meetingEntitlement = meetingEntitlement;
+	}
+
+	public List<InstructionForMeeting> getMeetingInstruction() {
+		return meetingInstruction;
+	}
+
+	public void setMeetingInstruction(List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction) {
+		this.meetingInstruction = meetingInstruction;
+	}
+
+	public List<MeetingResultDissemination> getMeetingResultDissemination() {
+		return meetingResultDissemination;
+	}
+
+	public void setMeetingResultDissemination(List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination) {
+		this.meetingResultDissemination = meetingResultDissemination;
 	}
 }

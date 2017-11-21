@@ -19,13 +19,21 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.CategoryPurpose1Choice;
 import com.tools20022.repository.choice.LocalInstrument2Choice;
 import com.tools20022.repository.choice.MandateClassification1Choice;
 import com.tools20022.repository.choice.ServiceLevel8Choice;
+import com.tools20022.repository.entity.DirectDebitMandate;
 import com.tools20022.repository.entity.Mandate;
+import com.tools20022.repository.entity.PaymentProcessing;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to further detail the information related to the type of
@@ -38,17 +46,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#ServiceLevel
- * MandateTypeInformation2.ServiceLevel}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#mmServiceLevel
+ * MandateTypeInformation2.mmServiceLevel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#LocalInstrument
- * MandateTypeInformation2.LocalInstrument}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#mmLocalInstrument
+ * MandateTypeInformation2.mmLocalInstrument}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#CategoryPurpose
- * MandateTypeInformation2.CategoryPurpose}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#mmCategoryPurpose
+ * MandateTypeInformation2.mmCategoryPurpose}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#Classification
- * MandateTypeInformation2.Classification}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateTypeInformation2#mmClassification
+ * MandateTypeInformation2.mmClassification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -56,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,9 +78,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "MandateTypeInformation2", propOrder = {"serviceLevel", "localInstrument", "categoryPurpose", "classification"})
 public class MandateTypeInformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ServiceLevel8Choice serviceLevel;
 	/**
 	 * Agreement under which or rules under which the mandate resides.
 	 * <p>
@@ -84,8 +95,8 @@ public class MandateTypeInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentProcessing#ServiceLevel
-	 * PaymentProcessing.ServiceLevel}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentProcessing#mmServiceLevel
+	 * PaymentProcessing.mmServiceLevel}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -105,21 +116,22 @@ public class MandateTypeInformation2 {
 	 * "Agreement under which or rules under which the mandate resides."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ServiceLevel = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmServiceLevel = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentProcessing.mmServiceLevel;
 			componentContext_lazy = () -> MandateTypeInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.ServiceLevel;
 			isDerived = false;
 			xmlTag = "SvcLvl";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ServiceLevel";
 			definition = "Agreement under which or rules under which the mandate resides.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ServiceLevel8Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> ServiceLevel8Choice.mmObject();
 		}
 	};
+	protected LocalInstrument2Choice localInstrument;
 	/**
 	 * User community specific instrument. Usage: This element is used to
 	 * specify a local instrument, local clearing option and/or further qualify
@@ -134,8 +146,8 @@ public class MandateTypeInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.DirectDebitMandate#MandatePaymentType
-	 * DirectDebitMandate.MandatePaymentType}</li>
+	 * {@linkplain com.tools20022.repository.entity.DirectDebitMandate#mmMandatePaymentType
+	 * DirectDebitMandate.mmMandatePaymentType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -156,21 +168,22 @@ public class MandateTypeInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd LocalInstrument = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmLocalInstrument = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> DirectDebitMandate.mmMandatePaymentType;
 			componentContext_lazy = () -> MandateTypeInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.MandatePaymentType;
 			isDerived = false;
 			xmlTag = "LclInstrm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LocalInstrument";
 			definition = "User community specific instrument.\nUsage: This element is used to specify a local instrument, local clearing option and/or further qualify the service or service level.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> LocalInstrument2Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> LocalInstrument2Choice.mmObject();
 		}
 	};
+	protected CategoryPurpose1Choice categoryPurpose;
 	/**
 	 * Specifies the high level purpose of the mandate based on a set of
 	 * pre-defined categories.
@@ -184,8 +197,8 @@ public class MandateTypeInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentProcessing#CategoryPurpose
-	 * PaymentProcessing.CategoryPurpose}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentProcessing#mmCategoryPurpose
+	 * PaymentProcessing.mmCategoryPurpose}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -206,21 +219,22 @@ public class MandateTypeInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd CategoryPurpose = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCategoryPurpose = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentProcessing.mmCategoryPurpose;
 			componentContext_lazy = () -> MandateTypeInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.CategoryPurpose;
 			isDerived = false;
 			xmlTag = "CtgyPurp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CategoryPurpose";
 			definition = "Specifies the high level purpose of the mandate based on a set of pre-defined categories.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CategoryPurpose1Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> CategoryPurpose1Choice.mmObject();
 		}
 	};
+	protected MandateClassification1Choice classification;
 	/**
 	 * Type of direct debit instruction.
 	 * <p>
@@ -233,8 +247,8 @@ public class MandateTypeInformation2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.DirectDebitMandate#Classification
-	 * DirectDebitMandate.Classification}</li>
+	 * {@linkplain com.tools20022.repository.entity.DirectDebitMandate#mmClassification
+	 * DirectDebitMandate.mmClassification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -253,34 +267,69 @@ public class MandateTypeInformation2 {
 	 * definition} = "Type of direct debit instruction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Classification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmClassification = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> DirectDebitMandate.mmClassification;
 			componentContext_lazy = () -> MandateTypeInformation2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.Classification;
 			isDerived = false;
 			xmlTag = "Clssfctn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Classification";
 			definition = "Type of direct debit instruction.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> MandateClassification1Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> MandateClassification1Choice.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateTypeInformation2.ServiceLevel, com.tools20022.repository.msg.MandateTypeInformation2.LocalInstrument,
-						com.tools20022.repository.msg.MandateTypeInformation2.CategoryPurpose, com.tools20022.repository.msg.MandateTypeInformation2.Classification);
+				messageElement_lazy = () -> Arrays.asList(MandateTypeInformation2.mmServiceLevel, MandateTypeInformation2.mmLocalInstrument, MandateTypeInformation2.mmCategoryPurpose, MandateTypeInformation2.mmClassification);
 				trace_lazy = () -> Mandate.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateTypeInformation2";
 				definition = "Set of elements used to further detail the information related to the type of payment.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "SvcLvl")
+	public ServiceLevel8Choice getServiceLevel() {
+		return serviceLevel;
+	}
+
+	public void setServiceLevel(ServiceLevel8Choice serviceLevel) {
+		this.serviceLevel = serviceLevel;
+	}
+
+	@XmlElement(name = "LclInstrm")
+	public LocalInstrument2Choice getLocalInstrument() {
+		return localInstrument;
+	}
+
+	public void setLocalInstrument(LocalInstrument2Choice localInstrument) {
+		this.localInstrument = localInstrument;
+	}
+
+	@XmlElement(name = "CtgyPurp")
+	public CategoryPurpose1Choice getCategoryPurpose() {
+		return categoryPurpose;
+	}
+
+	public void setCategoryPurpose(CategoryPurpose1Choice categoryPurpose) {
+		this.categoryPurpose = categoryPurpose;
+	}
+
+	@XmlElement(name = "Clssfctn")
+	public MandateClassification1Choice getClassification() {
+		return classification;
+	}
+
+	public void setClassification(MandateClassification1Choice classification) {
+		this.classification = classification;
 	}
 }

@@ -17,7 +17,9 @@
 
 package com.tools20022.repository.datatype;
 
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.metamodel.MMText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -25,11 +27,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
+ * "UNLIMITED"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -47,10 +51,12 @@ public class Unlimited9Text {
 	final static public MMText mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMText() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Unlimited9Text";
 				definition = "String of characters equal to UNLIMITED.";
+				pattern = "UNLIMITED";
+				length = 9;
 			}
 		});
 		return mmObject_lazy.get();

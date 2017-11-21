@@ -20,11 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to provide information on the tax amount(s) of tax
@@ -36,14 +43,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#Rate
- * TaxAmount1.Rate}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#TaxableBaseAmount
- * TaxAmount1.TaxableBaseAmount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#TotalAmount
- * TaxAmount1.TotalAmount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#Details
- * TaxAmount1.Details}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#mmRate
+ * TaxAmount1.mmRate}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#mmTaxableBaseAmount
+ * TaxAmount1.mmTaxableBaseAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#mmTotalAmount
+ * TaxAmount1.mmTotalAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxAmount1#mmDetails
+ * TaxAmount1.mmDetails}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,9 +72,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TaxAmount1", propOrder = {"rate", "taxableBaseAmount", "totalAmount", "details"})
 public class TaxAmount1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate rate;
 	/**
 	 * Rate used to calculate the tax.
 	 * <p>
@@ -81,7 +91,7 @@ public class TaxAmount1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Rate Tax.Rate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmRate Tax.mmRate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} = {@linkplain com.tools20022.repository.msg.TaxAmount1
@@ -99,20 +109,21 @@ public class TaxAmount1 {
 	 * definition} = "Rate used to calculate the tax."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Rate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmRate;
 			componentContext_lazy = () -> TaxAmount1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Rate;
 			isDerived = false;
 			xmlTag = "Rate";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rate";
 			definition = "Rate used to calculate the tax.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount taxableBaseAmount;
 	/**
 	 * Amount of money on which the tax is based.
 	 * <p>
@@ -126,8 +137,8 @@ public class TaxAmount1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#TaxableBaseAmount
-	 * Tax.TaxableBaseAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmTaxableBaseAmount
+	 * Tax.mmTaxableBaseAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} = {@linkplain com.tools20022.repository.msg.TaxAmount1
@@ -145,20 +156,21 @@ public class TaxAmount1 {
 	 * definition} = "Amount of money on which the tax is based."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TaxableBaseAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTaxableBaseAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmTaxableBaseAmount;
 			componentContext_lazy = () -> TaxAmount1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.TaxableBaseAmount;
 			isDerived = false;
 			xmlTag = "TaxblBaseAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxableBaseAmount";
 			definition = "Amount of money on which the tax is based.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount totalAmount;
 	/**
 	 * Total amount that is the result of the calculation of the tax for the
 	 * record.
@@ -173,7 +185,7 @@ public class TaxAmount1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Amount Tax.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmAmount Tax.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} = {@linkplain com.tools20022.repository.msg.TaxAmount1
@@ -193,20 +205,21 @@ public class TaxAmount1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> TaxAmount1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Amount;
 			isDerived = false;
 			xmlTag = "TtlAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmount";
 			definition = "Total amount that is the result of the calculation of the tax for the record.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.TaxRecordDetails1> details;
 	/**
 	 * Set of elements used to provide details on the tax period and amount.
 	 * <p>
@@ -233,32 +246,67 @@ public class TaxAmount1 {
 	 * "Set of elements used to provide details on the tax period and amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Details = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmDetails = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> TaxAmount1.mmObject();
 			isDerived = false;
 			xmlTag = "Dtls";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Details";
 			definition = "Set of elements used to provide details on the tax period and amount.";
 			minOccurs = 0;
-			type_lazy = () -> TaxRecordDetails1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TaxRecordDetails1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxAmount1.Rate, com.tools20022.repository.msg.TaxAmount1.TaxableBaseAmount, com.tools20022.repository.msg.TaxAmount1.TotalAmount,
-						com.tools20022.repository.msg.TaxAmount1.Details);
+				messageElement_lazy = () -> Arrays.asList(TaxAmount1.mmRate, TaxAmount1.mmTaxableBaseAmount, TaxAmount1.mmTotalAmount, TaxAmount1.mmDetails);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxAmount1";
 				definition = "Set of elements used to provide information on the tax amount(s) of tax record.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Rate")
+	public PercentageRate getRate() {
+		return rate;
+	}
+
+	public void setRate(PercentageRate rate) {
+		this.rate = rate;
+	}
+
+	@XmlElement(name = "TaxblBaseAmt")
+	public ActiveOrHistoricCurrencyAndAmount getTaxableBaseAmount() {
+		return taxableBaseAmount;
+	}
+
+	public void setTaxableBaseAmount(ActiveOrHistoricCurrencyAndAmount taxableBaseAmount) {
+		this.taxableBaseAmount = taxableBaseAmount;
+	}
+
+	@XmlElement(name = "TtlAmt")
+	public ActiveOrHistoricCurrencyAndAmount getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(ActiveOrHistoricCurrencyAndAmount totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	@XmlElement(name = "Dtls")
+	public List<TaxRecordDetails1> getDetails() {
+		return details;
+	}
+
+	public void setDetails(List<com.tools20022.repository.msg.TaxRecordDetails1> details) {
+		this.details = details;
 	}
 }

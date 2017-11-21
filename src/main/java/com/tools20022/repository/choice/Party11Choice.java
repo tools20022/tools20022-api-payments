@@ -19,12 +19,19 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.OrganisationIdentification;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.entity.PersonIdentification;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.OrganisationIdentification8;
 import com.tools20022.repository.msg.PersonIdentification5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Nature or use of the account.
@@ -36,11 +43,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.Party11Choice#OrganisationIdentification
- * Party11Choice.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.choice.Party11Choice#mmOrganisationIdentification
+ * Party11Choice.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.Party11Choice#PrivateIdentification
- * Party11Choice.PrivateIdentification}</li>
+ * {@linkplain com.tools20022.repository.choice.Party11Choice#mmPrivateIdentification
+ * Party11Choice.mmPrivateIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -50,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Nature or use of the account."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Party11Choice", propOrder = {"organisationIdentification", "privateIdentification"})
 public class Party11Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected OrganisationIdentification8 organisationIdentification;
 	/**
 	 * Unique and unambiguous way to identify an organisation.
 	 * <p>
@@ -97,21 +107,22 @@ public class Party11Choice {
 	 * definition} = "Unique and unambiguous way to identify an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OrganisationIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOrganisationIdentification = new MMMessageAssociationEnd() {
 		{
+			businessComponentTrace_lazy = () -> OrganisationIdentification.mmObject();
 			componentContext_lazy = () -> Party11Choice.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			isDerived = false;
 			xmlTag = "OrgId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OrganisationIdentification";
 			definition = "Unique and unambiguous way to identify an organisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> OrganisationIdentification8.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> OrganisationIdentification8.mmObject();
 		}
 	};
+	protected PersonIdentification5 privateIdentification;
 	/**
 	 * Unique and unambiguous identification of a person, eg, passport.
 	 * <p>
@@ -144,33 +155,51 @@ public class Party11Choice {
 	 * "Unique and unambiguous identification of a person, eg, passport."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PrivateIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPrivateIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> Party11Choice.mmObject();
 			businessComponentTrace_lazy = () -> PersonIdentification.mmObject();
+			componentContext_lazy = () -> Party11Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PrvtId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PrivateIdentification";
 			definition = "Unique and unambiguous identification of a person, eg, passport.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PersonIdentification5.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> PersonIdentification5.mmObject();
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Party11Choice.OrganisationIdentification, com.tools20022.repository.choice.Party11Choice.PrivateIdentification);
+				messageElement_lazy = () -> Arrays.asList(Party11Choice.mmOrganisationIdentification, Party11Choice.mmPrivateIdentification);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Party11Choice";
 				definition = "Nature or use of the account.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgId", required = true)
+	public OrganisationIdentification8 getOrganisationIdentification() {
+		return organisationIdentification;
+	}
+
+	public void setOrganisationIdentification(OrganisationIdentification8 organisationIdentification) {
+		this.organisationIdentification = organisationIdentification;
+	}
+
+	@XmlElement(name = "PrvtId", required = true)
+	public PersonIdentification5 getPrivateIdentification() {
+		return privateIdentification;
+	}
+
+	public void setPrivateIdentification(PersonIdentification5 privateIdentification) {
+		this.privateIdentification = privateIdentification;
 	}
 }

@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.entity.IndividualPayment;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashDeposit1;
+import com.tools20022.repository.msg.EntryTransaction8;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,37 +41,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashDeposit#NoteDenomination
- * CashDeposit.NoteDenomination}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CashDeposit#NumberOfNotes
- * CashDeposit.NumberOfNotes}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CashDeposit#DepositAmount
- * CashDeposit.DepositAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashDeposit#mmNoteDenomination
+ * CashDeposit.mmNoteDenomination}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CashDeposit#mmNumberOfNotes
+ * CashDeposit.mmNumberOfNotes}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CashDeposit#mmDepositAmount
+ * CashDeposit.mmDepositAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashDeposit#RelatedBankingTransaction
- * CashDeposit.RelatedBankingTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.CashDeposit#mmRelatedBankingTransaction
+ * CashDeposit.mmRelatedBankingTransaction}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.BankingTransaction#CashDeposit
- * BankingTransaction.CashDeposit}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.EntryTransaction8#CashDeposit
- * EntryTransaction8.CashDeposit}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.IndividualPayment
- * IndividualPayment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -79,10 +60,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.BankingTransaction#mmCashDeposit
+ * BankingTransaction.mmCashDeposit}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmCashDeposit
+ * EntryTransaction8.mmCashDeposit}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.IndividualPayment
+ * IndividualPayment}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,6 +99,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CashDeposit extends IndividualPayment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount noteDenomination;
 	/**
 	 * Specifies the note or coin denomination, including the currency, such as
 	 * a 50 euro note.
@@ -112,8 +115,8 @@ public class CashDeposit extends IndividualPayment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashDeposit1#NoteDenomination
-	 * CashDeposit1.NoteDenomination}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashDeposit1#mmNoteDenomination
+	 * CashDeposit1.mmNoteDenomination}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -133,19 +136,28 @@ public class CashDeposit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NoteDenomination = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNoteDenomination = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashDeposit1.NoteDenomination);
-			elementContext_lazy = () -> CashDeposit.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashDeposit1.mmNoteDenomination);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoteDenomination";
 			definition = "Specifies the note or coin denomination, including the currency, such as a 50 euro note.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashDeposit.class.getMethod("getNoteDenomination", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max15NumericText numberOfNotes;
 	/**
 	 * Specifies the number of notes of the same denomination in the deposit.
 	 * <p>
@@ -159,8 +171,9 @@ public class CashDeposit extends IndividualPayment {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashDeposit1#NumberOfNotes
-	 * CashDeposit1.NumberOfNotes}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CashDeposit1#mmNumberOfNotes
+	 * CashDeposit1.mmNumberOfNotes}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -179,19 +192,28 @@ public class CashDeposit extends IndividualPayment {
 	 * "Specifies the number of notes of the same denomination in the deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NumberOfNotes = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumberOfNotes = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashDeposit1.NumberOfNotes);
-			elementContext_lazy = () -> CashDeposit.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashDeposit1.mmNumberOfNotes);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfNotes";
 			definition = "Specifies the number of notes of the same denomination in the deposit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashDeposit.class.getMethod("getNumberOfNotes", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount depositAmount;
 	/**
 	 * Specifies the total amount of money in the cash deposit, that is the note
 	 * denomination times the number of notes.
@@ -206,8 +228,8 @@ public class CashDeposit extends IndividualPayment {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashDeposit1#Amount
-	 * CashDeposit1.Amount}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashDeposit1#mmAmount
+	 * CashDeposit1.mmAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -227,19 +249,28 @@ public class CashDeposit extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DepositAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDepositAmount = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashDeposit1.Amount);
-			elementContext_lazy = () -> CashDeposit.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashDeposit1.mmAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositAmount";
 			definition = "Specifies the total amount of money in the cash deposit, that is the note denomination times the number of notes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashDeposit.class.getMethod("getDepositAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BankingTransaction relatedBankingTransaction;
 	/**
 	 * Describes the type of transaction associated with a cash deposit.
 	 * <p>
@@ -248,8 +279,8 @@ public class CashDeposit extends IndividualPayment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BankingTransaction#CashDeposit
-	 * BankingTransaction.CashDeposit}</li>
+	 * {@linkplain com.tools20022.repository.entity.BankingTransaction#mmCashDeposit
+	 * BankingTransaction.mmCashDeposit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -273,36 +304,73 @@ public class CashDeposit extends IndividualPayment {
 	 * "Describes the type of transaction associated with a cash deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedBankingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedBankingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashDeposit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedBankingTransaction";
 			definition = "Describes the type of transaction associated with a cash deposit.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BankingTransaction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.CashDeposit;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmCashDeposit;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashDeposit";
 				definition = "Amount of money representing a value paid by a debtor to an agent bank.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BankingTransaction.CashDeposit);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EntryTransaction8.CashDeposit);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BankingTransaction.mmCashDeposit);
+				derivationElement_lazy = () -> Arrays.asList(EntryTransaction8.mmCashDeposit);
 				superType_lazy = () -> IndividualPayment.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashDeposit.NoteDenomination, com.tools20022.repository.entity.CashDeposit.NumberOfNotes, com.tools20022.repository.entity.CashDeposit.DepositAmount,
-						com.tools20022.repository.entity.CashDeposit.RelatedBankingTransaction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashDeposit.mmNoteDenomination, com.tools20022.repository.entity.CashDeposit.mmNumberOfNotes, com.tools20022.repository.entity.CashDeposit.mmDepositAmount,
+						com.tools20022.repository.entity.CashDeposit.mmRelatedBankingTransaction);
 				derivationComponent_lazy = () -> Arrays.asList(CashDeposit1.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CashDeposit.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getNoteDenomination() {
+		return noteDenomination;
+	}
+
+	public void setNoteDenomination(CurrencyAndAmount noteDenomination) {
+		this.noteDenomination = noteDenomination;
+	}
+
+	public Max15NumericText getNumberOfNotes() {
+		return numberOfNotes;
+	}
+
+	public void setNumberOfNotes(Max15NumericText numberOfNotes) {
+		this.numberOfNotes = numberOfNotes;
+	}
+
+	public CurrencyAndAmount getDepositAmount() {
+		return depositAmount;
+	}
+
+	public void setDepositAmount(CurrencyAndAmount depositAmount) {
+		this.depositAmount = depositAmount;
+	}
+
+	public BankingTransaction getRelatedBankingTransaction() {
+		return relatedBankingTransaction;
+	}
+
+	public void setRelatedBankingTransaction(com.tools20022.repository.entity.BankingTransaction relatedBankingTransaction) {
+		this.relatedBankingTransaction = relatedBankingTransaction;
 	}
 }

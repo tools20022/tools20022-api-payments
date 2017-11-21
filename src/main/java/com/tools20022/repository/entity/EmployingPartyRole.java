@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Organisation represented by a person, or for which a person works.
@@ -35,16 +39,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.EmployingPartyRole#Employee
- * EmployingPartyRole.Employee}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.EmployingPartyRole#mmEmployee
+ * EmployingPartyRole.mmEmployee}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Person#EmployingParty
- * Person.EmployingParty}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmEmployingParty
+ * Person.mmEmployingParty}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -52,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,6 +73,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class EmployingPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Person> employee;
 	/**
 	 * Identifies the employee of a party.
 	 * <p>
@@ -76,8 +82,8 @@ public class EmployingPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Person#EmployingParty
-	 * Person.EmployingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.Person#mmEmployingParty
+	 * Person.mmEmployingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -100,32 +106,45 @@ public class EmployingPartyRole extends Role {
 	 * definition} = "Identifies the employee of a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Employee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEmployee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> EmployingPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.EmployingPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Employee";
 			definition = "Identifies the employee of a party.";
 			minOccurs = 0;
-			type_lazy = () -> Person.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Person.EmployingParty;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmEmployingParty;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EmployingPartyRole";
 				definition = "Organisation represented by a person, or for which a person works.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Person.EmployingParty);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Person.mmEmployingParty);
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.EmployingPartyRole.Employee);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.EmployingPartyRole.mmEmployee);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return EmployingPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Person> getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(List<com.tools20022.repository.entity.Person> employee) {
+		this.employee = employee;
 	}
 }

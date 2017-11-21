@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#MarketSide
- * MarketClientSideCode.MarketSide}</li>
+ * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#mmMarketSide
+ * MarketClientSideCode.mmMarketSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#ClientSide
- * MarketClientSideCode.ClientSide}</li>
+ * {@linkplain com.tools20022.repository.codeset.MarketClientSideCode#mmClientSide
+ * MarketClientSideCode.mmClientSide}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class MarketClientSideCode {
 	 * definition} = "Instruction is for a market side transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode MarketSide = new MMCode() {
+	public static final MMCode mmMarketSide = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketSide";
 			definition = "Instruction is for a market side transaction.";
 			owner_lazy = () -> MarketClientSideCode.mmObject();
@@ -113,9 +115,9 @@ public class MarketClientSideCode {
 	 * definition} = "Instruction is for a client side transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode ClientSide = new MMCode() {
+	public static final MMCode mmClientSide = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientSide";
 			definition = "Instruction is for a client side transaction.";
 			owner_lazy = () -> MarketClientSideCode.mmObject();
@@ -126,12 +128,12 @@ public class MarketClientSideCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("MAKT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketClientSideCode";
 				definition = "Specifies if an instruction is for a market or client side transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MarketClientSideCode.MarketSide, com.tools20022.repository.codeset.MarketClientSideCode.ClientSide);
+				code_lazy = () -> Arrays.asList(MarketClientSideCode.mmMarketSide, MarketClientSideCode.mmClientSide);
 			}
 		});
 		return mmObject_lazy.get();

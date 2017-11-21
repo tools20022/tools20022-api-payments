@@ -18,6 +18,8 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,11 +36,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * identificationScheme} =
  * "The Clearing House (formerly The New York Clearing House); Universal Payment Identification Code"
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
+ * "[0-9]{8,17}"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -64,12 +68,13 @@ public class UPICIdentifier {
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("12345678");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UPICIdentifier";
 				definition = "Universal Payment Identification Code (UPIC).  Identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes.";
 				identificationScheme = "The Clearing House (formerly The New York Clearing House); Universal Payment Identification Code";
+				pattern = "[0-9]{8,17}";
 			}
 		});
 		return mmObject_lazy.get();

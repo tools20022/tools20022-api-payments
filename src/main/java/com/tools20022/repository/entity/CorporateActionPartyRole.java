@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of a corporate action.
@@ -37,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#CorporateActionEvent
- * CorporateActionPartyRole.CorporateActionEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#mmCorporateActionEvent
+ * CorporateActionPartyRole.mmCorporateActionEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#Account
- * CorporateActionPartyRole.Account}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#mmAccount
+ * CorporateActionPartyRole.mmAccount}</li>
  * </ul>
  * </li>
  * <li>
@@ -49,13 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#RelatedCorporateActionPartyRole
- * Account.RelatedCorporateActionPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmRelatedCorporateActionPartyRole
+ * Account.mmRelatedCorporateActionPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionPartyRole
- * CorporateActionEvent.CorporateActionPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionPartyRole
+ * CorporateActionEvent.mmCorporateActionPartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -63,13 +69,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * MeetingPartyRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,6 +87,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.CorporateActionEvent> corporateActionEvent;
 	/**
 	 * Specifies the event for which a party plays a role.
 	 * <p>
@@ -91,8 +96,8 @@ public class CorporateActionPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionPartyRole
-	 * CorporateActionEvent.CorporateActionPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionPartyRole
+	 * CorporateActionEvent.mmCorporateActionPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -117,19 +122,20 @@ public class CorporateActionPartyRole extends Role {
 	 * definition} = "Specifies the event for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Specifies the event for which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.CorporateActionPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Account> account;
 	/**
 	 * Unambiguous identification of the account used in the context of the
 	 * corporate action party role.
@@ -139,8 +145,8 @@ public class CorporateActionPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#RelatedCorporateActionPartyRole
-	 * Account.RelatedCorporateActionPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmRelatedCorporateActionPartyRole
+	 * Account.mmRelatedCorporateActionPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -165,33 +171,54 @@ public class CorporateActionPartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Unambiguous identification of the account used in the context of the corporate action party role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmRelatedCorporateActionPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.RelatedCorporateActionPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionPartyRole";
 				definition = "Role played by a party in the context of a corporate action.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.RelatedCorporateActionPartyRole, com.tools20022.repository.entity.CorporateActionEvent.CorporateActionPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmRelatedCorporateActionPartyRole, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionPartyRole);
 				subType_lazy = () -> Arrays.asList(MeetingPartyRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionPartyRole.CorporateActionEvent, com.tools20022.repository.entity.CorporateActionPartyRole.Account);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionPartyRole.mmCorporateActionEvent, com.tools20022.repository.entity.CorporateActionPartyRole.mmAccount);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<CorporateActionEvent> getCorporateActionEvent() {
+		return corporateActionEvent;
+	}
+
+	public void setCorporateActionEvent(List<com.tools20022.repository.entity.CorporateActionEvent> corporateActionEvent) {
+		this.corporateActionEvent = corporateActionEvent;
+	}
+
+	public List<Account> getAccount() {
+		return account;
+	}
+
+	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = account;
 	}
 }

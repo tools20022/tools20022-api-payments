@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,66 +32,72 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#DisplayMessage
- * ActionTypeCode.DisplayMessage}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmDisplayMessage
+ * ActionTypeCode.mmDisplayMessage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#PrintMessage
- * ActionTypeCode.PrintMessage}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Referral
- * ActionTypeCode.Referral}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#CaptureCard
- * ActionTypeCode.CaptureCard}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#PINRetry
- * ActionTypeCode.PINRetry}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#PINLastTry
- * ActionTypeCode.PINLastTry}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#RequestData
- * ActionTypeCode.RequestData}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Busy
- * ActionTypeCode.Busy}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmPrintMessage
+ * ActionTypeCode.mmPrintMessage}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmReferral
+ * ActionTypeCode.mmReferral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#IdentificationRequired
- * ActionTypeCode.IdentificationRequired}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmCaptureCard
+ * ActionTypeCode.mmCaptureCard}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmPINRetry
+ * ActionTypeCode.mmPINRetry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#ForbidOverride
- * ActionTypeCode.ForbidOverride}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmPINLastTry
+ * ActionTypeCode.mmPINLastTry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptCurrencyConversion
- * ActionTypeCode.AcceptCurrencyConversion}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Decline
- * ActionTypeCode.Decline}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#UpdateTrack
- * ActionTypeCode.UpdateTrack}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmRequestData
+ * ActionTypeCode.mmRequestData}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmBusy
+ * ActionTypeCode.mmBusy}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptHigherAmount
- * ActionTypeCode.AcceptHigherAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmIdentificationRequired
+ * ActionTypeCode.mmIdentificationRequired}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptLowerAmount
- * ActionTypeCode.AcceptLowerAmount}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#AcceptFees
- * ActionTypeCode.AcceptFees}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmForbidOverride
+ * ActionTypeCode.mmForbidOverride}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#DistributeCoupon
- * ActionTypeCode.DistributeCoupon}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmAcceptCurrencyConversion
+ * ActionTypeCode.mmAcceptCurrencyConversion}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmDecline
+ * ActionTypeCode.mmDecline}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#PerformRequest
- * ActionTypeCode.PerformRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmUpdateTrack
+ * ActionTypeCode.mmUpdateTrack}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#NoReasonForDecline
- * ActionTypeCode.NoReasonForDecline}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#BlockCard
- * ActionTypeCode.BlockCard}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#Approve
- * ActionTypeCode.Approve}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#FallForward
- * ActionTypeCode.FallForward}</li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmAcceptHigherAmount
+ * ActionTypeCode.mmAcceptHigherAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmAcceptLowerAmount
+ * ActionTypeCode.mmAcceptLowerAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmAcceptFees
+ * ActionTypeCode.mmAcceptFees}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmDistributeCoupon
+ * ActionTypeCode.mmDistributeCoupon}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmPerformRequest
+ * ActionTypeCode.mmPerformRequest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmNoReasonForDecline
+ * ActionTypeCode.mmNoReasonForDecline}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmBlockCard
+ * ActionTypeCode.mmBlockCard}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmApprove
+ * ActionTypeCode.mmApprove}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ActionTypeCode#mmFallForward
+ * ActionTypeCode.mmFallForward}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -131,9 +139,9 @@ public class ActionTypeCode {
 	 * definition} = "Message to display, print or log."</li>
 	 * </ul>
 	 */
-	public static final MMCode DisplayMessage = new MMCode() {
+	public static final MMCode mmDisplayMessage = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisplayMessage";
 			definition = "Message to display, print or log.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -161,9 +169,9 @@ public class ActionTypeCode {
 	 * definition} = "Print a message."</li>
 	 * </ul>
 	 */
-	public static final MMCode PrintMessage = new MMCode() {
+	public static final MMCode mmPrintMessage = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrintMessage";
 			definition = "Print a message.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -191,9 +199,9 @@ public class ActionTypeCode {
 	 * definition} = "Referral has to be performed."</li>
 	 * </ul>
 	 */
-	public static final MMCode Referral = new MMCode() {
+	public static final MMCode mmReferral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Referral";
 			definition = "Referral has to be performed.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -221,9 +229,9 @@ public class ActionTypeCode {
 	 * definition} = "Capture the card."</li>
 	 * </ul>
 	 */
-	public static final MMCode CaptureCard = new MMCode() {
+	public static final MMCode mmCaptureCard = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CaptureCard";
 			definition = "Capture the card.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -253,9 +261,9 @@ public class ActionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PINRetry = new MMCode() {
+	public static final MMCode mmPINRetry = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PINRetry";
 			definition = "PIN (Personal Identification Number) is wrong, retry a PIN verification.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -283,9 +291,9 @@ public class ActionTypeCode {
 	 * definition} = "Last PIN (Personal Identification Number) try."</li>
 	 * </ul>
 	 */
-	public static final MMCode PINLastTry = new MMCode() {
+	public static final MMCode mmPINLastTry = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PINLastTry";
 			definition = "Last PIN (Personal Identification Number) try.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -316,9 +324,9 @@ public class ActionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RequestData = new MMCode() {
+	public static final MMCode mmRequestData = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestData";
 			definition = "Request additional data through a displayed text and request confirmation by an attendant.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -346,9 +354,9 @@ public class ActionTypeCode {
 	 * definition} = "Server busy, try later."</li>
 	 * </ul>
 	 */
-	public static final MMCode Busy = new MMCode() {
+	public static final MMCode mmBusy = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Busy";
 			definition = "Server busy, try later.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -377,9 +385,9 @@ public class ActionTypeCode {
 	 * "Additional identification required (passport, ID card, etc.)."</li>
 	 * </ul>
 	 */
-	public static final MMCode IdentificationRequired = new MMCode() {
+	public static final MMCode mmIdentificationRequired = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentificationRequired";
 			definition = "Additional identification required (passport, ID card, etc.).";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -410,9 +418,9 @@ public class ActionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ForbidOverride = new MMCode() {
+	public static final MMCode mmForbidOverride = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForbidOverride";
 			definition = "Payment application cannot propose to the merchant an override of the payment transaction.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -440,9 +448,9 @@ public class ActionTypeCode {
 	 * definition} = "Ask the cardholder to accept the currency conversion."</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptCurrencyConversion = new MMCode() {
+	public static final MMCode mmAcceptCurrencyConversion = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptCurrencyConversion";
 			definition = "Ask the cardholder to accept the currency conversion.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -470,9 +478,9 @@ public class ActionTypeCode {
 	 * definition} = "Decline the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Decline = new MMCode() {
+	public static final MMCode mmDecline = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Decline";
 			definition = "Decline the transaction.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -501,9 +509,9 @@ public class ActionTypeCode {
 	 * "Track provided in the response must be updated on the card."</li>
 	 * </ul>
 	 */
-	public static final MMCode UpdateTrack = new MMCode() {
+	public static final MMCode mmUpdateTrack = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UpdateTrack";
 			definition = "Track provided in the response must be updated on the card.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -531,9 +539,9 @@ public class ActionTypeCode {
 	 * definition} = "MinimumAmount must be accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptHigherAmount = new MMCode() {
+	public static final MMCode mmAcceptHigherAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptHigherAmount";
 			definition = "MinimumAmount must be accepted.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -561,9 +569,9 @@ public class ActionTypeCode {
 	 * definition} = "MaximumAuthorisedAmount must be accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptLowerAmount = new MMCode() {
+	public static final MMCode mmAcceptLowerAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptLowerAmount";
 			definition = "MaximumAuthorisedAmount must be accepted.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -591,9 +599,9 @@ public class ActionTypeCode {
 	 * definition} = "Fees must be accepted."</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptFees = new MMCode() {
+	public static final MMCode mmAcceptFees = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptFees";
 			definition = "Fees must be accepted.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -621,9 +629,9 @@ public class ActionTypeCode {
 	 * definition} = "Distribute a coupon from the cassette of coupon."</li>
 	 * </ul>
 	 */
-	public static final MMCode DistributeCoupon = new MMCode() {
+	public static final MMCode mmDistributeCoupon = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DistributeCoupon";
 			definition = "Distribute a coupon from the cassette of coupon.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -651,9 +659,9 @@ public class ActionTypeCode {
 	 * definition} = "Request to be performed by the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMCode PerformRequest = new MMCode() {
+	public static final MMCode mmPerformRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PerformRequest";
 			definition = "Request to be performed by the ATM.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -681,9 +689,9 @@ public class ActionTypeCode {
 	 * definition} = "No reason for declining the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoReasonForDecline = new MMCode() {
+	public static final MMCode mmNoReasonForDecline = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoReasonForDecline";
 			definition = "No reason for declining the transaction.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -711,9 +719,9 @@ public class ActionTypeCode {
 	 * definition} = "Block the card."</li>
 	 * </ul>
 	 */
-	public static final MMCode BlockCard = new MMCode() {
+	public static final MMCode mmBlockCard = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BlockCard";
 			definition = "Block the card.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -741,9 +749,9 @@ public class ActionTypeCode {
 	 * definition} = "Approve the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Approve = new MMCode() {
+	public static final MMCode mmApprove = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Approve";
 			definition = "Approve the transaction.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -772,9 +780,9 @@ public class ActionTypeCode {
 	 * "Fall-forward from contactless to chip card transaction required."</li>
 	 * </ul>
 	 */
-	public static final MMCode FallForward = new MMCode() {
+	public static final MMCode mmFallForward = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FallForward";
 			definition = "Fall-forward from contactless to chip card transaction required.";
 			owner_lazy = () -> ActionTypeCode.mmObject();
@@ -785,19 +793,15 @@ public class ActionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DISP");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionTypeCode";
 				definition = "Type of action to be performed by the POI system (Point Of Interaction).";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ActionTypeCode.DisplayMessage, com.tools20022.repository.codeset.ActionTypeCode.PrintMessage, com.tools20022.repository.codeset.ActionTypeCode.Referral,
-						com.tools20022.repository.codeset.ActionTypeCode.CaptureCard, com.tools20022.repository.codeset.ActionTypeCode.PINRetry, com.tools20022.repository.codeset.ActionTypeCode.PINLastTry,
-						com.tools20022.repository.codeset.ActionTypeCode.RequestData, com.tools20022.repository.codeset.ActionTypeCode.Busy, com.tools20022.repository.codeset.ActionTypeCode.IdentificationRequired,
-						com.tools20022.repository.codeset.ActionTypeCode.ForbidOverride, com.tools20022.repository.codeset.ActionTypeCode.AcceptCurrencyConversion, com.tools20022.repository.codeset.ActionTypeCode.Decline,
-						com.tools20022.repository.codeset.ActionTypeCode.UpdateTrack, com.tools20022.repository.codeset.ActionTypeCode.AcceptHigherAmount, com.tools20022.repository.codeset.ActionTypeCode.AcceptLowerAmount,
-						com.tools20022.repository.codeset.ActionTypeCode.AcceptFees, com.tools20022.repository.codeset.ActionTypeCode.DistributeCoupon, com.tools20022.repository.codeset.ActionTypeCode.PerformRequest,
-						com.tools20022.repository.codeset.ActionTypeCode.NoReasonForDecline, com.tools20022.repository.codeset.ActionTypeCode.BlockCard, com.tools20022.repository.codeset.ActionTypeCode.Approve,
-						com.tools20022.repository.codeset.ActionTypeCode.FallForward);
+				code_lazy = () -> Arrays.asList(ActionTypeCode.mmDisplayMessage, ActionTypeCode.mmPrintMessage, ActionTypeCode.mmReferral, ActionTypeCode.mmCaptureCard, ActionTypeCode.mmPINRetry, ActionTypeCode.mmPINLastTry,
+						ActionTypeCode.mmRequestData, ActionTypeCode.mmBusy, ActionTypeCode.mmIdentificationRequired, ActionTypeCode.mmForbidOverride, ActionTypeCode.mmAcceptCurrencyConversion, ActionTypeCode.mmDecline,
+						ActionTypeCode.mmUpdateTrack, ActionTypeCode.mmAcceptHigherAmount, ActionTypeCode.mmAcceptLowerAmount, ActionTypeCode.mmAcceptFees, ActionTypeCode.mmDistributeCoupon, ActionTypeCode.mmPerformRequest,
+						ActionTypeCode.mmNoReasonForDecline, ActionTypeCode.mmBlockCard, ActionTypeCode.mmApprove, ActionTypeCode.mmFallForward);
 			}
 		});
 		return mmObject_lazy.get();

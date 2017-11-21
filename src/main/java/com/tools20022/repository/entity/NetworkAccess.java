@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max1025Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Parameters used to access a network.
@@ -38,24 +39,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.NetworkAccess#HostIPAddress
- * NetworkAccess.HostIPAddress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.NetworkAccess#HostPortNumber
- * NetworkAccess.HostPortNumber}</li>
- * <li>{@linkplain com.tools20022.repository.entity.NetworkAccess#UserName
- * NetworkAccess.UserName}</li>
- * <li>{@linkplain com.tools20022.repository.entity.NetworkAccess#AccessCode
- * NetworkAccess.AccessCode}</li>
+ * {@linkplain com.tools20022.repository.entity.NetworkAccess#mmHostIPAddress
+ * NetworkAccess.mmHostIPAddress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.NetworkAccess#ClientCertificate
- * NetworkAccess.ClientCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.NetworkAccess#mmHostPortNumber
+ * NetworkAccess.mmHostPortNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.NetworkAccess#mmUserName
+ * NetworkAccess.mmUserName}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.NetworkAccess#mmAccessCode
+ * NetworkAccess.mmAccessCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.NetworkAccess#TerminalManagementSystem
- * NetworkAccess.TerminalManagementSystem}</li>
+ * {@linkplain com.tools20022.repository.entity.NetworkAccess#mmClientCertificate
+ * NetworkAccess.mmClientCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.NetworkAccess#NetworkAddress
- * NetworkAccess.NetworkAddress}</li>
+ * {@linkplain com.tools20022.repository.entity.NetworkAccess#mmTerminalManagementSystem
+ * NetworkAccess.mmTerminalManagementSystem}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.NetworkAccess#mmNetworkAddress
+ * NetworkAccess.mmNetworkAddress}</li>
  * </ul>
  * </li>
  * <li>
@@ -63,18 +65,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecurityCertificate#NetworkAccess
- * SecurityCertificate.NetworkAccess}</li>
+ * {@linkplain com.tools20022.repository.entity.SecurityCertificate#mmNetworkAccess
+ * SecurityCertificate.mmNetworkAccess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#NetworkAccess
- * TerminalManagementSystem.NetworkAccess}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#mmNetworkAccess
+ * TerminalManagementSystem.mmNetworkAccess}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,6 +90,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class NetworkAccess {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text hostIPAddress;
 	/**
 	 * IP address of the host.
 	 * <p>
@@ -113,18 +116,27 @@ public class NetworkAccess {
 	 * definition} = "IP address of the host."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute HostIPAddress = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmHostIPAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HostIPAddress";
 			definition = "IP address of the host.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return NetworkAccess.class.getMethod("getHostIPAddress", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number hostPortNumber;
 	/**
 	 * Port number of the host.
 	 * <p>
@@ -150,18 +162,27 @@ public class NetworkAccess {
 	 * definition} = "Port number of the host."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute HostPortNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmHostPortNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HostPortNumber";
 			definition = "Port number of the host.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return NetworkAccess.class.getMethod("getHostPortNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text userName;
 	/**
 	 * User name identifying the party accessing the network.
 	 * <p>
@@ -187,18 +208,27 @@ public class NetworkAccess {
 	 * definition} = "User name identifying the party accessing the network."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute UserName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmUserName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UserName";
 			definition = "User name identifying the party accessing the network.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return NetworkAccess.class.getMethod("getUserName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text accessCode;
 	/**
 	 * Password authenticating the user
 	 * <p>
@@ -224,18 +254,27 @@ public class NetworkAccess {
 	 * definition} = "Password authenticating the user"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AccessCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAccessCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccessCode";
 			definition = "Password authenticating the user";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return NetworkAccess.class.getMethod("getAccessCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecurityCertificate> clientCertificate;
 	/**
 	 * Client certificate chain.
 	 * <p>
@@ -244,8 +283,8 @@ public class NetworkAccess {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecurityCertificate#NetworkAccess
-	 * SecurityCertificate.NetworkAccess}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecurityCertificate#mmNetworkAccess
+	 * SecurityCertificate.mmNetworkAccess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -269,19 +308,20 @@ public class NetworkAccess {
 	 * definition} = "Client certificate chain."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClientCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClientCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientCertificate";
 			definition = "Client certificate chain.";
 			minOccurs = 0;
-			type_lazy = () -> SecurityCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.NetworkAccess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmNetworkAccess;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 		}
 	};
+	protected TerminalManagementSystem terminalManagementSystem;
 	/**
 	 * Terminal Management System which uses the network.
 	 * <p>
@@ -290,8 +330,8 @@ public class NetworkAccess {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#NetworkAccess
-	 * TerminalManagementSystem.NetworkAccess}</li>
+	 * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#mmNetworkAccess
+	 * TerminalManagementSystem.mmNetworkAccess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -316,20 +356,21 @@ public class NetworkAccess {
 	 * definition} = "Terminal Management System which uses the network."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminalManagementSystem";
 			definition = "Terminal Management System which uses the network.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmNetworkAccess;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.NetworkAccess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max1025Text networkAddress;
 	/**
 	 * Address used to reach the network on which a message will be carried.
 	 * <p>
@@ -356,32 +397,101 @@ public class NetworkAccess {
 	 * "Address used to reach the network on which a message will be carried."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NetworkAddress = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNetworkAddress = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> NetworkAccess.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetworkAddress";
 			definition = "Address used to reach the network on which a message will be carried.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max1025Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return NetworkAccess.class.getMethod("getNetworkAddress", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetworkAccess";
 				definition = "Parameters used to access a network.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecurityCertificate.NetworkAccess, com.tools20022.repository.entity.TerminalManagementSystem.NetworkAccess);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NetworkAccess.HostIPAddress, com.tools20022.repository.entity.NetworkAccess.HostPortNumber, com.tools20022.repository.entity.NetworkAccess.UserName,
-						com.tools20022.repository.entity.NetworkAccess.AccessCode, com.tools20022.repository.entity.NetworkAccess.ClientCertificate, com.tools20022.repository.entity.NetworkAccess.TerminalManagementSystem,
-						com.tools20022.repository.entity.NetworkAccess.NetworkAddress);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecurityCertificate.mmNetworkAccess, com.tools20022.repository.entity.TerminalManagementSystem.mmNetworkAccess);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NetworkAccess.mmHostIPAddress, com.tools20022.repository.entity.NetworkAccess.mmHostPortNumber, com.tools20022.repository.entity.NetworkAccess.mmUserName,
+						com.tools20022.repository.entity.NetworkAccess.mmAccessCode, com.tools20022.repository.entity.NetworkAccess.mmClientCertificate, com.tools20022.repository.entity.NetworkAccess.mmTerminalManagementSystem,
+						com.tools20022.repository.entity.NetworkAccess.mmNetworkAddress);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return NetworkAccess.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getHostIPAddress() {
+		return hostIPAddress;
+	}
+
+	public void setHostIPAddress(Max35Text hostIPAddress) {
+		this.hostIPAddress = hostIPAddress;
+	}
+
+	public Number getHostPortNumber() {
+		return hostPortNumber;
+	}
+
+	public void setHostPortNumber(Number hostPortNumber) {
+		this.hostPortNumber = hostPortNumber;
+	}
+
+	public Max35Text getUserName() {
+		return userName;
+	}
+
+	public void setUserName(Max35Text userName) {
+		this.userName = userName;
+	}
+
+	public Max35Text getAccessCode() {
+		return accessCode;
+	}
+
+	public void setAccessCode(Max35Text accessCode) {
+		this.accessCode = accessCode;
+	}
+
+	public List<SecurityCertificate> getClientCertificate() {
+		return clientCertificate;
+	}
+
+	public void setClientCertificate(List<com.tools20022.repository.entity.SecurityCertificate> clientCertificate) {
+		this.clientCertificate = clientCertificate;
+	}
+
+	public TerminalManagementSystem getTerminalManagementSystem() {
+		return terminalManagementSystem;
+	}
+
+	public void setTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem terminalManagementSystem) {
+		this.terminalManagementSystem = terminalManagementSystem;
+	}
+
+	public Max1025Text getNetworkAddress() {
+		return networkAddress;
+	}
+
+	public void setNetworkAddress(Max1025Text networkAddress) {
+		this.networkAddress = networkAddress;
 	}
 }

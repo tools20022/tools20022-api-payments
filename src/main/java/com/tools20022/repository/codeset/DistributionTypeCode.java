@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,23 +33,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#RollingBasis
- * DistributionTypeCode.RollingBasis}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DistributionTypeCode#Final
- * DistributionTypeCode.Final}</li>
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmRollingBasis
+ * DistributionTypeCode.mmRollingBasis}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#Interim
- * DistributionTypeCode.Interim}</li>
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmFinal
+ * DistributionTypeCode.mmFinal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#Ongoing
- * DistributionTypeCode.Ongoing}</li>
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmInterim
+ * DistributionTypeCode.mmInterim}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DistributionTypeCode#mmOngoing
+ * DistributionTypeCode.mmOngoing}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -93,9 +96,9 @@ public class DistributionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RollingBasis = new MMCode() {
+	public static final MMCode mmRollingBasis = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RollingBasis";
 			definition = "Event will have a number of acceptance and payment dates until further announcement by the Issuer or its agent.";
 			owner_lazy = () -> DistributionTypeCode.mmObject();
@@ -123,9 +126,9 @@ public class DistributionTypeCode {
 	 * definition} = "Final payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode Final = new MMCode() {
+	public static final MMCode mmFinal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Final";
 			definition = "Final payment.";
 			owner_lazy = () -> DistributionTypeCode.mmObject();
@@ -153,9 +156,9 @@ public class DistributionTypeCode {
 	 * definition} = "Interim payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode Interim = new MMCode() {
+	public static final MMCode mmInterim = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Interim";
 			definition = "Interim payment.";
 			owner_lazy = () -> DistributionTypeCode.mmObject();
@@ -183,9 +186,9 @@ public class DistributionTypeCode {
 	 * definition} = "Event is ongoing for acceptance on an unsolicited basis."</li>
 	 * </ul>
 	 */
-	public static final MMCode Ongoing = new MMCode() {
+	public static final MMCode mmOngoing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ongoing";
 			definition = "Event is ongoing for acceptance on an unsolicited basis.";
 			owner_lazy = () -> DistributionTypeCode.mmObject();
@@ -196,13 +199,12 @@ public class DistributionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ROLL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DistributionTypeCode";
 				definition = "Specifies whether the proceeds of the event will be distributed on a rolling basis rather than on a specific date.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DistributionTypeCode.RollingBasis, com.tools20022.repository.codeset.DistributionTypeCode.Final,
-						com.tools20022.repository.codeset.DistributionTypeCode.Interim, com.tools20022.repository.codeset.DistributionTypeCode.Ongoing);
+				code_lazy = () -> Arrays.asList(DistributionTypeCode.mmRollingBasis, DistributionTypeCode.mmFinal, DistributionTypeCode.mmInterim, DistributionTypeCode.mmOngoing);
 			}
 		});
 		return mmObject_lazy.get();

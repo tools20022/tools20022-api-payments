@@ -17,9 +17,12 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SecuritiesTrade;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOptionTrade#Option
- * SecuritiesOptionTrade.Option}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOptionTrade#mmOption
+ * SecuritiesOptionTrade.mmOption}</li>
  * </ul>
  * </li>
  * <li>
@@ -47,8 +50,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Option#SecuritiesOptionTrade
- * Option.SecuritiesOptionTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.Option#mmSecuritiesOptionTrade
+ * Option.mmSecuritiesOptionTrade}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -57,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesOptionTrade extends SecuritiesTrade {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Option option;
 	/**
 	 * Specifies the different parameters of the option.
 	 * <p>
@@ -82,8 +86,8 @@ public class SecuritiesOptionTrade extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Option#SecuritiesOptionTrade
-	 * Option.SecuritiesOptionTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.Option#mmSecuritiesOptionTrade
+	 * Option.mmSecuritiesOptionTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -106,33 +110,46 @@ public class SecuritiesOptionTrade extends SecuritiesTrade {
 	 * definition} = "Specifies the different parameters of the option."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Option = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesOptionTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOptionTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Option";
 			definition = "Specifies the different parameters of the option.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Option.mmSecuritiesOptionTrade;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Option.SecuritiesOptionTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "SecuritiesOptionTrade";
 				definition = "Process of buying or selling an option which has securities as underlying asset.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Option.SecuritiesOptionTrade);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Option.mmSecuritiesOptionTrade);
 				superType_lazy = () -> SecuritiesTrade.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOptionTrade.Option);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOptionTrade.mmOption);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesOptionTrade.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Option getOption() {
+		return option;
+	}
+
+	public void setOption(com.tools20022.repository.entity.Option option) {
+		this.option = option;
 	}
 }

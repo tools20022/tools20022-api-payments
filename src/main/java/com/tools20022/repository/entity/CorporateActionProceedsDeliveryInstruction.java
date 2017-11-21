@@ -17,10 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies the delivery instructions for the securities and cash proceeds at
@@ -37,21 +41,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#RelatedDistribution
- * CorporateActionProceedsDeliveryInstruction.RelatedDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmRelatedDistribution
+ * CorporateActionProceedsDeliveryInstruction.mmRelatedDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#SecuritiesProceedsMovement
- * CorporateActionProceedsDeliveryInstruction.SecuritiesProceedsMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmSecuritiesProceedsMovement
+ * CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#CashProceedsMovement
- * CorporateActionProceedsDeliveryInstruction.CashProceedsMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmCashProceedsMovement
+ * CorporateActionProceedsDeliveryInstruction.mmCashProceedsMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#SettlementAccount
- * CorporateActionProceedsDeliveryInstruction.SettlementAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmSettlementAccount
+ * CorporateActionProceedsDeliveryInstruction.mmSettlementAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#CorporateActionStandingInstruction
- * CorporateActionProceedsDeliveryInstruction.CorporateActionStandingInstruction
- * }</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmCorporateActionStandingInstruction
+ * CorporateActionProceedsDeliveryInstruction.
+ * mmCorporateActionStandingInstruction}</li>
  * </ul>
  * </li>
  * <li>
@@ -59,27 +63,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#RelatedProceedsDelivery
- * Account.RelatedProceedsDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmRelatedProceedsDelivery
+ * Account.mmRelatedProceedsDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedCorporateAction
- * PaymentObligation.RelatedCorporateAction}</li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedCorporateAction
+ * PaymentObligation.mmRelatedCorporateAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#RelatedCorporateAction
- * SecuritiesDeliveryObligation.RelatedCorporateAction}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmRelatedCorporateAction
+ * SecuritiesDeliveryObligation.mmRelatedCorporateAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#CorporateActionProceedsDeliveryInstruction
- * CorporateActionDistribution.CorporateActionProceedsDeliveryInstruction}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#mmCorporateActionProceedsDeliveryInstruction
+ * CorporateActionDistribution.mmCorporateActionProceedsDeliveryInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#RelatedDeliveryInstructions
- * AgentCorporateActionStandingInstruction.RelatedDeliveryInstructions}</li>
+ * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#mmRelatedDeliveryInstructions
+ * AgentCorporateActionStandingInstruction.mmRelatedDeliveryInstructions}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,6 +99,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionProceedsDeliveryInstruction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionDistribution relatedDistribution;
 	/**
 	 * Parameters of the distribution of the proceeds of a CA event.
 	 * <p>
@@ -103,8 +108,9 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#CorporateActionProceedsDeliveryInstruction
-	 * CorporateActionDistribution.CorporateActionProceedsDeliveryInstruction}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#mmCorporateActionProceedsDeliveryInstruction
+	 * CorporateActionDistribution.mmCorporateActionProceedsDeliveryInstruction}
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -130,20 +136,21 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * "Parameters of the distribution of the proceeds of a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedDistribution";
 			definition = "Parameters of the distribution of the proceeds of a CA event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionDistribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.CorporateActionProceedsDeliveryInstruction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmCorporateActionProceedsDeliveryInstruction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesProceedsMovement;
 	/**
 	 * Instructions for the movement of securities related to a corporate
 	 * action.
@@ -153,8 +160,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#RelatedCorporateAction
-	 * SecuritiesDeliveryObligation.RelatedCorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmRelatedCorporateAction
+	 * SecuritiesDeliveryObligation.mmRelatedCorporateAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -181,19 +188,20 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesProceedsMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesProceedsMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesProceedsMovement";
 			definition = "Instructions for the movement of securities related to a corporate action.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesDeliveryObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.RelatedCorporateAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedCorporateAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PaymentObligation> cashProceedsMovement;
 	/**
 	 * Instructions for the movement of cash related to a corporate action.
 	 * <p>
@@ -202,8 +210,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedCorporateAction
-	 * PaymentObligation.RelatedCorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedCorporateAction
+	 * PaymentObligation.mmRelatedCorporateAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -228,19 +236,20 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * "Instructions for the movement of cash related to a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashProceedsMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashProceedsMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashProceedsMovement";
 			definition = "Instructions for the movement of cash related to a corporate action.";
 			minOccurs = 0;
-			type_lazy = () -> PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.RelatedCorporateAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRelatedCorporateAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Account> settlementAccount;
 	/**
 	 * Information relative to the account(s) to be used for the delivery of the
 	 * proceeds (cash or securities)
@@ -250,8 +259,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#RelatedProceedsDelivery
-	 * Account.RelatedProceedsDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmRelatedProceedsDelivery
+	 * Account.mmRelatedProceedsDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -276,19 +285,20 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SettlementAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSettlementAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAccount";
 			definition = "Information relative to the account(s) to be used for the delivery of the proceeds (cash or securities)";
 			minOccurs = 0;
-			type_lazy = () -> Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.RelatedProceedsDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmRelatedProceedsDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 		}
 	};
+	protected AgentCorporateActionStandingInstruction corporateActionStandingInstruction;
 	/**
 	 * Standing instruction related to a corporate action.
 	 * <p>
@@ -297,8 +307,8 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#RelatedDeliveryInstructions
-	 * AgentCorporateActionStandingInstruction.RelatedDeliveryInstructions}</li>
+	 * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#mmRelatedDeliveryInstructions
+	 * AgentCorporateActionStandingInstruction.mmRelatedDeliveryInstructions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -323,36 +333,81 @@ public class CorporateActionProceedsDeliveryInstruction {
 	 * definition} = "Standing instruction related to a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionStandingInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionStandingInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStandingInstruction";
 			definition = "Standing instruction related to a corporate action.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AgentCorporateActionStandingInstruction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.RelatedDeliveryInstructions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmRelatedDeliveryInstructions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionProceedsDeliveryInstruction";
 				definition = "Specifies the delivery instructions for the securities and cash proceeds at any stage of the Corporate Action process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.RelatedProceedsDelivery, com.tools20022.repository.entity.PaymentObligation.RelatedCorporateAction,
-						com.tools20022.repository.entity.SecuritiesDeliveryObligation.RelatedCorporateAction, com.tools20022.repository.entity.CorporateActionDistribution.CorporateActionProceedsDeliveryInstruction,
-						com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.RelatedDeliveryInstructions);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.RelatedDistribution,
-						com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.SecuritiesProceedsMovement, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.CashProceedsMovement,
-						com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.SettlementAccount, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.CorporateActionStandingInstruction);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmRelatedProceedsDelivery, com.tools20022.repository.entity.PaymentObligation.mmRelatedCorporateAction,
+						com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedCorporateAction, com.tools20022.repository.entity.CorporateActionDistribution.mmCorporateActionProceedsDeliveryInstruction,
+						com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmRelatedDeliveryInstructions);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmRelatedDistribution,
+						com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmSecuritiesProceedsMovement, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmCashProceedsMovement,
+						com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmSettlementAccount, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmCorporateActionStandingInstruction);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionProceedsDeliveryInstruction.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionDistribution getRelatedDistribution() {
+		return relatedDistribution;
+	}
+
+	public void setRelatedDistribution(com.tools20022.repository.entity.CorporateActionDistribution relatedDistribution) {
+		this.relatedDistribution = relatedDistribution;
+	}
+
+	public List<SecuritiesDeliveryObligation> getSecuritiesProceedsMovement() {
+		return securitiesProceedsMovement;
+	}
+
+	public void setSecuritiesProceedsMovement(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesProceedsMovement) {
+		this.securitiesProceedsMovement = securitiesProceedsMovement;
+	}
+
+	public List<PaymentObligation> getCashProceedsMovement() {
+		return cashProceedsMovement;
+	}
+
+	public void setCashProceedsMovement(List<com.tools20022.repository.entity.PaymentObligation> cashProceedsMovement) {
+		this.cashProceedsMovement = cashProceedsMovement;
+	}
+
+	public List<Account> getSettlementAccount() {
+		return settlementAccount;
+	}
+
+	public void setSettlementAccount(List<com.tools20022.repository.entity.Account> settlementAccount) {
+		this.settlementAccount = settlementAccount;
+	}
+
+	public AgentCorporateActionStandingInstruction getCorporateActionStandingInstruction() {
+		return corporateActionStandingInstruction;
+	}
+
+	public void setCorporateActionStandingInstruction(com.tools20022.repository.entity.AgentCorporateActionStandingInstruction corporateActionStandingInstruction) {
+		this.corporateActionStandingInstruction = corporateActionStandingInstruction;
 	}
 }

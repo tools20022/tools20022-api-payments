@@ -19,11 +19,19 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ServiceTaxDesignation1Code;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.entity.TaxRecord;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Designates the tax calculation to be applied on a service.
@@ -34,13 +42,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ServiceTaxDesignation1#Code
- * ServiceTaxDesignation1.Code}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ServiceTaxDesignation1#Region
- * ServiceTaxDesignation1.Region}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ServiceTaxDesignation1#mmCode
+ * ServiceTaxDesignation1.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ServiceTaxDesignation1#TaxReason
- * ServiceTaxDesignation1.TaxReason}</li>
+ * {@linkplain com.tools20022.repository.msg.ServiceTaxDesignation1#mmRegion
+ * ServiceTaxDesignation1.mmRegion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ServiceTaxDesignation1#mmTaxReason
+ * ServiceTaxDesignation1.mmTaxReason}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Designates the tax calculation to be applied on a service."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ServiceTaxDesignation1", propOrder = {"code", "region", "taxReason"})
 public class ServiceTaxDesignation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ServiceTaxDesignation1Code code;
 	/**
 	 * Identifies the taxable status of the service.
 	 * <p>
@@ -91,19 +103,20 @@ public class ServiceTaxDesignation1 {
 	 * definition} = "Identifies the taxable status of the service."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ServiceTaxDesignation1.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Identifies the taxable status of the service.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ServiceTaxDesignation1Code.mmObject();
 		}
 	};
+	protected Max35Text region;
 	/**
 	 * Defines the tax region associated with the service. This element must be
 	 * present if taxes are involved with any portion of the statement.
@@ -117,8 +130,8 @@ public class ServiceTaxDesignation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#AdministrationZone
-	 * Tax.AdministrationZone}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmAdministrationZone
+	 * Tax.mmAdministrationZone}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -139,20 +152,21 @@ public class ServiceTaxDesignation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Region = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRegion = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
 			componentContext_lazy = () -> ServiceTaxDesignation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.AdministrationZone;
 			isDerived = false;
 			xmlTag = "Rgn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Region";
 			definition = "Defines the tax region associated with the service. This element must be present if taxes are involved with any portion of the statement.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.TaxReason1> taxReason;
 	/**
 	 * Provides free form explanations of the various tax codes used within the
 	 * statement.
@@ -183,31 +197,57 @@ public class ServiceTaxDesignation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TaxReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTaxReason = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ServiceTaxDesignation1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxRsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxReason";
 			definition = "Provides free form explanations of the various tax codes used within the statement.";
 			minOccurs = 0;
-			complexType_lazy = () -> TaxReason1.mmObject();
+			complexType_lazy = () -> com.tools20022.repository.msg.TaxReason1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ServiceTaxDesignation1.Code, com.tools20022.repository.msg.ServiceTaxDesignation1.Region,
-						com.tools20022.repository.msg.ServiceTaxDesignation1.TaxReason);
+				messageElement_lazy = () -> Arrays.asList(ServiceTaxDesignation1.mmCode, ServiceTaxDesignation1.mmRegion, ServiceTaxDesignation1.mmTaxReason);
 				trace_lazy = () -> TaxRecord.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceTaxDesignation1";
 				definition = "Designates the tax calculation to be applied on a service.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ServiceTaxDesignation1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ServiceTaxDesignation1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Rgn")
+	public Max35Text getRegion() {
+		return region;
+	}
+
+	public void setRegion(Max35Text region) {
+		this.region = region;
+	}
+
+	@XmlElement(name = "TaxRsn")
+	public List<TaxReason1> getTaxReason() {
+		return taxReason;
+	}
+
+	public void setTaxReason(List<com.tools20022.repository.msg.TaxReason1> taxReason) {
+		this.taxReason = taxReason;
 	}
 }

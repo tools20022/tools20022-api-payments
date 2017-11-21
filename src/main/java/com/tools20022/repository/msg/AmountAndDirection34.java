@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.PlusOrMinusIndicator;
 import com.tools20022.repository.entity.CashEntry;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Amount of money expressed with an optional currency code and debit/credit
@@ -35,10 +41,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection34#Amount
- * AmountAndDirection34.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection34#Sign
- * AmountAndDirection34.Sign}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection34#mmAmount
+ * AmountAndDirection34.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection34#mmSign
+ * AmountAndDirection34.mmSign}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AmountAndDirection34", propOrder = {"amount", "sign"})
 public class AmountAndDirection34 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
 	 * Amount of money that results in an increase (positively signed) or
 	 * decrease (negatively signed), with specification of the currency.
@@ -77,8 +86,8 @@ public class AmountAndDirection34 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashEntry#Amount
-	 * CashEntry.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashEntry#mmAmount
+	 * CashEntry.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -99,20 +108,21 @@ public class AmountAndDirection34 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashEntry.mmAmount;
 			componentContext_lazy = () -> AmountAndDirection34.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashEntry.Amount;
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount of money that results in an increase (positively signed) or decrease (negatively signed), with specification of the currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected PlusOrMinusIndicator sign;
 	/**
 	 * Indicates that the amount value is positive or negative.
 	 * <p>
@@ -141,16 +151,16 @@ public class AmountAndDirection34 {
 	 * definition} = "Indicates that the amount value is positive or negative."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Sign = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSign = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AmountAndDirection34.mmObject();
 			isDerived = false;
 			xmlTag = "Sgn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Sign";
 			definition = "Indicates that the amount value is positive or negative.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PlusOrMinusIndicator.mmObject();
 		}
 	};
@@ -158,14 +168,32 @@ public class AmountAndDirection34 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AmountAndDirection34.Amount, com.tools20022.repository.msg.AmountAndDirection34.Sign);
+				messageElement_lazy = () -> Arrays.asList(AmountAndDirection34.mmAmount, AmountAndDirection34.mmSign);
 				trace_lazy = () -> CashEntry.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountAndDirection34";
 				definition = "Amount of money expressed with an optional currency code and debit/credit indicator.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Amt", required = true)
+	public ActiveOrHistoricCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	@XmlElement(name = "Sgn", required = true)
+	public PlusOrMinusIndicator getSign() {
+		return sign;
+	}
+
+	public void setSign(PlusOrMinusIndicator sign) {
+		this.sign = sign;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,24 +32,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#Critical
- * TMSContactLevelCode.Critical}</li>
+ * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#mmCritical
+ * TMSContactLevelCode.mmCritical}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#AsSoonAsPossible
- * TMSContactLevelCode.AsSoonAsPossible}</li>
+ * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#mmAsSoonAsPossible
+ * TMSContactLevelCode.mmAsSoonAsPossible}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#DateTime
- * TMSContactLevelCode.DateTime}</li>
+ * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#mmDateTime
+ * TMSContactLevelCode.mmDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#EndCustomerSession
- * TMSContactLevelCode.EndCustomerSession}</li>
+ * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#mmEndCustomerSession
+ * TMSContactLevelCode.mmEndCustomerSession}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,9 +94,9 @@ public class TMSContactLevelCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Critical = new MMCode() {
+	public static final MMCode mmCritical = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Critical";
 			definition = "Terminal management system has to be contacted before the next transaction.";
 			owner_lazy = () -> TMSContactLevelCode.mmObject();
@@ -125,9 +127,9 @@ public class TMSContactLevelCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AsSoonAsPossible = new MMCode() {
+	public static final MMCode mmAsSoonAsPossible = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AsSoonAsPossible";
 			definition = "Terminal management system has to be contacted as soon as possible (for example after reconciliation).";
 			owner_lazy = () -> TMSContactLevelCode.mmObject();
@@ -158,9 +160,9 @@ public class TMSContactLevelCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode DateTime = new MMCode() {
+	public static final MMCode mmDateTime = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateTime";
 			definition = "Terminal management system has to be contacted at the date and time provided.";
 			owner_lazy = () -> TMSContactLevelCode.mmObject();
@@ -188,9 +190,9 @@ public class TMSContactLevelCode {
 	 * definition} = "After the end of the customer session"</li>
 	 * </ul>
 	 */
-	public static final MMCode EndCustomerSession = new MMCode() {
+	public static final MMCode mmEndCustomerSession = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndCustomerSession";
 			definition = "After the end of the customer session";
 			owner_lazy = () -> TMSContactLevelCode.mmObject();
@@ -201,13 +203,12 @@ public class TMSContactLevelCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CRIT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TMSContactLevelCode";
 				definition = "Level of urgency in contacting the terminal management system.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TMSContactLevelCode.Critical, com.tools20022.repository.codeset.TMSContactLevelCode.AsSoonAsPossible,
-						com.tools20022.repository.codeset.TMSContactLevelCode.DateTime, com.tools20022.repository.codeset.TMSContactLevelCode.EndCustomerSession);
+				code_lazy = () -> Arrays.asList(TMSContactLevelCode.mmCritical, TMSContactLevelCode.mmAsSoonAsPossible, TMSContactLevelCode.mmDateTime, TMSContactLevelCode.mmEndCustomerSession);
 			}
 		});
 		return mmObject_lazy.get();

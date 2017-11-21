@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,21 +33,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.HoldingTransferableCode#TransferAllowed
- * HoldingTransferableCode.TransferAllowed}</li>
+ * {@linkplain com.tools20022.repository.codeset.HoldingTransferableCode#mmTransferAllowed
+ * HoldingTransferableCode.mmTransferAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.HoldingTransferableCode#TransferNotAllowed
- * HoldingTransferableCode.TransferNotAllowed}</li>
+ * {@linkplain com.tools20022.repository.codeset.HoldingTransferableCode#mmTransferNotAllowed
+ * HoldingTransferableCode.mmTransferNotAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.HoldingTransferableCode#ReferToFundOrderDesk
- * HoldingTransferableCode.ReferToFundOrderDesk}</li>
+ * {@linkplain com.tools20022.repository.codeset.HoldingTransferableCode#mmReferToFundOrderDesk
+ * HoldingTransferableCode.mmReferToFundOrderDesk}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +90,9 @@ public class HoldingTransferableCode {
 	 * definition} = "Transfer is allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode TransferAllowed = new MMCode() {
+	public static final MMCode mmTransferAllowed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferAllowed";
 			definition = "Transfer is allowed.";
 			owner_lazy = () -> HoldingTransferableCode.mmObject();
@@ -118,9 +120,9 @@ public class HoldingTransferableCode {
 	 * definition} = "Transfer is not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode TransferNotAllowed = new MMCode() {
+	public static final MMCode mmTransferNotAllowed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferNotAllowed";
 			definition = "Transfer is not allowed.";
 			owner_lazy = () -> HoldingTransferableCode.mmObject();
@@ -151,9 +153,9 @@ public class HoldingTransferableCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ReferToFundOrderDesk = new MMCode() {
+	public static final MMCode mmReferToFundOrderDesk = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReferToFundOrderDesk";
 			definition = "Indicates that the operation is only possible in restricted circumstances.";
 			owner_lazy = () -> HoldingTransferableCode.mmObject();
@@ -164,13 +166,12 @@ public class HoldingTransferableCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("TRAL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HoldingTransferableCode";
 				definition = "Indicate whether or not registered investors are able to transfer some or all of their holdings to third parties.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.HoldingTransferableCode.TransferAllowed, com.tools20022.repository.codeset.HoldingTransferableCode.TransferNotAllowed,
-						com.tools20022.repository.codeset.HoldingTransferableCode.ReferToFundOrderDesk);
+				code_lazy = () -> Arrays.asList(HoldingTransferableCode.mmTransferAllowed, HoldingTransferableCode.mmTransferNotAllowed, HoldingTransferableCode.mmReferToFundOrderDesk);
 			}
 		});
 		return mmObject_lazy.get();

@@ -17,14 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Contractual details related to an agreement between parties.
@@ -38,20 +40,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#DateSigned
- * Agreement.DateSigned}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#Description
- * Agreement.Description}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#Version
- * Agreement.Version}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#ValidityPeriod
- * Agreement.ValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#Document
- * Agreement.Document}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#Trade
- * Agreement.Trade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#Jurisdiction
- * Agreement.Jurisdiction}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmDateSigned
+ * Agreement.mmDateSigned}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmDescription
+ * Agreement.mmDescription}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmVersion
+ * Agreement.mmVersion}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmValidityPeriod
+ * Agreement.mmValidityPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmDocument
+ * Agreement.mmDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmTrade
+ * Agreement.mmTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmJurisdiction
+ * Agreement.mmJurisdiction}</li>
  * </ul>
  * </li>
  * <li>
@@ -59,15 +61,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedAgreement
- * DateTimePeriod.RelatedAgreement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Agreement
- * Document.Agreement}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedAgreement
+ * DateTimePeriod.mmRelatedAgreement}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmAgreement
+ * Document.mmAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Jurisdiction#RelatedAgreement
- * Jurisdiction.RelatedAgreement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CommercialTrade#Agreement
- * CommercialTrade.Agreement}</li>
+ * {@linkplain com.tools20022.repository.entity.Jurisdiction#mmRelatedAgreement
+ * Jurisdiction.mmRelatedAgreement}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CommercialTrade#mmAgreement
+ * CommercialTrade.mmAgreement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -88,8 +90,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,6 +105,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Agreement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate dateSigned;
 	/**
 	 * Date on which the agreement was signed by all parties.
 	 * <p>
@@ -116,14 +119,14 @@ public class Agreement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractDocument1#SignOffDate
-	 * ContractDocument1.SignOffDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractDocument1#mmSignOffDate
+	 * ContractDocument1.mmSignOffDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#StartDate
-	 * RegisteredContractAmendment1.StartDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#mmStartDate
+	 * RegisteredContractAmendment1.mmStartDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation11#DateOfSignature
-	 * MandateRelatedInformation11.DateOfSignature}</li>
+	 * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation11#mmDateOfSignature
+	 * MandateRelatedInformation11.mmDateOfSignature}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -141,20 +144,28 @@ public class Agreement {
 	 * definition} = "Date on which the agreement was signed by all parties."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DateSigned = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDateSigned = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractDocument1.SignOffDate, com.tools20022.repository.msg.RegisteredContractAmendment1.StartDate,
-					com.tools20022.repository.msg.MandateRelatedInformation11.DateOfSignature);
-			elementContext_lazy = () -> Agreement.mmObject();
+			derivation_lazy = () -> Arrays.asList(ContractDocument1.mmSignOffDate, RegisteredContractAmendment1.mmStartDate, MandateRelatedInformation11.mmDateOfSignature);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateSigned";
 			definition = "Date on which the agreement was signed by all parties.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Agreement.class.getMethod("getDateSigned", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text description;
 	/**
 	 * Full name of an agreement, annexes and amendments in place between the
 	 * principals.
@@ -169,25 +180,25 @@ public class Agreement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractDocument1#Reference
-	 * ContractDocument1.Reference}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractDocument1#mmReference
+	 * ContractDocument1.mmReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Description
-	 * SupportingDocumentRequestOrLetter1.Description}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#Reason
-	 * Mandate10.Reason}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate9#Reason
-	 * Mandate9.Reason}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmDescription
+	 * SupportingDocumentRequestOrLetter1.mmDescription}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#mmReason
+	 * Mandate10.mmReason}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Mandate9#mmReason
+	 * Mandate9.mmReason}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation11#Reason
-	 * MandateRelatedInformation11.Reason}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate11#Reason
-	 * Mandate11.Reason}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate8#Reason
-	 * Mandate8.Reason}</li>
+	 * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation11#mmReason
+	 * MandateRelatedInformation11.mmReason}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Mandate11#mmReason
+	 * Mandate11.mmReason}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Mandate8#mmReason
+	 * Mandate8.mmReason}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11#OriginalReason
-	 * AmendmentInformationDetails11.OriginalReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.AmendmentInformationDetails11#mmOriginalReason
+	 * AmendmentInformationDetails11.mmOriginalReason}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -207,21 +218,29 @@ public class Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Description = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractDocument1.Reference, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Description, com.tools20022.repository.msg.Mandate10.Reason,
-					com.tools20022.repository.msg.Mandate9.Reason, com.tools20022.repository.msg.MandateRelatedInformation11.Reason, com.tools20022.repository.msg.Mandate11.Reason, com.tools20022.repository.msg.Mandate8.Reason,
-					com.tools20022.repository.msg.AmendmentInformationDetails11.OriginalReason);
-			elementContext_lazy = () -> Agreement.mmObject();
+			derivation_lazy = () -> Arrays.asList(ContractDocument1.mmReference, SupportingDocumentRequestOrLetter1.mmDescription, Mandate10.mmReason, Mandate9.mmReason, MandateRelatedInformation11.mmReason, Mandate11.mmReason,
+					Mandate8.mmReason, AmendmentInformationDetails11.mmOriginalReason);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Full name of an agreement, annexes and amendments in place between the principals.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Agreement.class.getMethod("getDescription", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text version;
 	/**
 	 * Version number of a contract or of a legal agreement.
 	 * <p>
@@ -234,8 +253,9 @@ public class Agreement {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.ContractDocument1#Version
-	 * ContractDocument1.Version}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContractDocument1#mmVersion
+	 * ContractDocument1.mmVersion}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -253,19 +273,28 @@ public class Agreement {
 	 * definition} = "Version number of a contract or of a  legal agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Version = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVersion = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractDocument1.Version);
-			elementContext_lazy = () -> Agreement.mmObject();
+			derivation_lazy = () -> Arrays.asList(ContractDocument1.mmVersion);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Version";
 			definition = "Version number of a contract or of a  legal agreement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Agreement.class.getMethod("getVersion", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod;
 	/**
 	 * Period during which the agreement is valid
 	 * <p>
@@ -274,8 +303,8 @@ public class Agreement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedAgreement
-	 * DateTimePeriod.RelatedAgreement}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedAgreement
+	 * DateTimePeriod.mmRelatedAgreement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -287,8 +316,8 @@ public class Agreement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.MandateOccurrences4#Duration
-	 * MandateOccurrences4.Duration}</li>
+	 * {@linkplain com.tools20022.repository.msg.MandateOccurrences4#mmDuration
+	 * MandateOccurrences4.mmDuration}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -306,20 +335,21 @@ public class Agreement {
 	 * definition} = "Period during which the agreement is valid"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateOccurrences4.Duration);
-			elementContext_lazy = () -> Agreement.mmObject();
+			derivation_lazy = () -> Arrays.asList(MandateOccurrences4.mmDuration);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Period during which the agreement is valid";
 			minOccurs = 0;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RelatedAgreement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedAgreement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected Document document;
 	/**
 	 * Document which materialises the agreement.
 	 * <p>
@@ -328,8 +358,8 @@ public class Agreement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Agreement
-	 * Document.Agreement}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmAgreement
+	 * Document.mmAgreement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -339,19 +369,24 @@ public class Agreement {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.SupportingDocument1#Entry
-	 * SupportingDocument1.Entry}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#Document
-	 * RegisteredContractAmendment1.Document}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#ReferredDocument
-	 * Mandate10.ReferredDocument}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate9#ReferredDocument
-	 * Mandate9.ReferredDocument}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate11#ReferredDocument
-	 * Mandate11.ReferredDocument}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate8#ReferredDocument
-	 * Mandate8.ReferredDocument}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#mmEntry
+	 * SupportingDocument1.mmEntry}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#mmDocument
+	 * RegisteredContractAmendment1.mmDocument}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate10#mmReferredDocument
+	 * Mandate10.mmReferredDocument}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate9#mmReferredDocument
+	 * Mandate9.mmReferredDocument}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate11#mmReferredDocument
+	 * Mandate11.mmReferredDocument}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate8#mmReferredDocument
+	 * Mandate8.mmReferredDocument}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -369,22 +404,22 @@ public class Agreement {
 	 * definition} = "Document which materialises the agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Document = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocument1.Entry, com.tools20022.repository.msg.RegisteredContractAmendment1.Document, com.tools20022.repository.msg.Mandate10.ReferredDocument,
-					com.tools20022.repository.msg.Mandate9.ReferredDocument, com.tools20022.repository.msg.Mandate11.ReferredDocument, com.tools20022.repository.msg.Mandate8.ReferredDocument);
-			elementContext_lazy = () -> Agreement.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocument1.mmEntry, RegisteredContractAmendment1.mmDocument, Mandate10.mmReferredDocument, Mandate9.mmReferredDocument, Mandate11.mmReferredDocument, Mandate8.mmReferredDocument);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Document";
 			definition = "Document which materialises the agreement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmAgreement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.Agreement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CommercialTrade trade;
 	/**
 	 * Specifies the type of trade that is the subject of an agreement. The
 	 * agreement contains the clauses that will govern each trade between the
@@ -395,8 +430,8 @@ public class Agreement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CommercialTrade#Agreement
-	 * CommercialTrade.Agreement}</li>
+	 * {@linkplain com.tools20022.repository.entity.CommercialTrade#mmAgreement
+	 * CommercialTrade.mmAgreement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -421,20 +456,21 @@ public class Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Trade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Agreement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Specifies the type of trade that is the subject of an agreement. The agreement contains the clauses that will govern each trade between the signing parties.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CommercialTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTrade.Agreement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmAgreement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 		}
 	};
+	protected Jurisdiction jurisdiction;
 	/**
 	 * Jurisdiction where an agreement applies.
 	 * <p>
@@ -443,8 +479,8 @@ public class Agreement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Jurisdiction#RelatedAgreement
-	 * Jurisdiction.RelatedAgreement}</li>
+	 * {@linkplain com.tools20022.repository.entity.Jurisdiction#mmRelatedAgreement
+	 * Jurisdiction.mmRelatedAgreement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -467,36 +503,97 @@ public class Agreement {
 	 * definition} = "Jurisdiction where an agreement applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Jurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Agreement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Jurisdiction";
 			definition = "Jurisdiction where an agreement applies.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmRelatedAgreement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.RelatedAgreement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Agreement";
 				definition = "Contractual details related to an agreement between parties.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.RelatedAgreement, com.tools20022.repository.entity.Document.Agreement,
-						com.tools20022.repository.entity.Jurisdiction.RelatedAgreement, com.tools20022.repository.entity.CommercialTrade.Agreement);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmRelatedAgreement, com.tools20022.repository.entity.Document.mmAgreement,
+						com.tools20022.repository.entity.Jurisdiction.mmRelatedAgreement, com.tools20022.repository.entity.CommercialTrade.mmAgreement);
 				subType_lazy = () -> Arrays.asList(Contract.mmObject(), SecuritiesFinancingAgreement.mmObject(), CollateralAgreement.mmObject(), MasterAgreement.mmObject(), InvoiceFinancingAgreement.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Agreement.DateSigned, com.tools20022.repository.entity.Agreement.Description, com.tools20022.repository.entity.Agreement.Version,
-						com.tools20022.repository.entity.Agreement.ValidityPeriod, com.tools20022.repository.entity.Agreement.Document, com.tools20022.repository.entity.Agreement.Trade,
-						com.tools20022.repository.entity.Agreement.Jurisdiction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Agreement.mmDateSigned, com.tools20022.repository.entity.Agreement.mmDescription, com.tools20022.repository.entity.Agreement.mmVersion,
+						com.tools20022.repository.entity.Agreement.mmValidityPeriod, com.tools20022.repository.entity.Agreement.mmDocument, com.tools20022.repository.entity.Agreement.mmTrade,
+						com.tools20022.repository.entity.Agreement.mmJurisdiction);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Agreement.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODate getDateSigned() {
+		return dateSigned;
+	}
+
+	public void setDateSigned(ISODate dateSigned) {
+		this.dateSigned = dateSigned;
+	}
+
+	public Max350Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max350Text description) {
+		this.description = description;
+	}
+
+	public Max35Text getVersion() {
+		return version;
+	}
+
+	public void setVersion(Max35Text version) {
+		this.version = version;
+	}
+
+	public List<DateTimePeriod> getValidityPeriod() {
+		return validityPeriod;
+	}
+
+	public void setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
+		this.validityPeriod = validityPeriod;
+	}
+
+	public Document getDocument() {
+		return document;
+	}
+
+	public void setDocument(com.tools20022.repository.entity.Document document) {
+		this.document = document;
+	}
+
+	public CommercialTrade getTrade() {
+		return trade;
+	}
+
+	public void setTrade(com.tools20022.repository.entity.CommercialTrade trade) {
+		this.trade = trade;
+	}
+
+	public Jurisdiction getJurisdiction() {
+		return jurisdiction;
+	}
+
+	public void setJurisdiction(com.tools20022.repository.entity.Jurisdiction jurisdiction) {
+		this.jurisdiction = jurisdiction;
 	}
 }

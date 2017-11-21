@@ -20,11 +20,17 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalChargeType1Code;
 import com.tools20022.repository.entity.Charges;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the charge type.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ChargeType3Choice#Code
- * ChargeType3Choice.Code}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.ChargeType3Choice#mmCode
+ * ChargeType3Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ChargeType3Choice#Proprietary
- * ChargeType3Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.ChargeType3Choice#mmProprietary
+ * ChargeType3Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the charge type."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ChargeType3Choice", propOrder = {"code", "proprietary"})
 public class ChargeType3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalChargeType1Code code;
 	/**
 	 * Charge type, in a coded form.
 	 * <p>
@@ -75,8 +84,8 @@ public class ChargeType3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Charges#ChargeType
-	 * Charges.ChargeType}</li>
+	 * {@linkplain com.tools20022.repository.entity.Charges#mmChargeType
+	 * Charges.mmChargeType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -95,20 +104,21 @@ public class ChargeType3Choice {
 	 * definition} = "Charge type, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Charges.mmChargeType;
 			componentContext_lazy = () -> ChargeType3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Charges.ChargeType;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Charge type, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalChargeType1Code.mmObject();
 		}
 	};
+	protected GenericIdentification3 proprietary;
 	/**
 	 * Type of charge in a proprietary form, as defined by the issuer.
 	 * <p>
@@ -120,8 +130,8 @@ public class ChargeType3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Charges#ChargeType
-	 * Charges.ChargeType}</li>
+	 * {@linkplain com.tools20022.repository.entity.Charges#mmChargeType
+	 * Charges.mmChargeType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -141,33 +151,51 @@ public class ChargeType3Choice {
 	 * "Type of charge in a proprietary form, as defined by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Proprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Charges.mmChargeType;
 			componentContext_lazy = () -> ChargeType3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Charges.ChargeType;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Type of charge in a proprietary form, as defined by the issuer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification3.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> GenericIdentification3.mmObject();
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ChargeType3Choice.Code, com.tools20022.repository.choice.ChargeType3Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(ChargeType3Choice.mmCode, ChargeType3Choice.mmProprietary);
 				trace_lazy = () -> Charges.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeType3Choice";
 				definition = "Specifies the charge type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalChargeType1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalChargeType1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public GenericIdentification3 getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(GenericIdentification3 proprietary) {
+		this.proprietary = proprietary;
 	}
 }

@@ -20,12 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CashSettlement;
+import com.tools20022.repository.entity.PaymentIdentification;
 import com.tools20022.repository.entity.PaymentInstruction;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Reference information concerning the original transaction, to which the
@@ -38,23 +46,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#OriginalGroupInformation
- * UnderlyingPaymentTransaction2.OriginalGroupInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalGroupInformation
+ * UnderlyingPaymentTransaction2.mmOriginalGroupInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#OriginalInstructionIdentification
- * UnderlyingPaymentTransaction2.OriginalInstructionIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalInstructionIdentification
+ * UnderlyingPaymentTransaction2.mmOriginalInstructionIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#OriginalEndToEndIdentification
- * UnderlyingPaymentTransaction2.OriginalEndToEndIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalEndToEndIdentification
+ * UnderlyingPaymentTransaction2.mmOriginalEndToEndIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#OriginalTransactionIdentification
- * UnderlyingPaymentTransaction2.OriginalTransactionIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalTransactionIdentification
+ * UnderlyingPaymentTransaction2.mmOriginalTransactionIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#OriginalInterbankSettlementAmount
- * UnderlyingPaymentTransaction2.OriginalInterbankSettlementAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalInterbankSettlementAmount
+ * UnderlyingPaymentTransaction2.mmOriginalInterbankSettlementAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#OriginalInterbankSettlementDate
- * UnderlyingPaymentTransaction2.OriginalInterbankSettlementDate}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingPaymentTransaction2#mmOriginalInterbankSettlementDate
+ * UnderlyingPaymentTransaction2.mmOriginalInterbankSettlementDate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -63,8 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,9 +85,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "UnderlyingPaymentTransaction2", propOrder = {"originalGroupInformation", "originalInstructionIdentification", "originalEndToEndIdentification", "originalTransactionIdentification", "originalInterbankSettlementAmount",
+		"originalInterbankSettlementDate"})
 public class UnderlyingPaymentTransaction2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected UnderlyingGroupInformation1 originalGroupInformation;
 	/**
 	 * Set of elements used to provide information on the original message.
 	 * <p>
@@ -108,20 +120,21 @@ public class UnderlyingPaymentTransaction2 {
 	 * "Set of elements used to provide information on the original message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalGroupInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalGroupInformation = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlGrpInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalGroupInformation";
 			definition = "Set of elements used to provide information on the original message.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> UnderlyingGroupInformation1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.UnderlyingGroupInformation1.mmObject();
 		}
 	};
+	protected Max35Text originalInstructionIdentification;
 	/**
 	 * Unique identification, as assigned by the original instructing party for
 	 * the original instructed party, to unambiguously identify the original
@@ -136,8 +149,8 @@ public class UnderlyingPaymentTransaction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#InstructionIdentification
-	 * PaymentIdentification.InstructionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#mmInstructionIdentification
+	 * PaymentIdentification.mmInstructionIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -158,20 +171,21 @@ public class UnderlyingPaymentTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalInstructionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalInstructionIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentIdentification.mmInstructionIdentification;
 			componentContext_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.InstructionIdentification;
 			isDerived = false;
 			xmlTag = "OrgnlInstrId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalInstructionIdentification";
 			definition = "Unique identification, as assigned by the original instructing party for the original instructed party, to unambiguously identify the original instruction.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text originalEndToEndIdentification;
 	/**
 	 * Unique identification, as assigned by the original initiating party, to
 	 * unambiguously identify the original transaction.
@@ -185,8 +199,8 @@ public class UnderlyingPaymentTransaction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#EndToEndIdentification
-	 * PaymentIdentification.EndToEndIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#mmEndToEndIdentification
+	 * PaymentIdentification.mmEndToEndIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -207,20 +221,21 @@ public class UnderlyingPaymentTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalEndToEndIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalEndToEndIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentIdentification.mmEndToEndIdentification;
 			componentContext_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.EndToEndIdentification;
 			isDerived = false;
 			xmlTag = "OrgnlEndToEndId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalEndToEndIdentification";
 			definition = "Unique identification, as assigned by the original initiating party, to unambiguously identify the original transaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text originalTransactionIdentification;
 	/**
 	 * Unique identification, as assigned by the original first instructing
 	 * agent, to unambiguously identify the transaction.
@@ -234,8 +249,8 @@ public class UnderlyingPaymentTransaction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#TransactionIdentification
-	 * PaymentIdentification.TransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#mmTransactionIdentification
+	 * PaymentIdentification.mmTransactionIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -256,20 +271,21 @@ public class UnderlyingPaymentTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalTransactionIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentIdentification.mmTransactionIdentification;
 			componentContext_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.TransactionIdentification;
 			isDerived = false;
 			xmlTag = "OrgnlTxId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalTransactionIdentification";
 			definition = "Unique identification, as assigned by the original first instructing agent, to unambiguously identify the transaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount originalInterbankSettlementAmount;
 	/**
 	 * Amount of money, as provided in the original transaction, to be moved
 	 * between the instructing agent and the instructed agent.
@@ -284,8 +300,8 @@ public class UnderlyingPaymentTransaction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashSettlement#InterbankSettlementAmount
-	 * CashSettlement.InterbankSettlementAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashSettlement#mmInterbankSettlementAmount
+	 * CashSettlement.mmInterbankSettlementAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -306,20 +322,21 @@ public class UnderlyingPaymentTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalInterbankSettlementAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalInterbankSettlementAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashSettlement.mmInterbankSettlementAmount;
 			componentContext_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashSettlement.InterbankSettlementAmount;
 			isDerived = false;
 			xmlTag = "OrgnlIntrBkSttlmAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalInterbankSettlementAmount";
 			definition = "Amount of money, as provided in the original transaction, to be moved between the instructing agent and the instructed agent.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected ISODate originalInterbankSettlementDate;
 	/**
 	 * Date, as provided in the original transaction, on which the amount of
 	 * money ceases to be available to the agent that owes it and when the
@@ -334,8 +351,8 @@ public class UnderlyingPaymentTransaction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashSettlement#InterbankSettlementDate
-	 * CashSettlement.InterbankSettlementDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashSettlement#mmInterbankSettlementDate
+	 * CashSettlement.mmInterbankSettlementDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -356,17 +373,17 @@ public class UnderlyingPaymentTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalInterbankSettlementDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalInterbankSettlementDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashSettlement.mmInterbankSettlementDate;
 			componentContext_lazy = () -> UnderlyingPaymentTransaction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashSettlement.InterbankSettlementDate;
 			isDerived = false;
 			xmlTag = "OrgnlIntrBkSttlmDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalInterbankSettlementDate";
 			definition = "Date, as provided in the original transaction, on which the amount of money ceases to be available to the agent that owes it and when the amount of money becomes available to the agent to which it is due.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
@@ -374,16 +391,70 @@ public class UnderlyingPaymentTransaction2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnderlyingPaymentTransaction2.OriginalGroupInformation, com.tools20022.repository.msg.UnderlyingPaymentTransaction2.OriginalInstructionIdentification,
-						com.tools20022.repository.msg.UnderlyingPaymentTransaction2.OriginalEndToEndIdentification, com.tools20022.repository.msg.UnderlyingPaymentTransaction2.OriginalTransactionIdentification,
-						com.tools20022.repository.msg.UnderlyingPaymentTransaction2.OriginalInterbankSettlementAmount, com.tools20022.repository.msg.UnderlyingPaymentTransaction2.OriginalInterbankSettlementDate);
+				messageElement_lazy = () -> Arrays.asList(UnderlyingPaymentTransaction2.mmOriginalGroupInformation, UnderlyingPaymentTransaction2.mmOriginalInstructionIdentification,
+						UnderlyingPaymentTransaction2.mmOriginalEndToEndIdentification, UnderlyingPaymentTransaction2.mmOriginalTransactionIdentification, UnderlyingPaymentTransaction2.mmOriginalInterbankSettlementAmount,
+						UnderlyingPaymentTransaction2.mmOriginalInterbankSettlementDate);
 				trace_lazy = () -> PaymentInstruction.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingPaymentTransaction2";
 				definition = "Reference information concerning the original transaction, to which the investigation message refers.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlGrpInf")
+	public UnderlyingGroupInformation1 getOriginalGroupInformation() {
+		return originalGroupInformation;
+	}
+
+	public void setOriginalGroupInformation(com.tools20022.repository.msg.UnderlyingGroupInformation1 originalGroupInformation) {
+		this.originalGroupInformation = originalGroupInformation;
+	}
+
+	@XmlElement(name = "OrgnlInstrId")
+	public Max35Text getOriginalInstructionIdentification() {
+		return originalInstructionIdentification;
+	}
+
+	public void setOriginalInstructionIdentification(Max35Text originalInstructionIdentification) {
+		this.originalInstructionIdentification = originalInstructionIdentification;
+	}
+
+	@XmlElement(name = "OrgnlEndToEndId")
+	public Max35Text getOriginalEndToEndIdentification() {
+		return originalEndToEndIdentification;
+	}
+
+	public void setOriginalEndToEndIdentification(Max35Text originalEndToEndIdentification) {
+		this.originalEndToEndIdentification = originalEndToEndIdentification;
+	}
+
+	@XmlElement(name = "OrgnlTxId")
+	public Max35Text getOriginalTransactionIdentification() {
+		return originalTransactionIdentification;
+	}
+
+	public void setOriginalTransactionIdentification(Max35Text originalTransactionIdentification) {
+		this.originalTransactionIdentification = originalTransactionIdentification;
+	}
+
+	@XmlElement(name = "OrgnlIntrBkSttlmAmt", required = true)
+	public ActiveOrHistoricCurrencyAndAmount getOriginalInterbankSettlementAmount() {
+		return originalInterbankSettlementAmount;
+	}
+
+	public void setOriginalInterbankSettlementAmount(ActiveOrHistoricCurrencyAndAmount originalInterbankSettlementAmount) {
+		this.originalInterbankSettlementAmount = originalInterbankSettlementAmount;
+	}
+
+	@XmlElement(name = "OrgnlIntrBkSttlmDt", required = true)
+	public ISODate getOriginalInterbankSettlementDate() {
+		return originalInterbankSettlementDate;
+	}
+
+	public void setOriginalInterbankSettlementDate(ISODate originalInterbankSettlementDate) {
+		this.originalInterbankSettlementDate = originalInterbankSettlementDate;
 	}
 }

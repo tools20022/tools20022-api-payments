@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.Max70Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of change to name.
@@ -34,17 +40,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.NameModification1#ModificationCode
- * NameModification1.ModificationCode}</li>
- * <li>{@linkplain com.tools20022.repository.msg.NameModification1#Name
- * NameModification1.Name}</li>
+ * {@linkplain com.tools20022.repository.msg.NameModification1#mmModificationCode
+ * NameModification1.mmModificationCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.NameModification1#mmName
+ * NameModification1.mmName}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -55,9 +61,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of change to name."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "NameModification1", propOrder = {"modificationCode", "name"})
 public class NameModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Modification1Code modificationCode;
 	/**
 	 * Specifies the type of change.
 	 * <p>
@@ -86,19 +95,20 @@ public class NameModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> NameModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationCode";
 			definition = "Specifies the type of change.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	protected Max70Text name;
 	/**
 	 * Name of the account.
 	 * <p>
@@ -126,16 +136,16 @@ public class NameModification1 {
 	 * definition} = "Name of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> NameModification1.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name of the account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
@@ -143,13 +153,31 @@ public class NameModification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NameModification1.ModificationCode, com.tools20022.repository.msg.NameModification1.Name);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(NameModification1.mmModificationCode, NameModification1.mmName);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NameModification1";
 				definition = "Specifies the type of change to name.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ModCd")
+	public Modification1Code getModificationCode() {
+		return modificationCode;
+	}
+
+	public void setModificationCode(Modification1Code modificationCode) {
+		this.modificationCode = modificationCode;
+	}
+
+	@XmlElement(name = "Nm", required = true)
+	public Max70Text getName() {
+		return name;
+	}
+
+	public void setName(Max70Text name) {
+		this.name = name;
 	}
 }

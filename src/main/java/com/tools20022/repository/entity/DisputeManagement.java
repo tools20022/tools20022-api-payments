@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DisputeResolutionTypeCode;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,17 +40,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisputeManagement#DisputedAmount
- * DisputeManagement.DisputedAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.DisputeManagement#mmDisputedAmount
+ * DisputeManagement.mmDisputedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisputeManagement#DisputeDate
- * DisputeManagement.DisputeDate}</li>
+ * {@linkplain com.tools20022.repository.entity.DisputeManagement#mmDisputeDate
+ * DisputeManagement.mmDisputeDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisputeManagement#DisputeResolutionType
- * DisputeManagement.DisputeResolutionType}</li>
+ * {@linkplain com.tools20022.repository.entity.DisputeManagement#mmDisputeResolutionType
+ * DisputeManagement.mmDisputeResolutionType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisputeManagement#RelatedManagementProcess
- * DisputeManagement.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.DisputeManagement#mmRelatedManagementProcess
+ * DisputeManagement.mmRelatedManagementProcess}</li>
  * </ul>
  * </li>
  * <li>
@@ -58,15 +58,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#DisputeManagement
- * CollateralManagement.DisputeManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmDisputeManagement
+ * CollateralManagement.mmDisputeManagement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class DisputeManagement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ActiveCurrencyAndAmount disputedAmount;
 	/**
 	 * Disputed amount.
 	 * <p>
@@ -108,18 +109,27 @@ public class DisputeManagement {
 	 * definition} = "Disputed amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DisputedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDisputedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DisputeManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputedAmount";
 			definition = "Disputed amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DisputeManagement.class.getMethod("getDisputedAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODate disputeDate;
 	/**
 	 * Date of dispute.
 	 * <p>
@@ -145,18 +155,27 @@ public class DisputeManagement {
 	 * definition} = "Date of dispute."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DisputeDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDisputeDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DisputeManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputeDate";
 			definition = "Date of dispute.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DisputeManagement.class.getMethod("getDisputeDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DisputeResolutionTypeCode disputeResolutionType;
 	/**
 	 * Specifies the type of dispute that is to be resolved regarding the
 	 * disputed collateral amount.
@@ -186,18 +205,27 @@ public class DisputeManagement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DisputeResolutionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDisputeResolutionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DisputeManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DisputeResolutionType";
 			definition = "Specifies the type of dispute that is to be resolved regarding the disputed collateral amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DisputeResolutionTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DisputeManagement.class.getMethod("getDisputeResolutionType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CollateralManagement relatedManagementProcess;
 	/**
 	 * Process which groups the activities related to collateral.
 	 * <p>
@@ -206,8 +234,8 @@ public class DisputeManagement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralManagement#DisputeManagement
-	 * CollateralManagement.DisputeManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmDisputeManagement
+	 * CollateralManagement.mmDisputeManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -233,33 +261,70 @@ public class DisputeManagement {
 	 * "Process which groups the activities related to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedManagementProcess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DisputeManagement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisputeManagement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedManagementProcess";
 			definition = "Process which groups the activities related to collateral.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CollateralManagement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.DisputeManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmDisputeManagement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "DisputeManagement";
 				definition = "Provides the dispute details on the variation margin and/or the segregated independent amount.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralManagement.DisputeManagement);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DisputeManagement.DisputedAmount, com.tools20022.repository.entity.DisputeManagement.DisputeDate,
-						com.tools20022.repository.entity.DisputeManagement.DisputeResolutionType, com.tools20022.repository.entity.DisputeManagement.RelatedManagementProcess);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralManagement.mmDisputeManagement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DisputeManagement.mmDisputedAmount, com.tools20022.repository.entity.DisputeManagement.mmDisputeDate,
+						com.tools20022.repository.entity.DisputeManagement.mmDisputeResolutionType, com.tools20022.repository.entity.DisputeManagement.mmRelatedManagementProcess);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return DisputeManagement.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ActiveCurrencyAndAmount getDisputedAmount() {
+		return disputedAmount;
+	}
+
+	public void setDisputedAmount(ActiveCurrencyAndAmount disputedAmount) {
+		this.disputedAmount = disputedAmount;
+	}
+
+	public ISODate getDisputeDate() {
+		return disputeDate;
+	}
+
+	public void setDisputeDate(ISODate disputeDate) {
+		this.disputeDate = disputeDate;
+	}
+
+	public DisputeResolutionTypeCode getDisputeResolutionType() {
+		return disputeResolutionType;
+	}
+
+	public void setDisputeResolutionType(DisputeResolutionTypeCode disputeResolutionType) {
+		this.disputeResolutionType = disputeResolutionType;
+	}
+
+	public CollateralManagement getRelatedManagementProcess() {
+		return relatedManagementProcess;
+	}
+
+	public void setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
+		this.relatedManagementProcess = relatedManagementProcess;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,29 +31,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Single
- * CivilStatusCode.Single}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Married
- * CivilStatusCode.Married}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmSingle
+ * CivilStatusCode.mmSingle}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmMarried
+ * CivilStatusCode.mmMarried}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#LegallyDivorced
- * CivilStatusCode.LegallyDivorced}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Divorced
- * CivilStatusCode.Divorced}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Widow
- * CivilStatusCode.Widow}</li>
+ * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmLegallyDivorced
+ * CivilStatusCode.mmLegallyDivorced}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmDivorced
+ * CivilStatusCode.mmDivorced}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmWidow
+ * CivilStatusCode.mmWidow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#StableUnion
- * CivilStatusCode.StableUnion}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CivilStatusCode#Separated
- * CivilStatusCode.Separated}</li>
+ * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmStableUnion
+ * CivilStatusCode.mmStableUnion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.CivilStatusCode#mmSeparated
+ * CivilStatusCode.mmSeparated}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,9 +89,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is single."</li>
 	 * </ul>
 	 */
-	public static final MMCode Single = new MMCode() {
+	public static final MMCode mmSingle = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Single";
 			definition = "Person is single.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -116,9 +119,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is married."</li>
 	 * </ul>
 	 */
-	public static final MMCode Married = new MMCode() {
+	public static final MMCode mmMarried = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Married";
 			definition = "Person is married.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -146,9 +149,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is legally divorced."</li>
 	 * </ul>
 	 */
-	public static final MMCode LegallyDivorced = new MMCode() {
+	public static final MMCode mmLegallyDivorced = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LegallyDivorced";
 			definition = "Person is legally divorced.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -176,9 +179,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is divorced."</li>
 	 * </ul>
 	 */
-	public static final MMCode Divorced = new MMCode() {
+	public static final MMCode mmDivorced = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Divorced";
 			definition = "Person is divorced.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -206,9 +209,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is a widower."</li>
 	 * </ul>
 	 */
-	public static final MMCode Widow = new MMCode() {
+	public static final MMCode mmWidow = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Widow";
 			definition = "Person is a widower.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -236,9 +239,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is in a stable union."</li>
 	 * </ul>
 	 */
-	public static final MMCode StableUnion = new MMCode() {
+	public static final MMCode mmStableUnion = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StableUnion";
 			definition = "Person is in a stable union.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -266,9 +269,9 @@ public class CivilStatusCode {
 	 * definition} = "Person is separated."</li>
 	 * </ul>
 	 */
-	public static final MMCode Separated = new MMCode() {
+	public static final MMCode mmSeparated = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Separated";
 			definition = "Person is separated.";
 			owner_lazy = () -> CivilStatusCode.mmObject();
@@ -279,13 +282,12 @@ public class CivilStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CivilStatusCode";
 				definition = "Specifies the civil status of a person.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CivilStatusCode.Single, com.tools20022.repository.codeset.CivilStatusCode.Married, com.tools20022.repository.codeset.CivilStatusCode.LegallyDivorced,
-						com.tools20022.repository.codeset.CivilStatusCode.Divorced, com.tools20022.repository.codeset.CivilStatusCode.Widow, com.tools20022.repository.codeset.CivilStatusCode.StableUnion,
-						com.tools20022.repository.codeset.CivilStatusCode.Separated);
+				code_lazy = () -> Arrays.asList(CivilStatusCode.mmSingle, CivilStatusCode.mmMarried, CivilStatusCode.mmLegallyDivorced, CivilStatusCode.mmDivorced, CivilStatusCode.mmWidow, CivilStatusCode.mmStableUnion,
+						CivilStatusCode.mmSeparated);
 			}
 		});
 		return mmObject_lazy.get();

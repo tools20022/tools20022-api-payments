@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Status of the corporate action process.
@@ -41,47 +42,47 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#AgentStandingInstructionStatus
- * CorporateActionStatus.AgentStandingInstructionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmAgentStandingInstructionStatus
+ * CorporateActionStatus.mmAgentStandingInstructionStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#ProcessingStatus
- * CorporateActionStatus.ProcessingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmProcessingStatus
+ * CorporateActionStatus.mmProcessingStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#EventProcessingStatus
- * CorporateActionStatus.EventProcessingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmEventProcessingStatus
+ * CorporateActionStatus.mmEventProcessingStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionStatusReason
- * CorporateActionStatus.CorporateActionStatusReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionStatusReason
+ * CorporateActionStatus.mmCorporateActionStatusReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#InstructionCancellationStatus
- * CorporateActionStatus.InstructionCancellationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmInstructionCancellationStatus
+ * CorporateActionStatus.mmInstructionCancellationStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionInstructionProcessingStatus
- * CorporateActionStatus.CorporateActionInstructionProcessingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionInstructionProcessingStatus
+ * CorporateActionStatus.mmCorporateActionInstructionProcessingStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#RateStatus
- * CorporateActionStatus.RateStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmRateStatus
+ * CorporateActionStatus.mmRateStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#OptionAvailabilityStatus
- * CorporateActionStatus.OptionAvailabilityStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmOptionAvailabilityStatus
+ * CorporateActionStatus.mmOptionAvailabilityStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionEvent
- * CorporateActionStatus.CorporateActionEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionEvent
+ * CorporateActionStatus.mmCorporateActionEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#EventStatus
- * CorporateActionStatus.EventStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmEventStatus
+ * CorporateActionStatus.mmEventStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#RelatedInstructionProcessedStatus
- * CorporateActionStatus.RelatedInstructionProcessedStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmRelatedInstructionProcessedStatus
+ * CorporateActionStatus.mmRelatedInstructionProcessedStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#DeactivationDateAndTime
- * CorporateActionStatus.DeactivationDateAndTime}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmDeactivationDateAndTime
+ * CorporateActionStatus.mmDeactivationDateAndTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#EventConfirmationStatus
- * CorporateActionStatus.EventConfirmationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmEventConfirmationStatus
+ * CorporateActionStatus.mmEventConfirmationStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#EventCompletenessStatus
- * CorporateActionStatus.EventCompletenessStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmEventCompletenessStatus
+ * CorporateActionStatus.mmEventCompletenessStatus}</li>
  * </ul>
  * </li>
  * <li>
@@ -89,11 +90,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#CorporateActionStatus
- * CorporateActionStatusReason.CorporateActionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmCorporateActionStatus
+ * CorporateActionStatusReason.mmCorporateActionStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionStatus
- * CorporateActionEvent.CorporateActionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionStatus
+ * CorporateActionEvent.mmCorporateActionStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -101,8 +102,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,6 +117,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max350Text agentStandingInstructionStatus;
 	/**
 	 * Specifies the state or the condition.
 	 * <p>
@@ -141,18 +143,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Specifies the state or the condition."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AgentStandingInstructionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAgentStandingInstructionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgentStandingInstructionStatus";
 			definition = "Specifies the state or the condition.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getAgentStandingInstructionStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ProcessingStatusCode processingStatus;
 	/**
 	 * Specifies the status of the details of the event.
 	 * <p>
@@ -179,18 +190,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Specifies the status of the details of the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ProcessingStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingStatus";
 			definition = "Specifies the status of the details of the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ProcessingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getProcessingStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionEventProcessingStatusCode eventProcessingStatus;
 	/**
 	 * Processing status of the corporate action event.
 	 * <p>
@@ -217,18 +237,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Processing status of the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventProcessingStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventProcessingStatus";
 			definition = "Processing status of the corporate action event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventProcessingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getEventProcessingStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionStatusReason> corporateActionStatusReason;
 	/**
 	 * Specifies the reasons for the status. It is derived from the relationship
 	 * between Status and Status Reason.
@@ -238,8 +267,8 @@ public class CorporateActionStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#CorporateActionStatus
-	 * CorporateActionStatusReason.CorporateActionStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmCorporateActionStatus
+	 * CorporateActionStatusReason.mmCorporateActionStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -266,19 +295,20 @@ public class CorporateActionStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionStatusReason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionStatusReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStatusReason";
 			definition = "Specifies the reasons for the status. It is derived from the relationship between Status and Status Reason.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmCorporateActionStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.CorporateActionStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CorporateActionInstructionCancellationProcessingStatusCode instructionCancellationStatus;
 	/**
 	 * Status of the instruction cancellation process.
 	 * <p>
@@ -305,18 +335,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Status of the instruction cancellation process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InstructionCancellationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInstructionCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionCancellationStatus";
 			definition = "Status of the instruction cancellation process.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionInstructionCancellationProcessingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getInstructionCancellationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionInstructionProcessingStatusCode corporateActionInstructionProcessingStatus;
 	/**
 	 * Status of the corporate action instruction process.
 	 * <p>
@@ -343,18 +382,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Status of the corporate action instruction process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CorporateActionInstructionProcessingStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCorporateActionInstructionProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionInstructionProcessingStatus";
 			definition = "Status of the corporate action instruction process.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionInstructionProcessingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getCorporateActionInstructionProcessingStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RateStatusCode rateStatus;
 	/**
 	 * Specifies whether the rate is indicative or actual.
 	 * <p>
@@ -381,18 +429,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Specifies whether the rate is indicative or actual."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RateStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRateStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateStatus";
 			definition = "Specifies whether the rate is indicative or actual.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RateStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getRateStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OptionAvailabilityStatusCode optionAvailabilityStatus;
 	/**
 	 * Availability status of the option.
 	 * <p>
@@ -419,18 +476,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Availability status of the option."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OptionAvailabilityStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOptionAvailabilityStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionAvailabilityStatus";
 			definition = "Availability status of the option.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> OptionAvailabilityStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getOptionAvailabilityStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionEvent corporateActionEvent;
 	/**
 	 * Corporate event for which a status is provided.
 	 * <p>
@@ -439,8 +505,8 @@ public class CorporateActionStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionStatus
-	 * CorporateActionEvent.CorporateActionStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionStatus
+	 * CorporateActionEvent.mmCorporateActionStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -465,20 +531,21 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Corporate event for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEvent";
 			definition = "Corporate event for which a status is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.CorporateActionStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CorporateActionEventStatusCode eventStatus;
 	/**
 	 * Status of the corporate action event.
 	 * <p>
@@ -505,18 +572,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Status of the corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventStatus";
 			definition = "Status of the corporate action event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getEventStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionProcessedStatusCode relatedInstructionProcessedStatus;
 	/**
 	 * Information on the status of the processing of an instruction related to
 	 * a corporate action.
@@ -546,18 +622,27 @@ public class CorporateActionStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RelatedInstructionProcessedStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRelatedInstructionProcessedStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInstructionProcessedStatus";
 			definition = "Information on the status of the processing of an instruction related to a corporate action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionProcessedStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getRelatedInstructionProcessedStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime deactivationDateAndTime;
 	/**
 	 * Date and time at which the the corporate action event or the option is
 	 * deactivated.
@@ -586,18 +671,27 @@ public class CorporateActionStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DeactivationDateAndTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDeactivationDateAndTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeactivationDateAndTime";
 			definition = "Date and time at which the the corporate action event or the option is deactivated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getDeactivationDateAndTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected EventConfirmationStatusCode eventConfirmationStatus;
 	/**
 	 * Indicates the status of the occurrence of an event.
 	 * <p>
@@ -624,18 +718,27 @@ public class CorporateActionStatus extends Status {
 	 * definition} = "Indicates the status of the occurrence of an event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventConfirmationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventConfirmationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventConfirmationStatus";
 			definition = "Indicates the status of the occurrence of an event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> EventConfirmationStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getEventConfirmationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected EventCompletenessStatusCode eventCompletenessStatus;
 	/**
 	 * Indicates whether the details provided about an event are complete or
 	 * incomplete.
@@ -665,37 +768,162 @@ public class CorporateActionStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventCompletenessStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventCompletenessStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventCompletenessStatus";
 			definition = "Indicates whether the details provided about an event are complete or incomplete.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> EventCompletenessStatusCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatus.class.getMethod("getEventCompletenessStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStatus";
 				definition = "Status of the corporate action process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatusReason.CorporateActionStatus, com.tools20022.repository.entity.CorporateActionEvent.CorporateActionStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatusReason.mmCorporateActionStatus, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionStatus);
 				superType_lazy = () -> Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatus.AgentStandingInstructionStatus, com.tools20022.repository.entity.CorporateActionStatus.ProcessingStatus,
-						com.tools20022.repository.entity.CorporateActionStatus.EventProcessingStatus, com.tools20022.repository.entity.CorporateActionStatus.CorporateActionStatusReason,
-						com.tools20022.repository.entity.CorporateActionStatus.InstructionCancellationStatus, com.tools20022.repository.entity.CorporateActionStatus.CorporateActionInstructionProcessingStatus,
-						com.tools20022.repository.entity.CorporateActionStatus.RateStatus, com.tools20022.repository.entity.CorporateActionStatus.OptionAvailabilityStatus,
-						com.tools20022.repository.entity.CorporateActionStatus.CorporateActionEvent, com.tools20022.repository.entity.CorporateActionStatus.EventStatus,
-						com.tools20022.repository.entity.CorporateActionStatus.RelatedInstructionProcessedStatus, com.tools20022.repository.entity.CorporateActionStatus.DeactivationDateAndTime,
-						com.tools20022.repository.entity.CorporateActionStatus.EventConfirmationStatus, com.tools20022.repository.entity.CorporateActionStatus.EventCompletenessStatus);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatus.mmAgentStandingInstructionStatus, com.tools20022.repository.entity.CorporateActionStatus.mmProcessingStatus,
+						com.tools20022.repository.entity.CorporateActionStatus.mmEventProcessingStatus, com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionStatusReason,
+						com.tools20022.repository.entity.CorporateActionStatus.mmInstructionCancellationStatus, com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionInstructionProcessingStatus,
+						com.tools20022.repository.entity.CorporateActionStatus.mmRateStatus, com.tools20022.repository.entity.CorporateActionStatus.mmOptionAvailabilityStatus,
+						com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionEvent, com.tools20022.repository.entity.CorporateActionStatus.mmEventStatus,
+						com.tools20022.repository.entity.CorporateActionStatus.mmRelatedInstructionProcessedStatus, com.tools20022.repository.entity.CorporateActionStatus.mmDeactivationDateAndTime,
+						com.tools20022.repository.entity.CorporateActionStatus.mmEventConfirmationStatus, com.tools20022.repository.entity.CorporateActionStatus.mmEventCompletenessStatus);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max350Text getAgentStandingInstructionStatus() {
+		return agentStandingInstructionStatus;
+	}
+
+	public void setAgentStandingInstructionStatus(Max350Text agentStandingInstructionStatus) {
+		this.agentStandingInstructionStatus = agentStandingInstructionStatus;
+	}
+
+	public ProcessingStatusCode getProcessingStatus() {
+		return processingStatus;
+	}
+
+	public void setProcessingStatus(ProcessingStatusCode processingStatus) {
+		this.processingStatus = processingStatus;
+	}
+
+	public CorporateActionEventProcessingStatusCode getEventProcessingStatus() {
+		return eventProcessingStatus;
+	}
+
+	public void setEventProcessingStatus(CorporateActionEventProcessingStatusCode eventProcessingStatus) {
+		this.eventProcessingStatus = eventProcessingStatus;
+	}
+
+	public List<CorporateActionStatusReason> getCorporateActionStatusReason() {
+		return corporateActionStatusReason;
+	}
+
+	public void setCorporateActionStatusReason(List<com.tools20022.repository.entity.CorporateActionStatusReason> corporateActionStatusReason) {
+		this.corporateActionStatusReason = corporateActionStatusReason;
+	}
+
+	public CorporateActionInstructionCancellationProcessingStatusCode getInstructionCancellationStatus() {
+		return instructionCancellationStatus;
+	}
+
+	public void setInstructionCancellationStatus(CorporateActionInstructionCancellationProcessingStatusCode instructionCancellationStatus) {
+		this.instructionCancellationStatus = instructionCancellationStatus;
+	}
+
+	public CorporateActionInstructionProcessingStatusCode getCorporateActionInstructionProcessingStatus() {
+		return corporateActionInstructionProcessingStatus;
+	}
+
+	public void setCorporateActionInstructionProcessingStatus(CorporateActionInstructionProcessingStatusCode corporateActionInstructionProcessingStatus) {
+		this.corporateActionInstructionProcessingStatus = corporateActionInstructionProcessingStatus;
+	}
+
+	public RateStatusCode getRateStatus() {
+		return rateStatus;
+	}
+
+	public void setRateStatus(RateStatusCode rateStatus) {
+		this.rateStatus = rateStatus;
+	}
+
+	public OptionAvailabilityStatusCode getOptionAvailabilityStatus() {
+		return optionAvailabilityStatus;
+	}
+
+	public void setOptionAvailabilityStatus(OptionAvailabilityStatusCode optionAvailabilityStatus) {
+		this.optionAvailabilityStatus = optionAvailabilityStatus;
+	}
+
+	public CorporateActionEvent getCorporateActionEvent() {
+		return corporateActionEvent;
+	}
+
+	public void setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
+		this.corporateActionEvent = corporateActionEvent;
+	}
+
+	public CorporateActionEventStatusCode getEventStatus() {
+		return eventStatus;
+	}
+
+	public void setEventStatus(CorporateActionEventStatusCode eventStatus) {
+		this.eventStatus = eventStatus;
+	}
+
+	public CorporateActionProcessedStatusCode getRelatedInstructionProcessedStatus() {
+		return relatedInstructionProcessedStatus;
+	}
+
+	public void setRelatedInstructionProcessedStatus(CorporateActionProcessedStatusCode relatedInstructionProcessedStatus) {
+		this.relatedInstructionProcessedStatus = relatedInstructionProcessedStatus;
+	}
+
+	public ISODateTime getDeactivationDateAndTime() {
+		return deactivationDateAndTime;
+	}
+
+	public void setDeactivationDateAndTime(ISODateTime deactivationDateAndTime) {
+		this.deactivationDateAndTime = deactivationDateAndTime;
+	}
+
+	public EventConfirmationStatusCode getEventConfirmationStatus() {
+		return eventConfirmationStatus;
+	}
+
+	public void setEventConfirmationStatus(EventConfirmationStatusCode eventConfirmationStatus) {
+		this.eventConfirmationStatus = eventConfirmationStatus;
+	}
+
+	public EventCompletenessStatusCode getEventCompletenessStatus() {
+		return eventCompletenessStatus;
+	}
+
+	public void setEventCompletenessStatus(EventCompletenessStatusCode eventCompletenessStatus) {
+		this.eventCompletenessStatus = eventCompletenessStatus;
 	}
 }

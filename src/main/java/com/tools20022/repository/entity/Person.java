@@ -17,9 +17,7 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CivilStatusCode;
 import com.tools20022.repository.codeset.GenderCode;
 import com.tools20022.repository.codeset.LanguageCode;
@@ -28,9 +26,15 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BillingTaxIdentification1;
+import com.tools20022.repository.msg.CashAccountCharacteristics2;
 import com.tools20022.repository.msg.DateAndPlaceOfBirth;
+import com.tools20022.repository.msg.TaxAuthorisation1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Human entity, as distinguished from a corporate entity (which is sometimes
@@ -45,78 +49,49 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Person#Gender Person.Gender}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#Language
- * Person.Language}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#BirthDate
- * Person.BirthDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#PlaceOfBirth
- * Person.PlaceOfBirth}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#Profession
- * Person.Profession}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#ResidentialStatus
- * Person.ResidentialStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#Nationality
- * Person.Nationality}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#MinorIndicator
- * Person.MinorIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmGender
+ * Person.mmGender}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmLanguage
+ * Person.mmLanguage}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmBirthDate
+ * Person.mmBirthDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmPlaceOfBirth
+ * Person.mmPlaceOfBirth}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmProfession
+ * Person.mmProfession}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmResidentialStatus
+ * Person.mmResidentialStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmNationality
+ * Person.mmNationality}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmMinorIndicator
+ * Person.mmMinorIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Person#BusinessFunctionTitle
- * Person.BusinessFunctionTitle}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#PersonIdentification
- * Person.PersonIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#EmployingParty
- * Person.EmployingParty}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#MeetingAttendee
- * Person.MeetingAttendee}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#RelatedRole
- * Person.RelatedRole}</li>
+ * {@linkplain com.tools20022.repository.entity.Person#mmBusinessFunctionTitle
+ * Person.mmBusinessFunctionTitle}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Person#PreAssignedProxyPerson
- * Person.PreAssignedProxyPerson}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#PersonProfile
- * Person.PersonProfile}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#ContactPersonRole
- * Person.ContactPersonRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#Household
- * Person.Household}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#CivilStatus
- * Person.CivilStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#DeathDate
- * Person.DeathDate}</li>
+ * {@linkplain com.tools20022.repository.entity.Person#mmPersonIdentification
+ * Person.mmPersonIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmEmployingParty
+ * Person.mmEmployingParty}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmMeetingAttendee
+ * Person.mmMeetingAttendee}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmRelatedRole
+ * Person.mmRelatedRole}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Person#mmPreAssignedProxyPerson
+ * Person.mmPreAssignedProxyPerson}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmPersonProfile
+ * Person.mmPersonProfile}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmContactPersonRole
+ * Person.mmContactPersonRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmHousehold
+ * Person.mmHousehold}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmCivilStatus
+ * Person.mmCivilStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Person#mmDeathDate
+ * Person.mmDeathDate}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Country#Citizen
- * Country.Citizen}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#NativePerson
- * Location.NativePerson}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PersonIdentification#Person
- * PersonIdentification.Person}</li>
- * <li>{@linkplain com.tools20022.repository.entity.EmployingPartyRole#Employee
- * EmployingPartyRole.Employee}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ContactPersonRole#Person
- * ContactPersonRole.Person}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#ProxyPerson
- * AssignedProxyRole.ProxyPerson}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#PreAssignedProxyRole
- * AssignedProxyRole.PreAssignedProxyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.MeetingAttendeeRole#Person
- * MeetingAttendeeRole.Person}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PersonProfile#Person
- * PersonProfile.Person}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Household#Member
- * Household.Member}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Party Party}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -126,10 +101,43 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.Country#mmCitizen
+ * Country.mmCitizen}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmNativePerson
+ * Location.mmNativePerson}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmPerson
+ * PersonIdentification.mmPerson}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.EmployingPartyRole#mmEmployee
+ * EmployingPartyRole.mmEmployee}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ContactPersonRole#mmPerson
+ * ContactPersonRole.mmPerson}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#mmProxyPerson
+ * AssignedProxyRole.mmProxyPerson}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#mmPreAssignedProxyRole
+ * AssignedProxyRole.mmPreAssignedProxyRole}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MeetingAttendeeRole#mmPerson
+ * MeetingAttendeeRole.mmPerson}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PersonProfile#mmPerson
+ * PersonProfile.mmPerson}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Household#mmMember
+ * Household.mmMember}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Party Party}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -145,6 +153,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Person extends Party {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected GenderCode gender;
 	/**
 	 * Specifies the gender of the person.
 	 * <p>
@@ -169,18 +178,27 @@ public class Person extends Party {
 	 * definition} = "Specifies the gender of the person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Gender = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGender = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Gender";
 			definition = "Specifies the gender of the person.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> GenderCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getGender", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected LanguageCode language;
 	/**
 	 * Language in which a person communicates.
 	 * <p>
@@ -205,18 +223,27 @@ public class Person extends Party {
 	 * definition} = "Language in which a person communicates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Language = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which a person communicates.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getLanguage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime birthDate;
 	/**
 	 * Date on which a person is born.
 	 * <p>
@@ -230,8 +257,8 @@ public class Person extends Party {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth#BirthDate
-	 * DateAndPlaceOfBirth.BirthDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth#mmBirthDate
+	 * DateAndPlaceOfBirth.mmBirthDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -249,19 +276,28 @@ public class Person extends Party {
 	 * definition} = "Date on which a person is born."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BirthDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBirthDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DateAndPlaceOfBirth.BirthDate);
-			elementContext_lazy = () -> Person.mmObject();
+			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmBirthDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BirthDate";
 			definition = "Date on which a person is born.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getBirthDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Location placeOfBirth;
 	/**
 	 * Place (for instance Country and City) where a person was born.
 	 * <p>
@@ -270,8 +306,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Location#NativePerson
-	 * Location.NativePerson}</li>
+	 * {@linkplain com.tools20022.repository.entity.Location#mmNativePerson
+	 * Location.mmNativePerson}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -294,20 +330,21 @@ public class Person extends Party {
 	 * "Place (for instance Country and City) where a person was born."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PlaceOfBirth = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPlaceOfBirth = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfBirth";
 			definition = "Place (for instance Country and City) where a person was born.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmNativePerson;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.NativePerson;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text profession;
 	/**
 	 * Name of the occupation or job of a person.
 	 * <p>
@@ -332,18 +369,27 @@ public class Person extends Party {
 	 * definition} = "Name of the occupation or job of a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Profession = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProfession = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Profession";
 			definition = "Name of the occupation or job of a person.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getProfession", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ResidentialStatusCode residentialStatus;
 	/**
 	 * Residential status of an individual, for example, non-permanent resident.
 	 * <p>
@@ -371,18 +417,27 @@ public class Person extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResidentialStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResidentialStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResidentialStatus";
 			definition = "Residential status of an individual, for example, non-permanent resident.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ResidentialStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getResidentialStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Country> nationality;
 	/**
 	 * Specifies the country where a person was born or is legally accepted as
 	 * belonging to the country.
@@ -391,8 +446,9 @@ public class Person extends Party {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Country#Citizen
-	 * Country.Citizen}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Country#mmCitizen
+	 * Country.mmCitizen}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -416,19 +472,20 @@ public class Person extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Nationality = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNationality = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Nationality";
 			definition = "Specifies the country where a person was born or is legally accepted as belonging to the country.";
 			minOccurs = 0;
-			type_lazy = () -> Country.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Country.Citizen;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Country.mmCitizen;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 		}
 	};
+	protected YesNoIndicator minorIndicator;
 	/**
 	 * Indicates whether the person is a legal minor. It may depend on the
 	 * nationality, the domicile country or the transaction in which the person
@@ -458,18 +515,27 @@ public class Person extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MinorIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMinorIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinorIndicator";
 			definition = "Indicates whether the person is a legal minor. It may depend on the nationality, the domicile country or the transaction in which the person is involved.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getMinorIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text businessFunctionTitle;
 	/**
 	 * Title of the function in an organisation.
 	 * <p>
@@ -482,8 +548,8 @@ public class Person extends Party {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.TaxAuthorisation1#Title
-	 * TaxAuthorisation1.Title}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxAuthorisation1#mmTitle
+	 * TaxAuthorisation1.mmTitle}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -501,19 +567,28 @@ public class Person extends Party {
 	 * definition} = "Title of the function in an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BusinessFunctionTitle = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBusinessFunctionTitle = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxAuthorisation1.Title);
-			elementContext_lazy = () -> Person.mmObject();
+			derivation_lazy = () -> Arrays.asList(TaxAuthorisation1.mmTitle);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessFunctionTitle";
 			definition = "Title of the function in an organisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getBusinessFunctionTitle", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.PersonIdentification> personIdentification;
 	/**
 	 * Specific identification assigned to a person. It is derived from the
 	 * association between Party and PartyIdentification.
@@ -523,8 +598,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PersonIdentification#Person
-	 * PersonIdentification.Person}</li>
+	 * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmPerson
+	 * PersonIdentification.mmPerson}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -537,11 +612,11 @@ public class Person extends Party {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingTaxIdentification1#TaxContact
-	 * BillingTaxIdentification1.TaxContact}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingTaxIdentification1#mmTaxContact
+	 * BillingTaxIdentification1.mmTaxContact}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#AccountServicerContact
-	 * CashAccountCharacteristics2.AccountServicerContact}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#mmAccountServicerContact
+	 * CashAccountCharacteristics2.mmAccountServicerContact}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -561,20 +636,21 @@ public class Person extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PersonIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPersonIdentification = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingTaxIdentification1.TaxContact, com.tools20022.repository.msg.CashAccountCharacteristics2.AccountServicerContact);
-			elementContext_lazy = () -> Person.mmObject();
+			derivation_lazy = () -> Arrays.asList(BillingTaxIdentification1.mmTaxContact, CashAccountCharacteristics2.mmAccountServicerContact);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PersonIdentification";
 			definition = "Specific identification assigned to a person. It is derived from the association between Party and PartyIdentification.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmPerson;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PersonIdentification.Person;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected EmployingPartyRole employingParty;
 	/**
 	 * Party which is the employer of a person.
 	 * <p>
@@ -583,8 +659,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.EmployingPartyRole#Employee
-	 * EmployingPartyRole.Employee}</li>
+	 * {@linkplain com.tools20022.repository.entity.EmployingPartyRole#mmEmployee
+	 * EmployingPartyRole.mmEmployee}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -607,20 +683,21 @@ public class Person extends Party {
 	 * definition} = "Party which is the employer of a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EmployingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEmployingParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployingParty";
 			definition = "Party which is the employer of a person.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> EmployingPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.EmployingPartyRole.Employee;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.EmployingPartyRole.mmEmployee;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.EmployingPartyRole.mmObject();
 		}
 	};
+	protected MeetingAttendeeRole meetingAttendee;
 	/**
 	 * Specifies the meeting attendee which is an individual person.
 	 * <p>
@@ -629,8 +706,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MeetingAttendeeRole#Person
-	 * MeetingAttendeeRole.Person}</li>
+	 * {@linkplain com.tools20022.repository.entity.MeetingAttendeeRole#mmPerson
+	 * MeetingAttendeeRole.mmPerson}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -654,20 +731,21 @@ public class Person extends Party {
 	 * "Specifies the meeting attendee which is an individual person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MeetingAttendee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeetingAttendee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingAttendee";
 			definition = "Specifies the meeting attendee which is an individual person.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> MeetingAttendeeRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingAttendeeRole.Person;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.MeetingAttendeeRole.mmPerson;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.MeetingAttendeeRole.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.AssignedProxyRole> relatedRole;
 	/**
 	 * Role performed by the person for the proxy voting process.
 	 * <p>
@@ -676,8 +754,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#ProxyPerson
-	 * AssignedProxyRole.ProxyPerson}</li>
+	 * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#mmProxyPerson
+	 * AssignedProxyRole.mmProxyPerson}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -701,19 +779,20 @@ public class Person extends Party {
 	 * "Role performed by the person for the proxy voting process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRole";
 			definition = "Role performed by the person for the proxy voting process.";
 			minOccurs = 0;
-			type_lazy = () -> AssignedProxyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.ProxyPerson;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmProxyPerson;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmObject();
 		}
 	};
+	protected AssignedProxyRole preAssignedProxyPerson;
 	/**
 	 * Specifies the person who is the pre-assigned proxy for a meeting.
 	 * <p>
@@ -722,8 +801,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#PreAssignedProxyRole
-	 * AssignedProxyRole.PreAssignedProxyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.AssignedProxyRole#mmPreAssignedProxyRole
+	 * AssignedProxyRole.mmPreAssignedProxyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -747,20 +826,21 @@ public class Person extends Party {
 	 * "Specifies the person who is the pre-assigned proxy for a meeting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PreAssignedProxyPerson = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPreAssignedProxyPerson = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreAssignedProxyPerson";
 			definition = "Specifies the person who is the pre-assigned proxy for a meeting.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AssignedProxyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.PreAssignedProxyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmPreAssignedProxyRole;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AssignedProxyRole.mmObject();
 		}
 	};
+	protected PersonProfile personProfile;
 	/**
 	 * Information to support the Know Your Customer processes.
 	 * <p>
@@ -769,8 +849,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PersonProfile#Person
-	 * PersonProfile.Person}</li>
+	 * {@linkplain com.tools20022.repository.entity.PersonProfile#mmPerson
+	 * PersonProfile.mmPerson}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -793,20 +873,21 @@ public class Person extends Party {
 	 * definition} = "Information to support the Know Your Customer processes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PersonProfile = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPersonProfile = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PersonProfile";
 			definition = "Information to support the Know Your Customer processes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmPerson;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PersonProfile.Person;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ContactPersonRole contactPersonRole;
 	/**
 	 * Contact role played by a person.
 	 * <p>
@@ -815,8 +896,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPersonRole#Person
-	 * ContactPersonRole.Person}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPersonRole#mmPerson
+	 * ContactPersonRole.mmPerson}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -839,20 +920,21 @@ public class Person extends Party {
 	 * definition} = "Contact role played by a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ContactPersonRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmContactPersonRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPersonRole";
 			definition = "Contact role played by a person.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmPerson;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.Person;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Household household;
 	/**
 	 * Specifies the members of a household in relation with the ownership of an
 	 * account.
@@ -862,8 +944,8 @@ public class Person extends Party {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Household#Member
-	 * Household.Member}</li>
+	 * {@linkplain com.tools20022.repository.entity.Household#mmMember
+	 * Household.mmMember}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -888,20 +970,21 @@ public class Person extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Household = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmHousehold = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Household";
 			definition = "Specifies the members of a household in relation with the ownership of an account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Household.mmMember;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Household.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Household.Member;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CivilStatusCode civilStatus;
 	/**
 	 * Specifies the civil status of a person.
 	 * <p>
@@ -927,18 +1010,27 @@ public class Person extends Party {
 	 * definition} = "Specifies the civil status of a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CivilStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCivilStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CivilStatus";
 			definition = "Specifies the civil status of a person.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CivilStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getCivilStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime deathDate;
 	/**
 	 * Date on which a person is dead.
 	 * <p>
@@ -963,40 +1055,206 @@ public class Person extends Party {
 	 * definition} = "Date on which a person is dead."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DeathDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDeathDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Person.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeathDate";
 			definition = "Date on which a person is dead.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Person.class.getMethod("getDeathDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Person";
 				definition = "Human entity, as distinguished from a corporate entity (which is sometimes referred to as an 'artificial person').";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.Citizen, com.tools20022.repository.entity.Location.NativePerson, com.tools20022.repository.entity.PersonIdentification.Person,
-						com.tools20022.repository.entity.EmployingPartyRole.Employee, com.tools20022.repository.entity.ContactPersonRole.Person, com.tools20022.repository.entity.AssignedProxyRole.ProxyPerson,
-						com.tools20022.repository.entity.AssignedProxyRole.PreAssignedProxyRole, com.tools20022.repository.entity.MeetingAttendeeRole.Person, com.tools20022.repository.entity.PersonProfile.Person,
-						com.tools20022.repository.entity.Household.Member);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmCitizen, com.tools20022.repository.entity.Location.mmNativePerson, com.tools20022.repository.entity.PersonIdentification.mmPerson,
+						com.tools20022.repository.entity.EmployingPartyRole.mmEmployee, com.tools20022.repository.entity.ContactPersonRole.mmPerson, com.tools20022.repository.entity.AssignedProxyRole.mmProxyPerson,
+						com.tools20022.repository.entity.AssignedProxyRole.mmPreAssignedProxyRole, com.tools20022.repository.entity.MeetingAttendeeRole.mmPerson, com.tools20022.repository.entity.PersonProfile.mmPerson,
+						com.tools20022.repository.entity.Household.mmMember);
 				superType_lazy = () -> Party.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Person.Gender, com.tools20022.repository.entity.Person.Language, com.tools20022.repository.entity.Person.BirthDate,
-						com.tools20022.repository.entity.Person.PlaceOfBirth, com.tools20022.repository.entity.Person.Profession, com.tools20022.repository.entity.Person.ResidentialStatus,
-						com.tools20022.repository.entity.Person.Nationality, com.tools20022.repository.entity.Person.MinorIndicator, com.tools20022.repository.entity.Person.BusinessFunctionTitle,
-						com.tools20022.repository.entity.Person.PersonIdentification, com.tools20022.repository.entity.Person.EmployingParty, com.tools20022.repository.entity.Person.MeetingAttendee,
-						com.tools20022.repository.entity.Person.RelatedRole, com.tools20022.repository.entity.Person.PreAssignedProxyPerson, com.tools20022.repository.entity.Person.PersonProfile,
-						com.tools20022.repository.entity.Person.ContactPersonRole, com.tools20022.repository.entity.Person.Household, com.tools20022.repository.entity.Person.CivilStatus, com.tools20022.repository.entity.Person.DeathDate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Person.mmGender, com.tools20022.repository.entity.Person.mmLanguage, com.tools20022.repository.entity.Person.mmBirthDate,
+						com.tools20022.repository.entity.Person.mmPlaceOfBirth, com.tools20022.repository.entity.Person.mmProfession, com.tools20022.repository.entity.Person.mmResidentialStatus,
+						com.tools20022.repository.entity.Person.mmNationality, com.tools20022.repository.entity.Person.mmMinorIndicator, com.tools20022.repository.entity.Person.mmBusinessFunctionTitle,
+						com.tools20022.repository.entity.Person.mmPersonIdentification, com.tools20022.repository.entity.Person.mmEmployingParty, com.tools20022.repository.entity.Person.mmMeetingAttendee,
+						com.tools20022.repository.entity.Person.mmRelatedRole, com.tools20022.repository.entity.Person.mmPreAssignedProxyPerson, com.tools20022.repository.entity.Person.mmPersonProfile,
+						com.tools20022.repository.entity.Person.mmContactPersonRole, com.tools20022.repository.entity.Person.mmHousehold, com.tools20022.repository.entity.Person.mmCivilStatus,
+						com.tools20022.repository.entity.Person.mmDeathDate);
 				derivationComponent_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Person.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public GenderCode getGender() {
+		return gender;
+	}
+
+	public void setGender(GenderCode gender) {
+		this.gender = gender;
+	}
+
+	public LanguageCode getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(LanguageCode language) {
+		this.language = language;
+	}
+
+	public ISODateTime getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(ISODateTime birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public Location getPlaceOfBirth() {
+		return placeOfBirth;
+	}
+
+	public void setPlaceOfBirth(com.tools20022.repository.entity.Location placeOfBirth) {
+		this.placeOfBirth = placeOfBirth;
+	}
+
+	public Max35Text getProfession() {
+		return profession;
+	}
+
+	public void setProfession(Max35Text profession) {
+		this.profession = profession;
+	}
+
+	public ResidentialStatusCode getResidentialStatus() {
+		return residentialStatus;
+	}
+
+	public void setResidentialStatus(ResidentialStatusCode residentialStatus) {
+		this.residentialStatus = residentialStatus;
+	}
+
+	public List<Country> getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(List<com.tools20022.repository.entity.Country> nationality) {
+		this.nationality = nationality;
+	}
+
+	public YesNoIndicator getMinorIndicator() {
+		return minorIndicator;
+	}
+
+	public void setMinorIndicator(YesNoIndicator minorIndicator) {
+		this.minorIndicator = minorIndicator;
+	}
+
+	public Max35Text getBusinessFunctionTitle() {
+		return businessFunctionTitle;
+	}
+
+	public void setBusinessFunctionTitle(Max35Text businessFunctionTitle) {
+		this.businessFunctionTitle = businessFunctionTitle;
+	}
+
+	public List<PersonIdentification> getPersonIdentification() {
+		return personIdentification;
+	}
+
+	public void setPersonIdentification(List<com.tools20022.repository.entity.PersonIdentification> personIdentification) {
+		this.personIdentification = personIdentification;
+	}
+
+	public EmployingPartyRole getEmployingParty() {
+		return employingParty;
+	}
+
+	public void setEmployingParty(com.tools20022.repository.entity.EmployingPartyRole employingParty) {
+		this.employingParty = employingParty;
+	}
+
+	public MeetingAttendeeRole getMeetingAttendee() {
+		return meetingAttendee;
+	}
+
+	public void setMeetingAttendee(com.tools20022.repository.entity.MeetingAttendeeRole meetingAttendee) {
+		this.meetingAttendee = meetingAttendee;
+	}
+
+	public List<AssignedProxyRole> getRelatedRole() {
+		return relatedRole;
+	}
+
+	public void setRelatedRole(List<com.tools20022.repository.entity.AssignedProxyRole> relatedRole) {
+		this.relatedRole = relatedRole;
+	}
+
+	public AssignedProxyRole getPreAssignedProxyPerson() {
+		return preAssignedProxyPerson;
+	}
+
+	public void setPreAssignedProxyPerson(com.tools20022.repository.entity.AssignedProxyRole preAssignedProxyPerson) {
+		this.preAssignedProxyPerson = preAssignedProxyPerson;
+	}
+
+	public PersonProfile getPersonProfile() {
+		return personProfile;
+	}
+
+	public void setPersonProfile(com.tools20022.repository.entity.PersonProfile personProfile) {
+		this.personProfile = personProfile;
+	}
+
+	public ContactPersonRole getContactPersonRole() {
+		return contactPersonRole;
+	}
+
+	public void setContactPersonRole(com.tools20022.repository.entity.ContactPersonRole contactPersonRole) {
+		this.contactPersonRole = contactPersonRole;
+	}
+
+	public Household getHousehold() {
+		return household;
+	}
+
+	public void setHousehold(com.tools20022.repository.entity.Household household) {
+		this.household = household;
+	}
+
+	public CivilStatusCode getCivilStatus() {
+		return civilStatus;
+	}
+
+	public void setCivilStatus(CivilStatusCode civilStatus) {
+		this.civilStatus = civilStatus;
+	}
+
+	public ISODateTime getDeathDate() {
+		return deathDate;
+	}
+
+	public void setDeathDate(ISODateTime deathDate) {
+		this.deathDate = deathDate;
 	}
 }

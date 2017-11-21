@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LiquidityLimitTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.Limit;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Cash management feature limiting the amount of liquidity needed to perform
@@ -45,20 +46,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#VolatilityMargin
- * LiquidityManagementLimit.VolatilityMargin}</li>
+ * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#mmVolatilityMargin
+ * LiquidityManagementLimit.mmVolatilityMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#CurrencyExchange
- * LiquidityManagementLimit.CurrencyExchange}</li>
+ * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#mmCurrencyExchange
+ * LiquidityManagementLimit.mmCurrencyExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#RelatedCashServices
- * LiquidityManagementLimit.RelatedCashServices}</li>
+ * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#mmRelatedCashServices
+ * LiquidityManagementLimit.mmRelatedCashServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#LiquidityLimitType
- * LiquidityManagementLimit.LiquidityLimitType}</li>
+ * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#mmLiquidityLimitType
+ * LiquidityManagementLimit.mmLiquidityLimitType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#RequiredAmount
- * LiquidityManagementLimit.RequiredAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.LiquidityManagementLimit#mmRequiredAmount
+ * LiquidityManagementLimit.mmRequiredAmount}</li>
  * </ul>
  * </li>
  * <li>
@@ -66,11 +67,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashManagementService#LiquidityManagementLimit
- * CashManagementService.LiquidityManagementLimit}</li>
+ * {@linkplain com.tools20022.repository.entity.CashManagementService#mmLiquidityManagementLimit
+ * CashManagementService.mmLiquidityManagementLimit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CurrencyExchange#RelatedLimitManagement
- * CurrencyExchange.RelatedLimitManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmRelatedLimitManagement
+ * CurrencyExchange.mmRelatedLimitManagement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -78,8 +79,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class LiquidityManagementLimit extends Limit {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate volatilityMargin;
 	/**
 	 * Margin used to decrease long positions and increase short positions for
 	 * the calculation of the limit usage.
@@ -124,18 +126,27 @@ public class LiquidityManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VolatilityMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVolatilityMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LiquidityManagementLimit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VolatilityMargin";
 			definition = "Margin used to decrease long positions and increase short positions for the calculation of the limit usage.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LiquidityManagementLimit.class.getMethod("getVolatilityMargin", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
 	/**
 	 * Exchange rate used in the calculation of the limit when different
 	 * currencies are involved.
@@ -145,8 +156,8 @@ public class LiquidityManagementLimit extends Limit {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#RelatedLimitManagement
-	 * CurrencyExchange.RelatedLimitManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmRelatedLimitManagement
+	 * CurrencyExchange.mmRelatedLimitManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -172,19 +183,20 @@ public class LiquidityManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CurrencyExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LiquidityManagementLimit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Exchange rate used in the calculation of the limit when different currencies are involved.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmRelatedLimitManagement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.RelatedLimitManagement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CashManagementService relatedCashServices;
 	/**
 	 * Cash management services which provide standing liquidity management
 	 * facilities.
@@ -194,8 +206,8 @@ public class LiquidityManagementLimit extends Limit {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashManagementService#LiquidityManagementLimit
-	 * CashManagementService.LiquidityManagementLimit}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashManagementService#mmLiquidityManagementLimit
+	 * CashManagementService.mmLiquidityManagementLimit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -222,20 +234,21 @@ public class LiquidityManagementLimit extends Limit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCashServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCashServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LiquidityManagementLimit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashServices";
 			definition = "Cash management services which provide standing liquidity management facilities.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CashManagementService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashManagementService.LiquidityManagementLimit;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmLiquidityManagementLimit;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 		}
 	};
+	protected LiquidityLimitTypeCode liquidityLimitType;
 	/**
 	 * Type of liquidity management limit.
 	 * <p>
@@ -262,18 +275,27 @@ public class LiquidityManagementLimit extends Limit {
 	 * definition} = "Type of liquidity management limit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LiquidityLimitType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLiquidityLimitType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LiquidityManagementLimit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LiquidityLimitType";
 			definition = "Type of liquidity management limit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LiquidityLimitTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LiquidityManagementLimit.class.getMethod("getLiquidityLimitType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount requiredAmount;
 	/**
 	 * Amount required to cover the needs of liquidity management.
 	 * <p>
@@ -301,33 +323,86 @@ public class LiquidityManagementLimit extends Limit {
 	 * "Amount required to cover the needs of liquidity management."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RequiredAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRequiredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LiquidityManagementLimit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LiquidityManagementLimit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequiredAmount";
 			definition = "Amount required to cover the needs of liquidity management.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return LiquidityManagementLimit.class.getMethod("getRequiredAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LiquidityManagementLimit";
 				definition = "Cash management feature limiting the amount of liquidity needed to perform clearing and settlement operations. At any point in time during the process, the limit imposes the maximum amount of liquidity available for operations concerning the system or other managed elements, for example, transaction amount or counterparty.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashManagementService.LiquidityManagementLimit, com.tools20022.repository.entity.CurrencyExchange.RelatedLimitManagement);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashManagementService.mmLiquidityManagementLimit, com.tools20022.repository.entity.CurrencyExchange.mmRelatedLimitManagement);
 				superType_lazy = () -> Limit.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LiquidityManagementLimit.VolatilityMargin, com.tools20022.repository.entity.LiquidityManagementLimit.CurrencyExchange,
-						com.tools20022.repository.entity.LiquidityManagementLimit.RelatedCashServices, com.tools20022.repository.entity.LiquidityManagementLimit.LiquidityLimitType,
-						com.tools20022.repository.entity.LiquidityManagementLimit.RequiredAmount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LiquidityManagementLimit.mmVolatilityMargin, com.tools20022.repository.entity.LiquidityManagementLimit.mmCurrencyExchange,
+						com.tools20022.repository.entity.LiquidityManagementLimit.mmRelatedCashServices, com.tools20022.repository.entity.LiquidityManagementLimit.mmLiquidityLimitType,
+						com.tools20022.repository.entity.LiquidityManagementLimit.mmRequiredAmount);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return LiquidityManagementLimit.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PercentageRate getVolatilityMargin() {
+		return volatilityMargin;
+	}
+
+	public void setVolatilityMargin(PercentageRate volatilityMargin) {
+		this.volatilityMargin = volatilityMargin;
+	}
+
+	public List<CurrencyExchange> getCurrencyExchange() {
+		return currencyExchange;
+	}
+
+	public void setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+		this.currencyExchange = currencyExchange;
+	}
+
+	public CashManagementService getRelatedCashServices() {
+		return relatedCashServices;
+	}
+
+	public void setRelatedCashServices(com.tools20022.repository.entity.CashManagementService relatedCashServices) {
+		this.relatedCashServices = relatedCashServices;
+	}
+
+	public LiquidityLimitTypeCode getLiquidityLimitType() {
+		return liquidityLimitType;
+	}
+
+	public void setLiquidityLimitType(LiquidityLimitTypeCode liquidityLimitType) {
+		this.liquidityLimitType = liquidityLimitType;
+	}
+
+	public CurrencyAndAmount getRequiredAmount() {
+		return requiredAmount;
+	}
+
+	public void setRequiredAmount(CurrencyAndAmount requiredAmount) {
+		this.requiredAmount = requiredAmount;
 	}
 }

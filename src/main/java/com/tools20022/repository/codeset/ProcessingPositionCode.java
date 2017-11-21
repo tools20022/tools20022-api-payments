@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,24 +33,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#After
- * ProcessingPositionCode.After}</li>
+ * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#mmAfter
+ * ProcessingPositionCode.mmAfter}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#With
- * ProcessingPositionCode.With}</li>
+ * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#mmWith
+ * ProcessingPositionCode.mmWith}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#Before
- * ProcessingPositionCode.Before}</li>
+ * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#mmBefore
+ * ProcessingPositionCode.mmBefore}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#Information
- * ProcessingPositionCode.Information}</li>
+ * {@linkplain com.tools20022.repository.codeset.ProcessingPositionCode#mmInformation
+ * ProcessingPositionCode.mmInformation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -94,9 +96,9 @@ public class ProcessingPositionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode After = new MMCode() {
+	public static final MMCode mmAfter = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "After";
 			definition = "Specifies that the transaction/instruction is to be executed after the linked transaction/instruction.";
 			owner_lazy = () -> ProcessingPositionCode.mmObject();
@@ -127,9 +129,9 @@ public class ProcessingPositionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode With = new MMCode() {
+	public static final MMCode mmWith = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "With";
 			definition = "Specifies that the transaction/instruction is to be executed with the linked transaction/instruction.";
 			owner_lazy = () -> ProcessingPositionCode.mmObject();
@@ -160,9 +162,9 @@ public class ProcessingPositionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Before = new MMCode() {
+	public static final MMCode mmBefore = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Before";
 			definition = "Specifies that the transaction/instruction is to be executed before the linked transaction/instruction.";
 			owner_lazy = () -> ProcessingPositionCode.mmObject();
@@ -193,9 +195,9 @@ public class ProcessingPositionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Information = new MMCode() {
+	public static final MMCode mmInformation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Information";
 			definition = "Specifies that the transactions/instructions are linked for information purposes only.";
 			owner_lazy = () -> ProcessingPositionCode.mmObject();
@@ -206,13 +208,12 @@ public class ProcessingPositionCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("AFTE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessingPositionCode";
 				definition = "Specifies when an transaction/instruction is to be executed relative to a linked transaction/instruction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ProcessingPositionCode.After, com.tools20022.repository.codeset.ProcessingPositionCode.With, com.tools20022.repository.codeset.ProcessingPositionCode.Before,
-						com.tools20022.repository.codeset.ProcessingPositionCode.Information);
+				code_lazy = () -> Arrays.asList(ProcessingPositionCode.mmAfter, ProcessingPositionCode.mmWith, ProcessingPositionCode.mmBefore, ProcessingPositionCode.mmInformation);
 			}
 		});
 		return mmObject_lazy.get();

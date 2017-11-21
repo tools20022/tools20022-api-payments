@@ -17,9 +17,13 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Evidence;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Cheque7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Signature#Conditions
- * Signature.Conditions}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Signature#mmConditions
+ * Signature.mmConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Signature#CardPaymentValidation
- * Signature.CardPaymentValidation}</li>
+ * {@linkplain com.tools20022.repository.entity.Signature#mmCardPaymentValidation
+ * Signature.mmCardPaymentValidation}</li>
  * </ul>
  * </li>
  * <li>
@@ -49,21 +53,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SignatureCondition#Signature
- * SignatureCondition.Signature}</li>
+ * {@linkplain com.tools20022.repository.entity.SignatureCondition#mmSignature
+ * SignatureCondition.mmSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Signature
- * CardPaymentValidation.Signature}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmSignature
+ * CardPaymentValidation.mmSignature}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Cheque7#Signature
- * Cheque7.Signature}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Cheque7#mmSignature
+ * Cheque7.mmSignature}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Evidence Evidence}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -71,13 +77,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * ElectronicSignature}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Evidence Evidence}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,6 +97,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Signature extends Evidence {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SignatureCondition conditions;
 	/**
 	 * Parameters related to the signature provided.
 	 * <p>
@@ -101,8 +106,8 @@ public class Signature extends Evidence {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SignatureCondition#Signature
-	 * SignatureCondition.Signature}</li>
+	 * {@linkplain com.tools20022.repository.entity.SignatureCondition#mmSignature
+	 * SignatureCondition.mmSignature}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -125,20 +130,21 @@ public class Signature extends Evidence {
 	 * definition} = "Parameters related to the signature provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Conditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Signature.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Conditions";
 			definition = "Parameters related to the signature provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SignatureCondition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SignatureCondition.Signature;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmSignature;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
 		}
 	};
+	protected CardPaymentValidation cardPaymentValidation;
 	/**
 	 * Validation of a payment by card for which a signeture is specified.
 	 * <p>
@@ -147,8 +153,8 @@ public class Signature extends Evidence {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Signature
-	 * CardPaymentValidation.Signature}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmSignature
+	 * CardPaymentValidation.mmSignature}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -173,35 +179,56 @@ public class Signature extends Evidence {
 	 * "Validation of a payment by card for which a signeture is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CardPaymentValidation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCardPaymentValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Signature.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPaymentValidation";
 			definition = "Validation of a payment by card for which a signeture is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmSignature;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.Signature;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Signature";
 				definition = "Additional security provision attached to a contract. A (numeric) signature can be used as evidence of origin and integrity, i.e., authenticity of the signed data. A judge can accept this evidence as proof.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SignatureCondition.Signature, com.tools20022.repository.entity.CardPaymentValidation.Signature);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Cheque7.Signature);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SignatureCondition.mmSignature, com.tools20022.repository.entity.CardPaymentValidation.mmSignature);
+				derivationElement_lazy = () -> Arrays.asList(Cheque7.mmSignature);
 				subType_lazy = () -> Arrays.asList(ElectronicSignature.mmObject());
 				superType_lazy = () -> Evidence.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Signature.Conditions, com.tools20022.repository.entity.Signature.CardPaymentValidation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Signature.mmConditions, com.tools20022.repository.entity.Signature.mmCardPaymentValidation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Signature.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SignatureCondition getConditions() {
+		return conditions;
+	}
+
+	public void setConditions(com.tools20022.repository.entity.SignatureCondition conditions) {
+		this.conditions = conditions;
+	}
+
+	public CardPaymentValidation getCardPaymentValidation() {
+		return cardPaymentValidation;
+	}
+
+	public void setCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation cardPaymentValidation) {
+		this.cardPaymentValidation = cardPaymentValidation;
 	}
 }

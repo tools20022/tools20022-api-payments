@@ -20,10 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.Max10KBinary;
+import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.entity.SecurityCertificatePartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Party and related security certificate.
@@ -35,20 +43,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#ModificationCode
- * PartyAndCertificate3.ModificationCode}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyAndCertificate3#Party
- * PartyAndCertificate3.Party}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#mmModificationCode
+ * PartyAndCertificate3.mmModificationCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyAndCertificate3#mmParty
+ * PartyAndCertificate3.mmParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#Certificate
- * PartyAndCertificate3.Certificate}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#mmCertificate
+ * PartyAndCertificate3.mmCertificate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,9 +71,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * PartyAndCertificate2}</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "PartyAndCertificate3", propOrder = {"modificationCode", "party", "certificate"})
 public class PartyAndCertificate3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Modification1Code modificationCode;
 	/**
 	 * Specifies the type of change.
 	 * <p>
@@ -94,19 +105,20 @@ public class PartyAndCertificate3 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> PartyAndCertificate3.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationCode";
 			definition = "Specifies the type of change.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	protected PartyIdentification43 party;
 	/**
 	 * Entity involved in an activity.
 	 * <p>
@@ -118,8 +130,8 @@ public class PartyAndCertificate3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -138,21 +150,22 @@ public class PartyAndCertificate3 {
 	 * definition} = "Entity involved in an activity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Party = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> PartyAndCertificate3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "Pty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Party";
 			definition = "Entity involved in an activity.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected Max10KBinary certificate;
 	/**
 	 * Security certificate used to sign electronically.
 	 * <p>
@@ -166,8 +179,8 @@ public class PartyAndCertificate3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.SecurityCertificatePartyRole#SecurityCertificate
-	 * SecurityCertificatePartyRole.SecurityCertificate}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecurityCertificatePartyRole#mmSecurityCertificate
+	 * SecurityCertificatePartyRole.mmSecurityCertificate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -186,17 +199,17 @@ public class PartyAndCertificate3 {
 	 * definition} = "Security certificate used to sign electronically."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Certificate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCertificate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> SecurityCertificatePartyRole.mmSecurityCertificate;
 			componentContext_lazy = () -> PartyAndCertificate3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.SecurityCertificatePartyRole.SecurityCertificate;
 			isDerived = false;
 			xmlTag = "Cert";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Certificate";
 			definition = "Security certificate used to sign electronically.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max10KBinary.mmObject();
 		}
 	};
@@ -204,15 +217,41 @@ public class PartyAndCertificate3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyAndCertificate3.ModificationCode, com.tools20022.repository.msg.PartyAndCertificate3.Party,
-						com.tools20022.repository.msg.PartyAndCertificate3.Certificate);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(PartyAndCertificate3.mmModificationCode, PartyAndCertificate3.mmParty, PartyAndCertificate3.mmCertificate);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyAndCertificate3";
 				definition = "Party and related security certificate.";
 				previousVersion_lazy = () -> PartyAndCertificate2.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ModCd")
+	public Modification1Code getModificationCode() {
+		return modificationCode;
+	}
+
+	public void setModificationCode(Modification1Code modificationCode) {
+		this.modificationCode = modificationCode;
+	}
+
+	@XmlElement(name = "Pty", required = true)
+	public PartyIdentification43 getParty() {
+		return party;
+	}
+
+	public void setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+		this.party = party;
+	}
+
+	@XmlElement(name = "Cert")
+	public Max10KBinary getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(Max10KBinary certificate) {
+		this.certificate = certificate;
 	}
 }

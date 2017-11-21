@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CommunicationMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,27 +36,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#Email
- * CommunicationMethod2Code.Email}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#mmEmail
+ * CommunicationMethod2Code.mmEmail}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#Fax
- * CommunicationMethod2Code.Fax}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#mmFax
+ * CommunicationMethod2Code.mmFax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#File
- * CommunicationMethod2Code.File}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#mmFile
+ * CommunicationMethod2Code.mmFile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#Online
- * CommunicationMethod2Code.Online}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#mmOnline
+ * CommunicationMethod2Code.mmOnline}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#PostalService
- * CommunicationMethod2Code.PostalService}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod2Code#mmPostalService
+ * CommunicationMethod2Code.mmPostalService}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -90,9 +92,9 @@ public class CommunicationMethod2Code extends CommunicationMethodCode {
 	 * name} = "Email"</li>
 	 * </ul>
 	 */
-	public static final MMCode Email = new MMCode() {
+	public static final MMCode mmEmail = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Email";
 			owner_lazy = () -> CommunicationMethod2Code.mmObject();
 		}
@@ -113,9 +115,9 @@ public class CommunicationMethod2Code extends CommunicationMethodCode {
 	 * name} = "Fax"</li>
 	 * </ul>
 	 */
-	public static final MMCode Fax = new MMCode() {
+	public static final MMCode mmFax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fax";
 			owner_lazy = () -> CommunicationMethod2Code.mmObject();
 		}
@@ -136,9 +138,9 @@ public class CommunicationMethod2Code extends CommunicationMethodCode {
 	 * name} = "File"</li>
 	 * </ul>
 	 */
-	public static final MMCode File = new MMCode() {
+	public static final MMCode mmFile = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "File";
 			owner_lazy = () -> CommunicationMethod2Code.mmObject();
 		}
@@ -159,9 +161,9 @@ public class CommunicationMethod2Code extends CommunicationMethodCode {
 	 * name} = "Online"</li>
 	 * </ul>
 	 */
-	public static final MMCode Online = new MMCode() {
+	public static final MMCode mmOnline = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Online";
 			owner_lazy = () -> CommunicationMethod2Code.mmObject();
 		}
@@ -182,9 +184,9 @@ public class CommunicationMethod2Code extends CommunicationMethodCode {
 	 * name} = "PostalService"</li>
 	 * </ul>
 	 */
-	public static final MMCode PostalService = new MMCode() {
+	public static final MMCode mmPostalService = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostalService";
 			owner_lazy = () -> CommunicationMethod2Code.mmObject();
 		}
@@ -193,13 +195,12 @@ public class CommunicationMethod2Code extends CommunicationMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("EMAL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommunicationMethod2Code";
 				definition = "Communication method used for the transmission of documents.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CommunicationMethod2Code.Email, com.tools20022.repository.codeset.CommunicationMethod2Code.Fax,
-						com.tools20022.repository.codeset.CommunicationMethod2Code.File, com.tools20022.repository.codeset.CommunicationMethod2Code.Online, com.tools20022.repository.codeset.CommunicationMethod2Code.PostalService);
+				code_lazy = () -> Arrays.asList(CommunicationMethod2Code.mmEmail, CommunicationMethod2Code.mmFax, CommunicationMethod2Code.mmFile, CommunicationMethod2Code.mmOnline, CommunicationMethod2Code.mmPostalService);
 				trace_lazy = () -> CommunicationMethodCode.mmObject();
 			}
 		});

@@ -20,11 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.PriceRateOrAmountChoice;
 import com.tools20022.repository.choice.YieldedOrValueType1Choice;
 import com.tools20022.repository.entity.SecuritiesPricing;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Type and information about a price.
@@ -35,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Price2#Type Price2.Type}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Price2#Value Price2.Value}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Price2#mmType Price2.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Price2#mmValue Price2.mmValue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -45,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -57,9 +63,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Type and information about a price."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Price2", propOrder = {"type", "value"})
 public class Price2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected YieldedOrValueType1Choice type;
 	/**
 	 * Specification of the price type.
 	 * <p>
@@ -72,8 +81,8 @@ public class Price2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceType
-	 * SecuritiesPricing.PriceType}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceType
+	 * SecuritiesPricing.mmPriceType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} = {@linkplain com.tools20022.repository.msg.Price2
@@ -91,21 +100,22 @@ public class Price2 {
 	 * definition} = "Specification of the price type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Type = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> SecuritiesPricing.mmPriceType;
 			componentContext_lazy = () -> Price2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.PriceType;
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specification of the price type.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> YieldedOrValueType1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> YieldedOrValueType1Choice.mmObject();
 		}
 	};
+	protected PriceRateOrAmountChoice value;
 	/**
 	 * Value of the price, for example, as a currency and value.
 	 * <p>
@@ -139,17 +149,17 @@ public class Price2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Value = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> Price2.mmObject();
 			businessComponentTrace_lazy = () -> SecuritiesPricing.mmObject();
+			componentContext_lazy = () -> Price2.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Value";
 			definition = "Value of the price, for example, as a currency and value.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> PriceRateOrAmountChoice.mmObject();
 		}
 	};
@@ -157,14 +167,32 @@ public class Price2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Price2.Type, com.tools20022.repository.msg.Price2.Value);
+				messageElement_lazy = () -> Arrays.asList(Price2.mmType, Price2.mmValue);
 				trace_lazy = () -> SecuritiesPricing.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Price2";
 				definition = "Type and information about a price.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public YieldedOrValueType1Choice getType() {
+		return type;
+	}
+
+	public void setType(YieldedOrValueType1Choice type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Val", required = true)
+	public PriceRateOrAmountChoice getValue() {
+		return value;
+	}
+
+	public void setValue(PriceRateOrAmountChoice value) {
+		this.value = value;
 	}
 }

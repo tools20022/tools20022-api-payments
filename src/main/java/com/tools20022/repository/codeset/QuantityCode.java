@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,22 +31,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#Open
- * QuantityCode.Open}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#mmOpen
+ * QuantityCode.mmOpen}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.QuantityCode#UnknownQuantity
- * QuantityCode.UnknownQuantity}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#AllSecurities
- * QuantityCode.AllSecurities}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#AnyAndAll
- * QuantityCode.AnyAndAll}</li>
+ * {@linkplain com.tools20022.repository.codeset.QuantityCode#mmUnknownQuantity
+ * QuantityCode.mmUnknownQuantity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.QuantityCode#mmAllSecurities
+ * QuantityCode.mmAllSecurities}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.QuantityCode#mmAnyAndAll
+ * QuantityCode.mmAnyAndAll}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +88,9 @@ public class QuantityCode {
 	 * definition} = "Quantity has not been established."</li>
 	 * </ul>
 	 */
-	public static final MMCode Open = new MMCode() {
+	public static final MMCode mmOpen = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Open";
 			definition = "Quantity has not been established.";
 			owner_lazy = () -> QuantityCode.mmObject();
@@ -115,9 +118,9 @@ public class QuantityCode {
 	 * "Quantity is unknown by the sender or has not been established."</li>
 	 * </ul>
 	 */
-	public static final MMCode UnknownQuantity = new MMCode() {
+	public static final MMCode mmUnknownQuantity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnknownQuantity";
 			definition = "Quantity is unknown by the sender or has not been established.";
 			owner_lazy = () -> QuantityCode.mmObject();
@@ -147,9 +150,9 @@ public class QuantityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AllSecurities = new MMCode() {
+	public static final MMCode mmAllSecurities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllSecurities";
 			definition = "Instruction applies to the entire eligible balance of underlying securities.";
 			owner_lazy = () -> QuantityCode.mmObject();
@@ -179,9 +182,9 @@ public class QuantityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AnyAndAll = new MMCode() {
+	public static final MMCode mmAnyAndAll = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AnyAndAll";
 			definition = "Instruction applies to the entire eligible balance of underlying securities.";
 			owner_lazy = () -> QuantityCode.mmObject();
@@ -192,13 +195,12 @@ public class QuantityCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("OPEN");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "QuantityCode";
 				definition = "Quantity is unknown by the sender or has not been established.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.QuantityCode.Open, com.tools20022.repository.codeset.QuantityCode.UnknownQuantity, com.tools20022.repository.codeset.QuantityCode.AllSecurities,
-						com.tools20022.repository.codeset.QuantityCode.AnyAndAll);
+				code_lazy = () -> Arrays.asList(QuantityCode.mmOpen, QuantityCode.mmUnknownQuantity, QuantityCode.mmAllSecurities, QuantityCode.mmAnyAndAll);
 			}
 		});
 		return mmObject_lazy.get();

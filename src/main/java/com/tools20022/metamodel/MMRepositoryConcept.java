@@ -18,8 +18,14 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.NameFirstLetterUppercase;
+import com.tools20022.metamodel.constraints.RemovalDateRegistrationStatus;
 import com.tools20022.metamodel.*;
 import java.util.Date;
 import java.util.function.Supplier;
@@ -31,6 +37,62 @@ import java.util.Optional;
  * MessageDefinition and which is stored in the Repository
  */
 public interface MMRepositoryConcept extends MMModelEntity {
+
+	/**
+	 * a word or set of words by which a RepositoryConcept is known, addressed
+	 * or referred to
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, String> nameAttribute = newAttribute();
+	/**
+	 * describes the semantic meaning of a RepositoryConcept
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, Optional<String>> definitionAttribute = newAttribute();
+	/**
+	 * Enables modelers to markup elements of the Repository with semantic
+	 * metadata.
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, List<MMSemanticMarkup>> semanticMarkupAttribute = newAttribute();
+	/**
+	 * Doclets of the entity, used for documentation.
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, List<MMDoclet>> docletAttribute = newAttribute();
+	/**
+	 * provides a representative instance of a RepositoryConcept
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, List<String>> exampleAttribute = newAttribute();
+	/**
+	 * a property of a RepositoryConcept specifying a semantic condition or
+	 * restriction expressed in natural language text and potentially in a
+	 * formal notation
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, List<MMConstraint>> constraintAttribute = newAttribute();
+	/**
+	 * specifies in which stage of the registration lifecycle a
+	 * RepositoryConcept is in
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, MMRegistrationStatus> registrationStatusAttribute = newAttribute();
+	/**
+	 * specifies the date at which a RepositoryConcept will cease or has ceased
+	 * to be part of the Repository
+	 */
+	public final static MetamodelAttribute<MMRepositoryConcept, Optional<Date>> removalDateAttribute = newAttribute();
+	/**
+	 * If a removalDate is specified then the registrationStatus must be
+	 * OBSOLETE removalDate-&gt;notEmpty( ) implies registrationStatus =
+	 * RegistrationStatus::OBSOLETE
+	 */
+	public final static MetamodelConstraint<MMRepositoryConcept> checkRemovalDateRegistrationStatus = newConstraint(b -> {
+		new RemovalDateRegistrationStatus().accept(b);
+	});
+	/**
+	 * First letter of name shall be upper case. [A-Z] Set
+	 * {'A','B','C','D','E','F'
+	 * ,'G','H','I','J','K','L','M','N','O','P','Q','R','S'
+	 * ,'T','U','V','W','X','Y','Z'}-&gt;exists(x|x=name.substring(1,1))
+	 */
+	public final static MetamodelConstraint<MMRepositoryConcept> checkNameFirstLetterUppercase = newConstraint(b -> {
+		new NameFirstLetterUppercase().accept(b);
+	});
 
 	public static MetamodelType<MMRepositoryConcept> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMRepositoryConcept.class);

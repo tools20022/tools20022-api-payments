@@ -18,6 +18,8 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,11 +33,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMIdentifierSet#getIdentificationScheme
  * identificationScheme} =
  * "Hong Kong Interbank Clearing Ltd (HKICL); Bank Code of Hong Kong"</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
+ * "HK[0-9]{3,3}"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -61,12 +65,13 @@ public class HongKongBankIdentifier {
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("HK123");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HongKongBankIdentifier";
 				definition = "Hong Kong Bank Code. Identifies Hong Kong financial institutions on the Hong Kong local clearing system.";
 				identificationScheme = "Hong Kong Interbank Clearing Ltd (HKICL); Bank Code of Hong Kong";
+				pattern = "HK[0-9]{3,3}";
 			}
 		});
 		return mmObject_lazy.get();

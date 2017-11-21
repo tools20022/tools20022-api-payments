@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CSCManagement1Code;
 import com.tools20022.repository.datatype.Min3Max4NumericText;
 import com.tools20022.repository.entity.PaymentCard;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Card security code (CSC) associated with the card performing the transaction.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardSecurityInformation1#CSCManagement
- * CardSecurityInformation1.CSCManagement}</li>
+ * {@linkplain com.tools20022.repository.msg.CardSecurityInformation1#mmCSCManagement
+ * CardSecurityInformation1.mmCSCManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardSecurityInformation1#CSCValue
- * CardSecurityInformation1.CSCValue}</li>
+ * {@linkplain com.tools20022.repository.msg.CardSecurityInformation1#mmCSCValue
+ * CardSecurityInformation1.mmCSCValue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +68,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CardSecurityInformation1", propOrder = {"CSCManagement", "CSCValue"})
 public class CardSecurityInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected CSCManagement1Code cSCManagement;
 	/**
 	 * Card security code (CSC) management associated with the transaction.
 	 * <p>
@@ -78,8 +87,8 @@ public class CardSecurityInformation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentCard#SecurityCodeManagement
-	 * PaymentCard.SecurityCodeManagement}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentCard#mmSecurityCodeManagement
+	 * PaymentCard.mmSecurityCodeManagement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -99,20 +108,21 @@ public class CardSecurityInformation1 {
 	 * "Card security code (CSC) management associated with the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CSCManagement = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCSCManagement = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentCard.mmSecurityCodeManagement;
 			componentContext_lazy = () -> CardSecurityInformation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentCard.SecurityCodeManagement;
 			isDerived = false;
 			xmlTag = "CSCMgmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CSCManagement";
 			definition = "Card security code (CSC) management associated with the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CSCManagement1Code.mmObject();
 		}
 	};
+	protected Min3Max4NumericText cSCValue;
 	/**
 	 * Card security code (CSC).
 	 * <p>
@@ -126,8 +136,8 @@ public class CardSecurityInformation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentCard#SecurityCode
-	 * PaymentCard.SecurityCode}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentCard#mmSecurityCode
+	 * PaymentCard.mmSecurityCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -146,17 +156,17 @@ public class CardSecurityInformation1 {
 	 * definition} = "Card security code (CSC)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CSCValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCSCValue = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentCard.mmSecurityCode;
 			componentContext_lazy = () -> CardSecurityInformation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentCard.SecurityCode;
 			isDerived = false;
 			xmlTag = "CSCVal";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CSCValue";
 			definition = "Card security code (CSC).";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Min3Max4NumericText.mmObject();
 		}
 	};
@@ -164,14 +174,32 @@ public class CardSecurityInformation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardSecurityInformation1.CSCManagement, com.tools20022.repository.msg.CardSecurityInformation1.CSCValue);
+				messageElement_lazy = () -> Arrays.asList(CardSecurityInformation1.mmCSCManagement, CardSecurityInformation1.mmCSCValue);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardSecurityInformation1";
 				definition = "Card security code (CSC) associated with the card performing the transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "CSCMgmt", required = true)
+	public CSCManagement1Code getCSCManagement() {
+		return cSCManagement;
+	}
+
+	public void setCSCManagement(CSCManagement1Code cSCManagement) {
+		this.cSCManagement = cSCManagement;
+	}
+
+	@XmlElement(name = "CSCVal")
+	public Min3Max4NumericText getCSCValue() {
+		return cSCValue;
+	}
+
+	public void setCSCValue(Min3Max4NumericText cSCValue) {
+		this.cSCValue = cSCValue;
 	}
 }

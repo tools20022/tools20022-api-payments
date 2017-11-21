@@ -17,17 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CorporateAction9;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * An event determined by a corporation's board of directors, that changes the
@@ -42,221 +43,146 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.CorporateActionEvent#Type
- * CorporateActionEvent.Type}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmType
+ * CorporateActionEvent.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#MandatoryVoluntaryEventType
- * CorporateActionEvent.MandatoryVoluntaryEventType}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmMandatoryVoluntaryEventType
+ * CorporateActionEvent.mmMandatoryVoluntaryEventType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#UnderlyingSecurity
- * CorporateActionEvent.UnderlyingSecurity}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmUnderlyingSecurity
+ * CorporateActionEvent.mmUnderlyingSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionPrice
- * CorporateActionEvent.CorporateActionPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionPrice
+ * CorporateActionEvent.mmCorporateActionPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#ExchangeRate
- * CorporateActionEvent.ExchangeRate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmExchangeRate
+ * CorporateActionEvent.mmExchangeRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#RegistrationDetails
- * CorporateActionEvent.RegistrationDetails}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmRegistrationDetails
+ * CorporateActionEvent.mmRegistrationDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BasketOrIndexInformation
- * CorporateActionEvent.BasketOrIndexInformation}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBasketOrIndexInformation
+ * CorporateActionEvent.mmBasketOrIndexInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Deadline
- * CorporateActionEvent.Deadline}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmDeadline
+ * CorporateActionEvent.mmDeadline}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#AdditionalBusinessProcess
- * CorporateActionEvent.AdditionalBusinessProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmAdditionalBusinessProcess
+ * CorporateActionEvent.mmAdditionalBusinessProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#TradingDate
- * CorporateActionEvent.TradingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmTradingDate
+ * CorporateActionEvent.mmTradingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionCharge
- * CorporateActionEvent.CorporateActionCharge}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionCharge
+ * CorporateActionEvent.mmCorporateActionCharge}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#PariPassuDate
- * CorporateActionEvent.PariPassuDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmPariPassuDate
+ * CorporateActionEvent.mmPariPassuDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#InformationConditions
- * CorporateActionEvent.InformationConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmInformationConditions
+ * CorporateActionEvent.mmInformationConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#FractionalQuantity
- * CorporateActionEvent.FractionalQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmFractionalQuantity
+ * CorporateActionEvent.mmFractionalQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#EventProcessingType
- * CorporateActionEvent.EventProcessingType}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmEventProcessingType
+ * CorporateActionEvent.mmEventProcessingType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionStatus
- * CorporateActionEvent.CorporateActionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionStatus
+ * CorporateActionEvent.mmCorporateActionStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#AnnouncementDate
- * CorporateActionEvent.AnnouncementDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmAnnouncementDate
+ * CorporateActionEvent.mmAnnouncementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#EffectiveDate
- * CorporateActionEvent.EffectiveDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmEffectiveDate
+ * CorporateActionEvent.mmEffectiveDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#FurtherDetailsAnnouncementDate
- * CorporateActionEvent.FurtherDetailsAnnouncementDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmFurtherDetailsAnnouncementDate
+ * CorporateActionEvent.mmFurtherDetailsAnnouncementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#MarginFixingDate
- * CorporateActionEvent.MarginFixingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmMarginFixingDate
+ * CorporateActionEvent.mmMarginFixingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#ResultPublicationDate
- * CorporateActionEvent.ResultPublicationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmResultPublicationDate
+ * CorporateActionEvent.mmResultPublicationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#UnconditionalDate
- * CorporateActionEvent.UnconditionalDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmUnconditionalDate
+ * CorporateActionEvent.mmUnconditionalDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#WhollyUnconditionalDate
- * CorporateActionEvent.WhollyUnconditionalDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmWhollyUnconditionalDate
+ * CorporateActionEvent.mmWhollyUnconditionalDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#LapsedDate
- * CorporateActionEvent.LapsedDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmLapsedDate
+ * CorporateActionEvent.mmLapsedDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BookClosurePeriod
- * CorporateActionEvent.BookClosurePeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBookClosurePeriod
+ * CorporateActionEvent.mmBookClosurePeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#SecuritiesQuantity
- * CorporateActionEvent.SecuritiesQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmSecuritiesQuantity
+ * CorporateActionEvent.mmSecuritiesQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#RestrictionIndicator
- * CorporateActionEvent.RestrictionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmRestrictionIndicator
+ * CorporateActionEvent.mmRestrictionIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#EventStage
- * CorporateActionEvent.EventStage}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmEventStage
+ * CorporateActionEvent.mmEventStage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#DocumentationLocation
- * CorporateActionEvent.DocumentationLocation}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmDocumentationLocation
+ * CorporateActionEvent.mmDocumentationLocation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#SecuritiesQuantitySought
- * CorporateActionEvent.SecuritiesQuantitySought}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmSecuritiesQuantitySought
+ * CorporateActionEvent.mmSecuritiesQuantitySought}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#PartialElectionIndicator
- * CorporateActionEvent.PartialElectionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmPartialElectionIndicator
+ * CorporateActionEvent.mmPartialElectionIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionPartyRole
- * CorporateActionEvent.CorporateActionPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionPartyRole
+ * CorporateActionEvent.mmCorporateActionPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#MarketClaim
- * CorporateActionEvent.MarketClaim}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmMarketClaim
+ * CorporateActionEvent.mmMarketClaim}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BiddingConditions
- * CorporateActionEvent.BiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBiddingConditions
+ * CorporateActionEvent.mmBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#RelatedClassAction
- * CorporateActionEvent.RelatedClassAction}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmRelatedClassAction
+ * CorporateActionEvent.mmRelatedClassAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#CorporateActionEventRegistration
- * CorporateActionEvent.CorporateActionEventRegistration}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionEventRegistration
+ * CorporateActionEvent.mmCorporateActionEventRegistration}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#SuspensionPeriod
- * CorporateActionEvent.SuspensionPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmSuspensionPeriod
+ * CorporateActionEvent.mmSuspensionPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Lottery
- * CorporateActionEvent.Lottery}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmLottery
+ * CorporateActionEvent.mmLottery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#MarginType
- * CorporateActionEvent.MarginType}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmMarginType
+ * CorporateActionEvent.mmMarginType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#RelatedMeeting
- * CorporateActionEvent.RelatedMeeting}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmRelatedMeeting
+ * CorporateActionEvent.mmRelatedMeeting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Services
- * CorporateActionEvent.Services}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmServices
+ * CorporateActionEvent.mmServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Issuance
- * CorporateActionEvent.Issuance}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmIssuance
+ * CorporateActionEvent.mmIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#SecuritiesModification
- * CorporateActionEvent.SecuritiesModification}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmSecuritiesModification
+ * CorporateActionEvent.mmSecuritiesModification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#TradingPeriod
- * CorporateActionEvent.TradingPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmTradingPeriod
+ * CorporateActionEvent.mmTradingPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#TransactionTax
- * CorporateActionEvent.TransactionTax}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmTransactionTax
+ * CorporateActionEvent.mmTransactionTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#ConsentType
- * CorporateActionEvent.ConsentType}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmConsentType
+ * CorporateActionEvent.mmConsentType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#ProceedsDefinition
- * CorporateActionEvent.ProceedsDefinition}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#CorporateEvent
- * Security.CorporateEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ContactPoint#RelatedCorporateActionEvent
- * ContactPoint.RelatedCorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BookClosureCorporateAction
- * DateTimePeriod.BookClosureCorporateAction}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedCorporateAction
- * DateTimePeriod.RelatedCorporateAction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Tax#CorporateActionEvent
- * Tax.CorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedEventForFractionalQuantity
- * SecuritiesQuantity.RelatedEventForFractionalQuantity}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#CorporateActionEvent
- * SecuritiesQuantity.CorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedCorporateActionEvent
- * SecuritiesQuantity.RelatedCorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionEvent
- * CorporateActionStatus.CorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CurrencyExchange#RelatedCorporateActionEvent
- * CurrencyExchange.RelatedCorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEventRegistration#CorporateActionEvent
- * CorporateActionEventRegistration.CorporateActionEvent}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#EventInformation
- * Issuance.EventInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ProceedsDefinition#CorporateAction
- * ProceedsDefinition.CorporateAction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ClassAction#CorporateEvent
- * ClassAction.CorporateEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesModification#RelatedCorporateEvent
- * SecuritiesModification.RelatedCorporateEvent}</li>
- * <li>{@linkplain com.tools20022.repository.entity.BiddingConditions#Event
- * BiddingConditions.Event}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#CorporateActionEvent
- * CorporateActionPrice.CorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#Event
- * CorporateActionServicing.Event}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Deadline#RelatedCorporateActionEvent
- * Deadline.RelatedCorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionFeesAndCharges#CorporateAction
- * CorporateActionFeesAndCharges.CorporateAction}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.MarketClaim#RelatedCorporateEvent
- * MarketClaim.RelatedCorporateEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#CorporateActionEvent
- * SuspensionPeriod.CorporateActionEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Lottery#RelatedCorporateEvent
- * Lottery.RelatedCorporateEvent}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Meeting#CorporateEvent
- * Meeting.CorporateEvent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#CorporateActionEvent
- * CorporateActionPartyRole.CorporateActionEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmProceedsDefinition
+ * CorporateActionEvent.mmProceedsDefinition}</li>
  * </ul>
  * </li>
  * <li>
@@ -268,10 +194,86 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmCorporateEvent
+ * Security.mmCorporateEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ContactPoint#mmRelatedCorporateActionEvent
+ * ContactPoint.mmRelatedCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBookClosureCorporateAction
+ * DateTimePeriod.mmBookClosureCorporateAction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedCorporateAction
+ * DateTimePeriod.mmRelatedCorporateAction}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Tax#mmCorporateActionEvent
+ * Tax.mmCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedEventForFractionalQuantity
+ * SecuritiesQuantity.mmRelatedEventForFractionalQuantity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmCorporateActionEvent
+ * SecuritiesQuantity.mmCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedCorporateActionEvent
+ * SecuritiesQuantity.mmRelatedCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionEvent
+ * CorporateActionStatus.mmCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmRelatedCorporateActionEvent
+ * CurrencyExchange.mmRelatedCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEventRegistration#mmCorporateActionEvent
+ * CorporateActionEventRegistration.mmCorporateActionEvent}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmEventInformation
+ * Issuance.mmEventInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ProceedsDefinition#mmCorporateAction
+ * ProceedsDefinition.mmCorporateAction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ClassAction#mmCorporateEvent
+ * ClassAction.mmCorporateEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesModification#mmRelatedCorporateEvent
+ * SecuritiesModification.mmRelatedCorporateEvent}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.BiddingConditions#mmEvent
+ * BiddingConditions.mmEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#mmCorporateActionEvent
+ * CorporateActionPrice.mmCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmEvent
+ * CorporateActionServicing.mmEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Deadline#mmRelatedCorporateActionEvent
+ * Deadline.mmRelatedCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionFeesAndCharges#mmCorporateAction
+ * CorporateActionFeesAndCharges.mmCorporateAction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MarketClaim#mmRelatedCorporateEvent
+ * MarketClaim.mmRelatedCorporateEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmCorporateActionEvent
+ * SuspensionPeriod.mmCorporateActionEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Lottery#mmRelatedCorporateEvent
+ * Lottery.mmRelatedCorporateEvent}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmCorporateEvent
+ * Meeting.mmCorporateEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#mmCorporateActionEvent
+ * CorporateActionPartyRole.mmCorporateActionEvent}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -287,6 +289,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionEvent {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionEventTypeV3Code type;
 	/**
 	 * Type of corporate action event.
 	 * <p>
@@ -300,8 +303,9 @@ public class CorporateActionEvent {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CorporateAction9#EventType
-	 * CorporateAction9.EventType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CorporateAction9#mmEventType
+	 * CorporateAction9.mmEventType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -320,19 +324,28 @@ public class CorporateActionEvent {
 	 * definition} = "Type of corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CorporateAction9.EventType);
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			derivation_lazy = () -> Arrays.asList(CorporateAction9.mmEventType);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of corporate action event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventTypeV3Code.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionMandatoryVoluntaryCode mandatoryVoluntaryEventType;
 	/**
 	 * Specifies whether the event is mandatory, mandatory with options or
 	 * voluntary.
@@ -362,18 +375,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MandatoryVoluntaryEventType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMandatoryVoluntaryEventType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MandatoryVoluntaryEventType";
 			definition = "Specifies whether the event is mandatory, mandatory with options or voluntary.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionMandatoryVoluntaryCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getMandatoryVoluntaryEventType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Security underlyingSecurity;
 	/**
 	 * Security to which this instruction or event applies.
 	 * <p>
@@ -382,8 +404,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#CorporateEvent
-	 * Security.CorporateEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmCorporateEvent
+	 * Security.mmCorporateEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -406,20 +428,21 @@ public class CorporateActionEvent {
 	 * definition} = "Security to which this instruction or event applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd UnderlyingSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUnderlyingSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingSecurity";
 			definition = "Security to which this instruction or event applies.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.CorporateEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmCorporateEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionPrice> corporateActionPrice;
 	/**
 	 * Specifies prices related to a corporate action.
 	 * <p>
@@ -428,8 +451,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#CorporateActionEvent
-	 * CorporateActionPrice.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#mmCorporateActionEvent
+	 * CorporateActionPrice.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -454,19 +477,20 @@ public class CorporateActionEvent {
 	 * definition} = "Specifies prices related to a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionPrice";
 			definition = "Specifies prices related to a corporate action.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate;
 	/**
 	 * Rate, specified by the issuer, when the paid amount is not in the same
 	 * currency as the specified amount.
@@ -476,8 +500,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#RelatedCorporateActionEvent
-	 * CurrencyExchange.RelatedCorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmRelatedCorporateActionEvent
+	 * CurrencyExchange.mmRelatedCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -503,19 +527,20 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ExchangeRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExchangeRate";
 			definition = "Rate, specified by the issuer, when the paid amount is not in the same currency as the specified amount.";
 			minOccurs = 0;
-			type_lazy = () -> CurrencyExchange.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.RelatedCorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmRelatedCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 		}
 	};
+	protected Max350Text registrationDetails;
 	/**
 	 * Provides information required for the registration.
 	 * <p>
@@ -541,18 +566,27 @@ public class CorporateActionEvent {
 	 * definition} = "Provides information required for the registration."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegistrationDetails = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegistrationDetails = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDetails";
 			definition = "Provides information required for the registration.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getRegistrationDetails", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text basketOrIndexInformation;
 	/**
 	 * Provides additional information on the basket or index underlying a
 	 * security, for example a warrant.
@@ -581,18 +615,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BasketOrIndexInformation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBasketOrIndexInformation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BasketOrIndexInformation";
 			definition = "Provides additional information on the basket or index underlying a security, for example a warrant.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getBasketOrIndexInformation", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Deadline deadline;
 	/**
 	 * Specifies the different deadlines related to a corporate event.
 	 * <p>
@@ -601,8 +644,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Deadline#RelatedCorporateActionEvent
-	 * Deadline.RelatedCorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.Deadline#mmRelatedCorporateActionEvent
+	 * Deadline.mmRelatedCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -626,20 +669,21 @@ public class CorporateActionEvent {
 	 * "Specifies the different deadlines related to a corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Deadline = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDeadline = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deadline";
 			definition = "Specifies the different deadlines related to a corporate event.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Deadline.mmRelatedCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Deadline.RelatedCorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected AdditionalBusinessProcessCode additionalBusinessProcess;
 	/**
 	 * Specifies the type of the additional business process linked to a
 	 * corporate action event such as a claim compensation or tax refund.
@@ -669,18 +713,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AdditionalBusinessProcess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAdditionalBusinessProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalBusinessProcess";
 			definition = "Specifies the type of the additional business process linked to a corporate action event such as a claim compensation or tax refund.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AdditionalBusinessProcessCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getAdditionalBusinessProcess", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime tradingDate;
 	/**
 	 * Date/time at which the deal (rights) was agreed.
 	 * <p>
@@ -706,18 +759,27 @@ public class CorporateActionEvent {
 	 * definition} = "Date/time at which the deal (rights) was agreed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingDate";
 			definition = "Date/time at which the deal (rights) was agreed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getTradingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionFeesAndCharges corporateActionCharge;
 	/**
 	 * Specifies the charges relative to a corporate action event.
 	 * <p>
@@ -726,8 +788,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionFeesAndCharges#CorporateAction
-	 * CorporateActionFeesAndCharges.CorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionFeesAndCharges#mmCorporateAction
+	 * CorporateActionFeesAndCharges.mmCorporateAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -753,20 +815,21 @@ public class CorporateActionEvent {
 	 * "Specifies the charges relative to a corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionCharge = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionCharge = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionCharge";
 			definition = "Specifies the charges relative to a corporate action event.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionFeesAndCharges.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.CorporateAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmCorporateAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmObject();
 		}
 	};
+	protected ISODateTime pariPassuDate;
 	/**
 	 * Date on which security will assimilate, become fungible, or have the same
 	 * rights to dividends as the parent issue.
@@ -795,18 +858,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PariPassuDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPariPassuDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PariPassuDate";
 			definition = "Date on which security will assimilate, become fungible, or have the same rights to dividends as the parent issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getPariPassuDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text informationConditions;
 	/**
 	 * Provides conditional information related to the event, eg, an offer is
 	 * subject to 50% acceptance, the offeror allows the securities holder to
@@ -836,18 +908,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InformationConditions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInformationConditions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationConditions";
 			definition = "Provides conditional information related to the event, eg, an offer is subject to 50% acceptance, the offeror allows the securities holder to set some conditions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getInformationConditions", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> fractionalQuantity;
 	/**
 	 * Fractional quantity resulting from an event which will be paid with cash
 	 * in lieu.
@@ -857,8 +938,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedEventForFractionalQuantity
-	 * SecuritiesQuantity.RelatedEventForFractionalQuantity}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedEventForFractionalQuantity
+	 * SecuritiesQuantity.mmRelatedEventForFractionalQuantity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -884,19 +965,20 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FractionalQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFractionalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FractionalQuantity";
 			definition = "Fractional quantity resulting from an event which will be paid with cash in lieu. ";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedEventForFractionalQuantity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.RelatedEventForFractionalQuantity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CorporateActionEventProcessingTypeCode eventProcessingType;
 	/**
 	 * Type of processing involved by a Corporate Action.
 	 * <p>
@@ -923,18 +1005,27 @@ public class CorporateActionEvent {
 	 * definition} = "Type of processing involved by a Corporate Action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventProcessingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventProcessingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventProcessingType";
 			definition = "Type of processing involved by a Corporate Action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getEventProcessingType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionStatus> corporateActionStatus;
 	/**
 	 * Status of the corporate action process.
 	 * <p>
@@ -943,8 +1034,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionEvent
-	 * CorporateActionStatus.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionEvent
+	 * CorporateActionStatus.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -969,19 +1060,20 @@ public class CorporateActionEvent {
 	 * definition} = "Status of the corporate action process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStatus";
 			definition = "Status of the corporate action process.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime announcementDate;
 	/**
 	 * Date/time at which the issuer announced that a corporate action event
 	 * will occur such as the issue of securities or an official meeting.
@@ -1010,18 +1102,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AnnouncementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAnnouncementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AnnouncementDate";
 			definition = "Date/time at which the issuer announced that a corporate action event will occur such as the issue of securities or an official meeting.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getAnnouncementDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime effectiveDate;
 	/**
 	 * Date/time at which an event is officially effective from the issuer's
 	 * perspective.
@@ -1050,18 +1151,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date/time at which an event is officially effective from the issuer's perspective.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getEffectiveDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime furtherDetailsAnnouncementDate;
 	/**
 	 * Date/time at which additional information on the event will be announced,
 	 * for instance exchange ratio announcement date.
@@ -1090,18 +1200,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FurtherDetailsAnnouncementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFurtherDetailsAnnouncementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FurtherDetailsAnnouncementDate";
 			definition = "Date/time at which additional information on the event will be announced, for instance exchange ratio announcement date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getFurtherDetailsAnnouncementDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime marginFixingDate;
 	/**
 	 * Date/time at which the margin rate will be determined .
 	 * <p>
@@ -1127,18 +1246,27 @@ public class CorporateActionEvent {
 	 * definition} = "Date/time at which the margin rate will be determined ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MarginFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMarginFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginFixingDate";
 			definition = "Date/time at which the margin rate will be determined .";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getMarginFixingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODate resultPublicationDate;
 	/**
 	 * Date on which results are published, eg, results of an offer, of a
 	 * meeting.
@@ -1167,18 +1295,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResultPublicationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResultPublicationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultPublicationDate";
 			definition = "Date on which results are published, eg, results of an offer, of a meeting.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getResultPublicationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime unconditionalDate;
 	/**
 	 * Date upon which the terms of the take-over become unconditional as to
 	 * acceptances.
@@ -1207,18 +1344,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute UnconditionalDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmUnconditionalDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnconditionalDate";
 			definition = "Date upon which the terms of the take-over become unconditional as to acceptances.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getUnconditionalDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime whollyUnconditionalDate;
 	/**
 	 * Date on which all conditions, including regulatory, legal etc. pertaining
 	 * to the take-over, have been met.
@@ -1247,18 +1393,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute WhollyUnconditionalDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmWhollyUnconditionalDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WhollyUnconditionalDate";
 			definition = "Date on which all conditions, including regulatory, legal etc. pertaining to the take-over, have been met.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getWhollyUnconditionalDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime lapsedDate;
 	/**
 	 * Date/time at which an event/offer is terminated or lapsed.
 	 * <p>
@@ -1285,18 +1440,27 @@ public class CorporateActionEvent {
 	 * "Date/time at which an event/offer is terminated or lapsed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LapsedDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLapsedDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LapsedDate";
 			definition = "Date/time at which an event/offer is terminated or lapsed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getLapsedDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod bookClosurePeriod;
 	/**
 	 * Period defining the last date on which shareholder registration will be
 	 * accepted by the issuer and the date on which shareholder registration
@@ -1307,8 +1471,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BookClosureCorporateAction
-	 * DateTimePeriod.BookClosureCorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBookClosureCorporateAction
+	 * DateTimePeriod.mmBookClosureCorporateAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1334,20 +1498,21 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BookClosurePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBookClosurePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookClosurePeriod";
 			definition = "Period defining the last date on which shareholder registration will be accepted by the issuer and the date on which shareholder registration will resume.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.BookClosureCorporateAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmBookClosureCorporateAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity;
 	/**
 	 * Provides information about securities quantity linked to a corporate
 	 * action.
@@ -1357,8 +1522,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#CorporateActionEvent
-	 * SecuritiesQuantity.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmCorporateActionEvent
+	 * SecuritiesQuantity.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1384,19 +1549,20 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Provides information about securities quantity linked to a corporate action.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator restrictionIndicator;
 	/**
 	 * Indicates whether there are legal or other restrictions associated with a
 	 * rights offer or other corporate event, for example, domicile,
@@ -1429,18 +1595,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RestrictionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRestrictionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestrictionIndicator";
 			definition = "Indicates whether there are legal or other restrictions associated with a rights offer or other corporate event, for example, domicile, citizenship, residency, type of investor.\r\nYes = There are restrictions.\r\nNo = There are no restrictions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getRestrictionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionEventStageCode eventStage;
 	/**
 	 * Stage in the corporate action event life cycle.
 	 * <p>
@@ -1467,18 +1642,27 @@ public class CorporateActionEvent {
 	 * definition} = "Stage in the corporate action event life cycle."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventStage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventStage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventStage";
 			definition = "Stage in the corporate action event life cycle.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionEventStageCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getEventStage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.ContactPoint> documentationLocation;
 	/**
 	 * Information on where additional information published for the event, can
 	 * be received. for instance the address for the Universal Resource Locator
@@ -1489,8 +1673,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPoint#RelatedCorporateActionEvent
-	 * ContactPoint.RelatedCorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPoint#mmRelatedCorporateActionEvent
+	 * ContactPoint.mmRelatedCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1516,19 +1700,20 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DocumentationLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDocumentationLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentationLocation";
 			definition = "Information on where additional information published for the event, can be received. for instance the address for the Universal Resource Locator (URL), eg, used over the www (HTTP) service.";
 			minOccurs = 0;
-			type_lazy = () -> ContactPoint.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.RelatedCorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmRelatedCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
 		}
 	};
+	protected SecuritiesQuantity securitiesQuantitySought;
 	/**
 	 * Quantity of securities the offeror/issuer will purchase or redeem under
 	 * the terms of the event. This can be a number or the term "any and all".
@@ -1538,8 +1723,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedCorporateActionEvent
-	 * SecuritiesQuantity.RelatedCorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedCorporateActionEvent
+	 * SecuritiesQuantity.mmRelatedCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1565,20 +1750,21 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesQuantitySought = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesQuantitySought = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantitySought";
 			definition = "Quantity of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.RelatedCorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator partialElectionIndicator;
 	/**
 	 * Specifies if the issuer will allow the agent to accept partial elections.
 	 * It is to allow split voting over options. It allows the client to elect
@@ -1609,18 +1795,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartialElectionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartialElectionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialElectionIndicator";
 			definition = "Specifies if the issuer will allow the agent to accept partial elections. It is to allow split voting over options. It allows the client to elect more than one option to be selected per designated holding.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getPartialElectionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionPartyRole corporateActionPartyRole;
 	/**
 	 * Specifies the role played by a party in the context of a corporate
 	 * action.
@@ -1630,8 +1825,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#CorporateActionEvent
-	 * CorporateActionPartyRole.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#mmCorporateActionEvent
+	 * CorporateActionPartyRole.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1658,20 +1853,21 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionPartyRole";
 			definition = "Specifies the role played by a party in the context of a corporate action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.MarketClaim> marketClaim;
 	/**
 	 * Market claim information.
 	 * <p>
@@ -1680,8 +1876,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MarketClaim#RelatedCorporateEvent
-	 * MarketClaim.RelatedCorporateEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.MarketClaim#mmRelatedCorporateEvent
+	 * MarketClaim.mmRelatedCorporateEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1705,19 +1901,20 @@ public class CorporateActionEvent {
 	 * definition} = "Market claim information."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MarketClaim = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMarketClaim = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketClaim";
 			definition = "Market claim information.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmRelatedCorporateEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MarketClaim.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MarketClaim.RelatedCorporateEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected BiddingConditions biddingConditions;
 	/**
 	 * Specifies the conditions under which securities can be acquired as part
 	 * of a corporate action.
@@ -1727,8 +1924,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BiddingConditions#Event
-	 * BiddingConditions.Event}</li>
+	 * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmEvent
+	 * BiddingConditions.mmEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1754,20 +1951,21 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BiddingConditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BiddingConditions";
 			definition = "Specifies the conditions under which securities can be acquired as part of a corporate action.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BiddingConditions.Event;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.ClassAction> relatedClassAction;
 	/**
 	 * Specifies the underlying class action related to the event.
 	 * <p>
@@ -1776,8 +1974,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ClassAction#CorporateEvent
-	 * ClassAction.CorporateEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.ClassAction#mmCorporateEvent
+	 * ClassAction.mmCorporateEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1802,19 +2000,20 @@ public class CorporateActionEvent {
 	 * "Specifies the underlying class action related to the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedClassAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedClassAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedClassAction";
 			definition = "Specifies the underlying class action related to the event.";
 			minOccurs = 0;
-			type_lazy = () -> ClassAction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ClassAction.CorporateEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ClassAction.mmCorporateEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionEventRegistration> corporateActionEventRegistration;
 	/**
 	 * Official registration of the event.
 	 * <p>
@@ -1823,8 +2022,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEventRegistration#CorporateActionEvent
-	 * CorporateActionEventRegistration.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEventRegistration#mmCorporateActionEvent
+	 * CorporateActionEventRegistration.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1849,19 +2048,20 @@ public class CorporateActionEvent {
 	 * definition} = "Official registration of the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionEventRegistration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionEventRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionEventRegistration";
 			definition = "Official registration of the event.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEventRegistration.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SuspensionPeriod suspensionPeriod;
 	/**
 	 * Period defining the last date for which an action will be accepted and
 	 * the date on which the suspension will be released and normal processing
@@ -1872,8 +2072,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#CorporateActionEvent
-	 * SuspensionPeriod.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmCorporateActionEvent
+	 * SuspensionPeriod.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1899,20 +2099,21 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SuspensionPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSuspensionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SuspensionPeriod";
 			definition = "Period defining the last date for which an action will be accepted and the date on which the suspension will be released and normal processing will resume.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Lottery lottery;
 	/**
 	 * Organisation of draws for cash prizes on bonds (instead of coupon
 	 * payments). Every issued bond (similar to a lottery ticket) has an equal
@@ -1923,8 +2124,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Lottery#RelatedCorporateEvent
-	 * Lottery.RelatedCorporateEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.Lottery#mmRelatedCorporateEvent
+	 * Lottery.mmRelatedCorporateEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1949,20 +2150,21 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Lottery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLottery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lottery";
 			definition = "Organisation of draws for cash prizes on bonds (instead of coupon payments). Every issued bond (similar to a lottery ticket) has an equal opportunity at winning payments in the draws.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Lottery.mmRelatedCorporateEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Lottery.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Lottery.RelatedCorporateEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected RemarketingMarginTypeCode marginType;
 	/**
 	 * Specifies the margin type for a remarketing procedure.
 	 * <p>
@@ -1989,18 +2191,27 @@ public class CorporateActionEvent {
 	 * definition} = "Specifies the margin type for a remarketing procedure."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MarginType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMarginType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginType";
 			definition = "Specifies the margin type for a remarketing procedure.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RemarketingMarginTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getMarginType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Meeting> relatedMeeting;
 	/**
 	 * Provides information on the meeting related to the corporate event.
 	 * <p>
@@ -2009,8 +2220,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#CorporateEvent
-	 * Meeting.CorporateEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmCorporateEvent
+	 * Meeting.mmCorporateEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2034,19 +2245,20 @@ public class CorporateActionEvent {
 	 * "Provides information on the meeting  related to the corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeeting";
 			definition = "Provides information on the meeting  related to the corporate event.";
 			minOccurs = 0;
-			type_lazy = () -> Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.CorporateEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmCorporateEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionServicing> services;
 	/**
 	 * Specifies the different services linked to a corporate action event.
 	 * <p>
@@ -2055,8 +2267,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#Event
-	 * CorporateActionServicing.Event}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmEvent
+	 * CorporateActionServicing.mmEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2082,19 +2294,20 @@ public class CorporateActionEvent {
 	 * "Specifies the different services linked to a corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Services = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Specifies the different services linked to a corporate action event.";
 			minOccurs = 0;
-			type_lazy = () -> CorporateActionServicing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.Event;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Issuance> issuance;
 	/**
 	 * Information specified when the corporate event relates to the issuance of
 	 * securities.
@@ -2104,8 +2317,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Issuance#EventInformation
-	 * Issuance.EventInformation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Issuance#mmEventInformation
+	 * Issuance.mmEventInformation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2130,19 +2343,20 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Issuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Information specified when the corporate event relates to the issuance of securities.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.mmEventInformation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.EventInformation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesModification> securitiesModification;
 	/**
 	 * Modification of the reference data of a security or of the organisation
 	 * that issued it.
@@ -2152,8 +2366,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesModification#RelatedCorporateEvent
-	 * SecuritiesModification.RelatedCorporateEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesModification#mmRelatedCorporateEvent
+	 * SecuritiesModification.mmRelatedCorporateEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2180,19 +2394,20 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesModification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesModification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesModification";
 			definition = "Modification of the reference data of a security or of the organisation that issued it.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmRelatedCorporateEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.RelatedCorporateEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DateTimePeriod tradingPeriod;
 	/**
 	 * Period during which a financial instrument is available for trading.
 	 * <p>
@@ -2201,8 +2416,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedCorporateAction
-	 * DateTimePeriod.RelatedCorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedCorporateAction
+	 * DateTimePeriod.mmRelatedCorporateAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2227,20 +2442,21 @@ public class CorporateActionEvent {
 	 * "Period during which a financial instrument is available for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPeriod";
 			definition = "Period during which a financial instrument is available for trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RelatedCorporateAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedCorporateAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected Tax transactionTax;
 	/**
 	 * Tax rate of financial transactions related to an event.
 	 * <p>
@@ -2249,8 +2465,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#CorporateActionEvent
-	 * Tax.CorporateActionEvent}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmCorporateActionEvent
+	 * Tax.mmCorporateActionEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2273,20 +2489,21 @@ public class CorporateActionEvent {
 	 * definition} = "Tax rate of financial transactions related to an event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TransactionTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransactionTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionTax";
 			definition = "Tax rate of financial transactions related to an event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Tax.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.CorporateActionEvent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmCorporateActionEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
 		}
 	};
+	protected ConsentTypeCode consentType;
 	/**
 	 * Corporate actions may be approved by shareholders without a meeting or a
 	 * vote by means of execution of a consent by a majority of shareholders
@@ -2317,18 +2534,27 @@ public class CorporateActionEvent {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConsentType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConsentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConsentType";
 			definition = "Corporate actions may be approved by shareholders without a meeting or a vote by means of execution of a consent by a majority of shareholders entitled to vote.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ConsentTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionEvent.class.getMethod("getConsentType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ProceedsDefinition proceedsDefinition;
 	/**
 	 * Specifies the proceeds of a corporate action.
 	 * <p>
@@ -2337,8 +2563,8 @@ public class CorporateActionEvent {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProceedsDefinition#CorporateAction
-	 * ProceedsDefinition.CorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProceedsDefinition#mmCorporateAction
+	 * ProceedsDefinition.mmCorporateAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2362,63 +2588,447 @@ public class CorporateActionEvent {
 	 * definition} = "Specifies the proceeds of a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionEvent.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProceedsDefinition";
 			definition = "Specifies the proceeds of a corporate action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmCorporateAction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProceedsDefinition.CorporateAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEvent";
 				definition = "An event determined by a corporation's board of directors, that changes the existing corporate capital structure or financial condition.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.CorporateEvent, com.tools20022.repository.entity.ContactPoint.RelatedCorporateActionEvent,
-						com.tools20022.repository.entity.DateTimePeriod.BookClosureCorporateAction, com.tools20022.repository.entity.DateTimePeriod.RelatedCorporateAction, com.tools20022.repository.entity.Tax.CorporateActionEvent,
-						com.tools20022.repository.entity.SecuritiesQuantity.RelatedEventForFractionalQuantity, com.tools20022.repository.entity.SecuritiesQuantity.CorporateActionEvent,
-						com.tools20022.repository.entity.SecuritiesQuantity.RelatedCorporateActionEvent, com.tools20022.repository.entity.CorporateActionStatus.CorporateActionEvent,
-						com.tools20022.repository.entity.CurrencyExchange.RelatedCorporateActionEvent, com.tools20022.repository.entity.CorporateActionEventRegistration.CorporateActionEvent,
-						com.tools20022.repository.entity.Issuance.EventInformation, com.tools20022.repository.entity.ProceedsDefinition.CorporateAction, com.tools20022.repository.entity.ClassAction.CorporateEvent,
-						com.tools20022.repository.entity.SecuritiesModification.RelatedCorporateEvent, com.tools20022.repository.entity.BiddingConditions.Event, com.tools20022.repository.entity.CorporateActionPrice.CorporateActionEvent,
-						com.tools20022.repository.entity.CorporateActionServicing.Event, com.tools20022.repository.entity.Deadline.RelatedCorporateActionEvent, com.tools20022.repository.entity.CorporateActionFeesAndCharges.CorporateAction,
-						com.tools20022.repository.entity.MarketClaim.RelatedCorporateEvent, com.tools20022.repository.entity.SuspensionPeriod.CorporateActionEvent, com.tools20022.repository.entity.Lottery.RelatedCorporateEvent,
-						com.tools20022.repository.entity.Meeting.CorporateEvent, com.tools20022.repository.entity.CorporateActionPartyRole.CorporateActionEvent);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionEvent.Type, com.tools20022.repository.entity.CorporateActionEvent.MandatoryVoluntaryEventType,
-						com.tools20022.repository.entity.CorporateActionEvent.UnderlyingSecurity, com.tools20022.repository.entity.CorporateActionEvent.CorporateActionPrice,
-						com.tools20022.repository.entity.CorporateActionEvent.ExchangeRate, com.tools20022.repository.entity.CorporateActionEvent.RegistrationDetails,
-						com.tools20022.repository.entity.CorporateActionEvent.BasketOrIndexInformation, com.tools20022.repository.entity.CorporateActionEvent.Deadline,
-						com.tools20022.repository.entity.CorporateActionEvent.AdditionalBusinessProcess, com.tools20022.repository.entity.CorporateActionEvent.TradingDate,
-						com.tools20022.repository.entity.CorporateActionEvent.CorporateActionCharge, com.tools20022.repository.entity.CorporateActionEvent.PariPassuDate,
-						com.tools20022.repository.entity.CorporateActionEvent.InformationConditions, com.tools20022.repository.entity.CorporateActionEvent.FractionalQuantity,
-						com.tools20022.repository.entity.CorporateActionEvent.EventProcessingType, com.tools20022.repository.entity.CorporateActionEvent.CorporateActionStatus,
-						com.tools20022.repository.entity.CorporateActionEvent.AnnouncementDate, com.tools20022.repository.entity.CorporateActionEvent.EffectiveDate,
-						com.tools20022.repository.entity.CorporateActionEvent.FurtherDetailsAnnouncementDate, com.tools20022.repository.entity.CorporateActionEvent.MarginFixingDate,
-						com.tools20022.repository.entity.CorporateActionEvent.ResultPublicationDate, com.tools20022.repository.entity.CorporateActionEvent.UnconditionalDate,
-						com.tools20022.repository.entity.CorporateActionEvent.WhollyUnconditionalDate, com.tools20022.repository.entity.CorporateActionEvent.LapsedDate,
-						com.tools20022.repository.entity.CorporateActionEvent.BookClosurePeriod, com.tools20022.repository.entity.CorporateActionEvent.SecuritiesQuantity,
-						com.tools20022.repository.entity.CorporateActionEvent.RestrictionIndicator, com.tools20022.repository.entity.CorporateActionEvent.EventStage,
-						com.tools20022.repository.entity.CorporateActionEvent.DocumentationLocation, com.tools20022.repository.entity.CorporateActionEvent.SecuritiesQuantitySought,
-						com.tools20022.repository.entity.CorporateActionEvent.PartialElectionIndicator, com.tools20022.repository.entity.CorporateActionEvent.CorporateActionPartyRole,
-						com.tools20022.repository.entity.CorporateActionEvent.MarketClaim, com.tools20022.repository.entity.CorporateActionEvent.BiddingConditions, com.tools20022.repository.entity.CorporateActionEvent.RelatedClassAction,
-						com.tools20022.repository.entity.CorporateActionEvent.CorporateActionEventRegistration, com.tools20022.repository.entity.CorporateActionEvent.SuspensionPeriod,
-						com.tools20022.repository.entity.CorporateActionEvent.Lottery, com.tools20022.repository.entity.CorporateActionEvent.MarginType, com.tools20022.repository.entity.CorporateActionEvent.RelatedMeeting,
-						com.tools20022.repository.entity.CorporateActionEvent.Services, com.tools20022.repository.entity.CorporateActionEvent.Issuance, com.tools20022.repository.entity.CorporateActionEvent.SecuritiesModification,
-						com.tools20022.repository.entity.CorporateActionEvent.TradingPeriod, com.tools20022.repository.entity.CorporateActionEvent.TransactionTax, com.tools20022.repository.entity.CorporateActionEvent.ConsentType,
-						com.tools20022.repository.entity.CorporateActionEvent.ProceedsDefinition);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmCorporateEvent, com.tools20022.repository.entity.ContactPoint.mmRelatedCorporateActionEvent,
+						com.tools20022.repository.entity.DateTimePeriod.mmBookClosureCorporateAction, com.tools20022.repository.entity.DateTimePeriod.mmRelatedCorporateAction, com.tools20022.repository.entity.Tax.mmCorporateActionEvent,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedEventForFractionalQuantity, com.tools20022.repository.entity.SecuritiesQuantity.mmCorporateActionEvent,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedCorporateActionEvent, com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionEvent,
+						com.tools20022.repository.entity.CurrencyExchange.mmRelatedCorporateActionEvent, com.tools20022.repository.entity.CorporateActionEventRegistration.mmCorporateActionEvent,
+						com.tools20022.repository.entity.Issuance.mmEventInformation, com.tools20022.repository.entity.ProceedsDefinition.mmCorporateAction, com.tools20022.repository.entity.ClassAction.mmCorporateEvent,
+						com.tools20022.repository.entity.SecuritiesModification.mmRelatedCorporateEvent, com.tools20022.repository.entity.BiddingConditions.mmEvent,
+						com.tools20022.repository.entity.CorporateActionPrice.mmCorporateActionEvent, com.tools20022.repository.entity.CorporateActionServicing.mmEvent,
+						com.tools20022.repository.entity.Deadline.mmRelatedCorporateActionEvent, com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmCorporateAction,
+						com.tools20022.repository.entity.MarketClaim.mmRelatedCorporateEvent, com.tools20022.repository.entity.SuspensionPeriod.mmCorporateActionEvent, com.tools20022.repository.entity.Lottery.mmRelatedCorporateEvent,
+						com.tools20022.repository.entity.Meeting.mmCorporateEvent, com.tools20022.repository.entity.CorporateActionPartyRole.mmCorporateActionEvent);
+				element_lazy = () -> Arrays
+						.asList(com.tools20022.repository.entity.CorporateActionEvent.mmType, com.tools20022.repository.entity.CorporateActionEvent.mmMandatoryVoluntaryEventType,
+								com.tools20022.repository.entity.CorporateActionEvent.mmUnderlyingSecurity, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionPrice,
+								com.tools20022.repository.entity.CorporateActionEvent.mmExchangeRate, com.tools20022.repository.entity.CorporateActionEvent.mmRegistrationDetails,
+								com.tools20022.repository.entity.CorporateActionEvent.mmBasketOrIndexInformation, com.tools20022.repository.entity.CorporateActionEvent.mmDeadline,
+								com.tools20022.repository.entity.CorporateActionEvent.mmAdditionalBusinessProcess, com.tools20022.repository.entity.CorporateActionEvent.mmTradingDate,
+								com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionCharge, com.tools20022.repository.entity.CorporateActionEvent.mmPariPassuDate,
+								com.tools20022.repository.entity.CorporateActionEvent.mmInformationConditions, com.tools20022.repository.entity.CorporateActionEvent.mmFractionalQuantity,
+								com.tools20022.repository.entity.CorporateActionEvent.mmEventProcessingType, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionStatus,
+								com.tools20022.repository.entity.CorporateActionEvent.mmAnnouncementDate, com.tools20022.repository.entity.CorporateActionEvent.mmEffectiveDate,
+								com.tools20022.repository.entity.CorporateActionEvent.mmFurtherDetailsAnnouncementDate, com.tools20022.repository.entity.CorporateActionEvent.mmMarginFixingDate,
+								com.tools20022.repository.entity.CorporateActionEvent.mmResultPublicationDate, com.tools20022.repository.entity.CorporateActionEvent.mmUnconditionalDate,
+								com.tools20022.repository.entity.CorporateActionEvent.mmWhollyUnconditionalDate, com.tools20022.repository.entity.CorporateActionEvent.mmLapsedDate,
+								com.tools20022.repository.entity.CorporateActionEvent.mmBookClosurePeriod, com.tools20022.repository.entity.CorporateActionEvent.mmSecuritiesQuantity,
+								com.tools20022.repository.entity.CorporateActionEvent.mmRestrictionIndicator, com.tools20022.repository.entity.CorporateActionEvent.mmEventStage,
+								com.tools20022.repository.entity.CorporateActionEvent.mmDocumentationLocation, com.tools20022.repository.entity.CorporateActionEvent.mmSecuritiesQuantitySought,
+								com.tools20022.repository.entity.CorporateActionEvent.mmPartialElectionIndicator, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionPartyRole,
+								com.tools20022.repository.entity.CorporateActionEvent.mmMarketClaim, com.tools20022.repository.entity.CorporateActionEvent.mmBiddingConditions,
+								com.tools20022.repository.entity.CorporateActionEvent.mmRelatedClassAction, com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionEventRegistration,
+								com.tools20022.repository.entity.CorporateActionEvent.mmSuspensionPeriod, com.tools20022.repository.entity.CorporateActionEvent.mmLottery, com.tools20022.repository.entity.CorporateActionEvent.mmMarginType,
+								com.tools20022.repository.entity.CorporateActionEvent.mmRelatedMeeting, com.tools20022.repository.entity.CorporateActionEvent.mmServices, com.tools20022.repository.entity.CorporateActionEvent.mmIssuance,
+								com.tools20022.repository.entity.CorporateActionEvent.mmSecuritiesModification, com.tools20022.repository.entity.CorporateActionEvent.mmTradingPeriod,
+								com.tools20022.repository.entity.CorporateActionEvent.mmTransactionTax, com.tools20022.repository.entity.CorporateActionEvent.mmConsentType,
+								com.tools20022.repository.entity.CorporateActionEvent.mmProceedsDefinition);
 				derivationComponent_lazy = () -> Arrays.asList(CorporateAction9.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionEvent.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionEventTypeV3Code getType() {
+		return type;
+	}
+
+	public void setType(CorporateActionEventTypeV3Code type) {
+		this.type = type;
+	}
+
+	public CorporateActionMandatoryVoluntaryCode getMandatoryVoluntaryEventType() {
+		return mandatoryVoluntaryEventType;
+	}
+
+	public void setMandatoryVoluntaryEventType(CorporateActionMandatoryVoluntaryCode mandatoryVoluntaryEventType) {
+		this.mandatoryVoluntaryEventType = mandatoryVoluntaryEventType;
+	}
+
+	public Security getUnderlyingSecurity() {
+		return underlyingSecurity;
+	}
+
+	public void setUnderlyingSecurity(com.tools20022.repository.entity.Security underlyingSecurity) {
+		this.underlyingSecurity = underlyingSecurity;
+	}
+
+	public List<CorporateActionPrice> getCorporateActionPrice() {
+		return corporateActionPrice;
+	}
+
+	public void setCorporateActionPrice(List<com.tools20022.repository.entity.CorporateActionPrice> corporateActionPrice) {
+		this.corporateActionPrice = corporateActionPrice;
+	}
+
+	public List<CurrencyExchange> getExchangeRate() {
+		return exchangeRate;
+	}
+
+	public void setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
+		this.exchangeRate = exchangeRate;
+	}
+
+	public Max350Text getRegistrationDetails() {
+		return registrationDetails;
+	}
+
+	public void setRegistrationDetails(Max350Text registrationDetails) {
+		this.registrationDetails = registrationDetails;
+	}
+
+	public Max350Text getBasketOrIndexInformation() {
+		return basketOrIndexInformation;
+	}
+
+	public void setBasketOrIndexInformation(Max350Text basketOrIndexInformation) {
+		this.basketOrIndexInformation = basketOrIndexInformation;
+	}
+
+	public Deadline getDeadline() {
+		return deadline;
+	}
+
+	public void setDeadline(com.tools20022.repository.entity.Deadline deadline) {
+		this.deadline = deadline;
+	}
+
+	public AdditionalBusinessProcessCode getAdditionalBusinessProcess() {
+		return additionalBusinessProcess;
+	}
+
+	public void setAdditionalBusinessProcess(AdditionalBusinessProcessCode additionalBusinessProcess) {
+		this.additionalBusinessProcess = additionalBusinessProcess;
+	}
+
+	public ISODateTime getTradingDate() {
+		return tradingDate;
+	}
+
+	public void setTradingDate(ISODateTime tradingDate) {
+		this.tradingDate = tradingDate;
+	}
+
+	public CorporateActionFeesAndCharges getCorporateActionCharge() {
+		return corporateActionCharge;
+	}
+
+	public void setCorporateActionCharge(com.tools20022.repository.entity.CorporateActionFeesAndCharges corporateActionCharge) {
+		this.corporateActionCharge = corporateActionCharge;
+	}
+
+	public ISODateTime getPariPassuDate() {
+		return pariPassuDate;
+	}
+
+	public void setPariPassuDate(ISODateTime pariPassuDate) {
+		this.pariPassuDate = pariPassuDate;
+	}
+
+	public Max350Text getInformationConditions() {
+		return informationConditions;
+	}
+
+	public void setInformationConditions(Max350Text informationConditions) {
+		this.informationConditions = informationConditions;
+	}
+
+	public List<SecuritiesQuantity> getFractionalQuantity() {
+		return fractionalQuantity;
+	}
+
+	public void setFractionalQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> fractionalQuantity) {
+		this.fractionalQuantity = fractionalQuantity;
+	}
+
+	public CorporateActionEventProcessingTypeCode getEventProcessingType() {
+		return eventProcessingType;
+	}
+
+	public void setEventProcessingType(CorporateActionEventProcessingTypeCode eventProcessingType) {
+		this.eventProcessingType = eventProcessingType;
+	}
+
+	public List<CorporateActionStatus> getCorporateActionStatus() {
+		return corporateActionStatus;
+	}
+
+	public void setCorporateActionStatus(List<com.tools20022.repository.entity.CorporateActionStatus> corporateActionStatus) {
+		this.corporateActionStatus = corporateActionStatus;
+	}
+
+	public ISODateTime getAnnouncementDate() {
+		return announcementDate;
+	}
+
+	public void setAnnouncementDate(ISODateTime announcementDate) {
+		this.announcementDate = announcementDate;
+	}
+
+	public ISODateTime getEffectiveDate() {
+		return effectiveDate;
+	}
+
+	public void setEffectiveDate(ISODateTime effectiveDate) {
+		this.effectiveDate = effectiveDate;
+	}
+
+	public ISODateTime getFurtherDetailsAnnouncementDate() {
+		return furtherDetailsAnnouncementDate;
+	}
+
+	public void setFurtherDetailsAnnouncementDate(ISODateTime furtherDetailsAnnouncementDate) {
+		this.furtherDetailsAnnouncementDate = furtherDetailsAnnouncementDate;
+	}
+
+	public ISODateTime getMarginFixingDate() {
+		return marginFixingDate;
+	}
+
+	public void setMarginFixingDate(ISODateTime marginFixingDate) {
+		this.marginFixingDate = marginFixingDate;
+	}
+
+	public ISODate getResultPublicationDate() {
+		return resultPublicationDate;
+	}
+
+	public void setResultPublicationDate(ISODate resultPublicationDate) {
+		this.resultPublicationDate = resultPublicationDate;
+	}
+
+	public ISODateTime getUnconditionalDate() {
+		return unconditionalDate;
+	}
+
+	public void setUnconditionalDate(ISODateTime unconditionalDate) {
+		this.unconditionalDate = unconditionalDate;
+	}
+
+	public ISODateTime getWhollyUnconditionalDate() {
+		return whollyUnconditionalDate;
+	}
+
+	public void setWhollyUnconditionalDate(ISODateTime whollyUnconditionalDate) {
+		this.whollyUnconditionalDate = whollyUnconditionalDate;
+	}
+
+	public ISODateTime getLapsedDate() {
+		return lapsedDate;
+	}
+
+	public void setLapsedDate(ISODateTime lapsedDate) {
+		this.lapsedDate = lapsedDate;
+	}
+
+	public DateTimePeriod getBookClosurePeriod() {
+		return bookClosurePeriod;
+	}
+
+	public void setBookClosurePeriod(com.tools20022.repository.entity.DateTimePeriod bookClosurePeriod) {
+		this.bookClosurePeriod = bookClosurePeriod;
+	}
+
+	public List<SecuritiesQuantity> getSecuritiesQuantity() {
+		return securitiesQuantity;
+	}
+
+	public void setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
+		this.securitiesQuantity = securitiesQuantity;
+	}
+
+	public YesNoIndicator getRestrictionIndicator() {
+		return restrictionIndicator;
+	}
+
+	public void setRestrictionIndicator(YesNoIndicator restrictionIndicator) {
+		this.restrictionIndicator = restrictionIndicator;
+	}
+
+	public CorporateActionEventStageCode getEventStage() {
+		return eventStage;
+	}
+
+	public void setEventStage(CorporateActionEventStageCode eventStage) {
+		this.eventStage = eventStage;
+	}
+
+	public List<ContactPoint> getDocumentationLocation() {
+		return documentationLocation;
+	}
+
+	public void setDocumentationLocation(List<com.tools20022.repository.entity.ContactPoint> documentationLocation) {
+		this.documentationLocation = documentationLocation;
+	}
+
+	public SecuritiesQuantity getSecuritiesQuantitySought() {
+		return securitiesQuantitySought;
+	}
+
+	public void setSecuritiesQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantitySought) {
+		this.securitiesQuantitySought = securitiesQuantitySought;
+	}
+
+	public YesNoIndicator getPartialElectionIndicator() {
+		return partialElectionIndicator;
+	}
+
+	public void setPartialElectionIndicator(YesNoIndicator partialElectionIndicator) {
+		this.partialElectionIndicator = partialElectionIndicator;
+	}
+
+	public CorporateActionPartyRole getCorporateActionPartyRole() {
+		return corporateActionPartyRole;
+	}
+
+	public void setCorporateActionPartyRole(com.tools20022.repository.entity.CorporateActionPartyRole corporateActionPartyRole) {
+		this.corporateActionPartyRole = corporateActionPartyRole;
+	}
+
+	public List<MarketClaim> getMarketClaim() {
+		return marketClaim;
+	}
+
+	public void setMarketClaim(List<com.tools20022.repository.entity.MarketClaim> marketClaim) {
+		this.marketClaim = marketClaim;
+	}
+
+	public BiddingConditions getBiddingConditions() {
+		return biddingConditions;
+	}
+
+	public void setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
+		this.biddingConditions = biddingConditions;
+	}
+
+	public List<ClassAction> getRelatedClassAction() {
+		return relatedClassAction;
+	}
+
+	public void setRelatedClassAction(List<com.tools20022.repository.entity.ClassAction> relatedClassAction) {
+		this.relatedClassAction = relatedClassAction;
+	}
+
+	public List<CorporateActionEventRegistration> getCorporateActionEventRegistration() {
+		return corporateActionEventRegistration;
+	}
+
+	public void setCorporateActionEventRegistration(List<com.tools20022.repository.entity.CorporateActionEventRegistration> corporateActionEventRegistration) {
+		this.corporateActionEventRegistration = corporateActionEventRegistration;
+	}
+
+	public SuspensionPeriod getSuspensionPeriod() {
+		return suspensionPeriod;
+	}
+
+	public void setSuspensionPeriod(com.tools20022.repository.entity.SuspensionPeriod suspensionPeriod) {
+		this.suspensionPeriod = suspensionPeriod;
+	}
+
+	public Lottery getLottery() {
+		return lottery;
+	}
+
+	public void setLottery(com.tools20022.repository.entity.Lottery lottery) {
+		this.lottery = lottery;
+	}
+
+	public RemarketingMarginTypeCode getMarginType() {
+		return marginType;
+	}
+
+	public void setMarginType(RemarketingMarginTypeCode marginType) {
+		this.marginType = marginType;
+	}
+
+	public List<Meeting> getRelatedMeeting() {
+		return relatedMeeting;
+	}
+
+	public void setRelatedMeeting(List<com.tools20022.repository.entity.Meeting> relatedMeeting) {
+		this.relatedMeeting = relatedMeeting;
+	}
+
+	public List<CorporateActionServicing> getServices() {
+		return services;
+	}
+
+	public void setServices(List<com.tools20022.repository.entity.CorporateActionServicing> services) {
+		this.services = services;
+	}
+
+	public List<Issuance> getIssuance() {
+		return issuance;
+	}
+
+	public void setIssuance(List<com.tools20022.repository.entity.Issuance> issuance) {
+		this.issuance = issuance;
+	}
+
+	public List<SecuritiesModification> getSecuritiesModification() {
+		return securitiesModification;
+	}
+
+	public void setSecuritiesModification(List<com.tools20022.repository.entity.SecuritiesModification> securitiesModification) {
+		this.securitiesModification = securitiesModification;
+	}
+
+	public DateTimePeriod getTradingPeriod() {
+		return tradingPeriod;
+	}
+
+	public void setTradingPeriod(com.tools20022.repository.entity.DateTimePeriod tradingPeriod) {
+		this.tradingPeriod = tradingPeriod;
+	}
+
+	public Tax getTransactionTax() {
+		return transactionTax;
+	}
+
+	public void setTransactionTax(com.tools20022.repository.entity.Tax transactionTax) {
+		this.transactionTax = transactionTax;
+	}
+
+	public ConsentTypeCode getConsentType() {
+		return consentType;
+	}
+
+	public void setConsentType(ConsentTypeCode consentType) {
+		this.consentType = consentType;
+	}
+
+	public ProceedsDefinition getProceedsDefinition() {
+		return proceedsDefinition;
+	}
+
+	public void setProceedsDefinition(com.tools20022.repository.entity.ProceedsDefinition proceedsDefinition) {
+		this.proceedsDefinition = proceedsDefinition;
 	}
 }

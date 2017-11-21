@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingStatementStatus1Code#Original
- * BillingStatementStatus1Code.Original}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingStatementStatus1Code#mmOriginal
+ * BillingStatementStatus1Code.mmOriginal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingStatementStatus1Code#Replace
- * BillingStatementStatus1Code.Replace}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingStatementStatus1Code#mmReplace
+ * BillingStatementStatus1Code.mmReplace}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingStatementStatus1Code#Test
- * BillingStatementStatus1Code.Test}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingStatementStatus1Code#mmTest
+ * BillingStatementStatus1Code.mmTest}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,9 +82,9 @@ public class BillingStatementStatus1Code {
 	 * name} = "Original"</li>
 	 * </ul>
 	 */
-	public static final MMCode Original = new MMCode() {
+	public static final MMCode mmOriginal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Original";
 			owner_lazy = () -> BillingStatementStatus1Code.mmObject();
 		}
@@ -103,9 +105,9 @@ public class BillingStatementStatus1Code {
 	 * name} = "Replace"</li>
 	 * </ul>
 	 */
-	public static final MMCode Replace = new MMCode() {
+	public static final MMCode mmReplace = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Replace";
 			owner_lazy = () -> BillingStatementStatus1Code.mmObject();
 		}
@@ -126,9 +128,9 @@ public class BillingStatementStatus1Code {
 	 * name} = "Test"</li>
 	 * </ul>
 	 */
-	public static final MMCode Test = new MMCode() {
+	public static final MMCode mmTest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Test";
 			owner_lazy = () -> BillingStatementStatus1Code.mmObject();
 		}
@@ -137,13 +139,12 @@ public class BillingStatementStatus1Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ORGN");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingStatementStatus1Code";
 				definition = "Defines the status of the billing statement.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BillingStatementStatus1Code.Original, com.tools20022.repository.codeset.BillingStatementStatus1Code.Replace,
-						com.tools20022.repository.codeset.BillingStatementStatus1Code.Test);
+				code_lazy = () -> Arrays.asList(BillingStatementStatus1Code.mmOriginal, BillingStatementStatus1Code.mmReplace, BillingStatementStatus1Code.mmTest);
 			}
 		});
 		return mmObject_lazy.get();

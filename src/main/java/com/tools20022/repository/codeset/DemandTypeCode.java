@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,17 +31,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.DemandTypeCode#PayOnly
- * DemandTypeCode.PayOnly}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DemandTypeCode#PayOrExtend
- * DemandTypeCode.PayOrExtend}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DemandTypeCode#mmPayOnly
+ * DemandTypeCode.mmPayOnly}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DemandTypeCode#mmPayOrExtend
+ * DemandTypeCode.mmPayOrExtend}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,9 +83,9 @@ public class DemandTypeCode {
 	 * definition} = "Pay only."</li>
 	 * </ul>
 	 */
-	public static final MMCode PayOnly = new MMCode() {
+	public static final MMCode mmPayOnly = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PayOnly";
 			definition = "Pay only.";
 			owner_lazy = () -> DemandTypeCode.mmObject();
@@ -110,9 +113,9 @@ public class DemandTypeCode {
 	 * definition} = "Pay or extend."</li>
 	 * </ul>
 	 */
-	public static final MMCode PayOrExtend = new MMCode() {
+	public static final MMCode mmPayOrExtend = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PayOrExtend";
 			definition = "Pay or extend.";
 			owner_lazy = () -> DemandTypeCode.mmObject();
@@ -123,12 +126,12 @@ public class DemandTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PAYM");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DemandTypeCode";
 				definition = "Specifies the type of demand for payment.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DemandTypeCode.PayOnly, com.tools20022.repository.codeset.DemandTypeCode.PayOrExtend);
+				code_lazy = () -> Arrays.asList(DemandTypeCode.mmPayOnly, DemandTypeCode.mmPayOrExtend);
 			}
 		});
 		return mmObject_lazy.get();

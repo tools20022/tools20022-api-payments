@@ -17,10 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.IncotermsCode;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ShipmentAttribute1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,37 +45,38 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Incoterms#Transport
- * Incoterms.Transport}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Incoterms#Code
- * Incoterms.Code}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Incoterms#Location
- * Incoterms.Location}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Incoterms#mmTransport
+ * Incoterms.mmTransport}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Incoterms#mmCode
+ * Incoterms.mmCode}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Incoterms#mmLocation
+ * Incoterms.mmLocation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Location#Incoterms
- * Location.Incoterms}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Transport#Incoterms
- * Transport.Incoterms}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmIncoterms
+ * Location.mmIncoterms}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Transport#mmIncoterms
+ * Transport.mmIncoterms}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ShipmentAttribute1#Conditions
- * ShipmentAttribute1.Conditions}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ShipmentAttribute1#mmConditions
+ * ShipmentAttribute1.mmConditions}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,6 +92,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Incoterms {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Transport transport;
 	/**
 	 * Specifies the transport information to which the incoterms apply.
 	 * <p>
@@ -98,8 +101,8 @@ public class Incoterms {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Transport#Incoterms
-	 * Transport.Incoterms}</li>
+	 * {@linkplain com.tools20022.repository.entity.Transport#mmIncoterms
+	 * Transport.mmIncoterms}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -123,20 +126,21 @@ public class Incoterms {
 	 * "Specifies the transport information to which the incoterms apply."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Transport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Incoterms.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Specifies the transport information to which the incoterms apply.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmIncoterms;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.Incoterms;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected IncotermsCode code;
 	/**
 	 * Specifies the applicable Incoterm by means of a code.
 	 * <p>
@@ -162,18 +166,27 @@ public class Incoterms {
 	 * definition} = "Specifies the applicable Incoterm by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Code = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Incoterms.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Specifies the applicable Incoterm by means of a code.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> IncotermsCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Incoterms.class.getMethod("getCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Location location;
 	/**
 	 * Location where the Incoterms are actioned.
 	 * <p>
@@ -182,8 +195,8 @@ public class Incoterms {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Location#Incoterms
-	 * Location.Incoterms}</li>
+	 * {@linkplain com.tools20022.repository.entity.Location#mmIncoterms
+	 * Location.mmIncoterms}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -205,33 +218,62 @@ public class Incoterms {
 	 * definition} = "Location where the Incoterms are actioned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Location = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Incoterms.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Location";
 			definition = "Location where the Incoterms are actioned.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmIncoterms;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.Incoterms;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Incoterms";
 				definition = "International commerce terms are a series of international sales terms, published by International Chamber of Commerce (ICC) and widely used in international commercial transactions. These are accepted by governments, legal authorities and practitioners worldwide for the interpretation of most commonly used terms in international trade. Scope of this is limited to matters relating to rights and obligations of the parties to the contract of sale with respect to the delivery of goods sold. They are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.Incoterms, com.tools20022.repository.entity.Transport.Incoterms);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ShipmentAttribute1.Conditions);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Incoterms.Transport, com.tools20022.repository.entity.Incoterms.Code, com.tools20022.repository.entity.Incoterms.Location);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.mmIncoterms, com.tools20022.repository.entity.Transport.mmIncoterms);
+				derivationElement_lazy = () -> Arrays.asList(ShipmentAttribute1.mmConditions);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Incoterms.mmTransport, com.tools20022.repository.entity.Incoterms.mmCode, com.tools20022.repository.entity.Incoterms.mmLocation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Incoterms.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Transport getTransport() {
+		return transport;
+	}
+
+	public void setTransport(com.tools20022.repository.entity.Transport transport) {
+		this.transport = transport;
+	}
+
+	public IncotermsCode getCode() {
+		return code;
+	}
+
+	public void setCode(IncotermsCode code) {
+		this.code = code;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(com.tools20022.repository.entity.Location location) {
+		this.location = location;
 	}
 }

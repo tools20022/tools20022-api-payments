@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CommunicationMethod4Code;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.Presentation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Communication details related to the registered currency control contract.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractCommunication1#Method
- * RegisteredContractCommunication1.Method}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractCommunication1#mmMethod
+ * RegisteredContractCommunication1.mmMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractCommunication1#Date
- * RegisteredContractCommunication1.Date}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractCommunication1#mmDate
+ * RegisteredContractCommunication1.mmDate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Communication details related to the registered currency control contract."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RegisteredContractCommunication1", propOrder = {"method", "date"})
 public class RegisteredContractCommunication1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected CommunicationMethod4Code method;
 	/**
 	 * Method by which the registered contract document is exchanged.
 	 * <p>
@@ -77,8 +86,8 @@ public class RegisteredContractCommunication1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Presentation#CommunicationMethod
-	 * Presentation.CommunicationMethod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Presentation#mmCommunicationMethod
+	 * Presentation.mmCommunicationMethod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -98,20 +107,21 @@ public class RegisteredContractCommunication1 {
 	 * "Method by which the registered contract document is exchanged."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Method = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Presentation.mmCommunicationMethod;
 			componentContext_lazy = () -> RegisteredContractCommunication1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Presentation.CommunicationMethod;
 			isDerived = false;
 			xmlTag = "Mtd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Method";
 			definition = "Method by which the registered contract document is exchanged.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
 	};
+	protected ISODate date;
 	/**
 	 * Date of the exchange.
 	 * <p>
@@ -124,8 +134,8 @@ public class RegisteredContractCommunication1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Presentation#PresentationDate
-	 * Presentation.PresentationDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Presentation#mmPresentationDate
+	 * Presentation.mmPresentationDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -144,17 +154,17 @@ public class RegisteredContractCommunication1 {
 	 * definition} = "Date of the exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Date = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Presentation.mmPresentationDate;
 			componentContext_lazy = () -> RegisteredContractCommunication1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Presentation.PresentationDate;
 			isDerived = false;
 			xmlTag = "Dt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Date of the exchange.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
@@ -162,14 +172,32 @@ public class RegisteredContractCommunication1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContractCommunication1.Method, com.tools20022.repository.msg.RegisteredContractCommunication1.Date);
+				messageElement_lazy = () -> Arrays.asList(RegisteredContractCommunication1.mmMethod, RegisteredContractCommunication1.mmDate);
 				trace_lazy = () -> Presentation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContractCommunication1";
 				definition = "Communication details related to the registered currency control contract.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Mtd", required = true)
+	public CommunicationMethod4Code getMethod() {
+		return method;
+	}
+
+	public void setMethod(CommunicationMethod4Code method) {
+		this.method = method;
+	}
+
+	@XmlElement(name = "Dt", required = true)
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
 	}
 }

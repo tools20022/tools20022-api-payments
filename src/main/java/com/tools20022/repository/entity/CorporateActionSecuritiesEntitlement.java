@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RenounceableStatusCode;
 import com.tools20022.repository.entity.CorporateActionEntitlement;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement#EntitledSecuritiesQuantity
- * CorporateActionSecuritiesEntitlement.EntitledSecuritiesQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement#mmEntitledSecuritiesQuantity
+ * CorporateActionSecuritiesEntitlement.mmEntitledSecuritiesQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement#RenounceableEntitlementStatusType
- * CorporateActionSecuritiesEntitlement.RenounceableEntitlementStatusType}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement#mmRenounceableEntitlementStatusType
+ * CorporateActionSecuritiesEntitlement.mmRenounceableEntitlementStatusType}</li>
  * </ul>
  * </li>
  * <li>
@@ -52,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#SecuritiesEntitlement
- * SecuritiesQuantity.SecuritiesEntitlement}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmSecuritiesEntitlement
+ * SecuritiesQuantity.mmSecuritiesEntitlement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -63,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,6 +80,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitlement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesQuantity entitledSecuritiesQuantity;
 	/**
 	 * Quantity of securities based on the terms of the corporate action event
 	 * and balance of underlying securities entitled to the account owner. (This
@@ -90,8 +91,8 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#SecuritiesEntitlement
-	 * SecuritiesQuantity.SecuritiesEntitlement}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmSecuritiesEntitlement
+	 * SecuritiesQuantity.mmSecuritiesEntitlement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -117,20 +118,21 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EntitledSecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEntitledSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionSecuritiesEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitledSecuritiesQuantity";
 			definition = "Quantity of securities based on the terms of the corporate action event and balance of underlying securities entitled to the account owner. (This quantity can be positive or negative).";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.SecuritiesEntitlement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesEntitlement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected RenounceableStatusCode renounceableEntitlementStatusType;
 	/**
 	 * Specifies whether terms of the event allow resale of the rights.
 	 * <p>
@@ -158,32 +160,61 @@ public class CorporateActionSecuritiesEntitlement extends CorporateActionEntitle
 	 * "Specifies whether terms of the event allow resale of the rights."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RenounceableEntitlementStatusType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRenounceableEntitlementStatusType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionSecuritiesEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenounceableEntitlementStatusType";
 			definition = "Specifies whether terms of the event allow resale of the rights.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RenounceableStatusCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionSecuritiesEntitlement.class.getMethod("getRenounceableEntitlementStatusType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionSecuritiesEntitlement";
 				definition = "Rights for securities entitled to the account owner based on the terms of the corporate action event and the balance of underlying securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuantity.SecuritiesEntitlement);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesEntitlement);
 				superType_lazy = () -> CorporateActionEntitlement.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.EntitledSecuritiesQuantity,
-						com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.RenounceableEntitlementStatusType);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmEntitledSecuritiesQuantity,
+						com.tools20022.repository.entity.CorporateActionSecuritiesEntitlement.mmRenounceableEntitlementStatusType);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionSecuritiesEntitlement.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesQuantity getEntitledSecuritiesQuantity() {
+		return entitledSecuritiesQuantity;
+	}
+
+	public void setEntitledSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity entitledSecuritiesQuantity) {
+		this.entitledSecuritiesQuantity = entitledSecuritiesQuantity;
+	}
+
+	public RenounceableStatusCode getRenounceableEntitlementStatusType() {
+		return renounceableEntitlementStatusType;
+	}
+
+	public void setRenounceableEntitlementStatusType(RenounceableStatusCode renounceableEntitlementStatusType) {
+		this.renounceableEntitlementStatusType = renounceableEntitlementStatusType;
 	}
 }

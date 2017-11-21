@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,35 +32,35 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#MailOrder
- * TransactionChannelCode.MailOrder}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmMailOrder
+ * TransactionChannelCode.mmMailOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#TelephoneOrder
- * TransactionChannelCode.TelephoneOrder}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmTelephoneOrder
+ * TransactionChannelCode.mmTelephoneOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#ElectronicCommerce
- * TransactionChannelCode.ElectronicCommerce}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmElectronicCommerce
+ * TransactionChannelCode.mmElectronicCommerce}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#TelevisionPayment
- * TransactionChannelCode.TelevisionPayment}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmTelevisionPayment
+ * TransactionChannelCode.mmTelevisionPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#OfficeOrBranch
- * TransactionChannelCode.OfficeOrBranch}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmOfficeOrBranch
+ * TransactionChannelCode.mmOfficeOrBranch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#HomeBanking
- * TransactionChannelCode.HomeBanking}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmHomeBanking
+ * TransactionChannelCode.mmHomeBanking}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#FinancialAdvisor
- * TransactionChannelCode.FinancialAdvisor}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmFinancialAdvisor
+ * TransactionChannelCode.mmFinancialAdvisor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#MobilePayment
- * TransactionChannelCode.MobilePayment}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmMobilePayment
+ * TransactionChannelCode.mmMobilePayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#SecuredElectronicCommerce
- * TransactionChannelCode.SecuredElectronicCommerce}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmSecuredElectronicCommerce
+ * TransactionChannelCode.mmSecuredElectronicCommerce}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#MobilePOS
- * TransactionChannelCode.MobilePOS}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannelCode#mmMobilePOS
+ * TransactionChannelCode.mmMobilePOS}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -71,8 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -113,9 +115,9 @@ public class TransactionChannelCode {
 	 * definition} = "Mail order."</li>
 	 * </ul>
 	 */
-	public static final MMCode MailOrder = new MMCode() {
+	public static final MMCode mmMailOrder = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MailOrder";
 			definition = "Mail order.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -143,9 +145,9 @@ public class TransactionChannelCode {
 	 * definition} = "Telephone order."</li>
 	 * </ul>
 	 */
-	public static final MMCode TelephoneOrder = new MMCode() {
+	public static final MMCode mmTelephoneOrder = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TelephoneOrder";
 			definition = "Telephone order.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -173,9 +175,9 @@ public class TransactionChannelCode {
 	 * definition} = "Electronic commerce."</li>
 	 * </ul>
 	 */
-	public static final MMCode ElectronicCommerce = new MMCode() {
+	public static final MMCode mmElectronicCommerce = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicCommerce";
 			definition = "Electronic commerce.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -203,9 +205,9 @@ public class TransactionChannelCode {
 	 * definition} = "Payment on television."</li>
 	 * </ul>
 	 */
-	public static final MMCode TelevisionPayment = new MMCode() {
+	public static final MMCode mmTelevisionPayment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TelevisionPayment";
 			definition = "Payment on television.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -233,9 +235,9 @@ public class TransactionChannelCode {
 	 * definition} = "Office or branch."</li>
 	 * </ul>
 	 */
-	public static final MMCode OfficeOrBranch = new MMCode() {
+	public static final MMCode mmOfficeOrBranch = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OfficeOrBranch";
 			definition = "Office or branch.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -263,9 +265,9 @@ public class TransactionChannelCode {
 	 * definition} = "Home banking."</li>
 	 * </ul>
 	 */
-	public static final MMCode HomeBanking = new MMCode() {
+	public static final MMCode mmHomeBanking = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HomeBanking";
 			definition = "Home banking.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -293,9 +295,9 @@ public class TransactionChannelCode {
 	 * definition} = "Financial advisor."</li>
 	 * </ul>
 	 */
-	public static final MMCode FinancialAdvisor = new MMCode() {
+	public static final MMCode mmFinancialAdvisor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialAdvisor";
 			definition = "Financial advisor.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -323,9 +325,9 @@ public class TransactionChannelCode {
 	 * definition} = "Payment performed through a cardholder mobile device."</li>
 	 * </ul>
 	 */
-	public static final MMCode MobilePayment = new MMCode() {
+	public static final MMCode mmMobilePayment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MobilePayment";
 			definition = "Payment performed through a cardholder mobile device.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -353,9 +355,9 @@ public class TransactionChannelCode {
 	 * definition} = "Electronic commerce with cardholder authentication."</li>
 	 * </ul>
 	 */
-	public static final MMCode SecuredElectronicCommerce = new MMCode() {
+	public static final MMCode mmSecuredElectronicCommerce = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuredElectronicCommerce";
 			definition = "Electronic commerce with cardholder authentication.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -383,9 +385,9 @@ public class TransactionChannelCode {
 	 * definition} = "Payment performed through a merchant mobile device."</li>
 	 * </ul>
 	 */
-	public static final MMCode MobilePOS = new MMCode() {
+	public static final MMCode mmMobilePOS = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MobilePOS";
 			definition = "Payment performed through a merchant mobile device.";
 			owner_lazy = () -> TransactionChannelCode.mmObject();
@@ -396,16 +398,14 @@ public class TransactionChannelCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("MAIL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionChannelCode";
 				definition = "Specifies the type of communication channel.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionChannelCode.MailOrder, com.tools20022.repository.codeset.TransactionChannelCode.TelephoneOrder,
-						com.tools20022.repository.codeset.TransactionChannelCode.ElectronicCommerce, com.tools20022.repository.codeset.TransactionChannelCode.TelevisionPayment,
-						com.tools20022.repository.codeset.TransactionChannelCode.OfficeOrBranch, com.tools20022.repository.codeset.TransactionChannelCode.HomeBanking,
-						com.tools20022.repository.codeset.TransactionChannelCode.FinancialAdvisor, com.tools20022.repository.codeset.TransactionChannelCode.MobilePayment,
-						com.tools20022.repository.codeset.TransactionChannelCode.SecuredElectronicCommerce, com.tools20022.repository.codeset.TransactionChannelCode.MobilePOS);
+				code_lazy = () -> Arrays.asList(TransactionChannelCode.mmMailOrder, TransactionChannelCode.mmTelephoneOrder, TransactionChannelCode.mmElectronicCommerce, TransactionChannelCode.mmTelevisionPayment,
+						TransactionChannelCode.mmOfficeOrBranch, TransactionChannelCode.mmHomeBanking, TransactionChannelCode.mmFinancialAdvisor, TransactionChannelCode.mmMobilePayment, TransactionChannelCode.mmSecuredElectronicCommerce,
+						TransactionChannelCode.mmMobilePOS);
 				derivation_lazy = () -> Arrays.asList(TransactionChannel1Code.mmObject());
 			}
 		});

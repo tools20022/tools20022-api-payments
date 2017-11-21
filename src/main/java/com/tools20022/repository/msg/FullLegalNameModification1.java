@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.entity.OrganisationName;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of change to the full legal name.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.FullLegalNameModification1#ModificationCode
- * FullLegalNameModification1.ModificationCode}</li>
+ * {@linkplain com.tools20022.repository.msg.FullLegalNameModification1#mmModificationCode
+ * FullLegalNameModification1.mmModificationCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.FullLegalNameModification1#FullLegalName
- * FullLegalNameModification1.FullLegalName}</li>
+ * {@linkplain com.tools20022.repository.msg.FullLegalNameModification1#mmFullLegalName
+ * FullLegalNameModification1.mmFullLegalName}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of change to the full legal name."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "FullLegalNameModification1", propOrder = {"modificationCode", "fullLegalName"})
 public class FullLegalNameModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Modification1Code modificationCode;
 	/**
 	 * Specifies the type of change.
 	 * <p>
@@ -91,19 +100,20 @@ public class FullLegalNameModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> FullLegalNameModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationCode";
 			definition = "Specifies the type of change.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	protected Max350Text fullLegalName;
 	/**
 	 * Name by which a party is known and which is usually used to identify that
 	 * party.
@@ -117,8 +127,8 @@ public class FullLegalNameModification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.OrganisationName#LegalName
-	 * OrganisationName.LegalName}</li>
+	 * {@linkplain com.tools20022.repository.entity.OrganisationName#mmLegalName
+	 * OrganisationName.mmLegalName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -139,17 +149,17 @@ public class FullLegalNameModification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute FullLegalName = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmFullLegalName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> OrganisationName.mmLegalName;
 			componentContext_lazy = () -> FullLegalNameModification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.OrganisationName.LegalName;
 			isDerived = false;
 			xmlTag = "FullLglNm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FullLegalName";
 			definition = "Name by which a party is known and which is usually used to identify that party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 	};
@@ -157,14 +167,32 @@ public class FullLegalNameModification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FullLegalNameModification1.ModificationCode, com.tools20022.repository.msg.FullLegalNameModification1.FullLegalName);
+				messageElement_lazy = () -> Arrays.asList(FullLegalNameModification1.mmModificationCode, FullLegalNameModification1.mmFullLegalName);
 				trace_lazy = () -> OrganisationName.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FullLegalNameModification1";
 				definition = "Specifies the type of change to the full legal name.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ModCd")
+	public Modification1Code getModificationCode() {
+		return modificationCode;
+	}
+
+	public void setModificationCode(Modification1Code modificationCode) {
+		this.modificationCode = modificationCode;
+	}
+
+	@XmlElement(name = "FullLglNm", required = true)
+	public Max350Text getFullLegalName() {
+		return fullLegalName;
+	}
+
+	public void setFullLegalName(Max350Text fullLegalName) {
+		this.fullLegalName = fullLegalName;
 	}
 }

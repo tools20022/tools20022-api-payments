@@ -19,10 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04;
 import com.tools20022.repository.codeset.CaseForwardingNotification3Code;
 import com.tools20022.repository.entity.Reassignment;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Status of a case resulting from a case assignment.
@@ -34,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CaseForwardingNotification3#Justification
- * CaseForwardingNotification3.Justification}</li>
+ * {@linkplain com.tools20022.repository.msg.CaseForwardingNotification3#mmJustification
+ * CaseForwardingNotification3.mmJustification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,15 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#Notification
- * NotificationOfCaseAssignmentV04.Notification}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#mmNotification
+ * NotificationOfCaseAssignmentV04.mmNotification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,9 +72,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Status of a case resulting from a case assignment."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CaseForwardingNotification3", propOrder = "justification")
 public class CaseForwardingNotification3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected CaseForwardingNotification3Code justification;
 	/**
 	 * Justification for the forward action.
 	 * <p>
@@ -81,8 +91,8 @@ public class CaseForwardingNotification3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Reassignment#Justification
-	 * Reassignment.Justification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Reassignment#mmJustification
+	 * Reassignment.mmJustification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -101,17 +111,17 @@ public class CaseForwardingNotification3 {
 	 * definition} = "Justification for the forward action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Justification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmJustification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Reassignment.mmJustification;
 			componentContext_lazy = () -> CaseForwardingNotification3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Reassignment.Justification;
 			isDerived = false;
 			xmlTag = "Justfn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Justification";
 			definition = "Justification for the forward action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CaseForwardingNotification3Code.mmObject();
 		}
 	};
@@ -119,15 +129,24 @@ public class CaseForwardingNotification3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CaseForwardingNotification3.Justification);
+				messageElement_lazy = () -> Arrays.asList(CaseForwardingNotification3.mmJustification);
+				messageBuildingBlock_lazy = () -> Arrays.asList(NotificationOfCaseAssignmentV04.mmNotification);
 				trace_lazy = () -> Reassignment.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04.Notification);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CaseForwardingNotification3";
 				definition = "Status of a case resulting from a case assignment.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Justfn", required = true)
+	public CaseForwardingNotification3Code getJustification() {
+		return justification;
+	}
+
+	public void setJustification(CaseForwardingNotification3Code justification) {
+		this.justification = justification;
 	}
 }

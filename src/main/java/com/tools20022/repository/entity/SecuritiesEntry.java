@@ -17,13 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.Entry;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.EntryTransaction8;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Posting to a securities account as a result of a securities creation,
@@ -39,20 +41,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#AcquisitionDate
- * SecuritiesEntry.AcquisitionDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmAcquisitionDate
+ * SecuritiesEntry.mmAcquisitionDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#FinancialInstrumentQuantity
- * SecuritiesEntry.FinancialInstrumentQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmFinancialInstrumentQuantity
+ * SecuritiesEntry.mmFinancialInstrumentQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#SecuritiesAccount
- * SecuritiesEntry.SecuritiesAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmSecuritiesAccount
+ * SecuritiesEntry.mmSecuritiesAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#SecuritiesBalance
- * SecuritiesEntry.SecuritiesBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmSecuritiesBalance
+ * SecuritiesEntry.mmSecuritiesBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#TriggeringSecuritiesTransfer
- * SecuritiesEntry.TriggeringSecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmTriggeringSecuritiesTransfer
+ * SecuritiesEntry.mmTriggeringSecuritiesTransfer}</li>
  * </ul>
  * </li>
  * <li>
@@ -60,16 +62,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#SecuritiesEntry
- * SecuritiesAccount.SecuritiesEntry}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Entry
- * SecuritiesQuantity.Entry}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSecuritiesEntry
+ * SecuritiesAccount.mmSecuritiesEntry}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmEntry
+ * SecuritiesQuantity.mmEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#BookEntry
- * SecuritiesTransfer.BookEntry}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmBookEntry
+ * SecuritiesTransfer.mmBookEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#SecuritiesEntry
- * SecuritiesBalance.SecuritiesEntry}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmSecuritiesEntry
+ * SecuritiesBalance.mmSecuritiesEntry}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -77,8 +79,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesEntry extends Entry {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate acquisitionDate;
 	/**
 	 * Date upon which the investor purchased the financial instrument.
 	 * <p>
@@ -120,18 +123,27 @@ public class SecuritiesEntry extends Entry {
 	 * "Date upon which the investor purchased the financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AcquisitionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAcquisitionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesEntry.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcquisitionDate";
 			definition = "Date upon which the investor purchased the financial instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesEntry.class.getMethod("getAcquisitionDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity financialInstrumentQuantity;
 	/**
 	 * Quantity of financial instrument.
 	 * <p>
@@ -140,8 +152,8 @@ public class SecuritiesEntry extends Entry {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Entry
-	 * SecuritiesQuantity.Entry}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmEntry
+	 * SecuritiesQuantity.mmEntry}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -153,8 +165,8 @@ public class SecuritiesEntry extends Entry {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#RelatedQuantities
-	 * EntryTransaction8.RelatedQuantities}</li>
+	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmRelatedQuantities
+	 * EntryTransaction8.mmRelatedQuantities}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -173,21 +185,22 @@ public class SecuritiesEntry extends Entry {
 	 * definition} = "Quantity of financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FinancialInstrumentQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFinancialInstrumentQuantity = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EntryTransaction8.RelatedQuantities);
-			elementContext_lazy = () -> SecuritiesEntry.mmObject();
+			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmRelatedQuantities);
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialInstrumentQuantity";
 			definition = "Quantity of financial instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.Entry;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmEntry;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
 	 * Securities account on which the quantity of the entry is debited or
 	 * credited. It is derived from the association between Entry and Account.
@@ -197,8 +210,8 @@ public class SecuritiesEntry extends Entry {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#SecuritiesEntry
-	 * SecuritiesAccount.SecuritiesEntry}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSecuritiesEntry
+	 * SecuritiesAccount.mmSecuritiesEntry}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -224,19 +237,20 @@ public class SecuritiesEntry extends Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesEntry.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Securities account on which the quantity of the entry is debited or credited. It is derived from the association between Entry and Account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesEntry;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.SecuritiesEntry;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesBalance securitiesBalance;
 	/**
 	 * Amount that is the result of the sum of the entries from or to an
 	 * account. It is derived from the association between Entry and Balance.
@@ -246,8 +260,8 @@ public class SecuritiesEntry extends Entry {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#SecuritiesEntry
-	 * SecuritiesBalance.SecuritiesEntry}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmSecuritiesEntry
+	 * SecuritiesBalance.mmSecuritiesEntry}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -273,20 +287,21 @@ public class SecuritiesEntry extends Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesEntry.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Amount that is the result of the sum of the entries from or to an account. It is derived from the association between Entry and Balance.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesEntry;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.SecuritiesEntry;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesTransfer triggeringSecuritiesTransfer;
 	/**
 	 * Transfer which is at the origin of the entry in the securities account.
 	 * <p>
@@ -295,8 +310,8 @@ public class SecuritiesEntry extends Entry {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#BookEntry
-	 * SecuritiesTransfer.BookEntry}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmBookEntry
+	 * SecuritiesTransfer.mmBookEntry}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -322,35 +337,81 @@ public class SecuritiesEntry extends Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TriggeringSecuritiesTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTriggeringSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesEntry.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TriggeringSecuritiesTransfer";
 			definition = "Transfer which is at the origin of the entry in the securities account.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesTransfer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.BookEntry;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmBookEntry;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesEntry";
 				definition = "Posting to a securities account as a result of a securities creation, deletion or transfer in the context of a securities transaction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.SecuritiesEntry, com.tools20022.repository.entity.SecuritiesQuantity.Entry,
-						com.tools20022.repository.entity.SecuritiesTransfer.BookEntry, com.tools20022.repository.entity.SecuritiesBalance.SecuritiesEntry);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesEntry, com.tools20022.repository.entity.SecuritiesQuantity.mmEntry,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmBookEntry, com.tools20022.repository.entity.SecuritiesBalance.mmSecuritiesEntry);
 				superType_lazy = () -> Entry.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesEntry.AcquisitionDate, com.tools20022.repository.entity.SecuritiesEntry.FinancialInstrumentQuantity,
-						com.tools20022.repository.entity.SecuritiesEntry.SecuritiesAccount, com.tools20022.repository.entity.SecuritiesEntry.SecuritiesBalance, com.tools20022.repository.entity.SecuritiesEntry.TriggeringSecuritiesTransfer);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesEntry.mmAcquisitionDate, com.tools20022.repository.entity.SecuritiesEntry.mmFinancialInstrumentQuantity,
+						com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesAccount, com.tools20022.repository.entity.SecuritiesEntry.mmSecuritiesBalance,
+						com.tools20022.repository.entity.SecuritiesEntry.mmTriggeringSecuritiesTransfer);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesEntry.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODate getAcquisitionDate() {
+		return acquisitionDate;
+	}
+
+	public void setAcquisitionDate(ISODate acquisitionDate) {
+		this.acquisitionDate = acquisitionDate;
+	}
+
+	public SecuritiesQuantity getFinancialInstrumentQuantity() {
+		return financialInstrumentQuantity;
+	}
+
+	public void setFinancialInstrumentQuantity(com.tools20022.repository.entity.SecuritiesQuantity financialInstrumentQuantity) {
+		this.financialInstrumentQuantity = financialInstrumentQuantity;
+	}
+
+	public List<SecuritiesAccount> getSecuritiesAccount() {
+		return securitiesAccount;
+	}
+
+	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = securitiesAccount;
+	}
+
+	public SecuritiesBalance getSecuritiesBalance() {
+		return securitiesBalance;
+	}
+
+	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+		this.securitiesBalance = securitiesBalance;
+	}
+
+	public SecuritiesTransfer getTriggeringSecuritiesTransfer() {
+		return triggeringSecuritiesTransfer;
+	}
+
+	public void setTriggeringSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer triggeringSecuritiesTransfer) {
+		this.triggeringSecuritiesTransfer = triggeringSecuritiesTransfer;
 	}
 }

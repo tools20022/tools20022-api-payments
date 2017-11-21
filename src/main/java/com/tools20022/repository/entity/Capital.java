@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CapitalTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,28 +39,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Capital#AssetIssuance
- * Capital.AssetIssuance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Capital#Date Capital.Date}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Capital#Type Capital.Type}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Capital#Amount
- * Capital.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Capital#Unit Capital.Unit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Capital#mmAssetIssuance
+ * Capital.mmAssetIssuance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Capital#mmDate
+ * Capital.mmDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Capital#mmType
+ * Capital.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Capital#mmAmount
+ * Capital.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Capital#mmUnit
+ * Capital.mmUnit}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#CapitalRaised
- * Issuance.CapitalRaised}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmCapitalRaised
+ * Issuance.mmCapitalRaised}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,6 +78,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Capital {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Issuance assetIssuance;
 	/**
 	 * Issued asset.
 	 * <p>
@@ -83,8 +87,8 @@ public class Capital {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Issuance#CapitalRaised
-	 * Issuance.CapitalRaised}</li>
+	 * {@linkplain com.tools20022.repository.entity.Issuance#mmCapitalRaised
+	 * Issuance.mmCapitalRaised}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -106,20 +110,21 @@ public class Capital {
 	 * definition} = "Issued asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssetIssuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssetIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Capital.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssetIssuance";
 			definition = "Issued asset.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Issuance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.CapitalRaised;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.mmCapitalRaised;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 		}
 	};
+	protected ISODateTime date;
 	/**
 	 * Date/time at which capital amount was recorded.
 	 * <p>
@@ -144,18 +149,27 @@ public class Capital {
 	 * definition} = "Date/time at which capital amount was recorded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Date = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Capital.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date/time at which capital amount was recorded.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Capital.class.getMethod("getDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CapitalTypeCode type;
 	/**
 	 * Specifies the type of capital.
 	 * <p>
@@ -181,18 +195,27 @@ public class Capital {
 	 * definition} = "Specifies the type of capital."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Capital.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of capital.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CapitalTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Capital.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount amount;
 	/**
 	 * Capital expressed as a currency and amount.
 	 * <p>
@@ -218,18 +241,27 @@ public class Capital {
 	 * definition} = "Capital expressed as a currency and amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Capital.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Capital expressed as a currency and amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Capital.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DecimalNumber unit;
 	/**
 	 * Capital expressed as a number of units.
 	 * <p>
@@ -255,31 +287,84 @@ public class Capital {
 	 * definition} = "Capital expressed as a number of units."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Unit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Capital.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unit";
 			definition = "Capital expressed as a number of units.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Capital.class.getMethod("getUnit", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Capital";
 				definition = "Amount of money targeted to be raised through the issuance of a security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Issuance.CapitalRaised);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Capital.AssetIssuance, com.tools20022.repository.entity.Capital.Date, com.tools20022.repository.entity.Capital.Type,
-						com.tools20022.repository.entity.Capital.Amount, com.tools20022.repository.entity.Capital.Unit);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Issuance.mmCapitalRaised);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Capital.mmAssetIssuance, com.tools20022.repository.entity.Capital.mmDate, com.tools20022.repository.entity.Capital.mmType,
+						com.tools20022.repository.entity.Capital.mmAmount, com.tools20022.repository.entity.Capital.mmUnit);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Capital.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Issuance getAssetIssuance() {
+		return assetIssuance;
+	}
+
+	public void setAssetIssuance(com.tools20022.repository.entity.Issuance assetIssuance) {
+		this.assetIssuance = assetIssuance;
+	}
+
+	public ISODateTime getDate() {
+		return date;
+	}
+
+	public void setDate(ISODateTime date) {
+		this.date = date;
+	}
+
+	public CapitalTypeCode getType() {
+		return type;
+	}
+
+	public void setType(CapitalTypeCode type) {
+		this.type = type;
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public DecimalNumber getUnit() {
+		return unit;
+	}
+
+	public void setUnit(DecimalNumber unit) {
+		this.unit = unit;
 	}
 }

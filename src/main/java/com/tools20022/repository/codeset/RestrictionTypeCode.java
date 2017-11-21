@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,25 +32,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Selling
- * RestrictionTypeCode.Selling}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Buying
- * RestrictionTypeCode.Buying}</li>
+ * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#mmSelling
+ * RestrictionTypeCode.mmSelling}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Placing
- * RestrictionTypeCode.Placing}</li>
+ * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#mmBuying
+ * RestrictionTypeCode.mmBuying}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Holding
- * RestrictionTypeCode.Holding}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#Voting
- * RestrictionTypeCode.Voting}</li>
+ * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#mmPlacing
+ * RestrictionTypeCode.mmPlacing}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#mmHolding
+ * RestrictionTypeCode.mmHolding}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.RestrictionTypeCode#mmVoting
+ * RestrictionTypeCode.mmVoting}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +93,9 @@ public class RestrictionTypeCode {
 	 * definition} = "Selling restriction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Selling = new MMCode() {
+	public static final MMCode mmSelling = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Selling";
 			definition = "Selling restriction.";
 			owner_lazy = () -> RestrictionTypeCode.mmObject();
@@ -119,9 +123,9 @@ public class RestrictionTypeCode {
 	 * definition} = "Buying restriction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Buying = new MMCode() {
+	public static final MMCode mmBuying = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Buying";
 			definition = "Buying restriction.";
 			owner_lazy = () -> RestrictionTypeCode.mmObject();
@@ -149,9 +153,9 @@ public class RestrictionTypeCode {
 	 * definition} = "Placing restriction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Placing = new MMCode() {
+	public static final MMCode mmPlacing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Placing";
 			definition = "Placing restriction.";
 			owner_lazy = () -> RestrictionTypeCode.mmObject();
@@ -179,9 +183,9 @@ public class RestrictionTypeCode {
 	 * definition} = "Holding restriction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Holding = new MMCode() {
+	public static final MMCode mmHolding = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Holding";
 			definition = "Holding restriction.";
 			owner_lazy = () -> RestrictionTypeCode.mmObject();
@@ -209,9 +213,9 @@ public class RestrictionTypeCode {
 	 * definition} = "Voting restriction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Voting = new MMCode() {
+	public static final MMCode mmVoting = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Voting";
 			definition = "Voting restriction.";
 			owner_lazy = () -> RestrictionTypeCode.mmObject();
@@ -222,13 +226,12 @@ public class RestrictionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("SELR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RestrictionTypeCode";
 				definition = "Specifies the type of restriction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RestrictionTypeCode.Selling, com.tools20022.repository.codeset.RestrictionTypeCode.Buying, com.tools20022.repository.codeset.RestrictionTypeCode.Placing,
-						com.tools20022.repository.codeset.RestrictionTypeCode.Holding, com.tools20022.repository.codeset.RestrictionTypeCode.Voting);
+				code_lazy = () -> Arrays.asList(RestrictionTypeCode.mmSelling, RestrictionTypeCode.mmBuying, RestrictionTypeCode.mmPlacing, RestrictionTypeCode.mmHolding, RestrictionTypeCode.mmVoting);
 			}
 		});
 		return mmObject_lazy.get();

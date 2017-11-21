@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -32,6 +34,23 @@ import java.util.Optional;
  */
 public class MMCodeSet extends MMString {
 
+	/**
+	 * The CodeSet that this CodesSet is derived from.
+	 */
+	public final static MetamodelAttribute<MMCodeSet, Optional<MMCodeSet>> traceAttribute = newAttribute();
+	/**
+	 * The CodeSets which are derived from this CodeSet.
+	 */
+	public final static MetamodelAttribute<MMCodeSet, List<MMCodeSet>> derivationAttribute = newAttribute();
+	/**
+	 * Uniquely identifies a set of Codes through a Uniform Resource Identifier
+	 * (URI).
+	 */
+	public final static MetamodelAttribute<MMCodeSet, Optional<String>> identificationSchemeAttribute = newAttribute();
+	/**
+	 * A set of Codes belonging to the same CodeSet
+	 */
+	public final static MetamodelAttribute<MMCodeSet, List<MMCode>> codeAttribute = newAttribute();
 	protected Supplier<MMCodeSet> trace_lazy;
 	protected Supplier<List<MMCodeSet>> derivation_lazy;
 	protected String identificationScheme;

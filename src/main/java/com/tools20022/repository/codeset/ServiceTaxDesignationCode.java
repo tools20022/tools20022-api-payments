@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,14 +32,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode#Exempt
- * ServiceTaxDesignationCode.Exempt}</li>
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode#mmExempt
+ * ServiceTaxDesignationCode.mmExempt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode#ZeroRate
- * ServiceTaxDesignationCode.ZeroRate}</li>
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode#mmZeroRate
+ * ServiceTaxDesignationCode.mmZeroRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode#Taxable
- * ServiceTaxDesignationCode.Taxable}</li>
+ * {@linkplain com.tools20022.repository.codeset.ServiceTaxDesignationCode#mmTaxable
+ * ServiceTaxDesignationCode.mmTaxable}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -50,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,9 +94,9 @@ public class ServiceTaxDesignationCode {
 	 * definition} = "No taxes are due."</li>
 	 * </ul>
 	 */
-	public static final MMCode Exempt = new MMCode() {
+	public static final MMCode mmExempt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Exempt";
 			definition = "No taxes are due.";
 			owner_lazy = () -> ServiceTaxDesignationCode.mmObject();
@@ -122,9 +124,9 @@ public class ServiceTaxDesignationCode {
 	 * definition} = "Tax is due but at zero percent and a zero charge."</li>
 	 * </ul>
 	 */
-	public static final MMCode ZeroRate = new MMCode() {
+	public static final MMCode mmZeroRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ZeroRate";
 			definition = "Tax is due but at zero percent and a zero charge.";
 			owner_lazy = () -> ServiceTaxDesignationCode.mmObject();
@@ -152,9 +154,9 @@ public class ServiceTaxDesignationCode {
 	 * definition} = "One or more taxes are due on this service."</li>
 	 * </ul>
 	 */
-	public static final MMCode Taxable = new MMCode() {
+	public static final MMCode mmTaxable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Taxable";
 			definition = "One or more taxes are due on this service.";
 			owner_lazy = () -> ServiceTaxDesignationCode.mmObject();
@@ -165,13 +167,12 @@ public class ServiceTaxDesignationCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("XMPT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServiceTaxDesignationCode";
 				definition = "Defines the taxable status of the service.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ServiceTaxDesignationCode.Exempt, com.tools20022.repository.codeset.ServiceTaxDesignationCode.ZeroRate,
-						com.tools20022.repository.codeset.ServiceTaxDesignationCode.Taxable);
+				code_lazy = () -> Arrays.asList(ServiceTaxDesignationCode.mmExempt, ServiceTaxDesignationCode.mmZeroRate, ServiceTaxDesignationCode.mmTaxable);
 				derivation_lazy = () -> Arrays.asList(ServiceTaxDesignation1Code.mmObject());
 			}
 		});

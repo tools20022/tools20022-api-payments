@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,22 +32,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#AgainstPayment
- * DeliveryTypeCode.AgainstPayment}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#Free
- * DeliveryTypeCode.Free}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#Triparty
- * DeliveryTypeCode.Triparty}</li>
+ * {@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#mmAgainstPayment
+ * DeliveryTypeCode.mmAgainstPayment}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#mmFree
+ * DeliveryTypeCode.mmFree}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#HoldInCustody
- * DeliveryTypeCode.HoldInCustody}</li>
+ * {@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#mmTriparty
+ * DeliveryTypeCode.mmTriparty}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DeliveryTypeCode#mmHoldInCustody
+ * DeliveryTypeCode.mmHoldInCustody}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +91,9 @@ public class DeliveryTypeCode {
 	 * definition} = "Indicates that the delivery is against payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode AgainstPayment = new MMCode() {
+	public static final MMCode mmAgainstPayment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AgainstPayment";
 			definition = "Indicates that the delivery is against payment.";
 			owner_lazy = () -> DeliveryTypeCode.mmObject();
@@ -118,9 +121,9 @@ public class DeliveryTypeCode {
 	 * definition} = "Indicates the delivery is free of payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode Free = new MMCode() {
+	public static final MMCode mmFree = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Free";
 			definition = "Indicates the delivery is free of payment.";
 			owner_lazy = () -> DeliveryTypeCode.mmObject();
@@ -151,9 +154,9 @@ public class DeliveryTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Triparty = new MMCode() {
+	public static final MMCode mmTriparty = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Triparty";
 			definition = "Indicates that a custodian bank or international clearing organization acts as an intermediary between the two parties to the repo.";
 			owner_lazy = () -> DeliveryTypeCode.mmObject();
@@ -186,9 +189,9 @@ public class DeliveryTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode HoldInCustody = new MMCode() {
+	public static final MMCode mmHoldInCustody = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HoldInCustody";
 			definition = "Indicates that the collateral pledged by the (cash) borrower is not actually delivered to the cash lender. Rather, it is placed in an internal account (\"held in custody\") by the borrower, for the lender, throughout the duration of the trade.";
 			owner_lazy = () -> DeliveryTypeCode.mmObject();
@@ -199,13 +202,12 @@ public class DeliveryTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("AGPM");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryTypeCode";
 				definition = "Describes the delivery or custody arrangement for the underlying securities.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DeliveryTypeCode.AgainstPayment, com.tools20022.repository.codeset.DeliveryTypeCode.Free, com.tools20022.repository.codeset.DeliveryTypeCode.Triparty,
-						com.tools20022.repository.codeset.DeliveryTypeCode.HoldInCustody);
+				code_lazy = () -> Arrays.asList(DeliveryTypeCode.mmAgainstPayment, DeliveryTypeCode.mmFree, DeliveryTypeCode.mmTriparty, DeliveryTypeCode.mmHoldInCustody);
 			}
 		});
 		return mmObject_lazy.get();

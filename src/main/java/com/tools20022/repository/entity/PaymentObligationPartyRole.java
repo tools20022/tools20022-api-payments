@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of a payment obligation.
@@ -37,18 +41,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligationPartyRole#PaymentObligation
- * PaymentObligationPartyRole.PaymentObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligationPartyRole#mmPaymentObligation
+ * PaymentObligationPartyRole.mmPaymentObligation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.PaymentObligation#PartyRole
- * PaymentObligation.PartyRole}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPartyRole
+ * PaymentObligation.mmPartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -58,13 +65,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * UltimateCreditorRole}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,6 +84,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PaymentObligationPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
 	 * Identifies the payment obligation for which a party plays a role.
 	 * <p>
@@ -87,8 +93,8 @@ public class PaymentObligationPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#PartyRole
-	 * PaymentObligation.PartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPartyRole
+	 * PaymentObligation.mmPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -113,33 +119,46 @@ public class PaymentObligationPartyRole extends Role {
 	 * "Identifies the payment obligation for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PaymentObligationPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentObligationPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Identifies the payment obligation for which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.PartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentObligationPartyRole";
 				definition = "Role played by a party in the context of a payment obligation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.PartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.mmPartyRole);
 				subType_lazy = () -> Arrays.asList(UltimateDebtorRole.mmObject(), UltimateCreditorRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligationPartyRole.PaymentObligation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligationPartyRole.mmPaymentObligation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PaymentObligationPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<PaymentObligation> getPaymentObligation() {
+		return paymentObligation;
+	}
+
+	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = paymentObligation;
 	}
 }

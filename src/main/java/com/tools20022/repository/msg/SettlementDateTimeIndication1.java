@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.entity.CashSettlement;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Information on the occurred settlement time(s) of the payment transaction.
@@ -34,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SettlementDateTimeIndication1#DebitDateTime
- * SettlementDateTimeIndication1.DebitDateTime}</li>
+ * {@linkplain com.tools20022.repository.msg.SettlementDateTimeIndication1#mmDebitDateTime
+ * SettlementDateTimeIndication1.mmDebitDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SettlementDateTimeIndication1#CreditDateTime
- * SettlementDateTimeIndication1.CreditDateTime}</li>
+ * {@linkplain com.tools20022.repository.msg.SettlementDateTimeIndication1#mmCreditDateTime
+ * SettlementDateTimeIndication1.mmCreditDateTime}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Information on the occurred settlement time(s) of the payment transaction."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "SettlementDateTimeIndication1", propOrder = {"debitDateTime", "creditDateTime"})
 public class SettlementDateTimeIndication1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODateTime debitDateTime;
 	/**
 	 * Date and time at which a payment has been debited at the transaction
 	 * administrator. In the case of TARGET, the date and time at which the
@@ -78,8 +87,8 @@ public class SettlementDateTimeIndication1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashSettlement#DebitDateTime
-	 * CashSettlement.DebitDateTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashSettlement#mmDebitDateTime
+	 * CashSettlement.mmDebitDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -100,20 +109,21 @@ public class SettlementDateTimeIndication1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DebitDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDebitDateTime = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashSettlement.mmDebitDateTime;
 			componentContext_lazy = () -> SettlementDateTimeIndication1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashSettlement.DebitDateTime;
 			isDerived = false;
 			xmlTag = "DbtDtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebitDateTime";
 			definition = "Date and time at which a payment has been debited at the transaction administrator. In the case of TARGET, the date and time at which the payment has been debited at the central bank, expressed in Central European Time (CET).";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	protected ISODateTime creditDateTime;
 	/**
 	 * Date and time at which a payment has been credited at the transaction
 	 * administrator. In the case of TARGET, the date and time at which the
@@ -129,8 +139,8 @@ public class SettlementDateTimeIndication1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashSettlement#CreditDateTime
-	 * CashSettlement.CreditDateTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashSettlement#mmCreditDateTime
+	 * CashSettlement.mmCreditDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -151,17 +161,17 @@ public class SettlementDateTimeIndication1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreditDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreditDateTime = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashSettlement.mmCreditDateTime;
 			componentContext_lazy = () -> SettlementDateTimeIndication1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashSettlement.CreditDateTime;
 			isDerived = false;
 			xmlTag = "CdtDtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDateTime";
 			definition = "Date and time at which a payment has been credited at the transaction administrator. In the case of TARGET, the date and time at which the payment has been credited at the receiving central bank, expressed in Central European Time (CET).";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
@@ -169,14 +179,32 @@ public class SettlementDateTimeIndication1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SettlementDateTimeIndication1.DebitDateTime, com.tools20022.repository.msg.SettlementDateTimeIndication1.CreditDateTime);
+				messageElement_lazy = () -> Arrays.asList(SettlementDateTimeIndication1.mmDebitDateTime, SettlementDateTimeIndication1.mmCreditDateTime);
 				trace_lazy = () -> CashSettlement.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementDateTimeIndication1";
 				definition = "Information on the occurred settlement time(s) of the payment transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "DbtDtTm")
+	public ISODateTime getDebitDateTime() {
+		return debitDateTime;
+	}
+
+	public void setDebitDateTime(ISODateTime debitDateTime) {
+		this.debitDateTime = debitDateTime;
+	}
+
+	@XmlElement(name = "CdtDtTm")
+	public ISODateTime getCreditDateTime() {
+		return creditDateTime;
+	}
+
+	public void setCreditDateTime(ISODateTime creditDateTime) {
+		this.creditDateTime = creditDateTime;
 	}
 }

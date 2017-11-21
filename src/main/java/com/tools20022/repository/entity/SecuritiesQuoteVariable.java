@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LegSwapTypeCode;
 import com.tools20022.repository.codeset.PriceValueTypeCode;
 import com.tools20022.repository.codeset.QualifierCode;
 import com.tools20022.repository.codeset.QuoteTypeCode;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Proposition of price for a financial instrument.
@@ -41,66 +42,69 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#Qualifier
- * SecuritiesQuoteVariable.Qualifier}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmQualifier
+ * SecuritiesQuoteVariable.mmQualifier}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#Type
- * SecuritiesQuoteVariable.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmType
+ * SecuritiesQuoteVariable.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#QuoteTradingSession
- * SecuritiesQuoteVariable.QuoteTradingSession}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmQuoteTradingSession
+ * SecuritiesQuoteVariable.mmQuoteTradingSession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#LegSwapType
- * SecuritiesQuoteVariable.LegSwapType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmLegSwapType
+ * SecuritiesQuoteVariable.mmLegSwapType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#PriceType
- * SecuritiesQuoteVariable.PriceType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmPriceType
+ * SecuritiesQuoteVariable.mmPriceType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#MidSide
- * SecuritiesQuoteVariable.MidSide}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmMidSide
+ * SecuritiesQuoteVariable.mmMidSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#BidSide
- * SecuritiesQuoteVariable.BidSide}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmBidSide
+ * SecuritiesQuoteVariable.mmBidSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#OfferSide
- * SecuritiesQuoteVariable.OfferSide}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmOfferSide
+ * SecuritiesQuoteVariable.mmOfferSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#RelatedQuote
- * SecuritiesQuoteVariable.RelatedQuote}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmRelatedQuote
+ * SecuritiesQuoteVariable.mmRelatedQuote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#SecuritiesOrder
- * SecuritiesQuoteVariable.SecuritiesOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmSecuritiesOrder
+ * SecuritiesQuoteVariable.mmSecuritiesOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#Commission
- * SecuritiesQuoteVariable.Commission}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable#mmCommission
+ * SecuritiesQuoteVariable.mmCommission}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Commission#RelatedQuote
- * Commission.RelatedQuote}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesOrder#Quote
- * SecuritiesOrder.Quote}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingSession#Quote
- * TradingSession.Quote}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Quote#MidSideQuoteVariable
- * Quote.MidSideQuoteVariable}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Quote#BidSideQuoteVariable
- * Quote.BidSideQuoteVariable}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Commission#mmRelatedQuote
+ * Commission.mmRelatedQuote}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmQuote
+ * SecuritiesOrder.mmQuote}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingSession#mmQuote
+ * TradingSession.mmQuote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Quote#OfferSideQuoteVariable
- * Quote.OfferSideQuoteVariable}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Quote#SecurityQuoteVariable
- * Quote.SecurityQuoteVariable}</li>
+ * {@linkplain com.tools20022.repository.entity.Quote#mmMidSideQuoteVariable
+ * Quote.mmMidSideQuoteVariable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Quote#mmBidSideQuoteVariable
+ * Quote.mmBidSideQuoteVariable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Quote#mmOfferSideQuoteVariable
+ * Quote.mmOfferSideQuoteVariable}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Quote#mmSecurityQuoteVariable
+ * Quote.mmSecurityQuoteVariable}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -114,6 +118,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesQuoteVariable {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected QualifierCode qualifier;
 	/**
 	 * Qualifies the use of the quote.
 	 * <p>
@@ -140,18 +145,27 @@ public class SecuritiesQuoteVariable {
 	 * definition} = "Qualifies the use of the quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Qualifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmQualifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Qualifier";
 			definition = "Qualifies the use of the quote.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> QualifierCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesQuoteVariable.class.getMethod("getQualifier", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected QuoteTypeCode type;
 	/**
 	 * Indicates the scenario in which the quote is (requested to be) used (ie,
 	 * indicative, firm, restricted tradeable or counter).
@@ -181,18 +195,27 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Indicates the scenario in which the quote is (requested to be) used (ie, indicative, firm, restricted tradeable or counter).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> QuoteTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesQuoteVariable.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TradingSession quoteTradingSession;
 	/**
 	 * Details of a specific trading session associated with a quote.
 	 * <p>
@@ -201,8 +224,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingSession#Quote
-	 * TradingSession.Quote}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingSession#mmQuote
+	 * TradingSession.mmQuote}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -227,20 +250,21 @@ public class SecuritiesQuoteVariable {
 	 * "Details of a specific trading session associated with a quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd QuoteTradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmQuoteTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteTradingSession";
 			definition = "Details of a specific trading session associated with a quote.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> TradingSession.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.Quote;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.mmQuote;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
 		}
 	};
+	protected LegSwapTypeCode legSwapType;
 	/**
 	 * Indicates that the sell-side is requested to calculate the quantity based
 	 * on the opposite leg and is used instead of giving a quantity.
@@ -270,18 +294,27 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LegSwapType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLegSwapType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegSwapType";
 			definition = "Indicates that the sell-side is requested to calculate the quantity based on the opposite leg and is used instead of giving a quantity.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LegSwapTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesQuoteVariable.class.getMethod("getLegSwapType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PriceValueTypeCode priceType;
 	/**
 	 * Initiator can specify the price type the quote needs to be quoted at. If
 	 * not specified, the respondent has option to specify how quote is quoted.
@@ -311,18 +344,27 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PriceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPriceType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceType";
 			definition = "Initiator can specify the price type the quote needs to be quoted at. If not specified, the respondent has option to specify how quote is quoted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PriceValueTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesQuoteVariable.class.getMethod("getPriceType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Quote midSide;
 	/**
 	 * Indicates that the quote details are indicated as a mid of a security,
 	 * commodity, currency (an average of the offer and the bid).
@@ -332,8 +374,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Quote#MidSideQuoteVariable
-	 * Quote.MidSideQuoteVariable}</li>
+	 * {@linkplain com.tools20022.repository.entity.Quote#mmMidSideQuoteVariable
+	 * Quote.mmMidSideQuoteVariable}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -358,20 +400,21 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MidSide = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMidSide = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MidSide";
 			definition = "Indicates that the quote details are indicated as a mid of a security, commodity, currency (an average of the offer and the bid).";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Quote.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.MidSideQuoteVariable;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmMidSideQuoteVariable;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 		}
 	};
+	protected Quote bidSide;
 	/**
 	 * Indicates that the quote details are indicated as a bid of a security,
 	 * commodity, currency.
@@ -381,8 +424,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Quote#BidSideQuoteVariable
-	 * Quote.BidSideQuoteVariable}</li>
+	 * {@linkplain com.tools20022.repository.entity.Quote#mmBidSideQuoteVariable
+	 * Quote.mmBidSideQuoteVariable}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -407,20 +450,21 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BidSide = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBidSide = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BidSide";
 			definition = "Indicates that the quote details are indicated as a bid of a security, commodity, currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Quote.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.BidSideQuoteVariable;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmBidSideQuoteVariable;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 		}
 	};
+	protected Quote offerSide;
 	/**
 	 * Indicates that the quote details are indicated as an offer of a security,
 	 * commodity, currency.
@@ -430,8 +474,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Quote#OfferSideQuoteVariable
-	 * Quote.OfferSideQuoteVariable}</li>
+	 * {@linkplain com.tools20022.repository.entity.Quote#mmOfferSideQuoteVariable
+	 * Quote.mmOfferSideQuoteVariable}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -456,20 +500,21 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OfferSide = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOfferSide = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferSide";
 			definition = "Indicates that the quote details are indicated as an offer of a security, commodity, currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Quote.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.OfferSideQuoteVariable;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmOfferSideQuoteVariable;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 		}
 	};
+	protected Quote relatedQuote;
 	/**
 	 * Quote parameters related to a security quote.
 	 * <p>
@@ -478,8 +523,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Quote#SecurityQuoteVariable
-	 * Quote.SecurityQuoteVariable}</li>
+	 * {@linkplain com.tools20022.repository.entity.Quote#mmSecurityQuoteVariable
+	 * Quote.mmSecurityQuoteVariable}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -502,20 +547,21 @@ public class SecuritiesQuoteVariable {
 	 * definition} = "Quote parameters related to a security quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedQuote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedQuote";
 			definition = "Quote parameters related to a security quote.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Quote.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.SecurityQuoteVariable;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmSecurityQuoteVariable;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
 		}
 	};
+	protected SecuritiesOrder securitiesOrder;
 	/**
 	 * Preliminary information on conditions of the order, specified in the
 	 * quote (request).
@@ -525,8 +571,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#Quote
-	 * SecuritiesOrder.Quote}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmQuote
+	 * SecuritiesOrder.mmQuote}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -552,20 +598,21 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Preliminary information on conditions of the order, specified in the quote (request).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmQuote;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.Quote;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Commission> commission;
 	/**
 	 * Commission associated with a quote.
 	 * <p>
@@ -574,8 +621,8 @@ public class SecuritiesQuoteVariable {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Commission#RelatedQuote
-	 * Commission.RelatedQuote}</li>
+	 * {@linkplain com.tools20022.repository.entity.Commission#mmRelatedQuote
+	 * Commission.mmRelatedQuote}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -599,36 +646,130 @@ public class SecuritiesQuoteVariable {
 	 * definition} = "Commission associated with a quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Commission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesQuoteVariable.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Commission";
 			definition = "Commission associated with a quote.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Commission.mmRelatedQuote;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Commission.RelatedQuote;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesQuoteVariable";
 				definition = "Proposition of price for a financial instrument.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.RelatedQuote, com.tools20022.repository.entity.SecuritiesOrder.Quote, com.tools20022.repository.entity.TradingSession.Quote,
-						com.tools20022.repository.entity.Quote.MidSideQuoteVariable, com.tools20022.repository.entity.Quote.BidSideQuoteVariable, com.tools20022.repository.entity.Quote.OfferSideQuoteVariable,
-						com.tools20022.repository.entity.Quote.SecurityQuoteVariable);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuoteVariable.Qualifier, com.tools20022.repository.entity.SecuritiesQuoteVariable.Type,
-						com.tools20022.repository.entity.SecuritiesQuoteVariable.QuoteTradingSession, com.tools20022.repository.entity.SecuritiesQuoteVariable.LegSwapType, com.tools20022.repository.entity.SecuritiesQuoteVariable.PriceType,
-						com.tools20022.repository.entity.SecuritiesQuoteVariable.MidSide, com.tools20022.repository.entity.SecuritiesQuoteVariable.BidSide, com.tools20022.repository.entity.SecuritiesQuoteVariable.OfferSide,
-						com.tools20022.repository.entity.SecuritiesQuoteVariable.RelatedQuote, com.tools20022.repository.entity.SecuritiesQuoteVariable.SecuritiesOrder, com.tools20022.repository.entity.SecuritiesQuoteVariable.Commission);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmRelatedQuote, com.tools20022.repository.entity.SecuritiesOrder.mmQuote, com.tools20022.repository.entity.TradingSession.mmQuote,
+						com.tools20022.repository.entity.Quote.mmMidSideQuoteVariable, com.tools20022.repository.entity.Quote.mmBidSideQuoteVariable, com.tools20022.repository.entity.Quote.mmOfferSideQuoteVariable,
+						com.tools20022.repository.entity.Quote.mmSecurityQuoteVariable);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuoteVariable.mmQualifier, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmType,
+						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmQuoteTradingSession, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmLegSwapType,
+						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmPriceType, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmMidSide, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmBidSide,
+						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmOfferSide, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmRelatedQuote,
+						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmSecuritiesOrder, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmCommission);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesQuoteVariable.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public QualifierCode getQualifier() {
+		return qualifier;
+	}
+
+	public void setQualifier(QualifierCode qualifier) {
+		this.qualifier = qualifier;
+	}
+
+	public QuoteTypeCode getType() {
+		return type;
+	}
+
+	public void setType(QuoteTypeCode type) {
+		this.type = type;
+	}
+
+	public TradingSession getQuoteTradingSession() {
+		return quoteTradingSession;
+	}
+
+	public void setQuoteTradingSession(com.tools20022.repository.entity.TradingSession quoteTradingSession) {
+		this.quoteTradingSession = quoteTradingSession;
+	}
+
+	public LegSwapTypeCode getLegSwapType() {
+		return legSwapType;
+	}
+
+	public void setLegSwapType(LegSwapTypeCode legSwapType) {
+		this.legSwapType = legSwapType;
+	}
+
+	public PriceValueTypeCode getPriceType() {
+		return priceType;
+	}
+
+	public void setPriceType(PriceValueTypeCode priceType) {
+		this.priceType = priceType;
+	}
+
+	public Quote getMidSide() {
+		return midSide;
+	}
+
+	public void setMidSide(com.tools20022.repository.entity.Quote midSide) {
+		this.midSide = midSide;
+	}
+
+	public Quote getBidSide() {
+		return bidSide;
+	}
+
+	public void setBidSide(com.tools20022.repository.entity.Quote bidSide) {
+		this.bidSide = bidSide;
+	}
+
+	public Quote getOfferSide() {
+		return offerSide;
+	}
+
+	public void setOfferSide(com.tools20022.repository.entity.Quote offerSide) {
+		this.offerSide = offerSide;
+	}
+
+	public Quote getRelatedQuote() {
+		return relatedQuote;
+	}
+
+	public void setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
+		this.relatedQuote = relatedQuote;
+	}
+
+	public SecuritiesOrder getSecuritiesOrder() {
+		return securitiesOrder;
+	}
+
+	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+		this.securitiesOrder = securitiesOrder;
+	}
+
+	public List<Commission> getCommission() {
+		return commission;
+	}
+
+	public void setCommission(List<com.tools20022.repository.entity.Commission> commission) {
+		this.commission = commission;
 	}
 }

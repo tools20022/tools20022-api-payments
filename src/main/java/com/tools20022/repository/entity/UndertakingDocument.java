@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ExternalDocumentFormatCode;
 import com.tools20022.repository.codeset.ExternalUndertakingDocumentTypeCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,18 +39,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingDocument#DocumentType
- * UndertakingDocument.DocumentType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UndertakingDocument#Format
- * UndertakingDocument.Format}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmDocumentType
+ * UndertakingDocument.mmDocumentType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingDocument#Undertaking
- * UndertakingDocument.Undertaking}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmFormat
+ * UndertakingDocument.mmFormat}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UndertakingDocument#CopyIndicator
- * UndertakingDocument.CopyIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UndertakingDocument#Demand
- * UndertakingDocument.Demand}</li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmUndertaking
+ * UndertakingDocument.mmUndertaking}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmCopyIndicator
+ * UndertakingDocument.mmCopyIndicator}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmDemand
+ * UndertakingDocument.mmDemand}</li>
  * </ul>
  * </li>
  * <li>
@@ -58,17 +60,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Undertaking#SpecifiedDocument
- * Undertaking.SpecifiedDocument}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#AssociatedDocument
- * Demand.AssociatedDocument}</li>
+ * {@linkplain com.tools20022.repository.entity.Undertaking#mmSpecifiedDocument
+ * Undertaking.mmSpecifiedDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmAssociatedDocument
+ * Demand.mmAssociatedDocument}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +84,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class UndertakingDocument {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalUndertakingDocumentTypeCode documentType;
 	/**
 	 * Type of document.
 	 * <p>
@@ -108,18 +111,27 @@ public class UndertakingDocument {
 	 * definition} = "Type of document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DocumentType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDocumentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingDocument.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentType";
 			definition = "Type of document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalUndertakingDocumentTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingDocument.class.getMethod("getDocumentType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ExternalDocumentFormatCode format;
 	/**
 	 * Format of the document.
 	 * <p>
@@ -146,18 +158,27 @@ public class UndertakingDocument {
 	 * definition} = "Format of the document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Format = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFormat = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingDocument.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Format";
 			definition = "Format of the document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalDocumentFormatCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingDocument.class.getMethod("getFormat", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Undertaking undertaking;
 	/**
 	 * Undertaking for which document content is specified.
 	 * <p>
@@ -166,8 +187,8 @@ public class UndertakingDocument {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Undertaking#SpecifiedDocument
-	 * Undertaking.SpecifiedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.Undertaking#mmSpecifiedDocument
+	 * Undertaking.mmSpecifiedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -191,20 +212,21 @@ public class UndertakingDocument {
 	 * definition} = "Undertaking for which document content is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Undertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> UndertakingDocument.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which document content is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmSpecifiedDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.SpecifiedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator copyIndicator;
 	/**
 	 * Indicates whether the document is a copy.
 	 * <p>
@@ -231,18 +253,27 @@ public class UndertakingDocument {
 	 * definition} = "Indicates whether the document is a copy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CopyIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCopyIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> UndertakingDocument.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CopyIndicator";
 			definition = "Indicates whether the document is a copy.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return UndertakingDocument.class.getMethod("getCopyIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Demand demand;
 	/**
 	 * Demand for which associated documents are specified.
 	 * <p>
@@ -251,8 +282,8 @@ public class UndertakingDocument {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Demand#AssociatedDocument
-	 * Demand.AssociatedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.Demand#mmAssociatedDocument
+	 * Demand.mmAssociatedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -275,33 +306,78 @@ public class UndertakingDocument {
 	 * definition} = "Demand for which associated documents are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Demand = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDemand = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> UndertakingDocument.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Demand";
 			definition = "Demand for which associated documents are specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Demand.mmAssociatedDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Demand.AssociatedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingDocument";
 				definition = "Document presented.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.SpecifiedDocument, com.tools20022.repository.entity.Demand.AssociatedDocument);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UndertakingDocument.DocumentType, com.tools20022.repository.entity.UndertakingDocument.Format,
-						com.tools20022.repository.entity.UndertakingDocument.Undertaking, com.tools20022.repository.entity.UndertakingDocument.CopyIndicator, com.tools20022.repository.entity.UndertakingDocument.Demand);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Undertaking.mmSpecifiedDocument, com.tools20022.repository.entity.Demand.mmAssociatedDocument);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.UndertakingDocument.mmDocumentType, com.tools20022.repository.entity.UndertakingDocument.mmFormat,
+						com.tools20022.repository.entity.UndertakingDocument.mmUndertaking, com.tools20022.repository.entity.UndertakingDocument.mmCopyIndicator, com.tools20022.repository.entity.UndertakingDocument.mmDemand);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return UndertakingDocument.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ExternalUndertakingDocumentTypeCode getDocumentType() {
+		return documentType;
+	}
+
+	public void setDocumentType(ExternalUndertakingDocumentTypeCode documentType) {
+		this.documentType = documentType;
+	}
+
+	public ExternalDocumentFormatCode getFormat() {
+		return format;
+	}
+
+	public void setFormat(ExternalDocumentFormatCode format) {
+		this.format = format;
+	}
+
+	public Undertaking getUndertaking() {
+		return undertaking;
+	}
+
+	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = undertaking;
+	}
+
+	public YesNoIndicator getCopyIndicator() {
+		return copyIndicator;
+	}
+
+	public void setCopyIndicator(YesNoIndicator copyIndicator) {
+		this.copyIndicator = copyIndicator;
+	}
+
+	public Demand getDemand() {
+		return demand;
+	}
+
+	public void setDemand(com.tools20022.repository.entity.Demand demand) {
+		this.demand = demand;
 	}
 }

@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.CashAccountService;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Identification of the service to be billed.
@@ -35,14 +41,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification2#Identification
- * BillingServiceIdentification2.Identification}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification2#mmIdentification
+ * BillingServiceIdentification2.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification2#SubService
- * BillingServiceIdentification2.SubService}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification2#mmSubService
+ * BillingServiceIdentification2.mmSubService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification2#Description
- * BillingServiceIdentification2.Description}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceIdentification2#mmDescription
+ * BillingServiceIdentification2.mmDescription}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identification of the service to be billed."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingServiceIdentification2", propOrder = {"identification", "subService", "description"})
 public class BillingServiceIdentification2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text identification;
 	/**
 	 * Financial institution's own, internal service identification code,
 	 * different from the common code. Usage: The financial institution own code
@@ -103,20 +112,21 @@ public class BillingServiceIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceIdentification2.mmObject();
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
+			componentContext_lazy = () -> BillingServiceIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Financial institution's own, internal service identification code, different from the common code.\nUsage: The financial institution own code is used to uniquely identify the service within the financial institution.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected BillingSubServiceIdentification1 subService;
 	/**
 	 * Defines the financial institution sub-service identification if the
 	 * financial institution service identification code is used for more than
@@ -154,20 +164,21 @@ public class BillingServiceIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute SubService = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSubService = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceIdentification2.mmObject();
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
+			componentContext_lazy = () -> BillingServiceIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "SubSvc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SubService";
 			definition = "Defines the financial institution sub-service identification if the financial institution service identification code is used for more than one service.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			complexType_lazy = () -> BillingSubServiceIdentification1.mmObject();
+			minOccurs = 0;
+			complexType_lazy = () -> com.tools20022.repository.msg.BillingSubServiceIdentification1.mmObject();
 		}
 	};
+	protected Max70Text description;
 	/**
 	 * Specifies further details to describe the financial institution service
 	 * description, which is not the standard description related to the common
@@ -199,16 +210,16 @@ public class BillingServiceIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Description = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BillingServiceIdentification2.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Description";
 			definition = "Specifies further details to describe the financial institution service description, which is not the standard description related to the common code.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
@@ -216,15 +227,41 @@ public class BillingServiceIdentification2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServiceIdentification2.Identification, com.tools20022.repository.msg.BillingServiceIdentification2.SubService,
-						com.tools20022.repository.msg.BillingServiceIdentification2.Description);
+				messageElement_lazy = () -> Arrays.asList(BillingServiceIdentification2.mmIdentification, BillingServiceIdentification2.mmSubService, BillingServiceIdentification2.mmDescription);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServiceIdentification2";
 				definition = "Identification of the service to be billed.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "SubSvc")
+	public BillingSubServiceIdentification1 getSubService() {
+		return subService;
+	}
+
+	public void setSubService(com.tools20022.repository.msg.BillingSubServiceIdentification1 subService) {
+		this.subService = subService;
+	}
+
+	@XmlElement(name = "Desc", required = true)
+	public Max70Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max70Text description) {
+		this.description = description;
 	}
 }

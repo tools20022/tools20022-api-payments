@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SystemClosureReasonCode;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,14 +38,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemClosureInformation#Period
- * SystemClosureInformation.Period}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemClosureInformation#mmPeriod
+ * SystemClosureInformation.mmPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemClosureInformation#SystemAvailability
- * SystemClosureInformation.SystemAvailability}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemClosureInformation#mmSystemAvailability
+ * SystemClosureInformation.mmSystemAvailability}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemClosureInformation#ClosureReason
- * SystemClosureInformation.ClosureReason}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemClosureInformation#mmClosureReason
+ * SystemClosureInformation.mmClosureReason}</li>
  * </ul>
  * </li>
  * <li>
@@ -53,15 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemAvailability#ClosureInformation
- * SystemAvailability.ClosureInformation}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemAvailability#mmClosureInformation
+ * SystemAvailability.mmClosureInformation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,6 +75,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SystemClosureInformation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DateTimePeriod period;
 	/**
 	 * Period of time when the system is closed/not operating.
 	 * <p>
@@ -101,18 +102,27 @@ public class SystemClosureInformation {
 	 * definition} = "Period of time when the system is closed/not operating."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Period = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SystemClosureInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Period";
 			definition = "Period of time when the system is closed/not operating.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> DateTimePeriod.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return SystemClosureInformation.class.getMethod("getPeriod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
+	protected SystemAvailability systemAvailability;
 	/**
 	 * System for which closure information is specified.
 	 * <p>
@@ -121,8 +131,8 @@ public class SystemClosureInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SystemAvailability#ClosureInformation
-	 * SystemAvailability.ClosureInformation}</li>
+	 * {@linkplain com.tools20022.repository.entity.SystemAvailability#mmClosureInformation
+	 * SystemAvailability.mmClosureInformation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -146,20 +156,21 @@ public class SystemClosureInformation {
 	 * definition} = "System for which closure information is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SystemAvailability = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystemAvailability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SystemClosureInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemAvailability";
 			definition = "System for which closure information is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmClosureInformation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemAvailability.ClosureInformation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SystemClosureReasonCode closureReason;
 	/**
 	 * Reason the system is closed/not operating.
 	 * <p>
@@ -186,31 +197,68 @@ public class SystemClosureInformation {
 	 * definition} = "Reason the system is closed/not operating."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClosureReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClosureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SystemClosureInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemClosureInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureReason";
 			definition = "Reason the system is closed/not operating.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SystemClosureReasonCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return SystemClosureInformation.class.getMethod("getClosureReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemClosureInformation";
 				definition = "Information about inactivity of a system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemAvailability.ClosureInformation);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemClosureInformation.Period, com.tools20022.repository.entity.SystemClosureInformation.SystemAvailability,
-						com.tools20022.repository.entity.SystemClosureInformation.ClosureReason);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemAvailability.mmClosureInformation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemClosureInformation.mmPeriod, com.tools20022.repository.entity.SystemClosureInformation.mmSystemAvailability,
+						com.tools20022.repository.entity.SystemClosureInformation.mmClosureReason);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SystemClosureInformation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DateTimePeriod getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
+		this.period = period;
+	}
+
+	public SystemAvailability getSystemAvailability() {
+		return systemAvailability;
+	}
+
+	public void setSystemAvailability(com.tools20022.repository.entity.SystemAvailability systemAvailability) {
+		this.systemAvailability = systemAvailability;
+	}
+
+	public SystemClosureReasonCode getClosureReason() {
+		return closureReason;
+	}
+
+	public void setClosureReason(SystemClosureReasonCode closureReason) {
+		this.closureReason = closureReason;
 	}
 }

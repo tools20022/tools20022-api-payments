@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,24 +32,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#Quorum
- * MeetingCancellationReasonCode.Quorum}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#mmQuorum
+ * MeetingCancellationReasonCode.mmQuorum}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#Processing
- * MeetingCancellationReasonCode.Processing}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#mmProcessing
+ * MeetingCancellationReasonCode.mmProcessing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#Other
- * MeetingCancellationReasonCode.Other}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#mmOther
+ * MeetingCancellationReasonCode.mmOther}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#Withdrawal
- * MeetingCancellationReasonCode.Withdrawal}</li>
+ * {@linkplain com.tools20022.repository.codeset.MeetingCancellationReasonCode#mmWithdrawal
+ * MeetingCancellationReasonCode.mmWithdrawal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +91,9 @@ public class MeetingCancellationReasonCode {
 	 * "Cancellation due to insufficient participation to the vote."</li>
 	 * </ul>
 	 */
-	public static final MMCode Quorum = new MMCode() {
+	public static final MMCode mmQuorum = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Quorum";
 			definition = "Cancellation due to insufficient participation to the vote.";
 			owner_lazy = () -> MeetingCancellationReasonCode.mmObject();
@@ -119,9 +121,9 @@ public class MeetingCancellationReasonCode {
 	 * definition} = "Cancellation due to a processing error."</li>
 	 * </ul>
 	 */
-	public static final MMCode Processing = new MMCode() {
+	public static final MMCode mmProcessing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Processing";
 			definition = "Cancellation due to a processing error.";
 			owner_lazy = () -> MeetingCancellationReasonCode.mmObject();
@@ -149,9 +151,9 @@ public class MeetingCancellationReasonCode {
 	 * definition} = "Cancellation due to another reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode Other = new MMCode() {
+	public static final MMCode mmOther = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Cancellation due to another reason.";
 			owner_lazy = () -> MeetingCancellationReasonCode.mmObject();
@@ -180,9 +182,9 @@ public class MeetingCancellationReasonCode {
 	 * "Cancellation due to the meeting being cancelled by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode Withdrawal = new MMCode() {
+	public static final MMCode mmWithdrawal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Withdrawal";
 			definition = "Cancellation due to the meeting being cancelled by the issuer.";
 			owner_lazy = () -> MeetingCancellationReasonCode.mmObject();
@@ -193,13 +195,12 @@ public class MeetingCancellationReasonCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("QORM");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingCancellationReasonCode";
 				definition = "Specifies the reason for cancelling a meeting.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MeetingCancellationReasonCode.Quorum, com.tools20022.repository.codeset.MeetingCancellationReasonCode.Processing,
-						com.tools20022.repository.codeset.MeetingCancellationReasonCode.Other, com.tools20022.repository.codeset.MeetingCancellationReasonCode.Withdrawal);
+				code_lazy = () -> Arrays.asList(MeetingCancellationReasonCode.mmQuorum, MeetingCancellationReasonCode.mmProcessing, MeetingCancellationReasonCode.mmOther, MeetingCancellationReasonCode.mmWithdrawal);
 			}
 		});
 		return mmObject_lazy.get();

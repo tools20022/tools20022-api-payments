@@ -20,14 +20,18 @@ package com.tools20022.repository.area.auth;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.choice.SearchCriteria1Choice;
 import com.tools20022.repository.codeset.StatusResponse1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.msg.ReturnIndicator1;
 import com.tools20022.repository.msg.SupplementaryData1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * This message is sent by the financial institution to the authorities (police,
@@ -56,30 +60,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#ResponseIdentification
- * InformationRequestResponseV01.ResponseIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmResponseIdentification
+ * InformationRequestResponseV01.mmResponseIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#InvestigationIdentification
- * InformationRequestResponseV01.InvestigationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmInvestigationIdentification
+ * InformationRequestResponseV01.mmInvestigationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#ResponseStatus
- * InformationRequestResponseV01.ResponseStatus}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmResponseStatus
+ * InformationRequestResponseV01.mmResponseStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#SearchCriteria
- * InformationRequestResponseV01.SearchCriteria}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmSearchCriteria
+ * InformationRequestResponseV01.mmSearchCriteria}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#ReturnIndicator
- * InformationRequestResponseV01.ReturnIndicator}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmReturnIndicator
+ * InformationRequestResponseV01.mmReturnIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#SupplementaryData
- * InformationRequestResponseV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmSupplementaryData
+ * InformationRequestResponseV01.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#identifier
- * InformationRequestResponseV01.identifier}</li>
+ * messageDefinitionIdentifier} = {@code auth.002.001.01}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,9 +94,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "InformationRequestResponseV01", propOrder = {"responseIdentification", "investigationIdentification", "responseStatus", "searchCriteria", "returnIndicator", "supplementaryData"})
 public class InformationRequestResponseV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text responseIdentification;
 	/**
 	 * Unique identification for the specific investigation as know by the
 	 * responding party.
@@ -120,17 +125,26 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock ResponseIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmResponseIdentification = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "RspnId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResponseIdentification";
 			definition = "Unique identification for the specific investigation as know by the responding party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestResponseV01.class.getMethod("getResponseIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text investigationIdentification;
 	/**
 	 * Unique identification for the specific investigation as known by the
 	 * requesting party.
@@ -156,17 +170,26 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock InvestigationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmInvestigationIdentification = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "InvstgtnId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestigationIdentification";
 			definition = "Unique identification for the specific investigation as known by the requesting party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestResponseV01.class.getMethod("getInvestigationIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected StatusResponse1Code responseStatus;
 	/**
 	 * Provides the status of the response.
 	 * <p>
@@ -190,17 +213,26 @@ public class InformationRequestResponseV01 {
 	 * definition} = "Provides the status of the response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock ResponseStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmResponseStatus = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "RspnSts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResponseStatus";
 			definition = "Provides the status of the response.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> StatusResponse1Code.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestResponseV01.class.getMethod("getResponseStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SearchCriteria1Choice searchCriteria;
 	/**
 	 * Specifies the the search criteria for the financial institution to
 	 * perform the search on. The search criteria can be an account, a customer
@@ -228,17 +260,26 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SearchCriteria = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSearchCriteria = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SchCrit";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SearchCriteria";
 			definition = "Specifies the the search criteria for the financial institution to perform the search on. The search criteria can be an account, a customer identification or a payment instrument type.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> SearchCriteria1Choice.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestResponseV01.class.getMethod("getSearchCriteria", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<ReturnIndicator1> returnIndicator;
 	/**
 	 * Provides the return indicators and the investigation result.
 	 * <p>
@@ -263,16 +304,25 @@ public class InformationRequestResponseV01 {
 	 * "Provides the return indicators and the investigation result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock ReturnIndicator = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmReturnIndicator = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "RtrInd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReturnIndicator";
 			definition = "Provides the return indicators and the investigation result.";
 			minOccurs = 1;
 			complexType_lazy = () -> ReturnIndicator1.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestResponseV01.class.getMethod("getReturnIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that can not be captured in the structured fields
 	 * and/or any other specific block.
@@ -299,60 +349,113 @@ public class InformationRequestResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "01"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "auth"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "002"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "auth";
-			messageFunctionality = "002";
-			version = "01";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestResponseV01.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationRequestResponseV01";
 				definition = "This message is sent by the financial institution to the authorities (police, customs, tax authorities, enforcement authorities) to provide a part or all of the requested information.\r\nThe financial institution previously received a request for financial information in the scope of a financial investigation.\r\n\r\nDepending on whether the response can be provided STP within the authorities financial investigations messages, the requested information may be \r\n•\tprovided in part or in full within the response message itself, or \r\n•\tonly referred to in the response message";
 				rootElement = "Document";
 				xmlTag = "InfReqRspn";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestResponseV01.ResponseIdentification,
-						com.tools20022.repository.area.auth.InformationRequestResponseV01.InvestigationIdentification, com.tools20022.repository.area.auth.InformationRequestResponseV01.ResponseStatus,
-						com.tools20022.repository.area.auth.InformationRequestResponseV01.SearchCriteria, com.tools20022.repository.area.auth.InformationRequestResponseV01.ReturnIndicator,
-						com.tools20022.repository.area.auth.InformationRequestResponseV01.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.auth.InformationRequestResponseV01.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestResponseV01.mmResponseIdentification,
+						com.tools20022.repository.area.auth.InformationRequestResponseV01.mmInvestigationIdentification, com.tools20022.repository.area.auth.InformationRequestResponseV01.mmResponseStatus,
+						com.tools20022.repository.area.auth.InformationRequestResponseV01.mmSearchCriteria, com.tools20022.repository.area.auth.InformationRequestResponseV01.mmReturnIndicator,
+						com.tools20022.repository.area.auth.InformationRequestResponseV01.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "auth";
+						messageFunctionality = "002";
+						version = "01";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InformationRequestResponseV01.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RspnId", required = true)
+	public Max35Text getResponseIdentification() {
+		return responseIdentification;
+	}
+
+	public void setResponseIdentification(Max35Text responseIdentification) {
+		this.responseIdentification = responseIdentification;
+	}
+
+	@XmlElement(name = "InvstgtnId", required = true)
+	public Max35Text getInvestigationIdentification() {
+		return investigationIdentification;
+	}
+
+	public void setInvestigationIdentification(Max35Text investigationIdentification) {
+		this.investigationIdentification = investigationIdentification;
+	}
+
+	@XmlElement(name = "RspnSts", required = true)
+	public StatusResponse1Code getResponseStatus() {
+		return responseStatus;
+	}
+
+	public void setResponseStatus(StatusResponse1Code responseStatus) {
+		this.responseStatus = responseStatus;
+	}
+
+	@XmlElement(name = "SchCrit", required = true)
+	public SearchCriteria1Choice getSearchCriteria() {
+		return searchCriteria;
+	}
+
+	public void setSearchCriteria(SearchCriteria1Choice searchCriteria) {
+		this.searchCriteria = searchCriteria;
+	}
+
+	@XmlElement(name = "RtrInd", required = true)
+	public List<ReturnIndicator1> getReturnIndicator() {
+		return returnIndicator;
+	}
+
+	public void setReturnIndicator(List<ReturnIndicator1> returnIndicator) {
+		this.returnIndicator = returnIndicator;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.002.01.01")
+	static public class Document {
+		@XmlElement(name = "InfReqRspn", required = true)
+		public InformationRequestResponseV01 messageBody;
 	}
 }

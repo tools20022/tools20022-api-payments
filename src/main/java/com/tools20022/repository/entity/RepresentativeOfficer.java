@@ -17,9 +17,12 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AccountPartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RepresentativeOfficer#Organisation
- * RepresentativeOfficer.Organisation}</li>
+ * {@linkplain com.tools20022.repository.entity.RepresentativeOfficer#mmOrganisation
+ * RepresentativeOfficer.mmOrganisation}</li>
  * </ul>
  * </li>
  * <li>
@@ -47,8 +50,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Organisation#RepresentativeOfficer
- * Organisation.RepresentativeOfficer}</li>
+ * {@linkplain com.tools20022.repository.entity.Organisation#mmRepresentativeOfficer
+ * Organisation.mmRepresentativeOfficer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -57,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RepresentativeOfficer extends AccountPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Organisation organisation;
 	/**
 	 * Organisation which is represented by the representative officer.
 	 * <p>
@@ -82,8 +86,8 @@ public class RepresentativeOfficer extends AccountPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#RepresentativeOfficer
-	 * Organisation.RepresentativeOfficer}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmRepresentativeOfficer
+	 * Organisation.mmRepresentativeOfficer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -108,33 +112,46 @@ public class RepresentativeOfficer extends AccountPartyRole {
 	 * "Organisation which is represented by the representative officer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Organisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOrganisation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RepresentativeOfficer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RepresentativeOfficer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Organisation";
 			definition = "Organisation which is represented by the representative officer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmRepresentativeOfficer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.RepresentativeOfficer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepresentativeOfficer";
 				definition = "Officer who has some rights to represent a given organisation. In account management, it is the person to be contacted by the account servicer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.RepresentativeOfficer);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmRepresentativeOfficer);
 				superType_lazy = () -> AccountPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RepresentativeOfficer.Organisation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RepresentativeOfficer.mmOrganisation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return RepresentativeOfficer.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Organisation getOrganisation() {
+		return organisation;
+	}
+
+	public void setOrganisation(com.tools20022.repository.entity.Organisation organisation) {
+		this.organisation = organisation;
 	}
 }

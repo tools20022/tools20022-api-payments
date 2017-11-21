@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ClearingChannelCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,24 +37,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#RealTimeGrossSettlementSystem
- * ClearingChannel2Code.RealTimeGrossSettlementSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmRealTimeGrossSettlementSystem
+ * ClearingChannel2Code.mmRealTimeGrossSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#RealTimeNetSettlementSystem
- * ClearingChannel2Code.RealTimeNetSettlementSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmRealTimeNetSettlementSystem
+ * ClearingChannel2Code.mmRealTimeNetSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#MassPaymentNetSystem
- * ClearingChannel2Code.MassPaymentNetSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmMassPaymentNetSystem
+ * ClearingChannel2Code.mmMassPaymentNetSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#BookTransfer
- * ClearingChannel2Code.BookTransfer}</li>
+ * {@linkplain com.tools20022.repository.codeset.ClearingChannel2Code#mmBookTransfer
+ * ClearingChannel2Code.mmBookTransfer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -90,9 +92,9 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "RealTimeGrossSettlementSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode RealTimeGrossSettlementSystem = new MMCode() {
+	public static final MMCode mmRealTimeGrossSettlementSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RealTimeGrossSettlementSystem";
 			owner_lazy = () -> ClearingChannel2Code.mmObject();
 		}
@@ -113,9 +115,9 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "RealTimeNetSettlementSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode RealTimeNetSettlementSystem = new MMCode() {
+	public static final MMCode mmRealTimeNetSettlementSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RealTimeNetSettlementSystem";
 			owner_lazy = () -> ClearingChannel2Code.mmObject();
 		}
@@ -136,9 +138,9 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "MassPaymentNetSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode MassPaymentNetSystem = new MMCode() {
+	public static final MMCode mmMassPaymentNetSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MassPaymentNetSystem";
 			owner_lazy = () -> ClearingChannel2Code.mmObject();
 		}
@@ -159,9 +161,9 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	 * name} = "BookTransfer"</li>
 	 * </ul>
 	 */
-	public static final MMCode BookTransfer = new MMCode() {
+	public static final MMCode mmBookTransfer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BookTransfer";
 			owner_lazy = () -> ClearingChannel2Code.mmObject();
 		}
@@ -170,13 +172,12 @@ public class ClearingChannel2Code extends ClearingChannelCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("RTGS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingChannel2Code";
 				definition = "Specifies the clearing channel for the routing of the transaction, as part of the payment type identification.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ClearingChannel2Code.RealTimeGrossSettlementSystem, com.tools20022.repository.codeset.ClearingChannel2Code.RealTimeNetSettlementSystem,
-						com.tools20022.repository.codeset.ClearingChannel2Code.MassPaymentNetSystem, com.tools20022.repository.codeset.ClearingChannel2Code.BookTransfer);
+				code_lazy = () -> Arrays.asList(ClearingChannel2Code.mmRealTimeGrossSettlementSystem, ClearingChannel2Code.mmRealTimeNetSettlementSystem, ClearingChannel2Code.mmMassPaymentNetSystem, ClearingChannel2Code.mmBookTransfer);
 				trace_lazy = () -> ClearingChannelCode.mmObject();
 			}
 		});

@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RepurchaseTypeCode;
 import com.tools20022.repository.codeset.SecuritiesTransactionTypeV2Code;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.SecuritiesTrade;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Process of lending or borrowing cash or securities against securities or cash
@@ -42,94 +43,94 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#ReturnLegInstruction
- * SecuritiesFinancing.ReturnLegInstruction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesFinancing#Type
- * SecuritiesFinancing.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmReturnLegInstruction
+ * SecuritiesFinancing.mmReturnLegInstruction}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmType
+ * SecuritiesFinancing.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#TerminationDateTime
- * SecuritiesFinancing.TerminationDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmTerminationDateTime
+ * SecuritiesFinancing.mmTerminationDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#RateChangeDateTime
- * SecuritiesFinancing.RateChangeDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmRateChangeDateTime
+ * SecuritiesFinancing.mmRateChangeDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#RevaluationIndicator
- * SecuritiesFinancing.RevaluationIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmRevaluationIndicator
+ * SecuritiesFinancing.mmRevaluationIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#InterestPayment
- * SecuritiesFinancing.InterestPayment}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmInterestPayment
+ * SecuritiesFinancing.mmInterestPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#VariableRateSupport
- * SecuritiesFinancing.VariableRateSupport}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmVariableRateSupport
+ * SecuritiesFinancing.mmVariableRateSupport}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#RepurchaseRate
- * SecuritiesFinancing.RepurchaseRate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmRepurchaseRate
+ * SecuritiesFinancing.mmRepurchaseRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#StockLoanMargin
- * SecuritiesFinancing.StockLoanMargin}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmStockLoanMargin
+ * SecuritiesFinancing.mmStockLoanMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#Interest
- * SecuritiesFinancing.Interest}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmInterest
+ * SecuritiesFinancing.mmInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#RepurchaseSpread
- * SecuritiesFinancing.RepurchaseSpread}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmRepurchaseSpread
+ * SecuritiesFinancing.mmRepurchaseSpread}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#TransactionCallDelay
- * SecuritiesFinancing.TransactionCallDelay}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmTransactionCallDelay
+ * SecuritiesFinancing.mmTransactionCallDelay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#TotalNumberOfCollateralInstructions
- * SecuritiesFinancing.TotalNumberOfCollateralInstructions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmTotalNumberOfCollateralInstructions
+ * SecuritiesFinancing.mmTotalNumberOfCollateralInstructions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#DealAmount
- * SecuritiesFinancing.DealAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmDealAmount
+ * SecuritiesFinancing.mmDealAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#ForfeitRepurchaseAmount
- * SecuritiesFinancing.ForfeitRepurchaseAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmForfeitRepurchaseAmount
+ * SecuritiesFinancing.mmForfeitRepurchaseAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#PremiumAmount
- * SecuritiesFinancing.PremiumAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmPremiumAmount
+ * SecuritiesFinancing.mmPremiumAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#TerminationAmountPerPieceOfCollateral
- * SecuritiesFinancing.TerminationAmountPerPieceOfCollateral}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmTerminationAmountPerPieceOfCollateral
+ * SecuritiesFinancing.mmTerminationAmountPerPieceOfCollateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#TerminationTransactionAmount
- * SecuritiesFinancing.TerminationTransactionAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmTerminationTransactionAmount
+ * SecuritiesFinancing.mmTerminationTransactionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#MaturityDateModification
- * SecuritiesFinancing.MaturityDateModification}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmMaturityDateModification
+ * SecuritiesFinancing.mmMaturityDateModification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#EarliestCallBackDate
- * SecuritiesFinancing.EarliestCallBackDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmEarliestCallBackDate
+ * SecuritiesFinancing.mmEarliestCallBackDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#OpeningSettlementDate
- * SecuritiesFinancing.OpeningSettlementDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmOpeningSettlementDate
+ * SecuritiesFinancing.mmOpeningSettlementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#RepurchaseType
- * SecuritiesFinancing.RepurchaseType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmRepurchaseType
+ * SecuritiesFinancing.mmRepurchaseType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#EndPrice
- * SecuritiesFinancing.EndPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmEndPrice
+ * SecuritiesFinancing.mmEndPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#SpreadTransaction
- * SecuritiesFinancing.SpreadTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmSpreadTransaction
+ * SecuritiesFinancing.mmSpreadTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#FinancingAgreement
- * SecuritiesFinancing.FinancingAgreement}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmFinancingAgreement
+ * SecuritiesFinancing.mmFinancingAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#OpeningSettlementAmount
- * SecuritiesFinancing.OpeningSettlementAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmOpeningSettlementAmount
+ * SecuritiesFinancing.mmOpeningSettlementAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#ClosingLegExecution
- * SecuritiesFinancing.ClosingLegExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmClosingLegExecution
+ * SecuritiesFinancing.mmClosingLegExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#OpeningLegExecution
- * SecuritiesFinancing.OpeningLegExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmOpeningLegExecution
+ * SecuritiesFinancing.mmOpeningLegExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#RelatedIndicationOfInterest
- * SecuritiesFinancing.RelatedIndicationOfInterest}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmRelatedIndicationOfInterest
+ * SecuritiesFinancing.mmRelatedIndicationOfInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#Identification
- * SecuritiesFinancing.Identification}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmIdentification
+ * SecuritiesFinancing.mmIdentification}</li>
  * </ul>
  * </li>
  * <li>
@@ -137,27 +138,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedSecuritiesFinancing
- * SecuritiesPricing.RelatedSecuritiesFinancing}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedSecuritiesFinancing
+ * SecuritiesPricing.mmRelatedSecuritiesFinancing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesFinancingClosingData
- * SecuritiesTrade.SecuritiesFinancingClosingData}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesFinancingClosingData
+ * SecuritiesTrade.mmSecuritiesFinancingClosingData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesFinancingOpeningData
- * SecuritiesTrade.SecuritiesFinancingOpeningData}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesFinancingOpeningData
+ * SecuritiesTrade.mmSecuritiesFinancingOpeningData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#SecuritiesFinancing
- * Interest.SecuritiesFinancing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Spread#SecuritiesFinancing
- * Spread.SecuritiesFinancing}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmSecuritiesFinancing
+ * Interest.mmSecuritiesFinancing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancingAgreement#SecuritiesFinancingTrade
- * SecuritiesFinancingAgreement.SecuritiesFinancingTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.Spread#mmSecuritiesFinancing
+ * Spread.mmSecuritiesFinancing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BuyOrSellIndicationOfInterest#TwoLegTransaction
- * BuyOrSellIndicationOfInterest.TwoLegTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancingAgreement#mmSecuritiesFinancingTrade
+ * SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.BuyOrSellIndicationOfInterest#mmTwoLegTransaction
+ * BuyOrSellIndicationOfInterest.mmTwoLegTransaction}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTrade
+ * SecuritiesTrade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -167,14 +172,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * RepurchaseAgreement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.SecuritiesTrade
- * SecuritiesTrade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -190,6 +192,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesFinancing extends SecuritiesTrade {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator returnLegInstruction;
 	/**
 	 * Specifies whether, for a securities lending/borrowing settlement
 	 * transaction, the lender will instruct the return leg as agreed with the
@@ -220,18 +223,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReturnLegInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReturnLegInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReturnLegInstruction";
 			definition = "Specifies whether, for a securities lending/borrowing settlement transaction, the lender will instruct the return leg as agreed with the borrower.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getReturnLegInstruction", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesTransactionTypeV2Code type;
 	/**
 	 * Specifies the type of securities financing transaction, that is,
 	 * repurchase agreement, reverse repurchase agreement, securities lending or
@@ -262,18 +274,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of securities financing transaction, that is, repurchase agreement, reverse repurchase agreement, securities lending or securities borrowing.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SecuritiesTransactionTypeV2Code.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime terminationDateTime;
 	/**
 	 * Closing date/time or maturity date/time of the repo transaction.
 	 * <p>
@@ -300,18 +321,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * "Closing date/time or maturity date/time of the repo transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TerminationDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTerminationDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationDateTime";
 			definition = "Closing date/time or maturity date/time of the repo transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getTerminationDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime rateChangeDateTime;
 	/**
 	 * Date/Time at which rate change has taken place.
 	 * <p>
@@ -337,18 +367,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Date/Time at which rate change has taken place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RateChangeDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRateChangeDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RateChangeDateTime";
 			definition = "Date/Time at which rate change has taken place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getRateChangeDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator revaluationIndicator;
 	/**
 	 * Specifies whether the collateral position should be subject to automatic
 	 * revaluation by the account servicer.
@@ -378,18 +417,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RevaluationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRevaluationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RevaluationIndicator";
 			definition = "Specifies whether the collateral position should be subject to automatic revaluation by the account servicer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getRevaluationIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator interestPayment;
 	/**
 	 * Specifies whether the interest is to be paid to the collateral taker. If
 	 * set to no, the interest is paid to the collateral giver.
@@ -419,18 +467,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InterestPayment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInterestPayment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestPayment";
 			definition = "Specifies whether the interest is to be paid to the collateral taker. If set to no, the interest is paid to the collateral giver.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getInterestPayment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text variableRateSupport;
 	/**
 	 * Index or support rate used together with the spread to calculate the
 	 * repurchase rate.
@@ -459,18 +516,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VariableRateSupport = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVariableRateSupport = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateSupport";
 			definition = "Index or support rate used together with the spread to calculate the repurchase rate.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getVariableRateSupport", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate repurchaseRate;
 	/**
 	 * Rate to be used to recalculate the repurchase amount.
 	 * <p>
@@ -497,18 +563,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Rate to be used to recalculate the repurchase amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RepurchaseRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRepurchaseRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseRate";
 			definition = "Rate to be used to recalculate the repurchase amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getRepurchaseRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate stockLoanMargin;
 	/**
 	 * Percentage mark-up on a loan consideration used to reflect the lender's
 	 * risk.
@@ -538,18 +613,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StockLoanMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStockLoanMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockLoanMargin";
 			definition = "Percentage mark-up on a loan consideration used to reflect the lender's risk.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getStockLoanMargin", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
 	 * Interest to be paid on the transaction amount.
 	 * <p>
@@ -558,8 +642,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Interest#SecuritiesFinancing
-	 * Interest.SecuritiesFinancing}</li>
+	 * {@linkplain com.tools20022.repository.entity.Interest#mmSecuritiesFinancing
+	 * Interest.mmSecuritiesFinancing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -582,19 +666,20 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Interest to be paid on the transaction amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Interest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest to be paid on the transaction amount.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmSecuritiesFinancing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.SecuritiesFinancing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Spread repurchaseSpread;
 	/**
 	 * Repurchase spread expressed as a rate; margin over or under an index that
 	 * determines the repurchase rate.
@@ -604,8 +689,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Spread#SecuritiesFinancing
-	 * Spread.SecuritiesFinancing}</li>
+	 * {@linkplain com.tools20022.repository.entity.Spread#mmSecuritiesFinancing
+	 * Spread.mmSecuritiesFinancing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -630,20 +715,21 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RepurchaseSpread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRepurchaseSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseSpread";
 			definition = "Repurchase spread expressed as a rate; margin over or under an index that determines the repurchase rate.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Spread.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.SecuritiesFinancing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmSecuritiesFinancing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
 		}
 	};
+	protected Max3NumericText transactionCallDelay;
 	/**
 	 * Minimum number of days' notice a counterparty needs for terminating the
 	 * transaction.
@@ -673,18 +759,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransactionCallDelay = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransactionCallDelay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionCallDelay";
 			definition = "Minimum number of days' notice a counterparty needs for terminating the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getTransactionCallDelay", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max3NumericText totalNumberOfCollateralInstructions;
 	/**
 	 * Indicates the total Number of collateral instructions involved in the
 	 * transaction.
@@ -714,18 +809,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TotalNumberOfCollateralInstructions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTotalNumberOfCollateralInstructions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfCollateralInstructions";
 			definition = "Indicates the total Number of collateral instructions involved in the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getTotalNumberOfCollateralInstructions", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount dealAmount;
 	/**
 	 * Deal amount of the second leg.
 	 * <p>
@@ -752,18 +856,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Deal amount of the second leg."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DealAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDealAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealAmount";
 			definition = "Deal amount of the second leg.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getDealAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount forfeitRepurchaseAmount;
 	/**
 	 * Fixed amount which has to be paid (instead of interest) in the case of a
 	 * recall.
@@ -793,18 +906,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ForfeitRepurchaseAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmForfeitRepurchaseAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForfeitRepurchaseAmount";
 			definition = "Fixed amount which has to be paid (instead of interest) in the case of a recall.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getForfeitRepurchaseAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount premiumAmount;
 	/**
 	 * Difference between the cash amount of the first leg and the cash amount
 	 * of the second leg of the repurchase agreement.
@@ -834,18 +956,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumAmount";
 			definition = "Difference between the cash amount of the first leg and the cash amount of the \nsecond leg of the repurchase agreement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getPremiumAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount terminationAmountPerPieceOfCollateral;
 	/**
 	 * Amount of money to be settled per piece of collateral to terminate the
 	 * transaction.
@@ -875,18 +1006,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TerminationAmountPerPieceOfCollateral = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTerminationAmountPerPieceOfCollateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationAmountPerPieceOfCollateral";
 			definition = "Amount of money to be settled per piece of collateral to terminate the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getTerminationAmountPerPieceOfCollateral", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount terminationTransactionAmount;
 	/**
 	 * Total amount of money to be settled to terminate the transaction.
 	 * <p>
@@ -914,18 +1054,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * "Total amount of money to be settled to terminate the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TerminationTransactionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTerminationTransactionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationTransactionAmount";
 			definition = "Total amount of money to be settled to terminate the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getTerminationTransactionAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator maturityDateModification;
 	/**
 	 * Specifies whether the maturity date of the securities financing
 	 * transaction may be modified.
@@ -955,18 +1104,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MaturityDateModification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMaturityDateModification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaturityDateModification";
 			definition = "Specifies whether the maturity date of the securities financing transaction may be modified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getMaturityDateModification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime earliestCallBackDate;
 	/**
 	 * Earliest date/time at which the call back can take place.
 	 * <p>
@@ -993,18 +1151,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EarliestCallBackDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEarliestCallBackDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EarliestCallBackDate";
 			definition = "Earliest date/time at which the call back can take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getEarliestCallBackDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime openingSettlementDate;
 	/**
 	 * Date and time at which the securities are to be delivered or received.
 	 * <p>
@@ -1031,18 +1198,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * "Date and time at which the securities are to be delivered or received."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OpeningSettlementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOpeningSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningSettlementDate";
 			definition = "Date and time at which the securities are to be delivered or received.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getOpeningSettlementDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RepurchaseTypeCode repurchaseType;
 	/**
 	 * Specifies the type of repurchase transaction.
 	 * <p>
@@ -1069,18 +1245,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Specifies the type of repurchase transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RepurchaseType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRepurchaseType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseType";
 			definition = "Specifies the type of repurchase transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RepurchaseTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getRepurchaseType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPricing> endPrice;
 	/**
 	 * Negotiated fixed price of the security to buy it back.
 	 * <p>
@@ -1089,8 +1274,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedSecuritiesFinancing
-	 * SecuritiesPricing.RelatedSecuritiesFinancing}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedSecuritiesFinancing
+	 * SecuritiesPricing.mmRelatedSecuritiesFinancing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1114,19 +1299,20 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Negotiated fixed price of the security to buy it back."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EndPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEndPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EndPrice";
 			definition = "Negotiated fixed price of the security to buy it back.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.RelatedSecuritiesFinancing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedSecuritiesFinancing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected YesNoIndicator spreadTransaction;
 	/**
 	 * Specifies that there will be one price and one transaction when two
 	 * contracts are carried out simultaneously, one to buy and the other one to
@@ -1157,18 +1343,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SpreadTransaction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSpreadTransaction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpreadTransaction";
 			definition = "Specifies that there will be one price and one transaction when two contracts are carried out simultaneously, one to buy and the other one to sell with two different expiration dates.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getSpreadTransaction", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesFinancingAgreement financingAgreement;
 	/**
 	 * Provides the contractual details related to the agreement between
 	 * parties.
@@ -1178,8 +1373,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancingAgreement#SecuritiesFinancingTrade
-	 * SecuritiesFinancingAgreement.SecuritiesFinancingTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancingAgreement#mmSecuritiesFinancingTrade
+	 * SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1206,20 +1401,21 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FinancingAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFinancingAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingAgreement";
 			definition = "Provides the contractual details related to the agreement between parties.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesFinancingAgreement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancingAgreement.SecuritiesFinancingTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancingAgreement.mmObject();
 		}
 	};
+	protected CurrencyAndAmount openingSettlementAmount;
 	/**
 	 * Total amount of money to be paid or received in exchange for the
 	 * securities at the opening of a securities financing transaction.
@@ -1249,18 +1445,27 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OpeningSettlementAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOpeningSettlementAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningSettlementAmount";
 			definition = "Total amount of money to be paid or received in exchange for the securities at the opening of a securities financing transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getOpeningSettlementAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesTrade closingLegExecution;
 	/**
 	 * Repayment of the previously received cash by one party in exchange of the
 	 * return of the security by the counterparty.
@@ -1270,8 +1475,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesFinancingClosingData
-	 * SecuritiesTrade.SecuritiesFinancingClosingData}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesFinancingClosingData
+	 * SecuritiesTrade.mmSecuritiesFinancingClosingData}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1297,20 +1502,21 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClosingLegExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClosingLegExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingLegExecution";
 			definition = "Repayment of the previously received cash by one party in exchange of the return of the security by the counterparty.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> SecuritiesTrade.mmSecuritiesFinancingClosingData;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> SecuritiesTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.SecuritiesFinancingClosingData;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesTrade openingLegExecution;
 	/**
 	 * Transfer of cash to a party against the legal transfer of securities. The
 	 * cash receiver agrees to buy the same security from the counterparty at a
@@ -1321,8 +1527,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesFinancingOpeningData
-	 * SecuritiesTrade.SecuritiesFinancingOpeningData}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesFinancingOpeningData
+	 * SecuritiesTrade.mmSecuritiesFinancingOpeningData}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1348,20 +1554,21 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OpeningLegExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOpeningLegExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningLegExecution";
 			definition = "Transfer of cash to a party against the legal transfer of securities. The cash receiver agrees to buy the same security from the counterparty at a fixed price at some later date.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> SecuritiesTrade.mmSecuritiesFinancingOpeningData;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> SecuritiesTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.SecuritiesFinancingOpeningData;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected BuyOrSellIndicationOfInterest relatedIndicationOfInterest;
 	/**
 	 * Indication of interest process which is the source of a securities
 	 * financing process.
@@ -1371,8 +1578,8 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BuyOrSellIndicationOfInterest#TwoLegTransaction
-	 * BuyOrSellIndicationOfInterest.TwoLegTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.BuyOrSellIndicationOfInterest#mmTwoLegTransaction
+	 * BuyOrSellIndicationOfInterest.mmTwoLegTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1399,20 +1606,21 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process which is the source of a securities financing process.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.TwoLegTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmTwoLegTransaction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
 		}
 	};
+	protected Max35Text identification;
 	/**
 	 * Unique identification of the repurchase agreement.
 	 * <p>
@@ -1438,47 +1646,300 @@ public class SecuritiesFinancing extends SecuritiesTrade {
 	 * definition} = "Unique identification of the repurchase agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Identification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesFinancing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique identification of the repurchase agreement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesFinancing.class.getMethod("getIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesFinancing";
 				definition = "Process of lending or borrowing cash or securities against securities or cash collateral. It aims at optimising liquidity, support a trading strategy, or increase settlement efficiency.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.RelatedSecuritiesFinancing, com.tools20022.repository.entity.SecuritiesTrade.SecuritiesFinancingClosingData,
-						com.tools20022.repository.entity.SecuritiesTrade.SecuritiesFinancingOpeningData, com.tools20022.repository.entity.Interest.SecuritiesFinancing, com.tools20022.repository.entity.Spread.SecuritiesFinancing,
-						com.tools20022.repository.entity.SecuritiesFinancingAgreement.SecuritiesFinancingTrade, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.TwoLegTransaction);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmRelatedSecuritiesFinancing, SecuritiesTrade.mmSecuritiesFinancingClosingData,
+						SecuritiesTrade.mmSecuritiesFinancingOpeningData, com.tools20022.repository.entity.Interest.mmSecuritiesFinancing, com.tools20022.repository.entity.Spread.mmSecuritiesFinancing,
+						com.tools20022.repository.entity.SecuritiesFinancingAgreement.mmSecuritiesFinancingTrade, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmTwoLegTransaction);
 				subType_lazy = () -> Arrays.asList(SecuritiesLending.mmObject(), RepurchaseAgreement.mmObject());
 				superType_lazy = () -> SecuritiesTrade.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesFinancing.ReturnLegInstruction, com.tools20022.repository.entity.SecuritiesFinancing.Type,
-						com.tools20022.repository.entity.SecuritiesFinancing.TerminationDateTime, com.tools20022.repository.entity.SecuritiesFinancing.RateChangeDateTime,
-						com.tools20022.repository.entity.SecuritiesFinancing.RevaluationIndicator, com.tools20022.repository.entity.SecuritiesFinancing.InterestPayment,
-						com.tools20022.repository.entity.SecuritiesFinancing.VariableRateSupport, com.tools20022.repository.entity.SecuritiesFinancing.RepurchaseRate, com.tools20022.repository.entity.SecuritiesFinancing.StockLoanMargin,
-						com.tools20022.repository.entity.SecuritiesFinancing.Interest, com.tools20022.repository.entity.SecuritiesFinancing.RepurchaseSpread, com.tools20022.repository.entity.SecuritiesFinancing.TransactionCallDelay,
-						com.tools20022.repository.entity.SecuritiesFinancing.TotalNumberOfCollateralInstructions, com.tools20022.repository.entity.SecuritiesFinancing.DealAmount,
-						com.tools20022.repository.entity.SecuritiesFinancing.ForfeitRepurchaseAmount, com.tools20022.repository.entity.SecuritiesFinancing.PremiumAmount,
-						com.tools20022.repository.entity.SecuritiesFinancing.TerminationAmountPerPieceOfCollateral, com.tools20022.repository.entity.SecuritiesFinancing.TerminationTransactionAmount,
-						com.tools20022.repository.entity.SecuritiesFinancing.MaturityDateModification, com.tools20022.repository.entity.SecuritiesFinancing.EarliestCallBackDate,
-						com.tools20022.repository.entity.SecuritiesFinancing.OpeningSettlementDate, com.tools20022.repository.entity.SecuritiesFinancing.RepurchaseType, com.tools20022.repository.entity.SecuritiesFinancing.EndPrice,
-						com.tools20022.repository.entity.SecuritiesFinancing.SpreadTransaction, com.tools20022.repository.entity.SecuritiesFinancing.FinancingAgreement,
-						com.tools20022.repository.entity.SecuritiesFinancing.OpeningSettlementAmount, com.tools20022.repository.entity.SecuritiesFinancing.ClosingLegExecution,
-						com.tools20022.repository.entity.SecuritiesFinancing.OpeningLegExecution, com.tools20022.repository.entity.SecuritiesFinancing.RelatedIndicationOfInterest,
-						com.tools20022.repository.entity.SecuritiesFinancing.Identification);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesFinancing.mmReturnLegInstruction, com.tools20022.repository.entity.SecuritiesFinancing.mmType,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmTerminationDateTime, com.tools20022.repository.entity.SecuritiesFinancing.mmRateChangeDateTime,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmRevaluationIndicator, com.tools20022.repository.entity.SecuritiesFinancing.mmInterestPayment,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmVariableRateSupport, com.tools20022.repository.entity.SecuritiesFinancing.mmRepurchaseRate,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmStockLoanMargin, com.tools20022.repository.entity.SecuritiesFinancing.mmInterest, com.tools20022.repository.entity.SecuritiesFinancing.mmRepurchaseSpread,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmTransactionCallDelay, com.tools20022.repository.entity.SecuritiesFinancing.mmTotalNumberOfCollateralInstructions,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmDealAmount, com.tools20022.repository.entity.SecuritiesFinancing.mmForfeitRepurchaseAmount,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmPremiumAmount, com.tools20022.repository.entity.SecuritiesFinancing.mmTerminationAmountPerPieceOfCollateral,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmTerminationTransactionAmount, com.tools20022.repository.entity.SecuritiesFinancing.mmMaturityDateModification,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmEarliestCallBackDate, com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningSettlementDate,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmRepurchaseType, com.tools20022.repository.entity.SecuritiesFinancing.mmEndPrice, com.tools20022.repository.entity.SecuritiesFinancing.mmSpreadTransaction,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmFinancingAgreement, com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningSettlementAmount,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmClosingLegExecution, com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningLegExecution,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmRelatedIndicationOfInterest, com.tools20022.repository.entity.SecuritiesFinancing.mmIdentification);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesFinancing.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator getReturnLegInstruction() {
+		return returnLegInstruction;
+	}
+
+	public void setReturnLegInstruction(YesNoIndicator returnLegInstruction) {
+		this.returnLegInstruction = returnLegInstruction;
+	}
+
+	public SecuritiesTransactionTypeV2Code getType() {
+		return type;
+	}
+
+	public void setType(SecuritiesTransactionTypeV2Code type) {
+		this.type = type;
+	}
+
+	public ISODateTime getTerminationDateTime() {
+		return terminationDateTime;
+	}
+
+	public void setTerminationDateTime(ISODateTime terminationDateTime) {
+		this.terminationDateTime = terminationDateTime;
+	}
+
+	public ISODateTime getRateChangeDateTime() {
+		return rateChangeDateTime;
+	}
+
+	public void setRateChangeDateTime(ISODateTime rateChangeDateTime) {
+		this.rateChangeDateTime = rateChangeDateTime;
+	}
+
+	public YesNoIndicator getRevaluationIndicator() {
+		return revaluationIndicator;
+	}
+
+	public void setRevaluationIndicator(YesNoIndicator revaluationIndicator) {
+		this.revaluationIndicator = revaluationIndicator;
+	}
+
+	public YesNoIndicator getInterestPayment() {
+		return interestPayment;
+	}
+
+	public void setInterestPayment(YesNoIndicator interestPayment) {
+		this.interestPayment = interestPayment;
+	}
+
+	public Max35Text getVariableRateSupport() {
+		return variableRateSupport;
+	}
+
+	public void setVariableRateSupport(Max35Text variableRateSupport) {
+		this.variableRateSupport = variableRateSupport;
+	}
+
+	public PercentageRate getRepurchaseRate() {
+		return repurchaseRate;
+	}
+
+	public void setRepurchaseRate(PercentageRate repurchaseRate) {
+		this.repurchaseRate = repurchaseRate;
+	}
+
+	public PercentageRate getStockLoanMargin() {
+		return stockLoanMargin;
+	}
+
+	public void setStockLoanMargin(PercentageRate stockLoanMargin) {
+		this.stockLoanMargin = stockLoanMargin;
+	}
+
+	public List<Interest> getInterest() {
+		return interest;
+	}
+
+	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = interest;
+	}
+
+	public Spread getRepurchaseSpread() {
+		return repurchaseSpread;
+	}
+
+	public void setRepurchaseSpread(com.tools20022.repository.entity.Spread repurchaseSpread) {
+		this.repurchaseSpread = repurchaseSpread;
+	}
+
+	public Max3NumericText getTransactionCallDelay() {
+		return transactionCallDelay;
+	}
+
+	public void setTransactionCallDelay(Max3NumericText transactionCallDelay) {
+		this.transactionCallDelay = transactionCallDelay;
+	}
+
+	public Max3NumericText getTotalNumberOfCollateralInstructions() {
+		return totalNumberOfCollateralInstructions;
+	}
+
+	public void setTotalNumberOfCollateralInstructions(Max3NumericText totalNumberOfCollateralInstructions) {
+		this.totalNumberOfCollateralInstructions = totalNumberOfCollateralInstructions;
+	}
+
+	public CurrencyAndAmount getDealAmount() {
+		return dealAmount;
+	}
+
+	public void setDealAmount(CurrencyAndAmount dealAmount) {
+		this.dealAmount = dealAmount;
+	}
+
+	public CurrencyAndAmount getForfeitRepurchaseAmount() {
+		return forfeitRepurchaseAmount;
+	}
+
+	public void setForfeitRepurchaseAmount(CurrencyAndAmount forfeitRepurchaseAmount) {
+		this.forfeitRepurchaseAmount = forfeitRepurchaseAmount;
+	}
+
+	public CurrencyAndAmount getPremiumAmount() {
+		return premiumAmount;
+	}
+
+	public void setPremiumAmount(CurrencyAndAmount premiumAmount) {
+		this.premiumAmount = premiumAmount;
+	}
+
+	public CurrencyAndAmount getTerminationAmountPerPieceOfCollateral() {
+		return terminationAmountPerPieceOfCollateral;
+	}
+
+	public void setTerminationAmountPerPieceOfCollateral(CurrencyAndAmount terminationAmountPerPieceOfCollateral) {
+		this.terminationAmountPerPieceOfCollateral = terminationAmountPerPieceOfCollateral;
+	}
+
+	public CurrencyAndAmount getTerminationTransactionAmount() {
+		return terminationTransactionAmount;
+	}
+
+	public void setTerminationTransactionAmount(CurrencyAndAmount terminationTransactionAmount) {
+		this.terminationTransactionAmount = terminationTransactionAmount;
+	}
+
+	public YesNoIndicator getMaturityDateModification() {
+		return maturityDateModification;
+	}
+
+	public void setMaturityDateModification(YesNoIndicator maturityDateModification) {
+		this.maturityDateModification = maturityDateModification;
+	}
+
+	public ISODateTime getEarliestCallBackDate() {
+		return earliestCallBackDate;
+	}
+
+	public void setEarliestCallBackDate(ISODateTime earliestCallBackDate) {
+		this.earliestCallBackDate = earliestCallBackDate;
+	}
+
+	public ISODateTime getOpeningSettlementDate() {
+		return openingSettlementDate;
+	}
+
+	public void setOpeningSettlementDate(ISODateTime openingSettlementDate) {
+		this.openingSettlementDate = openingSettlementDate;
+	}
+
+	public RepurchaseTypeCode getRepurchaseType() {
+		return repurchaseType;
+	}
+
+	public void setRepurchaseType(RepurchaseTypeCode repurchaseType) {
+		this.repurchaseType = repurchaseType;
+	}
+
+	public List<SecuritiesPricing> getEndPrice() {
+		return endPrice;
+	}
+
+	public void setEndPrice(List<com.tools20022.repository.entity.SecuritiesPricing> endPrice) {
+		this.endPrice = endPrice;
+	}
+
+	public YesNoIndicator getSpreadTransaction() {
+		return spreadTransaction;
+	}
+
+	public void setSpreadTransaction(YesNoIndicator spreadTransaction) {
+		this.spreadTransaction = spreadTransaction;
+	}
+
+	public SecuritiesFinancingAgreement getFinancingAgreement() {
+		return financingAgreement;
+	}
+
+	public void setFinancingAgreement(com.tools20022.repository.entity.SecuritiesFinancingAgreement financingAgreement) {
+		this.financingAgreement = financingAgreement;
+	}
+
+	public CurrencyAndAmount getOpeningSettlementAmount() {
+		return openingSettlementAmount;
+	}
+
+	public void setOpeningSettlementAmount(CurrencyAndAmount openingSettlementAmount) {
+		this.openingSettlementAmount = openingSettlementAmount;
+	}
+
+	public SecuritiesTrade getClosingLegExecution() {
+		return closingLegExecution;
+	}
+
+	public void setClosingLegExecution(SecuritiesTrade closingLegExecution) {
+		this.closingLegExecution = closingLegExecution;
+	}
+
+	public SecuritiesTrade getOpeningLegExecution() {
+		return openingLegExecution;
+	}
+
+	public void setOpeningLegExecution(SecuritiesTrade openingLegExecution) {
+		this.openingLegExecution = openingLegExecution;
+	}
+
+	public BuyOrSellIndicationOfInterest getRelatedIndicationOfInterest() {
+		return relatedIndicationOfInterest;
+	}
+
+	public void setRelatedIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
+		this.relatedIndicationOfInterest = relatedIndicationOfInterest;
+	}
+
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
 	}
 }

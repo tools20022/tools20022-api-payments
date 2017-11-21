@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SettlementPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.SettlementInstruction3;
+import com.tools20022.repository.msg.SettlementInstruction4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in cash settlement.
@@ -37,11 +43,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashSettlementInstructionPartyRole#CashAccount
- * CashSettlementInstructionPartyRole.CashAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashSettlementInstructionPartyRole#mmCashAccount
+ * CashSettlementInstructionPartyRole.mmCashAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashSettlementInstructionPartyRole#SettlementInstruction
- * CashSettlementInstructionPartyRole.SettlementInstruction}</li>
+ * {@linkplain com.tools20022.repository.entity.CashSettlementInstructionPartyRole#mmSettlementInstruction
+ * CashSettlementInstructionPartyRole.mmSettlementInstruction}</li>
  * </ul>
  * </li>
  * <li>
@@ -49,12 +55,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccount#CashSettlementPartyRole
- * CashAccount.CashSettlementPartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CashSettlement#PartyRole
- * CashSettlement.PartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashSettlementPartyRole
+ * CashAccount.mmCashSettlementPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CashSettlement#mmPartyRole
+ * CashSettlement.mmPartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.SettlementPartyRole
+ * SettlementPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -66,15 +76,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * InstructedReimbursementAgent}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.SettlementPartyRole
- * SettlementPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,6 +94,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
 	 * Unambiguous identification of the account used in the context of the
 	 * party role such as instructing reimbursement agent account...
@@ -97,8 +104,8 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#CashSettlementPartyRole
-	 * CashAccount.CashSettlementPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashSettlementPartyRole
+	 * CashAccount.mmCashSettlementPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -110,20 +117,20 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#InstructingReimbursementAgentAccount
-	 * SettlementInstruction4.InstructingReimbursementAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#mmInstructingReimbursementAgentAccount
+	 * SettlementInstruction4.mmInstructingReimbursementAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#InstructedReimbursementAgentAccount
-	 * SettlementInstruction4.InstructedReimbursementAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#mmInstructedReimbursementAgentAccount
+	 * SettlementInstruction4.mmInstructedReimbursementAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#ThirdReimbursementAgentAccount
-	 * SettlementInstruction4.ThirdReimbursementAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction4#mmThirdReimbursementAgentAccount
+	 * SettlementInstruction4.mmThirdReimbursementAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction3#InstructingReimbursementAgentAccount
-	 * SettlementInstruction3.InstructingReimbursementAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction3#mmInstructingReimbursementAgentAccount
+	 * SettlementInstruction3.mmInstructingReimbursementAgentAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction3#InstructedReimbursementAgentAccount
-	 * SettlementInstruction3.InstructedReimbursementAgentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.SettlementInstruction3#mmInstructedReimbursementAgentAccount
+	 * SettlementInstruction3.mmInstructedReimbursementAgentAccount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -144,22 +151,22 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SettlementInstruction4.InstructingReimbursementAgentAccount, com.tools20022.repository.msg.SettlementInstruction4.InstructedReimbursementAgentAccount,
-					com.tools20022.repository.msg.SettlementInstruction4.ThirdReimbursementAgentAccount, com.tools20022.repository.msg.SettlementInstruction3.InstructingReimbursementAgentAccount,
-					com.tools20022.repository.msg.SettlementInstruction3.InstructedReimbursementAgentAccount);
-			elementContext_lazy = () -> CashSettlementInstructionPartyRole.mmObject();
+			derivation_lazy = () -> Arrays.asList(SettlementInstruction4.mmInstructingReimbursementAgentAccount, SettlementInstruction4.mmInstructedReimbursementAgentAccount, SettlementInstruction4.mmThirdReimbursementAgentAccount,
+					SettlementInstruction3.mmInstructingReimbursementAgentAccount, SettlementInstruction3.mmInstructedReimbursementAgentAccount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Unambiguous identification of the account used in the context of the party role such as instructing reimbursement agent account...";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmCashSettlementPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.CashSettlementPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CashSettlement> settlementInstruction;
 	/**
 	 * Identifies the settlement instruction in which a party plays a role.
 	 * <p>
@@ -168,8 +175,8 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashSettlement#PartyRole
-	 * CashSettlement.PartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashSettlement#mmPartyRole
+	 * CashSettlement.mmPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -194,33 +201,54 @@ public class CashSettlementInstructionPartyRole extends SettlementPartyRole {
 	 * "Identifies the settlement instruction in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashSettlementInstructionPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementInstruction";
 			definition = "Identifies the settlement instruction in which a party plays a role.";
 			minOccurs = 0;
-			type_lazy = () -> CashSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.PartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmPartyRole;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSettlementInstructionPartyRole";
 				definition = "Role played by a party in cash settlement.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.CashSettlementPartyRole, com.tools20022.repository.entity.CashSettlement.PartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCashSettlementPartyRole, com.tools20022.repository.entity.CashSettlement.mmPartyRole);
 				subType_lazy = () -> Arrays.asList(SettlementInstructionSystemRole.mmObject(), InstructedReimbursementAgent.mmObject());
 				superType_lazy = () -> SettlementPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashSettlementInstructionPartyRole.CashAccount, com.tools20022.repository.entity.CashSettlementInstructionPartyRole.SettlementInstruction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmCashAccount, com.tools20022.repository.entity.CashSettlementInstructionPartyRole.mmSettlementInstruction);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CashSettlementInstructionPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<CashAccount> getCashAccount() {
+		return cashAccount;
+	}
+
+	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = cashAccount;
+	}
+
+	public List<CashSettlement> getSettlementInstruction() {
+		return settlementInstruction;
+	}
+
+	public void setSettlementInstruction(List<com.tools20022.repository.entity.CashSettlement> settlementInstruction) {
+		this.settlementInstruction = settlementInstruction;
 	}
 }

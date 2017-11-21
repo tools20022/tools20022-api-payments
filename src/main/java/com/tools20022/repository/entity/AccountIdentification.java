@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.AccountIdentification4Choice;
 import com.tools20022.repository.datatype.*;
-import com.tools20022.repository.msg.GenericAccountIdentification1;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,39 +40,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountIdentification#Account
- * AccountIdentification.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountIdentification#IBAN
- * AccountIdentification.IBAN}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountIdentification#BBAN
- * AccountIdentification.BBAN}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountIdentification#UPIC
- * AccountIdentification.UPIC}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmAccount
+ * AccountIdentification.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountIdentification#ProprietaryIdentification
- * AccountIdentification.ProprietaryIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountIdentification#Name
- * AccountIdentification.Name}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmIBAN
+ * AccountIdentification.mmIBAN}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountIdentification#CostReferencePattern
- * AccountIdentification.CostReferencePattern}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmBBAN
+ * AccountIdentification.mmBBAN}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountIdentification#Number
- * AccountIdentification.Number}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmUPIC
+ * AccountIdentification.mmUPIC}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmProprietaryIdentification
+ * AccountIdentification.mmProprietaryIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForAccount
- * GenericIdentification.IdentificationForAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmName
+ * AccountIdentification.mmName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForAccountCostReferencePattern
- * GenericIdentification.IdentificationForAccountCostReferencePattern}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Identification
- * Account.Identification}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmCostReferencePattern
+ * AccountIdentification.mmCostReferencePattern}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmNumber
+ * AccountIdentification.mmNumber}</li>
  * </ul>
  * </li>
  * <li>
@@ -87,10 +77,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForAccount
+ * GenericIdentification.mmIdentificationForAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForAccountCostReferencePattern
+ * GenericIdentification.mmIdentificationForAccountCostReferencePattern}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmIdentification
+ * Account.mmIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,6 +109,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AccountIdentification {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Account account;
 	/**
 	 * Account for which an identification is provided.
 	 * <p>
@@ -113,8 +118,8 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#Identification
-	 * Account.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmIdentification
+	 * Account.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -137,20 +142,21 @@ public class AccountIdentification {
 	 * definition} = "Account for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account for which an identification is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.Identification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected IBAN2007Identifier iBAN;
 	/**
 	 * International Bank Account Number (IBAN) - identifier used
 	 * internationally by financial institutions to uniquely identify the
@@ -170,11 +176,11 @@ public class AccountIdentification {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.AccountIdentification4Choice#IBAN
-	 * AccountIdentification4Choice.IBAN}</li>
+	 * {@linkplain com.tools20022.repository.choice.AccountIdentification4Choice#mmIBAN
+	 * AccountIdentification4Choice.mmIBAN}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.AccountIdentification4Choice#Other
-	 * AccountIdentification4Choice.Other}</li>
+	 * {@linkplain com.tools20022.repository.choice.AccountIdentification4Choice#mmOther
+	 * AccountIdentification4Choice.mmOther}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -195,19 +201,28 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IBAN = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIBAN = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AccountIdentification4Choice.IBAN, com.tools20022.repository.choice.AccountIdentification4Choice.Other);
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			derivation_lazy = () -> Arrays.asList(AccountIdentification4Choice.mmIBAN, AccountIdentification4Choice.mmOther);
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IBAN";
 			definition = "International Bank Account Number (IBAN) - identifier used internationally by financial institutions to uniquely identify the account of a customer. Further specifications of the format and content of the IBAN can be found in the standard ISO 13616 \"Banking and related financial services - International Bank Account Number (IBAN)\" version 1997-10-01, or later revisions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> IBAN2007Identifier.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountIdentification.class.getMethod("getIBAN", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BBANIdentifier bBAN;
 	/**
 	 * Basic Bank Account Number (BBAN) - identifier used nationally by
 	 * financial institutions, ie, in individual countries, generally as part of
@@ -239,18 +254,27 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BBAN = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBBAN = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BBAN";
 			definition = "Basic Bank Account Number (BBAN) - identifier used nationally by financial institutions, ie, in individual countries, generally as part of a National Account Numbering Scheme(s), to uniquely identify the account of a customer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BBANIdentifier.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountIdentification.class.getMethod("getBBAN", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected UPICIdentifier uPIC;
 	/**
 	 * Universal Payment Identification Code (UPIC) - identifier used by the New
 	 * York Clearing House to mask confidential data, such as bank accounts and
@@ -282,18 +306,27 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute UPIC = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmUPIC = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UPIC";
 			definition = "Universal Payment Identification Code (UPIC) - identifier used by the New York Clearing House to mask confidential data, such as bank accounts and bank routing numbers. UPIC numbers remain with business customers, regardless of banking relationship changes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> UPICIdentifier.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountIdentification.class.getMethod("getUPIC", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected GenericIdentification proprietaryIdentification;
 	/**
 	 * Unique identifier for an account. It is assigned by the account servicer
 	 * using a proprietary identification scheme.
@@ -303,8 +336,8 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForAccount
-	 * GenericIdentification.IdentificationForAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForAccount
+	 * GenericIdentification.mmIdentificationForAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -331,20 +364,21 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ProprietaryIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmProprietaryIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProprietaryIdentification";
 			definition = "Unique identifier for an account. It is assigned by the account servicer using a proprietary identification scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentificationForAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected Max70Text name;
 	/**
 	 * Name of the account. It provides an additional means of identification,
 	 * and is designated by the account servicer in agreement with the account
@@ -359,21 +393,21 @@ public class AccountIdentification {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#Name
-	 * CashAccount24.Name}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount25#Name
-	 * CashAccount25.Name}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#Name
-	 * AccountForAction2.Name}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount5#Name
-	 * CustomerAccount5.Name}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#mmName
+	 * CashAccount24.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount25#mmName
+	 * CashAccount25.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#mmName
+	 * AccountForAction2.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount5#mmName
+	 * CustomerAccount5.mmName}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#Name
-	 * CustomerAccountModification1.Name}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount4#Name
-	 * CustomerAccount4.Name}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.SecuritiesAccount19#Name
-	 * SecuritiesAccount19.Name}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#mmName
+	 * CustomerAccountModification1.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount4#mmName
+	 * CustomerAccount4.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.SecuritiesAccount19#mmName
+	 * SecuritiesAccount19.mmName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -394,21 +428,28 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Name = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccount24.Name, com.tools20022.repository.msg.CashAccount25.Name, com.tools20022.repository.msg.AccountForAction2.Name,
-					com.tools20022.repository.msg.CustomerAccount5.Name, com.tools20022.repository.msg.CustomerAccountModification1.Name, com.tools20022.repository.msg.CustomerAccount4.Name,
-					com.tools20022.repository.msg.SecuritiesAccount19.Name);
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashAccount24.mmName, CashAccount25.mmName, AccountForAction2.mmName, CustomerAccount5.mmName, CustomerAccountModification1.mmName, CustomerAccount4.mmName, SecuritiesAccount19.mmName);
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the account. It provides an additional means of identification, and is designated by the account servicer in agreement with the account owner.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountIdentification.class.getMethod("getName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected GenericIdentification costReferencePattern;
 	/**
 	 * Template describing the mask of the structure for the format of the
 	 * accounting account identifier; for example "AABBBBCC" where AA represents
@@ -419,8 +460,8 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForAccountCostReferencePattern
-	 * GenericIdentification.IdentificationForAccountCostReferencePattern}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForAccountCostReferencePattern
+	 * GenericIdentification.mmIdentificationForAccountCostReferencePattern}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -447,20 +488,21 @@ public class AccountIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CostReferencePattern = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCostReferencePattern = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CostReferencePattern";
 			definition = "Template describing the mask of the structure for the format of the accounting account identifier; for example \"AABBBBCC\" where AA represents the country, BBBB the service classification, CC the sales area.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentificationForAccountCostReferencePattern;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccountCostReferencePattern;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected Max35Text number;
 	/**
 	 * String of characters (mainly numbers) used to identify an account.
 	 * <p>
@@ -487,34 +529,111 @@ public class AccountIdentification {
 	 * "String of characters (mainly numbers) used to identify an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Number = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AccountIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "String of characters (mainly numbers) used to identify an account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountIdentification.class.getMethod("getNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountIdentification";
 				definition = "Unique identifier of an account, as assigned by the account servicer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.IdentificationForAccount,
-						com.tools20022.repository.entity.GenericIdentification.IdentificationForAccountCostReferencePattern, com.tools20022.repository.entity.Account.Identification);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountIdentification.Account, com.tools20022.repository.entity.AccountIdentification.IBAN, com.tools20022.repository.entity.AccountIdentification.BBAN,
-						com.tools20022.repository.entity.AccountIdentification.UPIC, com.tools20022.repository.entity.AccountIdentification.ProprietaryIdentification, com.tools20022.repository.entity.AccountIdentification.Name,
-						com.tools20022.repository.entity.AccountIdentification.CostReferencePattern, com.tools20022.repository.entity.AccountIdentification.Number);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccount,
+						com.tools20022.repository.entity.GenericIdentification.mmIdentificationForAccountCostReferencePattern, com.tools20022.repository.entity.Account.mmIdentification);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountIdentification.mmAccount, com.tools20022.repository.entity.AccountIdentification.mmIBAN,
+						com.tools20022.repository.entity.AccountIdentification.mmBBAN, com.tools20022.repository.entity.AccountIdentification.mmUPIC, com.tools20022.repository.entity.AccountIdentification.mmProprietaryIdentification,
+						com.tools20022.repository.entity.AccountIdentification.mmName, com.tools20022.repository.entity.AccountIdentification.mmCostReferencePattern, com.tools20022.repository.entity.AccountIdentification.mmNumber);
 				derivationComponent_lazy = () -> Arrays.asList(GenericAccountIdentification1.mmObject(), AccountIdentification4Choice.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AccountIdentification.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = account;
+	}
+
+	public IBAN2007Identifier getIBAN() {
+		return iBAN;
+	}
+
+	public void setIBAN(IBAN2007Identifier iBAN) {
+		this.iBAN = iBAN;
+	}
+
+	public BBANIdentifier getBBAN() {
+		return bBAN;
+	}
+
+	public void setBBAN(BBANIdentifier bBAN) {
+		this.bBAN = bBAN;
+	}
+
+	public UPICIdentifier getUPIC() {
+		return uPIC;
+	}
+
+	public void setUPIC(UPICIdentifier uPIC) {
+		this.uPIC = uPIC;
+	}
+
+	public GenericIdentification getProprietaryIdentification() {
+		return proprietaryIdentification;
+	}
+
+	public void setProprietaryIdentification(com.tools20022.repository.entity.GenericIdentification proprietaryIdentification) {
+		this.proprietaryIdentification = proprietaryIdentification;
+	}
+
+	public Max70Text getName() {
+		return name;
+	}
+
+	public void setName(Max70Text name) {
+		this.name = name;
+	}
+
+	public GenericIdentification getCostReferencePattern() {
+		return costReferencePattern;
+	}
+
+	public void setCostReferencePattern(com.tools20022.repository.entity.GenericIdentification costReferencePattern) {
+		this.costReferencePattern = costReferencePattern;
+	}
+
+	public Max35Text getNumber() {
+		return number;
+	}
+
+	public void setNumber(Max35Text number) {
+		this.number = number;
 	}
 }

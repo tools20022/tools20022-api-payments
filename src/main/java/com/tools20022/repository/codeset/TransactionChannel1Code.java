@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.TransactionChannelCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,24 +37,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#MailOrder
- * TransactionChannel1Code.MailOrder}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#mmMailOrder
+ * TransactionChannel1Code.mmMailOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#TelephoneOrder
- * TransactionChannel1Code.TelephoneOrder}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#mmTelephoneOrder
+ * TransactionChannel1Code.mmTelephoneOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#ElectronicCommerce
- * TransactionChannel1Code.ElectronicCommerce}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#mmElectronicCommerce
+ * TransactionChannel1Code.mmElectronicCommerce}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#TelevisionPayment
- * TransactionChannel1Code.TelevisionPayment}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionChannel1Code#mmTelevisionPayment
+ * TransactionChannel1Code.mmTelevisionPayment}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -90,9 +92,9 @@ public class TransactionChannel1Code extends TransactionChannelCode {
 	 * name} = "MailOrder"</li>
 	 * </ul>
 	 */
-	public static final MMCode MailOrder = new MMCode() {
+	public static final MMCode mmMailOrder = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MailOrder";
 			owner_lazy = () -> TransactionChannel1Code.mmObject();
 		}
@@ -113,9 +115,9 @@ public class TransactionChannel1Code extends TransactionChannelCode {
 	 * name} = "TelephoneOrder"</li>
 	 * </ul>
 	 */
-	public static final MMCode TelephoneOrder = new MMCode() {
+	public static final MMCode mmTelephoneOrder = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TelephoneOrder";
 			owner_lazy = () -> TransactionChannel1Code.mmObject();
 		}
@@ -136,9 +138,9 @@ public class TransactionChannel1Code extends TransactionChannelCode {
 	 * name} = "ElectronicCommerce"</li>
 	 * </ul>
 	 */
-	public static final MMCode ElectronicCommerce = new MMCode() {
+	public static final MMCode mmElectronicCommerce = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ElectronicCommerce";
 			owner_lazy = () -> TransactionChannel1Code.mmObject();
 		}
@@ -159,9 +161,9 @@ public class TransactionChannel1Code extends TransactionChannelCode {
 	 * name} = "TelevisionPayment"</li>
 	 * </ul>
 	 */
-	public static final MMCode TelevisionPayment = new MMCode() {
+	public static final MMCode mmTelevisionPayment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TelevisionPayment";
 			owner_lazy = () -> TransactionChannel1Code.mmObject();
 		}
@@ -170,13 +172,12 @@ public class TransactionChannel1Code extends TransactionChannelCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("MAIL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionChannel1Code";
 				definition = "Identifies the type of the communication channels used by the cardholder to the acceptor system.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionChannel1Code.MailOrder, com.tools20022.repository.codeset.TransactionChannel1Code.TelephoneOrder,
-						com.tools20022.repository.codeset.TransactionChannel1Code.ElectronicCommerce, com.tools20022.repository.codeset.TransactionChannel1Code.TelevisionPayment);
+				code_lazy = () -> Arrays.asList(TransactionChannel1Code.mmMailOrder, TransactionChannel1Code.mmTelephoneOrder, TransactionChannel1Code.mmElectronicCommerce, TransactionChannel1Code.mmTelevisionPayment);
 				trace_lazy = () -> TransactionChannelCode.mmObject();
 			}
 		});

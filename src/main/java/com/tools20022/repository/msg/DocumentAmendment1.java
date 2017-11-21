@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.RegisteredContract;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Indicates whether the supporting document is amending an original document or
@@ -36,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentAmendment1#CorrectionIdentification
- * DocumentAmendment1.CorrectionIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentAmendment1#mmCorrectionIdentification
+ * DocumentAmendment1.mmCorrectionIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentAmendment1#OriginalDocumentIdentification
- * DocumentAmendment1.OriginalDocumentIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentAmendment1#mmOriginalDocumentIdentification
+ * DocumentAmendment1.mmOriginalDocumentIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -49,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DocumentAmendment1", propOrder = {"correctionIdentification", "originalDocumentIdentification"})
 public class DocumentAmendment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Number correctionIdentification;
 	/**
 	 * Provides the correction sequence number used to identify the amendment.
 	 * <p>
@@ -95,19 +104,20 @@ public class DocumentAmendment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CorrectionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCorrectionIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DocumentAmendment1.mmObject();
 			isDerived = false;
 			xmlTag = "CrrctnId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorrectionIdentification";
 			definition = "Provides the correction sequence number used to identify the amendment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
+	protected Max35Text originalDocumentIdentification;
 	/**
 	 * Identification of the original document being amended.
 	 * <p>
@@ -120,8 +130,8 @@ public class DocumentAmendment1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
-	 * RegisteredContract.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+	 * RegisteredContract.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -140,17 +150,17 @@ public class DocumentAmendment1 {
 	 * definition} = "Identification of the original document being amended."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalDocumentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalDocumentIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> DocumentAmendment1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Identification;
 			isDerived = false;
 			xmlTag = "OrgnlDocId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalDocumentIdentification";
 			definition = "Identification of the original document being amended.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -158,14 +168,32 @@ public class DocumentAmendment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentAmendment1.CorrectionIdentification, com.tools20022.repository.msg.DocumentAmendment1.OriginalDocumentIdentification);
+				messageElement_lazy = () -> Arrays.asList(DocumentAmendment1.mmCorrectionIdentification, DocumentAmendment1.mmOriginalDocumentIdentification);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentAmendment1";
 				definition = "Indicates whether the supporting document is amending an original document or not, and the reference of the original supporting document, when applicable.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "CrrctnId", required = true)
+	public Number getCorrectionIdentification() {
+		return correctionIdentification;
+	}
+
+	public void setCorrectionIdentification(Number correctionIdentification) {
+		this.correctionIdentification = correctionIdentification;
+	}
+
+	@XmlElement(name = "OrgnlDocId")
+	public Max35Text getOriginalDocumentIdentification() {
+		return originalDocumentIdentification;
+	}
+
+	public void setOriginalDocumentIdentification(Max35Text originalDocumentIdentification) {
+		this.originalDocumentIdentification = originalDocumentIdentification;
 	}
 }

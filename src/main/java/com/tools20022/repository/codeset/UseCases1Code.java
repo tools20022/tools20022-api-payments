@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,21 +31,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#Opening
- * UseCases1Code.Opening}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#Maintenance
- * UseCases1Code.Maintenance}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#Closing
- * UseCases1Code.Closing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#View
- * UseCases1Code.View}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#mmOpening
+ * UseCases1Code.mmOpening}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.UseCases1Code#mmMaintenance
+ * UseCases1Code.mmMaintenance}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#mmClosing
+ * UseCases1Code.mmClosing}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.UseCases1Code#mmView
+ * UseCases1Code.mmView}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -79,9 +82,9 @@ public class UseCases1Code {
 	 * name} = "Opening"</li>
 	 * </ul>
 	 */
-	public static final MMCode Opening = new MMCode() {
+	public static final MMCode mmOpening = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Opening";
 			owner_lazy = () -> UseCases1Code.mmObject();
 		}
@@ -102,9 +105,9 @@ public class UseCases1Code {
 	 * name} = "Maintenance"</li>
 	 * </ul>
 	 */
-	public static final MMCode Maintenance = new MMCode() {
+	public static final MMCode mmMaintenance = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Maintenance";
 			owner_lazy = () -> UseCases1Code.mmObject();
 		}
@@ -125,9 +128,9 @@ public class UseCases1Code {
 	 * name} = "Closing"</li>
 	 * </ul>
 	 */
-	public static final MMCode Closing = new MMCode() {
+	public static final MMCode mmClosing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Closing";
 			owner_lazy = () -> UseCases1Code.mmObject();
 		}
@@ -148,9 +151,9 @@ public class UseCases1Code {
 	 * name} = "View"</li>
 	 * </ul>
 	 */
-	public static final MMCode View = new MMCode() {
+	public static final MMCode mmView = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "View";
 			owner_lazy = () -> UseCases1Code.mmObject();
 		}
@@ -159,13 +162,12 @@ public class UseCases1Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("OPEN");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UseCases1Code";
 				definition = "Specifies the action on the cash account.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UseCases1Code.Opening, com.tools20022.repository.codeset.UseCases1Code.Maintenance, com.tools20022.repository.codeset.UseCases1Code.Closing,
-						com.tools20022.repository.codeset.UseCases1Code.View);
+				code_lazy = () -> Arrays.asList(UseCases1Code.mmOpening, UseCases1Code.mmMaintenance, UseCases1Code.mmClosing, UseCases1Code.mmView);
 			}
 		});
 		return mmObject_lazy.get();

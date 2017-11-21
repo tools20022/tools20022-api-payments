@@ -19,9 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessAttribute;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CashCollateral5;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,18 +41,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Money#CashAmount
- * Money.CashAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Money#mmCashAmount
+ * Money.mmCashAmount}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Deposit Deposit}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -58,11 +53,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * CashCollateral5}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.Deposit Deposit}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,6 +81,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Money extends Asset {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount cashAmount;
 	/**
 	 * Value of the asset specified as a currency and an amount.
 	 * <p>
@@ -92,8 +96,8 @@ public class Money extends Asset {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#DepositAmount
-	 * CashCollateral5.DepositAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#mmDepositAmount
+	 * CashCollateral5.mmDepositAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -112,33 +116,54 @@ public class Money extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CashAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCashAmount = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashCollateral5.DepositAmount);
-			elementContext_lazy = () -> Money.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmDepositAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Money.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAmount";
 			definition = "Value of the asset specified as a currency and an amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Money.class.getMethod("getCashAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Money";
 				definition = "Currency (banknotes and coins) and demand deposits or 'bank money' (the balance held in checking accounts and savings accounts).";
 				subType_lazy = () -> Arrays.asList(Deposit.mmObject());
 				superType_lazy = () -> Asset.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Money.CashAmount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Money.mmCashAmount);
 				derivationComponent_lazy = () -> Arrays.asList(CashCollateral5.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Money.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getCashAmount() {
+		return cashAmount;
+	}
+
+	public void setCashAmount(CurrencyAndAmount cashAmount) {
+		this.cashAmount = cashAmount;
 	}
 }

@@ -17,10 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Type of entity that plays a specific role in a specific context.
@@ -34,20 +38,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#Role
- * RolePlayer.Role}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#ValidityPeriod
- * RolePlayer.ValidityPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#mmRole
+ * RolePlayer.mmRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#mmValidityPeriod
+ * RolePlayer.mmValidityPeriod}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Role#Player Role.Player}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Role#mmPlayer Role.mmPlayer}
+ * </li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedRolePlayer
- * DateTimePeriod.RelatedRolePlayer}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedRolePlayer
+ * DateTimePeriod.mmRelatedRolePlayer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -60,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,6 +81,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RolePlayer {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Role> role;
 	/**
 	 * Role of the entity in the activity.
 	 * <p>
@@ -83,8 +89,8 @@ public class RolePlayer {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Role#Player
-	 * Role.Player}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Role#mmPlayer
+	 * Role.mmPlayer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -106,19 +112,20 @@ public class RolePlayer {
 	 * definition} = "Role of the entity in the activity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Role = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RolePlayer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Role";
 			definition = "Role of the entity in the activity.";
 			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Role.mmPlayer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Role.Player;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DateTimePeriod validityPeriod;
 	/**
 	 * Specifies the period during which a role player is valid
 	 * <p>
@@ -127,8 +134,8 @@ public class RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedRolePlayer
-	 * DateTimePeriod.RelatedRolePlayer}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedRolePlayer
+	 * DateTimePeriod.mmRelatedRolePlayer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -151,33 +158,54 @@ public class RolePlayer {
 	 * definition} = "Specifies the period during which a role player is valid"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RolePlayer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which a role player is valid";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RelatedRolePlayer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RolePlayer";
 				definition = "Type of entity that plays a specific role in a specific context.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.Player, com.tools20022.repository.entity.DateTimePeriod.RelatedRolePlayer);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.mmPlayer, com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer);
 				subType_lazy = () -> Arrays.asList(Party.mmObject(), System.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RolePlayer.Role, com.tools20022.repository.entity.RolePlayer.ValidityPeriod);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RolePlayer.mmRole, com.tools20022.repository.entity.RolePlayer.mmValidityPeriod);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return RolePlayer.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Role> getRole() {
+		return role;
+	}
+
+	public void setRole(List<com.tools20022.repository.entity.Role> role) {
+		this.role = role;
+	}
+
+	public DateTimePeriod getValidityPeriod() {
+		return validityPeriod;
+	}
+
+	public void setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
+		this.validityPeriod = validityPeriod;
 	}
 }

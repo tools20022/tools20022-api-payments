@@ -17,9 +17,7 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FrequencyCode;
 import com.tools20022.repository.codeset.InstalmentPlanCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
@@ -27,6 +25,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.PaymentObligation;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,36 +44,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Instalment#InitialNumberOfInstalment
- * Instalment.InitialNumberOfInstalment}</li>
+ * {@linkplain com.tools20022.repository.entity.Instalment#mmInitialNumberOfInstalment
+ * Instalment.mmInitialNumberOfInstalment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Instalment#TotalNumberOfInstalment
- * Instalment.TotalNumberOfInstalment}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Instalment#PeriodUnit
- * Instalment.PeriodUnit}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Instalment#NumberOfUnits
- * Instalment.NumberOfUnits}</li>
+ * {@linkplain com.tools20022.repository.entity.Instalment#mmTotalNumberOfInstalment
+ * Instalment.mmTotalNumberOfInstalment}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Instalment#mmPeriodUnit
+ * Instalment.mmPeriodUnit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Instalment#mmNumberOfUnits
+ * Instalment.mmNumberOfUnits}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Instalment#SequenceIdentification
- * Instalment.SequenceIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Instalment#InvestmentPlan
- * Instalment.InvestmentPlan}</li>
+ * {@linkplain com.tools20022.repository.entity.Instalment#mmSequenceIdentification
+ * Instalment.mmSequenceIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Instalment#mmInvestmentPlan
+ * Instalment.mmInvestmentPlan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Instalment#InstalmentPlanType
- * Instalment.InstalmentPlanType}</li>
+ * {@linkplain com.tools20022.repository.entity.Instalment#mmInstalmentPlanType
+ * Instalment.mmInstalmentPlanType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Instalment#FirstPaymentAmount
- * Instalment.FirstPaymentAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Instalment#FirstPaymentDate
- * Instalment.FirstPaymentDate}</li>
+ * {@linkplain com.tools20022.repository.entity.Instalment#mmFirstPaymentAmount
+ * Instalment.mmFirstPaymentAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Instalment#mmFirstPaymentDate
+ * Instalment.mmFirstPaymentDate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.InvestmentPlan#Instalment
- * InvestmentPlan.Instalment}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.InvestmentPlan#mmInstalment
+ * InvestmentPlan.mmInstalment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -82,8 +83,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,6 +100,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Instalment extends PaymentObligation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Number initialNumberOfInstalment;
 	/**
 	 * Number of pre-paid instalment periods at the time an investment plan is
 	 * created.
@@ -126,18 +128,27 @@ public class Instalment extends PaymentObligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InitialNumberOfInstalment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInitialNumberOfInstalment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitialNumberOfInstalment";
 			definition = "Number of pre-paid instalment periods at the time an investment plan is created.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getInitialNumberOfInstalment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number totalNumberOfInstalment;
 	/**
 	 * Total number of times the amount must be invested at the predefined
 	 * frequency as of the start date of the investment plan.
@@ -165,18 +176,27 @@ public class Instalment extends PaymentObligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TotalNumberOfInstalment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTotalNumberOfInstalment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalNumberOfInstalment";
 			definition = "Total number of times the amount must be invested at the predefined frequency as of the start date of the investment plan.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getTotalNumberOfInstalment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FrequencyCode periodUnit;
 	/**
 	 * Period unit between consecutive payments (for example day, month, year).
 	 * <p>
@@ -204,18 +224,27 @@ public class Instalment extends PaymentObligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PeriodUnit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPeriodUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PeriodUnit";
 			definition = "Period unit between consecutive payments (for example day, month, year).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getPeriodUnit", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number numberOfUnits;
 	/**
 	 * Number of period units between consecutive payments.
 	 * <p>
@@ -240,18 +269,27 @@ public class Instalment extends PaymentObligation {
 	 * definition} = "Number of period units between consecutive payments."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NumberOfUnits = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumberOfUnits = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfUnits";
 			definition = "Number of period units between consecutive payments.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getNumberOfUnits", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max70Text sequenceIdentification;
 	/**
 	 * Specifies the progressive number of a single instalment.
 	 * <p>
@@ -276,18 +314,27 @@ public class Instalment extends PaymentObligation {
 	 * definition} = "Specifies the progressive number of a single instalment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SequenceIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSequenceIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SequenceIdentification";
 			definition = "Specifies the progressive number of a single instalment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getSequenceIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentPlan investmentPlan;
 	/**
 	 * Investment plan for which instalment information is provided.
 	 * <p>
@@ -296,8 +343,8 @@ public class Instalment extends PaymentObligation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#Instalment
-	 * InvestmentPlan.Instalment}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmInstalment
+	 * InvestmentPlan.mmInstalment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -321,20 +368,21 @@ public class Instalment extends PaymentObligation {
 	 * "Investment plan for which instalment information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentPlan";
 			definition = "Investment plan for which instalment information is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmInstalment;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.Instalment;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected InstalmentPlanCode instalmentPlanType;
 	/**
 	 * Type of instalment plan.
 	 * <p>
@@ -360,18 +408,27 @@ public class Instalment extends PaymentObligation {
 	 * definition} = "Type of instalment plan."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InstalmentPlanType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInstalmentPlanType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstalmentPlanType";
 			definition = "Type of instalment plan.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> InstalmentPlanCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getInstalmentPlanType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount firstPaymentAmount;
 	/**
 	 * Amount of the first payment.
 	 * <p>
@@ -397,18 +454,27 @@ public class Instalment extends PaymentObligation {
 	 * definition} = "Amount of the first payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FirstPaymentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFirstPaymentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstPaymentAmount";
 			definition = "Amount of the first payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getFirstPaymentAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime firstPaymentDate;
 	/**
 	 * Date of the first payment.
 	 * <p>
@@ -433,34 +499,119 @@ public class Instalment extends PaymentObligation {
 	 * definition} = "Date of the first payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FirstPaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFirstPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Instalment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Instalment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstPaymentDate";
 			definition = "Date of the first payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Instalment.class.getMethod("getFirstPaymentDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Instalment";
 				definition = "Specifies the details of each successive payment in settlement of a debt or in an investment plan.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.Instalment);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.mmInstalment);
 				superType_lazy = () -> PaymentObligation.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Instalment.InitialNumberOfInstalment, com.tools20022.repository.entity.Instalment.TotalNumberOfInstalment,
-						com.tools20022.repository.entity.Instalment.PeriodUnit, com.tools20022.repository.entity.Instalment.NumberOfUnits, com.tools20022.repository.entity.Instalment.SequenceIdentification,
-						com.tools20022.repository.entity.Instalment.InvestmentPlan, com.tools20022.repository.entity.Instalment.InstalmentPlanType, com.tools20022.repository.entity.Instalment.FirstPaymentAmount,
-						com.tools20022.repository.entity.Instalment.FirstPaymentDate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Instalment.mmInitialNumberOfInstalment, com.tools20022.repository.entity.Instalment.mmTotalNumberOfInstalment,
+						com.tools20022.repository.entity.Instalment.mmPeriodUnit, com.tools20022.repository.entity.Instalment.mmNumberOfUnits, com.tools20022.repository.entity.Instalment.mmSequenceIdentification,
+						com.tools20022.repository.entity.Instalment.mmInvestmentPlan, com.tools20022.repository.entity.Instalment.mmInstalmentPlanType, com.tools20022.repository.entity.Instalment.mmFirstPaymentAmount,
+						com.tools20022.repository.entity.Instalment.mmFirstPaymentDate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Instalment.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Number getInitialNumberOfInstalment() {
+		return initialNumberOfInstalment;
+	}
+
+	public void setInitialNumberOfInstalment(Number initialNumberOfInstalment) {
+		this.initialNumberOfInstalment = initialNumberOfInstalment;
+	}
+
+	public Number getTotalNumberOfInstalment() {
+		return totalNumberOfInstalment;
+	}
+
+	public void setTotalNumberOfInstalment(Number totalNumberOfInstalment) {
+		this.totalNumberOfInstalment = totalNumberOfInstalment;
+	}
+
+	public FrequencyCode getPeriodUnit() {
+		return periodUnit;
+	}
+
+	public void setPeriodUnit(FrequencyCode periodUnit) {
+		this.periodUnit = periodUnit;
+	}
+
+	public Number getNumberOfUnits() {
+		return numberOfUnits;
+	}
+
+	public void setNumberOfUnits(Number numberOfUnits) {
+		this.numberOfUnits = numberOfUnits;
+	}
+
+	public Max70Text getSequenceIdentification() {
+		return sequenceIdentification;
+	}
+
+	public void setSequenceIdentification(Max70Text sequenceIdentification) {
+		this.sequenceIdentification = sequenceIdentification;
+	}
+
+	public InvestmentPlan getInvestmentPlan() {
+		return investmentPlan;
+	}
+
+	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+		this.investmentPlan = investmentPlan;
+	}
+
+	public InstalmentPlanCode getInstalmentPlanType() {
+		return instalmentPlanType;
+	}
+
+	public void setInstalmentPlanType(InstalmentPlanCode instalmentPlanType) {
+		this.instalmentPlanType = instalmentPlanType;
+	}
+
+	public CurrencyAndAmount getFirstPaymentAmount() {
+		return firstPaymentAmount;
+	}
+
+	public void setFirstPaymentAmount(CurrencyAndAmount firstPaymentAmount) {
+		this.firstPaymentAmount = firstPaymentAmount;
+	}
+
+	public ISODateTime getFirstPaymentDate() {
+		return firstPaymentDate;
+	}
+
+	public void setFirstPaymentDate(ISODateTime firstPaymentDate) {
+		this.firstPaymentDate = firstPaymentDate;
 	}
 }

@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.OptionDefinitionTypeCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,17 +37,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * OptionDefinitionTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#Call
- * OptionTypeCode.Call}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#Put
- * OptionTypeCode.Put}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#mmCall
+ * OptionTypeCode.mmCall}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.OptionTypeCode#mmPut
+ * OptionTypeCode.mmPut}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class OptionTypeCode extends OptionDefinitionTypeCode {
 	 * name} = "Call"</li>
 	 * </ul>
 	 */
-	public static final MMCode Call = new MMCode() {
+	public static final MMCode mmCall = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Call";
 			owner_lazy = () -> OptionTypeCode.mmObject();
 		}
@@ -106,9 +108,9 @@ public class OptionTypeCode extends OptionDefinitionTypeCode {
 	 * name} = "Put"</li>
 	 * </ul>
 	 */
-	public static final MMCode Put = new MMCode() {
+	public static final MMCode mmPut = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Put";
 			owner_lazy = () -> OptionTypeCode.mmObject();
 		}
@@ -117,12 +119,12 @@ public class OptionTypeCode extends OptionDefinitionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CALL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionTypeCode";
 				definition = "Indicates whether it is a Call option (right to purchase a specific underlying asset) or a Put option (right to sell a specific underlying asset).";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OptionTypeCode.Call, com.tools20022.repository.codeset.OptionTypeCode.Put);
+				code_lazy = () -> Arrays.asList(OptionTypeCode.mmCall, OptionTypeCode.mmPut);
 				trace_lazy = () -> OptionDefinitionTypeCode.mmObject();
 			}
 		});

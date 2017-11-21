@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMDataType;
 import java.util.Optional;
 
@@ -26,6 +28,29 @@ import java.util.Optional;
  * of time-related concepts.
  */
 public interface MMAbstractDateTimeConcept extends MMDataType {
+
+	/**
+	 * the lowest value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMAbstractDateTimeConcept, Optional<String>> minInclusiveAttribute = newAttribute();
+	/**
+	 * the lowest but one value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMAbstractDateTimeConcept, Optional<String>> minExclusiveAttribute = newAttribute();
+	/**
+	 * the highest value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMAbstractDateTimeConcept, Optional<String>> maxInclusiveAttribute = newAttribute();
+	/**
+	 * the highest but one value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMAbstractDateTimeConcept, Optional<String>> maxExclusiveAttribute = newAttribute();
+	/**
+	 * A constraint on the value space of a datatype which is achieved by
+	 * constraining the lexical space to literals which match a specific
+	 * pattern.
+	 */
+	public final static MetamodelAttribute<MMAbstractDateTimeConcept, Optional<String>> patternAttribute = newAttribute();
 
 	public static MetamodelType<MMAbstractDateTimeConcept> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMAbstractDateTimeConcept.class);

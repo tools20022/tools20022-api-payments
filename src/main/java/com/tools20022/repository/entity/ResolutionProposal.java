@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,13 +38,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ResolutionProposal#ResolutionProposalThreshold
- * ResolutionProposal.ResolutionProposalThreshold}</li>
+ * {@linkplain com.tools20022.repository.entity.ResolutionProposal#mmResolutionProposalThreshold
+ * ResolutionProposal.mmResolutionProposalThreshold}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ResolutionProposal#ResolutionProposalThresholdPercentage
- * ResolutionProposal.ResolutionProposalThresholdPercentage}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ResolutionProposal#Meeting
- * ResolutionProposal.Meeting}</li>
+ * {@linkplain com.tools20022.repository.entity.ResolutionProposal#mmResolutionProposalThresholdPercentage
+ * ResolutionProposal.mmResolutionProposalThresholdPercentage}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ResolutionProposal#mmMeeting
+ * ResolutionProposal.mmMeeting}</li>
  * </ul>
  * </li>
  * <li>
@@ -52,15 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Meeting#ResolutionProposalConditions
- * Meeting.ResolutionProposalConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.Meeting#mmResolutionProposalConditions
+ * Meeting.mmResolutionProposalConditions}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +75,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ResolutionProposal {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max350Text resolutionProposalThreshold;
 	/**
 	 * Specifies the minimum stake in share capital or cash value or number of
 	 * security holders required to table resolutions.
@@ -102,18 +104,27 @@ public class ResolutionProposal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResolutionProposalThreshold = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResolutionProposalThreshold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ResolutionProposal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResolutionProposalThreshold";
 			definition = "Specifies the minimum stake in share capital or cash value or number of security holders required to table resolutions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ResolutionProposal.class.getMethod("getResolutionProposalThreshold", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate resolutionProposalThresholdPercentage;
 	/**
 	 * Specifies the minimum stake in share capital or cash value or number of
 	 * security holders required to table resolutions. This minimum is expressed
@@ -144,18 +155,27 @@ public class ResolutionProposal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResolutionProposalThresholdPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResolutionProposalThresholdPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ResolutionProposal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResolutionProposalThresholdPercentage";
 			definition = "Specifies the minimum stake in share capital or cash value or number of security holders required to table resolutions. This minimum is expressed as a percentage.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ResolutionProposal.class.getMethod("getResolutionProposalThresholdPercentage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Meeting meeting;
 	/**
 	 * Meeting for which conditions for proposing a resolution are specified.
 	 * <p>
@@ -164,8 +184,8 @@ public class ResolutionProposal {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#ResolutionProposalConditions
-	 * Meeting.ResolutionProposalConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmResolutionProposalConditions
+	 * Meeting.mmResolutionProposalConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -189,33 +209,62 @@ public class ResolutionProposal {
 	 * "Meeting for which conditions for proposing a resolution are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Meeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ResolutionProposal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ResolutionProposal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which conditions for proposing a resolution are specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmResolutionProposalConditions;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.ResolutionProposalConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResolutionProposal";
 				definition = "Conditions that must be met to propose a resolution.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.ResolutionProposalConditions);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ResolutionProposal.ResolutionProposalThreshold, com.tools20022.repository.entity.ResolutionProposal.ResolutionProposalThresholdPercentage,
-						com.tools20022.repository.entity.ResolutionProposal.Meeting);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmResolutionProposalConditions);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ResolutionProposal.mmResolutionProposalThreshold, com.tools20022.repository.entity.ResolutionProposal.mmResolutionProposalThresholdPercentage,
+						com.tools20022.repository.entity.ResolutionProposal.mmMeeting);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ResolutionProposal.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max350Text getResolutionProposalThreshold() {
+		return resolutionProposalThreshold;
+	}
+
+	public void setResolutionProposalThreshold(Max350Text resolutionProposalThreshold) {
+		this.resolutionProposalThreshold = resolutionProposalThreshold;
+	}
+
+	public PercentageRate getResolutionProposalThresholdPercentage() {
+		return resolutionProposalThresholdPercentage;
+	}
+
+	public void setResolutionProposalThresholdPercentage(PercentageRate resolutionProposalThresholdPercentage) {
+		this.resolutionProposalThresholdPercentage = resolutionProposalThresholdPercentage;
+	}
+
+	public Meeting getMeeting() {
+		return meeting;
+	}
+
+	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+		this.meeting = meeting;
 	}
 }

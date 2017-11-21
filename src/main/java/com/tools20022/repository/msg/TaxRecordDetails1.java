@@ -20,10 +20,16 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides information on the individual tax amount(s) per period of the tax
@@ -35,10 +41,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxRecordDetails1#Period
- * TaxRecordDetails1.Period}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxRecordDetails1#Amount
- * TaxRecordDetails1.Amount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxRecordDetails1#mmPeriod
+ * TaxRecordDetails1.mmPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxRecordDetails1#mmAmount
+ * TaxRecordDetails1.mmAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TaxRecordDetails1", propOrder = {"period", "amount"})
 public class TaxRecordDetails1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected TaxPeriod1 period;
 	/**
 	 * Set of elements used to provide details on the period of time related to
 	 * the tax payment.
@@ -91,20 +100,21 @@ public class TaxRecordDetails1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Period = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPeriod = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> TaxRecordDetails1.mmObject();
 			isDerived = false;
 			xmlTag = "Prd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Period";
 			definition = "Set of elements used to provide details on the period of time related to the tax payment.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> TaxPeriod1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TaxPeriod1.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
 	 * Underlying tax amount related to the specified period.
 	 * <p>
@@ -118,7 +128,7 @@ public class TaxRecordDetails1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Amount Tax.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmAmount Tax.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -137,17 +147,17 @@ public class TaxRecordDetails1 {
 	 * definition} = "Underlying tax amount related to the specified period."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> TaxRecordDetails1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Amount;
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Underlying tax amount related to the specified period.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
@@ -155,14 +165,32 @@ public class TaxRecordDetails1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxRecordDetails1.Period, com.tools20022.repository.msg.TaxRecordDetails1.Amount);
+				messageElement_lazy = () -> Arrays.asList(TaxRecordDetails1.mmPeriod, TaxRecordDetails1.mmAmount);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxRecordDetails1";
 				definition = "Provides information on the individual tax amount(s) per period of the tax record.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Prd")
+	public TaxPeriod1 getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(com.tools20022.repository.msg.TaxPeriod1 period) {
+		this.period = period;
+	}
+
+	@XmlElement(name = "Amt", required = true)
+	public ActiveOrHistoricCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+		this.amount = amount;
 	}
 }

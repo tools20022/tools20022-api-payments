@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalStatusReason1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.StatusReason;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the reason for the status of the transaction.
@@ -34,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.StatusReason6Choice#Code
- * StatusReason6Choice.Code}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.StatusReason6Choice#mmCode
+ * StatusReason6Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.StatusReason6Choice#Proprietary
- * StatusReason6Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.StatusReason6Choice#mmProprietary
+ * StatusReason6Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the reason for the status of the transaction."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "StatusReason6Choice", propOrder = {"code", "proprietary"})
 public class StatusReason6Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalStatusReason1Code code;
 	/**
 	 * Reason for the status, as published in an external reason code list.
 	 * <p>
@@ -75,8 +84,8 @@ public class StatusReason6Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.StatusReason#Reason
-	 * StatusReason.Reason}</li>
+	 * {@linkplain com.tools20022.repository.entity.StatusReason#mmReason
+	 * StatusReason.mmReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -96,20 +105,21 @@ public class StatusReason6Choice {
 	 * "Reason for the status, as published in an external reason code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> StatusReason6Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.StatusReason.Reason;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Reason for the status, as published in an external reason code list.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalStatusReason1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Reason for the status, in a proprietary form.
 	 * <p>
@@ -122,8 +132,8 @@ public class StatusReason6Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.StatusReason#Reason
-	 * StatusReason.Reason}</li>
+	 * {@linkplain com.tools20022.repository.entity.StatusReason#mmReason
+	 * StatusReason.mmReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -142,17 +152,17 @@ public class StatusReason6Choice {
 	 * definition} = "Reason for the status, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> StatusReason6Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.StatusReason.Reason;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Reason for the status, in a proprietary form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -160,14 +170,32 @@ public class StatusReason6Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.StatusReason6Choice.Code, com.tools20022.repository.choice.StatusReason6Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(StatusReason6Choice.mmCode, StatusReason6Choice.mmProprietary);
 				trace_lazy = () -> StatusReason.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusReason6Choice";
 				definition = "Specifies the reason for the status of the transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalStatusReason1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalStatusReason1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

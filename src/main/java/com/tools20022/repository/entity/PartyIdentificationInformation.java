@@ -17,21 +17,19 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
-import com.tools20022.repository.choice.Party11Choice;
-import com.tools20022.repository.choice.Party12Choice;
-import com.tools20022.repository.choice.Party13Choice;
-import com.tools20022.repository.choice.Party28Choice;
+import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.PartyTypeCode;
 import com.tools20022.repository.codeset.TypeOfIdentificationCode;
 import com.tools20022.repository.datatype.LEIIdentifier;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Unique and unambiguous way to identify a party
@@ -47,93 +45,38 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#OtherIdentification
- * PartyIdentificationInformation.OtherIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmOtherIdentification
+ * PartyIdentificationInformation.mmOtherIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#IdentifiedParty
- * PartyIdentificationInformation.IdentifiedParty}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmIdentifiedParty
+ * PartyIdentificationInformation.mmIdentifiedParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#TaxIdentificationNumber
- * PartyIdentificationInformation.TaxIdentificationNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmTaxIdentificationNumber
+ * PartyIdentificationInformation.mmTaxIdentificationNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#NationalRegistrationNumber
- * PartyIdentificationInformation.NationalRegistrationNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmNationalRegistrationNumber
+ * PartyIdentificationInformation.mmNationalRegistrationNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#TypeOfIdentification
- * PartyIdentificationInformation.TypeOfIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmTypeOfIdentification
+ * PartyIdentificationInformation.mmTypeOfIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#Declaration
- * PartyIdentificationInformation.Declaration}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmDeclaration
+ * PartyIdentificationInformation.mmDeclaration}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#PartyType
- * PartyIdentificationInformation.PartyType}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmPartyType
+ * PartyIdentificationInformation.mmPartyType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#PartyName
- * PartyIdentificationInformation.PartyName}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmPartyName
+ * PartyIdentificationInformation.mmPartyName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#ValidityPeriod
- * PartyIdentificationInformation.ValidityPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmValidityPeriod
+ * PartyIdentificationInformation.mmValidityPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#IdentifiedMarket
- * PartyIdentificationInformation.IdentifiedMarket}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmIdentifiedMarket
+ * PartyIdentificationInformation.mmIdentifiedMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#LEI
- * PartyIdentificationInformation.LEI}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#RelatedPartyIdentification
- * GenericIdentification.RelatedPartyIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Party#Identification
- * Party.Identification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PartyName#PartyIdentification
- * PartyName.PartyIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedIdentification
- * DateTimePeriod.RelatedIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Market#Identification
- * Market.Identification}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification43#Identification
- * PartyIdentification43.Identification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification40#Identification
- * PartyIdentification40.Identification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PartyModification1#PartyIdentification
- * PartyModification1.PartyIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryParty3#Party
- * ProprietaryParty3.Party}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party12Choice#Party
- * Party12Choice.Party}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification58#Identification
- * PartyIdentification58.Identification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification77#Identification
- * PartyIdentification77.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#Party
- * Party28Choice.Party}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.OrganisationIdentification
- * OrganisationIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PersonIdentification
- * PersonIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmLEI
+ * PartyIdentificationInformation.mmLEI}</li>
  * </ul>
  * </li>
  * <li>
@@ -154,6 +97,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * ProprietaryParty3}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Party12Choice Party12Choice}
  * </li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party10Choice Party10Choice}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification42
+ * PartyIdentification42}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party9Choice Party9Choice}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Party13Choice Party13Choice}
  * </li>
  * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification58
@@ -165,10 +113,68 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmRelatedPartyIdentification
+ * GenericIdentification.mmRelatedPartyIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmIdentification
+ * Party.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PartyName#mmPartyIdentification
+ * PartyName.mmPartyIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedIdentification
+ * DateTimePeriod.mmRelatedIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Market#mmIdentification
+ * Market.mmIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification43#mmIdentification
+ * PartyIdentification43.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification40#mmIdentification
+ * PartyIdentification40.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyModification1#mmPartyIdentification
+ * PartyModification1.mmPartyIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryParty3#mmParty
+ * ProprietaryParty3.mmParty}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party12Choice#mmParty
+ * Party12Choice.mmParty}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification42#mmIdentification
+ * PartyIdentification42.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmIdentification
+ * PartyIdentification58.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification77#mmIdentification
+ * PartyIdentification77.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmParty
+ * Party28Choice.mmParty}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.OrganisationIdentification
+ * OrganisationIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PersonIdentification
+ * PersonIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -182,6 +188,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PartyIdentificationInformation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected GenericIdentification otherIdentification;
 	/**
 	 * Identifier issued to a party for which no specific identifier has been
 	 * defined.
@@ -191,8 +198,8 @@ public class PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#RelatedPartyIdentification
-	 * GenericIdentification.RelatedPartyIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmRelatedPartyIdentification
+	 * GenericIdentification.mmRelatedPartyIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -205,15 +212,18 @@ public class PartyIdentificationInformation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification5#Other
-	 * PersonIdentification5.Other}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.ContactDetails2#Other
-	 * ContactDetails2.Other}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification5#mmOther
+	 * PersonIdentification5.mmOther}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.ContactDetails2#mmOther
+	 * ContactDetails2.mmOther}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OrganisationIdentification8#Other
-	 * OrganisationIdentification8.Other}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.ContactDetails3#Other
-	 * ContactDetails3.Other}</li>
+	 * {@linkplain com.tools20022.repository.msg.OrganisationIdentification8#mmOther
+	 * OrganisationIdentification8.mmOther}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OrganisationIdentification7#mmOther
+	 * OrganisationIdentification7.mmOther}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.ContactDetails3#mmOther
+	 * ContactDetails3.mmOther}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -234,22 +244,22 @@ public class PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OtherIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOtherIdentification = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PersonIdentification5.Other, com.tools20022.repository.msg.ContactDetails2.Other, com.tools20022.repository.msg.OrganisationIdentification8.Other,
-					com.tools20022.repository.msg.ContactDetails3.Other);
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmOther, ContactDetails2.mmOther, OrganisationIdentification8.mmOther, OrganisationIdentification7.mmOther, ContactDetails3.mmOther);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OtherIdentification";
 			definition = "Identifier issued to a party for which no specific identifier has been defined.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.RelatedPartyIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedPartyIdentification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected Party identifiedParty;
 	/**
 	 * Party for which an identification is provided.
 	 * <p>
@@ -258,8 +268,8 @@ public class PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -282,20 +292,21 @@ public class PartyIdentificationInformation {
 	 * definition} = "Party for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IdentifiedParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIdentifiedParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentifiedParty";
 			definition = "Party for which an identification is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Party.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.Identification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmIdentification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 		}
 	};
+	protected Max35Text taxIdentificationNumber;
 	/**
 	 * Number assigned by a tax authority to an entity.
 	 * <p>
@@ -309,26 +320,26 @@ public class PartyIdentificationInformation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxParty1#TaxIdentification
-	 * TaxParty1.TaxIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxParty1#mmTaxIdentification
+	 * TaxParty1.mmTaxIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxParty1#RegistrationIdentification
-	 * TaxParty1.RegistrationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxParty1#mmRegistrationIdentification
+	 * TaxParty1.mmRegistrationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxParty2#TaxIdentification
-	 * TaxParty2.TaxIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxParty2#mmTaxIdentification
+	 * TaxParty2.mmTaxIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxParty2#RegistrationIdentification
-	 * TaxParty2.RegistrationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxParty2#mmRegistrationIdentification
+	 * TaxParty2.mmRegistrationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxParty3#TaxIdentification
-	 * TaxParty3.TaxIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxParty3#mmTaxIdentification
+	 * TaxParty3.mmTaxIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxParty3#RegistrationIdentification
-	 * TaxParty3.RegistrationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxParty3#mmRegistrationIdentification
+	 * TaxParty3.mmRegistrationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingTaxRegion1#CustomerTaxIdentification
-	 * BillingTaxRegion1.CustomerTaxIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingTaxRegion1#mmCustomerTaxIdentification
+	 * BillingTaxRegion1.mmCustomerTaxIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -347,21 +358,29 @@ public class PartyIdentificationInformation {
 	 * definition} = "Number assigned by a tax authority to an entity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TaxIdentificationNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTaxIdentificationNumber = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxParty1.TaxIdentification, com.tools20022.repository.msg.TaxParty1.RegistrationIdentification, com.tools20022.repository.msg.TaxParty2.TaxIdentification,
-					com.tools20022.repository.msg.TaxParty2.RegistrationIdentification, com.tools20022.repository.msg.TaxParty3.TaxIdentification, com.tools20022.repository.msg.TaxParty3.RegistrationIdentification,
-					com.tools20022.repository.msg.BillingTaxRegion1.CustomerTaxIdentification);
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			derivation_lazy = () -> Arrays.asList(TaxParty1.mmTaxIdentification, TaxParty1.mmRegistrationIdentification, TaxParty2.mmTaxIdentification, TaxParty2.mmRegistrationIdentification, TaxParty3.mmTaxIdentification,
+					TaxParty3.mmRegistrationIdentification, BillingTaxRegion1.mmCustomerTaxIdentification);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxIdentificationNumber";
 			definition = "Number assigned by a tax authority to an entity.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PartyIdentificationInformation.class.getMethod("getTaxIdentificationNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text nationalRegistrationNumber;
 	/**
 	 * Number assigned by a national registration authority to an entity. In
 	 * Singapore this is known as the NRIC.
@@ -390,18 +409,27 @@ public class PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NationalRegistrationNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNationalRegistrationNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NationalRegistrationNumber";
 			definition = "Number assigned by a national registration authority to an entity. In Singapore this is known as the NRIC.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PartyIdentificationInformation.class.getMethod("getNationalRegistrationNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TypeOfIdentificationCode typeOfIdentification;
 	/**
 	 * Specifies the type of alternate identification which can be used to
 	 * identify a party.
@@ -431,18 +459,27 @@ public class PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TypeOfIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTypeOfIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfIdentification";
 			definition = "Specifies the type of alternate identification which can be used to identify a party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TypeOfIdentificationCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PartyIdentificationInformation.class.getMethod("getTypeOfIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text declaration;
 	/**
 	 * Provides declaration details relative to the party.
 	 * <p>
@@ -468,18 +505,27 @@ public class PartyIdentificationInformation {
 	 * definition} = "Provides declaration details relative to the party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Declaration = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDeclaration = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Declaration";
 			definition = "Provides declaration details relative to the party.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PartyIdentificationInformation.class.getMethod("getDeclaration", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PartyTypeCode partyType;
 	/**
 	 * Specifies the type of party in different business contexts.
 	 * <p>
@@ -507,18 +553,27 @@ public class PartyIdentificationInformation {
 	 * "Specifies the type of party in different business contexts."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyType";
 			definition = "Specifies the type of party in different business contexts.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PartyTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PartyIdentificationInformation.class.getMethod("getPartyType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.PartyName> partyName;
 	/**
 	 * Name by which a party is known and which is usually used to identify that
 	 * party.
@@ -528,8 +583,8 @@ public class PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PartyName#PartyIdentification
-	 * PartyName.PartyIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyName#mmPartyIdentification
+	 * PartyName.mmPartyIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -555,19 +610,20 @@ public class PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PartyName = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPartyName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyName";
 			definition = "Name by which a party is known and which is usually used to identify that party.";
 			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PartyName.mmPartyIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PartyName.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyName.PartyIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DateTimePeriod validityPeriod;
 	/**
 	 * Specifies the period during which an identification is valid
 	 * <p>
@@ -576,8 +632,8 @@ public class PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedIdentification
-	 * DateTimePeriod.RelatedIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedIdentification
+	 * DateTimePeriod.mmRelatedIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -602,20 +658,21 @@ public class PartyIdentificationInformation {
 	 * "Specifies the period during which an identification is valid"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which an identification is valid";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RelatedIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedIdentification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected Market identifiedMarket;
 	/**
 	 * Market for which an identification is provided.
 	 * <p>
@@ -624,8 +681,8 @@ public class PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Market#Identification
-	 * Market.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Market#mmIdentification
+	 * Market.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -648,20 +705,21 @@ public class PartyIdentificationInformation {
 	 * definition} = "Market for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IdentifiedMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIdentifiedMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IdentifiedMarket";
 			definition = "Market for which an identification is provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Market.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Market.Identification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Market.mmIdentification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
 		}
 	};
+	protected LEIIdentifier lEI;
 	/**
 	 * Legal Entity Identifier is a code allocated to a party as described in
 	 * ISO 17442 "Financial Services - Legal Entity Identifier (LEI)".
@@ -691,42 +749,143 @@ public class PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LEI = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLEI = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PartyIdentificationInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LEI";
 			definition = "Legal Entity Identifier is a code allocated to a party as described in ISO 17442 \"Financial Services - Legal Entity Identifier (LEI)\".";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LEIIdentifier.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return PartyIdentificationInformation.class.getMethod("getLEI", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentificationInformation";
 				definition = "Unique and unambiguous way to identify a party";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.RelatedPartyIdentification, com.tools20022.repository.entity.Party.Identification,
-						com.tools20022.repository.entity.PartyName.PartyIdentification, com.tools20022.repository.entity.DateTimePeriod.RelatedIdentification, com.tools20022.repository.entity.Market.Identification);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyIdentification43.Identification, com.tools20022.repository.msg.PartyIdentification40.Identification,
-						com.tools20022.repository.msg.PartyModification1.PartyIdentification, com.tools20022.repository.msg.ProprietaryParty3.Party, com.tools20022.repository.choice.Party12Choice.Party,
-						com.tools20022.repository.msg.PartyIdentification58.Identification, com.tools20022.repository.msg.PartyIdentification77.Identification, com.tools20022.repository.choice.Party28Choice.Party);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmRelatedPartyIdentification, com.tools20022.repository.entity.Party.mmIdentification,
+						com.tools20022.repository.entity.PartyName.mmPartyIdentification, com.tools20022.repository.entity.DateTimePeriod.mmRelatedIdentification, com.tools20022.repository.entity.Market.mmIdentification);
+				derivationElement_lazy = () -> Arrays.asList(PartyIdentification43.mmIdentification, PartyIdentification40.mmIdentification, PartyModification1.mmPartyIdentification, ProprietaryParty3.mmParty, Party12Choice.mmParty,
+						PartyIdentification42.mmIdentification, PartyIdentification58.mmIdentification, PartyIdentification77.mmIdentification, Party28Choice.mmParty);
 				subType_lazy = () -> Arrays.asList(OrganisationIdentification.mmObject(), PersonIdentification.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PartyIdentificationInformation.OtherIdentification, com.tools20022.repository.entity.PartyIdentificationInformation.IdentifiedParty,
-						com.tools20022.repository.entity.PartyIdentificationInformation.TaxIdentificationNumber, com.tools20022.repository.entity.PartyIdentificationInformation.NationalRegistrationNumber,
-						com.tools20022.repository.entity.PartyIdentificationInformation.TypeOfIdentification, com.tools20022.repository.entity.PartyIdentificationInformation.Declaration,
-						com.tools20022.repository.entity.PartyIdentificationInformation.PartyType, com.tools20022.repository.entity.PartyIdentificationInformation.PartyName,
-						com.tools20022.repository.entity.PartyIdentificationInformation.ValidityPeriod, com.tools20022.repository.entity.PartyIdentificationInformation.IdentifiedMarket,
-						com.tools20022.repository.entity.PartyIdentificationInformation.LEI);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PartyIdentificationInformation.mmOtherIdentification, com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedParty,
+						com.tools20022.repository.entity.PartyIdentificationInformation.mmTaxIdentificationNumber, com.tools20022.repository.entity.PartyIdentificationInformation.mmNationalRegistrationNumber,
+						com.tools20022.repository.entity.PartyIdentificationInformation.mmTypeOfIdentification, com.tools20022.repository.entity.PartyIdentificationInformation.mmDeclaration,
+						com.tools20022.repository.entity.PartyIdentificationInformation.mmPartyType, com.tools20022.repository.entity.PartyIdentificationInformation.mmPartyName,
+						com.tools20022.repository.entity.PartyIdentificationInformation.mmValidityPeriod, com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedMarket,
+						com.tools20022.repository.entity.PartyIdentificationInformation.mmLEI);
 				derivationComponent_lazy = () -> Arrays.asList(Party11Choice.mmObject(), PartyIdentification43.mmObject(), PartyIdentification40.mmObject(), PartyModification1.mmObject(), NameAndAddress10.mmObject(),
-						ProprietaryParty3.mmObject(), Party12Choice.mmObject(), Party13Choice.mmObject(), PartyIdentification58.mmObject(), PartyIdentification77.mmObject(), Party28Choice.mmObject());
+						ProprietaryParty3.mmObject(), Party12Choice.mmObject(), Party10Choice.mmObject(), PartyIdentification42.mmObject(), Party9Choice.mmObject(), Party13Choice.mmObject(), PartyIdentification58.mmObject(),
+						PartyIdentification77.mmObject(), Party28Choice.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PartyIdentificationInformation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public GenericIdentification getOtherIdentification() {
+		return otherIdentification;
+	}
+
+	public void setOtherIdentification(com.tools20022.repository.entity.GenericIdentification otherIdentification) {
+		this.otherIdentification = otherIdentification;
+	}
+
+	public Party getIdentifiedParty() {
+		return identifiedParty;
+	}
+
+	public void setIdentifiedParty(com.tools20022.repository.entity.Party identifiedParty) {
+		this.identifiedParty = identifiedParty;
+	}
+
+	public Max35Text getTaxIdentificationNumber() {
+		return taxIdentificationNumber;
+	}
+
+	public void setTaxIdentificationNumber(Max35Text taxIdentificationNumber) {
+		this.taxIdentificationNumber = taxIdentificationNumber;
+	}
+
+	public Max35Text getNationalRegistrationNumber() {
+		return nationalRegistrationNumber;
+	}
+
+	public void setNationalRegistrationNumber(Max35Text nationalRegistrationNumber) {
+		this.nationalRegistrationNumber = nationalRegistrationNumber;
+	}
+
+	public TypeOfIdentificationCode getTypeOfIdentification() {
+		return typeOfIdentification;
+	}
+
+	public void setTypeOfIdentification(TypeOfIdentificationCode typeOfIdentification) {
+		this.typeOfIdentification = typeOfIdentification;
+	}
+
+	public Max350Text getDeclaration() {
+		return declaration;
+	}
+
+	public void setDeclaration(Max350Text declaration) {
+		this.declaration = declaration;
+	}
+
+	public PartyTypeCode getPartyType() {
+		return partyType;
+	}
+
+	public void setPartyType(PartyTypeCode partyType) {
+		this.partyType = partyType;
+	}
+
+	public List<PartyName> getPartyName() {
+		return partyName;
+	}
+
+	public void setPartyName(List<com.tools20022.repository.entity.PartyName> partyName) {
+		this.partyName = partyName;
+	}
+
+	public DateTimePeriod getValidityPeriod() {
+		return validityPeriod;
+	}
+
+	public void setValidityPeriod(com.tools20022.repository.entity.DateTimePeriod validityPeriod) {
+		this.validityPeriod = validityPeriod;
+	}
+
+	public Market getIdentifiedMarket() {
+		return identifiedMarket;
+	}
+
+	public void setIdentifiedMarket(com.tools20022.repository.entity.Market identifiedMarket) {
+		this.identifiedMarket = identifiedMarket;
+	}
+
+	public LEIIdentifier getLEI() {
+		return lEI;
+	}
+
+	public void setLEI(LEIIdentifier lEI) {
+		this.lEI = lEI;
 	}
 }

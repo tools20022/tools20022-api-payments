@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,17 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FormOfSecurityCode#Registered
- * FormOfSecurityCode.Registered}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FormOfSecurityCode#Bearer
- * FormOfSecurityCode.Bearer}</li>
+ * {@linkplain com.tools20022.repository.codeset.FormOfSecurityCode#mmRegistered
+ * FormOfSecurityCode.mmRegistered}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FormOfSecurityCode#mmBearer
+ * FormOfSecurityCode.mmBearer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +87,9 @@ public class FormOfSecurityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Registered = new MMCode() {
+	public static final MMCode mmRegistered = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Registered";
 			definition = "Shareholder name of the financial instrument appears in the corporation/funds books.";
 			owner_lazy = () -> FormOfSecurityCode.mmObject();
@@ -117,9 +120,9 @@ public class FormOfSecurityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Bearer = new MMCode() {
+	public static final MMCode mmBearer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bearer";
 			definition = "The financial instrument does not specify any registration of ownership, and  is payable to whomever possesses the certificate.";
 			owner_lazy = () -> FormOfSecurityCode.mmObject();
@@ -130,12 +133,12 @@ public class FormOfSecurityCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("REGD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FormOfSecurityCode";
 				definition = "Specifies the form of the security.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FormOfSecurityCode.Registered, com.tools20022.repository.codeset.FormOfSecurityCode.Bearer);
+				code_lazy = () -> Arrays.asList(FormOfSecurityCode.mmRegistered, FormOfSecurityCode.mmBearer);
 			}
 		});
 		return mmObject_lazy.get();

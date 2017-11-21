@@ -17,15 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CorporateActionOptionCode;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,57 +41,64 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#ExercisePeriod
- * Distribution.ExercisePeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#OfferPeriod
- * Distribution.OfferPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#TradingPeriod
- * Distribution.TradingPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#BlockingPeriod
- * Distribution.BlockingPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#InterestPeriod
- * Distribution.InterestPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Distribution#DistributionTax
- * Distribution.DistributionTax}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#OfferPrice
- * Distribution.OfferPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmExercisePeriod
+ * Distribution.mmExercisePeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmOfferPeriod
+ * Distribution.mmOfferPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Distribution#IncentivePremium
- * Distribution.IncentivePremium}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#EffectiveDate
- * Distribution.EffectiveDate}</li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmTradingPeriod
+ * Distribution.mmTradingPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Distribution#EventConditions
- * Distribution.EventConditions}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#ExDate
- * Distribution.ExDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#GrossRate
- * Distribution.GrossRate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#MeetingDate
- * Distribution.MeetingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#NetRate
- * Distribution.NetRate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#NewFaceValue
- * Distribution.NewFaceValue}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#NewParValue
- * Distribution.NewParValue}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#PaymentDate
- * Distribution.PaymentDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#Dividend
- * Distribution.Dividend}</li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmBlockingPeriod
+ * Distribution.mmBlockingPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Distribution#CorporateActionOption
- * Distribution.CorporateActionOption}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#CurrencyOption
- * Distribution.CurrencyOption}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#DecreaseAmount
- * Distribution.DecreaseAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#DecreaseRate
- * Distribution.DecreaseRate}</li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmInterestPeriod
+ * Distribution.mmInterestPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Distribution#OfferPriceFixingDate
- * Distribution.OfferPriceFixingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmDistributionTax
+ * Distribution.mmDistributionTax}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmOfferPrice
+ * Distribution.mmOfferPrice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmIncentivePremium
+ * Distribution.mmIncentivePremium}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmEffectiveDate
+ * Distribution.mmEffectiveDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmEventConditions
+ * Distribution.mmEventConditions}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmExDate
+ * Distribution.mmExDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmGrossRate
+ * Distribution.mmGrossRate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmMeetingDate
+ * Distribution.mmMeetingDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmNetRate
+ * Distribution.mmNetRate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmNewFaceValue
+ * Distribution.mmNewFaceValue}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmNewParValue
+ * Distribution.mmNewParValue}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmPaymentDate
+ * Distribution.mmPaymentDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmDividend
+ * Distribution.mmDividend}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmCorporateActionOption
+ * Distribution.mmCorporateActionOption}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmCurrencyOption
+ * Distribution.mmCurrencyOption}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmDecreaseAmount
+ * Distribution.mmDecreaseAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmDecreaseRate
+ * Distribution.mmDecreaseRate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmOfferPriceFixingDate
+ * Distribution.mmOfferPriceFixingDate}</li>
  * </ul>
  * </li>
  * <li>
@@ -99,32 +106,32 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Dividend#RelatedDistribution
- * Dividend.RelatedDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.Dividend#mmRelatedDistribution
+ * Dividend.mmRelatedDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Distribution
- * SecuritiesPricing.Distribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmDistribution
+ * SecuritiesPricing.mmDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ExercisePeriodDistribution
- * DateTimePeriod.ExercisePeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmExercisePeriodDistribution
+ * DateTimePeriod.mmExercisePeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#OfferPeriodDistribution
- * DateTimePeriod.OfferPeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmOfferPeriodDistribution
+ * DateTimePeriod.mmOfferPeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#TradingPeriodDistribution
- * DateTimePeriod.TradingPeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmTradingPeriodDistribution
+ * DateTimePeriod.mmTradingPeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BlockingPeriodDistribution
- * DateTimePeriod.BlockingPeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBlockingPeriodDistribution
+ * DateTimePeriod.mmBlockingPeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#CashDistribution
- * DateTimePeriod.CashDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmCashDistribution
+ * DateTimePeriod.mmCashDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Tax#RelatedCorporateActionDistribution
- * Tax.RelatedCorporateActionDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.Tax#mmRelatedCorporateActionDistribution
+ * Tax.mmRelatedCorporateActionDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#CorporateActionDistribution
- * IncentivePremium.CorporateActionDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmCorporateActionDistribution
+ * IncentivePremium.mmCorporateActionDistribution}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -142,8 +149,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -158,6 +165,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Distribution {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DateTimePeriod exercisePeriod;
 	/**
 	 * Period during which the right and/or privilege on an underlying financial
 	 * instrument may be executed.
@@ -167,8 +175,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ExercisePeriodDistribution
-	 * DateTimePeriod.ExercisePeriodDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmExercisePeriodDistribution
+	 * DateTimePeriod.mmExercisePeriodDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -193,20 +201,21 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ExercisePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmExercisePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisePeriod";
 			definition = "Period during which the right and/or privilege on an underlying financial instrument may be executed.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.ExercisePeriodDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmExercisePeriodDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected DateTimePeriod offerPeriod;
 	/**
 	 * Period during which an open offer remains valid.
 	 * <p>
@@ -215,8 +224,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#OfferPeriodDistribution
-	 * DateTimePeriod.OfferPeriodDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmOfferPeriodDistribution
+	 * DateTimePeriod.mmOfferPeriodDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -239,20 +248,21 @@ public class Distribution {
 	 * definition} = "Period during which an open offer remains valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OfferPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOfferPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPeriod";
 			definition = "Period during which an open offer remains valid.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.OfferPeriodDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmOfferPeriodDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected DateTimePeriod tradingPeriod;
 	/**
 	 * Period during which a financial instrument is available for trading.
 	 * <p>
@@ -261,8 +271,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#TradingPeriodDistribution
-	 * DateTimePeriod.TradingPeriodDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmTradingPeriodDistribution
+	 * DateTimePeriod.mmTradingPeriodDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -286,20 +296,21 @@ public class Distribution {
 	 * "Period during which a financial instrument is available for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPeriod";
 			definition = "Period during which a financial instrument is available for trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.TradingPeriodDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmTradingPeriodDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected DateTimePeriod blockingPeriod;
 	/**
 	 * Period, set by the issuer, during which the security is blocked, ie, not
 	 * available for exchange.
@@ -309,8 +320,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BlockingPeriodDistribution
-	 * DateTimePeriod.BlockingPeriodDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBlockingPeriodDistribution
+	 * DateTimePeriod.mmBlockingPeriodDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -335,20 +346,21 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BlockingPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBlockingPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockingPeriod";
 			definition = "Period, set by the issuer, during which the security is blocked, ie, not available for exchange.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.BlockingPeriodDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmBlockingPeriodDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected DateTimePeriod interestPeriod;
 	/**
 	 * Period during which interest has accrued.
 	 * <p>
@@ -357,8 +369,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#CashDistribution
-	 * DateTimePeriod.CashDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmCashDistribution
+	 * DateTimePeriod.mmCashDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -381,20 +393,21 @@ public class Distribution {
 	 * definition} = "Period during which interest has accrued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestPeriod";
 			definition = "Period during which interest has accrued.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.CashDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmCashDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected Tax distributionTax;
 	/**
 	 * Provides the tax description associated with the corporate event.
 	 * <p>
@@ -403,8 +416,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#RelatedCorporateActionDistribution
-	 * Tax.RelatedCorporateActionDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmRelatedCorporateActionDistribution
+	 * Tax.mmRelatedCorporateActionDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -427,20 +440,21 @@ public class Distribution {
 	 * "Provides the tax description associated with the corporate event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DistributionTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDistributionTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributionTax";
 			definition = "Provides the tax description associated with the corporate event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Tax.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.RelatedCorporateActionDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmRelatedCorporateActionDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
 		}
 	};
+	protected SecuritiesPricing offerPrice;
 	/**
 	 * Price, determined by the offerer, at which the investor is entitled to
 	 * take part in an event.
@@ -450,8 +464,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Distribution
-	 * SecuritiesPricing.Distribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmDistribution
+	 * SecuritiesPricing.mmDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -476,20 +490,21 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OfferPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOfferPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPrice";
 			definition = "Price, determined by the offerer, at which the investor is entitled to take part in an event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Distribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected IncentivePremium incentivePremium;
 	/**
 	 * Cash premium made available to encourage participation by a certain
 	 * deadline (avoids to have a second call).
@@ -499,8 +514,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.IncentivePremium#CorporateActionDistribution
-	 * IncentivePremium.CorporateActionDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmCorporateActionDistribution
+	 * IncentivePremium.mmCorporateActionDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -525,20 +540,21 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IncentivePremium = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIncentivePremium = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncentivePremium";
 			definition = "Cash premium made available to encourage participation by a certain deadline (avoids to have a second call).";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmCorporateActionDistribution;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.IncentivePremium.CorporateActionDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime effectiveDate;
 	/**
 	 * Date/time at which the event or part of the event, for example, an
 	 * option, becomes valid and should be processed and/or applied to holdings.
@@ -566,18 +582,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date/time at which the event or part of the event, for example, an option, becomes valid and should be processed and/or applied to holdings.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getEffectiveDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text eventConditions;
 	/**
 	 * Conditions that the issuer has placed on the completion of the event, for
 	 * example, tender percentage required.
@@ -605,18 +630,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EventConditions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEventConditions = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventConditions";
 			definition = "Conditions that the issuer has placed on the completion of the event, for example, tender percentage required.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getEventConditions", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime exDate;
 	/**
 	 * Date/time as from which trading (including exchange and OTC trading)
 	 * occurs on the underlying security without the benefit.
@@ -644,18 +678,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExDate";
 			definition = "Date/time as from which trading (including exchange and OTC trading) occurs on the underlying security without the benefit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getExDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate grossRate;
 	/**
 	 * Percentage paid before deductions and/or allowances have been made.
 	 * <p>
@@ -682,18 +725,27 @@ public class Distribution {
 	 * "Percentage paid before deductions and/or allowances have been made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GrossRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGrossRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossRate";
 			definition = "Percentage paid before deductions and/or allowances have been made.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getGrossRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime meetingDate;
 	/**
 	 * Date/time at which the meeting will take place.
 	 * <p>
@@ -718,18 +770,27 @@ public class Distribution {
 	 * definition} = "Date/time at which the meeting will take place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MeetingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMeetingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MeetingDate";
 			definition = "Date/time at which the meeting will take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getMeetingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate netRate;
 	/**
 	 * Percentage paid after deductions and/or allowances have been made.
 	 * <p>
@@ -756,18 +817,27 @@ public class Distribution {
 	 * "Percentage paid after deductions and/or allowances have been made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NetRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNetRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetRate";
 			definition = "Percentage paid after deductions and/or allowances have been made.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getNetRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount newFaceValue;
 	/**
 	 * New unit value of a debt security.
 	 * <p>
@@ -793,18 +863,27 @@ public class Distribution {
 	 * definition} = "New unit value of a debt security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NewFaceValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNewFaceValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewFaceValue";
 			definition = "New unit value of a debt security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getNewFaceValue", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount newParValue;
 	/**
 	 * New nominal value of an equity security.
 	 * <p>
@@ -830,18 +909,27 @@ public class Distribution {
 	 * definition} = "New nominal value of an equity security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NewParValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNewParValue = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewParValue";
 			definition = "New nominal value of an equity security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getNewParValue", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime paymentDate;
 	/**
 	 * Date/time at which the distribution is due to take place (cash and/or
 	 * securities).
@@ -869,18 +957,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date/time at which the distribution is due to take place (cash and/or securities).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getPaymentDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Dividend dividend;
 	/**
 	 * Dividend per financial instrument.
 	 * <p>
@@ -889,8 +986,8 @@ public class Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Dividend#RelatedDistribution
-	 * Dividend.RelatedDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.Dividend#mmRelatedDistribution
+	 * Dividend.mmRelatedDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -912,20 +1009,21 @@ public class Distribution {
 	 * definition} = "Dividend per financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Dividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Dividend";
 			definition = "Dividend per financial instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.mmRelatedDistribution;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.RelatedDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CorporateActionOptionCode corporateActionOption;
 	/**
 	 * Specifies information about the choices offered to the holder of a
 	 * corporate action.
@@ -954,18 +1052,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CorporateActionOption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCorporateActionOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOption";
 			definition = "Specifies information about the choices offered to the holder of a corporate action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionOptionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getCorporateActionOption", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode currencyOption;
 	/**
 	 * Currency choice given to the investor.
 	 * <p>
@@ -990,18 +1097,27 @@ public class Distribution {
 	 * definition} = "Currency choice given to the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CurrencyOption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCurrencyOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrencyOption";
 			definition = "Currency choice given to the investor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getCurrencyOption", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount decreaseAmount;
 	/**
 	 * Amount by which the issuer devalues a share (in a decrease value event).
 	 * <p>
@@ -1029,18 +1145,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DecreaseAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDecreaseAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecreaseAmount";
 			definition = "Amount by which the issuer devalues a share  (in a decrease value event).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getDecreaseAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate decreaseRate;
 	/**
 	 * Amount, expressed as a percentage, by which the issuer devalues a share
 	 * (in a decrease value event).
@@ -1069,18 +1194,27 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DecreaseRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDecreaseRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecreaseRate";
 			definition = "Amount, expressed as a percentage, by which the issuer devalues a share  (in a decrease value event).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getDecreaseRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime offerPriceFixingDate;
 	/**
 	 * Date/time at which an offer price is determined (as compared to its reset
 	 * date if applicable).
@@ -1108,42 +1242,239 @@ public class Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OfferPriceFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOfferPriceFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Distribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPriceFixingDate";
 			definition = "Date/time at which an offer price is determined (as compared to its reset date if applicable).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Distribution.class.getMethod("getOfferPriceFixingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Distribution";
 				definition = "Distributions in cash and/or securities following a corporate event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Dividend.RelatedDistribution, com.tools20022.repository.entity.SecuritiesPricing.Distribution,
-						com.tools20022.repository.entity.DateTimePeriod.ExercisePeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.OfferPeriodDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.TradingPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.BlockingPeriodDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.CashDistribution, com.tools20022.repository.entity.Tax.RelatedCorporateActionDistribution,
-						com.tools20022.repository.entity.IncentivePremium.CorporateActionDistribution);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Dividend.mmRelatedDistribution, com.tools20022.repository.entity.SecuritiesPricing.mmDistribution,
+						com.tools20022.repository.entity.DateTimePeriod.mmExercisePeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.mmOfferPeriodDistribution,
+						com.tools20022.repository.entity.DateTimePeriod.mmTradingPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.mmBlockingPeriodDistribution,
+						com.tools20022.repository.entity.DateTimePeriod.mmCashDistribution, com.tools20022.repository.entity.Tax.mmRelatedCorporateActionDistribution,
+						com.tools20022.repository.entity.IncentivePremium.mmCorporateActionDistribution);
 				subType_lazy = () -> Arrays.asList(CashDistribution.mmObject(), SecuritiesAndCashDistribution.mmObject(), SecuritiesDistribution.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Distribution.ExercisePeriod, com.tools20022.repository.entity.Distribution.OfferPeriod, com.tools20022.repository.entity.Distribution.TradingPeriod,
-						com.tools20022.repository.entity.Distribution.BlockingPeriod, com.tools20022.repository.entity.Distribution.InterestPeriod, com.tools20022.repository.entity.Distribution.DistributionTax,
-						com.tools20022.repository.entity.Distribution.OfferPrice, com.tools20022.repository.entity.Distribution.IncentivePremium, com.tools20022.repository.entity.Distribution.EffectiveDate,
-						com.tools20022.repository.entity.Distribution.EventConditions, com.tools20022.repository.entity.Distribution.ExDate, com.tools20022.repository.entity.Distribution.GrossRate,
-						com.tools20022.repository.entity.Distribution.MeetingDate, com.tools20022.repository.entity.Distribution.NetRate, com.tools20022.repository.entity.Distribution.NewFaceValue,
-						com.tools20022.repository.entity.Distribution.NewParValue, com.tools20022.repository.entity.Distribution.PaymentDate, com.tools20022.repository.entity.Distribution.Dividend,
-						com.tools20022.repository.entity.Distribution.CorporateActionOption, com.tools20022.repository.entity.Distribution.CurrencyOption, com.tools20022.repository.entity.Distribution.DecreaseAmount,
-						com.tools20022.repository.entity.Distribution.DecreaseRate, com.tools20022.repository.entity.Distribution.OfferPriceFixingDate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Distribution.mmExercisePeriod, com.tools20022.repository.entity.Distribution.mmOfferPeriod, com.tools20022.repository.entity.Distribution.mmTradingPeriod,
+						com.tools20022.repository.entity.Distribution.mmBlockingPeriod, com.tools20022.repository.entity.Distribution.mmInterestPeriod, com.tools20022.repository.entity.Distribution.mmDistributionTax,
+						com.tools20022.repository.entity.Distribution.mmOfferPrice, com.tools20022.repository.entity.Distribution.mmIncentivePremium, com.tools20022.repository.entity.Distribution.mmEffectiveDate,
+						com.tools20022.repository.entity.Distribution.mmEventConditions, com.tools20022.repository.entity.Distribution.mmExDate, com.tools20022.repository.entity.Distribution.mmGrossRate,
+						com.tools20022.repository.entity.Distribution.mmMeetingDate, com.tools20022.repository.entity.Distribution.mmNetRate, com.tools20022.repository.entity.Distribution.mmNewFaceValue,
+						com.tools20022.repository.entity.Distribution.mmNewParValue, com.tools20022.repository.entity.Distribution.mmPaymentDate, com.tools20022.repository.entity.Distribution.mmDividend,
+						com.tools20022.repository.entity.Distribution.mmCorporateActionOption, com.tools20022.repository.entity.Distribution.mmCurrencyOption, com.tools20022.repository.entity.Distribution.mmDecreaseAmount,
+						com.tools20022.repository.entity.Distribution.mmDecreaseRate, com.tools20022.repository.entity.Distribution.mmOfferPriceFixingDate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Distribution.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DateTimePeriod getExercisePeriod() {
+		return exercisePeriod;
+	}
+
+	public void setExercisePeriod(com.tools20022.repository.entity.DateTimePeriod exercisePeriod) {
+		this.exercisePeriod = exercisePeriod;
+	}
+
+	public DateTimePeriod getOfferPeriod() {
+		return offerPeriod;
+	}
+
+	public void setOfferPeriod(com.tools20022.repository.entity.DateTimePeriod offerPeriod) {
+		this.offerPeriod = offerPeriod;
+	}
+
+	public DateTimePeriod getTradingPeriod() {
+		return tradingPeriod;
+	}
+
+	public void setTradingPeriod(com.tools20022.repository.entity.DateTimePeriod tradingPeriod) {
+		this.tradingPeriod = tradingPeriod;
+	}
+
+	public DateTimePeriod getBlockingPeriod() {
+		return blockingPeriod;
+	}
+
+	public void setBlockingPeriod(com.tools20022.repository.entity.DateTimePeriod blockingPeriod) {
+		this.blockingPeriod = blockingPeriod;
+	}
+
+	public DateTimePeriod getInterestPeriod() {
+		return interestPeriod;
+	}
+
+	public void setInterestPeriod(com.tools20022.repository.entity.DateTimePeriod interestPeriod) {
+		this.interestPeriod = interestPeriod;
+	}
+
+	public Tax getDistributionTax() {
+		return distributionTax;
+	}
+
+	public void setDistributionTax(com.tools20022.repository.entity.Tax distributionTax) {
+		this.distributionTax = distributionTax;
+	}
+
+	public SecuritiesPricing getOfferPrice() {
+		return offerPrice;
+	}
+
+	public void setOfferPrice(com.tools20022.repository.entity.SecuritiesPricing offerPrice) {
+		this.offerPrice = offerPrice;
+	}
+
+	public IncentivePremium getIncentivePremium() {
+		return incentivePremium;
+	}
+
+	public void setIncentivePremium(com.tools20022.repository.entity.IncentivePremium incentivePremium) {
+		this.incentivePremium = incentivePremium;
+	}
+
+	public ISODateTime getEffectiveDate() {
+		return effectiveDate;
+	}
+
+	public void setEffectiveDate(ISODateTime effectiveDate) {
+		this.effectiveDate = effectiveDate;
+	}
+
+	public Max350Text getEventConditions() {
+		return eventConditions;
+	}
+
+	public void setEventConditions(Max350Text eventConditions) {
+		this.eventConditions = eventConditions;
+	}
+
+	public ISODateTime getExDate() {
+		return exDate;
+	}
+
+	public void setExDate(ISODateTime exDate) {
+		this.exDate = exDate;
+	}
+
+	public PercentageRate getGrossRate() {
+		return grossRate;
+	}
+
+	public void setGrossRate(PercentageRate grossRate) {
+		this.grossRate = grossRate;
+	}
+
+	public ISODateTime getMeetingDate() {
+		return meetingDate;
+	}
+
+	public void setMeetingDate(ISODateTime meetingDate) {
+		this.meetingDate = meetingDate;
+	}
+
+	public PercentageRate getNetRate() {
+		return netRate;
+	}
+
+	public void setNetRate(PercentageRate netRate) {
+		this.netRate = netRate;
+	}
+
+	public CurrencyAndAmount getNewFaceValue() {
+		return newFaceValue;
+	}
+
+	public void setNewFaceValue(CurrencyAndAmount newFaceValue) {
+		this.newFaceValue = newFaceValue;
+	}
+
+	public CurrencyAndAmount getNewParValue() {
+		return newParValue;
+	}
+
+	public void setNewParValue(CurrencyAndAmount newParValue) {
+		this.newParValue = newParValue;
+	}
+
+	public ISODateTime getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(ISODateTime paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	public Dividend getDividend() {
+		return dividend;
+	}
+
+	public void setDividend(com.tools20022.repository.entity.Dividend dividend) {
+		this.dividend = dividend;
+	}
+
+	public CorporateActionOptionCode getCorporateActionOption() {
+		return corporateActionOption;
+	}
+
+	public void setCorporateActionOption(CorporateActionOptionCode corporateActionOption) {
+		this.corporateActionOption = corporateActionOption;
+	}
+
+	public CurrencyCode getCurrencyOption() {
+		return currencyOption;
+	}
+
+	public void setCurrencyOption(CurrencyCode currencyOption) {
+		this.currencyOption = currencyOption;
+	}
+
+	public CurrencyAndAmount getDecreaseAmount() {
+		return decreaseAmount;
+	}
+
+	public void setDecreaseAmount(CurrencyAndAmount decreaseAmount) {
+		this.decreaseAmount = decreaseAmount;
+	}
+
+	public PercentageRate getDecreaseRate() {
+		return decreaseRate;
+	}
+
+	public void setDecreaseRate(PercentageRate decreaseRate) {
+		this.decreaseRate = decreaseRate;
+	}
+
+	public ISODateTime getOfferPriceFixingDate() {
+		return offerPriceFixingDate;
+	}
+
+	public void setOfferPriceFixingDate(ISODateTime offerPriceFixingDate) {
+		this.offerPriceFixingDate = offerPriceFixingDate;
 	}
 }

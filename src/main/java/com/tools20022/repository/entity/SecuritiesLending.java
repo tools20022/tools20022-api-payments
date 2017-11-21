@@ -17,15 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BorrowingReasonCode;
 import com.tools20022.repository.codeset.LendingTransactionMethodCode;
 import com.tools20022.repository.codeset.ReversibleCode;
 import com.tools20022.repository.codeset.SecuritiesLendingTypeCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.SecuritiesFinancing;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,43 +46,44 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#BorrowingFee
- * SecuritiesLending.BorrowingFee}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmBorrowingFee
+ * SecuritiesLending.mmBorrowingFee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#CallableTradeIndicator
- * SecuritiesLending.CallableTradeIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmCallableTradeIndicator
+ * SecuritiesLending.mmCallableTradeIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#LendingTransactionMethod
- * SecuritiesLending.LendingTransactionMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmLendingTransactionMethod
+ * SecuritiesLending.mmLendingTransactionMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#BorrowingReason
- * SecuritiesLending.BorrowingReason}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmBorrowingReason
+ * SecuritiesLending.mmBorrowingReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#Reversible
- * SecuritiesLending.Reversible}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmReversible
+ * SecuritiesLending.mmReversible}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#SecuritiesLendingType
- * SecuritiesLending.SecuritiesLendingType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmSecuritiesLendingType
+ * SecuritiesLending.mmSecuritiesLendingType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#LendingWithCollateral
- * SecuritiesLending.LendingWithCollateral}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmLendingWithCollateral
+ * SecuritiesLending.mmLendingWithCollateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#MinimumDateForCallBack
- * SecuritiesLending.MinimumDateForCallBack}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmMinimumDateForCallBack
+ * SecuritiesLending.mmMinimumDateForCallBack}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#NumberOfDaysLendingBorrowing
- * SecuritiesLending.NumberOfDaysLendingBorrowing}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmNumberOfDaysLendingBorrowing
+ * SecuritiesLending.mmNumberOfDaysLendingBorrowing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#PeriodicPayment
- * SecuritiesLending.PeriodicPayment}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesLending#Rollover
- * SecuritiesLending.Rollover}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmPeriodicPayment
+ * SecuritiesLending.mmPeriodicPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#BorrowingRate
- * SecuritiesLending.BorrowingRate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmRollover
+ * SecuritiesLending.mmRollover}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesLending#SecuritiesDeliveryObligation
- * SecuritiesLending.SecuritiesDeliveryObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmBorrowingRate
+ * SecuritiesLending.mmBorrowingRate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesLending#mmSecuritiesDeliveryObligation
+ * SecuritiesLending.mmSecuritiesDeliveryObligation}</li>
  * </ul>
  * </li>
  * <li>
@@ -90,8 +91,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#SecuritiesLending
- * SecuritiesDeliveryObligation.SecuritiesLending}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmSecuritiesLending
+ * SecuritiesDeliveryObligation.mmSecuritiesLending}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -101,8 +102,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -118,6 +119,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesLending extends SecuritiesFinancing {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount borrowingFee;
 	/**
 	 * Amount to be paid by the borrower to the lender for the securities
 	 * borrowed calculated based on the bond loan rate.
@@ -147,18 +149,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BorrowingFee = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBorrowingFee = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BorrowingFee";
 			definition = "Amount to be paid by the borrower to the lender for the securities borrowed calculated based on the bond loan rate.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getBorrowingFee", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator callableTradeIndicator;
 	/**
 	 * Indicates whether the trade is callable or not.
 	 * <p>
@@ -185,18 +196,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Indicates whether the trade is callable or not."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CallableTradeIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCallableTradeIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallableTradeIndicator";
 			definition = "Indicates whether the trade is callable or not.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getCallableTradeIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected LendingTransactionMethodCode lendingTransactionMethod;
 	/**
 	 * Method applied to a lending transaction.
 	 * <p>
@@ -223,18 +243,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Method applied to a lending transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LendingTransactionMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLendingTransactionMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LendingTransactionMethod";
 			definition = "Method applied to a lending transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LendingTransactionMethodCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getLendingTransactionMethod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BorrowingReasonCode borrowingReason;
 	/**
 	 * Underlying reason for the borrowing, for instance, sale on my behalf or
 	 * on behalf of a third party.
@@ -264,18 +293,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BorrowingReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBorrowingReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BorrowingReason";
 			definition = "Underlying reason for the borrowing, for instance, sale on my behalf or on behalf of a third party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BorrowingReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getBorrowingReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ReversibleCode reversible;
 	/**
 	 * Indicates the possibility to terminate the securitiesc lending contract
 	 * either by the borrower or lender before the expiration date.
@@ -305,18 +343,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Reversible = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReversible = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reversible";
 			definition = "Indicates the possibility to terminate the securitiesc lending contract either by the borrower or lender before the expiration date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ReversibleCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getReversible", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesLendingTypeCode securitiesLendingType;
 	/**
 	 * Type of securities lending.
 	 * <p>
@@ -343,18 +390,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Type of securities lending."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SecuritiesLendingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSecuritiesLendingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesLendingType";
 			definition = "Type of securities lending.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SecuritiesLendingTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getSecuritiesLendingType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator lendingWithCollateral;
 	/**
 	 * Indicates if the contract is with or without an exchange of collateral.
 	 * <p>
@@ -383,18 +439,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LendingWithCollateral = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLendingWithCollateral = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LendingWithCollateral";
 			definition = "Indicates if the contract is with or without an exchange of collateral.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getLendingWithCollateral", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODate minimumDateForCallBack;
 	/**
 	 * Minimum date at which the borrower is allowed to give back the
 	 * securities.
@@ -423,18 +488,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MinimumDateForCallBack = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMinimumDateForCallBack = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumDateForCallBack";
 			definition = "Minimum date at which the borrower is allowed to give back the securities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getMinimumDateForCallBack", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max4NumericText numberOfDaysLendingBorrowing;
 	/**
 	 * Number of days the securities are lent or borrowed for a contract which
 	 * has an agreed closing date.
@@ -464,18 +538,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NumberOfDaysLendingBorrowing = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumberOfDaysLendingBorrowing = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfDaysLendingBorrowing";
 			definition = "Number of days the securities are lent or borrowed for a contract which has an agreed closing date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max4NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getNumberOfDaysLendingBorrowing", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator periodicPayment;
 	/**
 	 * Indicates whether the securities lending fees can be paid periodically or
 	 * at the end of the contract.
@@ -505,18 +588,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PeriodicPayment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPeriodicPayment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PeriodicPayment";
 			definition = "Indicates whether the securities lending fees can be paid periodically or at the end of the contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getPeriodicPayment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator rollover;
 	/**
 	 * Indicates that the contract can be rolled over.
 	 * <p>
@@ -543,18 +635,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Indicates that the contract can be rolled over."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Rollover = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRollover = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rollover";
 			definition = "Indicates that the contract can be rolled over.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getRollover", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate borrowingRate;
 	/**
 	 * Rate paid by the borrower to the lender for the securities borrowed.
 	 * <p>
@@ -582,18 +683,27 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * "Rate paid by the borrower to the lender for the securities borrowed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BorrowingRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBorrowingRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BorrowingRate";
 			definition = "Rate paid by the borrower to the lender for the securities borrowed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesLending.class.getMethod("getBorrowingRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesDeliveryObligation securitiesDeliveryObligation;
 	/**
 	 * Obligation covered by the lending of securities.
 	 * <p>
@@ -602,8 +712,8 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#SecuritiesLending
-	 * SecuritiesDeliveryObligation.SecuritiesLending}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmSecuritiesLending
+	 * SecuritiesDeliveryObligation.mmSecuritiesLending}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -628,38 +738,147 @@ public class SecuritiesLending extends SecuritiesFinancing {
 	 * definition} = "Obligation covered by the lending of securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesLending.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesLending.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Obligation covered by the lending of securities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesLending;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.SecuritiesLending;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesLending";
 				definition = "Lending of securities by one party to another. The terms of the loan are governed by an agreement that requires the borrower to provide the lender with collateral of value equal to or greater than the loaned securities. As payment for the loan, the parties negotiate a fee, quoted as an annualised percentage of the value of the loaned securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesDeliveryObligation.SecuritiesLending);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesLending);
 				superType_lazy = () -> SecuritiesFinancing.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesLending.BorrowingFee, com.tools20022.repository.entity.SecuritiesLending.CallableTradeIndicator,
-						com.tools20022.repository.entity.SecuritiesLending.LendingTransactionMethod, com.tools20022.repository.entity.SecuritiesLending.BorrowingReason, com.tools20022.repository.entity.SecuritiesLending.Reversible,
-						com.tools20022.repository.entity.SecuritiesLending.SecuritiesLendingType, com.tools20022.repository.entity.SecuritiesLending.LendingWithCollateral,
-						com.tools20022.repository.entity.SecuritiesLending.MinimumDateForCallBack, com.tools20022.repository.entity.SecuritiesLending.NumberOfDaysLendingBorrowing,
-						com.tools20022.repository.entity.SecuritiesLending.PeriodicPayment, com.tools20022.repository.entity.SecuritiesLending.Rollover, com.tools20022.repository.entity.SecuritiesLending.BorrowingRate,
-						com.tools20022.repository.entity.SecuritiesLending.SecuritiesDeliveryObligation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesLending.mmBorrowingFee, com.tools20022.repository.entity.SecuritiesLending.mmCallableTradeIndicator,
+						com.tools20022.repository.entity.SecuritiesLending.mmLendingTransactionMethod, com.tools20022.repository.entity.SecuritiesLending.mmBorrowingReason, com.tools20022.repository.entity.SecuritiesLending.mmReversible,
+						com.tools20022.repository.entity.SecuritiesLending.mmSecuritiesLendingType, com.tools20022.repository.entity.SecuritiesLending.mmLendingWithCollateral,
+						com.tools20022.repository.entity.SecuritiesLending.mmMinimumDateForCallBack, com.tools20022.repository.entity.SecuritiesLending.mmNumberOfDaysLendingBorrowing,
+						com.tools20022.repository.entity.SecuritiesLending.mmPeriodicPayment, com.tools20022.repository.entity.SecuritiesLending.mmRollover, com.tools20022.repository.entity.SecuritiesLending.mmBorrowingRate,
+						com.tools20022.repository.entity.SecuritiesLending.mmSecuritiesDeliveryObligation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesLending.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getBorrowingFee() {
+		return borrowingFee;
+	}
+
+	public void setBorrowingFee(CurrencyAndAmount borrowingFee) {
+		this.borrowingFee = borrowingFee;
+	}
+
+	public YesNoIndicator getCallableTradeIndicator() {
+		return callableTradeIndicator;
+	}
+
+	public void setCallableTradeIndicator(YesNoIndicator callableTradeIndicator) {
+		this.callableTradeIndicator = callableTradeIndicator;
+	}
+
+	public LendingTransactionMethodCode getLendingTransactionMethod() {
+		return lendingTransactionMethod;
+	}
+
+	public void setLendingTransactionMethod(LendingTransactionMethodCode lendingTransactionMethod) {
+		this.lendingTransactionMethod = lendingTransactionMethod;
+	}
+
+	public BorrowingReasonCode getBorrowingReason() {
+		return borrowingReason;
+	}
+
+	public void setBorrowingReason(BorrowingReasonCode borrowingReason) {
+		this.borrowingReason = borrowingReason;
+	}
+
+	public ReversibleCode getReversible() {
+		return reversible;
+	}
+
+	public void setReversible(ReversibleCode reversible) {
+		this.reversible = reversible;
+	}
+
+	public SecuritiesLendingTypeCode getSecuritiesLendingType() {
+		return securitiesLendingType;
+	}
+
+	public void setSecuritiesLendingType(SecuritiesLendingTypeCode securitiesLendingType) {
+		this.securitiesLendingType = securitiesLendingType;
+	}
+
+	public YesNoIndicator getLendingWithCollateral() {
+		return lendingWithCollateral;
+	}
+
+	public void setLendingWithCollateral(YesNoIndicator lendingWithCollateral) {
+		this.lendingWithCollateral = lendingWithCollateral;
+	}
+
+	public ISODate getMinimumDateForCallBack() {
+		return minimumDateForCallBack;
+	}
+
+	public void setMinimumDateForCallBack(ISODate minimumDateForCallBack) {
+		this.minimumDateForCallBack = minimumDateForCallBack;
+	}
+
+	public Max4NumericText getNumberOfDaysLendingBorrowing() {
+		return numberOfDaysLendingBorrowing;
+	}
+
+	public void setNumberOfDaysLendingBorrowing(Max4NumericText numberOfDaysLendingBorrowing) {
+		this.numberOfDaysLendingBorrowing = numberOfDaysLendingBorrowing;
+	}
+
+	public YesNoIndicator getPeriodicPayment() {
+		return periodicPayment;
+	}
+
+	public void setPeriodicPayment(YesNoIndicator periodicPayment) {
+		this.periodicPayment = periodicPayment;
+	}
+
+	public YesNoIndicator getRollover() {
+		return rollover;
+	}
+
+	public void setRollover(YesNoIndicator rollover) {
+		this.rollover = rollover;
+	}
+
+	public PercentageRate getBorrowingRate() {
+		return borrowingRate;
+	}
+
+	public void setBorrowingRate(PercentageRate borrowingRate) {
+		this.borrowingRate = borrowingRate;
+	}
+
+	public SecuritiesDeliveryObligation getSecuritiesDeliveryObligation() {
+		return securitiesDeliveryObligation;
+	}
+
+	public void setSecuritiesDeliveryObligation(com.tools20022.repository.entity.SecuritiesDeliveryObligation securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
 	}
 }

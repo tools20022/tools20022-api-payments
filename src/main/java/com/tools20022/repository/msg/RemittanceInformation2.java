@@ -19,10 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Information supplied to enable the matching of an entry with the items that
@@ -35,8 +42,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceInformation2#Unstructured
- * RemittanceInformation2.Unstructured}</li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceInformation2#mmUnstructured
+ * RemittanceInformation2.mmUnstructured}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -44,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RemittanceInformation2", propOrder = "unstructured")
 public class RemittanceInformation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<Max140Text> unstructured;
 	/**
 	 * Information supplied to enable the matching of an entry with the items
 	 * that the transfer is intended to settle, eg, commercial invoices in an
@@ -96,13 +106,13 @@ public class RemittanceInformation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Unstructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmUnstructured = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> RemittanceInformation2.mmObject();
 			businessComponentTrace_lazy = () -> Document.mmObject();
+			componentContext_lazy = () -> RemittanceInformation2.mmObject();
 			isDerived = false;
 			xmlTag = "Ustrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unstructured";
 			definition = "Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, eg, commercial invoices in an accounts' receivable system in an unstructured form.";
 			minOccurs = 0;
@@ -113,14 +123,23 @@ public class RemittanceInformation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RemittanceInformation2.Unstructured);
+				messageElement_lazy = () -> Arrays.asList(RemittanceInformation2.mmUnstructured);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceInformation2";
 				definition = "Information supplied to enable the matching of an entry with the items that the transfer is intended to settle.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Ustrd")
+	public List<Max140Text> getUnstructured() {
+		return unstructured;
+	}
+
+	public void setUnstructured(List<Max140Text> unstructured) {
+		this.unstructured = unstructured;
 	}
 }

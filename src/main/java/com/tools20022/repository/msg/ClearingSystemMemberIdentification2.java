@@ -20,11 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.ClearingSystemIdentification2Choice;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CashClearingSystem;
 import com.tools20022.repository.entity.CashClearingSystemMember;
+import com.tools20022.repository.entity.GenericIdentification;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Unique identification, as assigned by a clearing system, to unambiguously
@@ -37,11 +45,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2#ClearingSystemIdentification
- * ClearingSystemMemberIdentification2.ClearingSystemIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2#mmClearingSystemIdentification
+ * ClearingSystemMemberIdentification2.mmClearingSystemIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2#MemberIdentification
- * ClearingSystemMemberIdentification2.MemberIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.ClearingSystemMemberIdentification2#mmMemberIdentification
+ * ClearingSystemMemberIdentification2.mmMemberIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,9 +73,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ClearingSystemMemberIdentification2", propOrder = {"clearingSystemIdentification", "memberIdentification"})
 public class ClearingSystemMemberIdentification2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ClearingSystemIdentification2Choice clearingSystemIdentification;
 	/**
 	 * Specification of a pre-agreed offering between clearing agents or the
 	 * channel through which the payment instruction is processed.
@@ -81,8 +92,8 @@ public class ClearingSystemMemberIdentification2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashClearingSystem#Identification
-	 * CashClearingSystem.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashClearingSystem#mmIdentification
+	 * CashClearingSystem.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -103,21 +114,22 @@ public class ClearingSystemMemberIdentification2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ClearingSystemIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmClearingSystemIdentification = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> CashClearingSystem.mmIdentification;
 			componentContext_lazy = () -> ClearingSystemMemberIdentification2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashClearingSystem.Identification;
 			isDerived = false;
 			xmlTag = "ClrSysId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClearingSystemIdentification";
 			definition = "Specification of a pre-agreed offering between clearing agents or the channel through which the payment instruction is processed.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ClearingSystemIdentification2Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> ClearingSystemIdentification2Choice.mmObject();
 		}
 	};
+	protected Max35Text memberIdentification;
 	/**
 	 * Identification of a member of a clearing system.
 	 * <p>
@@ -130,8 +142,8 @@ public class ClearingSystemMemberIdentification2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -150,17 +162,17 @@ public class ClearingSystemMemberIdentification2 {
 	 * definition} = "Identification of a member of a clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute MemberIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMemberIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> ClearingSystemMemberIdentification2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "MmbId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MemberIdentification";
 			definition = "Identification of a member of a clearing system.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -168,15 +180,32 @@ public class ClearingSystemMemberIdentification2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ClearingSystemMemberIdentification2.ClearingSystemIdentification,
-						com.tools20022.repository.msg.ClearingSystemMemberIdentification2.MemberIdentification);
+				messageElement_lazy = () -> Arrays.asList(ClearingSystemMemberIdentification2.mmClearingSystemIdentification, ClearingSystemMemberIdentification2.mmMemberIdentification);
 				trace_lazy = () -> CashClearingSystemMember.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingSystemMemberIdentification2";
 				definition = "Unique identification, as assigned by a clearing system, to unambiguously identify a member of the clearing system.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ClrSysId")
+	public ClearingSystemIdentification2Choice getClearingSystemIdentification() {
+		return clearingSystemIdentification;
+	}
+
+	public void setClearingSystemIdentification(ClearingSystemIdentification2Choice clearingSystemIdentification) {
+		this.clearingSystemIdentification = clearingSystemIdentification;
+	}
+
+	@XmlElement(name = "MmbId", required = true)
+	public Max35Text getMemberIdentification() {
+		return memberIdentification;
+	}
+
+	public void setMemberIdentification(Max35Text memberIdentification) {
+		this.memberIdentification = memberIdentification;
 	}
 }

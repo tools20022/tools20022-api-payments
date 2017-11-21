@@ -20,14 +20,22 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.PaymentScheduleType1Choice;
 import com.tools20022.repository.choice.UnderlyingContract1Choice;
 import com.tools20022.repository.codeset.Priority2Code;
 import com.tools20022.repository.datatype.Max1025Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Contract;
 import com.tools20022.repository.entity.RegisteredContract;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Document that a user must file with an authorized servicer for each contract
@@ -40,29 +48,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract3#RegisteredContractAmendmentIdentification
- * RegisteredContract3.RegisteredContractAmendmentIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmRegisteredContractAmendmentIdentification
+ * RegisteredContract3.mmRegisteredContractAmendmentIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract3#OriginalRegisteredContractIdentification
- * RegisteredContract3.OriginalRegisteredContractIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#Priority
- * RegisteredContract3.Priority}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#Contract
- * RegisteredContract3.Contract}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmOriginalRegisteredContractIdentification
+ * RegisteredContract3.mmOriginalRegisteredContractIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#mmPriority
+ * RegisteredContract3.mmPriority}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#mmContract
+ * RegisteredContract3.mmContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract3#ContractBalance
- * RegisteredContract3.ContractBalance}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmContractBalance
+ * RegisteredContract3.mmContractBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract3#PaymentScheduleType
- * RegisteredContract3.PaymentScheduleType}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmPaymentScheduleType
+ * RegisteredContract3.mmPaymentScheduleType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract3#AdditionalInformation
- * RegisteredContract3.AdditionalInformation}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#Attachment
- * RegisteredContract3.Attachment}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmAdditionalInformation
+ * RegisteredContract3.mmAdditionalInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract3#SupplementaryData
- * RegisteredContract3.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmAttachment
+ * RegisteredContract3.mmAttachment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmSupplementaryData
+ * RegisteredContract3.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -71,8 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,9 +94,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RegisteredContract3", propOrder = {"registeredContractAmendmentIdentification", "originalRegisteredContractIdentification", "priority", "contract", "contractBalance", "paymentScheduleType", "additionalInformation",
+		"attachment", "supplementaryData"})
 public class RegisteredContract3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text registeredContractAmendmentIdentification;
 	/**
 	 * Unique and unambiguous identification of the registered contract
 	 * amendment request.
@@ -101,8 +114,8 @@ public class RegisteredContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
-	 * RegisteredContract.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+	 * RegisteredContract.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -123,20 +136,21 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RegisteredContractAmendmentIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRegisteredContractAmendmentIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Identification;
 			isDerived = false;
 			xmlTag = "RegdCtrctAmdmntId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegisteredContractAmendmentIdentification";
 			definition = "Unique and unambiguous identification of the registered contract amendment request.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text originalRegisteredContractIdentification;
 	/**
 	 * Identification of the original contract registration, as registered with
 	 * the registration agent.
@@ -150,8 +164,8 @@ public class RegisteredContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
-	 * RegisteredContract.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+	 * RegisteredContract.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -172,20 +186,21 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalRegisteredContractIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalRegisteredContractIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Identification;
 			isDerived = false;
 			xmlTag = "OrgnlRegdCtrctId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalRegisteredContractIdentification";
 			definition = "Identification of the original contract registration, as registered with the registration agent.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Priority2Code priority;
 	/**
 	 * Priority requested for the amendment of the registered contract.
 	 * <p>
@@ -199,8 +214,8 @@ public class RegisteredContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Priority
-	 * RegisteredContract.Priority}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmPriority
+	 * RegisteredContract.mmPriority}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -220,20 +235,21 @@ public class RegisteredContract3 {
 	 * "Priority requested for the amendment of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Priority = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPriority = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmPriority;
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Priority;
 			isDerived = false;
 			xmlTag = "Prty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Priority";
 			definition = "Priority requested for the amendment of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Priority2Code.mmObject();
 		}
 	};
+	protected UnderlyingContract1Choice contract;
 	/**
 	 * Amendment details of the registered contract for the registered contract.
 	 * <p>
@@ -267,21 +283,22 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Contract = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmContract = new MMMessageAssociationEnd() {
 		{
+			businessComponentTrace_lazy = () -> Contract.mmObject();
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.Contract.mmObject();
 			isDerived = false;
 			xmlTag = "Ctrct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Contract";
 			definition = "Amendment details of the registered contract for the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> UnderlyingContract1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> UnderlyingContract1Choice.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.ContractBalance1> contractBalance;
 	/**
 	 * Contract balance on date of contract registration.
 	 * <p>
@@ -293,8 +310,8 @@ public class RegisteredContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#ContractBalance
-	 * RegisteredContract.ContractBalance}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmContractBalance
+	 * RegisteredContract.mmContractBalance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -313,20 +330,21 @@ public class RegisteredContract3 {
 	 * definition} = "Contract balance on date of contract registration."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ContractBalance = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmContractBalance = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmContractBalance;
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.ContractBalance;
 			isDerived = false;
 			xmlTag = "CtrctBal";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContractBalance";
 			definition = "Contract balance on date of contract registration.";
 			minOccurs = 0;
-			type_lazy = () -> ContractBalance1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ContractBalance1.mmObject();
 		}
 	};
+	protected PaymentScheduleType1Choice paymentScheduleType;
 	/**
 	 * Type of the payment schedule provided in the contract.
 	 * <p>
@@ -339,8 +357,8 @@ public class RegisteredContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#PaymentScheduleType
-	 * RegisteredContract.PaymentScheduleType}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmPaymentScheduleType
+	 * RegisteredContract.mmPaymentScheduleType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -359,21 +377,22 @@ public class RegisteredContract3 {
 	 * definition} = "Type of the payment schedule provided in the contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PaymentScheduleType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPaymentScheduleType = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmPaymentScheduleType;
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.PaymentScheduleType;
 			isDerived = false;
 			xmlTag = "PmtSchdlTp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentScheduleType";
 			definition = "Type of the payment schedule provided in the contract.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PaymentScheduleType1Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> PaymentScheduleType1Choice.mmObject();
 		}
 	};
+	protected Max1025Text additionalInformation;
 	/**
 	 * Further additional information on the amendment.
 	 * <p>
@@ -401,19 +420,20 @@ public class RegisteredContract3 {
 	 * definition} = "Further additional information on the amendment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Further additional information on the amendment.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
 	/**
 	 * Documents provided as attachments to the contract registration amendment
 	 * request.
@@ -427,8 +447,8 @@ public class RegisteredContract3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Attachment
-	 * RegisteredContract.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmAttachment
+	 * RegisteredContract.mmAttachment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -449,20 +469,21 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Attachment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Attachment;
 			isDerived = false;
 			xmlTag = "Attchmnt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Attachment";
 			definition = "Documents provided as attachments to the contract registration amendment request.";
 			minOccurs = 0;
-			type_lazy = () -> DocumentGeneralInformation3.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.DocumentGeneralInformation3.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -492,34 +513,114 @@ public class RegisteredContract3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd SupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> RegisteredContract3.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
-			type_lazy = () -> SupplementaryData1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract3.RegisteredContractAmendmentIdentification,
-						com.tools20022.repository.msg.RegisteredContract3.OriginalRegisteredContractIdentification, com.tools20022.repository.msg.RegisteredContract3.Priority, com.tools20022.repository.msg.RegisteredContract3.Contract,
-						com.tools20022.repository.msg.RegisteredContract3.ContractBalance, com.tools20022.repository.msg.RegisteredContract3.PaymentScheduleType, com.tools20022.repository.msg.RegisteredContract3.AdditionalInformation,
-						com.tools20022.repository.msg.RegisteredContract3.Attachment, com.tools20022.repository.msg.RegisteredContract3.SupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(RegisteredContract3.mmRegisteredContractAmendmentIdentification, RegisteredContract3.mmOriginalRegisteredContractIdentification, RegisteredContract3.mmPriority,
+						RegisteredContract3.mmContract, RegisteredContract3.mmContractBalance, RegisteredContract3.mmPaymentScheduleType, RegisteredContract3.mmAdditionalInformation, RegisteredContract3.mmAttachment,
+						RegisteredContract3.mmSupplementaryData);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContract3";
 				definition = "Document that a user must file with an authorized servicer for each contract that involves foreign currency transactions with non residents.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RegdCtrctAmdmntId", required = true)
+	public Max35Text getRegisteredContractAmendmentIdentification() {
+		return registeredContractAmendmentIdentification;
+	}
+
+	public void setRegisteredContractAmendmentIdentification(Max35Text registeredContractAmendmentIdentification) {
+		this.registeredContractAmendmentIdentification = registeredContractAmendmentIdentification;
+	}
+
+	@XmlElement(name = "OrgnlRegdCtrctId", required = true)
+	public Max35Text getOriginalRegisteredContractIdentification() {
+		return originalRegisteredContractIdentification;
+	}
+
+	public void setOriginalRegisteredContractIdentification(Max35Text originalRegisteredContractIdentification) {
+		this.originalRegisteredContractIdentification = originalRegisteredContractIdentification;
+	}
+
+	@XmlElement(name = "Prty", required = true)
+	public Priority2Code getPriority() {
+		return priority;
+	}
+
+	public void setPriority(Priority2Code priority) {
+		this.priority = priority;
+	}
+
+	@XmlElement(name = "Ctrct", required = true)
+	public UnderlyingContract1Choice getContract() {
+		return contract;
+	}
+
+	public void setContract(UnderlyingContract1Choice contract) {
+		this.contract = contract;
+	}
+
+	@XmlElement(name = "CtrctBal")
+	public List<ContractBalance1> getContractBalance() {
+		return contractBalance;
+	}
+
+	public void setContractBalance(List<com.tools20022.repository.msg.ContractBalance1> contractBalance) {
+		this.contractBalance = contractBalance;
+	}
+
+	@XmlElement(name = "PmtSchdlTp")
+	public PaymentScheduleType1Choice getPaymentScheduleType() {
+		return paymentScheduleType;
+	}
+
+	public void setPaymentScheduleType(PaymentScheduleType1Choice paymentScheduleType) {
+		this.paymentScheduleType = paymentScheduleType;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max1025Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max1025Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
+	}
+
+	@XmlElement(name = "Attchmnt")
+	public List<DocumentGeneralInformation3> getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+		this.attachment = attachment;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
 	}
 }

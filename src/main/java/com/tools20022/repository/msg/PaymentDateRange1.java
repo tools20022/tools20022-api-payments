@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PaymentSchedule;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies expected and due payment date.
@@ -35,12 +41,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PaymentDateRange1#PaymentScheduleIdentification
- * PaymentDateRange1.PaymentScheduleIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange1#ExpectedDate
- * PaymentDateRange1.ExpectedDate}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange1#DueDate
- * PaymentDateRange1.DueDate}</li>
+ * {@linkplain com.tools20022.repository.msg.PaymentDateRange1#mmPaymentScheduleIdentification
+ * PaymentDateRange1.mmPaymentScheduleIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentDateRange1#mmExpectedDate
+ * PaymentDateRange1.mmExpectedDate}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange1#mmDueDate
+ * PaymentDateRange1.mmDueDate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -49,8 +56,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,9 +72,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * ShipmentDateRange1}</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "PaymentDateRange1", propOrder = {"paymentScheduleIdentification", "expectedDate", "dueDate"})
 public class PaymentDateRange1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text paymentScheduleIdentification;
 	/**
 	 * Unique and unambiguous identification of the payment schedule.
 	 * <p>
@@ -96,19 +106,20 @@ public class PaymentDateRange1 {
 	 * "Unique and unambiguous identification of the payment schedule."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PaymentScheduleIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPaymentScheduleIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> PaymentDateRange1.mmObject();
 			isDerived = false;
 			xmlTag = "PmtSchdlId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentScheduleIdentification";
 			definition = "Unique and unambiguous identification of the payment schedule.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ISODate expectedDate;
 	/**
 	 * Expected payment date.
 	 * <p>
@@ -121,8 +132,8 @@ public class PaymentDateRange1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentSchedule#Date
-	 * PaymentSchedule.Date}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentSchedule#mmDate
+	 * PaymentSchedule.mmDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -142,25 +153,26 @@ public class PaymentDateRange1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ShipmentDateRange1#EarliestShipmentDate
-	 * ShipmentDateRange1.EarliestShipmentDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.ShipmentDateRange1#mmEarliestShipmentDate
+	 * ShipmentDateRange1.mmEarliestShipmentDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ExpectedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmExpectedDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentSchedule.mmDate;
 			componentContext_lazy = () -> PaymentDateRange1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.Date;
 			isDerived = false;
 			xmlTag = "XpctdDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExpectedDate";
 			definition = "Expected payment date.";
-			previousVersion_lazy = () -> com.tools20022.repository.msg.ShipmentDateRange1.EarliestShipmentDate;
-			minOccurs = 0;
+			previousVersion_lazy = () -> ShipmentDateRange1.mmEarliestShipmentDate;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected ISODate dueDate;
 	/**
 	 * Latest date whereby the amount must be paid.
 	 * <p>
@@ -173,8 +185,8 @@ public class PaymentDateRange1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentSchedule#Date
-	 * PaymentSchedule.Date}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentSchedule#mmDate
+	 * PaymentSchedule.mmDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -194,22 +206,22 @@ public class PaymentDateRange1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ShipmentDateRange1#LatestShipmentDate
-	 * ShipmentDateRange1.LatestShipmentDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.ShipmentDateRange1#mmLatestShipmentDate
+	 * ShipmentDateRange1.mmLatestShipmentDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentSchedule.mmDate;
 			componentContext_lazy = () -> PaymentDateRange1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.Date;
 			isDerived = false;
 			xmlTag = "DueDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DueDate";
 			definition = "Latest date whereby the amount must be paid.";
-			previousVersion_lazy = () -> com.tools20022.repository.msg.ShipmentDateRange1.LatestShipmentDate;
-			minOccurs = 0;
+			previousVersion_lazy = () -> ShipmentDateRange1.mmLatestShipmentDate;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
@@ -217,16 +229,42 @@ public class PaymentDateRange1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentDateRange1.PaymentScheduleIdentification, com.tools20022.repository.msg.PaymentDateRange1.ExpectedDate,
-						com.tools20022.repository.msg.PaymentDateRange1.DueDate);
+				messageElement_lazy = () -> Arrays.asList(PaymentDateRange1.mmPaymentScheduleIdentification, PaymentDateRange1.mmExpectedDate, PaymentDateRange1.mmDueDate);
 				trace_lazy = () -> PaymentSchedule.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentDateRange1";
 				definition = "Specifies expected and due payment date.";
 				previousVersion_lazy = () -> ShipmentDateRange1.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "PmtSchdlId")
+	public Max35Text getPaymentScheduleIdentification() {
+		return paymentScheduleIdentification;
+	}
+
+	public void setPaymentScheduleIdentification(Max35Text paymentScheduleIdentification) {
+		this.paymentScheduleIdentification = paymentScheduleIdentification;
+	}
+
+	@XmlElement(name = "XpctdDt")
+	public ISODate getExpectedDate() {
+		return expectedDate;
+	}
+
+	public void setExpectedDate(ISODate expectedDate) {
+		this.expectedDate = expectedDate;
+	}
+
+	@XmlElement(name = "DueDt")
+	public ISODate getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(ISODate dueDate) {
+		this.dueDate = dueDate;
 	}
 }

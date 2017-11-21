@@ -18,7 +18,11 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.MandatePartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.OperationMandate2;
+import com.tools20022.repository.msg.OperationMandate3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -36,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.OperationMandate2#MandateHolder
- * OperationMandate2.MandateHolder}</li>
+ * {@linkplain com.tools20022.repository.msg.OperationMandate2#mmMandateHolder
+ * OperationMandate2.mmMandateHolder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.OperationMandate3#MandateHolder
- * OperationMandate3.MandateHolder}</li>
+ * {@linkplain com.tools20022.repository.msg.OperationMandate3#mmMandateHolder
+ * OperationMandate3.mmMandateHolder}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -49,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,12 +74,17 @@ public class MandateHolder extends MandatePartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateHolder";
 				definition = "Entity that was given by another entity the authority to act on its behalf.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OperationMandate2.MandateHolder, com.tools20022.repository.msg.OperationMandate3.MandateHolder);
+				derivationElement_lazy = () -> Arrays.asList(OperationMandate2.mmMandateHolder, OperationMandate3.mmMandateHolder);
 				superType_lazy = () -> MandatePartyRole.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return MandateHolder.class;
 			}
 		});
 		return mmObject_lazy.get();

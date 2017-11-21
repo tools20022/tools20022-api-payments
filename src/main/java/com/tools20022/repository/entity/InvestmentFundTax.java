@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.SecuritiesTax;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,23 +39,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#FiscalExemption
- * InvestmentFundTax.FiscalExemption}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#mmFiscalExemption
+ * InvestmentFundTax.mmFiscalExemption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#InvestmentAccount
- * InvestmentFundTax.InvestmentAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#mmInvestmentAccount
+ * InvestmentFundTax.mmInvestmentAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#PercentageOfDebtClaim
- * InvestmentFundTax.PercentageOfDebtClaim}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#mmPercentageOfDebtClaim
+ * InvestmentFundTax.mmPercentageOfDebtClaim}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#PercentageGrandfatheredDebt
- * InvestmentFundTax.PercentageGrandfatheredDebt}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#mmPercentageGrandfatheredDebt
+ * InvestmentFundTax.mmPercentageGrandfatheredDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#ExemptionIndicator
- * InvestmentFundTax.ExemptionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#mmExemptionIndicator
+ * InvestmentFundTax.mmExemptionIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#Transaction
- * InvestmentFundTax.Transaction}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTax#mmTransaction
+ * InvestmentFundTax.mmTransaction}</li>
  * </ul>
  * </li>
  * <li>
@@ -63,11 +63,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccount#InvestmentFundTax
- * InvestmentAccount.InvestmentFundTax}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmInvestmentFundTax
+ * InvestmentAccount.mmInvestmentFundTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#TransactionTax
- * InvestmentFundTransaction.TransactionTax}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#mmTransactionTax
+ * InvestmentFundTransaction.mmTransactionTax}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -76,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,6 +91,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentFundTax extends SecuritiesTax {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator fiscalExemption;
 	/**
 	 * Indicates whether an owner of an investment account may benefit from a
 	 * fiscal exemption or amnesty for instance for declaring overseas
@@ -121,18 +122,27 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FiscalExemption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFiscalExemption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundTax.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FiscalExemption";
 			definition = "Indicates whether an owner of an investment account may benefit from a fiscal exemption or amnesty for instance for declaring overseas investments.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundTax.class.getMethod("getFiscalExemption", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentAccount investmentAccount;
 	/**
 	 * Investment account for which taxes are specified.
 	 * <p>
@@ -141,8 +151,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#InvestmentFundTax
-	 * InvestmentAccount.InvestmentFundTax}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmInvestmentFundTax
+	 * InvestmentAccount.mmInvestmentFundTax}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -166,20 +176,21 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * definition} = "Investment account for which taxes are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundTax.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Investment account for which taxes are specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmInvestmentFundTax;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.InvestmentFundTax;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PercentageRate percentageOfDebtClaim;
 	/**
 	 * Percentage of the underlying assets of the funds that represents a debt
 	 * and is in the scope of the European directive on taxation of savings
@@ -211,18 +222,27 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PercentageOfDebtClaim = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPercentageOfDebtClaim = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundTax.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfDebtClaim";
 			definition = "Percentage of the underlying assets of the funds that represents a debt and is in the scope of the European directive on taxation of savings income in the form of interest payments (Council Directive 2003/48/EC 3 June).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundTax.class.getMethod("getPercentageOfDebtClaim", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate percentageGrandfatheredDebt;
 	/**
 	 * Percentage of grandfathered debt claim.
 	 * <p>
@@ -249,18 +269,27 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * definition} = "Percentage of grandfathered debt claim."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PercentageGrandfatheredDebt = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPercentageGrandfatheredDebt = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundTax.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageGrandfatheredDebt";
 			definition = "Percentage of grandfathered debt claim.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundTax.class.getMethod("getPercentageGrandfatheredDebt", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator exemptionIndicator;
 	/**
 	 * Indicates whether a tax exemption applies.
 	 * <p>
@@ -287,18 +316,27 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * definition} = "Indicates whether a tax exemption applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExemptionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExemptionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundTax.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExemptionIndicator";
 			definition = "Indicates whether a tax exemption applies.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundTax.class.getMethod("getExemptionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentFundTransaction transaction;
 	/**
 	 * Transaction for which the tax is specified.
 	 * <p>
@@ -307,8 +345,8 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#TransactionTax
-	 * InvestmentFundTransaction.TransactionTax}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#mmTransactionTax
+	 * InvestmentFundTransaction.mmTransactionTax}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -333,35 +371,88 @@ public class InvestmentFundTax extends SecuritiesTax {
 	 * definition} = "Transaction for which the tax is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Transaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundTax.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundTax.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transaction";
 			definition = "Transaction for which the tax is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundTransaction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.TransactionTax;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmTransactionTax;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundTax";
 				definition = "Tax related to an investment fund order.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.InvestmentFundTax, com.tools20022.repository.entity.InvestmentFundTransaction.TransactionTax);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmInvestmentFundTax, com.tools20022.repository.entity.InvestmentFundTransaction.mmTransactionTax);
 				superType_lazy = () -> SecuritiesTax.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundTax.FiscalExemption, com.tools20022.repository.entity.InvestmentFundTax.InvestmentAccount,
-						com.tools20022.repository.entity.InvestmentFundTax.PercentageOfDebtClaim, com.tools20022.repository.entity.InvestmentFundTax.PercentageGrandfatheredDebt,
-						com.tools20022.repository.entity.InvestmentFundTax.ExemptionIndicator, com.tools20022.repository.entity.InvestmentFundTax.Transaction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundTax.mmFiscalExemption, com.tools20022.repository.entity.InvestmentFundTax.mmInvestmentAccount,
+						com.tools20022.repository.entity.InvestmentFundTax.mmPercentageOfDebtClaim, com.tools20022.repository.entity.InvestmentFundTax.mmPercentageGrandfatheredDebt,
+						com.tools20022.repository.entity.InvestmentFundTax.mmExemptionIndicator, com.tools20022.repository.entity.InvestmentFundTax.mmTransaction);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentFundTax.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator getFiscalExemption() {
+		return fiscalExemption;
+	}
+
+	public void setFiscalExemption(YesNoIndicator fiscalExemption) {
+		this.fiscalExemption = fiscalExemption;
+	}
+
+	public InvestmentAccount getInvestmentAccount() {
+		return investmentAccount;
+	}
+
+	public void setInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount investmentAccount) {
+		this.investmentAccount = investmentAccount;
+	}
+
+	public PercentageRate getPercentageOfDebtClaim() {
+		return percentageOfDebtClaim;
+	}
+
+	public void setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
+		this.percentageOfDebtClaim = percentageOfDebtClaim;
+	}
+
+	public PercentageRate getPercentageGrandfatheredDebt() {
+		return percentageGrandfatheredDebt;
+	}
+
+	public void setPercentageGrandfatheredDebt(PercentageRate percentageGrandfatheredDebt) {
+		this.percentageGrandfatheredDebt = percentageGrandfatheredDebt;
+	}
+
+	public YesNoIndicator getExemptionIndicator() {
+		return exemptionIndicator;
+	}
+
+	public void setExemptionIndicator(YesNoIndicator exemptionIndicator) {
+		this.exemptionIndicator = exemptionIndicator;
+	}
+
+	public InvestmentFundTransaction getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(com.tools20022.repository.entity.InvestmentFundTransaction transaction) {
+		this.transaction = transaction;
 	}
 }

@@ -18,8 +18,14 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.MessageTransmissionsHaveUniqueNames;
+import com.tools20022.metamodel.constraints.ParticipantsHaveUniqueNames;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +39,55 @@ import java.util.Optional;
  */
 public class MMBusinessTransaction implements MMTopLevelCatalogueEntry {
 
+	/**
+	 * the BusinessProcessTrace that is used to trace the BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, MMBusinessProcess> businessProcessTraceAttribute = newAttribute();
+	/**
+	 * the involvement of a BusinessRole in a BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, List<MMParticipant>> participantAttribute = newAttribute();
+	/**
+	 * he conveyance of information from a sending Participant in the context of
+	 * a BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, List<MMMessageTransmission>> transmissionAttribute = newAttribute();
+	/**
+	 * Provides a set of characterstics for a MessageTransportMode to have in
+	 * the context of a single BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, MMMessageTransportMode> messageTransportModeAttribute = newAttribute();
+	/**
+	 * decomposition of a BusinessTransaction into a number of sub transactions
+	 * which are BusinessTransactions in their own right.
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, List<MMBusinessTransaction>> subTransactionAttribute = newAttribute();
+	/**
+	 * assembly of a number of BusinessTransactions that together form a
+	 * BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, Optional<MMBusinessTransaction>> parentTransactionAttribute = newAttribute();
+	/**
+	 * all of the BusinessTransactionTraces that derive MessageChoreographies
+	 * from one BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMBusinessTransaction, List<MMMessageChoreography>> traceAttribute = newAttribute();
+	/**
+	 * All MessageTransmissions contained in this BusinessTransaction shall have
+	 * different names. transmission-&gt;forAll(msg1,msg2 | msg1 &lt;&gt; msg2
+	 * implies msg1.name &lt;&gt; msg2.name)
+	 */
+	public final static MetamodelConstraint<MMBusinessTransaction> checkMessageTransmissionsHaveUniqueNames = newConstraint(b -> {
+		new MessageTransmissionsHaveUniqueNames().accept(b);
+	});
+	/**
+	 * All Participants of this BusinessTransaction shall have different names.
+	 * participant-&gt;forAll(p1,p2 | p1 &lt;&gt; p2 implies p1.name &lt;&gt;
+	 * p2.name)
+	 */
+	public final static MetamodelConstraint<MMBusinessTransaction> checkParticipantsHaveUniqueNames = newConstraint(b -> {
+		new ParticipantsHaveUniqueNames().accept(b);
+	});
 	protected Supplier<MMBusinessProcess> businessProcessTrace_lazy;
 	protected Supplier<List<MMParticipant>> participant_lazy;
 	protected Supplier<List<MMMessageTransmission>> transmission_lazy;

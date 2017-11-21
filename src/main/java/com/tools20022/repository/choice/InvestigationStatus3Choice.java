@@ -20,13 +20,22 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.ResolutionOfInvestigationV07;
 import com.tools20022.repository.codeset.InvestigationExecutionConfirmation3Code;
 import com.tools20022.repository.codeset.ModificationRejection2Code;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.PaymentInvestigationCaseRejection;
 import com.tools20022.repository.entity.PaymentInvestigationCaseResolution;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Case3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the status of an investigation case.
@@ -38,17 +47,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#Confirmation
- * InvestigationStatus3Choice.Confirmation}</li>
+ * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#mmConfirmation
+ * InvestigationStatus3Choice.mmConfirmation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#RejectedModification
- * InvestigationStatus3Choice.RejectedModification}</li>
+ * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#mmRejectedModification
+ * InvestigationStatus3Choice.mmRejectedModification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#DuplicateOf
- * InvestigationStatus3Choice.DuplicateOf}</li>
+ * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#mmDuplicateOf
+ * InvestigationStatus3Choice.mmDuplicateOf}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#AssignmentCancellationConfirmation
- * InvestigationStatus3Choice.AssignmentCancellationConfirmation}</li>
+ * {@linkplain com.tools20022.repository.choice.InvestigationStatus3Choice#mmAssignmentCancellationConfirmation
+ * InvestigationStatus3Choice.mmAssignmentCancellationConfirmation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -60,15 +69,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#Status
- * ResolutionOfInvestigationV07.Status}</li>
+ * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#mmStatus
+ * ResolutionOfInvestigationV07.mmStatus}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,9 +88,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the status of an investigation case."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "InvestigationStatus3Choice", propOrder = {"confirmation", "rejectedModification", "duplicateOf", "assignmentCancellationConfirmation"})
 public class InvestigationStatus3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected InvestigationExecutionConfirmation3Code confirmation;
 	/**
 	 * Specifies the status of the investigation, in a coded form.
 	 * <p>
@@ -95,8 +107,8 @@ public class InvestigationStatus3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseResolution#InvestigationStatus
-	 * PaymentInvestigationCaseResolution.InvestigationStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseResolution#mmInvestigationStatus
+	 * PaymentInvestigationCaseResolution.mmInvestigationStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -116,20 +128,21 @@ public class InvestigationStatus3Choice {
 	 * "Specifies the status of the investigation, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Confirmation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmConfirmation = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentInvestigationCaseResolution.mmInvestigationStatus;
 			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.InvestigationStatus;
 			isDerived = false;
 			xmlTag = "Conf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Confirmation";
 			definition = "Specifies the status of the investigation, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> InvestigationExecutionConfirmation3Code.mmObject();
 		}
 	};
+	protected List<ModificationRejection2Code> rejectedModification;
 	/**
 	 * Reason for the rejection of a modification request, in a coded form.
 	 * <p>
@@ -143,8 +156,8 @@ public class InvestigationStatus3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#RejectedModification
-	 * PaymentInvestigationCaseRejection.RejectedModification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#mmRejectedModification
+	 * PaymentInvestigationCaseRejection.mmRejectedModification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -164,19 +177,20 @@ public class InvestigationStatus3Choice {
 	 * "Reason for the rejection of a modification request, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RejectedModification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRejectedModification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmRejectedModification;
 			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseRejection.RejectedModification;
 			isDerived = false;
 			xmlTag = "RjctdMod";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RejectedModification";
 			definition = "Reason for the rejection of a modification request, in a coded form.";
 			minOccurs = 1;
 			simpleType_lazy = () -> ModificationRejection2Code.mmObject();
 		}
 	};
+	protected Case3 duplicateOf;
 	/**
 	 * Indicates a duplicated case. Usage: When present, the case identified in
 	 * the message must be closed. The case identified as duplicated (in this
@@ -189,8 +203,8 @@ public class InvestigationStatus3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseResolution#DuplicateCase
-	 * PaymentInvestigationCaseResolution.DuplicateCase}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseResolution#mmDuplicateCase
+	 * PaymentInvestigationCaseResolution.mmDuplicateCase}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -211,21 +225,22 @@ public class InvestigationStatus3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd DuplicateOf = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmDuplicateOf = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentInvestigationCaseResolution.mmDuplicateCase;
 			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.DuplicateCase;
 			isDerived = false;
 			xmlTag = "DplctOf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DuplicateOf";
 			definition = "Indicates a duplicated case. \nUsage: When present, the case identified in the message must be closed. The case identified as duplicated (in this component) will be pursued.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Case3.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> Case3.mmObject();
 		}
 	};
+	protected YesNoIndicator assignmentCancellationConfirmation;
 	/**
 	 * Indicates whether the cancellation of the assignment is confirmed or
 	 * rejected. Usage: If yes, the cancellation of the assignment is confirmed.
@@ -242,8 +257,8 @@ public class InvestigationStatus3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#AssignmentCancellationConfirmation
-	 * PaymentInvestigationCaseRejection.AssignmentCancellationConfirmation}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInvestigationCaseRejection#mmAssignmentCancellationConfirmation
+	 * PaymentInvestigationCaseRejection.mmAssignmentCancellationConfirmation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -264,17 +279,17 @@ public class InvestigationStatus3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AssignmentCancellationConfirmation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAssignmentCancellationConfirmation = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentInvestigationCaseRejection.mmAssignmentCancellationConfirmation;
 			componentContext_lazy = () -> InvestigationStatus3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseRejection.AssignmentCancellationConfirmation;
 			isDerived = false;
 			xmlTag = "AssgnmtCxlConf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AssignmentCancellationConfirmation";
 			definition = "Indicates whether the cancellation of the assignment is confirmed or rejected.\nUsage: If yes, the cancellation of the assignment is confirmed.\nIf no, the cancellation of the assignment is rejected and the investigation process will continue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
@@ -282,16 +297,52 @@ public class InvestigationStatus3Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InvestigationStatus3Choice.Confirmation, com.tools20022.repository.choice.InvestigationStatus3Choice.RejectedModification,
-						com.tools20022.repository.choice.InvestigationStatus3Choice.DuplicateOf, com.tools20022.repository.choice.InvestigationStatus3Choice.AssignmentCancellationConfirmation);
+				messageElement_lazy = () -> Arrays.asList(InvestigationStatus3Choice.mmConfirmation, InvestigationStatus3Choice.mmRejectedModification, InvestigationStatus3Choice.mmDuplicateOf,
+						InvestigationStatus3Choice.mmAssignmentCancellationConfirmation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(ResolutionOfInvestigationV07.mmStatus);
 				trace_lazy = () -> PaymentInvestigationCaseResolution.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.ResolutionOfInvestigationV07.Status);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationStatus3Choice";
 				definition = "Specifies the status of an investigation case.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Conf", required = true)
+	public InvestigationExecutionConfirmation3Code getConfirmation() {
+		return confirmation;
+	}
+
+	public void setConfirmation(InvestigationExecutionConfirmation3Code confirmation) {
+		this.confirmation = confirmation;
+	}
+
+	@XmlElement(name = "RjctdMod", required = true)
+	public List<ModificationRejection2Code> getRejectedModification() {
+		return rejectedModification;
+	}
+
+	public void setRejectedModification(List<ModificationRejection2Code> rejectedModification) {
+		this.rejectedModification = rejectedModification;
+	}
+
+	@XmlElement(name = "DplctOf", required = true)
+	public Case3 getDuplicateOf() {
+		return duplicateOf;
+	}
+
+	public void setDuplicateOf(Case3 duplicateOf) {
+		this.duplicateOf = duplicateOf;
+	}
+
+	@XmlElement(name = "AssgnmtCxlConf", required = true)
+	public YesNoIndicator getAssignmentCancellationConfirmation() {
+		return assignmentCancellationConfirmation;
+	}
+
+	public void setAssignmentCancellationConfirmation(YesNoIndicator assignmentCancellationConfirmation) {
+		this.assignmentCancellationConfirmation = assignmentCancellationConfirmation;
 	}
 }

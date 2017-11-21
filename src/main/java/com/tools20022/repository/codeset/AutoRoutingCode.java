@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,18 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.AutoRoutingCode#DOTSystem
- * AutoRoutingCode.DOTSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AutoRoutingCode#SuperDOTSystem
- * AutoRoutingCode.SuperDOTSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.AutoRoutingCode#mmDOTSystem
+ * AutoRoutingCode.mmDOTSystem}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.AutoRoutingCode#mmSuperDOTSystem
+ * AutoRoutingCode.mmSuperDOTSystem}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +87,9 @@ public class AutoRoutingCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode DOTSystem = new MMCode() {
+	public static final MMCode mmDOTSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DOTSystem";
 			definition = "Indicates the Designated Order Turnaround system: computerized order routing system (used at the New York Stock Exchange) is to be used.";
 			owner_lazy = () -> AutoRoutingCode.mmObject();
@@ -118,9 +121,9 @@ public class AutoRoutingCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SuperDOTSystem = new MMCode() {
+	public static final MMCode mmSuperDOTSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SuperDOTSystem";
 			definition = "Indicates the evolution of the DOT system, a Designated Order Turnaround system: computerized order routing system (used at the New York Stock Exchange) is to be used.";
 			owner_lazy = () -> AutoRoutingCode.mmObject();
@@ -131,12 +134,12 @@ public class AutoRoutingCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DDOT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AutoRoutingCode";
 				definition = "Indicates whether an automatic routing system is involved.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AutoRoutingCode.DOTSystem, com.tools20022.repository.codeset.AutoRoutingCode.SuperDOTSystem);
+				code_lazy = () -> Arrays.asList(AutoRoutingCode.mmDOTSystem, AutoRoutingCode.mmSuperDOTSystem);
 			}
 		});
 		return mmObject_lazy.get();

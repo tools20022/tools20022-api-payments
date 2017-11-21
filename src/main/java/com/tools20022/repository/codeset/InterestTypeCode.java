@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,33 +32,34 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#CumInterest
- * InterestTypeCode.CumInterest}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmCumInterest
+ * InterestTypeCode.mmCumInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#ExInterest
- * InterestTypeCode.ExInterest}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmExInterest
+ * InterestTypeCode.mmExInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#ZeroCoupon
- * InterestTypeCode.ZeroCoupon}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmZeroCoupon
+ * InterestTypeCode.mmZeroCoupon}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#Discounted
- * InterestTypeCode.Discounted}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#Index
- * InterestTypeCode.Index}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#DualBasis
- * InterestTypeCode.DualBasis}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmDiscounted
+ * InterestTypeCode.mmDiscounted}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmIndex
+ * InterestTypeCode.mmIndex}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#FloatingRateNote
- * InterestTypeCode.FloatingRateNote}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#Fixed
- * InterestTypeCode.Fixed}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmDualBasis
+ * InterestTypeCode.mmDualBasis}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmFloatingRateNote
+ * InterestTypeCode.mmFloatingRateNote}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.InterestTypeCode#mmFixed
+ * InterestTypeCode.mmFixed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -99,9 +102,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates deal price including accrued interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode CumInterest = new MMCode() {
+	public static final MMCode mmCumInterest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CumInterest";
 			definition = "Indicates deal price including accrued interest.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -129,9 +132,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates deal price excluding accrued interest."</li>
 	 * </ul>
 	 */
-	public static final MMCode ExInterest = new MMCode() {
+	public static final MMCode mmExInterest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExInterest";
 			definition = "Indicates deal price excluding accrued interest.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -159,9 +162,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is a zero coupon."</li>
 	 * </ul>
 	 */
-	public static final MMCode ZeroCoupon = new MMCode() {
+	public static final MMCode mmZeroCoupon = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ZeroCoupon";
 			definition = "Indicates that the type of interest is a zero coupon.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -189,9 +192,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is discounted."</li>
 	 * </ul>
 	 */
-	public static final MMCode Discounted = new MMCode() {
+	public static final MMCode mmDiscounted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Discounted";
 			definition = "Indicates that the type of interest is discounted.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -219,9 +222,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is index."</li>
 	 * </ul>
 	 */
-	public static final MMCode Index = new MMCode() {
+	public static final MMCode mmIndex = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Index";
 			definition = "Indicates that the type of interest is index.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -249,9 +252,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is a dual basis."</li>
 	 * </ul>
 	 */
-	public static final MMCode DualBasis = new MMCode() {
+	public static final MMCode mmDualBasis = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DualBasis";
 			definition = "Indicates that the type of interest is a dual basis.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -280,9 +283,9 @@ public class InterestTypeCode {
 	 * "Indicates that the type of interest is a floating rate note."</li>
 	 * </ul>
 	 */
-	public static final MMCode FloatingRateNote = new MMCode() {
+	public static final MMCode mmFloatingRateNote = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FloatingRateNote";
 			definition = "Indicates that the type of interest is a floating rate note.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -310,9 +313,9 @@ public class InterestTypeCode {
 	 * definition} = "Indicates that the type of interest is fixed."</li>
 	 * </ul>
 	 */
-	public static final MMCode Fixed = new MMCode() {
+	public static final MMCode mmFixed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fixed";
 			definition = "Indicates that the type of interest is fixed.";
 			owner_lazy = () -> InterestTypeCode.mmObject();
@@ -323,14 +326,13 @@ public class InterestTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CINT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestTypeCode";
 				definition = "Indicates if the deal price is excluding or including the accrued interest.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InterestTypeCode.CumInterest, com.tools20022.repository.codeset.InterestTypeCode.ExInterest, com.tools20022.repository.codeset.InterestTypeCode.ZeroCoupon,
-						com.tools20022.repository.codeset.InterestTypeCode.Discounted, com.tools20022.repository.codeset.InterestTypeCode.Index, com.tools20022.repository.codeset.InterestTypeCode.DualBasis,
-						com.tools20022.repository.codeset.InterestTypeCode.FloatingRateNote, com.tools20022.repository.codeset.InterestTypeCode.Fixed);
+				code_lazy = () -> Arrays.asList(InterestTypeCode.mmCumInterest, InterestTypeCode.mmExInterest, InterestTypeCode.mmZeroCoupon, InterestTypeCode.mmDiscounted, InterestTypeCode.mmIndex, InterestTypeCode.mmDualBasis,
+						InterestTypeCode.mmFloatingRateNote, InterestTypeCode.mmFixed);
 			}
 		});
 		return mmObject_lazy.get();

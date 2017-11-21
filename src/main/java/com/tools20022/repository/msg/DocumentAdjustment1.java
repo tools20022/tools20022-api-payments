@@ -19,13 +19,19 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CreditDebitCode;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max4Text;
 import com.tools20022.repository.entity.Adjustment;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to provide information on the amount and reason of the
@@ -37,16 +43,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentAdjustment1#Amount
- * DocumentAdjustment1.Amount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentAdjustment1#mmAmount
+ * DocumentAdjustment1.mmAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentAdjustment1#CreditDebitIndicator
- * DocumentAdjustment1.CreditDebitIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DocumentAdjustment1#Reason
- * DocumentAdjustment1.Reason}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentAdjustment1#mmCreditDebitIndicator
+ * DocumentAdjustment1.mmCreditDebitIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DocumentAdjustment1#mmReason
+ * DocumentAdjustment1.mmReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentAdjustment1#AdditionalInformation
- * DocumentAdjustment1.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentAdjustment1#mmAdditionalInformation
+ * DocumentAdjustment1.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -54,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,9 +74,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DocumentAdjustment1", propOrder = {"amount", "creditDebitIndicator", "reason", "additionalInformation"})
 public class DocumentAdjustment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
 	 * Amount of money of the document adjustment.
 	 * <p>
@@ -84,8 +93,8 @@ public class DocumentAdjustment1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#Amount
-	 * Adjustment.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmAmount
+	 * Adjustment.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -104,20 +113,21 @@ public class DocumentAdjustment1 {
 	 * definition} = "Amount of money of the document adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Adjustment.mmAmount;
 			componentContext_lazy = () -> DocumentAdjustment1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Adjustment.Amount;
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount of money of the document adjustment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected CreditDebitCode creditDebitIndicator;
 	/**
 	 * Specifies whether the adjustment must be substracted or added to the
 	 * total amount.
@@ -132,8 +142,8 @@ public class DocumentAdjustment1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#Direction
-	 * Adjustment.Direction}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmDirection
+	 * Adjustment.mmDirection}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -154,20 +164,21 @@ public class DocumentAdjustment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Adjustment.mmDirection;
 			componentContext_lazy = () -> DocumentAdjustment1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Adjustment.Direction;
 			isDerived = false;
 			xmlTag = "CdtDbtInd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies whether the adjustment must be substracted or added to the total amount.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
 	};
+	protected Max4Text reason;
 	/**
 	 * Specifies the reason for the adjustment.
 	 * <p>
@@ -180,8 +191,8 @@ public class DocumentAdjustment1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#Reason
-	 * Adjustment.Reason}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmReason
+	 * Adjustment.mmReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -200,20 +211,21 @@ public class DocumentAdjustment1 {
 	 * definition} = "Specifies the reason for the adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Reason = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Adjustment.mmReason;
 			componentContext_lazy = () -> DocumentAdjustment1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Adjustment.Reason;
 			isDerived = false;
 			xmlTag = "Rsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reason";
 			definition = "Specifies the reason for the adjustment.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max4Text.mmObject();
 		}
 	};
+	protected Max140Text additionalInformation;
 	/**
 	 * Provides further details on the document adjustment.
 	 * <p>
@@ -241,16 +253,16 @@ public class DocumentAdjustment1 {
 	 * definition} = "Provides further details on the document adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DocumentAdjustment1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Provides further details on the document adjustment.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
@@ -258,15 +270,50 @@ public class DocumentAdjustment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentAdjustment1.Amount, com.tools20022.repository.msg.DocumentAdjustment1.CreditDebitIndicator,
-						com.tools20022.repository.msg.DocumentAdjustment1.Reason, com.tools20022.repository.msg.DocumentAdjustment1.AdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(DocumentAdjustment1.mmAmount, DocumentAdjustment1.mmCreditDebitIndicator, DocumentAdjustment1.mmReason, DocumentAdjustment1.mmAdditionalInformation);
 				trace_lazy = () -> Adjustment.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentAdjustment1";
 				definition = "Set of elements used to provide information on the amount and reason of the document adjustment.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Amt", required = true)
+	public ActiveOrHistoricCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	@XmlElement(name = "CdtDbtInd")
+	public CreditDebitCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
+	}
+
+	@XmlElement(name = "Rsn")
+	public Max4Text getReason() {
+		return reason;
+	}
+
+	public void setReason(Max4Text reason) {
+		this.reason = reason;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max140Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max140Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

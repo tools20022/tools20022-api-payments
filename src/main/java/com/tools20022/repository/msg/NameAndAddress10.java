@@ -19,11 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.entity.PostalAddress;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Information that locates and identifies a party.
@@ -34,10 +41,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10#Name
- * NameAndAddress10.Name}</li>
- * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10#Address
- * NameAndAddress10.Address}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10#mmName
+ * NameAndAddress10.mmName}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress10#mmAddress
+ * NameAndAddress10.mmAddress}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Information that locates and identifies a party."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "NameAndAddress10", propOrder = {"name", "address"})
 public class NameAndAddress10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max140Text name;
 	/**
 	 * Name by which a party is known and is usually used to identify that
 	 * identity.
@@ -75,8 +85,8 @@ public class NameAndAddress10 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PartyName#Name
-	 * PartyName.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyName#mmName
+	 * PartyName.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -97,20 +107,21 @@ public class NameAndAddress10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> NameAndAddress10.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PartyName.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name by which a party is known and is usually used to identify that identity.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected PostalAddress6 address;
 	/**
 	 * Postal address of a party.
 	 * <p>
@@ -143,32 +154,50 @@ public class NameAndAddress10 {
 	 * definition} = "Postal address of a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Address = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAddress = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> NameAndAddress10.mmObject();
 			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
+			componentContext_lazy = () -> NameAndAddress10.mmObject();
 			isDerived = false;
 			xmlTag = "Adr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Address";
 			definition = "Postal address of a party.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> PostalAddress6.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.PostalAddress6.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NameAndAddress10.Name, com.tools20022.repository.msg.NameAndAddress10.Address);
+				messageElement_lazy = () -> Arrays.asList(NameAndAddress10.mmName, NameAndAddress10.mmAddress);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NameAndAddress10";
 				definition = "Information that locates and identifies a party.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Nm", required = true)
+	public Max140Text getName() {
+		return name;
+	}
+
+	public void setName(Max140Text name) {
+		this.name = name;
+	}
+
+	@XmlElement(name = "Adr", required = true)
+	public PostalAddress6 getAddress() {
+		return address;
+	}
+
+	public void setAddress(com.tools20022.repository.msg.PostalAddress6 address) {
+		this.address = address;
 	}
 }

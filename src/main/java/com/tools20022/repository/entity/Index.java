@@ -17,17 +17,20 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.FrequencyCode;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.FloatingInterestRate4;
+import com.tools20022.repository.msg.InterestRateContractTerm1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Identifies the index.
@@ -41,61 +44,63 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexRateBasis
- * Index.IndexRateBasis}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexFactor
- * Index.IndexFactor}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexPoints
- * Index.IndexPoints}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexFixingDate
- * Index.IndexFixingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#Identification
- * Index.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#ReferenceSource
- * Index.ReferenceSource}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexRateCurrency
- * Index.IndexRateCurrency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexRateFrequency
- * Index.IndexRateFrequency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#IndexRateMultiplier
- * Index.IndexRateMultiplier}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#Spread Index.Spread}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#PortfolioBenchmark
- * Index.PortfolioBenchmark}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#VariableInterest
- * Index.VariableInterest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#SecuritiesPricing
- * Index.SecuritiesPricing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexRateBasis
+ * Index.mmIndexRateBasis}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexFactor
+ * Index.mmIndexFactor}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexPoints
+ * Index.mmIndexPoints}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexFixingDate
+ * Index.mmIndexFixingDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIdentification
+ * Index.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmReferenceSource
+ * Index.mmReferenceSource}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexRateCurrency
+ * Index.mmIndexRateCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexRateFrequency
+ * Index.mmIndexRateFrequency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmIndexRateMultiplier
+ * Index.mmIndexRateMultiplier}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmSpread
+ * Index.mmSpread}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmPortfolioBenchmark
+ * Index.mmPortfolioBenchmark}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmVariableInterest
+ * Index.mmVariableInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmSecuritiesPricing
+ * Index.mmSecuritiesPricing}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesPricing#Index
- * SecuritiesPricing.Index}</li>
- * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#Index
- * VariableInterest.Index}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RateAndAmount#Index
- * RateAndAmount.Index}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Spread#Index Spread.Index}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PortfolioBenchmark#Index
- * PortfolioBenchmark.Index}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmIndex
+ * SecuritiesPricing.mmIndex}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#mmIndex
+ * VariableInterest.mmIndex}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RateAndAmount#mmIndex
+ * RateAndAmount.mmIndex}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Spread#mmIndex
+ * Spread.mmIndex}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PortfolioBenchmark#mmIndex
+ * PortfolioBenchmark.mmIndex}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.FloatingInterestRate4#Term
- * FloatingInterestRate4.Term}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.FloatingInterestRate4#mmTerm
+ * FloatingInterestRate4.mmTerm}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -109,6 +114,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Index {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate indexRateBasis;
 	/**
 	 * Specifies the reference rate.
 	 * <p>
@@ -134,18 +140,27 @@ public class Index {
 	 * definition} = "Specifies the reference rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndexRateBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndexRateBasis = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateBasis";
 			definition = "Specifies the reference rate.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIndexRateBasis", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RateAndAmount indexFactor;
 	/**
 	 * Index rate applied to the amount paid to adjust it for instance to
 	 * inflation.
@@ -155,8 +170,8 @@ public class Index {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#Index
-	 * RateAndAmount.Index}</li>
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmIndex
+	 * RateAndAmount.mmIndex}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -181,20 +196,21 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IndexFactor = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIndexFactor = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexFactor";
 			definition = "Index rate applied to the amount paid to adjust it for instance to inflation.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RateAndAmount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.Index;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmIndex;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 		}
 	};
+	protected DecimalNumber indexPoints;
 	/**
 	 * Number of points above the index used to calculate a price.
 	 * <p>
@@ -221,18 +237,27 @@ public class Index {
 	 * "Number of points above the index used to calculate a price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndexPoints = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndexPoints = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexPoints";
 			definition = "Number of points above the index used to calculate a price.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIndexPoints", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime indexFixingDate;
 	/**
 	 * Date/time at which an index rate will be determined .
 	 * <p>
@@ -257,18 +282,27 @@ public class Index {
 	 * definition} = "Date/time at which an index rate will be determined ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndexFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndexFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexFixingDate";
 			definition = "Date/time at which an index rate will be determined .";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIndexFixingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text identification;
 	/**
 	 * Identifies the index by a name for instance LIBOR.
 	 * <p>
@@ -282,8 +316,8 @@ public class Index {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.FloatingInterestRate4#ReferenceRate
-	 * FloatingInterestRate4.ReferenceRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.FloatingInterestRate4#mmReferenceRate
+	 * FloatingInterestRate4.mmReferenceRate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -301,19 +335,28 @@ public class Index {
 	 * definition} = "Identifies the index by a name for instance LIBOR."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Identification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FloatingInterestRate4.ReferenceRate);
-			elementContext_lazy = () -> Index.mmObject();
+			derivation_lazy = () -> Arrays.asList(FloatingInterestRate4.mmReferenceRate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identifies the index by a name for instance LIBOR.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text referenceSource;
 	/**
 	 * Identifies the reference source. The source can be the fixing agent or a
 	 * system.
@@ -341,18 +384,27 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReferenceSource = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReferenceSource = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReferenceSource";
 			definition = "Identifies the reference source. The source can be the fixing agent or a system.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getReferenceSource", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode indexRateCurrency;
 	/**
 	 * Specifies the currency of the reference rate for fixed income instruments
 	 * where the price of the instrument is indexed to the price of an
@@ -381,18 +433,27 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndexRateCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndexRateCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateCurrency";
 			definition = "Specifies the currency of the reference rate for fixed income instruments where the price of the instrument is indexed to the price of an underlying benchmark.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIndexRateCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FrequencyCode indexRateFrequency;
 	/**
 	 * Frequency at which the index changes.
 	 * <p>
@@ -418,18 +479,27 @@ public class Index {
 	 * definition} = "Frequency at which the index changes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndexRateFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndexRateFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateFrequency";
 			definition = "Frequency at which the index changes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIndexRateFrequency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DecimalNumber indexRateMultiplier;
 	/**
 	 * Multiplier for the variable rate.
 	 * <p>
@@ -444,8 +514,8 @@ public class Index {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InterestRateContractTerm1#Value
-	 * InterestRateContractTerm1.Value}</li>
+	 * {@linkplain com.tools20022.repository.msg.InterestRateContractTerm1#mmValue
+	 * InterestRateContractTerm1.mmValue}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -463,19 +533,28 @@ public class Index {
 	 * definition} = "Multiplier for the variable rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndexRateMultiplier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndexRateMultiplier = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.InterestRateContractTerm1.Value);
-			elementContext_lazy = () -> Index.mmObject();
+			derivation_lazy = () -> Arrays.asList(InterestRateContractTerm1.mmValue);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndexRateMultiplier";
 			definition = "Multiplier for the variable rate.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Index.class.getMethod("getIndexRateMultiplier", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Spread spread;
 	/**
 	 * Percentage to be added to or deducted from the index rate to calculate
 	 * the effective rate.
@@ -484,8 +563,8 @@ public class Index {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Spread#Index
-	 * Spread.Index}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Spread#mmIndex
+	 * Spread.mmIndex}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -509,20 +588,21 @@ public class Index {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Spread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "Percentage to be added to or deducted from the index rate to calculate the effective rate.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmIndex;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.Index;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark;
 	/**
 	 * Portfolio benchmark which uses an index for decomposition,
 	 * <p>
@@ -531,8 +611,8 @@ public class Index {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PortfolioBenchmark#Index
-	 * PortfolioBenchmark.Index}</li>
+	 * {@linkplain com.tools20022.repository.entity.PortfolioBenchmark#mmIndex
+	 * PortfolioBenchmark.mmIndex}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -556,19 +636,20 @@ public class Index {
 	 * "Portfolio benchmark which uses an index for decomposition,"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PortfolioBenchmark = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPortfolioBenchmark = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PortfolioBenchmark";
 			definition = "Portfolio benchmark which uses an index for decomposition,";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioBenchmark.mmIndex;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PortfolioBenchmark.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioBenchmark.Index;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected VariableInterest variableInterest;
 	/**
 	 * Variable interest which uises the index.
 	 * <p>
@@ -577,8 +658,8 @@ public class Index {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.VariableInterest#Index
-	 * VariableInterest.Index}</li>
+	 * {@linkplain com.tools20022.repository.entity.VariableInterest#mmIndex
+	 * VariableInterest.mmIndex}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -601,20 +682,21 @@ public class Index {
 	 * definition} = "Variable interest which uises the index."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd VariableInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableInterest";
 			definition = "Variable interest which uises the index.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmIndex;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.Index;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesPricing securitiesPricing;
 	/**
 	 * Pricing which uses an index.
 	 * <p>
@@ -623,8 +705,8 @@ public class Index {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Index
-	 * SecuritiesPricing.Index}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmIndex
+	 * SecuritiesPricing.mmIndex}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -647,38 +729,147 @@ public class Index {
 	 * definition} = "Pricing which uses an index."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Index.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing which uses an index.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmIndex;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Index;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Index";
 				definition = "Identifies the index.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.Index, com.tools20022.repository.entity.VariableInterest.Index, com.tools20022.repository.entity.RateAndAmount.Index,
-						com.tools20022.repository.entity.Spread.Index, com.tools20022.repository.entity.PortfolioBenchmark.Index);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FloatingInterestRate4.Term);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Index.IndexRateBasis, com.tools20022.repository.entity.Index.IndexFactor, com.tools20022.repository.entity.Index.IndexPoints,
-						com.tools20022.repository.entity.Index.IndexFixingDate, com.tools20022.repository.entity.Index.Identification, com.tools20022.repository.entity.Index.ReferenceSource,
-						com.tools20022.repository.entity.Index.IndexRateCurrency, com.tools20022.repository.entity.Index.IndexRateFrequency, com.tools20022.repository.entity.Index.IndexRateMultiplier,
-						com.tools20022.repository.entity.Index.Spread, com.tools20022.repository.entity.Index.PortfolioBenchmark, com.tools20022.repository.entity.Index.VariableInterest,
-						com.tools20022.repository.entity.Index.SecuritiesPricing);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmIndex, com.tools20022.repository.entity.VariableInterest.mmIndex, com.tools20022.repository.entity.RateAndAmount.mmIndex,
+						com.tools20022.repository.entity.Spread.mmIndex, com.tools20022.repository.entity.PortfolioBenchmark.mmIndex);
+				derivationElement_lazy = () -> Arrays.asList(FloatingInterestRate4.mmTerm);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Index.mmIndexRateBasis, com.tools20022.repository.entity.Index.mmIndexFactor, com.tools20022.repository.entity.Index.mmIndexPoints,
+						com.tools20022.repository.entity.Index.mmIndexFixingDate, com.tools20022.repository.entity.Index.mmIdentification, com.tools20022.repository.entity.Index.mmReferenceSource,
+						com.tools20022.repository.entity.Index.mmIndexRateCurrency, com.tools20022.repository.entity.Index.mmIndexRateFrequency, com.tools20022.repository.entity.Index.mmIndexRateMultiplier,
+						com.tools20022.repository.entity.Index.mmSpread, com.tools20022.repository.entity.Index.mmPortfolioBenchmark, com.tools20022.repository.entity.Index.mmVariableInterest,
+						com.tools20022.repository.entity.Index.mmSecuritiesPricing);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Index.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PercentageRate getIndexRateBasis() {
+		return indexRateBasis;
+	}
+
+	public void setIndexRateBasis(PercentageRate indexRateBasis) {
+		this.indexRateBasis = indexRateBasis;
+	}
+
+	public RateAndAmount getIndexFactor() {
+		return indexFactor;
+	}
+
+	public void setIndexFactor(com.tools20022.repository.entity.RateAndAmount indexFactor) {
+		this.indexFactor = indexFactor;
+	}
+
+	public DecimalNumber getIndexPoints() {
+		return indexPoints;
+	}
+
+	public void setIndexPoints(DecimalNumber indexPoints) {
+		this.indexPoints = indexPoints;
+	}
+
+	public ISODateTime getIndexFixingDate() {
+		return indexFixingDate;
+	}
+
+	public void setIndexFixingDate(ISODateTime indexFixingDate) {
+		this.indexFixingDate = indexFixingDate;
+	}
+
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	public Max35Text getReferenceSource() {
+		return referenceSource;
+	}
+
+	public void setReferenceSource(Max35Text referenceSource) {
+		this.referenceSource = referenceSource;
+	}
+
+	public CurrencyCode getIndexRateCurrency() {
+		return indexRateCurrency;
+	}
+
+	public void setIndexRateCurrency(CurrencyCode indexRateCurrency) {
+		this.indexRateCurrency = indexRateCurrency;
+	}
+
+	public FrequencyCode getIndexRateFrequency() {
+		return indexRateFrequency;
+	}
+
+	public void setIndexRateFrequency(FrequencyCode indexRateFrequency) {
+		this.indexRateFrequency = indexRateFrequency;
+	}
+
+	public DecimalNumber getIndexRateMultiplier() {
+		return indexRateMultiplier;
+	}
+
+	public void setIndexRateMultiplier(DecimalNumber indexRateMultiplier) {
+		this.indexRateMultiplier = indexRateMultiplier;
+	}
+
+	public Spread getSpread() {
+		return spread;
+	}
+
+	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+		this.spread = spread;
+	}
+
+	public List<PortfolioBenchmark> getPortfolioBenchmark() {
+		return portfolioBenchmark;
+	}
+
+	public void setPortfolioBenchmark(List<com.tools20022.repository.entity.PortfolioBenchmark> portfolioBenchmark) {
+		this.portfolioBenchmark = portfolioBenchmark;
+	}
+
+	public VariableInterest getVariableInterest() {
+		return variableInterest;
+	}
+
+	public void setVariableInterest(com.tools20022.repository.entity.VariableInterest variableInterest) {
+		this.variableInterest = variableInterest;
+	}
+
+	public SecuritiesPricing getSecuritiesPricing() {
+		return securitiesPricing;
+	}
+
+	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = securitiesPricing;
 	}
 }

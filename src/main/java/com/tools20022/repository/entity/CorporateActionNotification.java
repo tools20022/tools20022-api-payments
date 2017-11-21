@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CorporateActionNotificationTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,17 +41,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#RelatedServicing
- * CorporateActionNotification.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#mmRelatedServicing
+ * CorporateActionNotification.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#CorporateActionNotificationIdentification
- * CorporateActionNotification.CorporateActionNotificationIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#mmCorporateActionNotificationIdentification
+ * CorporateActionNotification.mmCorporateActionNotificationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#NotificationType
- * CorporateActionNotification.NotificationType}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#mmNotificationType
+ * CorporateActionNotification.mmNotificationType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#CreationDateTime
- * CorporateActionNotification.CreationDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionNotification#mmCreationDateTime
+ * CorporateActionNotification.mmCreationDateTime}</li>
  * </ul>
  * </li>
  * <li>
@@ -59,15 +59,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionEventNotification
- * CorporateActionServicing.CorporateActionEventNotification}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionEventNotification
+ * CorporateActionServicing.mmCorporateActionEventNotification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,6 +83,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionNotification {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionServicing relatedServicing;
 	/**
 	 * Process which groups the activities related to corporate action
 	 * servicing.
@@ -92,8 +93,8 @@ public class CorporateActionNotification {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionEventNotification
-	 * CorporateActionServicing.CorporateActionEventNotification}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionEventNotification
+	 * CorporateActionServicing.mmCorporateActionEventNotification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -120,20 +121,21 @@ public class CorporateActionNotification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionNotification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Process which groups the activities related to corporate action servicing.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionServicing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.CorporateActionEventNotification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionEventNotification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 		}
 	};
+	protected Max35Text corporateActionNotificationIdentification;
 	/**
 	 * Identifies the corporate action notification.
 	 * <p>
@@ -159,18 +161,27 @@ public class CorporateActionNotification {
 	 * definition} = "Identifies the corporate action notification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CorporateActionNotificationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCorporateActionNotificationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionNotification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionNotificationIdentification";
 			definition = "Identifies the corporate action notification.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionNotification.class.getMethod("getCorporateActionNotificationIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionNotificationTypeCode notificationType;
 	/**
 	 * Specifies the type of notification.
 	 * <p>
@@ -197,18 +208,27 @@ public class CorporateActionNotification {
 	 * definition} = "Specifies the type of notification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NotificationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNotificationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionNotification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotificationType";
 			definition = "Specifies the type of notification.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionNotificationTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionNotification.class.getMethod("getNotificationType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime creationDateTime;
 	/**
 	 * Specifies the date and time when the notification was issued.
 	 * <p>
@@ -235,31 +255,76 @@ public class CorporateActionNotification {
 	 * "Specifies the date and time when the notification was issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CreationDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCreationDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionNotification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionNotification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreationDateTime";
 			definition = "Specifies the date and time when the notification was issued.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionNotification.class.getMethod("getCreationDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionNotification";
 				definition = "The process of notifying of an upcoming corporate action. It provides corporate action details including the different options.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionServicing.CorporateActionEventNotification);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionNotification.RelatedServicing, com.tools20022.repository.entity.CorporateActionNotification.CorporateActionNotificationIdentification,
-						com.tools20022.repository.entity.CorporateActionNotification.NotificationType, com.tools20022.repository.entity.CorporateActionNotification.CreationDateTime);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionEventNotification);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionNotification.mmRelatedServicing, com.tools20022.repository.entity.CorporateActionNotification.mmCorporateActionNotificationIdentification,
+						com.tools20022.repository.entity.CorporateActionNotification.mmNotificationType, com.tools20022.repository.entity.CorporateActionNotification.mmCreationDateTime);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionNotification.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionServicing getRelatedServicing() {
+		return relatedServicing;
+	}
+
+	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+		this.relatedServicing = relatedServicing;
+	}
+
+	public Max35Text getCorporateActionNotificationIdentification() {
+		return corporateActionNotificationIdentification;
+	}
+
+	public void setCorporateActionNotificationIdentification(Max35Text corporateActionNotificationIdentification) {
+		this.corporateActionNotificationIdentification = corporateActionNotificationIdentification;
+	}
+
+	public CorporateActionNotificationTypeCode getNotificationType() {
+		return notificationType;
+	}
+
+	public void setNotificationType(CorporateActionNotificationTypeCode notificationType) {
+		this.notificationType = notificationType;
+	}
+
+	public ISODateTime getCreationDateTime() {
+		return creationDateTime;
+	}
+
+	public void setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = creationDateTime;
 	}
 }

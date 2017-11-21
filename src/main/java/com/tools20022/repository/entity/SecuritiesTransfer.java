@@ -17,9 +17,7 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PartialSettlementCode;
 import com.tools20022.repository.codeset.TransferReasonCode;
 import com.tools20022.repository.codeset.TransferTypeCode;
@@ -27,8 +25,11 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Completion of a securities settlement instruction, wherein securities are
@@ -45,83 +46,90 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Identification
- * SecuritiesTransfer.Identification}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmIdentification
+ * SecuritiesTransfer.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#TransferredQuantity
- * SecuritiesTransfer.TransferredQuantity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Account
- * SecuritiesTransfer.Account}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmTransferredQuantity
+ * SecuritiesTransfer.mmTransferredQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#TransferType
- * SecuritiesTransfer.TransferType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmAccount
+ * SecuritiesTransfer.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#RelatedSettlement
- * SecuritiesTransfer.RelatedSettlement}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmTransferType
+ * SecuritiesTransfer.mmTransferType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#OwnAccountTransferIndicator
- * SecuritiesTransfer.OwnAccountTransferIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmRelatedSettlement
+ * SecuritiesTransfer.mmRelatedSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#PhysicalDelivery
- * SecuritiesTransfer.PhysicalDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmOwnAccountTransferIndicator
+ * SecuritiesTransfer.mmOwnAccountTransferIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#LateDeliveryDate
- * SecuritiesTransfer.LateDeliveryDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmPhysicalDelivery
+ * SecuritiesTransfer.mmPhysicalDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#TransferTax
- * SecuritiesTransfer.TransferTax}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmLateDeliveryDate
+ * SecuritiesTransfer.mmLateDeliveryDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#TransferReason
- * SecuritiesTransfer.TransferReason}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmTransferTax
+ * SecuritiesTransfer.mmTransferTax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#PartialSettlementType
- * SecuritiesTransfer.PartialSettlementType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmTransferReason
+ * SecuritiesTransfer.mmTransferReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#SecuritiesDeliveryObligation
- * SecuritiesTransfer.SecuritiesDeliveryObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmPartialSettlementType
+ * SecuritiesTransfer.mmPartialSettlementType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#BookEntry
- * SecuritiesTransfer.BookEntry}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmSecuritiesDeliveryObligation
+ * SecuritiesTransfer.mmSecuritiesDeliveryObligation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#TransactionIdentification
- * SecuritiesTransfer.TransactionIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Security
- * SecuritiesTransfer.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Status
- * SecuritiesTransfer.Status}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmBookEntry
+ * SecuritiesTransfer.mmBookEntry}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmTransactionIdentification
+ * SecuritiesTransfer.mmTransactionIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmSecurity
+ * SecuritiesTransfer.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmStatus
+ * SecuritiesTransfer.mmStatus}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesTransfer
- * Security.SecuritiesTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#RelatedTransfer
- * SecuritiesAccount.RelatedTransfer}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Tax#SecuritiesTransfer
- * Tax.SecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesTransfer
+ * Security.mmSecuritiesTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#SecuritiesTransfer
- * SecuritiesQuantity.SecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmRelatedTransfer
+ * SecuritiesAccount.mmRelatedTransfer}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Tax#mmSecuritiesTransfer
+ * Tax.mmSecuritiesTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#TransferOperation
- * SecuritiesSettlement.TransferOperation}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmSecuritiesTransfer
+ * SecuritiesQuantity.mmSecuritiesTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#TriggeringSecuritiesTransfer
- * SecuritiesEntry.TriggeringSecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmTransferOperation
+ * SecuritiesSettlement.mmTransferOperation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#RelatedTransfer
- * PhysicalDelivery.RelatedTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmTriggeringSecuritiesTransfer
+ * SecuritiesEntry.mmTriggeringSecuritiesTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#RelatedSecuritiesTransfer
- * SecuritiesTradeStatus.RelatedSecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmRelatedTransfer
+ * PhysicalDelivery.mmRelatedTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#SecuritiesTransfer
- * SecuritiesDeliveryObligation.SecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmRelatedSecuritiesTransfer
+ * SecuritiesTradeStatus.mmRelatedSecuritiesTransfer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmSecuritiesTransfer
+ * SecuritiesDeliveryObligation.mmSecuritiesTransfer}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -129,15 +137,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * IntraPositionTransfer}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -153,6 +157,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesTransfer extends ObligationFulfilment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text identification;
 	/**
 	 * Unique and unambiguous identification of a transfer, as assigned by the
 	 * instructing party.
@@ -181,18 +186,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Identification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification of a transfer, as assigned by the instructing party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity transferredQuantity;
 	/**
 	 * Total quantity of securities settled.
 	 * <p>
@@ -201,8 +215,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#SecuritiesTransfer
-	 * SecuritiesQuantity.SecuritiesTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmSecuritiesTransfer
+	 * SecuritiesQuantity.mmSecuritiesTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -226,20 +240,21 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Total quantity of securities settled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TransferredQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransferredQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredQuantity";
 			definition = "Total quantity of securities settled.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.SecuritiesTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesAccount> account;
 	/**
 	 * Specifies the account from/to which the securities are transferred.
 	 * <p>
@@ -248,8 +263,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#RelatedTransfer
-	 * SecuritiesAccount.RelatedTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmRelatedTransfer
+	 * SecuritiesAccount.mmRelatedTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -274,19 +289,20 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Specifies the account from/to which the securities are transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Specifies the account from/to which the securities are transferred.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.RelatedTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmRelatedTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 		}
 	};
+	protected TransferTypeCode transferType;
 	/**
 	 * Specifies whether the financial instrument is transferred as an asset or
 	 * as cash.
@@ -316,18 +332,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferType";
 			definition = "Specifies whether the financial instrument is transferred as an asset or as cash.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TransferTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getTransferType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesSettlement relatedSettlement;
 	/**
 	 * Settlement process which is the source of the transfer operation.
 	 * <p>
@@ -336,8 +361,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#TransferOperation
-	 * SecuritiesSettlement.TransferOperation}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmTransferOperation
+	 * SecuritiesSettlement.mmTransferOperation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -363,20 +388,21 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Settlement process which is the source of the transfer operation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSettlement";
 			definition = "Settlement process which is the source of the transfer operation.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.TransferOperation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmTransferOperation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 		}
 	};
+	protected YesNoIndicator ownAccountTransferIndicator;
 	/**
 	 * Indicates whether the transfer results in a change of beneficial owner.
 	 * <p>
@@ -405,18 +431,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OwnAccountTransferIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOwnAccountTransferIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OwnAccountTransferIndicator";
 			definition = "Indicates whether the transfer results in a change of beneficial owner.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getOwnAccountTransferIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PhysicalDelivery physicalDelivery;
 	/**
 	 * Information related to physical delivery of the securities.
 	 * <p>
@@ -425,8 +460,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#RelatedTransfer
-	 * PhysicalDelivery.RelatedTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmRelatedTransfer
+	 * PhysicalDelivery.mmRelatedTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -451,20 +486,21 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Information related to physical delivery of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PhysicalDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPhysicalDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalDelivery";
 			definition = "Information related to physical delivery of the securities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmRelatedTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.RelatedTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime lateDeliveryDate;
 	/**
 	 * Date and time after the settlement date specified in the trade, used for
 	 * pool trades resulting from the original To Be Assigned (TBA) securities.
@@ -493,18 +529,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LateDeliveryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLateDeliveryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LateDeliveryDate";
 			definition = "Date and time after the settlement date specified in the trade, used for pool trades resulting from the original To Be Assigned (TBA) securities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getLateDeliveryDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Tax transferTax;
 	/**
 	 * Tax related to the transfer of a financial instrument.
 	 * <p>
@@ -513,8 +558,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#SecuritiesTransfer
-	 * Tax.SecuritiesTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmSecuritiesTransfer
+	 * Tax.mmSecuritiesTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -537,20 +582,21 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Tax related to the transfer of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TransferTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransferTax = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferTax";
 			definition = "Tax related to the transfer of a financial instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Tax.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.SecuritiesTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmSecuritiesTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
 		}
 	};
+	protected TransferReasonCode transferReason;
 	/**
 	 * Identifies the transfer reason.
 	 * <p>
@@ -577,18 +623,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Identifies the transfer reason."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferReason";
 			definition = "Identifies the transfer reason.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TransferReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getTransferReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PartialSettlementCode partialSettlementType;
 	/**
 	 * Information about partial settlement.
 	 * <p>
@@ -615,18 +670,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Information about partial settlement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartialSettlementType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartialSettlementType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialSettlementType";
 			definition = "Information about partial settlement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PartialSettlementCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getPartialSettlementType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation;
 	/**
 	 * Obligation for one party to deliver securities to another party.
 	 * <p>
@@ -635,8 +699,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#SecuritiesTransfer
-	 * SecuritiesDeliveryObligation.SecuritiesTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmSecuritiesTransfer
+	 * SecuritiesDeliveryObligation.mmSecuritiesTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -662,19 +726,20 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * "Obligation for one party to deliver securities to another party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Obligation for one party to deliver securities to another party.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.SecuritiesTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry;
 	/**
 	 * Record in a securities account resulting from the transfer of a security.
 	 * <p>
@@ -683,8 +748,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#TriggeringSecuritiesTransfer
-	 * SecuritiesEntry.TriggeringSecuritiesTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesEntry#mmTriggeringSecuritiesTransfer
+	 * SecuritiesEntry.mmTriggeringSecuritiesTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -710,19 +775,20 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BookEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBookEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookEntry";
 			definition = "Record in a securities account resulting from the transfer of a security.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesEntry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.TriggeringSecuritiesTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmTriggeringSecuritiesTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesEntry.mmObject();
 		}
 	};
+	protected Max35Text transactionIdentification;
 	/**
 	 * Unambiguous identification of a securities transfer.
 	 * <p>
@@ -748,18 +814,27 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Unambiguous identification of a securities transfer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransactionIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionIdentification";
 			definition = "Unambiguous identification of a securities transfer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTransfer.class.getMethod("getTransactionIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Security> security;
 	/**
 	 * Security which is transferred.
 	 * <p>
@@ -768,8 +843,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#SecuritiesTransfer
-	 * Security.SecuritiesTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesTransfer
+	 * Security.mmSecuritiesTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -792,19 +867,20 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Security which is transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security which is transferred.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSecuritiesTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.SecuritiesTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesTradeStatus status;
 	/**
 	 * Status of a securities transfer.
 	 * <p>
@@ -813,8 +889,8 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#RelatedSecuritiesTransfer
-	 * SecuritiesTradeStatus.RelatedSecuritiesTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmRelatedSecuritiesTransfer
+	 * SecuritiesTradeStatus.mmRelatedSecuritiesTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -839,43 +915,176 @@ public class SecuritiesTransfer extends ObligationFulfilment {
 	 * definition} = "Status of a securities transfer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Status = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of a securities transfer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesTradeStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.RelatedSecuritiesTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmRelatedSecuritiesTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTransfer";
 				definition = "Completion of a securities settlement instruction, wherein securities are delivered/debited from a securities account and received/credited to the designated securities account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.SecuritiesTransfer, com.tools20022.repository.entity.SecuritiesAccount.RelatedTransfer,
-						com.tools20022.repository.entity.Tax.SecuritiesTransfer, com.tools20022.repository.entity.SecuritiesQuantity.SecuritiesTransfer, com.tools20022.repository.entity.SecuritiesSettlement.TransferOperation,
-						com.tools20022.repository.entity.SecuritiesEntry.TriggeringSecuritiesTransfer, com.tools20022.repository.entity.PhysicalDelivery.RelatedTransfer,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.RelatedSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesDeliveryObligation.SecuritiesTransfer);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesAccount.mmRelatedTransfer,
+						com.tools20022.repository.entity.Tax.mmSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesSettlement.mmTransferOperation,
+						com.tools20022.repository.entity.SecuritiesEntry.mmTriggeringSecuritiesTransfer, com.tools20022.repository.entity.PhysicalDelivery.mmRelatedTransfer,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmRelatedSecuritiesTransfer, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmSecuritiesTransfer);
 				subType_lazy = () -> Arrays.asList(IntraPositionTransfer.mmObject());
 				superType_lazy = () -> ObligationFulfilment.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTransfer.Identification, com.tools20022.repository.entity.SecuritiesTransfer.TransferredQuantity,
-						com.tools20022.repository.entity.SecuritiesTransfer.Account, com.tools20022.repository.entity.SecuritiesTransfer.TransferType, com.tools20022.repository.entity.SecuritiesTransfer.RelatedSettlement,
-						com.tools20022.repository.entity.SecuritiesTransfer.OwnAccountTransferIndicator, com.tools20022.repository.entity.SecuritiesTransfer.PhysicalDelivery,
-						com.tools20022.repository.entity.SecuritiesTransfer.LateDeliveryDate, com.tools20022.repository.entity.SecuritiesTransfer.TransferTax, com.tools20022.repository.entity.SecuritiesTransfer.TransferReason,
-						com.tools20022.repository.entity.SecuritiesTransfer.PartialSettlementType, com.tools20022.repository.entity.SecuritiesTransfer.SecuritiesDeliveryObligation,
-						com.tools20022.repository.entity.SecuritiesTransfer.BookEntry, com.tools20022.repository.entity.SecuritiesTransfer.TransactionIdentification, com.tools20022.repository.entity.SecuritiesTransfer.Security,
-						com.tools20022.repository.entity.SecuritiesTransfer.Status);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTransfer.mmIdentification, com.tools20022.repository.entity.SecuritiesTransfer.mmTransferredQuantity,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmAccount, com.tools20022.repository.entity.SecuritiesTransfer.mmTransferType, com.tools20022.repository.entity.SecuritiesTransfer.mmRelatedSettlement,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmOwnAccountTransferIndicator, com.tools20022.repository.entity.SecuritiesTransfer.mmPhysicalDelivery,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmLateDeliveryDate, com.tools20022.repository.entity.SecuritiesTransfer.mmTransferTax, com.tools20022.repository.entity.SecuritiesTransfer.mmTransferReason,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmPartialSettlementType, com.tools20022.repository.entity.SecuritiesTransfer.mmSecuritiesDeliveryObligation,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmBookEntry, com.tools20022.repository.entity.SecuritiesTransfer.mmTransactionIdentification, com.tools20022.repository.entity.SecuritiesTransfer.mmSecurity,
+						com.tools20022.repository.entity.SecuritiesTransfer.mmStatus);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesTransfer.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	public SecuritiesQuantity getTransferredQuantity() {
+		return transferredQuantity;
+	}
+
+	public void setTransferredQuantity(com.tools20022.repository.entity.SecuritiesQuantity transferredQuantity) {
+		this.transferredQuantity = transferredQuantity;
+	}
+
+	public List<SecuritiesAccount> getAccount() {
+		return account;
+	}
+
+	public void setAccount(List<com.tools20022.repository.entity.SecuritiesAccount> account) {
+		this.account = account;
+	}
+
+	public TransferTypeCode getTransferType() {
+		return transferType;
+	}
+
+	public void setTransferType(TransferTypeCode transferType) {
+		this.transferType = transferType;
+	}
+
+	public SecuritiesSettlement getRelatedSettlement() {
+		return relatedSettlement;
+	}
+
+	public void setRelatedSettlement(com.tools20022.repository.entity.SecuritiesSettlement relatedSettlement) {
+		this.relatedSettlement = relatedSettlement;
+	}
+
+	public YesNoIndicator getOwnAccountTransferIndicator() {
+		return ownAccountTransferIndicator;
+	}
+
+	public void setOwnAccountTransferIndicator(YesNoIndicator ownAccountTransferIndicator) {
+		this.ownAccountTransferIndicator = ownAccountTransferIndicator;
+	}
+
+	public PhysicalDelivery getPhysicalDelivery() {
+		return physicalDelivery;
+	}
+
+	public void setPhysicalDelivery(com.tools20022.repository.entity.PhysicalDelivery physicalDelivery) {
+		this.physicalDelivery = physicalDelivery;
+	}
+
+	public ISODateTime getLateDeliveryDate() {
+		return lateDeliveryDate;
+	}
+
+	public void setLateDeliveryDate(ISODateTime lateDeliveryDate) {
+		this.lateDeliveryDate = lateDeliveryDate;
+	}
+
+	public Tax getTransferTax() {
+		return transferTax;
+	}
+
+	public void setTransferTax(com.tools20022.repository.entity.Tax transferTax) {
+		this.transferTax = transferTax;
+	}
+
+	public TransferReasonCode getTransferReason() {
+		return transferReason;
+	}
+
+	public void setTransferReason(TransferReasonCode transferReason) {
+		this.transferReason = transferReason;
+	}
+
+	public PartialSettlementCode getPartialSettlementType() {
+		return partialSettlementType;
+	}
+
+	public void setPartialSettlementType(PartialSettlementCode partialSettlementType) {
+		this.partialSettlementType = partialSettlementType;
+	}
+
+	public List<SecuritiesDeliveryObligation> getSecuritiesDeliveryObligation() {
+		return securitiesDeliveryObligation;
+	}
+
+	public void setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
+	}
+
+	public List<SecuritiesEntry> getBookEntry() {
+		return bookEntry;
+	}
+
+	public void setBookEntry(List<com.tools20022.repository.entity.SecuritiesEntry> bookEntry) {
+		this.bookEntry = bookEntry;
+	}
+
+	public Max35Text getTransactionIdentification() {
+		return transactionIdentification;
+	}
+
+	public void setTransactionIdentification(Max35Text transactionIdentification) {
+		this.transactionIdentification = transactionIdentification;
+	}
+
+	public List<Security> getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = security;
+	}
+
+	public SecuritiesTradeStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(com.tools20022.repository.entity.SecuritiesTradeStatus status) {
+		this.status = status;
 	}
 }

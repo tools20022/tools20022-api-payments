@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PhysicalTransferTypeCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,18 +38,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#RelatedTransfer
- * PhysicalDelivery.RelatedTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmRelatedTransfer
+ * PhysicalDelivery.mmRelatedTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#RegisteredAddressIndicator
- * PhysicalDelivery.RegisteredAddressIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmRegisteredAddressIndicator
+ * PhysicalDelivery.mmRegisteredAddressIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#IssuedCertificateNumber
- * PhysicalDelivery.IssuedCertificateNumber}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PhysicalDelivery#Address
- * PhysicalDelivery.Address}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PhysicalDelivery#Type
- * PhysicalDelivery.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmIssuedCertificateNumber
+ * PhysicalDelivery.mmIssuedCertificateNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmAddress
+ * PhysicalDelivery.mmAddress}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PhysicalDelivery#mmType
+ * PhysicalDelivery.mmType}</li>
  * </ul>
  * </li>
  * <li>
@@ -57,21 +57,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PostalAddress#PhysicalDelivery
- * PostalAddress.PhysicalDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.PostalAddress#mmPhysicalDelivery
+ * PostalAddress.mmPhysicalDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#PhysicalDelivery
- * SecuritiesTransfer.PhysicalDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmPhysicalDelivery
+ * SecuritiesTransfer.mmPhysicalDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#RelatedDelivery
- * SecuritiesCertificate.RelatedDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#mmRelatedDelivery
+ * SecuritiesCertificate.mmRelatedDelivery}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,6 +85,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PhysicalDelivery {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesTransfer relatedTransfer;
 	/**
 	 * Transfer process which requires physical delivery of the securities.
 	 * <p>
@@ -93,8 +94,8 @@ public class PhysicalDelivery {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#PhysicalDelivery
-	 * SecuritiesTransfer.PhysicalDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmPhysicalDelivery
+	 * SecuritiesTransfer.mmPhysicalDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -119,20 +120,21 @@ public class PhysicalDelivery {
 	 * "Transfer process which requires physical delivery of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PhysicalDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransfer";
 			definition = "Transfer process which requires physical delivery of the securities.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesTransfer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.PhysicalDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmPhysicalDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 		}
 	};
+	protected YesNoIndicator registeredAddressIndicator;
 	/**
 	 * Indicates whether the address for the physical delivery is the registered
 	 * address.
@@ -162,18 +164,27 @@ public class PhysicalDelivery {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegisteredAddressIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegisteredAddressIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PhysicalDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredAddressIndicator";
 			definition = "Indicates whether the address for the physical delivery is the registered address.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PhysicalDelivery.class.getMethod("getRegisteredAddressIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesCertificate issuedCertificateNumber;
 	/**
 	 * Certificate representing a security that is delivered.
 	 * <p>
@@ -182,8 +193,8 @@ public class PhysicalDelivery {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#RelatedDelivery
-	 * SecuritiesCertificate.RelatedDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#mmRelatedDelivery
+	 * SecuritiesCertificate.mmRelatedDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -208,20 +219,21 @@ public class PhysicalDelivery {
 	 * definition} = "Certificate representing a security that is delivered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IssuedCertificateNumber = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuedCertificateNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PhysicalDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedCertificateNumber";
 			definition = "Certificate representing a security that is delivered.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.RelatedDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmRelatedDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
 		}
 	};
+	protected PostalAddress address;
 	/**
 	 * Address for physical delivery.
 	 * <p>
@@ -230,8 +242,8 @@ public class PhysicalDelivery {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PostalAddress#PhysicalDelivery
-	 * PostalAddress.PhysicalDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.PostalAddress#mmPhysicalDelivery
+	 * PostalAddress.mmPhysicalDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -255,20 +267,21 @@ public class PhysicalDelivery {
 	 * definition} = "Address for physical delivery."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Address = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PhysicalDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Address";
 			definition = "Address for physical delivery.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PostalAddress.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.PhysicalDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmPhysicalDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 		}
 	};
+	protected PhysicalTransferTypeCode type;
 	/**
 	 * Specifies the type of delivery.
 	 * <p>
@@ -295,32 +308,85 @@ public class PhysicalDelivery {
 	 * definition} = "Specifies the type of delivery."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PhysicalDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PhysicalDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of delivery.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PhysicalTransferTypeCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return PhysicalDelivery.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PhysicalDelivery";
 				definition = "Parameters of a physical delivery.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PostalAddress.PhysicalDelivery, com.tools20022.repository.entity.SecuritiesTransfer.PhysicalDelivery,
-						com.tools20022.repository.entity.SecuritiesCertificate.RelatedDelivery);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PhysicalDelivery.RelatedTransfer, com.tools20022.repository.entity.PhysicalDelivery.RegisteredAddressIndicator,
-						com.tools20022.repository.entity.PhysicalDelivery.IssuedCertificateNumber, com.tools20022.repository.entity.PhysicalDelivery.Address, com.tools20022.repository.entity.PhysicalDelivery.Type);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PostalAddress.mmPhysicalDelivery, com.tools20022.repository.entity.SecuritiesTransfer.mmPhysicalDelivery,
+						com.tools20022.repository.entity.SecuritiesCertificate.mmRelatedDelivery);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PhysicalDelivery.mmRelatedTransfer, com.tools20022.repository.entity.PhysicalDelivery.mmRegisteredAddressIndicator,
+						com.tools20022.repository.entity.PhysicalDelivery.mmIssuedCertificateNumber, com.tools20022.repository.entity.PhysicalDelivery.mmAddress, com.tools20022.repository.entity.PhysicalDelivery.mmType);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PhysicalDelivery.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesTransfer getRelatedTransfer() {
+		return relatedTransfer;
+	}
+
+	public void setRelatedTransfer(com.tools20022.repository.entity.SecuritiesTransfer relatedTransfer) {
+		this.relatedTransfer = relatedTransfer;
+	}
+
+	public YesNoIndicator getRegisteredAddressIndicator() {
+		return registeredAddressIndicator;
+	}
+
+	public void setRegisteredAddressIndicator(YesNoIndicator registeredAddressIndicator) {
+		this.registeredAddressIndicator = registeredAddressIndicator;
+	}
+
+	public SecuritiesCertificate getIssuedCertificateNumber() {
+		return issuedCertificateNumber;
+	}
+
+	public void setIssuedCertificateNumber(com.tools20022.repository.entity.SecuritiesCertificate issuedCertificateNumber) {
+		this.issuedCertificateNumber = issuedCertificateNumber;
+	}
+
+	public PostalAddress getAddress() {
+		return address;
+	}
+
+	public void setAddress(com.tools20022.repository.entity.PostalAddress address) {
+		this.address = address;
+	}
+
+	public PhysicalTransferTypeCode getType() {
+		return type;
+	}
+
+	public void setType(PhysicalTransferTypeCode type) {
+		this.type = type;
 	}
 }

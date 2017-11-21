@@ -20,10 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.remt.RemittanceLocationAdviceV01;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.ContactPoint;
+import com.tools20022.repository.entity.Payment;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides information on the remittance advice.
@@ -35,13 +44,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceLocation3#RemittanceIdentification
- * RemittanceLocation3.RemittanceIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation3#mmRemittanceIdentification
+ * RemittanceLocation3.mmRemittanceIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceLocation3#RemittanceLocationDetails
- * RemittanceLocation3.RemittanceLocationDetails}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RemittanceLocation3#References
- * RemittanceLocation3.References}</li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation3#mmRemittanceLocationDetails
+ * RemittanceLocation3.mmRemittanceLocationDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation3#mmReferences
+ * RemittanceLocation3.mmReferences}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -52,15 +62,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.remt.RemittanceLocationAdviceV01#RemittanceLocation
- * RemittanceLocationAdviceV01.RemittanceLocation}</li>
+ * {@linkplain com.tools20022.repository.area.remt.RemittanceLocationAdviceV01#mmRemittanceLocation
+ * RemittanceLocationAdviceV01.mmRemittanceLocation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,9 +81,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides information on the remittance advice."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RemittanceLocation3", propOrder = {"remittanceIdentification", "remittanceLocationDetails", "references"})
 public class RemittanceLocation3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text remittanceIdentification;
 	/**
 	 * Unique identification, as assigned by the initiating party, to
 	 * unambiguously identify the remittance information sent separately from
@@ -105,19 +118,20 @@ public class RemittanceLocation3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RemittanceIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRemittanceIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> RemittanceLocation3.mmObject();
 			isDerived = false;
 			xmlTag = "RmtId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemittanceIdentification";
 			definition = "Unique identification, as assigned by the initiating party, to unambiguously identify the remittance information sent separately from the payment instruction, such as a remittance advice.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.RemittanceLocationDetails1> remittanceLocationDetails;
 	/**
 	 * Set of elements used to provide information on the location and/or
 	 * delivery of the remittance information.
@@ -152,20 +166,21 @@ public class RemittanceLocation3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd RemittanceLocationDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRemittanceLocationDetails = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> RemittanceLocation3.mmObject();
 			businessComponentTrace_lazy = () -> ContactPoint.mmObject();
+			componentContext_lazy = () -> RemittanceLocation3.mmObject();
 			isDerived = false;
 			xmlTag = "RmtLctnDtls";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemittanceLocationDetails";
 			definition = "Set of elements used to provide information on the location and/or delivery of the remittance information.";
 			minOccurs = 1;
-			type_lazy = () -> RemittanceLocationDetails1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
 		}
 	};
+	protected TransactionReferences4 references;
 	/**
 	 * Identifies the underlying transaction.
 	 * <p>
@@ -177,8 +192,8 @@ public class RemittanceLocation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Payment#PaymentRelatedIdentifications
-	 * Payment.PaymentRelatedIdentifications}</li>
+	 * {@linkplain com.tools20022.repository.entity.Payment#mmPaymentRelatedIdentifications
+	 * Payment.mmPaymentRelatedIdentifications}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -197,35 +212,61 @@ public class RemittanceLocation3 {
 	 * definition} = "Identifies the underlying transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd References = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmReferences = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Payment.mmPaymentRelatedIdentifications;
 			componentContext_lazy = () -> RemittanceLocation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Payment.PaymentRelatedIdentifications;
 			isDerived = false;
 			xmlTag = "Refs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "References";
 			definition = "Identifies the underlying transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> TransactionReferences4.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TransactionReferences4.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RemittanceLocation3.RemittanceIdentification, com.tools20022.repository.msg.RemittanceLocation3.RemittanceLocationDetails,
-						com.tools20022.repository.msg.RemittanceLocation3.References);
+				messageElement_lazy = () -> Arrays.asList(RemittanceLocation3.mmRemittanceIdentification, RemittanceLocation3.mmRemittanceLocationDetails, RemittanceLocation3.mmReferences);
+				messageBuildingBlock_lazy = () -> Arrays.asList(RemittanceLocationAdviceV01.mmRemittanceLocation);
 				trace_lazy = () -> ContactPoint.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.remt.RemittanceLocationAdviceV01.RemittanceLocation);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceLocation3";
 				definition = "Provides information on the remittance advice.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RmtId")
+	public Max35Text getRemittanceIdentification() {
+		return remittanceIdentification;
+	}
+
+	public void setRemittanceIdentification(Max35Text remittanceIdentification) {
+		this.remittanceIdentification = remittanceIdentification;
+	}
+
+	@XmlElement(name = "RmtLctnDtls", required = true)
+	public List<RemittanceLocationDetails1> getRemittanceLocationDetails() {
+		return remittanceLocationDetails;
+	}
+
+	public void setRemittanceLocationDetails(List<com.tools20022.repository.msg.RemittanceLocationDetails1> remittanceLocationDetails) {
+		this.remittanceLocationDetails = remittanceLocationDetails;
+	}
+
+	@XmlElement(name = "Refs", required = true)
+	public TransactionReferences4 getReferences() {
+		return references;
+	}
+
+	public void setReferences(com.tools20022.repository.msg.TransactionReferences4 references) {
+		this.references = references;
 	}
 }

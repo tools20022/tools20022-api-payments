@@ -17,9 +17,7 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SettlementStatusCode;
 import com.tools20022.repository.codeset.TradeStatusCode;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
@@ -27,6 +25,8 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,32 +44,32 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#TradeStatus
- * TreasuryTradeSettlementStatus.TradeStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmTradeStatus
+ * TreasuryTradeSettlementStatus.mmTradeStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#AllegedTrade
- * TreasuryTradeSettlementStatus.AllegedTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmAllegedTrade
+ * TreasuryTradeSettlementStatus.mmAllegedTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#TreasuryTrade
- * TreasuryTradeSettlementStatus.TreasuryTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmTreasuryTrade
+ * TreasuryTradeSettlementStatus.mmTreasuryTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#Settlement
- * TreasuryTradeSettlementStatus.Settlement}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmSettlement
+ * TreasuryTradeSettlementStatus.mmSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#RejectedAmount
- * TreasuryTradeSettlementStatus.RejectedAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmRejectedAmount
+ * TreasuryTradeSettlementStatus.mmRejectedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#SettlementSuspended
- * TreasuryTradeSettlementStatus.SettlementSuspended}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmSettlementSuspended
+ * TreasuryTradeSettlementStatus.mmSettlementSuspended}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#PendingSettlement
- * TreasuryTradeSettlementStatus.PendingSettlement}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmPendingSettlement
+ * TreasuryTradeSettlementStatus.mmPendingSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#SettlementDate
- * TreasuryTradeSettlementStatus.SettlementDate}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmSettlementDate
+ * TreasuryTradeSettlementStatus.mmSettlementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#WithdrawalReason
- * TreasuryTradeSettlementStatus.WithdrawalReason}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTradeSettlementStatus#mmWithdrawalReason
+ * TreasuryTradeSettlementStatus.mmWithdrawalReason}</li>
  * </ul>
  * </li>
  * <li>
@@ -77,8 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TreasuryTrade#TreasuryTradeSettlementStatus
- * TreasuryTrade.TreasuryTradeSettlementStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.TreasuryTrade#mmTreasuryTradeSettlementStatus
+ * TreasuryTrade.mmTreasuryTradeSettlementStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -86,8 +86,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,6 +102,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TreasuryTradeSettlementStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected TradeStatusCode tradeStatus;
 	/**
 	 * Status of a treasury trade in a central matching/settlement system.
 	 * <p>
@@ -129,18 +130,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * "Status of a treasury trade in a central matching/settlement system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradeStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradeStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeStatus";
 			definition = "Status of a treasury trade in a central matching/settlement system.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TradeStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getTradeStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator allegedTrade;
 	/**
 	 * Specifies whether a trade is alleged (notified by the counterparty) or
 	 * not.
@@ -170,18 +180,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AllegedTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAllegedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllegedTrade";
 			definition = "Specifies whether a trade is alleged (notified by the counterparty) or not.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getAllegedTrade", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TreasuryTrade treasuryTrade;
 	/**
 	 * Treasury trade for which a settlement status is provided.
 	 * <p>
@@ -190,8 +209,8 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TreasuryTrade#TreasuryTradeSettlementStatus
-	 * TreasuryTrade.TreasuryTradeSettlementStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.TreasuryTrade#mmTreasuryTradeSettlementStatus
+	 * TreasuryTrade.mmTreasuryTradeSettlementStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -216,20 +235,21 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TreasuryTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTreasuryTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TreasuryTrade";
 			definition = "Treasury trade for which a settlement status is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmTreasuryTradeSettlementStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.TreasuryTradeSettlementStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SettlementStatusCode settlement;
 	/**
 	 * Specifies the status of a settlement eg rejected, settled or awaiting
 	 * authorisation.
@@ -259,18 +279,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Settlement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Specifies the status of a settlement eg rejected, settled or awaiting authorisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SettlementStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getSettlement", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount rejectedAmount;
 	/**
 	 * Amount that cannot be settled for instance by a settlement system.
 	 * <p>
@@ -298,18 +327,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * "Amount that cannot be settled for instance by a settlement system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RejectedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRejectedAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedAmount";
 			definition = "Amount that cannot be settled for instance by a settlement system.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getRejectedAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator settlementSuspended;
 	/**
 	 * Cash settlement is suspended.
 	 * <p>
@@ -336,18 +374,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * definition} = "Cash settlement is suspended."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SettlementSuspended = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSettlementSuspended = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementSuspended";
 			definition = "Cash settlement is suspended.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getSettlementSuspended", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator pendingSettlement;
 	/**
 	 * Cash settlement is pending.
 	 * <p>
@@ -374,18 +421,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * definition} = "Cash settlement is pending."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PendingSettlement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPendingSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingSettlement";
 			definition = "Cash settlement is pending.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getPendingSettlement", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime settlementDate;
 	/**
 	 * Date on which the trade is actually settled.
 	 * <p>
@@ -411,18 +467,27 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * definition} = "Date on which the trade is actually settled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SettlementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSettlementDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDate";
 			definition = "Date on which the trade is actually settled.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getSettlementDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text withdrawalReason;
 	/**
 	 * Reason that an alleged trade is withdrawn.
 	 * <p>
@@ -448,35 +513,120 @@ public class TreasuryTradeSettlementStatus extends Status {
 	 * definition} = "Reason that an alleged trade is withdrawn."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute WithdrawalReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmWithdrawalReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TreasuryTradeSettlementStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalReason";
 			definition = "Reason that an alleged trade is withdrawn.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return TreasuryTradeSettlementStatus.class.getMethod("getWithdrawalReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TreasuryTradeSettlementStatus";
 				definition = "Specifies the status of a treasury trade at a specified time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TreasuryTrade.TreasuryTradeSettlementStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TreasuryTrade.mmTreasuryTradeSettlementStatus);
 				superType_lazy = () -> Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TreasuryTradeSettlementStatus.TradeStatus, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.AllegedTrade,
-						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.TreasuryTrade, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.Settlement,
-						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.RejectedAmount, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.SettlementSuspended,
-						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.PendingSettlement, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.SettlementDate,
-						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.WithdrawalReason);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmTradeStatus, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmAllegedTrade,
+						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmTreasuryTrade, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmSettlement,
+						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmRejectedAmount, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmSettlementSuspended,
+						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmPendingSettlement, com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmSettlementDate,
+						com.tools20022.repository.entity.TreasuryTradeSettlementStatus.mmWithdrawalReason);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TreasuryTradeSettlementStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public TradeStatusCode getTradeStatus() {
+		return tradeStatus;
+	}
+
+	public void setTradeStatus(TradeStatusCode tradeStatus) {
+		this.tradeStatus = tradeStatus;
+	}
+
+	public YesNoIndicator getAllegedTrade() {
+		return allegedTrade;
+	}
+
+	public void setAllegedTrade(YesNoIndicator allegedTrade) {
+		this.allegedTrade = allegedTrade;
+	}
+
+	public TreasuryTrade getTreasuryTrade() {
+		return treasuryTrade;
+	}
+
+	public void setTreasuryTrade(com.tools20022.repository.entity.TreasuryTrade treasuryTrade) {
+		this.treasuryTrade = treasuryTrade;
+	}
+
+	public SettlementStatusCode getSettlement() {
+		return settlement;
+	}
+
+	public void setSettlement(SettlementStatusCode settlement) {
+		this.settlement = settlement;
+	}
+
+	public ActiveOrHistoricCurrencyAndAmount getRejectedAmount() {
+		return rejectedAmount;
+	}
+
+	public void setRejectedAmount(ActiveOrHistoricCurrencyAndAmount rejectedAmount) {
+		this.rejectedAmount = rejectedAmount;
+	}
+
+	public YesNoIndicator getSettlementSuspended() {
+		return settlementSuspended;
+	}
+
+	public void setSettlementSuspended(YesNoIndicator settlementSuspended) {
+		this.settlementSuspended = settlementSuspended;
+	}
+
+	public YesNoIndicator getPendingSettlement() {
+		return pendingSettlement;
+	}
+
+	public void setPendingSettlement(YesNoIndicator pendingSettlement) {
+		this.pendingSettlement = pendingSettlement;
+	}
+
+	public ISODateTime getSettlementDate() {
+		return settlementDate;
+	}
+
+	public void setSettlementDate(ISODateTime settlementDate) {
+		this.settlementDate = settlementDate;
+	}
+
+	public Max35Text getWithdrawalReason() {
+		return withdrawalReason;
+	}
+
+	public void setWithdrawalReason(Max35Text withdrawalReason) {
+		this.withdrawalReason = withdrawalReason;
 	}
 }

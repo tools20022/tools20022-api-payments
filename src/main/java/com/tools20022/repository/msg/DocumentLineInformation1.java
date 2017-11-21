@@ -20,10 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max2048Text;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.entity.GenericIdentification;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides document line information.<br>
@@ -35,14 +43,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#Identification
- * DocumentLineInformation1.Identification}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#mmIdentification
+ * DocumentLineInformation1.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#Description
- * DocumentLineInformation1.Description}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#mmDescription
+ * DocumentLineInformation1.mmDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#Amount
- * DocumentLineInformation1.Amount}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#mmAmount
+ * DocumentLineInformation1.mmAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -50,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +70,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides document line information.\r\n"</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DocumentLineInformation1", propOrder = {"identification", "description", "amount"})
 public class DocumentLineInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.msg.DocumentLineIdentification1> identification;
 	/**
 	 * Provides identification of the document line.
 	 * <p>
@@ -77,8 +88,8 @@ public class DocumentLineInformation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -97,20 +108,21 @@ public class DocumentLineInformation1 {
 	 * definition} = "Provides identification of the document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Identification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> DocumentLineInformation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Provides identification of the document line.";
 			minOccurs = 1;
-			type_lazy = () -> DocumentLineIdentification1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.DocumentLineIdentification1.mmObject();
 		}
 	};
+	protected Max2048Text description;
 	/**
 	 * Description associated with the document line.
 	 * <p>
@@ -142,20 +154,21 @@ public class DocumentLineInformation1 {
 	 * definition} = "Description associated with the document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Description = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> DocumentLineInformation1.mmObject();
 			businessComponentTrace_lazy = () -> Document.mmObject();
+			componentContext_lazy = () -> DocumentLineInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Description";
 			definition = "Description associated with the document line.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max2048Text.mmObject();
 		}
 	};
+	protected RemittanceAmount3 amount;
 	/**
 	 * Provides details on the amounts of the document line.
 	 * <p>
@@ -167,8 +180,8 @@ public class DocumentLineInformation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Amount
-	 * Document.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmAmount
+	 * Document.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -187,34 +200,60 @@ public class DocumentLineInformation1 {
 	 * definition} = "Provides details on the amounts of the document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Amount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAmount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Document.mmAmount;
 			componentContext_lazy = () -> DocumentLineInformation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.Amount;
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Provides details on the amounts of the document line.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> RemittanceAmount3.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.RemittanceAmount3.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentLineInformation1.Identification, com.tools20022.repository.msg.DocumentLineInformation1.Description,
-						com.tools20022.repository.msg.DocumentLineInformation1.Amount);
+				messageElement_lazy = () -> Arrays.asList(DocumentLineInformation1.mmIdentification, DocumentLineInformation1.mmDescription, DocumentLineInformation1.mmAmount);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentLineInformation1";
 				definition = "Provides document line information.\r\n";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public List<DocumentLineIdentification1> getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(List<com.tools20022.repository.msg.DocumentLineIdentification1> identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Desc")
+	public Max2048Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max2048Text description) {
+		this.description = description;
+	}
+
+	@XmlElement(name = "Amt")
+	public RemittanceAmount3 getAmount() {
+		return amount;
+	}
+
+	public void setAmount(com.tools20022.repository.msg.RemittanceAmount3 amount) {
+		this.amount = amount;
 	}
 }

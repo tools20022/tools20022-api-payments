@@ -19,8 +19,10 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
 import com.tools20022.core.metamodel.GeneratedMetamodelBean;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMBusinessProcessCatalogue;
 import com.tools20022.metamodel.MMDataDictionary;
 import com.tools20022.metamodel.MMModelEntity;
@@ -35,6 +37,14 @@ import java.util.Optional;
  */
 public class MMRepository implements MMModelEntity {
 
+	/**
+	 * the DataDictionary owned by the ISO 20022 Repository
+	 */
+	public final static MetamodelAttribute<MMRepository, MMDataDictionary> dataDictionaryAttribute = newAttribute();
+	/**
+	 * the BusinessProcessCatalogue owned by the ISO 20022 Repository
+	 */
+	public final static MetamodelAttribute<MMRepository, MMBusinessProcessCatalogue> businessProcessCatalogueAttribute = newAttribute();
 	protected Supplier<MMDataDictionary> dataDictionary_lazy;
 	protected Supplier<MMBusinessProcessCatalogue> businessProcessCatalogue_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;

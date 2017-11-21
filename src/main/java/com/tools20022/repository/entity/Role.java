@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PartyRoleCode;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.TradeParty2;
 import com.tools20022.repository.msg.TransactionAgents3;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role of a party in an activity.
@@ -38,27 +39,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Role#Player Role.Player}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Role#ContactPersonRole
- * Role.ContactPersonRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Role#PartyRole
- * Role.PartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Role#CounterpartyRisk
- * Role.CounterpartyRisk}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Role#Entry Role.Entry}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Role#mmPlayer Role.mmPlayer}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.entity.Role#mmContactPersonRole
+ * Role.mmContactPersonRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Role#mmPartyRole
+ * Role.mmPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Role#mmCounterpartyRisk
+ * Role.mmCounterpartyRisk}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Role#mmEntry Role.mmEntry}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionAgents3
+ * TransactionAgents3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeParty2 TradeParty2}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#Role
- * RolePlayer.Role}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Entry#Role Entry.Role}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ContactPersonRole#Role
- * ContactPersonRole.Role}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CounterpartyRisk#Party
- * CounterpartyRisk.Party}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#mmRole
+ * RolePlayer.mmRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Entry#mmRole Entry.mmRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ContactPersonRole#mmRole
+ * ContactPersonRole.mmRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CounterpartyRisk#mmParty
+ * CounterpartyRisk.mmParty}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -135,19 +146,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
- * derivationComponent} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionAgents3
- * TransactionAgents3}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TradeParty2 TradeParty2}</li>
- * </ul>
- * </li>
- * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -161,6 +163,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.RolePlayer> player;
 	/**
 	 * Entity which plays a role in the context of the business domain in which
 	 * the role is defined.
@@ -169,8 +172,9 @@ public class Role {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.RolePlayer#Role
-	 * RolePlayer.Role}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.RolePlayer#mmRole
+	 * RolePlayer.mmRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -195,19 +199,20 @@ public class Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Player = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPlayer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Role.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Player";
 			definition = "Entity which plays a role in the context of the business domain in which the role is defined.";
 			minOccurs = 0;
-			type_lazy = () -> RolePlayer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RolePlayer.Role;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmRole;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 		}
 	};
+	protected ContactPersonRole contactPersonRole;
 	/**
 	 * Contact person in the context of a role played by an organisation.
 	 * <p>
@@ -216,8 +221,8 @@ public class Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPersonRole#Role
-	 * ContactPersonRole.Role}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPersonRole#mmRole
+	 * ContactPersonRole.mmRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -241,20 +246,21 @@ public class Role {
 	 * "Contact person in the context of a role played by an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ContactPersonRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmContactPersonRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Role.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContactPersonRole";
 			definition = "Contact person in the context of a role played by an organisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPersonRole.Role;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PartyRoleCode partyRole;
 	/**
 	 * Specifies the role of the party in the transaction.
 	 * <p>
@@ -280,18 +286,27 @@ public class Role {
 	 * definition} = "Specifies the role of the party in the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartyRole = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartyRole = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Role.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies the role of the party in the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PartyRoleCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Role.class.getMethod("getPartyRole", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CounterpartyRisk counterpartyRisk;
 	/**
 	 * Specifies the risk which is related to the role played by a party.
 	 * <p>
@@ -300,8 +315,8 @@ public class Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CounterpartyRisk#Party
-	 * CounterpartyRisk.Party}</li>
+	 * {@linkplain com.tools20022.repository.entity.CounterpartyRisk#mmParty
+	 * CounterpartyRisk.mmParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -325,20 +340,21 @@ public class Role {
 	 * "Specifies the risk which is related to the role played by a party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CounterpartyRisk = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCounterpartyRisk = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Role.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterpartyRisk";
 			definition = "Specifies the risk which is related to the role played by a party.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmParty;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CounterpartyRisk.Party;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Entry entry;
 	/**
 	 * Entry for which a role is specified.
 	 * <p>
@@ -346,8 +362,8 @@ public class Role {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Entry#Role
-	 * Entry.Role}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Entry#mmRole
+	 * Entry.mmRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -369,41 +385,86 @@ public class Role {
 	 * definition} = "Entry for which a role is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Entry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Role.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Entry";
 			definition = "Entry for which a role is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Entry.mmRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Entry.Role;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Role";
 				definition = "Role of a party in an activity.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RolePlayer.Role, com.tools20022.repository.entity.Entry.Role, com.tools20022.repository.entity.ContactPersonRole.Role,
-						com.tools20022.repository.entity.CounterpartyRisk.Party);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RolePlayer.mmRole, com.tools20022.repository.entity.Entry.mmRole, com.tools20022.repository.entity.ContactPersonRole.mmRole,
+						com.tools20022.repository.entity.CounterpartyRisk.mmParty);
 				subType_lazy = () -> Arrays.asList(InformationPartyRole.mmObject(), AccountPartyRole.mmObject(), EmployingPartyRole.mmObject(), DocumentPartyRole.mmObject(), MandatePartyRole.mmObject(), CardPaymentPartyRole.mmObject(),
 						InvestmentFundPartyRole.mmObject(), TradePartyRole.mmObject(), SystemPartyRole.mmObject(), PaymentPartyRole.mmObject(), AssetPartyRole.mmObject(), SettlementPartyRole.mmObject(),
 						com.tools20022.repository.entity.ContactPersonRole.mmObject(), SecuritiesOrderPartyRole.mmObject(), SecurityCertificatePartyRole.mmObject(), InvoicePartyRole.mmObject(), TaxPartyRole.mmObject(),
 						InvestigationPartyRole.mmObject(), ChargePartyRole.mmObject(), RegulatoryAuthorityRole.mmObject(), UndertakingPartyRole.mmObject(), CorporateActionPartyRole.mmObject(), TransportPartyRole.mmObject(),
 						InsurancePartyRole.mmObject(), CollateralPartyRole.mmObject(), ReportingPartyRole.mmObject(), ChequePartyRole.mmObject(), CommissionPartyRole.mmObject(), GoodsPartyRole.mmObject(),
 						TradeCertificatePartyRole.mmObject(), MarketInfrastructure.mmObject(), GuaranteePartyRole.mmObject(), PaymentObligationPartyRole.mmObject(), RegulatoryReportingRole.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.Player, com.tools20022.repository.entity.Role.ContactPersonRole, com.tools20022.repository.entity.Role.PartyRole,
-						com.tools20022.repository.entity.Role.CounterpartyRisk, com.tools20022.repository.entity.Role.Entry);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.mmPlayer, com.tools20022.repository.entity.Role.mmContactPersonRole, com.tools20022.repository.entity.Role.mmPartyRole,
+						com.tools20022.repository.entity.Role.mmCounterpartyRisk, com.tools20022.repository.entity.Role.mmEntry);
 				derivationComponent_lazy = () -> Arrays.asList(TransactionAgents3.mmObject(), TradeParty2.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Role.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<RolePlayer> getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(List<com.tools20022.repository.entity.RolePlayer> player) {
+		this.player = player;
+	}
+
+	public ContactPersonRole getContactPersonRole() {
+		return contactPersonRole;
+	}
+
+	public void setContactPersonRole(com.tools20022.repository.entity.ContactPersonRole contactPersonRole) {
+		this.contactPersonRole = contactPersonRole;
+	}
+
+	public PartyRoleCode getPartyRole() {
+		return partyRole;
+	}
+
+	public void setPartyRole(PartyRoleCode partyRole) {
+		this.partyRole = partyRole;
+	}
+
+	public CounterpartyRisk getCounterpartyRisk() {
+		return counterpartyRisk;
+	}
+
+	public void setCounterpartyRisk(com.tools20022.repository.entity.CounterpartyRisk counterpartyRisk) {
+		this.counterpartyRisk = counterpartyRisk;
+	}
+
+	public Entry getEntry() {
+		return entry;
+	}
+
+	public void setEntry(com.tools20022.repository.entity.Entry entry) {
+		this.entry = entry;
 	}
 }

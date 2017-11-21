@@ -20,12 +20,16 @@ package com.tools20022.repository.area.acmt;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.IdentificationAssignment2;
 import com.tools20022.repository.msg.IdentificationVerification2;
 import com.tools20022.repository.msg.SupplementaryData1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * <b>Scope</b><br>
@@ -53,21 +57,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#Assignment
- * IdentificationVerificationRequestV02.Assignment}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#mmAssignment
+ * IdentificationVerificationRequestV02.mmAssignment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#Verification
- * IdentificationVerificationRequestV02.Verification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#mmVerification
+ * IdentificationVerificationRequestV02.mmVerification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#SupplementaryData
- * IdentificationVerificationRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#mmSupplementaryData
+ * IdentificationVerificationRequestV02.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#identifier
- * IdentificationVerificationRequestV02.identifier}</li>
+ * messageDefinitionIdentifier} = {@code acmt.023.001.02}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,9 +82,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "IdentificationVerificationRequestV02", propOrder = {"assignment", "verification", "supplementaryData"})
 public class IdentificationVerificationRequestV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected IdentificationAssignment2 assignment;
 	/**
 	 * Identifies the identification assignment.
 	 * <p>
@@ -106,17 +111,26 @@ public class IdentificationVerificationRequestV02 {
 	 * definition} = "Identifies the identification assignment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock Assignment = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmAssignment = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "Assgnmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Assignment";
 			definition = "Identifies the identification assignment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> IdentificationAssignment2.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IdentificationVerificationRequestV02.class.getMethod("getAssignment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<IdentificationVerification2> verification;
 	/**
 	 * Information concerning the identification data that is requested to be
 	 * verified.
@@ -143,16 +157,25 @@ public class IdentificationVerificationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock Verification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmVerification = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "Vrfctn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Verification";
 			definition = "Information concerning the identification data that is requested to be verified.";
 			minOccurs = 1;
 			complexType_lazy = () -> IdentificationVerification2.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IdentificationVerificationRequestV02.class.getMethod("getVerification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -179,58 +202,84 @@ public class IdentificationVerificationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "02"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "acmt"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "023"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "acmt";
-			messageFunctionality = "023";
-			version = "02";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return IdentificationVerificationRequestV02.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IdentificationVerificationRequestV02";
 				definition = "Scope\r\nThe IdentificationVerificationRequest message is sent by an assigner to an assignee. It is used to request the verification of party and/or account identification information.\r\nUsage\r\nThe IdentificationVerificationRequest message is sent before the sending of one or several transactions messages.\r\nThe IdentificationVerificationRequest message can contain one or more verification requests.";
 				rootElement = "Document";
 				xmlTag = "IdVrfctnReq";
 				businessArea_lazy = () -> AccountManagementLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.Assignment, com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.Verification,
-						com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.mmAssignment, com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.mmVerification,
+						com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "acmt";
+						messageFunctionality = "023";
+						version = "02";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return IdentificationVerificationRequestV02.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Assgnmt", required = true)
+	public IdentificationAssignment2 getAssignment() {
+		return assignment;
+	}
+
+	public void setAssignment(IdentificationAssignment2 assignment) {
+		this.assignment = assignment;
+	}
+
+	@XmlElement(name = "Vrfctn", required = true)
+	public List<IdentificationVerification2> getVerification() {
+		return verification;
+	}
+
+	public void setVerification(List<IdentificationVerification2> verification) {
+		this.verification = verification;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.023.02.02")
+	static public class Document {
+		@XmlElement(name = "IdVrfctnReq", required = true)
+		public IdentificationVerificationRequestV02 messageBody;
 	}
 }

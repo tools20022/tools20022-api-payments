@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max5NumericText;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Number used to sequence pages when it is not possible for data to be conveyed
@@ -35,17 +41,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Pagination#PageNumber
- * Pagination.PageNumber}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Pagination#LastPageIndicator
- * Pagination.LastPageIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Pagination#mmPageNumber
+ * Pagination.mmPageNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Pagination#mmLastPageIndicator
+ * Pagination.mmLastPageIndicator}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +64,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Pagination", propOrder = {"pageNumber", "lastPageIndicator"})
 public class Pagination {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max5NumericText pageNumber;
 	/**
 	 * Page number.
 	 * <p>
@@ -88,19 +97,20 @@ public class Pagination {
 	 * definition} = "Page number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PageNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPageNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> Pagination.mmObject();
 			isDerived = false;
 			xmlTag = "PgNb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PageNumber";
 			definition = "Page number.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max5NumericText.mmObject();
 		}
 	};
+	protected YesNoIndicator lastPageIndicator;
 	/**
 	 * Indicates the last page.
 	 * <p>
@@ -128,16 +138,16 @@ public class Pagination {
 	 * definition} = "Indicates the last page."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute LastPageIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmLastPageIndicator = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> Pagination.mmObject();
 			isDerived = false;
 			xmlTag = "LastPgInd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LastPageIndicator";
 			definition = "Indicates the last page.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
@@ -145,13 +155,31 @@ public class Pagination {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Pagination.PageNumber, com.tools20022.repository.msg.Pagination.LastPageIndicator);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(Pagination.mmPageNumber, Pagination.mmLastPageIndicator);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Pagination";
 				definition = "Number used to sequence pages when it is not possible for data to be conveyed in a single message and the data has to be split across several pages (messages).";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "PgNb", required = true)
+	public Max5NumericText getPageNumber() {
+		return pageNumber;
+	}
+
+	public void setPageNumber(Max5NumericText pageNumber) {
+		this.pageNumber = pageNumber;
+	}
+
+	@XmlElement(name = "LastPgInd", required = true)
+	public YesNoIndicator getLastPageIndicator() {
+		return lastPageIndicator;
+	}
+
+	public void setLastPageIndicator(YesNoIndicator lastPageIndicator) {
+		this.lastPageIndicator = lastPageIndicator;
 	}
 }

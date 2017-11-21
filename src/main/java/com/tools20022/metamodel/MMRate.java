@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,14 @@ import java.util.Optional;
  */
 public class MMRate extends MMDecimal {
 
+	/**
+	 * specifies the ratio between the base value and the actual value
+	 */
+	public final static MetamodelAttribute<MMRate, Double> baseValueAttribute = newAttribute();
+	/**
+	 * specifies unit code required to qualify this rate
+	 */
+	public final static MetamodelAttribute<MMRate, Optional<String>> baseUnitCodeAttribute = newAttribute();
 	protected Double baseValue;
 	protected String baseUnitCode;
 	protected String minInclusive;

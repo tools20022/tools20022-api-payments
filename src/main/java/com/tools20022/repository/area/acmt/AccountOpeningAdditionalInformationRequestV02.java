@@ -20,10 +20,14 @@ package com.tools20022.repository.area.acmt;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AccountManagementLatestVersion;
 import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * The AccountOpeningAdditionalInformationRequest message is sent from a
@@ -47,36 +51,35 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#References
- * AccountOpeningAdditionalInformationRequestV02.References}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmReferences
+ * AccountOpeningAdditionalInformationRequestV02.mmReferences}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#From
- * AccountOpeningAdditionalInformationRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmFrom
+ * AccountOpeningAdditionalInformationRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#OrganisationIdentification
- * AccountOpeningAdditionalInformationRequestV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmOrganisationIdentification
+ * AccountOpeningAdditionalInformationRequestV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#Account
- * AccountOpeningAdditionalInformationRequestV02.Account}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmAccount
+ * AccountOpeningAdditionalInformationRequestV02.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#AccountServicerIdentification
- * AccountOpeningAdditionalInformationRequestV02.AccountServicerIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmAccountServicerIdentification
+ * AccountOpeningAdditionalInformationRequestV02.mmAccountServicerIdentification
+ * }</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#UnderlyingMasterAgreement
- * AccountOpeningAdditionalInformationRequestV02.UnderlyingMasterAgreement}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmUnderlyingMasterAgreement
+ * AccountOpeningAdditionalInformationRequestV02.mmUnderlyingMasterAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#DigitalSignature
- * AccountOpeningAdditionalInformationRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmDigitalSignature
+ * AccountOpeningAdditionalInformationRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#SupplementaryData
- * AccountOpeningAdditionalInformationRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmSupplementaryData
+ * AccountOpeningAdditionalInformationRequestV02.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#identifier
- * AccountOpeningAdditionalInformationRequestV02.identifier}</li>
+ * messageDefinitionIdentifier} = {@code acmt.009.001.02}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,9 +92,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AccountOpeningAdditionalInformationRequestV02", propOrder = {"references", "from", "organisationIdentification", "account", "accountServicerIdentification", "underlyingMasterAgreement", "digitalSignature",
+		"supplementaryData"})
 public class AccountOpeningAdditionalInformationRequestV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected References3 references;
 	/**
 	 * Set of elements for the identification of the message and related
 	 * references.
@@ -117,17 +124,26 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock References = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmReferences = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "Refs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "References";
 			definition = "Set of elements for the identification of the message and related references.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> References3.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getReferences", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OrganisationIdentification8 from;
 	/**
 	 * Identifies the business sender of the message, if it is not the account
 	 * owner or account servicing financial institution.
@@ -155,17 +171,26 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock From = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmFrom = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "Fr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "From";
 			definition = "Identifies the business sender of the message, if it is not the account owner or account servicing financial institution. OrganisationIdentification6";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			complexType_lazy = () -> OrganisationIdentification8.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getFrom", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OrganisationIdentification8 organisationIdentification;
 	/**
 	 * Identification of the organisation.
 	 * <p>
@@ -189,17 +214,26 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * definition} = "Identification of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock OrganisationIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmOrganisationIdentification = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "OrgId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OrganisationIdentification";
 			definition = "Identification of the organisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> OrganisationIdentification8.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getOrganisationIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CustomerAccount4 account;
 	/**
 	 * Unique and unambiguous identification of the account between the account
 	 * owner and the account servicer.
@@ -226,17 +260,26 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock Account = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmAccount = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "Acct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Unique and unambiguous identification of the account between the account owner and the account servicer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> CustomerAccount4.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getAccount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BranchAndFinancialInstitutionIdentification5 accountServicerIdentification;
 	/**
 	 * Unique and unambiguous identifier of a financial institution, as assigned
 	 * under an internationally recognised or proprietary identification scheme.
@@ -263,17 +306,26 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock AccountServicerIdentification = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmAccountServicerIdentification = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "AcctSvcrId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountServicerIdentification";
 			definition = "Unique and unambiguous identifier of a financial institution, as assigned under an internationally recognised or proprietary identification scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getAccountServicerIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ContractDocument1 underlyingMasterAgreement;
 	/**
 	 * Account contract established between the organisation or the group to
 	 * which the organisation belongs, and the account servicer. This contract
@@ -301,17 +353,26 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock UnderlyingMasterAgreement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmUnderlyingMasterAgreement = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "UndrlygMstrAgrmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnderlyingMasterAgreement";
 			definition = "Account contract established between the organisation or the group to which the organisation belongs, and the account servicer. This contract has to be applied for the new account to be opened and maintained.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			complexType_lazy = () -> ContractDocument1.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getUnderlyingMasterAgreement", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<PartyAndSignature2> digitalSignature;
 	/**
 	 * Contains the signature with its components, namely signed info, signature
 	 * value, key info and the object.
@@ -338,16 +399,25 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock DigitalSignature = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmDigitalSignature = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "DgtlSgntr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DigitalSignature";
 			definition = "Contains the signature with its components, namely signed info, signature value, key info and the object.";
 			minOccurs = 0;
 			complexType_lazy = () -> PartyAndSignature2.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getDigitalSignature", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -374,61 +444,132 @@ public class AccountOpeningAdditionalInformationRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "02"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "acmt"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "009"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "acmt";
-			messageFunctionality = "009";
-			version = "02";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return AccountOpeningAdditionalInformationRequestV02.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountOpeningAdditionalInformationRequestV02";
 				definition = "The AccountOpeningAdditionalInformationRequest message is sent from a financial institution to an organisation as part of the account opening process. This message is sent in response to an opening request message from the organisation, if the business content is valid, but additional information is required.";
 				rootElement = "Document";
 				xmlTag = "AcctOpngAddtlInfReq";
 				businessArea_lazy = () -> AccountManagementLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.References,
-						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.From, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.OrganisationIdentification,
-						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.Account, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.AccountServicerIdentification,
-						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.UnderlyingMasterAgreement, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmReferences,
+						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmFrom, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmOrganisationIdentification,
+						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmAccount, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmAccountServicerIdentification,
+						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmUnderlyingMasterAgreement, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmDigitalSignature,
+						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "acmt";
+						messageFunctionality = "009";
+						version = "02";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AccountOpeningAdditionalInformationRequestV02.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Refs", required = true)
+	public References3 getReferences() {
+		return references;
+	}
+
+	public void setReferences(References3 references) {
+		this.references = references;
+	}
+
+	@XmlElement(name = "Fr")
+	public OrganisationIdentification8 getFrom() {
+		return from;
+	}
+
+	public void setFrom(OrganisationIdentification8 from) {
+		this.from = from;
+	}
+
+	@XmlElement(name = "OrgId", required = true)
+	public OrganisationIdentification8 getOrganisationIdentification() {
+		return organisationIdentification;
+	}
+
+	public void setOrganisationIdentification(OrganisationIdentification8 organisationIdentification) {
+		this.organisationIdentification = organisationIdentification;
+	}
+
+	@XmlElement(name = "Acct", required = true)
+	public CustomerAccount4 getAccount() {
+		return account;
+	}
+
+	public void setAccount(CustomerAccount4 account) {
+		this.account = account;
+	}
+
+	@XmlElement(name = "AcctSvcrId", required = true)
+	public BranchAndFinancialInstitutionIdentification5 getAccountServicerIdentification() {
+		return accountServicerIdentification;
+	}
+
+	public void setAccountServicerIdentification(BranchAndFinancialInstitutionIdentification5 accountServicerIdentification) {
+		this.accountServicerIdentification = accountServicerIdentification;
+	}
+
+	@XmlElement(name = "UndrlygMstrAgrmt")
+	public ContractDocument1 getUnderlyingMasterAgreement() {
+		return underlyingMasterAgreement;
+	}
+
+	public void setUnderlyingMasterAgreement(ContractDocument1 underlyingMasterAgreement) {
+		this.underlyingMasterAgreement = underlyingMasterAgreement;
+	}
+
+	@XmlElement(name = "DgtlSgntr")
+	public List<PartyAndSignature2> getDigitalSignature() {
+		return digitalSignature;
+	}
+
+	public void setDigitalSignature(List<PartyAndSignature2> digitalSignature) {
+		this.digitalSignature = digitalSignature;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.009.02.02")
+	static public class Document {
+		@XmlElement(name = "AcctOpngAddtlInfReq", required = true)
+		public AccountOpeningAdditionalInformationRequestV02 messageBody;
 	}
 }

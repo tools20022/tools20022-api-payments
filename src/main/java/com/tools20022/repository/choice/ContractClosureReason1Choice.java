@@ -19,11 +19,18 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalContractClosureReason1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Contract;
+import com.tools20022.repository.entity.GenericIdentification;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Reason for the closure of the contract.
@@ -35,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ContractClosureReason1Choice#Code
- * ContractClosureReason1Choice.Code}</li>
+ * {@linkplain com.tools20022.repository.choice.ContractClosureReason1Choice#mmCode
+ * ContractClosureReason1Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ContractClosureReason1Choice#Proprietary
- * ContractClosureReason1Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.ContractClosureReason1Choice#mmProprietary
+ * ContractClosureReason1Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Reason for the closure of the contract."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ContractClosureReason1Choice", propOrder = {"code", "proprietary"})
 public class ContractClosureReason1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalContractClosureReason1Code code;
 	/**
 	 * Reason in a coded form.
 	 * <p>
@@ -75,8 +85,8 @@ public class ContractClosureReason1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -95,20 +105,21 @@ public class ContractClosureReason1Choice {
 	 * definition} = "Reason in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> ContractClosureReason1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Reason in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalContractClosureReason1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Reason in a proprietary format.
 	 * <p>
@@ -121,8 +132,8 @@ public class ContractClosureReason1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -141,17 +152,17 @@ public class ContractClosureReason1Choice {
 	 * definition} = "Reason in a proprietary format."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> ContractClosureReason1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Reason in a proprietary format.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -159,14 +170,32 @@ public class ContractClosureReason1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ContractClosureReason1Choice.Code, com.tools20022.repository.choice.ContractClosureReason1Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(ContractClosureReason1Choice.mmCode, ContractClosureReason1Choice.mmProprietary);
 				trace_lazy = () -> Contract.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractClosureReason1Choice";
 				definition = "Reason for the closure of the contract.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalContractClosureReason1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalContractClosureReason1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

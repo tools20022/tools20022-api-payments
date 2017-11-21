@@ -17,9 +17,12 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.System;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,8 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementSystem#SettlementParty
- * SecuritiesSettlementSystem.SettlementParty}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementSystem#mmSettlementParty
+ * SecuritiesSettlementSystem.mmSettlementParty}</li>
  * </ul>
  * </li>
  * <li>
@@ -46,8 +49,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementPartyRole#SecuritiesSettlementSystem
- * SecuritiesSettlementPartyRole.SecuritiesSettlementSystem}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementPartyRole#mmSecuritiesSettlementSystem
+ * SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -55,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,6 +73,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesSettlementSystem extends System {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesSettlementPartyRole settlementParty;
 	/**
 	 * Party which settles through a system.
 	 * <p>
@@ -78,8 +82,8 @@ public class SecuritiesSettlementSystem extends System {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementPartyRole#SecuritiesSettlementSystem
-	 * SecuritiesSettlementPartyRole.SecuritiesSettlementSystem}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementPartyRole#mmSecuritiesSettlementSystem
+	 * SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -104,33 +108,46 @@ public class SecuritiesSettlementSystem extends System {
 	 * definition} = "Party which settles through a system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SettlementParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSettlementParty = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesSettlementSystem.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementSystem.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementParty";
 			definition = "Party which settles through a system.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesSettlementPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.SecuritiesSettlementSystem;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesSettlementSystem";
 				definition = "Specifies the system used in a settlement process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesSettlementPartyRole.SecuritiesSettlementSystem);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem);
 				superType_lazy = () -> System.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesSettlementSystem.SettlementParty);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesSettlementSystem.mmSettlementParty);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesSettlementSystem.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesSettlementPartyRole getSettlementParty() {
+		return settlementParty;
+	}
+
+	public void setSettlementParty(com.tools20022.repository.entity.SecuritiesSettlementPartyRole settlementParty) {
+		this.settlementParty = settlementParty;
 	}
 }

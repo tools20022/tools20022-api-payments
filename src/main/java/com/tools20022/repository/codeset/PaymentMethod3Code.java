@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,21 +36,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * PaymentMethodCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.PaymentMethod3Code#Cheque
- * PaymentMethod3Code.Cheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod3Code#CreditTransfer
- * PaymentMethod3Code.CreditTransfer}</li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod3Code#mmCheque
+ * PaymentMethod3Code.mmCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod3Code#TransferAdvice
- * PaymentMethod3Code.TransferAdvice}</li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod3Code#mmCreditTransfer
+ * PaymentMethod3Code.mmCreditTransfer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod3Code#mmTransferAdvice
+ * PaymentMethod3Code.mmTransferAdvice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,9 +89,9 @@ public class PaymentMethod3Code extends PaymentMethodCode {
 	 * name} = "Cheque"</li>
 	 * </ul>
 	 */
-	public static final MMCode Cheque = new MMCode() {
+	public static final MMCode mmCheque = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cheque";
 			owner_lazy = () -> PaymentMethod3Code.mmObject();
 		}
@@ -109,9 +112,9 @@ public class PaymentMethod3Code extends PaymentMethodCode {
 	 * name} = "CreditTransfer"</li>
 	 * </ul>
 	 */
-	public static final MMCode CreditTransfer = new MMCode() {
+	public static final MMCode mmCreditTransfer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditTransfer";
 			owner_lazy = () -> PaymentMethod3Code.mmObject();
 		}
@@ -132,9 +135,9 @@ public class PaymentMethod3Code extends PaymentMethodCode {
 	 * name} = "TransferAdvice"</li>
 	 * </ul>
 	 */
-	public static final MMCode TransferAdvice = new MMCode() {
+	public static final MMCode mmTransferAdvice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransferAdvice";
 			owner_lazy = () -> PaymentMethod3Code.mmObject();
 		}
@@ -143,13 +146,12 @@ public class PaymentMethod3Code extends PaymentMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CHK");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod3Code";
 				definition = "Specifies the transfer method that will be used  to transfer an amount of money.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod3Code.Cheque, com.tools20022.repository.codeset.PaymentMethod3Code.CreditTransfer,
-						com.tools20022.repository.codeset.PaymentMethod3Code.TransferAdvice);
+				code_lazy = () -> Arrays.asList(PaymentMethod3Code.mmCheque, PaymentMethod3Code.mmCreditTransfer, PaymentMethod3Code.mmTransferAdvice);
 				trace_lazy = () -> PaymentMethodCode.mmObject();
 			}
 		});

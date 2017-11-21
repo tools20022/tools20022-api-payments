@@ -20,13 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max40Text;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.entity.TaxRecord;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides for regional taxes on the service.
@@ -37,16 +43,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.BillingServicesTax2#Number
- * BillingServicesTax2.Number}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingServicesTax2#mmNumber
+ * BillingServicesTax2.mmNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServicesTax2#Description
- * BillingServicesTax2.Description}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingServicesTax2#Rate
- * BillingServicesTax2.Rate}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServicesTax2#mmDescription
+ * BillingServicesTax2.mmDescription}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingServicesTax2#mmRate
+ * BillingServicesTax2.mmRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServicesTax2#PricingAmount
- * BillingServicesTax2.PricingAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServicesTax2#mmPricingAmount
+ * BillingServicesTax2.mmPricingAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -54,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,9 +72,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides for regional taxes on the service."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingServicesTax2", propOrder = {"number", "description", "rate", "pricingAmount"})
 public class BillingServicesTax2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text number;
 	/**
 	 * Identification number of the specific region tax used to calculate the
 	 * tax.
@@ -99,19 +108,20 @@ public class BillingServicesTax2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Number = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BillingServicesTax2.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Number";
 			definition = "Identification number of the specific region tax used to calculate the tax.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max40Text description;
 	/**
 	 * Name used to describe the tax (such as the national value added tax).
 	 * <p>
@@ -140,19 +150,20 @@ public class BillingServicesTax2 {
 	 * "Name used to describe the tax (such as the national value added tax)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Description = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BillingServicesTax2.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Description";
 			definition = "Name used to describe the tax (such as the national value added tax).";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max40Text.mmObject();
 		}
 	};
+	protected DecimalNumber rate;
 	/**
 	 * Rate used to calculate the tax.
 	 * <p>
@@ -185,20 +196,21 @@ public class BillingServicesTax2 {
 	 * definition} = "Rate used to calculate the tax."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Rate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRate = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServicesTax2.mmObject();
 			businessComponentTrace_lazy = () -> Tax.mmObject();
+			componentContext_lazy = () -> BillingServicesTax2.mmObject();
 			isDerived = false;
 			xmlTag = "Rate";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rate";
 			definition = "Rate used to calculate the tax.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	protected AmountAndDirection34 pricingAmount;
 	/**
 	 * Amount of the tax obligation expressed in the tax region's pricing
 	 * currency.
@@ -211,8 +223,8 @@ public class BillingServicesTax2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.TaxRecord#Amount
-	 * TaxRecord.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.TaxRecord#mmAmount
+	 * TaxRecord.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -233,34 +245,69 @@ public class BillingServicesTax2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PricingAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPricingAmount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> TaxRecord.mmAmount;
 			componentContext_lazy = () -> BillingServicesTax2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.TaxRecord.Amount;
 			isDerived = false;
 			xmlTag = "PricgAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PricingAmount";
 			definition = "Amount of the tax obligation expressed in the tax region's pricing currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndDirection34.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServicesTax2.Number, com.tools20022.repository.msg.BillingServicesTax2.Description, com.tools20022.repository.msg.BillingServicesTax2.Rate,
-						com.tools20022.repository.msg.BillingServicesTax2.PricingAmount);
+				messageElement_lazy = () -> Arrays.asList(BillingServicesTax2.mmNumber, BillingServicesTax2.mmDescription, BillingServicesTax2.mmRate, BillingServicesTax2.mmPricingAmount);
 				trace_lazy = () -> TaxRecord.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServicesTax2";
 				definition = "Provides for regional taxes on the service.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Nb", required = true)
+	public Max35Text getNumber() {
+		return number;
+	}
+
+	public void setNumber(Max35Text number) {
+		this.number = number;
+	}
+
+	@XmlElement(name = "Desc")
+	public Max40Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max40Text description) {
+		this.description = description;
+	}
+
+	@XmlElement(name = "Rate", required = true)
+	public DecimalNumber getRate() {
+		return rate;
+	}
+
+	public void setRate(DecimalNumber rate) {
+		this.rate = rate;
+	}
+
+	@XmlElement(name = "PricgAmt", required = true)
+	public AmountAndDirection34 getPricingAmount() {
+		return pricingAmount;
+	}
+
+	public void setPricingAmount(com.tools20022.repository.msg.AmountAndDirection34 pricingAmount) {
+		this.pricingAmount = pricingAmount;
 	}
 }

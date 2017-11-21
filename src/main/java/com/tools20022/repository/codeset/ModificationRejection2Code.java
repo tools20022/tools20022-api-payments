@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentModificationRejectionV2Code;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,93 +36,93 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRelatedReference
- * ModificationRejection2Code.UnableToModifyRelatedReference}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyRelatedReference
+ * ModificationRejection2Code.mmUnableToModifyRelatedReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentServiceLevel
- * ModificationRejection2Code.UnableToModifyPaymentServiceLevel}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyPaymentServiceLevel
+ * ModificationRejection2Code.mmUnableToModifyPaymentServiceLevel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCategoryPurpose
- * ModificationRejection2Code.UnableToModifyCategoryPurpose}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyCategoryPurpose
+ * ModificationRejection2Code.mmUnableToModifyCategoryPurpose}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRequestedExecutionDate
- * ModificationRejection2Code.UnableToModifyRequestedExecutionDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyRequestedExecutionDate
+ * ModificationRejection2Code.mmUnableToModifyRequestedExecutionDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInterbankSettlementDate
- * ModificationRejection2Code.UnableToModifyInterbankSettlementDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInterbankSettlementDate
+ * ModificationRejection2Code.mmUnableToModifyInterbankSettlementDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInterbankSettlementAccount
- * ModificationRejection2Code.UnableToModifyInterbankSettlementAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInterbankSettlementAccount
+ * ModificationRejection2Code.mmUnableToModifyInterbankSettlementAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyDebtor
- * ModificationRejection2Code.UnableToModifyDebtor}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyDebtor
+ * ModificationRejection2Code.mmUnableToModifyDebtor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyDebtorAccount
- * ModificationRejection2Code.UnableToModifyDebtorAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyDebtorAccount
+ * ModificationRejection2Code.mmUnableToModifyDebtorAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructedReimbursementAgent
- * ModificationRejection2Code.UnableToModifyInstructedReimbursementAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInstructedReimbursementAgent
+ * ModificationRejection2Code.mmUnableToModifyInstructedReimbursementAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyThirdReimbursementAgent
- * ModificationRejection2Code.UnableToModifyThirdReimbursementAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyThirdReimbursementAgent
+ * ModificationRejection2Code.mmUnableToModifyThirdReimbursementAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentClearingChannel
- * ModificationRejection2Code.UnableToModifyPaymentClearingChannel}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyPaymentClearingChannel
+ * ModificationRejection2Code.mmUnableToModifyPaymentClearingChannel}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCreditorAgentAccount
- * ModificationRejection2Code.UnableToModifyCreditorAgentAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyCreditorAgentAccount
+ * ModificationRejection2Code.mmUnableToModifyCreditorAgentAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCreditor
- * ModificationRejection2Code.UnableToModifyCreditor}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyCreditor
+ * ModificationRejection2Code.mmUnableToModifyCreditor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyCreditorAccount
- * ModificationRejection2Code.UnableToModifyCreditorAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyCreditorAccount
+ * ModificationRejection2Code.mmUnableToModifyCreditorAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRemittanceInformation
- * ModificationRejection2Code.UnableToModifyRemittanceInformation}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyRemittanceInformation
+ * ModificationRejection2Code.mmUnableToModifyRemittanceInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentPurpose
- * ModificationRejection2Code.UnableToModifyPaymentPurpose}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyPaymentPurpose
+ * ModificationRejection2Code.mmUnableToModifyPaymentPurpose}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyChargeBearer
- * ModificationRejection2Code.UnableToModifyChargeBearer}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyChargeBearer
+ * ModificationRejection2Code.mmUnableToModifyChargeBearer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructionForNextAgent
- * ModificationRejection2Code.UnableToModifyInstructionForNextAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInstructionForNextAgent
+ * ModificationRejection2Code.mmUnableToModifyInstructionForNextAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructionForCreditorAgent
- * ModificationRejection2Code.UnableToModifyInstructionForCreditorAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInstructionForCreditorAgent
+ * ModificationRejection2Code.mmUnableToModifyInstructionForCreditorAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#InstructionCancelledSubmitNewInstruction
- * ModificationRejection2Code.InstructionCancelledSubmitNewInstruction}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmInstructionCancelledSubmitNewInstruction
+ * ModificationRejection2Code.mmInstructionCancelledSubmitNewInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifySubmitCancellation
- * ModificationRejection2Code.UnableToModifySubmitCancellation}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifySubmitCancellation
+ * ModificationRejection2Code.mmUnableToModifySubmitCancellation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyDebtorAgentAccount
- * ModificationRejection2Code.UnableToModifyDebtorAgentAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyDebtorAgentAccount
+ * ModificationRejection2Code.mmUnableToModifyDebtorAgentAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInterbankSettlementAmount
- * ModificationRejection2Code.UnableToModifyInterbankSettlementAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInterbankSettlementAmount
+ * ModificationRejection2Code.mmUnableToModifyInterbankSettlementAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructionForDebtorAgent
- * ModificationRejection2Code.UnableToModifyInstructionForDebtorAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInstructionForDebtorAgent
+ * ModificationRejection2Code.mmUnableToModifyInstructionForDebtorAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyRequestedCollectionDate
- * ModificationRejection2Code.UnableToModifyRequestedCollectionDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyRequestedCollectionDate
+ * ModificationRejection2Code.mmUnableToModifyRequestedCollectionDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyPaymentType
- * ModificationRejection2Code.UnableToModifyPaymentType}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyPaymentType
+ * ModificationRejection2Code.mmUnableToModifyPaymentType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#UnableToModifyInstructedAmount
- * ModificationRejection2Code.UnableToModifyInstructedAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.ModificationRejection2Code#mmUnableToModifyInstructedAmount
+ * ModificationRejection2Code.mmUnableToModifyInstructedAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -156,9 +158,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyRelatedReference"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyRelatedReference = new MMCode() {
+	public static final MMCode mmUnableToModifyRelatedReference = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyRelatedReference";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -179,9 +181,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyPaymentServiceLevel"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyPaymentServiceLevel = new MMCode() {
+	public static final MMCode mmUnableToModifyPaymentServiceLevel = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyPaymentServiceLevel";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -202,9 +204,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyCategoryPurpose"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyCategoryPurpose = new MMCode() {
+	public static final MMCode mmUnableToModifyCategoryPurpose = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyCategoryPurpose";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -225,9 +227,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyRequestedExecutionDate"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyRequestedExecutionDate = new MMCode() {
+	public static final MMCode mmUnableToModifyRequestedExecutionDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyRequestedExecutionDate";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -248,9 +250,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInterbankSettlementDate"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInterbankSettlementDate = new MMCode() {
+	public static final MMCode mmUnableToModifyInterbankSettlementDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInterbankSettlementDate";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -271,9 +273,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInterbankSettlementAccount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInterbankSettlementAccount = new MMCode() {
+	public static final MMCode mmUnableToModifyInterbankSettlementAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInterbankSettlementAccount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -294,9 +296,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyDebtor"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyDebtor = new MMCode() {
+	public static final MMCode mmUnableToModifyDebtor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyDebtor";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -317,9 +319,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyDebtorAccount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyDebtorAccount = new MMCode() {
+	public static final MMCode mmUnableToModifyDebtorAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyDebtorAccount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -340,9 +342,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInstructedReimbursementAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInstructedReimbursementAgent = new MMCode() {
+	public static final MMCode mmUnableToModifyInstructedReimbursementAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInstructedReimbursementAgent";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -363,9 +365,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyThirdReimbursementAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyThirdReimbursementAgent = new MMCode() {
+	public static final MMCode mmUnableToModifyThirdReimbursementAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyThirdReimbursementAgent";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -386,9 +388,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyPaymentClearingChannel"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyPaymentClearingChannel = new MMCode() {
+	public static final MMCode mmUnableToModifyPaymentClearingChannel = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyPaymentClearingChannel";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -409,9 +411,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyCreditorAgentAccount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyCreditorAgentAccount = new MMCode() {
+	public static final MMCode mmUnableToModifyCreditorAgentAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyCreditorAgentAccount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -432,9 +434,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyCreditor"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyCreditor = new MMCode() {
+	public static final MMCode mmUnableToModifyCreditor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyCreditor";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -455,9 +457,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyCreditorAccount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyCreditorAccount = new MMCode() {
+	public static final MMCode mmUnableToModifyCreditorAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyCreditorAccount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -478,9 +480,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyRemittanceInformation"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyRemittanceInformation = new MMCode() {
+	public static final MMCode mmUnableToModifyRemittanceInformation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyRemittanceInformation";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -501,9 +503,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyPaymentPurpose"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyPaymentPurpose = new MMCode() {
+	public static final MMCode mmUnableToModifyPaymentPurpose = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyPaymentPurpose";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -524,9 +526,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyChargeBearer"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyChargeBearer = new MMCode() {
+	public static final MMCode mmUnableToModifyChargeBearer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyChargeBearer";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -547,9 +549,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInstructionForNextAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInstructionForNextAgent = new MMCode() {
+	public static final MMCode mmUnableToModifyInstructionForNextAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInstructionForNextAgent";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -570,9 +572,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInstructionForCreditorAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInstructionForCreditorAgent = new MMCode() {
+	public static final MMCode mmUnableToModifyInstructionForCreditorAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInstructionForCreditorAgent";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -593,9 +595,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "InstructionCancelledSubmitNewInstruction"</li>
 	 * </ul>
 	 */
-	public static final MMCode InstructionCancelledSubmitNewInstruction = new MMCode() {
+	public static final MMCode mmInstructionCancelledSubmitNewInstruction = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructionCancelledSubmitNewInstruction";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -616,9 +618,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifySubmitCancellation"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifySubmitCancellation = new MMCode() {
+	public static final MMCode mmUnableToModifySubmitCancellation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifySubmitCancellation";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -639,9 +641,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyDebtorAgentAccount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyDebtorAgentAccount = new MMCode() {
+	public static final MMCode mmUnableToModifyDebtorAgentAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyDebtorAgentAccount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -662,9 +664,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInterbankSettlementAmount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInterbankSettlementAmount = new MMCode() {
+	public static final MMCode mmUnableToModifyInterbankSettlementAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInterbankSettlementAmount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -685,9 +687,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInstructionForDebtorAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInstructionForDebtorAgent = new MMCode() {
+	public static final MMCode mmUnableToModifyInstructionForDebtorAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInstructionForDebtorAgent";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -708,9 +710,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyRequestedCollectionDate"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyRequestedCollectionDate = new MMCode() {
+	public static final MMCode mmUnableToModifyRequestedCollectionDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyRequestedCollectionDate";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -731,9 +733,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyPaymentType"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyPaymentType = new MMCode() {
+	public static final MMCode mmUnableToModifyPaymentType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyPaymentType";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -754,9 +756,9 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	 * name} = "UnableToModifyInstructedAmount"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToModifyInstructedAmount = new MMCode() {
+	public static final MMCode mmUnableToModifyInstructedAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToModifyInstructedAmount";
 			owner_lazy = () -> ModificationRejection2Code.mmObject();
 		}
@@ -765,25 +767,20 @@ public class ModificationRejection2Code extends PaymentModificationRejectionV2Co
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("UM01");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ModificationRejection2Code";
 				definition = "Specifies the reason for rejecting a modification reject.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyRelatedReference, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyPaymentServiceLevel,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyCategoryPurpose, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyRequestedExecutionDate,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInterbankSettlementDate, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInterbankSettlementAccount,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyDebtor, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyDebtorAccount,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInstructedReimbursementAgent, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyThirdReimbursementAgent,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyPaymentClearingChannel, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyCreditorAgentAccount,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyCreditor, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyCreditorAccount,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyRemittanceInformation, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyPaymentPurpose,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyChargeBearer, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInstructionForNextAgent,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInstructionForCreditorAgent, com.tools20022.repository.codeset.ModificationRejection2Code.InstructionCancelledSubmitNewInstruction,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifySubmitCancellation, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyDebtorAgentAccount,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInterbankSettlementAmount, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInstructionForDebtorAgent,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyRequestedCollectionDate, com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyPaymentType,
-						com.tools20022.repository.codeset.ModificationRejection2Code.UnableToModifyInstructedAmount);
+				code_lazy = () -> Arrays.asList(ModificationRejection2Code.mmUnableToModifyRelatedReference, ModificationRejection2Code.mmUnableToModifyPaymentServiceLevel, ModificationRejection2Code.mmUnableToModifyCategoryPurpose,
+						ModificationRejection2Code.mmUnableToModifyRequestedExecutionDate, ModificationRejection2Code.mmUnableToModifyInterbankSettlementDate, ModificationRejection2Code.mmUnableToModifyInterbankSettlementAccount,
+						ModificationRejection2Code.mmUnableToModifyDebtor, ModificationRejection2Code.mmUnableToModifyDebtorAccount, ModificationRejection2Code.mmUnableToModifyInstructedReimbursementAgent,
+						ModificationRejection2Code.mmUnableToModifyThirdReimbursementAgent, ModificationRejection2Code.mmUnableToModifyPaymentClearingChannel, ModificationRejection2Code.mmUnableToModifyCreditorAgentAccount,
+						ModificationRejection2Code.mmUnableToModifyCreditor, ModificationRejection2Code.mmUnableToModifyCreditorAccount, ModificationRejection2Code.mmUnableToModifyRemittanceInformation,
+						ModificationRejection2Code.mmUnableToModifyPaymentPurpose, ModificationRejection2Code.mmUnableToModifyChargeBearer, ModificationRejection2Code.mmUnableToModifyInstructionForNextAgent,
+						ModificationRejection2Code.mmUnableToModifyInstructionForCreditorAgent, ModificationRejection2Code.mmInstructionCancelledSubmitNewInstruction, ModificationRejection2Code.mmUnableToModifySubmitCancellation,
+						ModificationRejection2Code.mmUnableToModifyDebtorAgentAccount, ModificationRejection2Code.mmUnableToModifyInterbankSettlementAmount, ModificationRejection2Code.mmUnableToModifyInstructionForDebtorAgent,
+						ModificationRejection2Code.mmUnableToModifyRequestedCollectionDate, ModificationRejection2Code.mmUnableToModifyPaymentType, ModificationRejection2Code.mmUnableToModifyInstructedAmount);
 				trace_lazy = () -> PaymentModificationRejectionV2Code.mmObject();
 			}
 		});

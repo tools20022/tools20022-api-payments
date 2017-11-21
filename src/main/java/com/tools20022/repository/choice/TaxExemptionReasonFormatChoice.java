@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.TaxExemptReason1Code;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Choice between specification of the tax exemption reason in structured or
@@ -36,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.TaxExemptionReasonFormatChoice#Unstructured
- * TaxExemptionReasonFormatChoice.Unstructured}</li>
+ * {@linkplain com.tools20022.repository.choice.TaxExemptionReasonFormatChoice#mmUnstructured
+ * TaxExemptionReasonFormatChoice.mmUnstructured}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.TaxExemptionReasonFormatChoice#Structured
- * TaxExemptionReasonFormatChoice.Structured}</li>
+ * {@linkplain com.tools20022.repository.choice.TaxExemptionReasonFormatChoice#mmStructured
+ * TaxExemptionReasonFormatChoice.mmStructured}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +68,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TaxExemptionReasonFormatChoice", propOrder = {"unstructured", "structured"})
 public class TaxExemptionReasonFormatChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max140Text unstructured;
 	/**
 	 * Free text form.
 	 * <p>
@@ -77,8 +86,8 @@ public class TaxExemptionReasonFormatChoice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#ExemptionReason
-	 * Tax.ExemptionReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmExemptionReason
+	 * Tax.mmExemptionReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -97,20 +106,21 @@ public class TaxExemptionReasonFormatChoice {
 	 * definition} = "Free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Unstructured = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmUnstructured = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmExemptionReason;
 			componentContext_lazy = () -> TaxExemptionReasonFormatChoice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.ExemptionReason;
 			isDerived = false;
 			xmlTag = "Ustrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unstructured";
 			definition = "Free text form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected TaxExemptReason1Code structured;
 	/**
 	 * Structured format.
 	 * <p>
@@ -124,8 +134,8 @@ public class TaxExemptionReasonFormatChoice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#ExemptionReason
-	 * Tax.ExemptionReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmExemptionReason
+	 * Tax.mmExemptionReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -144,17 +154,17 @@ public class TaxExemptionReasonFormatChoice {
 	 * definition} = "Structured format."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Structured = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmStructured = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmExemptionReason;
 			componentContext_lazy = () -> TaxExemptionReasonFormatChoice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.ExemptionReason;
 			isDerived = false;
 			xmlTag = "Strd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Structured";
 			definition = "Structured format.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TaxExemptReason1Code.mmObject();
 		}
 	};
@@ -162,14 +172,32 @@ public class TaxExemptionReasonFormatChoice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.TaxExemptionReasonFormatChoice.Unstructured, com.tools20022.repository.choice.TaxExemptionReasonFormatChoice.Structured);
+				messageElement_lazy = () -> Arrays.asList(TaxExemptionReasonFormatChoice.mmUnstructured, TaxExemptionReasonFormatChoice.mmStructured);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxExemptionReasonFormatChoice";
 				definition = "Choice between specification of the tax exemption reason in structured or free text format.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Ustrd", required = true)
+	public Max140Text getUnstructured() {
+		return unstructured;
+	}
+
+	public void setUnstructured(Max140Text unstructured) {
+		this.unstructured = unstructured;
+	}
+
+	@XmlElement(name = "Strd", required = true)
+	public TaxExemptReason1Code getStructured() {
+		return structured;
+	}
+
+	public void setStructured(TaxExemptReason1Code structured) {
+		this.structured = structured;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,29 +31,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Declined
- * ResponseCode.Declined}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Approved
- * ResponseCode.Approved}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#mmDeclined
+ * ResponseCode.mmDeclined}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#mmApproved
+ * ResponseCode.mmApproved}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseCode#PartialApproved
- * ResponseCode.PartialApproved}</li>
+ * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmPartialApproved
+ * ResponseCode.mmPartialApproved}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResponseCode#TechnicalError
- * ResponseCode.TechnicalError}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#FurtherAction
- * ResponseCode.FurtherAction}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#NotProcessed
- * ResponseCode.NotProcessed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#Processed
- * ResponseCode.Processed}</li>
+ * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmTechnicalError
+ * ResponseCode.mmTechnicalError}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmFurtherAction
+ * ResponseCode.mmFurtherAction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ResponseCode#mmNotProcessed
+ * ResponseCode.mmNotProcessed}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ResponseCode#mmProcessed
+ * ResponseCode.mmProcessed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -91,9 +95,9 @@ public class ResponseCode {
 	 * definition} = "Service is declined."</li>
 	 * </ul>
 	 */
-	public static final MMCode Declined = new MMCode() {
+	public static final MMCode mmDeclined = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Declined";
 			definition = "Service is declined.";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -120,9 +124,9 @@ public class ResponseCode {
 	 * definition} = "Service has been successfuly provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode Approved = new MMCode() {
+	public static final MMCode mmApproved = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Approved";
 			definition = "Service has been successfuly provided.";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -149,9 +153,9 @@ public class ResponseCode {
 	 * definition} = "Service has been partialy provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode PartialApproved = new MMCode() {
+	public static final MMCode mmPartialApproved = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialApproved";
 			definition = "Service has been partialy provided.";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -181,9 +185,9 @@ public class ResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TechnicalError = new MMCode() {
+	public static final MMCode mmTechnicalError = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TechnicalError";
 			definition = "Service cannot be provided for technical reason (eg timeout contacting the Issuer, security problem).";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -213,9 +217,9 @@ public class ResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FurtherAction = new MMCode() {
+	public static final MMCode mmFurtherAction = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FurtherAction";
 			definition = "Further action required to complete the transaction, for instance a referral.";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -242,9 +246,9 @@ public class ResponseCode {
 	 * definition} = "Advice message could not be processed."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotProcessed = new MMCode() {
+	public static final MMCode mmNotProcessed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotProcessed";
 			definition = "Advice message could not be processed.";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -271,9 +275,9 @@ public class ResponseCode {
 	 * definition} = "Advice message is processed."</li>
 	 * </ul>
 	 */
-	public static final MMCode Processed = new MMCode() {
+	public static final MMCode mmProcessed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Processed";
 			definition = "Advice message is processed.";
 			owner_lazy = () -> ResponseCode.mmObject();
@@ -284,14 +288,13 @@ public class ResponseCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DECL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseCode";
 				definition = "Response code of a transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ResponseCode.Declined, com.tools20022.repository.codeset.ResponseCode.Approved, com.tools20022.repository.codeset.ResponseCode.PartialApproved,
-						com.tools20022.repository.codeset.ResponseCode.TechnicalError, com.tools20022.repository.codeset.ResponseCode.FurtherAction, com.tools20022.repository.codeset.ResponseCode.NotProcessed,
-						com.tools20022.repository.codeset.ResponseCode.Processed);
+				code_lazy = () -> Arrays.asList(ResponseCode.mmDeclined, ResponseCode.mmApproved, ResponseCode.mmPartialApproved, ResponseCode.mmTechnicalError, ResponseCode.mmFurtherAction, ResponseCode.mmNotProcessed,
+						ResponseCode.mmProcessed);
 			}
 		});
 		return mmObject_lazy.get();

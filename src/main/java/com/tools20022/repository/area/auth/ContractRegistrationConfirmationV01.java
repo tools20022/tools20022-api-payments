@@ -20,12 +20,16 @@ package com.tools20022.repository.area.auth;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.msg.CurrencyControlHeader2;
 import com.tools20022.repository.msg.RegisteredContract4;
 import com.tools20022.repository.msg.SupplementaryData1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * The ContractRegistrationConfirmation message is sent by the registration
@@ -47,21 +51,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#GroupHeader
- * ContractRegistrationConfirmationV01.GroupHeader}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#mmGroupHeader
+ * ContractRegistrationConfirmationV01.mmGroupHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#RegisteredContract
- * ContractRegistrationConfirmationV01.RegisteredContract}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#mmRegisteredContract
+ * ContractRegistrationConfirmationV01.mmRegisteredContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#SupplementaryData
- * ContractRegistrationConfirmationV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#mmSupplementaryData
+ * ContractRegistrationConfirmationV01.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#identifier
- * ContractRegistrationConfirmationV01.identifier}</li>
+ * messageDefinitionIdentifier} = {@code auth.019.001.01}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,9 +76,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ContractRegistrationConfirmationV01", propOrder = {"groupHeader", "registeredContract", "supplementaryData"})
 public class ContractRegistrationConfirmationV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyControlHeader2 groupHeader;
 	/**
 	 * Characteristics shared by all individual items included in the message.
 	 * <p>
@@ -102,17 +107,26 @@ public class ContractRegistrationConfirmationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock GroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "GrpHdr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupHeader";
 			definition = "Characteristics shared by all individual items included in the message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> CurrencyControlHeader2.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ContractRegistrationConfirmationV01.class.getMethod("getGroupHeader", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<RegisteredContract4> registeredContract;
 	/**
 	 * Identifies the contract details which is registered for currency control.
 	 * <p>
@@ -138,16 +152,25 @@ public class ContractRegistrationConfirmationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock RegisteredContract = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmRegisteredContract = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "RegdCtrct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegisteredContract";
 			definition = "Identifies the contract details which is registered for currency control.";
 			minOccurs = 1;
 			complexType_lazy = () -> RegisteredContract4.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ContractRegistrationConfirmationV01.class.getMethod("getRegisteredContract", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -174,58 +197,84 @@ public class ContractRegistrationConfirmationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "01"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "auth"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "019"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "auth";
-			messageFunctionality = "019";
-			version = "01";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return ContractRegistrationConfirmationV01.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractRegistrationConfirmationV01";
 				definition = "The ContractRegistrationConfirmation message is sent by the registration agent to the reporting party to register the contract subject to currency control.";
 				rootElement = "Document";
 				xmlTag = "CtrctRegnConf";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.GroupHeader,
-						com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.RegisteredContract, com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.mmGroupHeader,
+						com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.mmRegisteredContract, com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "auth";
+						messageFunctionality = "019";
+						version = "01";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ContractRegistrationConfirmationV01.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "GrpHdr", required = true)
+	public CurrencyControlHeader2 getGroupHeader() {
+		return groupHeader;
+	}
+
+	public void setGroupHeader(CurrencyControlHeader2 groupHeader) {
+		this.groupHeader = groupHeader;
+	}
+
+	@XmlElement(name = "RegdCtrct", required = true)
+	public List<RegisteredContract4> getRegisteredContract() {
+		return registeredContract;
+	}
+
+	public void setRegisteredContract(List<RegisteredContract4> registeredContract) {
+		this.registeredContract = registeredContract;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.019.01.01")
+	static public class Document {
+		@XmlElement(name = "CtrctRegnConf", required = true)
+		public ContractRegistrationConfirmationV01 messageBody;
 	}
 }

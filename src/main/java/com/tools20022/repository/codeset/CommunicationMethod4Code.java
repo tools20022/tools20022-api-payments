@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CommunicationMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,39 +36,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#Email
- * CommunicationMethod4Code.Email}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmEmail
+ * CommunicationMethod4Code.mmEmail}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#Fax
- * CommunicationMethod4Code.Fax}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmFax
+ * CommunicationMethod4Code.mmFax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#File
- * CommunicationMethod4Code.File}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmFile
+ * CommunicationMethod4Code.mmFile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#Online
- * CommunicationMethod4Code.Online}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmOnline
+ * CommunicationMethod4Code.mmOnline}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#Phone
- * CommunicationMethod4Code.Phone}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmPhone
+ * CommunicationMethod4Code.mmPhone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#PostalService
- * CommunicationMethod4Code.PostalService}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmPostalService
+ * CommunicationMethod4Code.mmPostalService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#Proprietary
- * CommunicationMethod4Code.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmProprietary
+ * CommunicationMethod4Code.mmProprietary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#SWIFTMT
- * CommunicationMethod4Code.SWIFTMT}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmSWIFTMT
+ * CommunicationMethod4Code.mmSWIFTMT}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#SWIFTMX
- * CommunicationMethod4Code.SWIFTMX}</li>
+ * {@linkplain com.tools20022.repository.codeset.CommunicationMethod4Code#mmSWIFTMX
+ * CommunicationMethod4Code.mmSWIFTMX}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,9 +99,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "Email"</li>
 	 * </ul>
 	 */
-	public static final MMCode Email = new MMCode() {
+	public static final MMCode mmEmail = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Email";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -120,9 +122,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "Fax"</li>
 	 * </ul>
 	 */
-	public static final MMCode Fax = new MMCode() {
+	public static final MMCode mmFax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fax";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -143,9 +145,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "File"</li>
 	 * </ul>
 	 */
-	public static final MMCode File = new MMCode() {
+	public static final MMCode mmFile = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "File";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -166,9 +168,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "Online"</li>
 	 * </ul>
 	 */
-	public static final MMCode Online = new MMCode() {
+	public static final MMCode mmOnline = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Online";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -189,9 +191,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "Phone"</li>
 	 * </ul>
 	 */
-	public static final MMCode Phone = new MMCode() {
+	public static final MMCode mmPhone = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Phone";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -212,9 +214,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "PostalService"</li>
 	 * </ul>
 	 */
-	public static final MMCode PostalService = new MMCode() {
+	public static final MMCode mmPostalService = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostalService";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -235,9 +237,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "Proprietary"</li>
 	 * </ul>
 	 */
-	public static final MMCode Proprietary = new MMCode() {
+	public static final MMCode mmProprietary = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -258,9 +260,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "SWIFTMT"</li>
 	 * </ul>
 	 */
-	public static final MMCode SWIFTMT = new MMCode() {
+	public static final MMCode mmSWIFTMT = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SWIFTMT";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -281,9 +283,9 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	 * name} = "SWIFTMX"</li>
 	 * </ul>
 	 */
-	public static final MMCode SWIFTMX = new MMCode() {
+	public static final MMCode mmSWIFTMX = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SWIFTMX";
 			owner_lazy = () -> CommunicationMethod4Code.mmObject();
 		}
@@ -292,14 +294,12 @@ public class CommunicationMethod4Code extends CommunicationMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommunicationMethod4Code";
 				definition = "Specifies a communication method used for the transmission of documents.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CommunicationMethod4Code.Email, com.tools20022.repository.codeset.CommunicationMethod4Code.Fax,
-						com.tools20022.repository.codeset.CommunicationMethod4Code.File, com.tools20022.repository.codeset.CommunicationMethod4Code.Online, com.tools20022.repository.codeset.CommunicationMethod4Code.Phone,
-						com.tools20022.repository.codeset.CommunicationMethod4Code.PostalService, com.tools20022.repository.codeset.CommunicationMethod4Code.Proprietary, com.tools20022.repository.codeset.CommunicationMethod4Code.SWIFTMT,
-						com.tools20022.repository.codeset.CommunicationMethod4Code.SWIFTMX);
+				code_lazy = () -> Arrays.asList(CommunicationMethod4Code.mmEmail, CommunicationMethod4Code.mmFax, CommunicationMethod4Code.mmFile, CommunicationMethod4Code.mmOnline, CommunicationMethod4Code.mmPhone,
+						CommunicationMethod4Code.mmPostalService, CommunicationMethod4Code.mmProprietary, CommunicationMethod4Code.mmSWIFTMT, CommunicationMethod4Code.mmSWIFTMX);
 				trace_lazy = () -> CommunicationMethodCode.mmObject();
 			}
 		});

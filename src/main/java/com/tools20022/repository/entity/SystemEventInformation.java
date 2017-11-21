@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SystemEventTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,27 +41,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.SystemEventInformation#Type
- * SystemEventInformation.Type}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SystemEventInformation#Time
- * SystemEventInformation.Time}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemEventInformation#System
- * SystemEventInformation.System}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemEventInformation#mmType
+ * SystemEventInformation.mmType}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SystemEventInformation#mmTime
+ * SystemEventInformation.mmTime}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SystemEventInformation#mmSystem
+ * SystemEventInformation.mmSystem}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.System#Event System.Event}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.System#mmEvent
+ * System.mmEvent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,6 +80,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SystemEventInformation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SystemEventTypeCode type;
 	/**
 	 * Nature of the event that has occurred.
 	 * <p>
@@ -103,18 +107,27 @@ public class SystemEventInformation {
 	 * definition} = "Nature of the event that has occurred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SystemEventInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Nature of the event that has occurred.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SystemEventTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SystemEventInformation.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime time;
 	/**
 	 * Date and time at which the event occurred.
 	 * <p>
@@ -140,18 +153,27 @@ public class SystemEventInformation {
 	 * definition} = "Date and time at which the event occurred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Time = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SystemEventInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Time";
 			definition = "Date and time at which the event occurred.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SystemEventInformation.class.getMethod("getTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected System system;
 	/**
 	 * System for which event information is provided.
 	 * <p>
@@ -159,8 +181,8 @@ public class SystemEventInformation {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.System#Event
-	 * System.Event}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.System#mmEvent
+	 * System.mmEvent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -183,32 +205,62 @@ public class SystemEventInformation {
 	 * definition} = "System for which event information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd System = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SystemEventInformation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SystemEventInformation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which event information is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.System.mmEvent;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.System.Event;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemEventInformation";
 				definition = "Detailed information about an event occurring on a system, whether planned, for example, cut-off time for a specific type of eligible transfer, or unplanned, for example, an unsolicited failure, as stipulated in the specifications of the system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.Event);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemEventInformation.Type, com.tools20022.repository.entity.SystemEventInformation.Time, com.tools20022.repository.entity.SystemEventInformation.System);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.mmEvent);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemEventInformation.mmType, com.tools20022.repository.entity.SystemEventInformation.mmTime,
+						com.tools20022.repository.entity.SystemEventInformation.mmSystem);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SystemEventInformation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SystemEventTypeCode getType() {
+		return type;
+	}
+
+	public void setType(SystemEventTypeCode type) {
+		this.type = type;
+	}
+
+	public ISODateTime getTime() {
+		return time;
+	}
+
+	public void setTime(ISODateTime time) {
+		this.time = time;
+	}
+
+	public System getSystem() {
+		return system;
+	}
+
+	public void setSystem(com.tools20022.repository.entity.System system) {
+		this.system = system;
 	}
 }

@@ -19,9 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.*;
 import com.tools20022.repository.entity.ElectronicSignature;
+import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Entity involved in an activity.
@@ -32,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PartyAndSignature2#Party
- * PartyAndSignature2.Party}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyAndSignature2#Signature
- * PartyAndSignature2.Signature}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyAndSignature2#mmParty
+ * PartyAndSignature2.mmParty}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyAndSignature2#mmSignature
+ * PartyAndSignature2.mmSignature}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,57 +54,57 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#DigitalSignature
- * AccountAdditionalInformationRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#mmDigitalSignature
+ * AccountAdditionalInformationRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#DigitalSignature
- * AccountClosingAdditionalInformationRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#mmDigitalSignature
+ * AccountClosingAdditionalInformationRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#DigitalSignature
- * AccountClosingAmendmentRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#mmDigitalSignature
+ * AccountClosingAmendmentRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#DigitalSignature
- * AccountClosingRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#mmDigitalSignature
+ * AccountClosingRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02#DigitalSignature
- * AccountExcludedMandateMaintenanceAmendmentRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02#mmDigitalSignature
+ * AccountExcludedMandateMaintenanceAmendmentRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02#DigitalSignature
- * AccountExcludedMandateMaintenanceRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02#mmDigitalSignature
+ * AccountExcludedMandateMaintenanceRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#DigitalSignature
- * AccountMandateMaintenanceAmendmentRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#mmDigitalSignature
+ * AccountMandateMaintenanceAmendmentRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02#DigitalSignature
- * AccountMandateMaintenanceRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02#mmDigitalSignature
+ * AccountMandateMaintenanceRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#DigitalSignature
- * AccountOpeningAdditionalInformationRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmDigitalSignature
+ * AccountOpeningAdditionalInformationRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#DigitalSignature
- * AccountOpeningAmendmentRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#mmDigitalSignature
+ * AccountOpeningAmendmentRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#DigitalSignature
- * AccountOpeningRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#mmDigitalSignature
+ * AccountOpeningRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#DigitalSignature
- * AccountReportRequestV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#mmDigitalSignature
+ * AccountReportRequestV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountReportV02#DigitalSignature
- * AccountReportV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountReportV02#mmDigitalSignature
+ * AccountReportV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#DigitalSignature
- * AccountRequestAcknowledgementV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#mmDigitalSignature
+ * AccountRequestAcknowledgementV02.mmDigitalSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#DigitalSignature
- * AccountRequestRejectionV02.DigitalSignature}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#mmDigitalSignature
+ * AccountRequestRejectionV02.mmDigitalSignature}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,9 +115,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Entity involved in an activity."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "PartyAndSignature2", propOrder = {"party", "signature"})
 public class PartyAndSignature2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PartyIdentification43 party;
 	/**
 	 * Entity involved in an activity.
 	 * <p>
@@ -121,8 +132,8 @@ public class PartyAndSignature2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -141,21 +152,22 @@ public class PartyAndSignature2 {
 	 * definition} = "Entity involved in an activity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Party = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> PartyAndSignature2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "Pty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Party";
 			definition = "Entity involved in an activity.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected ProprietaryData3 signature;
 	/**
 	 * Signature of a party.
 	 * <p>
@@ -187,41 +199,56 @@ public class PartyAndSignature2 {
 	 * definition} = "Signature of a party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Signature = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSignature = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> PartyAndSignature2.mmObject();
 			businessComponentTrace_lazy = () -> ElectronicSignature.mmObject();
+			componentContext_lazy = () -> PartyAndSignature2.mmObject();
 			isDerived = false;
 			xmlTag = "Sgntr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Signature";
 			definition = "Signature of a party.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> ProprietaryData3.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ProprietaryData3.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyAndSignature2.Party, com.tools20022.repository.msg.PartyAndSignature2.Signature);
+				messageElement_lazy = () -> Arrays.asList(PartyAndSignature2.mmParty, PartyAndSignature2.mmSignature);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountAdditionalInformationRequestV02.mmDigitalSignature, AccountClosingAdditionalInformationRequestV02.mmDigitalSignature,
+						AccountClosingAmendmentRequestV02.mmDigitalSignature, AccountClosingRequestV02.mmDigitalSignature, AccountExcludedMandateMaintenanceAmendmentRequestV02.mmDigitalSignature,
+						AccountExcludedMandateMaintenanceRequestV02.mmDigitalSignature, AccountMandateMaintenanceAmendmentRequestV02.mmDigitalSignature, AccountMandateMaintenanceRequestV02.mmDigitalSignature,
+						AccountOpeningAdditionalInformationRequestV02.mmDigitalSignature, AccountOpeningAmendmentRequestV02.mmDigitalSignature, AccountOpeningRequestV02.mmDigitalSignature, AccountReportRequestV02.mmDigitalSignature,
+						AccountReportV02.mmDigitalSignature, AccountRequestAcknowledgementV02.mmDigitalSignature, AccountRequestRejectionV02.mmDigitalSignature);
 				trace_lazy = () -> ElectronicSignature.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountClosingRequestV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountOpeningRequestV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountReportRequestV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountReportV02.DigitalSignature,
-						com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02.DigitalSignature, com.tools20022.repository.area.acmt.AccountRequestRejectionV02.DigitalSignature);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyAndSignature2";
 				definition = "Entity involved in an activity.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Pty", required = true)
+	public PartyIdentification43 getParty() {
+		return party;
+	}
+
+	public void setParty(com.tools20022.repository.msg.PartyIdentification43 party) {
+		this.party = party;
+	}
+
+	@XmlElement(name = "Sgntr", required = true)
+	public ProprietaryData3 getSignature() {
+		return signature;
+	}
+
+	public void setSignature(com.tools20022.repository.msg.ProprietaryData3 signature) {
+		this.signature = signature;
 	}
 }

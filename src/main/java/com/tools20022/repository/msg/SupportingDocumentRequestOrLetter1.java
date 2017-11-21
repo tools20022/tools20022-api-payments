@@ -20,12 +20,22 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01;
 import com.tools20022.repository.choice.Party28Choice;
 import com.tools20022.repository.codeset.SupportDocumentType1Code;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.Agreement;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.entity.RegisteredContract;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Currency control related document or letter supporting the contract
@@ -38,41 +48,41 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#RequestOrLetterIdentification
- * SupportingDocumentRequestOrLetter1.RequestOrLetterIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmRequestOrLetterIdentification
+ * SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Date
- * SupportingDocumentRequestOrLetter1.Date}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmDate
+ * SupportingDocumentRequestOrLetter1.mmDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Sender
- * SupportingDocumentRequestOrLetter1.Sender}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmSender
+ * SupportingDocumentRequestOrLetter1.mmSender}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Receiver
- * SupportingDocumentRequestOrLetter1.Receiver}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmReceiver
+ * SupportingDocumentRequestOrLetter1.mmReceiver}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#OriginalReferences
- * SupportingDocumentRequestOrLetter1.OriginalReferences}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmOriginalReferences
+ * SupportingDocumentRequestOrLetter1.mmOriginalReferences}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Subject
- * SupportingDocumentRequestOrLetter1.Subject}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmSubject
+ * SupportingDocumentRequestOrLetter1.mmSubject}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Type
- * SupportingDocumentRequestOrLetter1.Type}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmType
+ * SupportingDocumentRequestOrLetter1.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Description
- * SupportingDocumentRequestOrLetter1.Description}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmDescription
+ * SupportingDocumentRequestOrLetter1.mmDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#ResponseRequired
- * SupportingDocumentRequestOrLetter1.ResponseRequired}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmResponseRequired
+ * SupportingDocumentRequestOrLetter1.mmResponseRequired}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#DueDate
- * SupportingDocumentRequestOrLetter1.DueDate}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmDueDate
+ * SupportingDocumentRequestOrLetter1.mmDueDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Attachment
- * SupportingDocumentRequestOrLetter1.Attachment}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmAttachment
+ * SupportingDocumentRequestOrLetter1.mmAttachment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#SupplementaryData
- * SupportingDocumentRequestOrLetter1.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmSupplementaryData
+ * SupportingDocumentRequestOrLetter1.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -82,15 +92,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01#RequestOrLetter
- * CurrencyControlRequestOrLetterV01.RequestOrLetter}</li>
+ * {@linkplain com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01#mmRequestOrLetter
+ * CurrencyControlRequestOrLetterV01.mmRequestOrLetter}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,9 +113,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "SupportingDocumentRequestOrLetter1", propOrder = {"requestOrLetterIdentification", "date", "sender", "receiver", "originalReferences", "subject", "type", "description", "responseRequired", "dueDate", "attachment",
+		"supplementaryData"})
 public class SupportingDocumentRequestOrLetter1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text requestOrLetterIdentification;
 	/**
 	 * Unique and unambiguous identification of the supporting document request
 	 * or the letter.
@@ -119,8 +133,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#DocumentIdentification
-	 * Document.DocumentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmDocumentIdentification
+	 * Document.mmDocumentIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -141,20 +155,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RequestOrLetterIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRequestOrLetterIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.DocumentIdentification;
 			isDerived = false;
 			xmlTag = "ReqOrLttrId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RequestOrLetterIdentification";
 			definition = "Unique and unambiguous identification of the supporting document request or the letter.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ISODate date;
 	/**
 	 * Date of the supporting document request or the letter.
 	 * <p>
@@ -167,8 +182,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#IssueDate
-	 * Document.IssueDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmIssueDate
+	 * Document.mmIssueDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -187,20 +202,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Date of the supporting document request or the letter."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Date = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmIssueDate;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.IssueDate;
 			isDerived = false;
 			xmlTag = "Dt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Date of the supporting document request or the letter.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected Party28Choice sender;
 	/**
 	 * Sender of the request or letter.
 	 * <p>
@@ -212,8 +228,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#SendingParty
-	 * RegisteredContract.SendingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmSendingParty
+	 * RegisteredContract.mmSendingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -232,21 +248,22 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Sender of the request or letter."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Sender = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSender = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmSendingParty;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.SendingParty;
 			isDerived = false;
 			xmlTag = "Sndr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Sender";
 			definition = "Sender of the request or letter.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Party28Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> Party28Choice.mmObject();
 		}
 	};
+	protected Party28Choice receiver;
 	/**
 	 * Receiver of the request or letter.
 	 * <p>
@@ -258,8 +275,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#ReceivingParty
-	 * RegisteredContract.ReceivingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmReceivingParty
+	 * RegisteredContract.mmReceivingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -278,21 +295,22 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Receiver of the request or letter."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Receiver = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmReceiver = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmReceivingParty;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.ReceivingParty;
 			isDerived = false;
 			xmlTag = "Rcvr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Receiver";
 			definition = "Receiver of the request or letter.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Party28Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> Party28Choice.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.OriginalMessage2> originalReferences;
 	/**
 	 * Provides the references of the original underlying message(s) for which
 	 * supporting documents are requested or for which the letter is sent.
@@ -305,8 +323,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#DocumentIdentification
-	 * Document.DocumentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmDocumentIdentification
+	 * Document.mmDocumentIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -327,20 +345,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalReferences = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalReferences = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Document.mmDocumentIdentification;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.DocumentIdentification;
 			isDerived = false;
 			xmlTag = "OrgnlRefs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalReferences";
 			definition = "Provides the references of the original underlying message(s) for which supporting documents are requested or for which the letter is sent.";
 			minOccurs = 0;
-			type_lazy = () -> OriginalMessage2.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.OriginalMessage2.mmObject();
 		}
 	};
+	protected Max140Text subject;
 	/**
 	 * Subject of the letter or supporting document.
 	 * <p>
@@ -353,8 +372,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Purpose
-	 * Document.Purpose}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmPurpose
+	 * Document.mmPurpose}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -373,20 +392,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Subject of the letter or supporting document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Subject = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSubject = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmPurpose;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.Purpose;
 			isDerived = false;
 			xmlTag = "Sbjt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Subject";
 			definition = "Subject of the letter or supporting document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected SupportDocumentType1Code type;
 	/**
 	 * Provides the type of supporting document requested.
 	 * <p>
@@ -400,8 +420,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Type Document.Type}
-	 * </li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmType
+	 * Document.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -420,20 +440,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Provides the type of supporting document requested."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.Type;
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Provides the type of supporting document requested.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SupportDocumentType1Code.mmObject();
 		}
 	};
+	protected Max1025Text description;
 	/**
 	 * Further free format description of the request.
 	 * <p>
@@ -446,8 +467,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Agreement#Description
-	 * Agreement.Description}</li>
+	 * {@linkplain com.tools20022.repository.entity.Agreement#mmDescription
+	 * Agreement.mmDescription}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -466,20 +487,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Further free format description of the request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Description = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Agreement.mmDescription;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Agreement.Description;
 			isDerived = false;
 			xmlTag = "Desc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Description";
 			definition = "Further free format description of the request.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
 		}
 	};
+	protected TrueFalseIndicator responseRequired;
 	/**
 	 * Flag to indicate whether a response is required or not.<br>
 	 * <br>
@@ -513,19 +535,20 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ResponseRequired = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmResponseRequired = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "RspnReqrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResponseRequired";
 			definition = "Flag to indicate whether a response is required or not.\r\n\r\nUsage: when the request is used to send a letter, there is no response required.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
+	protected ISODate dueDate;
 	/**
 	 * Date by which the response to the request is expected.
 	 * <p>
@@ -538,8 +561,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#IssueDate
-	 * Document.IssueDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmIssueDate
+	 * Document.mmIssueDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -558,20 +581,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * definition} = "Date by which the response to the request is expected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmIssueDate;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.IssueDate;
 			isDerived = false;
 			xmlTag = "DueDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DueDate";
 			definition = "Date by which the response to the request is expected.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment;
 	/**
 	 * Documents provided as attachments to the supporting document request or
 	 * letter.
@@ -585,8 +609,8 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Attachment
-	 * RegisteredContract.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmAttachment
+	 * RegisteredContract.mmAttachment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -607,20 +631,21 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Attachment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAttachment = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmAttachment;
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Attachment;
 			isDerived = false;
 			xmlTag = "Attchmnt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Attachment";
 			definition = "Documents provided as attachments to the supporting document request or letter.";
 			minOccurs = 0;
-			type_lazy = () -> DocumentGeneralInformation3.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.DocumentGeneralInformation3.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -650,37 +675,143 @@ public class SupportingDocumentRequestOrLetter1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd SupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> SupportingDocumentRequestOrLetter1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
-			type_lazy = () -> SupplementaryData1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.RequestOrLetterIdentification, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Date,
-						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Sender, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Receiver,
-						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.OriginalReferences, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Subject,
-						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Type, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Description,
-						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.ResponseRequired, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.DueDate,
-						com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Attachment, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.SupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification, SupportingDocumentRequestOrLetter1.mmDate, SupportingDocumentRequestOrLetter1.mmSender,
+						SupportingDocumentRequestOrLetter1.mmReceiver, SupportingDocumentRequestOrLetter1.mmOriginalReferences, SupportingDocumentRequestOrLetter1.mmSubject, SupportingDocumentRequestOrLetter1.mmType,
+						SupportingDocumentRequestOrLetter1.mmDescription, SupportingDocumentRequestOrLetter1.mmResponseRequired, SupportingDocumentRequestOrLetter1.mmDueDate, SupportingDocumentRequestOrLetter1.mmAttachment,
+						SupportingDocumentRequestOrLetter1.mmSupplementaryData);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CurrencyControlRequestOrLetterV01.mmRequestOrLetter);
 				trace_lazy = () -> Document.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01.RequestOrLetter);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupportingDocumentRequestOrLetter1";
 				definition = "Currency control related document or letter supporting the contract registration.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ReqOrLttrId", required = true)
+	public Max35Text getRequestOrLetterIdentification() {
+		return requestOrLetterIdentification;
+	}
+
+	public void setRequestOrLetterIdentification(Max35Text requestOrLetterIdentification) {
+		this.requestOrLetterIdentification = requestOrLetterIdentification;
+	}
+
+	@XmlElement(name = "Dt")
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
+	}
+
+	@XmlElement(name = "Sndr")
+	public Party28Choice getSender() {
+		return sender;
+	}
+
+	public void setSender(Party28Choice sender) {
+		this.sender = sender;
+	}
+
+	@XmlElement(name = "Rcvr")
+	public Party28Choice getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(Party28Choice receiver) {
+		this.receiver = receiver;
+	}
+
+	@XmlElement(name = "OrgnlRefs")
+	public List<OriginalMessage2> getOriginalReferences() {
+		return originalReferences;
+	}
+
+	public void setOriginalReferences(List<com.tools20022.repository.msg.OriginalMessage2> originalReferences) {
+		this.originalReferences = originalReferences;
+	}
+
+	@XmlElement(name = "Sbjt", required = true)
+	public Max140Text getSubject() {
+		return subject;
+	}
+
+	public void setSubject(Max140Text subject) {
+		this.subject = subject;
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public SupportDocumentType1Code getType() {
+		return type;
+	}
+
+	public void setType(SupportDocumentType1Code type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Desc")
+	public Max1025Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max1025Text description) {
+		this.description = description;
+	}
+
+	@XmlElement(name = "RspnReqrd", required = true)
+	public TrueFalseIndicator getResponseRequired() {
+		return responseRequired;
+	}
+
+	public void setResponseRequired(TrueFalseIndicator responseRequired) {
+		this.responseRequired = responseRequired;
+	}
+
+	@XmlElement(name = "DueDt")
+	public ISODate getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(ISODate dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	@XmlElement(name = "Attchmnt")
+	public List<DocumentGeneralInformation3> getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(List<com.tools20022.repository.msg.DocumentGeneralInformation3> attachment) {
+		this.attachment = attachment;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
 	}
 }

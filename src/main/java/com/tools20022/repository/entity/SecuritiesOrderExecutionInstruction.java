@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.StayOnSideTypeCode;
 import com.tools20022.repository.datatype.AllOrNoneIndicator;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,113 +40,113 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#AllOrNone
- * SecuritiesOrderExecutionInstruction.AllOrNone}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmAllOrNone
+ * SecuritiesOrderExecutionInstruction.mmAllOrNone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#CallFirst
- * SecuritiesOrderExecutionInstruction.CallFirst}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmCallFirst
+ * SecuritiesOrderExecutionInstruction.mmCallFirst}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Cross
- * SecuritiesOrderExecutionInstruction.Cross}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmCross
+ * SecuritiesOrderExecutionInstruction.mmCross}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#CustomerDisplay
- * SecuritiesOrderExecutionInstruction.CustomerDisplay}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmCustomerDisplay
+ * SecuritiesOrderExecutionInstruction.mmCustomerDisplay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Hold
- * SecuritiesOrderExecutionInstruction.Hold}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmHold
+ * SecuritiesOrderExecutionInstruction.mmHold}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Increase
- * SecuritiesOrderExecutionInstruction.Increase}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmIncrease
+ * SecuritiesOrderExecutionInstruction.mmIncrease}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#InstitutionsOnly
- * SecuritiesOrderExecutionInstruction.InstitutionsOnly}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmInstitutionsOnly
+ * SecuritiesOrderExecutionInstruction.mmInstitutionsOnly}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#NonNegotiable
- * SecuritiesOrderExecutionInstruction.NonNegotiable}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmNonNegotiable
+ * SecuritiesOrderExecutionInstruction.mmNonNegotiable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#OverTheDay
- * SecuritiesOrderExecutionInstruction.OverTheDay}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmOverTheDay
+ * SecuritiesOrderExecutionInstruction.mmOverTheDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ParticipateDontInitiate
- * SecuritiesOrderExecutionInstruction.ParticipateDontInitiate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmParticipateDontInitiate
+ * SecuritiesOrderExecutionInstruction.mmParticipateDontInitiate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#PercentOfVolume
- * SecuritiesOrderExecutionInstruction.PercentOfVolume}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmPercentOfVolume
+ * SecuritiesOrderExecutionInstruction.mmPercentOfVolume}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Scale
- * SecuritiesOrderExecutionInstruction.Scale}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmScale
+ * SecuritiesOrderExecutionInstruction.mmScale}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#StayOnSide
- * SecuritiesOrderExecutionInstruction.StayOnSide}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmStayOnSide
+ * SecuritiesOrderExecutionInstruction.mmStayOnSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Work
- * SecuritiesOrderExecutionInstruction.Work}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmWork
+ * SecuritiesOrderExecutionInstruction.mmWork}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#GoAlong
- * SecuritiesOrderExecutionInstruction.GoAlong}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmGoAlong
+ * SecuritiesOrderExecutionInstruction.mmGoAlong}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#TryScale
- * SecuritiesOrderExecutionInstruction.TryScale}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmTryScale
+ * SecuritiesOrderExecutionInstruction.mmTryScale}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#DoNotReduce
- * SecuritiesOrderExecutionInstruction.DoNotReduce}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmDoNotReduce
+ * SecuritiesOrderExecutionInstruction.mmDoNotReduce}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#CancelOnSystemFailure
- * SecuritiesOrderExecutionInstruction.CancelOnSystemFailure}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmCancelOnSystemFailure
+ * SecuritiesOrderExecutionInstruction.mmCancelOnSystemFailure}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#CancelOnTradingHalt
- * SecuritiesOrderExecutionInstruction.CancelOnTradingHalt}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmCancelOnTradingHalt
+ * SecuritiesOrderExecutionInstruction.mmCancelOnTradingHalt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#TradeAlong
- * SecuritiesOrderExecutionInstruction.TradeAlong}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmTradeAlong
+ * SecuritiesOrderExecutionInstruction.mmTradeAlong}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#StrictLimit
- * SecuritiesOrderExecutionInstruction.StrictLimit}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmStrictLimit
+ * SecuritiesOrderExecutionInstruction.mmStrictLimit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#IgnorePriceValidityChecks
- * SecuritiesOrderExecutionInstruction.IgnorePriceValidityChecks}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmIgnorePriceValidityChecks
+ * SecuritiesOrderExecutionInstruction.mmIgnorePriceValidityChecks}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ReinstateOnSystemFailure
- * SecuritiesOrderExecutionInstruction.ReinstateOnSystemFailure}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmReinstateOnSystemFailure
+ * SecuritiesOrderExecutionInstruction.mmReinstateOnSystemFailure}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ReinstateOnTradingHalt
- * SecuritiesOrderExecutionInstruction.ReinstateOnTradingHalt}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmReinstateOnTradingHalt
+ * SecuritiesOrderExecutionInstruction.mmReinstateOnTradingHalt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#CancelIfNotBest
- * SecuritiesOrderExecutionInstruction.CancelIfNotBest}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmCancelIfNotBest
+ * SecuritiesOrderExecutionInstruction.mmCancelIfNotBest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ExternalRoutingAllowed
- * SecuritiesOrderExecutionInstruction.ExternalRoutingAllowed}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmExternalRoutingAllowed
+ * SecuritiesOrderExecutionInstruction.mmExternalRoutingAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ExternalRoutingNotAllowed
- * SecuritiesOrderExecutionInstruction.ExternalRoutingNotAllowed}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmExternalRoutingNotAllowed
+ * SecuritiesOrderExecutionInstruction.mmExternalRoutingNotAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ImbalanceOnly
- * SecuritiesOrderExecutionInstruction.ImbalanceOnly}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmImbalanceOnly
+ * SecuritiesOrderExecutionInstruction.mmImbalanceOnly}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#IntermarketSweep
- * SecuritiesOrderExecutionInstruction.IntermarketSweep}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmIntermarketSweep
+ * SecuritiesOrderExecutionInstruction.mmIntermarketSweep}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Netting
- * SecuritiesOrderExecutionInstruction.Netting}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmNetting
+ * SecuritiesOrderExecutionInstruction.mmNetting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#RelatedOrder
- * SecuritiesOrderExecutionInstruction.RelatedOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmRelatedOrder
+ * SecuritiesOrderExecutionInstruction.mmRelatedOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#ForeignExchangeNetting
- * SecuritiesOrderExecutionInstruction.ForeignExchangeNetting}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmForeignExchangeNetting
+ * SecuritiesOrderExecutionInstruction.mmForeignExchangeNetting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#StrictScale
- * SecuritiesOrderExecutionInstruction.StrictScale}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmStrictScale
+ * SecuritiesOrderExecutionInstruction.mmStrictScale}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#Suspend
- * SecuritiesOrderExecutionInstruction.Suspend}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmSuspend
+ * SecuritiesOrderExecutionInstruction.mmSuspend}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#TryToStop
- * SecuritiesOrderExecutionInstruction.TryToStop}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmTryToStop
+ * SecuritiesOrderExecutionInstruction.mmTryToStop}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#OrderPriceStrategy
- * SecuritiesOrderExecutionInstruction.OrderPriceStrategy}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction#mmOrderPriceStrategy
+ * SecuritiesOrderExecutionInstruction.mmOrderPriceStrategy}</li>
  * </ul>
  * </li>
  * <li>
@@ -154,18 +154,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#ExecutionInstructions
- * SecuritiesOrder.ExecutionInstructions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmExecutionInstructions
+ * SecuritiesOrder.mmExecutionInstructions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Discretion#RelatedOrderExecution
- * Discretion.RelatedOrderExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.Discretion#mmRelatedOrderExecution
+ * Discretion.mmRelatedOrderExecution}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -179,6 +179,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesOrderExecutionInstruction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected AllOrNoneIndicator allOrNone;
 	/**
 	 * Round-lot market or limit-price order that must be executed in its
 	 * entirety or not at all; unlike Fill or Kill orders, AON orders are not
@@ -210,18 +211,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AllOrNone = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAllOrNone = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllOrNone";
 			definition = "Round-lot market or limit-price order that must be executed in its entirety or not at all; unlike Fill or Kill orders, AON orders are not treated as canceled if they are not executed as soon as represented in the Trading Crowd.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AllOrNoneIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getAllOrNone", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator callFirst;
 	/**
 	 * Refers to the client before trading in order to catch all verbal
 	 * instructions on trading strategy usually because the strategy is too
@@ -252,18 +262,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CallFirst = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCallFirst = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CallFirst";
 			definition = "Refers to the client before trading in order to catch all verbal instructions on trading strategy usually because the strategy is too complex or cannot be represented in the trading application.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getCallFirst", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator cross;
 	/**
 	 * Allow crossing of an order.
 	 * <p>
@@ -290,18 +309,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Allow crossing of an order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Cross = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCross = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cross";
 			definition = "Allow crossing of an order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getCross", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator customerDisplay;
 	/**
 	 * Exchange or ECN required by the SEC to display limit orders in the public
 	 * order book. A customer can choose not to have his limit order displayed
@@ -332,18 +360,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CustomerDisplay = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCustomerDisplay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomerDisplay";
 			definition = "Exchange or ECN required by the SEC to display limit orders in the public order book. A customer can choose not to have his limit order displayed to the public.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getCustomerDisplay", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator hold;
 	/**
 	 * Indicates whether the firm executing the order is held to best execution
 	 * requirements and may be able to make some discretionary decisions.
@@ -373,18 +410,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Hold = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmHold = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Hold";
 			definition = "Indicates whether the firm executing the order is held to best execution requirements and may be able to make some discretionary decisions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getHold", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator increase;
 	/**
 	 * Indicates whether the order is to be increased in shares on the
 	 * ex-dividend date as a result of a stock dividend or distribution.
@@ -414,18 +460,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Increase = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIncrease = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Increase";
 			definition = "Indicates whether the order is to be increased in shares on the ex-dividend date as a result of a stock dividend or distribution.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getIncrease", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator institutionsOnly;
 	/**
 	 * Identifies that the broker is restricted to dealing with other buy side
 	 * firms.
@@ -455,18 +510,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InstitutionsOnly = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInstitutionsOnly = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstitutionsOnly";
 			definition = "Identifies that the broker is restricted to dealing with other buy side firms.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getInstitutionsOnly", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator nonNegotiable;
 	/**
 	 * Qualifies an asset (usually a payment instrument) of which rights cannot
 	 * be transferred to a party other then the original debtor and creditor.
@@ -496,18 +560,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NonNegotiable = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNonNegotiable = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonNegotiable";
 			definition = "Qualifies an asset (usually a payment instrument) of which rights cannot be transferred to a party other then the original debtor and creditor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getNonNegotiable", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator overTheDay;
 	/**
 	 * Indicates whether to execute parts of the order over the course of the
 	 * day. Usually done with large block orders.
@@ -537,18 +610,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OverTheDay = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOverTheDay = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OverTheDay";
 			definition = "Indicates whether to execute parts of the order over the course of the day. Usually done with large block orders.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getOverTheDay", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator participateDontInitiate;
 	/**
 	 * An order that may participate in a transaction initiated by another
 	 * party, but may not initiate a transaction.
@@ -578,18 +660,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ParticipateDontInitiate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmParticipateDontInitiate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParticipateDontInitiate";
 			definition = "An order that may participate in a transaction initiated by another party, but may not initiate a transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getParticipateDontInitiate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator percentOfVolume;
 	/**
 	 * Indicates that the Sender does not want all of the volume on the floor.
 	 * <p>
@@ -618,18 +709,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PercentOfVolume = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPercentOfVolume = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentOfVolume";
 			definition = "Indicates that the Sender does not want all of the volume on the floor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getPercentOfVolume", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator scale;
 	/**
 	 * An order to buy (or sell) a financial instrument which specifies the
 	 * total amount to be bought (or sold) and the amount to be bought (or sold)
@@ -660,18 +760,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Scale = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmScale = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Scale";
 			definition = "An order to buy (or sell) a financial instrument which specifies the total amount to be bought (or sold) and the amount to be bought (or sold) at specified price variations.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getScale", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected StayOnSideTypeCode stayOnSide;
 	/**
 	 * Specifies the order limit based on the offer/bid at the time of the order
 	 * submission.
@@ -701,18 +810,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StayOnSide = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStayOnSide = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StayOnSide";
 			definition = "Specifies the order limit based on the offer/bid at the time of the order submission.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> StayOnSideTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getStayOnSide", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator work;
 	/**
 	 * Make the order active until notified.
 	 * <p>
@@ -739,18 +857,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Make the order active until notified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Work = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmWork = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Work";
 			definition = "Make the order active until notified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getWork", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator goAlong;
 	/**
 	 * Used for listed equity securities. Buy or sell at prices that randomly
 	 * occur on the floor, participating in what trades the specialist and other
@@ -781,18 +908,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GoAlong = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGoAlong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GoAlong";
 			definition = "Used for listed equity securities. Buy or sell at prices that randomly occur on the floor, participating in what\ntrades the specialist and other players will allow.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getGoAlong", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator tryScale;
 	/**
 	 * Order to buy (sell) a security that specifies the total amount to be
 	 * bought (sold) and the amount to be bought (sold) at successively
@@ -824,18 +960,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TryScale = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTryScale = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TryScale";
 			definition = "Order to buy (sell) a security that specifies the total amount to be bought (sold) and the amount to be bought (sold) at successively decreasing (increasing) price intervals; often placed in order to average the price.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getTryScale", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator doNotReduce;
 	/**
 	 * Indicates whether to buy, to stop order to sell, or to stop limit order
 	 * to sell that is not to be reduced in price by the amount of an ordinary
@@ -868,18 +1013,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DoNotReduce = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDoNotReduce = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DoNotReduce";
 			definition = "Indicates whether to buy, to stop order to sell, or to stop limit order to sell that is not to be reduced in price by the amount of an ordinary cash dividend on the ex-dividend date.  A \"do not reduce\" order applies only to ordinary cash dividends; it should be reduced for other distributions - such as when a stock goes ex stock dividend or ex rights.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getDoNotReduce", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator cancelOnSystemFailure;
 	/**
 	 * If a system failure interrupts trading or order routing, attempt to
 	 * cancel this order or attempt to reinstate this order, subject to time in
@@ -911,18 +1065,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancelOnSystemFailure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancelOnSystemFailure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelOnSystemFailure";
 			definition = "If a system failure interrupts trading or order routing, attempt to cancel this order or attempt to reinstate this order, subject to time in force limitations. Note that depending on the type and severity of the failure, this might not be possible.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getCancelOnSystemFailure", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator cancelOnTradingHalt;
 	/**
 	 * If trading in this instrument is halted, cancel this order or reinstate
 	 * this order when/if trading resumes, subject to time in force limitations.
@@ -952,18 +1115,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancelOnTradingHalt = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancelOnTradingHalt = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelOnTradingHalt";
 			definition = "If trading in this instrument is halted, cancel this order or reinstate this order when/if trading resumes, subject to time in force limitations.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getCancelOnTradingHalt", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator tradeAlong;
 	/**
 	 * Indicates whether the broker has permission to handle and place the order
 	 * in the market even if the broker already has its own proprietary orders
@@ -994,18 +1166,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradeAlong = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradeAlong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeAlong";
 			definition = "Indicates whether the broker has permission to handle and place the order in the market even if  the broker already has its own proprietary orders for the same financial instrument placed in the market.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getTradeAlong", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator strictLimit;
 	/**
 	 * Limit order that must be traded at the exact limit price specified
 	 * without any price improvement.
@@ -1035,18 +1216,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StrictLimit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStrictLimit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrictLimit";
 			definition = "Limit order that must be traded at the exact limit price specified without any price improvement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getStrictLimit", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator ignorePriceValidityChecks;
 	/**
 	 * Disables validity checking of price fields for an order or change
 	 * request.
@@ -1076,18 +1266,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IgnorePriceValidityChecks = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIgnorePriceValidityChecks = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IgnorePriceValidityChecks";
 			definition = "Disables validity checking of price fields for an order or change request.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getIgnorePriceValidityChecks", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator reinstateOnSystemFailure;
 	/**
 	 * If a system failure interrupts trading or order routing, attempt to
 	 * reinstate this order, subject to time in force limitations. Depending on
@@ -1118,18 +1317,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReinstateOnSystemFailure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReinstateOnSystemFailure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinstateOnSystemFailure";
 			definition = "If a system failure interrupts trading or order routing, attempt to reinstate this order, subject to time in force limitations. Depending on the type and severity of the failure, this might not be possible.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getReinstateOnSystemFailure", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator reinstateOnTradingHalt;
 	/**
 	 * If trading in this instrument is halted, reinstate this order when/if
 	 * trading resumes, subject to time in force limitations.
@@ -1159,18 +1367,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReinstateOnTradingHalt = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReinstateOnTradingHalt = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinstateOnTradingHalt";
 			definition = "If trading in this instrument is halted, reinstate this order when/if trading resumes, subject to time in force limitations.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getReinstateOnTradingHalt", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator cancelIfNotBest;
 	/**
 	 * Indicates that an order should be cancelled if it is no longer the best
 	 * bid if buying, or the best offer if selling.
@@ -1200,18 +1417,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancelIfNotBest = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancelIfNotBest = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancelIfNotBest";
 			definition = "Indicates that an order should be cancelled if it is no longer the best bid if buying, or the best offer if selling.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getCancelIfNotBest", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator externalRoutingAllowed;
 	/**
 	 * Indicates that an order sent to one market may be routed by that market
 	 * to other external markets, especially in cases where the order locks or
@@ -1245,18 +1471,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExternalRoutingAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExternalRoutingAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExternalRoutingAllowed";
 			definition = "Indicates that an order sent to one market may be routed by that market to other external markets, especially in cases where the order locks or crosses the market and it can be executed against another markets superior price. The absence of this instruction does not imply that an order should not be routed externally; rather, the order receivers default will apply.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getExternalRoutingAllowed", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator externalRoutingNotAllowed;
 	/**
 	 * Indicates that an order sent to one market may never be routed by that
 	 * market to other external markets. Should the order lock or cross the
@@ -1291,18 +1526,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExternalRoutingNotAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExternalRoutingNotAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExternalRoutingNotAllowed";
 			definition = "Indicates that an order sent to one market may never be routed by that market to other external markets. Should the order lock or cross the market but be unable to execute due to price protection reasons, a market may have to take alternate action, which might include rejecting the order, depending on the markets rules.The absence of this instruction does not imply that an order should be routed externally; rather, the order receivers default will apply.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getExternalRoutingNotAllowed", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator imbalanceOnly;
 	/**
 	 * Indicates that the order can only hit the imbalance during a call
 	 * auction. The imbalance is the remaining quantity when other buy and sell
@@ -1333,18 +1577,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ImbalanceOnly = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmImbalanceOnly = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ImbalanceOnly";
 			definition = "Indicates that the order can only hit the imbalance during a call auction. The imbalance is the remaining quantity when other buy and sell orders are matched at the auction clearing price.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getImbalanceOnly", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator intermarketSweep;
 	/**
 	 * Indicates that the party sending the order has taken responsibility for
 	 * price protection, and the recipient of the order should execute it, if
@@ -1378,18 +1631,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IntermarketSweep = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIntermarketSweep = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermarketSweep";
 			definition = "Indicates that the party sending the order has taken responsibility for price protection, and the recipient of the order should execute it, if possible, without regard to protection of other markets prices. While the term \"Intermarket sweep\" is specific to the United States, it may be used in other markets, where appropriate, to indicate an order that should be executed without regard to price protection.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getIntermarketSweep", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator netting;
 	/**
 	 * Used when sending multiple orders indicating that you would be 'netting'
 	 * the F/X later.
@@ -1419,18 +1681,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Netting = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNetting = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Netting";
 			definition = "Used when sending multiple orders indicating that you would be 'netting' the F/X later.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getNetting", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesOrder relatedOrder;
 	/**
 	 * Order which is executed.
 	 * <p>
@@ -1439,8 +1710,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#ExecutionInstructions
-	 * SecuritiesOrder.ExecutionInstructions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmExecutionInstructions
+	 * SecuritiesOrder.mmExecutionInstructions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1464,20 +1735,21 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Order which is executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order which is executed.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.ExecutionInstructions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmExecutionInstructions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 		}
 	};
+	protected YesNoIndicator foreignExchangeNetting;
 	/**
 	 * Reduction of transfers of cash (resulting of a foreign exchange operation
 	 * between subsidiaries or separate companies) to a net amount.
@@ -1507,18 +1779,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ForeignExchangeNetting = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmForeignExchangeNetting = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForeignExchangeNetting";
 			definition = "Reduction of transfers of cash (resulting of a foreign exchange operation between subsidiaries or separate companies) to a net amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getForeignExchangeNetting", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator strictScale;
 	/**
 	 * Order to buy (sell) a security that strictly specifies the total amount
 	 * to be bought (sold) and the amount to be bought (sold) at successively
@@ -1550,18 +1831,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StrictScale = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStrictScale = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrictScale";
 			definition = "Order to buy (sell) a security that strictly specifies the total amount to be bought (sold) and the amount to be bought (sold) at successively decreasing (increasing) price intervals; often placed in order to average the price.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getStrictScale", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator suspend;
 	/**
 	 * Used in specialist driven markets to direct the specialist to try to
 	 * suspend the order.
@@ -1591,18 +1881,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Suspend = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSuspend = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Suspend";
 			definition = "Used in specialist driven markets to direct the specialist to try to suspend the order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getSuspend", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator tryToStop;
 	/**
 	 * Used in specialist driven markets to direct the specialist to try and
 	 * stop the order.
@@ -1632,18 +1931,27 @@ public class SecuritiesOrderExecutionInstruction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TryToStop = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTryToStop = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TryToStop";
 			definition = "Used in specialist driven markets to direct the specialist to try and stop the order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesOrderExecutionInstruction.class.getMethod("getTryToStop", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Discretion orderPriceStrategy;
 	/**
 	 * Strategy used to obtain the order price.
 	 * <p>
@@ -1652,8 +1960,8 @@ public class SecuritiesOrderExecutionInstruction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Discretion#RelatedOrderExecution
-	 * Discretion.RelatedOrderExecution}</li>
+	 * {@linkplain com.tools20022.repository.entity.Discretion#mmRelatedOrderExecution
+	 * Discretion.mmRelatedOrderExecution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1677,49 +1985,342 @@ public class SecuritiesOrderExecutionInstruction {
 	 * definition} = "Strategy used to obtain the order price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OrderPriceStrategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOrderPriceStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderPriceStrategy";
 			definition = "Strategy used to obtain the order price.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Discretion.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Discretion.RelatedOrderExecution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Discretion.mmRelatedOrderExecution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesOrderExecutionInstruction";
 				definition = "Identifies the instructions for order handling";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.ExecutionInstructions, com.tools20022.repository.entity.Discretion.RelatedOrderExecution);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.AllOrNone, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.CallFirst,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Cross, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.CustomerDisplay,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Hold, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Increase,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.InstitutionsOnly, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.NonNegotiable,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.OverTheDay, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ParticipateDontInitiate,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.PercentOfVolume, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Scale,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.StayOnSide, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Work,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.GoAlong, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.TryScale,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.DoNotReduce, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.CancelOnSystemFailure,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.CancelOnTradingHalt, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.TradeAlong,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.StrictLimit, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.IgnorePriceValidityChecks,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ReinstateOnSystemFailure, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ReinstateOnTradingHalt,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.CancelIfNotBest, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ExternalRoutingAllowed,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ExternalRoutingNotAllowed, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ImbalanceOnly,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.IntermarketSweep, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Netting,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.RelatedOrder, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.ForeignExchangeNetting,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.StrictScale, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.Suspend,
-						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.TryToStop, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.OrderPriceStrategy);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.mmExecutionInstructions, com.tools20022.repository.entity.Discretion.mmRelatedOrderExecution);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmAllOrNone, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCallFirst,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCross, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCustomerDisplay,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmHold, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmIncrease,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmInstitutionsOnly, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmNonNegotiable,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmOverTheDay, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmParticipateDontInitiate,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmPercentOfVolume, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmScale,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmStayOnSide, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmWork,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmGoAlong, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmTryScale,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmDoNotReduce, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCancelOnSystemFailure,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCancelOnTradingHalt, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmTradeAlong,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmStrictLimit, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmIgnorePriceValidityChecks,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmReinstateOnSystemFailure, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmReinstateOnTradingHalt,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmCancelIfNotBest, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmExternalRoutingAllowed,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmExternalRoutingNotAllowed, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmImbalanceOnly,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmIntermarketSweep, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmNetting,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmRelatedOrder, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmForeignExchangeNetting,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmStrictScale, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmSuspend,
+						com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmTryToStop, com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmOrderPriceStrategy);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesOrderExecutionInstruction.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public AllOrNoneIndicator getAllOrNone() {
+		return allOrNone;
+	}
+
+	public void setAllOrNone(AllOrNoneIndicator allOrNone) {
+		this.allOrNone = allOrNone;
+	}
+
+	public YesNoIndicator getCallFirst() {
+		return callFirst;
+	}
+
+	public void setCallFirst(YesNoIndicator callFirst) {
+		this.callFirst = callFirst;
+	}
+
+	public YesNoIndicator getCross() {
+		return cross;
+	}
+
+	public void setCross(YesNoIndicator cross) {
+		this.cross = cross;
+	}
+
+	public YesNoIndicator getCustomerDisplay() {
+		return customerDisplay;
+	}
+
+	public void setCustomerDisplay(YesNoIndicator customerDisplay) {
+		this.customerDisplay = customerDisplay;
+	}
+
+	public YesNoIndicator getHold() {
+		return hold;
+	}
+
+	public void setHold(YesNoIndicator hold) {
+		this.hold = hold;
+	}
+
+	public YesNoIndicator getIncrease() {
+		return increase;
+	}
+
+	public void setIncrease(YesNoIndicator increase) {
+		this.increase = increase;
+	}
+
+	public YesNoIndicator getInstitutionsOnly() {
+		return institutionsOnly;
+	}
+
+	public void setInstitutionsOnly(YesNoIndicator institutionsOnly) {
+		this.institutionsOnly = institutionsOnly;
+	}
+
+	public YesNoIndicator getNonNegotiable() {
+		return nonNegotiable;
+	}
+
+	public void setNonNegotiable(YesNoIndicator nonNegotiable) {
+		this.nonNegotiable = nonNegotiable;
+	}
+
+	public YesNoIndicator getOverTheDay() {
+		return overTheDay;
+	}
+
+	public void setOverTheDay(YesNoIndicator overTheDay) {
+		this.overTheDay = overTheDay;
+	}
+
+	public YesNoIndicator getParticipateDontInitiate() {
+		return participateDontInitiate;
+	}
+
+	public void setParticipateDontInitiate(YesNoIndicator participateDontInitiate) {
+		this.participateDontInitiate = participateDontInitiate;
+	}
+
+	public YesNoIndicator getPercentOfVolume() {
+		return percentOfVolume;
+	}
+
+	public void setPercentOfVolume(YesNoIndicator percentOfVolume) {
+		this.percentOfVolume = percentOfVolume;
+	}
+
+	public YesNoIndicator getScale() {
+		return scale;
+	}
+
+	public void setScale(YesNoIndicator scale) {
+		this.scale = scale;
+	}
+
+	public StayOnSideTypeCode getStayOnSide() {
+		return stayOnSide;
+	}
+
+	public void setStayOnSide(StayOnSideTypeCode stayOnSide) {
+		this.stayOnSide = stayOnSide;
+	}
+
+	public YesNoIndicator getWork() {
+		return work;
+	}
+
+	public void setWork(YesNoIndicator work) {
+		this.work = work;
+	}
+
+	public YesNoIndicator getGoAlong() {
+		return goAlong;
+	}
+
+	public void setGoAlong(YesNoIndicator goAlong) {
+		this.goAlong = goAlong;
+	}
+
+	public YesNoIndicator getTryScale() {
+		return tryScale;
+	}
+
+	public void setTryScale(YesNoIndicator tryScale) {
+		this.tryScale = tryScale;
+	}
+
+	public YesNoIndicator getDoNotReduce() {
+		return doNotReduce;
+	}
+
+	public void setDoNotReduce(YesNoIndicator doNotReduce) {
+		this.doNotReduce = doNotReduce;
+	}
+
+	public YesNoIndicator getCancelOnSystemFailure() {
+		return cancelOnSystemFailure;
+	}
+
+	public void setCancelOnSystemFailure(YesNoIndicator cancelOnSystemFailure) {
+		this.cancelOnSystemFailure = cancelOnSystemFailure;
+	}
+
+	public YesNoIndicator getCancelOnTradingHalt() {
+		return cancelOnTradingHalt;
+	}
+
+	public void setCancelOnTradingHalt(YesNoIndicator cancelOnTradingHalt) {
+		this.cancelOnTradingHalt = cancelOnTradingHalt;
+	}
+
+	public YesNoIndicator getTradeAlong() {
+		return tradeAlong;
+	}
+
+	public void setTradeAlong(YesNoIndicator tradeAlong) {
+		this.tradeAlong = tradeAlong;
+	}
+
+	public YesNoIndicator getStrictLimit() {
+		return strictLimit;
+	}
+
+	public void setStrictLimit(YesNoIndicator strictLimit) {
+		this.strictLimit = strictLimit;
+	}
+
+	public YesNoIndicator getIgnorePriceValidityChecks() {
+		return ignorePriceValidityChecks;
+	}
+
+	public void setIgnorePriceValidityChecks(YesNoIndicator ignorePriceValidityChecks) {
+		this.ignorePriceValidityChecks = ignorePriceValidityChecks;
+	}
+
+	public YesNoIndicator getReinstateOnSystemFailure() {
+		return reinstateOnSystemFailure;
+	}
+
+	public void setReinstateOnSystemFailure(YesNoIndicator reinstateOnSystemFailure) {
+		this.reinstateOnSystemFailure = reinstateOnSystemFailure;
+	}
+
+	public YesNoIndicator getReinstateOnTradingHalt() {
+		return reinstateOnTradingHalt;
+	}
+
+	public void setReinstateOnTradingHalt(YesNoIndicator reinstateOnTradingHalt) {
+		this.reinstateOnTradingHalt = reinstateOnTradingHalt;
+	}
+
+	public YesNoIndicator getCancelIfNotBest() {
+		return cancelIfNotBest;
+	}
+
+	public void setCancelIfNotBest(YesNoIndicator cancelIfNotBest) {
+		this.cancelIfNotBest = cancelIfNotBest;
+	}
+
+	public YesNoIndicator getExternalRoutingAllowed() {
+		return externalRoutingAllowed;
+	}
+
+	public void setExternalRoutingAllowed(YesNoIndicator externalRoutingAllowed) {
+		this.externalRoutingAllowed = externalRoutingAllowed;
+	}
+
+	public YesNoIndicator getExternalRoutingNotAllowed() {
+		return externalRoutingNotAllowed;
+	}
+
+	public void setExternalRoutingNotAllowed(YesNoIndicator externalRoutingNotAllowed) {
+		this.externalRoutingNotAllowed = externalRoutingNotAllowed;
+	}
+
+	public YesNoIndicator getImbalanceOnly() {
+		return imbalanceOnly;
+	}
+
+	public void setImbalanceOnly(YesNoIndicator imbalanceOnly) {
+		this.imbalanceOnly = imbalanceOnly;
+	}
+
+	public YesNoIndicator getIntermarketSweep() {
+		return intermarketSweep;
+	}
+
+	public void setIntermarketSweep(YesNoIndicator intermarketSweep) {
+		this.intermarketSweep = intermarketSweep;
+	}
+
+	public YesNoIndicator getNetting() {
+		return netting;
+	}
+
+	public void setNetting(YesNoIndicator netting) {
+		this.netting = netting;
+	}
+
+	public SecuritiesOrder getRelatedOrder() {
+		return relatedOrder;
+	}
+
+	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+		this.relatedOrder = relatedOrder;
+	}
+
+	public YesNoIndicator getForeignExchangeNetting() {
+		return foreignExchangeNetting;
+	}
+
+	public void setForeignExchangeNetting(YesNoIndicator foreignExchangeNetting) {
+		this.foreignExchangeNetting = foreignExchangeNetting;
+	}
+
+	public YesNoIndicator getStrictScale() {
+		return strictScale;
+	}
+
+	public void setStrictScale(YesNoIndicator strictScale) {
+		this.strictScale = strictScale;
+	}
+
+	public YesNoIndicator getSuspend() {
+		return suspend;
+	}
+
+	public void setSuspend(YesNoIndicator suspend) {
+		this.suspend = suspend;
+	}
+
+	public YesNoIndicator getTryToStop() {
+		return tryToStop;
+	}
+
+	public void setTryToStop(YesNoIndicator tryToStop) {
+		this.tryToStop = tryToStop;
+	}
+
+	public Discretion getOrderPriceStrategy() {
+		return orderPriceStrategy;
+	}
+
+	public void setOrderPriceStrategy(com.tools20022.repository.entity.Discretion orderPriceStrategy) {
+		this.orderPriceStrategy = orderPriceStrategy;
 	}
 }

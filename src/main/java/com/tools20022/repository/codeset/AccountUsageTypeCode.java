@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,24 +32,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#Investor
- * AccountUsageTypeCode.Investor}</li>
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmInvestor
+ * AccountUsageTypeCode.mmInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#SettlementParticipant
- * AccountUsageTypeCode.SettlementParticipant}</li>
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmSettlementParticipant
+ * AccountUsageTypeCode.mmSettlementParticipant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#TradingParticipant
- * AccountUsageTypeCode.TradingParticipant}</li>
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmTradingParticipant
+ * AccountUsageTypeCode.mmTradingParticipant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#IssuingParticipant
- * AccountUsageTypeCode.IssuingParticipant}</li>
+ * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#mmIssuingParticipant
+ * AccountUsageTypeCode.mmIssuingParticipant}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +90,9 @@ public class AccountUsageTypeCode {
 	 * definition} = "Investor."</li>
 	 * </ul>
 	 */
-	public static final MMCode Investor = new MMCode() {
+	public static final MMCode mmInvestor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Investor";
 			definition = "Investor.";
 			owner_lazy = () -> AccountUsageTypeCode.mmObject();
@@ -118,9 +120,9 @@ public class AccountUsageTypeCode {
 	 * definition} = "Settlement participant."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementParticipant = new MMCode() {
+	public static final MMCode mmSettlementParticipant = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementParticipant";
 			definition = "Settlement participant.";
 			owner_lazy = () -> AccountUsageTypeCode.mmObject();
@@ -148,9 +150,9 @@ public class AccountUsageTypeCode {
 	 * definition} = "Trading participant."</li>
 	 * </ul>
 	 */
-	public static final MMCode TradingParticipant = new MMCode() {
+	public static final MMCode mmTradingParticipant = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingParticipant";
 			definition = "Trading participant.";
 			owner_lazy = () -> AccountUsageTypeCode.mmObject();
@@ -178,9 +180,9 @@ public class AccountUsageTypeCode {
 	 * definition} = "Issuing participant."</li>
 	 * </ul>
 	 */
-	public static final MMCode IssuingParticipant = new MMCode() {
+	public static final MMCode mmIssuingParticipant = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuingParticipant";
 			definition = "Issuing participant.";
 			owner_lazy = () -> AccountUsageTypeCode.mmObject();
@@ -191,13 +193,12 @@ public class AccountUsageTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("INVE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountUsageTypeCode";
 				definition = "Specifies the type of usage of the account";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountUsageTypeCode.Investor, com.tools20022.repository.codeset.AccountUsageTypeCode.SettlementParticipant,
-						com.tools20022.repository.codeset.AccountUsageTypeCode.TradingParticipant, com.tools20022.repository.codeset.AccountUsageTypeCode.IssuingParticipant);
+				code_lazy = () -> Arrays.asList(AccountUsageTypeCode.mmInvestor, AccountUsageTypeCode.mmSettlementParticipant, AccountUsageTypeCode.mmTradingParticipant, AccountUsageTypeCode.mmIssuingParticipant);
 			}
 		});
 		return mmObject_lazy.get();

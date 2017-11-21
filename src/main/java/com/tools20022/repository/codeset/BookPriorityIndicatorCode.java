@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BookPriorityIndicatorCode#Unchanged
- * BookPriorityIndicatorCode.Unchanged}</li>
+ * {@linkplain com.tools20022.repository.codeset.BookPriorityIndicatorCode#mmUnchanged
+ * BookPriorityIndicatorCode.mmUnchanged}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BookPriorityIndicatorCode#Lost
- * BookPriorityIndicatorCode.Lost}</li>
+ * {@linkplain com.tools20022.repository.codeset.BookPriorityIndicatorCode#mmLost
+ * BookPriorityIndicatorCode.mmLost}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class BookPriorityIndicatorCode {
 	 * definition} = "Indicates that the book priority is unchanged."</li>
 	 * </ul>
 	 */
-	public static final MMCode Unchanged = new MMCode() {
+	public static final MMCode mmUnchanged = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unchanged";
 			definition = "Indicates that the book priority is unchanged.";
 			owner_lazy = () -> BookPriorityIndicatorCode.mmObject();
@@ -117,9 +119,9 @@ public class BookPriorityIndicatorCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Lost = new MMCode() {
+	public static final MMCode mmLost = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Lost";
 			definition = "Indicates that the book priority is lost as a result of an order change.";
 			owner_lazy = () -> BookPriorityIndicatorCode.mmObject();
@@ -130,12 +132,12 @@ public class BookPriorityIndicatorCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("UNCH");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BookPriorityIndicatorCode";
 				definition = "Indicates if a Cancel/Replace instruction has caused an order to loose its book priority.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BookPriorityIndicatorCode.Unchanged, com.tools20022.repository.codeset.BookPriorityIndicatorCode.Lost);
+				code_lazy = () -> Arrays.asList(BookPriorityIndicatorCode.mmUnchanged, BookPriorityIndicatorCode.mmLost);
 			}
 		});
 		return mmObject_lazy.get();

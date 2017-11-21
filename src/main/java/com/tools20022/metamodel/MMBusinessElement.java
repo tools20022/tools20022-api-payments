@@ -19,8 +19,10 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.function.Supplier;
 import java.util.List;
@@ -30,6 +32,26 @@ import java.util.List;
  * scope of that BusinessComponent.
  */
 public interface MMBusinessElement extends MMConstruct, MMBusinessConcept {
+
+	/**
+	 * Specifies whether a BusinessElement can be computed using other
+	 * BusinessElements, but that is shown for clarity even though it adds no
+	 * semantic information.
+	 */
+	public final static MetamodelAttribute<MMBusinessElement, Boolean> isDerivedAttribute = newAttribute();
+	/**
+	 * All of the MessageElements that derive from one BusinessElement in a
+	 * specific BusinessComponent.
+	 */
+	public final static MetamodelAttribute<MMBusinessElement, List<MMMessageElement>> derivationAttribute = newAttribute();
+	/**
+	 * Derived direct reference to the type of the BusinessElement.
+	 */
+	public final static MetamodelAttribute<MMBusinessElement, MMBusinessElementType> businessElementTypeAttribute = newAttribute();
+	/**
+	 * The business context in which the BusinessElement is used
+	 */
+	public final static MetamodelAttribute<MMBusinessElement, MMBusinessComponent> elementContextAttribute = newAttribute();
 
 	public static MetamodelType<MMBusinessElement> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMBusinessElement.class);

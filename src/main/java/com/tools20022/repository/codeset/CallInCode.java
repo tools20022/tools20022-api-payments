@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CallInCode#CallForAccountValue
- * CallInCode.CallForAccountValue}</li>
+ * {@linkplain com.tools20022.repository.codeset.CallInCode#mmCallForAccountValue
+ * CallInCode.mmCallForAccountValue}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CallInCode#CallForSettlement
- * CallInCode.CallForSettlement}</li>
+ * {@linkplain com.tools20022.repository.codeset.CallInCode#mmCallForSettlement
+ * CallInCode.mmCallForSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CallInCode#CallForCurrencyClose
- * CallInCode.CallForCurrencyClose}</li>
+ * {@linkplain com.tools20022.repository.codeset.CallInCode#mmCallForCurrencyClose
+ * CallInCode.mmCallForCurrencyClose}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class CallInCode {
 	 * definition} = "Pay-in call is for account value."</li>
 	 * </ul>
 	 */
-	public static final MMCode CallForAccountValue = new MMCode() {
+	public static final MMCode mmCallForAccountValue = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CallForAccountValue";
 			definition = "Pay-in call is for account value.";
 			owner_lazy = () -> CallInCode.mmObject();
@@ -113,9 +115,9 @@ public class CallInCode {
 	 * definition} = "Pay-in call is for settlement."</li>
 	 * </ul>
 	 */
-	public static final MMCode CallForSettlement = new MMCode() {
+	public static final MMCode mmCallForSettlement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CallForSettlement";
 			definition = "Pay-in call is for settlement.";
 			owner_lazy = () -> CallInCode.mmObject();
@@ -142,9 +144,9 @@ public class CallInCode {
 	 * definition} = "Pay-in call is for currency close."</li>
 	 * </ul>
 	 */
-	public static final MMCode CallForCurrencyClose = new MMCode() {
+	public static final MMCode mmCallForCurrencyClose = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CallForCurrencyClose";
 			definition = "Pay-in call is for currency close.";
 			owner_lazy = () -> CallInCode.mmObject();
@@ -155,13 +157,12 @@ public class CallInCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CFAV");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CallInCode";
 				definition = "Specifies the type of pay-in call report.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CallInCode.CallForAccountValue, com.tools20022.repository.codeset.CallInCode.CallForSettlement,
-						com.tools20022.repository.codeset.CallInCode.CallForCurrencyClose);
+				code_lazy = () -> Arrays.asList(CallInCode.mmCallForAccountValue, CallInCode.mmCallForSettlement, CallInCode.mmCallForCurrencyClose);
 			}
 		});
 		return mmObject_lazy.get();

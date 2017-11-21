@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.SecuritiesTransfer;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Transfer of securities from one sub-balance to another or from one balance
@@ -40,14 +41,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#Reservation
- * IntraPositionTransfer.Reservation}</li>
+ * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#mmReservation
+ * IntraPositionTransfer.mmReservation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#CollateralAmount
- * IntraPositionTransfer.CollateralAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#mmCollateralAmount
+ * IntraPositionTransfer.mmCollateralAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#SecuritiesBalance
- * IntraPositionTransfer.SecuritiesBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#mmSecuritiesBalance
+ * IntraPositionTransfer.mmSecuritiesBalance}</li>
  * </ul>
  * </li>
  * <li>
@@ -55,11 +56,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Reservation#RelatedIntraPositionTransfer
- * Reservation.RelatedIntraPositionTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.Reservation#mmRelatedIntraPositionTransfer
+ * Reservation.mmRelatedIntraPositionTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#RelatedIntraPositionTransfer
- * SecuritiesBalance.RelatedIntraPositionTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmRelatedIntraPositionTransfer
+ * SecuritiesBalance.mmRelatedIntraPositionTransfer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -68,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,6 +86,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class IntraPositionTransfer extends SecuritiesTransfer {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Reservation> reservation;
 	/**
 	 * Quantity of securities set aside by a party for specific purpose.
 	 * <p>
@@ -93,8 +95,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Reservation#RelatedIntraPositionTransfer
-	 * Reservation.RelatedIntraPositionTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.Reservation#mmRelatedIntraPositionTransfer
+	 * Reservation.mmRelatedIntraPositionTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -119,19 +121,20 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * "Quantity of securities set aside by a party for specific purpose."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Reservation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReservation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> IntraPositionTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reservation";
 			definition = "Quantity of securities set aside by a party for specific purpose.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Reservation.mmRelatedIntraPositionTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Reservation.RelatedIntraPositionTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount collateralAmount;
 	/**
 	 * Value of the collateral available for the delivery settlement process.
 	 * <p>
@@ -159,18 +162,27 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * "Value of the collateral available for the delivery settlement process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CollateralAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCollateralAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IntraPositionTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAmount";
 			definition = "Value of the collateral available for the delivery settlement process.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IntraPositionTransfer.class.getMethod("getCollateralAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesBalance securitiesBalance;
 	/**
 	 * Specifies the securities balance or sub-balance from/to which the
 	 * securities are transferred.
@@ -180,8 +192,8 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#RelatedIntraPositionTransfer
-	 * SecuritiesBalance.RelatedIntraPositionTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmRelatedIntraPositionTransfer
+	 * SecuritiesBalance.mmRelatedIntraPositionTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -207,34 +219,63 @@ public class IntraPositionTransfer extends SecuritiesTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> IntraPositionTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesBalance";
 			definition = "Specifies the securities balance or sub-balance from/to which the securities are transferred.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmRelatedIntraPositionTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.RelatedIntraPositionTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IntraPositionTransfer";
 				definition = "Transfer of securities from one sub-balance to another or from one balance status to another.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reservation.RelatedIntraPositionTransfer, com.tools20022.repository.entity.SecuritiesBalance.RelatedIntraPositionTransfer);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reservation.mmRelatedIntraPositionTransfer, com.tools20022.repository.entity.SecuritiesBalance.mmRelatedIntraPositionTransfer);
 				superType_lazy = () -> SecuritiesTransfer.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IntraPositionTransfer.Reservation, com.tools20022.repository.entity.IntraPositionTransfer.CollateralAmount,
-						com.tools20022.repository.entity.IntraPositionTransfer.SecuritiesBalance);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IntraPositionTransfer.mmReservation, com.tools20022.repository.entity.IntraPositionTransfer.mmCollateralAmount,
+						com.tools20022.repository.entity.IntraPositionTransfer.mmSecuritiesBalance);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return IntraPositionTransfer.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Reservation> getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(List<com.tools20022.repository.entity.Reservation> reservation) {
+		this.reservation = reservation;
+	}
+
+	public CurrencyAndAmount getCollateralAmount() {
+		return collateralAmount;
+	}
+
+	public void setCollateralAmount(CurrencyAndAmount collateralAmount) {
+		this.collateralAmount = collateralAmount;
+	}
+
+	public SecuritiesBalance getSecuritiesBalance() {
+		return securitiesBalance;
+	}
+
+	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+		this.securitiesBalance = securitiesBalance;
 	}
 }

@@ -20,11 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Exact3NumericText;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.PaymentCard;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Electronic money product that provides the cardholder with a portable and
@@ -36,15 +42,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#PlainCardData
- * PaymentCard4.PlainCardData}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#CardCountryCode
- * PaymentCard4.CardCountryCode}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#CardBrand
- * PaymentCard4.CardBrand}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#mmPlainCardData
+ * PaymentCard4.mmPlainCardData}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#mmCardCountryCode
+ * PaymentCard4.mmCardCountryCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentCard4#mmCardBrand
+ * PaymentCard4.mmCardBrand}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PaymentCard4#AdditionalCardData
- * PaymentCard4.AdditionalCardData}</li>
+ * {@linkplain com.tools20022.repository.msg.PaymentCard4#mmAdditionalCardData
+ * PaymentCard4.mmAdditionalCardData}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -53,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,9 +73,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "PaymentCard4", propOrder = {"plainCardData", "cardCountryCode", "cardBrand", "additionalCardData"})
 public class PaymentCard4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PlainCardData1 plainCardData;
 	/**
 	 * Sensitive data associated with the card performing the transaction.
 	 * <p>
@@ -100,21 +109,22 @@ public class PaymentCard4 {
 	 * "Sensitive data associated with the card performing the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PlainCardData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPlainCardData = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> PaymentCard4.mmObject();
 			businessComponentTrace_lazy = () -> PaymentCard.mmObject();
+			componentContext_lazy = () -> PaymentCard4.mmObject();
 			isDerived = false;
 			xmlTag = "PlainCardData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PlainCardData";
 			definition = "Sensitive data associated with the card performing the transaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PlainCardData1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PlainCardData1.mmObject();
 		}
 	};
+	protected Exact3NumericText cardCountryCode;
 	/**
 	 * Country code assigned to the card by the card issuer.
 	 * <p>
@@ -128,8 +138,8 @@ public class PaymentCard4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentCard#CardCountryCode
-	 * PaymentCard.CardCountryCode}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentCard#mmCardCountryCode
+	 * PaymentCard.mmCardCountryCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -147,20 +157,21 @@ public class PaymentCard4 {
 	 * definition} = "Country code assigned to the card by the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CardCountryCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCardCountryCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentCard.mmCardCountryCode;
 			componentContext_lazy = () -> PaymentCard4.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentCard.CardCountryCode;
 			isDerived = false;
 			xmlTag = "CardCtryCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardCountryCode";
 			definition = "Country code assigned to the card by the card issuer.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
 		}
 	};
+	protected GenericIdentification1 cardBrand;
 	/**
 	 * Brand name of the card.
 	 * <p>
@@ -174,8 +185,8 @@ public class PaymentCard4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentCard#CardBrand
-	 * PaymentCard.CardBrand}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentCard#mmCardBrand
+	 * PaymentCard.mmCardBrand}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -193,20 +204,21 @@ public class PaymentCard4 {
 	 * definition} = "Brand name of the card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CardBrand = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCardBrand = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentCard.mmCardBrand;
 			componentContext_lazy = () -> PaymentCard4.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentCard.CardBrand;
 			isDerived = false;
 			xmlTag = "CardBrnd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardBrand";
 			definition = "Brand name of the card.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			complexType_lazy = () -> GenericIdentification1.mmObject();
+			minOccurs = 0;
+			complexType_lazy = () -> com.tools20022.repository.msg.GenericIdentification1.mmObject();
 		}
 	};
+	protected Max70Text additionalCardData;
 	/**
 	 * Additional card issuer specific data.
 	 * <p>
@@ -233,16 +245,16 @@ public class PaymentCard4 {
 	 * definition} = "Additional card issuer specific data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalCardData = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalCardData = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> PaymentCard4.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlCardData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalCardData";
 			definition = "Additional card issuer specific data.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
@@ -250,15 +262,50 @@ public class PaymentCard4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentCard4.PlainCardData, com.tools20022.repository.msg.PaymentCard4.CardCountryCode, com.tools20022.repository.msg.PaymentCard4.CardBrand,
-						com.tools20022.repository.msg.PaymentCard4.AdditionalCardData);
+				messageElement_lazy = () -> Arrays.asList(PaymentCard4.mmPlainCardData, PaymentCard4.mmCardCountryCode, PaymentCard4.mmCardBrand, PaymentCard4.mmAdditionalCardData);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCard4";
 				definition = "Electronic money product that provides the cardholder with a portable and specialised computer device, which typically contains a microprocessor.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "PlainCardData")
+	public PlainCardData1 getPlainCardData() {
+		return plainCardData;
+	}
+
+	public void setPlainCardData(com.tools20022.repository.msg.PlainCardData1 plainCardData) {
+		this.plainCardData = plainCardData;
+	}
+
+	@XmlElement(name = "CardCtryCd")
+	public Exact3NumericText getCardCountryCode() {
+		return cardCountryCode;
+	}
+
+	public void setCardCountryCode(Exact3NumericText cardCountryCode) {
+		this.cardCountryCode = cardCountryCode;
+	}
+
+	@XmlElement(name = "CardBrnd")
+	public GenericIdentification1 getCardBrand() {
+		return cardBrand;
+	}
+
+	public void setCardBrand(com.tools20022.repository.msg.GenericIdentification1 cardBrand) {
+		this.cardBrand = cardBrand;
+	}
+
+	@XmlElement(name = "AddtlCardData")
+	public Max70Text getAdditionalCardData() {
+		return additionalCardData;
+	}
+
+	public void setAdditionalCardData(Max70Text additionalCardData) {
+		this.additionalCardData = additionalCardData;
 	}
 }

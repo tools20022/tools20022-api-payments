@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#DemandGuarantee
- * UndertakingNameCode.DemandGuarantee}</li>
+ * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#mmDemandGuarantee
+ * UndertakingNameCode.mmDemandGuarantee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#StandbyLetterOfCredit
- * UndertakingNameCode.StandbyLetterOfCredit}</li>
+ * {@linkplain com.tools20022.repository.codeset.UndertakingNameCode#mmStandbyLetterOfCredit
+ * UndertakingNameCode.mmStandbyLetterOfCredit}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -82,9 +84,9 @@ public class UndertakingNameCode {
 	 * definition} = "Undertaking is a demand guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMCode DemandGuarantee = new MMCode() {
+	public static final MMCode mmDemandGuarantee = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DemandGuarantee";
 			definition = "Undertaking is a demand guarantee.";
 			owner_lazy = () -> UndertakingNameCode.mmObject();
@@ -112,9 +114,9 @@ public class UndertakingNameCode {
 	 * definition} = "Undertaking is a standby letter of credit."</li>
 	 * </ul>
 	 */
-	public static final MMCode StandbyLetterOfCredit = new MMCode() {
+	public static final MMCode mmStandbyLetterOfCredit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StandbyLetterOfCredit";
 			definition = "Undertaking is a standby letter of credit.";
 			owner_lazy = () -> UndertakingNameCode.mmObject();
@@ -125,12 +127,12 @@ public class UndertakingNameCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DGAR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingNameCode";
 				definition = "Specifies the named type of the undertaking.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UndertakingNameCode.DemandGuarantee, com.tools20022.repository.codeset.UndertakingNameCode.StandbyLetterOfCredit);
+				code_lazy = () -> Arrays.asList(UndertakingNameCode.mmDemandGuarantee, UndertakingNameCode.mmStandbyLetterOfCredit);
 			}
 		});
 		return mmObject_lazy.get();

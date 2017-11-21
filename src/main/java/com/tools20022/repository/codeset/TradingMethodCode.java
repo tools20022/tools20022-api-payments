@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,19 +32,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradingMethodCode#Electronic
- * TradingMethodCode.Electronic}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#Phone
- * TradingMethodCode.Phone}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#Broker
- * TradingMethodCode.Broker}</li>
+ * {@linkplain com.tools20022.repository.codeset.TradingMethodCode#mmElectronic
+ * TradingMethodCode.mmElectronic}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#mmPhone
+ * TradingMethodCode.mmPhone}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.TradingMethodCode#mmBroker
+ * TradingMethodCode.mmBroker}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class TradingMethodCode {
 	 * definition} = "Trade executed through an electronic trading system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Electronic = new MMCode() {
+	public static final MMCode mmElectronic = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Electronic";
 			definition = "Trade executed through an electronic trading system.";
 			owner_lazy = () -> TradingMethodCode.mmObject();
@@ -114,9 +116,9 @@ public class TradingMethodCode {
 	 * definition} = "Trade executed over the phone."</li>
 	 * </ul>
 	 */
-	public static final MMCode Phone = new MMCode() {
+	public static final MMCode mmPhone = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Phone";
 			definition = "Trade executed over the phone.";
 			owner_lazy = () -> TradingMethodCode.mmObject();
@@ -144,9 +146,9 @@ public class TradingMethodCode {
 	 * definition} = "Trade executed through a broker."</li>
 	 * </ul>
 	 */
-	public static final MMCode Broker = new MMCode() {
+	public static final MMCode mmBroker = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Broker";
 			definition = "Trade executed through a broker.";
 			owner_lazy = () -> TradingMethodCode.mmObject();
@@ -157,12 +159,12 @@ public class TradingMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ELEC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingMethodCode";
 				definition = "Specifies the method used for the negotiation and execution of a trade.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradingMethodCode.Electronic, com.tools20022.repository.codeset.TradingMethodCode.Phone, com.tools20022.repository.codeset.TradingMethodCode.Broker);
+				code_lazy = () -> Arrays.asList(TradingMethodCode.mmElectronic, TradingMethodCode.mmPhone, TradingMethodCode.mmBroker);
 			}
 		});
 		return mmObject_lazy.get();

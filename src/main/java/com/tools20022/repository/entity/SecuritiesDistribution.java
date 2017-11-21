@@ -17,16 +17,17 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PaymentTypeCode;
 import com.tools20022.repository.codeset.RoundingDirectionCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.Distribution;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Characteristics for a securities distribution event.
@@ -42,80 +43,80 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#MaximumHolding
- * SecuritiesDistribution.MaximumHolding}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmMaximumHolding
+ * SecuritiesDistribution.mmMaximumHolding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#IntermediateToUnderlyingNumerator
- * SecuritiesDistribution.IntermediateToUnderlyingNumerator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmIntermediateToUnderlyingNumerator
+ * SecuritiesDistribution.mmIntermediateToUnderlyingNumerator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#IntermediateToUnderlyingDenominator
- * SecuritiesDistribution.IntermediateToUnderlyingDenominator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmIntermediateToUnderlyingDenominator
+ * SecuritiesDistribution.mmIntermediateToUnderlyingDenominator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#DistributedToUnderlyingDenominator
- * SecuritiesDistribution.DistributedToUnderlyingDenominator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmDistributedToUnderlyingDenominator
+ * SecuritiesDistribution.mmDistributedToUnderlyingDenominator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#DistributedToUnderlyingNumerator
- * SecuritiesDistribution.DistributedToUnderlyingNumerator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmDistributedToUnderlyingNumerator
+ * SecuritiesDistribution.mmDistributedToUnderlyingNumerator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#MinimumHolding
- * SecuritiesDistribution.MinimumHolding}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmMinimumHolding
+ * SecuritiesDistribution.mmMinimumHolding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#CashFractionsPrice
- * SecuritiesDistribution.CashFractionsPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmCashFractionsPrice
+ * SecuritiesDistribution.mmCashFractionsPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#SubscriptionPrice
- * SecuritiesDistribution.SubscriptionPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmSubscriptionPrice
+ * SecuritiesDistribution.mmSubscriptionPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#ReinvestmentPrice
- * SecuritiesDistribution.ReinvestmentPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmReinvestmentPrice
+ * SecuritiesDistribution.mmReinvestmentPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#IntermediateSecurityExpiryDate
- * SecuritiesDistribution.IntermediateSecurityExpiryDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmIntermediateSecurityExpiryDate
+ * SecuritiesDistribution.mmIntermediateSecurityExpiryDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#TradingAvailabilityDate
- * SecuritiesDistribution.TradingAvailabilityDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmTradingAvailabilityDate
+ * SecuritiesDistribution.mmTradingAvailabilityDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#OfferExpiryDate
- * SecuritiesDistribution.OfferExpiryDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmOfferExpiryDate
+ * SecuritiesDistribution.mmOfferExpiryDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#OversubscriptionRate
- * SecuritiesDistribution.OversubscriptionRate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmOversubscriptionRate
+ * SecuritiesDistribution.mmOversubscriptionRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#OversubscriptionAmount
- * SecuritiesDistribution.OversubscriptionAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmOversubscriptionAmount
+ * SecuritiesDistribution.mmOversubscriptionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#ReinvestmentAmount
- * SecuritiesDistribution.ReinvestmentAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmReinvestmentAmount
+ * SecuritiesDistribution.mmReinvestmentAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#ReinvestmentRate
- * SecuritiesDistribution.ReinvestmentRate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmReinvestmentRate
+ * SecuritiesDistribution.mmReinvestmentRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#LoyalityPremiumIndicator
- * SecuritiesDistribution.LoyalityPremiumIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmLoyalityPremiumIndicator
+ * SecuritiesDistribution.mmLoyalityPremiumIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#OversubscriptionIndicator
- * SecuritiesDistribution.OversubscriptionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmOversubscriptionIndicator
+ * SecuritiesDistribution.mmOversubscriptionIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#RenounceableIndicator
- * SecuritiesDistribution.RenounceableIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmRenounceableIndicator
+ * SecuritiesDistribution.mmRenounceableIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#DecimalPrecision
- * SecuritiesDistribution.DecimalPrecision}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmDecimalPrecision
+ * SecuritiesDistribution.mmDecimalPrecision}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#ReinvestmentType
- * SecuritiesDistribution.ReinvestmentType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmReinvestmentType
+ * SecuritiesDistribution.mmReinvestmentType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#RevocableIndicator
- * SecuritiesDistribution.RevocableIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmRevocableIndicator
+ * SecuritiesDistribution.mmRevocableIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#SecuritiesAndCashDistribution
- * SecuritiesDistribution.SecuritiesAndCashDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmSecuritiesAndCashDistribution
+ * SecuritiesDistribution.mmSecuritiesAndCashDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#FractionTreatment
- * SecuritiesDistribution.FractionTreatment}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmFractionTreatment
+ * SecuritiesDistribution.mmFractionTreatment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#IntermediateSecurityDistributionIndicator
- * SecuritiesDistribution.IntermediateSecurityDistributionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDistribution#mmIntermediateSecurityDistributionIndicator
+ * SecuritiesDistribution.mmIntermediateSecurityDistributionIndicator}</li>
  * </ul>
  * </li>
  * <li>
@@ -123,39 +124,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#CashFractionsPriceRelatedSecuritiesDistribution
- * SecuritiesPricing.CashFractionsPriceRelatedSecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmCashFractionsPriceRelatedSecuritiesDistribution
+ * SecuritiesPricing.mmCashFractionsPriceRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#SuscriptionPriceRelatedSecuritiesDistribution
- * SecuritiesPricing.SuscriptionPriceRelatedSecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmSuscriptionPriceRelatedSecuritiesDistribution
+ * SecuritiesPricing.mmSuscriptionPriceRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#ReinvestmentPriceRelatedSecuritiesDistribution
- * SecuritiesPricing.ReinvestmentPriceRelatedSecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmReinvestmentPriceRelatedSecuritiesDistribution
+ * SecuritiesPricing.mmReinvestmentPriceRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumHoldingRelatedSecuritiesDistribution
- * SecuritiesQuantity.MaximumHoldingRelatedSecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumHoldingRelatedSecuritiesDistribution
+ * SecuritiesQuantity.mmMaximumHoldingRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution
  * SecuritiesQuantity.
- * IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
+ * mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution
  * SecuritiesQuantity.
- * IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
+ * mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution
  * SecuritiesQuantity.
- * DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
+ * mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution
  * SecuritiesQuantity.
- * DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
+ * mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumHoldingRelatedSecuritiesDistribution
- * SecuritiesQuantity.MinimumHoldingRelatedSecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumHoldingRelatedSecuritiesDistribution
+ * SecuritiesQuantity.mmMinimumHoldingRelatedSecuritiesDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAndCashDistribution#SecuritiesDistribution
- * SecuritiesAndCashDistribution.SecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAndCashDistribution#mmSecuritiesDistribution
+ * SecuritiesAndCashDistribution.mmSecuritiesDistribution}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -164,8 +165,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -179,6 +180,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesDistribution extends Distribution {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesQuantity maximumHolding;
 	/**
 	 * Indicates the maximum quantity of financial instrument that must be held
 	 * in order to be entitled to take part in the event.
@@ -188,8 +190,8 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumHoldingRelatedSecuritiesDistribution
-	 * SecuritiesQuantity.MaximumHoldingRelatedSecuritiesDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumHoldingRelatedSecuritiesDistribution
+	 * SecuritiesQuantity.mmMaximumHoldingRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -215,20 +217,21 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MaximumHolding = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMaximumHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumHolding";
 			definition = "Indicates the maximum quantity of financial instrument that must be held in order to be entitled to take part in the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MaximumHoldingRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumHoldingRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> intermediateToUnderlyingNumerator;
 	/**
 	 * The quantity of interim securities awarded for a given quantity of
 	 * underlying shares.
@@ -238,9 +241,9 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution
 	 * SecuritiesQuantity.
-	 * IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
+	 * mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -266,19 +269,20 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IntermediateToUnderlyingNumerator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingNumerator";
 			definition = "The quantity of interim securities awarded for a given quantity of underlying shares.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> intermediateToUnderlyingDenominator;
 	/**
 	 * The quantity of interim securities awarded for a given quantity of
 	 * underlying shares.
@@ -288,9 +292,9 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution
 	 * SecuritiesQuantity.
-	 * IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
+	 * mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -316,19 +320,20 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IntermediateToUnderlyingDenominator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIntermediateToUnderlyingDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateToUnderlyingDenominator";
 			definition = "The quantity of interim securities awarded for a given quantity of underlying shares.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> distributedToUnderlyingDenominator;
 	/**
 	 * Quantity of new securities that will be derived by the exercise of a
 	 * given quantity of intermediate securities.
@@ -338,9 +343,9 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution
 	 * SecuritiesQuantity.
-	 * DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
+	 * mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -366,19 +371,20 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DistributedToUnderlyingDenominator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingDenominator";
 			definition = "Quantity of new securities that will be derived by the exercise of a given quantity of intermediate securities.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> distributedToUnderlyingNumerator;
 	/**
 	 * Quantity of new securities that will be derived by the exercise of a
 	 * given quantity of intermediate securities.
@@ -388,9 +394,9 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution
 	 * SecuritiesQuantity.
-	 * DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
+	 * mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -416,19 +422,20 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DistributedToUnderlyingNumerator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDistributedToUnderlyingNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DistributedToUnderlyingNumerator";
 			definition = "Quantity of new securities that will be derived by the exercise of a given quantity of intermediate securities.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity minimumHolding;
 	/**
 	 * Indicates the minimum quantity of financial instrument that must be held
 	 * in order to be entitled to take part in the event.
@@ -438,8 +445,8 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumHoldingRelatedSecuritiesDistribution
-	 * SecuritiesQuantity.MinimumHoldingRelatedSecuritiesDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumHoldingRelatedSecuritiesDistribution
+	 * SecuritiesQuantity.mmMinimumHoldingRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -465,20 +472,21 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumHolding = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumHolding = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumHolding";
 			definition = "Indicates the minimum quantity of financial instrument that must be held in order to be entitled to take part in the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MinimumHoldingRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumHoldingRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesPricing cashFractionsPrice;
 	/**
 	 * Price paid by the issuer for the remaining fraction.
 	 * <p>
@@ -487,8 +495,8 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#CashFractionsPriceRelatedSecuritiesDistribution
-	 * SecuritiesPricing.CashFractionsPriceRelatedSecuritiesDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmCashFractionsPriceRelatedSecuritiesDistribution
+	 * SecuritiesPricing.mmCashFractionsPriceRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -512,20 +520,21 @@ public class SecuritiesDistribution extends Distribution {
 	 * definition} = "Price paid by the issuer for the remaining fraction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashFractionsPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashFractionsPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashFractionsPrice";
 			definition = "Price paid by the issuer for the remaining fraction.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.CashFractionsPriceRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmCashFractionsPriceRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected SecuritiesPricing subscriptionPrice;
 	/**
 	 * The amount of money required per unit for the purchase of an instrument.
 	 * <p>
@@ -534,8 +543,8 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#SuscriptionPriceRelatedSecuritiesDistribution
-	 * SecuritiesPricing.SuscriptionPriceRelatedSecuritiesDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmSuscriptionPriceRelatedSecuritiesDistribution
+	 * SecuritiesPricing.mmSuscriptionPriceRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -561,20 +570,21 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SubscriptionPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSubscriptionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionPrice";
 			definition = "The amount of money required per unit for the purchase of an instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.SuscriptionPriceRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmSuscriptionPriceRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected SecuritiesPricing reinvestmentPrice;
 	/**
 	 * Price at which a cash disbursement will be reinvested into a security.
 	 * <p>
@@ -583,8 +593,8 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#ReinvestmentPriceRelatedSecuritiesDistribution
-	 * SecuritiesPricing.ReinvestmentPriceRelatedSecuritiesDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmReinvestmentPriceRelatedSecuritiesDistribution
+	 * SecuritiesPricing.mmReinvestmentPriceRelatedSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -609,20 +619,21 @@ public class SecuritiesDistribution extends Distribution {
 	 * "Price at which a cash disbursement will be reinvested into a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ReinvestmentPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReinvestmentPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentPrice";
 			definition = "Price at which a cash disbursement will be reinvested into a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.ReinvestmentPriceRelatedSecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmReinvestmentPriceRelatedSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected ISODateTime intermediateSecurityExpiryDate;
 	/**
 	 * Date/time at which a privilege or an intermediate security is no longer
 	 * available.
@@ -651,18 +662,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IntermediateSecurityExpiryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIntermediateSecurityExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateSecurityExpiryDate";
 			definition = "Date/time at which a privilege or an intermediate security is no longer available.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getIntermediateSecurityExpiryDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime tradingAvailabilityDate;
 	/**
 	 * Date/time at which a security starts or resumes trading.
 	 * <p>
@@ -688,18 +708,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * definition} = "Date/time at which a security starts or resumes trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradingAvailabilityDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradingAvailabilityDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingAvailabilityDate";
 			definition = "Date/time at which a security starts or resumes trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getTradingAvailabilityDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime offerExpiryDate;
 	/**
 	 * Date/time at which a privilege or a security is no longer available.
 	 * <p>
@@ -726,18 +755,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * "Date/time at which a privilege or a security is no longer available."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OfferExpiryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOfferExpiryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferExpiryDate";
 			definition = "Date/time at which a privilege or a security is no longer available.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getOfferExpiryDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate oversubscriptionRate;
 	/**
 	 * Rate of oversubscription allowed by the issuer.
 	 * <p>
@@ -764,18 +802,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * definition} = "Rate of oversubscription allowed by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OversubscriptionRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOversubscriptionRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionRate";
 			definition = "Rate of oversubscription allowed by the issuer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getOversubscriptionRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount oversubscriptionAmount;
 	/**
 	 * Amount of oversubscription allowed by the issuer.
 	 * <p>
@@ -802,18 +849,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * definition} = "Amount of oversubscription allowed by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OversubscriptionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOversubscriptionAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionAmount";
 			definition = "Amount of oversubscription allowed by the issuer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getOversubscriptionAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount reinvestmentAmount;
 	/**
 	 * Amount at which a cash disbursement will be reinvested into a security.
 	 * <p>
@@ -842,18 +898,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReinvestmentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReinvestmentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentAmount";
 			definition = "Amount at which a cash disbursement will be reinvested into a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getReinvestmentAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BaseOneRate reinvestmentRate;
 	/**
 	 * Rate at which a cash disbursement will be reinvested into a security.
 	 * <p>
@@ -880,18 +945,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * "Rate at which a cash disbursement will be reinvested into a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReinvestmentRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReinvestmentRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentRate";
 			definition = "Rate at which a cash disbursement will be reinvested into a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getReinvestmentRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator loyalityPremiumIndicator;
 	/**
 	 * Dividend, in addition to regular dividends, payable to loyal (time, size,
 	 * amount) investors.
@@ -921,18 +995,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LoyalityPremiumIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLoyalityPremiumIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LoyalityPremiumIndicator";
 			definition = "Dividend, in addition to regular dividends, payable to loyal (time, size, amount) investors.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getLoyalityPremiumIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator oversubscriptionIndicator;
 	/**
 	 * Indicates that the event permits the holder to subscribe to more
 	 * securities than the underlying position allows.
@@ -962,18 +1045,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OversubscriptionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOversubscriptionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionIndicator";
 			definition = "Indicates that the event permits the holder to subscribe to more securities than the underlying position allows.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getOversubscriptionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator renounceableIndicator;
 	/**
 	 * Indicates whether the intermediate securities held by the beneficial
 	 * owner or agent can be sold.
@@ -1003,18 +1095,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RenounceableIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRenounceableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenounceableIndicator";
 			definition = "Indicates whether the intermediate securities held by the beneficial owner or agent can be sold.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getRenounceableIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number decimalPrecision;
 	/**
 	 * Indicates the number of digits to the right of the decimal point.
 	 * <p>
@@ -1041,18 +1142,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * "Indicates the number of digits to the right of the decimal point."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DecimalPrecision = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDecimalPrecision = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DecimalPrecision";
 			definition = "Indicates the number of digits to the right of the decimal point.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getDecimalPrecision", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PaymentTypeCode reinvestmentType;
 	/**
 	 * Specifies whether the investment will be net or gross.
 	 * <p>
@@ -1079,18 +1189,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * definition} = "Specifies whether the investment will be net or gross."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReinvestmentType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReinvestmentType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReinvestmentType";
 			definition = "Specifies whether the investment will be net or gross.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PaymentTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getReinvestmentType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator revocableIndicator;
 	/**
 	 * Action or event can be reversed at anytime, or otherwise annulled.
 	 * <p>
@@ -1118,18 +1237,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * "Action or event can be reversed at anytime, or otherwise annulled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RevocableIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRevocableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RevocableIndicator";
 			definition = "Action or event can be reversed at anytime, or otherwise annulled.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getRevocableIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesAndCashDistribution securitiesAndCashDistribution;
 	/**
 	 * Distribution for which the cash distribution elements are provided.
 	 * <p>
@@ -1138,8 +1266,8 @@ public class SecuritiesDistribution extends Distribution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAndCashDistribution#SecuritiesDistribution
-	 * SecuritiesAndCashDistribution.SecuritiesDistribution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAndCashDistribution#mmSecuritiesDistribution
+	 * SecuritiesAndCashDistribution.mmSecuritiesDistribution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1165,20 +1293,21 @@ public class SecuritiesDistribution extends Distribution {
 	 * "Distribution for which the cash distribution elements are provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesAndCashDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesAndCashDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAndCashDistribution";
 			definition = "Distribution for which the cash distribution elements are provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAndCashDistribution.mmSecuritiesDistribution;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAndCashDistribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAndCashDistribution.SecuritiesDistribution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected RoundingDirectionCode fractionTreatment;
 	/**
 	 * Specifies how the fractions will be treated.
 	 * <p>
@@ -1205,18 +1334,27 @@ public class SecuritiesDistribution extends Distribution {
 	 * definition} = "Specifies how the fractions will be treated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FractionTreatment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFractionTreatment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FractionTreatment";
 			definition = "Specifies how the fractions will be treated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RoundingDirectionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getFractionTreatment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator intermediateSecurityDistributionIndicator;
 	/**
 	 * Indicates whether there will be a distribution of intermediate securities
 	 * or privilege.
@@ -1246,49 +1384,263 @@ public class SecuritiesDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IntermediateSecurityDistributionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIntermediateSecurityDistributionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesDistribution.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesDistribution.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediateSecurityDistributionIndicator";
 			definition = "Indicates whether there will be a distribution of intermediate securities or privilege.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesDistribution.class.getMethod("getIntermediateSecurityDistributionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesDistribution";
 				definition = "Characteristics for a securities distribution event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.CashFractionsPriceRelatedSecuritiesDistribution,
-						com.tools20022.repository.entity.SecuritiesPricing.SuscriptionPriceRelatedSecuritiesDistribution, com.tools20022.repository.entity.SecuritiesPricing.ReinvestmentPriceRelatedSecuritiesDistribution,
-						com.tools20022.repository.entity.SecuritiesQuantity.MaximumHoldingRelatedSecuritiesDistribution, com.tools20022.repository.entity.SecuritiesQuantity.IntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution,
-						com.tools20022.repository.entity.SecuritiesQuantity.IntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution,
-						com.tools20022.repository.entity.SecuritiesQuantity.DistributedToUnderlyingDenominatorRelatedSecuritiesDistribution,
-						com.tools20022.repository.entity.SecuritiesQuantity.DistributedToUnderlyingNumeratorRelatedSecuritiesDistribution, com.tools20022.repository.entity.SecuritiesQuantity.MinimumHoldingRelatedSecuritiesDistribution,
-						com.tools20022.repository.entity.SecuritiesAndCashDistribution.SecuritiesDistribution);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmCashFractionsPriceRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesPricing.mmSuscriptionPriceRelatedSecuritiesDistribution, com.tools20022.repository.entity.SecuritiesPricing.mmReinvestmentPriceRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumHoldingRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmIntermediateToUnderlyingNumeratorRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmIntermediateToUnderlyingDenominatorRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmDistributedToUnderlyingDenominatorRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmDistributedToUnderlyingNumeratorRelatedSecuritiesDistribution, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumHoldingRelatedSecuritiesDistribution,
+						com.tools20022.repository.entity.SecuritiesAndCashDistribution.mmSecuritiesDistribution);
 				superType_lazy = () -> Distribution.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesDistribution.MaximumHolding, com.tools20022.repository.entity.SecuritiesDistribution.IntermediateToUnderlyingNumerator,
-						com.tools20022.repository.entity.SecuritiesDistribution.IntermediateToUnderlyingDenominator, com.tools20022.repository.entity.SecuritiesDistribution.DistributedToUnderlyingDenominator,
-						com.tools20022.repository.entity.SecuritiesDistribution.DistributedToUnderlyingNumerator, com.tools20022.repository.entity.SecuritiesDistribution.MinimumHolding,
-						com.tools20022.repository.entity.SecuritiesDistribution.CashFractionsPrice, com.tools20022.repository.entity.SecuritiesDistribution.SubscriptionPrice,
-						com.tools20022.repository.entity.SecuritiesDistribution.ReinvestmentPrice, com.tools20022.repository.entity.SecuritiesDistribution.IntermediateSecurityExpiryDate,
-						com.tools20022.repository.entity.SecuritiesDistribution.TradingAvailabilityDate, com.tools20022.repository.entity.SecuritiesDistribution.OfferExpiryDate,
-						com.tools20022.repository.entity.SecuritiesDistribution.OversubscriptionRate, com.tools20022.repository.entity.SecuritiesDistribution.OversubscriptionAmount,
-						com.tools20022.repository.entity.SecuritiesDistribution.ReinvestmentAmount, com.tools20022.repository.entity.SecuritiesDistribution.ReinvestmentRate,
-						com.tools20022.repository.entity.SecuritiesDistribution.LoyalityPremiumIndicator, com.tools20022.repository.entity.SecuritiesDistribution.OversubscriptionIndicator,
-						com.tools20022.repository.entity.SecuritiesDistribution.RenounceableIndicator, com.tools20022.repository.entity.SecuritiesDistribution.DecimalPrecision,
-						com.tools20022.repository.entity.SecuritiesDistribution.ReinvestmentType, com.tools20022.repository.entity.SecuritiesDistribution.RevocableIndicator,
-						com.tools20022.repository.entity.SecuritiesDistribution.SecuritiesAndCashDistribution, com.tools20022.repository.entity.SecuritiesDistribution.FractionTreatment,
-						com.tools20022.repository.entity.SecuritiesDistribution.IntermediateSecurityDistributionIndicator);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesDistribution.mmMaximumHolding, com.tools20022.repository.entity.SecuritiesDistribution.mmIntermediateToUnderlyingNumerator,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmIntermediateToUnderlyingDenominator, com.tools20022.repository.entity.SecuritiesDistribution.mmDistributedToUnderlyingDenominator,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmDistributedToUnderlyingNumerator, com.tools20022.repository.entity.SecuritiesDistribution.mmMinimumHolding,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmCashFractionsPrice, com.tools20022.repository.entity.SecuritiesDistribution.mmSubscriptionPrice,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmReinvestmentPrice, com.tools20022.repository.entity.SecuritiesDistribution.mmIntermediateSecurityExpiryDate,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmTradingAvailabilityDate, com.tools20022.repository.entity.SecuritiesDistribution.mmOfferExpiryDate,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmOversubscriptionRate, com.tools20022.repository.entity.SecuritiesDistribution.mmOversubscriptionAmount,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmReinvestmentAmount, com.tools20022.repository.entity.SecuritiesDistribution.mmReinvestmentRate,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmLoyalityPremiumIndicator, com.tools20022.repository.entity.SecuritiesDistribution.mmOversubscriptionIndicator,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmRenounceableIndicator, com.tools20022.repository.entity.SecuritiesDistribution.mmDecimalPrecision,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmReinvestmentType, com.tools20022.repository.entity.SecuritiesDistribution.mmRevocableIndicator,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmSecuritiesAndCashDistribution, com.tools20022.repository.entity.SecuritiesDistribution.mmFractionTreatment,
+						com.tools20022.repository.entity.SecuritiesDistribution.mmIntermediateSecurityDistributionIndicator);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesDistribution.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesQuantity getMaximumHolding() {
+		return maximumHolding;
+	}
+
+	public void setMaximumHolding(com.tools20022.repository.entity.SecuritiesQuantity maximumHolding) {
+		this.maximumHolding = maximumHolding;
+	}
+
+	public List<SecuritiesQuantity> getIntermediateToUnderlyingNumerator() {
+		return intermediateToUnderlyingNumerator;
+	}
+
+	public void setIntermediateToUnderlyingNumerator(List<com.tools20022.repository.entity.SecuritiesQuantity> intermediateToUnderlyingNumerator) {
+		this.intermediateToUnderlyingNumerator = intermediateToUnderlyingNumerator;
+	}
+
+	public List<SecuritiesQuantity> getIntermediateToUnderlyingDenominator() {
+		return intermediateToUnderlyingDenominator;
+	}
+
+	public void setIntermediateToUnderlyingDenominator(List<com.tools20022.repository.entity.SecuritiesQuantity> intermediateToUnderlyingDenominator) {
+		this.intermediateToUnderlyingDenominator = intermediateToUnderlyingDenominator;
+	}
+
+	public List<SecuritiesQuantity> getDistributedToUnderlyingDenominator() {
+		return distributedToUnderlyingDenominator;
+	}
+
+	public void setDistributedToUnderlyingDenominator(List<com.tools20022.repository.entity.SecuritiesQuantity> distributedToUnderlyingDenominator) {
+		this.distributedToUnderlyingDenominator = distributedToUnderlyingDenominator;
+	}
+
+	public List<SecuritiesQuantity> getDistributedToUnderlyingNumerator() {
+		return distributedToUnderlyingNumerator;
+	}
+
+	public void setDistributedToUnderlyingNumerator(List<com.tools20022.repository.entity.SecuritiesQuantity> distributedToUnderlyingNumerator) {
+		this.distributedToUnderlyingNumerator = distributedToUnderlyingNumerator;
+	}
+
+	public SecuritiesQuantity getMinimumHolding() {
+		return minimumHolding;
+	}
+
+	public void setMinimumHolding(com.tools20022.repository.entity.SecuritiesQuantity minimumHolding) {
+		this.minimumHolding = minimumHolding;
+	}
+
+	public SecuritiesPricing getCashFractionsPrice() {
+		return cashFractionsPrice;
+	}
+
+	public void setCashFractionsPrice(com.tools20022.repository.entity.SecuritiesPricing cashFractionsPrice) {
+		this.cashFractionsPrice = cashFractionsPrice;
+	}
+
+	public SecuritiesPricing getSubscriptionPrice() {
+		return subscriptionPrice;
+	}
+
+	public void setSubscriptionPrice(com.tools20022.repository.entity.SecuritiesPricing subscriptionPrice) {
+		this.subscriptionPrice = subscriptionPrice;
+	}
+
+	public SecuritiesPricing getReinvestmentPrice() {
+		return reinvestmentPrice;
+	}
+
+	public void setReinvestmentPrice(com.tools20022.repository.entity.SecuritiesPricing reinvestmentPrice) {
+		this.reinvestmentPrice = reinvestmentPrice;
+	}
+
+	public ISODateTime getIntermediateSecurityExpiryDate() {
+		return intermediateSecurityExpiryDate;
+	}
+
+	public void setIntermediateSecurityExpiryDate(ISODateTime intermediateSecurityExpiryDate) {
+		this.intermediateSecurityExpiryDate = intermediateSecurityExpiryDate;
+	}
+
+	public ISODateTime getTradingAvailabilityDate() {
+		return tradingAvailabilityDate;
+	}
+
+	public void setTradingAvailabilityDate(ISODateTime tradingAvailabilityDate) {
+		this.tradingAvailabilityDate = tradingAvailabilityDate;
+	}
+
+	public ISODateTime getOfferExpiryDate() {
+		return offerExpiryDate;
+	}
+
+	public void setOfferExpiryDate(ISODateTime offerExpiryDate) {
+		this.offerExpiryDate = offerExpiryDate;
+	}
+
+	public PercentageRate getOversubscriptionRate() {
+		return oversubscriptionRate;
+	}
+
+	public void setOversubscriptionRate(PercentageRate oversubscriptionRate) {
+		this.oversubscriptionRate = oversubscriptionRate;
+	}
+
+	public CurrencyAndAmount getOversubscriptionAmount() {
+		return oversubscriptionAmount;
+	}
+
+	public void setOversubscriptionAmount(CurrencyAndAmount oversubscriptionAmount) {
+		this.oversubscriptionAmount = oversubscriptionAmount;
+	}
+
+	public CurrencyAndAmount getReinvestmentAmount() {
+		return reinvestmentAmount;
+	}
+
+	public void setReinvestmentAmount(CurrencyAndAmount reinvestmentAmount) {
+		this.reinvestmentAmount = reinvestmentAmount;
+	}
+
+	public BaseOneRate getReinvestmentRate() {
+		return reinvestmentRate;
+	}
+
+	public void setReinvestmentRate(BaseOneRate reinvestmentRate) {
+		this.reinvestmentRate = reinvestmentRate;
+	}
+
+	public YesNoIndicator getLoyalityPremiumIndicator() {
+		return loyalityPremiumIndicator;
+	}
+
+	public void setLoyalityPremiumIndicator(YesNoIndicator loyalityPremiumIndicator) {
+		this.loyalityPremiumIndicator = loyalityPremiumIndicator;
+	}
+
+	public YesNoIndicator getOversubscriptionIndicator() {
+		return oversubscriptionIndicator;
+	}
+
+	public void setOversubscriptionIndicator(YesNoIndicator oversubscriptionIndicator) {
+		this.oversubscriptionIndicator = oversubscriptionIndicator;
+	}
+
+	public YesNoIndicator getRenounceableIndicator() {
+		return renounceableIndicator;
+	}
+
+	public void setRenounceableIndicator(YesNoIndicator renounceableIndicator) {
+		this.renounceableIndicator = renounceableIndicator;
+	}
+
+	public Number getDecimalPrecision() {
+		return decimalPrecision;
+	}
+
+	public void setDecimalPrecision(Number decimalPrecision) {
+		this.decimalPrecision = decimalPrecision;
+	}
+
+	public PaymentTypeCode getReinvestmentType() {
+		return reinvestmentType;
+	}
+
+	public void setReinvestmentType(PaymentTypeCode reinvestmentType) {
+		this.reinvestmentType = reinvestmentType;
+	}
+
+	public YesNoIndicator getRevocableIndicator() {
+		return revocableIndicator;
+	}
+
+	public void setRevocableIndicator(YesNoIndicator revocableIndicator) {
+		this.revocableIndicator = revocableIndicator;
+	}
+
+	public SecuritiesAndCashDistribution getSecuritiesAndCashDistribution() {
+		return securitiesAndCashDistribution;
+	}
+
+	public void setSecuritiesAndCashDistribution(com.tools20022.repository.entity.SecuritiesAndCashDistribution securitiesAndCashDistribution) {
+		this.securitiesAndCashDistribution = securitiesAndCashDistribution;
+	}
+
+	public RoundingDirectionCode getFractionTreatment() {
+		return fractionTreatment;
+	}
+
+	public void setFractionTreatment(RoundingDirectionCode fractionTreatment) {
+		this.fractionTreatment = fractionTreatment;
+	}
+
+	public YesNoIndicator getIntermediateSecurityDistributionIndicator() {
+		return intermediateSecurityDistributionIndicator;
+	}
+
+	public void setIntermediateSecurityDistributionIndicator(YesNoIndicator intermediateSecurityDistributionIndicator) {
+		this.intermediateSecurityDistributionIndicator = intermediateSecurityDistributionIndicator;
 	}
 }

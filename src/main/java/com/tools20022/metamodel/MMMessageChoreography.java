@@ -17,8 +17,10 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -34,6 +36,15 @@ import java.util.Optional;
  */
 public class MMMessageChoreography implements MMTopLevelCatalogueEntry {
 
+	/**
+	 * the BusinessTransactionTrace from the MessageChoreography to the
+	 * BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMMessageChoreography, Optional<MMBusinessTransaction>> businessTransactionTraceAttribute = newAttribute();
+	/**
+	 * The MessageDefinition that is used in a MessageChoreography.
+	 */
+	public final static MetamodelAttribute<MMMessageChoreography, List<MMMessageDefinition>> messageDefinitionAttribute = newAttribute();
 	protected Supplier<MMBusinessTransaction> businessTransactionTrace_lazy;
 	protected Supplier<List<MMMessageDefinition>> messageDefinition_lazy;
 	protected Supplier<MMBusinessProcessCatalogue> businessProcessCatalogue_lazy;

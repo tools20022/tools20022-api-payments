@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureConventionTypeCode#Gross
- * ExposureConventionTypeCode.Gross}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureConventionTypeCode#mmGross
+ * ExposureConventionTypeCode.mmGross}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureConventionTypeCode#Net
- * ExposureConventionTypeCode.Net}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureConventionTypeCode#mmNet
+ * ExposureConventionTypeCode.mmNet}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +91,9 @@ public class ExposureConventionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Gross = new MMCode() {
+	public static final MMCode mmGross = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Gross";
 			definition = "Indicates that the exposed amount to party A and B will be netted together for the variation margin calculation, and then two separate variation margin requirements will be determined.";
 			owner_lazy = () -> ExposureConventionTypeCode.mmObject();
@@ -122,9 +124,9 @@ public class ExposureConventionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Net = new MMCode() {
+	public static final MMCode mmNet = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Net";
 			definition = "Indicates that the exposed amount to party A and B will be netted together for the variation margin calculation.";
 			owner_lazy = () -> ExposureConventionTypeCode.mmObject();
@@ -135,12 +137,12 @@ public class ExposureConventionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("GROS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExposureConventionTypeCode";
 				definition = "Determines how the variation margin requirement will be calculated, either net or gross.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ExposureConventionTypeCode.Gross, com.tools20022.repository.codeset.ExposureConventionTypeCode.Net);
+				code_lazy = () -> Arrays.asList(ExposureConventionTypeCode.mmGross, ExposureConventionTypeCode.mmNet);
 			}
 		});
 		return mmObject_lazy.get();

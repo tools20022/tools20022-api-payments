@@ -17,17 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.PaymentCode;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.ProceedsDefinition;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Definition of the cash proceeds for a corporate action in generic terms; that
@@ -46,41 +47,41 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#CashIncentiveRate
- * CashProceedsDefinition.CashIncentiveRate}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmCashIncentiveRate
+ * CashProceedsDefinition.mmCashIncentiveRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#ContractualPaymentIndicator
- * CashProceedsDefinition.ContractualPaymentIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmContractualPaymentIndicator
+ * CashProceedsDefinition.mmContractualPaymentIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#IncomeType
- * CashProceedsDefinition.IncomeType}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmIncomeType
+ * CashProceedsDefinition.mmIncomeType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#IndemnityAmount
- * CashProceedsDefinition.IndemnityAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmIndemnityAmount
+ * CashProceedsDefinition.mmIndemnityAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#CashIncentiveAmount
- * CashProceedsDefinition.CashIncentiveAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmCashIncentiveAmount
+ * CashProceedsDefinition.mmCashIncentiveAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#PrincipalOrCorpus
- * CashProceedsDefinition.PrincipalOrCorpus}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmPrincipalOrCorpus
+ * CashProceedsDefinition.mmPrincipalOrCorpus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#RedemptionPremiumAmount
- * CashProceedsDefinition.RedemptionPremiumAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmRedemptionPremiumAmount
+ * CashProceedsDefinition.mmRedemptionPremiumAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#IncomePortion
- * CashProceedsDefinition.IncomePortion}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmIncomePortion
+ * CashProceedsDefinition.mmIncomePortion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#Interest
- * CashProceedsDefinition.Interest}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmInterest
+ * CashProceedsDefinition.mmInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#Amount
- * CashProceedsDefinition.Amount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmAmount
+ * CashProceedsDefinition.mmAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#Dividend
- * CashProceedsDefinition.Dividend}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmDividend
+ * CashProceedsDefinition.mmDividend}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#PaymentCurrency
- * CashProceedsDefinition.PaymentCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.CashProceedsDefinition#mmPaymentCurrency
+ * CashProceedsDefinition.mmPaymentCurrency}</li>
  * </ul>
  * </li>
  * <li>
@@ -88,13 +89,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForCashProceedsIncome
- * GenericIdentification.IdentificationForCashProceedsIncome}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Dividend#CashProceeds
- * Dividend.CashProceeds}</li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForCashProceedsIncome
+ * GenericIdentification.mmIdentificationForCashProceedsIncome}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Dividend#mmCashProceeds
+ * Dividend.mmCashProceeds}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Interest#RelatedCashProceedsDefinition
- * Interest.RelatedCashProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedCashProceedsDefinition
+ * Interest.mmRelatedCashProceedsDefinition}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -103,8 +104,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -120,6 +121,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CashProceedsDefinition extends ProceedsDefinition {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate cashIncentiveRate;
 	/**
 	 * Cash premium made available if the securities holder consents or
 	 * participates to an event, e.g. consent fees.
@@ -149,18 +151,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CashIncentiveRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCashIncentiveRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashIncentiveRate";
 			definition = "Cash premium made available if the securities holder consents or participates to an event, e.g. consent fees.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getCashIncentiveRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PaymentCode contractualPaymentIndicator;
 	/**
 	 * Indicates exceptions to contractual payment service.
 	 * <p>
@@ -186,18 +197,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Indicates exceptions to contractual payment service."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ContractualPaymentIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmContractualPaymentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractualPaymentIndicator";
 			definition = "Indicates exceptions to contractual payment service.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PaymentCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getContractualPaymentIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected GenericIdentification incomeType;
 	/**
 	 * Specifies the type of income.<br>
 	 * The lists of income type codes to be used, are available on the SMPG
@@ -208,8 +228,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForCashProceedsIncome
-	 * GenericIdentification.IdentificationForCashProceedsIncome}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForCashProceedsIncome
+	 * GenericIdentification.mmIdentificationForCashProceedsIncome}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -236,20 +256,21 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IncomeType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIncomeType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomeType";
 			definition = "Specifies the type of income.\r\nThe lists of income type codes to be used, are available on the SMPG website at www.smpg.info.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentificationForCashProceedsIncome;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForCashProceedsIncome;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected CurrencyAndAmount indemnityAmount;
 	/**
 	 * (Unique to France) Amount due to a buyer of securities dealt prior to ex
 	 * date which may be subject to different rate of taxation.
@@ -279,18 +300,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IndemnityAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIndemnityAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndemnityAmount";
 			definition = "(Unique to France) Amount due to a buyer of securities dealt prior to ex date which may be subject to different rate of taxation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getIndemnityAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount cashIncentiveAmount;
 	/**
 	 * Rate of the cash premium made available if the securities holder consents
 	 * or participates to an event, e.g. consent fees.
@@ -320,18 +350,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CashIncentiveAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCashIncentiveAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashIncentiveAmount";
 			definition = "Rate of the cash premium made available if the securities holder consents or participates to an event, e.g. consent fees.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getCashIncentiveAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount principalOrCorpus;
 	/**
 	 * Amount of money representing a distribution of a bond's principal, eg,
 	 * repayment of outstanding debt.
@@ -361,18 +400,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PrincipalOrCorpus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPrincipalOrCorpus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrincipalOrCorpus";
 			definition = "Amount of money representing a distribution of a bond's principal, eg, repayment of outstanding debt.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getPrincipalOrCorpus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount redemptionPremiumAmount;
 	/**
 	 * Amount of money (not interest) in addition to the principal at the
 	 * redemption of a bond.
@@ -402,18 +450,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RedemptionPremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRedemptionPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionPremiumAmount";
 			definition = "Amount of money (not interest) in addition to the principal at the redemption of a bond.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getRedemptionPremiumAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount incomePortion;
 	/**
 	 * Amount relating to the underlying security for which income is
 	 * distributed.
@@ -443,18 +500,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IncomePortion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIncomePortion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomePortion";
 			definition = "Amount relating to the underlying security for which income is distributed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getIncomePortion", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Interest> interest;
 	/**
 	 * Interest paid as the proceeds of a CA event.
 	 * <p>
@@ -463,8 +529,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Interest#RelatedCashProceedsDefinition
-	 * Interest.RelatedCashProceedsDefinition}</li>
+	 * {@linkplain com.tools20022.repository.entity.Interest#mmRelatedCashProceedsDefinition
+	 * Interest.mmRelatedCashProceedsDefinition}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -487,19 +553,20 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Interest paid as the proceeds of a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Interest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Interest";
 			definition = "Interest paid as the proceeds of a CA event.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmRelatedCashProceedsDefinition;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.RelatedCashProceedsDefinition;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount amount;
 	/**
 	 * Cash amount which is posted.
 	 * <p>
@@ -526,18 +593,27 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Cash amount which is posted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Cash amount which is posted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Dividend> dividend;
 	/**
 	 * Distribution of earnings to shareholders, paid for in cash, stock, scrip
 	 * issue or, rarely, in kind, eg, company products or property. The dividend
@@ -548,8 +624,8 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Dividend#CashProceeds
-	 * Dividend.CashProceeds}</li>
+	 * {@linkplain com.tools20022.repository.entity.Dividend#mmCashProceeds
+	 * Dividend.mmCashProceeds}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -574,19 +650,20 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Dividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dividend";
 			definition = "Distribution of earnings to shareholders, paid for in cash, stock, scrip issue or, rarely, in kind, eg, company products or property. The dividend amount is decided by the board of directors.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.mmCashProceeds;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.CashProceeds;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyCode paymentCurrency;
 	/**
 	 * Currency for the payment of the cash proceeds.
 	 * <p>
@@ -612,37 +689,146 @@ public class CashProceedsDefinition extends ProceedsDefinition {
 	 * definition} = "Currency for the payment of the cash proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PaymentCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPaymentCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashProceedsDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashProceedsDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentCurrency";
 			definition = "Currency for the payment of the cash proceeds.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashProceedsDefinition.class.getMethod("getPaymentCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashProceedsDefinition";
 				definition = "Definition of the cash proceeds for a corporate action in generic terms; that is, before applying it to specific securities holding. An example would be the definition of a dividend payment where all the information will be given in general on a per share basis.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.IdentificationForCashProceedsIncome, com.tools20022.repository.entity.Dividend.CashProceeds,
-						com.tools20022.repository.entity.Interest.RelatedCashProceedsDefinition);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForCashProceedsIncome, com.tools20022.repository.entity.Dividend.mmCashProceeds,
+						com.tools20022.repository.entity.Interest.mmRelatedCashProceedsDefinition);
 				superType_lazy = () -> ProceedsDefinition.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashProceedsDefinition.CashIncentiveRate, com.tools20022.repository.entity.CashProceedsDefinition.ContractualPaymentIndicator,
-						com.tools20022.repository.entity.CashProceedsDefinition.IncomeType, com.tools20022.repository.entity.CashProceedsDefinition.IndemnityAmount,
-						com.tools20022.repository.entity.CashProceedsDefinition.CashIncentiveAmount, com.tools20022.repository.entity.CashProceedsDefinition.PrincipalOrCorpus,
-						com.tools20022.repository.entity.CashProceedsDefinition.RedemptionPremiumAmount, com.tools20022.repository.entity.CashProceedsDefinition.IncomePortion,
-						com.tools20022.repository.entity.CashProceedsDefinition.Interest, com.tools20022.repository.entity.CashProceedsDefinition.Amount, com.tools20022.repository.entity.CashProceedsDefinition.Dividend,
-						com.tools20022.repository.entity.CashProceedsDefinition.PaymentCurrency);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashProceedsDefinition.mmCashIncentiveRate, com.tools20022.repository.entity.CashProceedsDefinition.mmContractualPaymentIndicator,
+						com.tools20022.repository.entity.CashProceedsDefinition.mmIncomeType, com.tools20022.repository.entity.CashProceedsDefinition.mmIndemnityAmount,
+						com.tools20022.repository.entity.CashProceedsDefinition.mmCashIncentiveAmount, com.tools20022.repository.entity.CashProceedsDefinition.mmPrincipalOrCorpus,
+						com.tools20022.repository.entity.CashProceedsDefinition.mmRedemptionPremiumAmount, com.tools20022.repository.entity.CashProceedsDefinition.mmIncomePortion,
+						com.tools20022.repository.entity.CashProceedsDefinition.mmInterest, com.tools20022.repository.entity.CashProceedsDefinition.mmAmount, com.tools20022.repository.entity.CashProceedsDefinition.mmDividend,
+						com.tools20022.repository.entity.CashProceedsDefinition.mmPaymentCurrency);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CashProceedsDefinition.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PercentageRate getCashIncentiveRate() {
+		return cashIncentiveRate;
+	}
+
+	public void setCashIncentiveRate(PercentageRate cashIncentiveRate) {
+		this.cashIncentiveRate = cashIncentiveRate;
+	}
+
+	public PaymentCode getContractualPaymentIndicator() {
+		return contractualPaymentIndicator;
+	}
+
+	public void setContractualPaymentIndicator(PaymentCode contractualPaymentIndicator) {
+		this.contractualPaymentIndicator = contractualPaymentIndicator;
+	}
+
+	public GenericIdentification getIncomeType() {
+		return incomeType;
+	}
+
+	public void setIncomeType(com.tools20022.repository.entity.GenericIdentification incomeType) {
+		this.incomeType = incomeType;
+	}
+
+	public CurrencyAndAmount getIndemnityAmount() {
+		return indemnityAmount;
+	}
+
+	public void setIndemnityAmount(CurrencyAndAmount indemnityAmount) {
+		this.indemnityAmount = indemnityAmount;
+	}
+
+	public ActiveCurrencyAndAmount getCashIncentiveAmount() {
+		return cashIncentiveAmount;
+	}
+
+	public void setCashIncentiveAmount(ActiveCurrencyAndAmount cashIncentiveAmount) {
+		this.cashIncentiveAmount = cashIncentiveAmount;
+	}
+
+	public CurrencyAndAmount getPrincipalOrCorpus() {
+		return principalOrCorpus;
+	}
+
+	public void setPrincipalOrCorpus(CurrencyAndAmount principalOrCorpus) {
+		this.principalOrCorpus = principalOrCorpus;
+	}
+
+	public CurrencyAndAmount getRedemptionPremiumAmount() {
+		return redemptionPremiumAmount;
+	}
+
+	public void setRedemptionPremiumAmount(CurrencyAndAmount redemptionPremiumAmount) {
+		this.redemptionPremiumAmount = redemptionPremiumAmount;
+	}
+
+	public CurrencyAndAmount getIncomePortion() {
+		return incomePortion;
+	}
+
+	public void setIncomePortion(CurrencyAndAmount incomePortion) {
+		this.incomePortion = incomePortion;
+	}
+
+	public List<Interest> getInterest() {
+		return interest;
+	}
+
+	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
+		this.interest = interest;
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public List<Dividend> getDividend() {
+		return dividend;
+	}
+
+	public void setDividend(List<com.tools20022.repository.entity.Dividend> dividend) {
+		this.dividend = dividend;
+	}
+
+	public CurrencyCode getPaymentCurrency() {
+		return paymentCurrency;
+	}
+
+	public void setPaymentCurrency(CurrencyCode paymentCurrency) {
+		this.paymentCurrency = paymentCurrency;
 	}
 }

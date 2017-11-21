@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalTaxAmountType1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the amount type.
@@ -34,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.TaxAmountType1Choice#Code
- * TaxAmountType1Choice.Code}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.TaxAmountType1Choice#mmCode
+ * TaxAmountType1Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.TaxAmountType1Choice#Proprietary
- * TaxAmountType1Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.TaxAmountType1Choice#mmProprietary
+ * TaxAmountType1Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +64,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the amount type."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TaxAmountType1Choice", propOrder = {"code", "proprietary"})
 public class TaxAmountType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalTaxAmountType1Code code;
 	/**
 	 * Specifies the amount type, in a coded form.
 	 * <p>
@@ -74,7 +83,7 @@ public class TaxAmountType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Type Tax.Type}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmType Tax.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -93,20 +102,21 @@ public class TaxAmountType1Choice {
 	 * definition} = "Specifies the amount type, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmType;
 			componentContext_lazy = () -> TaxAmountType1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Type;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Specifies the amount type, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalTaxAmountType1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Specifies the amount type, in a free-text form.
 	 * <p>
@@ -119,7 +129,7 @@ public class TaxAmountType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Type Tax.Type}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmType Tax.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -138,17 +148,17 @@ public class TaxAmountType1Choice {
 	 * definition} = "Specifies the amount type, in a free-text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmType;
 			componentContext_lazy = () -> TaxAmountType1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Type;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Specifies the amount type, in a free-text form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -156,14 +166,32 @@ public class TaxAmountType1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.TaxAmountType1Choice.Code, com.tools20022.repository.choice.TaxAmountType1Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(TaxAmountType1Choice.mmCode, TaxAmountType1Choice.mmProprietary);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxAmountType1Choice";
 				definition = "Specifies the amount type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalTaxAmountType1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalTaxAmountType1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

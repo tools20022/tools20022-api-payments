@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Modification1Code;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of change to an amount.
@@ -34,17 +40,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AmountModification1#ModificationCode
- * AmountModification1.ModificationCode}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AmountModification1#Amount
- * AmountModification1.Amount}</li>
+ * {@linkplain com.tools20022.repository.msg.AmountModification1#mmModificationCode
+ * AmountModification1.mmModificationCode}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountModification1#mmAmount
+ * AmountModification1.mmAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -55,9 +61,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of change to an amount."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AmountModification1", propOrder = {"modificationCode", "amount"})
 public class AmountModification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Modification1Code modificationCode;
 	/**
 	 * Specifies the type of change.
 	 * <p>
@@ -86,19 +95,20 @@ public class AmountModification1 {
 	 * definition} = "Specifies the type of change."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ModificationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmModificationCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AmountModification1.mmObject();
 			isDerived = false;
 			xmlTag = "ModCd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModificationCode";
 			definition = "Specifies the type of change.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Modification1Code.mmObject();
 		}
 	};
+	protected ImpliedCurrencyAndAmount amount;
 	/**
 	 * Amount.
 	 * <p>
@@ -127,16 +137,16 @@ public class AmountModification1 {
 	 * definition} = "Amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AmountModification1.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 	};
@@ -144,13 +154,31 @@ public class AmountModification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AmountModification1.ModificationCode, com.tools20022.repository.msg.AmountModification1.Amount);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(AmountModification1.mmModificationCode, AmountModification1.mmAmount);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountModification1";
 				definition = "Specifies the type of change to an amount.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ModCd")
+	public Modification1Code getModificationCode() {
+		return modificationCode;
+	}
+
+	public void setModificationCode(Modification1Code modificationCode) {
+		this.modificationCode = modificationCode;
+	}
+
+	@XmlElement(name = "Amt", required = true)
+	public ImpliedCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ImpliedCurrencyAndAmount amount) {
+		this.amount = amount;
 	}
 }

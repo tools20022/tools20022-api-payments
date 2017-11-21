@@ -20,11 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.BillingCompensationType1Choice;
 import com.tools20022.repository.codeset.BillingCurrencyType2Code;
 import com.tools20022.repository.entity.CashAccountService;
+import com.tools20022.repository.entity.Invoice;
+import com.tools20022.repository.entity.Service;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the compensation data of an incorrect billing.
@@ -35,13 +43,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.BillingCompensation1#Type
- * BillingCompensation1.Type}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingCompensation1#Value
- * BillingCompensation1.Value}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingCompensation1#mmType
+ * BillingCompensation1.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingCompensation1#mmValue
+ * BillingCompensation1.mmValue}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingCompensation1#CurrencyType
- * BillingCompensation1.CurrencyType}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingCompensation1#mmCurrencyType
+ * BillingCompensation1.mmCurrencyType}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -50,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +70,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the compensation data of an incorrect billing."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingCompensation1", propOrder = {"type", "value", "currencyType"})
 public class BillingCompensation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected BillingCompensationType1Choice type;
 	/**
 	 * Defines the type of billing compensation.
 	 * <p>
@@ -77,8 +88,8 @@ public class BillingCompensation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Invoice#BillingCompensationType
-	 * Invoice.BillingCompensationType}</li>
+	 * {@linkplain com.tools20022.repository.entity.Invoice#mmBillingCompensationType
+	 * Invoice.mmBillingCompensationType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -97,21 +108,22 @@ public class BillingCompensation1 {
 	 * definition} = "Defines the type of billing compensation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Type = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Invoice.mmBillingCompensationType;
 			componentContext_lazy = () -> BillingCompensation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Invoice.BillingCompensationType;
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Defines the type of billing compensation.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BillingCompensationType1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> BillingCompensationType1Choice.mmObject();
 		}
 	};
+	protected AmountAndDirection34 value;
 	/**
 	 * Defines the value of compensation.
 	 * <p>
@@ -123,8 +135,8 @@ public class BillingCompensation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Service#Amount
-	 * Service.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Service#mmAmount
+	 * Service.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -143,21 +155,22 @@ public class BillingCompensation1 {
 	 * definition} = "Defines the value of compensation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Value = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmValue = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> BillingCompensation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Service.Amount;
 			isDerived = false;
 			xmlTag = "Val";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Value";
 			definition = "Defines the value of compensation.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndDirection34.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	protected BillingCurrencyType2Code currencyType;
 	/**
 	 * Identifies the currency type used to report the value or total, in a
 	 * coded form, such as Settlement (STLM).
@@ -172,8 +185,8 @@ public class BillingCompensation1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccountService#BillingCurrency
-	 * CashAccountService.BillingCurrency}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccountService#mmBillingCurrency
+	 * CashAccountService.mmBillingCurrency}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -194,17 +207,17 @@ public class BillingCompensation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CurrencyType = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCurrencyType = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashAccountService.mmBillingCurrency;
 			componentContext_lazy = () -> BillingCompensation1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashAccountService.BillingCurrency;
 			isDerived = false;
 			xmlTag = "CcyTp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrencyType";
 			definition = "Identifies the currency type used to report the value or total, in a coded form, such as Settlement (STLM).";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> BillingCurrencyType2Code.mmObject();
 		}
 	};
@@ -212,14 +225,41 @@ public class BillingCompensation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingCompensation1.Type, com.tools20022.repository.msg.BillingCompensation1.Value, com.tools20022.repository.msg.BillingCompensation1.CurrencyType);
+				messageElement_lazy = () -> Arrays.asList(BillingCompensation1.mmType, BillingCompensation1.mmValue, BillingCompensation1.mmCurrencyType);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingCompensation1";
 				definition = "Specifies the compensation data of an incorrect billing.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public BillingCompensationType1Choice getType() {
+		return type;
+	}
+
+	public void setType(BillingCompensationType1Choice type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Val", required = true)
+	public AmountAndDirection34 getValue() {
+		return value;
+	}
+
+	public void setValue(com.tools20022.repository.msg.AmountAndDirection34 value) {
+		this.value = value;
+	}
+
+	@XmlElement(name = "CcyTp")
+	public BillingCurrencyType2Code getCurrencyType() {
+		return currencyType;
+	}
+
+	public void setCurrencyType(BillingCurrencyType2Code currencyType) {
+		this.currencyType = currencyType;
 	}
 }

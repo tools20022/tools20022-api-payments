@@ -17,12 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Provides the agreed amount and the collateral movement direction.
@@ -37,26 +38,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#RelatedCollateralProposal
- * CollateralMovement.RelatedCollateralProposal}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmRelatedCollateralProposal
+ * CollateralMovement.mmRelatedCollateralProposal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#VariationMargin
- * CollateralMovement.VariationMargin}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmVariationMargin
+ * CollateralMovement.mmVariationMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#SegregatedIndependentAmount
- * CollateralMovement.SegregatedIndependentAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmSegregatedIndependentAmount
+ * CollateralMovement.mmSegregatedIndependentAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#MarginCall
- * CollateralMovement.MarginCall}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmMarginCall
+ * CollateralMovement.mmMarginCall}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#SecuritiesCollateralMovement
- * CollateralMovement.SecuritiesCollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmSecuritiesCollateralMovement
+ * CollateralMovement.mmSecuritiesCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#CashCollateralMovement
- * CollateralMovement.CashCollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmCashCollateralMovement
+ * CollateralMovement.mmCashCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#FinancialTransaction
- * CollateralMovement.FinancialTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmFinancialTransaction
+ * CollateralMovement.mmFinancialTransaction}</li>
  * </ul>
  * </li>
  * <li>
@@ -64,27 +65,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedCollateralMovement
- * PaymentObligation.RelatedCollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedCollateralMovement
+ * PaymentObligation.mmRelatedCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#RelatedCollateralMovement
- * SecuritiesDeliveryObligation.RelatedCollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmRelatedCollateralMovement
+ * SecuritiesDeliveryObligation.mmRelatedCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MarginCall#CollateralMovement
- * MarginCall.CollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.MarginCall#mmCollateralMovement
+ * MarginCall.mmCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralProposal#ProposedCollateralMovement
- * CollateralProposal.ProposedCollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralProposal#mmProposedCollateralMovement
+ * CollateralProposal.mmProposedCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialTransaction#CollateralMovement
- * FinancialTransaction.CollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmCollateralMovement
+ * FinancialTransaction.mmCollateralMovement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,6 +100,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CollateralMovement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CollateralProposal relatedCollateralProposal;
 	/**
 	 * Collateral proposal for which collateral movements are detailed.
 	 * <p>
@@ -107,8 +109,8 @@ public class CollateralMovement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralProposal#ProposedCollateralMovement
-	 * CollateralProposal.ProposedCollateralMovement}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralProposal#mmProposedCollateralMovement
+	 * CollateralProposal.mmProposedCollateralMovement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -133,20 +135,21 @@ public class CollateralMovement {
 	 * "Collateral proposal for which collateral movements are detailed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCollateralProposal = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCollateralProposal = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralProposal";
 			definition = "Collateral proposal for which collateral movements are detailed.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CollateralProposal.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralProposal.ProposedCollateralMovement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmProposedCollateralMovement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralProposal.mmObject();
 		}
 	};
+	protected CurrencyAndAmount variationMargin;
 	/**
 	 * Amount of margin that will be delivered to one party by the other party
 	 * after rounding, threshold and minimum transfer amount are taken into
@@ -177,18 +180,27 @@ public class CollateralMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VariationMargin = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVariationMargin = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMargin";
 			definition = "Amount of margin that will be delivered to one party by the other party after rounding, threshold and minimum transfer amount are taken into account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralMovement.class.getMethod("getVariationMargin", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount segregatedIndependentAmount;
 	/**
 	 * Amount of margin that will be delivered to one party by the other party
 	 * after rounding, threshold and minimum transfer amount are taken into
@@ -219,18 +231,27 @@ public class CollateralMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SegregatedIndependentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSegregatedIndependentAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmount";
 			definition = "Amount of margin that will be delivered to one party by the other party after rounding, threshold and minimum transfer amount are taken into account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralMovement.class.getMethod("getSegregatedIndependentAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.MarginCall> marginCall;
 	/**
 	 * Magin call which needs to be executed.
 	 * <p>
@@ -239,8 +260,8 @@ public class CollateralMovement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MarginCall#CollateralMovement
-	 * MarginCall.CollateralMovement}</li>
+	 * {@linkplain com.tools20022.repository.entity.MarginCall#mmCollateralMovement
+	 * MarginCall.mmCollateralMovement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -264,19 +285,20 @@ public class CollateralMovement {
 	 * definition} = "Magin call which needs to be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MarginCall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMarginCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarginCall";
 			definition = "Magin call which needs to be executed.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.mmCollateralMovement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.CollateralMovement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement;
 	/**
 	 * Movement of assets in relation with collateral updates.
 	 * <p>
@@ -285,8 +307,8 @@ public class CollateralMovement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#RelatedCollateralMovement
-	 * SecuritiesDeliveryObligation.RelatedCollateralMovement}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmRelatedCollateralMovement
+	 * SecuritiesDeliveryObligation.mmRelatedCollateralMovement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -311,19 +333,20 @@ public class CollateralMovement {
 	 * definition} = "Movement of assets in relation with collateral updates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesCollateralMovement";
 			definition = "Movement of assets in relation with collateral updates.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesDeliveryObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.RelatedCollateralMovement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedCollateralMovement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement;
 	/**
 	 * Movement of assets in relation with collateral updates.
 	 * <p>
@@ -332,8 +355,8 @@ public class CollateralMovement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedCollateralMovement
-	 * PaymentObligation.RelatedCollateralMovement}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedCollateralMovement
+	 * PaymentObligation.mmRelatedCollateralMovement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -357,19 +380,20 @@ public class CollateralMovement {
 	 * definition} = "Movement of assets in relation with collateral updates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashCollateralMovement";
 			definition = "Movement of assets in relation with collateral updates.";
 			minOccurs = 0;
-			type_lazy = () -> PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.RelatedCollateralMovement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRelatedCollateralMovement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 		}
 	};
+	protected FinancialTransaction financialTransaction;
 	/**
 	 * Financial transaction to which the collateral management is associated.
 	 * <p>
@@ -378,8 +402,8 @@ public class CollateralMovement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.FinancialTransaction#CollateralMovement
-	 * FinancialTransaction.CollateralMovement}</li>
+	 * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmCollateralMovement
+	 * FinancialTransaction.mmCollateralMovement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -406,37 +430,98 @@ public class CollateralMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FinancialTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralMovement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialTransaction";
 			definition = "Financial transaction to which the collateral management is associated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmCollateralMovement;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.CollateralMovement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CollateralMovement";
 				definition = "Provides the agreed amount and the collateral movement direction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.RelatedCollateralMovement, com.tools20022.repository.entity.SecuritiesDeliveryObligation.RelatedCollateralMovement,
-						com.tools20022.repository.entity.MarginCall.CollateralMovement, com.tools20022.repository.entity.CollateralProposal.ProposedCollateralMovement,
-						com.tools20022.repository.entity.FinancialTransaction.CollateralMovement);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralMovement.RelatedCollateralProposal, com.tools20022.repository.entity.CollateralMovement.VariationMargin,
-						com.tools20022.repository.entity.CollateralMovement.SegregatedIndependentAmount, com.tools20022.repository.entity.CollateralMovement.MarginCall,
-						com.tools20022.repository.entity.CollateralMovement.SecuritiesCollateralMovement, com.tools20022.repository.entity.CollateralMovement.CashCollateralMovement,
-						com.tools20022.repository.entity.CollateralMovement.FinancialTransaction);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.mmRelatedCollateralMovement, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedCollateralMovement,
+						com.tools20022.repository.entity.MarginCall.mmCollateralMovement, com.tools20022.repository.entity.CollateralProposal.mmProposedCollateralMovement,
+						com.tools20022.repository.entity.FinancialTransaction.mmCollateralMovement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralMovement.mmRelatedCollateralProposal, com.tools20022.repository.entity.CollateralMovement.mmVariationMargin,
+						com.tools20022.repository.entity.CollateralMovement.mmSegregatedIndependentAmount, com.tools20022.repository.entity.CollateralMovement.mmMarginCall,
+						com.tools20022.repository.entity.CollateralMovement.mmSecuritiesCollateralMovement, com.tools20022.repository.entity.CollateralMovement.mmCashCollateralMovement,
+						com.tools20022.repository.entity.CollateralMovement.mmFinancialTransaction);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CollateralMovement.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CollateralProposal getRelatedCollateralProposal() {
+		return relatedCollateralProposal;
+	}
+
+	public void setRelatedCollateralProposal(com.tools20022.repository.entity.CollateralProposal relatedCollateralProposal) {
+		this.relatedCollateralProposal = relatedCollateralProposal;
+	}
+
+	public CurrencyAndAmount getVariationMargin() {
+		return variationMargin;
+	}
+
+	public void setVariationMargin(CurrencyAndAmount variationMargin) {
+		this.variationMargin = variationMargin;
+	}
+
+	public CurrencyAndAmount getSegregatedIndependentAmount() {
+		return segregatedIndependentAmount;
+	}
+
+	public void setSegregatedIndependentAmount(CurrencyAndAmount segregatedIndependentAmount) {
+		this.segregatedIndependentAmount = segregatedIndependentAmount;
+	}
+
+	public List<MarginCall> getMarginCall() {
+		return marginCall;
+	}
+
+	public void setMarginCall(List<com.tools20022.repository.entity.MarginCall> marginCall) {
+		this.marginCall = marginCall;
+	}
+
+	public List<SecuritiesDeliveryObligation> getSecuritiesCollateralMovement() {
+		return securitiesCollateralMovement;
+	}
+
+	public void setSecuritiesCollateralMovement(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesCollateralMovement) {
+		this.securitiesCollateralMovement = securitiesCollateralMovement;
+	}
+
+	public List<PaymentObligation> getCashCollateralMovement() {
+		return cashCollateralMovement;
+	}
+
+	public void setCashCollateralMovement(List<com.tools20022.repository.entity.PaymentObligation> cashCollateralMovement) {
+		this.cashCollateralMovement = cashCollateralMovement;
+	}
+
+	public FinancialTransaction getFinancialTransaction() {
+		return financialTransaction;
+	}
+
+	public void setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
+		this.financialTransaction = financialTransaction;
 	}
 }

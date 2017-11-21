@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,27 +32,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#SeniorDebt
- * DebtInstrumentSeniorityTypeCode.SeniorDebt}</li>
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmSeniorDebt
+ * DebtInstrumentSeniorityTypeCode.mmSeniorDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#MezzanineDebt
- * DebtInstrumentSeniorityTypeCode.MezzanineDebt}</li>
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmMezzanineDebt
+ * DebtInstrumentSeniorityTypeCode.mmMezzanineDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#SubordinatedDebt
- * DebtInstrumentSeniorityTypeCode.SubordinatedDebt}</li>
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmSubordinatedDebt
+ * DebtInstrumentSeniorityTypeCode.mmSubordinatedDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#JuniorDebt
- * DebtInstrumentSeniorityTypeCode.JuniorDebt}</li>
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmJuniorDebt
+ * DebtInstrumentSeniorityTypeCode.mmJuniorDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#Other
- * DebtInstrumentSeniorityTypeCode.Other}</li>
+ * {@linkplain com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode#mmOther
+ * DebtInstrumentSeniorityTypeCode.mmOther}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,9 +90,9 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SeniorDebt = new MMCode() {
+	public static final MMCode mmSeniorDebt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SeniorDebt";
 			definition = "Debt that takes priority over other unsecured or otherwise more junior debt owed by the issuer.";
 			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
@@ -121,9 +123,9 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MezzanineDebt = new MMCode() {
+	public static final MMCode mmMezzanineDebt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MezzanineDebt";
 			definition = "Subordinated debt or preferred equity instrument that represents a claim on a company's assets which is senior only to that of the common shares.";
 			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
@@ -154,9 +156,9 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SubordinatedDebt = new MMCode() {
+	public static final MMCode mmSubordinatedDebt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SubordinatedDebt";
 			definition = "Debt owed to an unsecured creditor that can only be paid, in the event of a liquidation, after the claims of secured creditors have been met.";
 			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
@@ -187,9 +189,9 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode JuniorDebt = new MMCode() {
+	public static final MMCode mmJuniorDebt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "JuniorDebt";
 			definition = "Debt that is either unsecured or has a lower priority than of another debt claim on the same asset or property.";
 			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
@@ -217,9 +219,9 @@ public class DebtInstrumentSeniorityTypeCode {
 	 * definition} = "Other type of debts."</li>
 	 * </ul>
 	 */
-	public static final MMCode Other = new MMCode() {
+	public static final MMCode mmOther = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Other type of debts.";
 			owner_lazy = () -> DebtInstrumentSeniorityTypeCode.mmObject();
@@ -230,13 +232,12 @@ public class DebtInstrumentSeniorityTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebtInstrumentSeniorityTypeCode";
 				definition = "Specifies the seniority type of a specific debt instrument.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.SeniorDebt, com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.MezzanineDebt,
-						com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.SubordinatedDebt, com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.JuniorDebt,
-						com.tools20022.repository.codeset.DebtInstrumentSeniorityTypeCode.Other);
+				code_lazy = () -> Arrays.asList(DebtInstrumentSeniorityTypeCode.mmSeniorDebt, DebtInstrumentSeniorityTypeCode.mmMezzanineDebt, DebtInstrumentSeniorityTypeCode.mmSubordinatedDebt,
+						DebtInstrumentSeniorityTypeCode.mmJuniorDebt, DebtInstrumentSeniorityTypeCode.mmOther);
 			}
 		});
 		return mmObject_lazy.get();

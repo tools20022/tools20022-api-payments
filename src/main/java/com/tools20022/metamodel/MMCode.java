@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -34,6 +36,14 @@ import java.util.Optional;
  */
 public class MMCode implements MMRepositoryConcept {
 
+	/**
+	 * Provides the full, non-abbreviated name of the Code
+	 */
+	public final static MetamodelAttribute<MMCode, Optional<String>> codeNameAttribute = newAttribute();
+	/**
+	 * Direct reference to the CodeSet owning this Code.
+	 */
+	public final static MetamodelAttribute<MMCode, MMCodeSet> ownerAttribute = newAttribute();
 	protected String codeName;
 	protected Supplier<MMCodeSet> owner_lazy;
 	protected String name;

@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.entity.Trade;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies trades linked to securities operations such as the exchange of
@@ -42,98 +43,103 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesTradeRelatedIdentifications
- * SecuritiesTrade.SecuritiesTradeRelatedIdentifications}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradeAmount
- * SecuritiesTrade.TradeAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesTradeRelatedIdentifications
+ * SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#OpeningClosingIndicator
- * SecuritiesTrade.OpeningClosingIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradeAmount
+ * SecuritiesTrade.mmTradeAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradeTransactionCondition
- * SecuritiesTrade.TradeTransactionCondition}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmOpeningClosingIndicator
+ * SecuritiesTrade.mmOpeningClosingIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesTradeStatus
- * SecuritiesTrade.SecuritiesTradeStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#Activity
- * SecuritiesTrade.Activity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradeTransactionCondition
+ * SecuritiesTrade.mmTradeTransactionCondition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradeQuantity
- * SecuritiesTrade.TradeQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesTradeStatus
+ * SecuritiesTrade.mmSecuritiesTradeStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmActivity
+ * SecuritiesTrade.mmActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradeOriginationDate
- * SecuritiesTrade.TradeOriginationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradeQuantity
+ * SecuritiesTrade.mmTradeQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#ClearingFeeType
- * SecuritiesTrade.ClearingFeeType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#Security
- * SecuritiesTrade.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradePrice
- * SecuritiesTrade.TradePrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#PartyRole
- * SecuritiesTrade.PartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradeOriginationDate
+ * SecuritiesTrade.mmTradeOriginationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesFinancingClosingData
- * SecuritiesTrade.SecuritiesFinancingClosingData}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmClearingFeeType
+ * SecuritiesTrade.mmClearingFeeType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecurity
+ * SecuritiesTrade.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradingExecution
- * SecuritiesTrade.TradingExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradePrice
+ * SecuritiesTrade.mmTradePrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmPartyRole
+ * SecuritiesTrade.mmPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#TradeAllocation
- * SecuritiesTrade.TradeAllocation}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesFinancingClosingData
+ * SecuritiesTrade.mmSecuritiesFinancingClosingData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#RelatedOrder
- * SecuritiesTrade.RelatedOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradingExecution
+ * SecuritiesTrade.mmTradingExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesFinancingOpeningData
- * SecuritiesTrade.SecuritiesFinancingOpeningData}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTradeAllocation
+ * SecuritiesTrade.mmTradeAllocation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#TransactionType
- * SecuritiesTrade.TransactionType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmRelatedOrder
+ * SecuritiesTrade.mmRelatedOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#LegalFramework
- * SecuritiesTrade.LegalFramework}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesFinancingOpeningData
+ * SecuritiesTrade.mmSecuritiesFinancingOpeningData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesTransactionType
- * SecuritiesTrade.SecuritiesTransactionType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmTransactionType
+ * SecuritiesTrade.mmTransactionType}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmLegalFramework
+ * SecuritiesTrade.mmLegalFramework}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesTransactionType
+ * SecuritiesTrade.mmSecuritiesTransactionType}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesTrade
- * Security.SecuritiesTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSecuritiesTrade
+ * Security.mmSecuritiesTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#SecuritiesTrade
- * SecuritiesPricing.SecuritiesTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmSecuritiesTrade
+ * SecuritiesPricing.mmSecuritiesTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeIdentification#IdentifiedTrade
- * SecuritiesTradeIdentification.IdentifiedTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Trade
- * SecuritiesQuantity.Trade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeIdentification#mmIdentifiedTrade
+ * SecuritiesTradeIdentification.mmIdentifiedTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmTrade
+ * SecuritiesQuantity.mmTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution#RelatedTrade
- * SecuritiesTradeExecution.RelatedTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution#mmRelatedTrade
+ * SecuritiesTradeExecution.mmRelatedTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#SecuritiesTrade
- * SecuritiesTradeStatus.SecuritiesTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmSecuritiesTrade
+ * SecuritiesTradeStatus.mmSecuritiesTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#ClosingLegExecution
- * SecuritiesFinancing.ClosingLegExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmClosingLegExecution
+ * SecuritiesFinancing.mmClosingLegExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#OpeningLegExecution
- * SecuritiesFinancing.OpeningLegExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmOpeningLegExecution
+ * SecuritiesFinancing.mmOpeningLegExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#OrderExecution
- * SecuritiesOrder.OrderExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmOrderExecution
+ * SecuritiesOrder.mmOrderExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradePartyRole#SecuritiesTrade
- * SecuritiesTradePartyRole.SecuritiesTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Allocation#SecuritiesTrade
- * Allocation.SecuritiesTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradePartyRole#mmSecuritiesTrade
+ * SecuritiesTradePartyRole.mmSecuritiesTrade}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Allocation#mmSecuritiesTrade
+ * Allocation.mmSecuritiesTrade}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Trade Trade}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -145,13 +151,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesOptionTrade}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Trade Trade}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -167,6 +171,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesTrade extends Trade {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.SecuritiesTradeIdentification> securitiesTradeRelatedIdentifications;
 	/**
 	 * Specifies the different identifications associated with a securities
 	 * trade.
@@ -176,8 +181,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeIdentification#IdentifiedTrade
-	 * SecuritiesTradeIdentification.IdentifiedTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeIdentification#mmIdentifiedTrade
+	 * SecuritiesTradeIdentification.mmIdentifiedTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -204,19 +209,20 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesTradeRelatedIdentifications = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesTradeRelatedIdentifications = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeRelatedIdentifications";
 			definition = "Specifies the different identifications associated with a securities trade.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesTradeIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.IdentifiedTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmIdentifiedTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeIdentification.mmObject();
 		}
 	};
+	protected CurrencyAndAmount tradeAmount;
 	/**
 	 * Total amount of the trade. Is equal to the executed trade quantity
 	 * multiplied by the executed trade price.
@@ -246,18 +252,27 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradeAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradeAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeAmount";
 			definition = "Total amount of the trade. Is equal to the executed trade quantity multiplied by the executed trade price.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getTradeAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OpeningClosingCode openingClosingIndicator;
 	/**
 	 * Specifies additional information relative to the processing of the trade.
 	 * <p>
@@ -286,18 +301,27 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OpeningClosingIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOpeningClosingIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningClosingIndicator";
 			definition = "Specifies additional information relative to the processing of the trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> OpeningClosingCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getOpeningClosingIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TradeTransactionConditionCode tradeTransactionCondition;
 	/**
 	 * Indicates the conditions under which the order/trade is to be/was
 	 * executed.
@@ -327,18 +351,27 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradeTransactionCondition = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradeTransactionCondition = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeTransactionCondition";
 			definition = "Indicates the conditions under which the order/trade is to be/was executed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TradeTransactionConditionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getTradeTransactionCondition", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesTradeStatus> securitiesTradeStatus;
 	/**
 	 * Specifies the status of a trade.
 	 * <p>
@@ -347,8 +380,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#SecuritiesTrade
-	 * SecuritiesTradeStatus.SecuritiesTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmSecuritiesTrade
+	 * SecuritiesTradeStatus.mmSecuritiesTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -373,19 +406,20 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Specifies the status of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesTradeStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesTradeStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTradeStatus";
 			definition = "Specifies the status of a trade.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmSecuritiesTrade;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.SecuritiesTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected TransactionActivityCode activity;
 	/**
 	 * Specifies the type of activity to which the trade relates.
 	 * <p>
@@ -413,18 +447,27 @@ public class SecuritiesTrade extends Trade {
 	 * "Specifies the type of activity to which the trade relates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Activity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmActivity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Activity";
 			definition = "Specifies the type of activity to which the trade relates.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TransactionActivityCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getActivity", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> tradeQuantity;
 	/**
 	 * Specifies the total quantity of a financial instrument involved in a
 	 * trade. It is derived from the ordered quantity or from the quantity
@@ -435,8 +478,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Trade
-	 * SecuritiesQuantity.Trade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmTrade
+	 * SecuritiesQuantity.mmTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -462,19 +505,20 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeQuantity";
 			definition = "Specifies the total quantity of a financial instrument involved in a trade. It is derived from the ordered quantity or from the quantity specified in a leg of a financing agreement.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.Trade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected ISODateTime tradeOriginationDate;
 	/**
 	 * Indicates the date and time of the agreement in principal between
 	 * counter-parties prior to actual trade date. Used with fixed income for
@@ -504,18 +548,27 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradeOriginationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradeOriginationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeOriginationDate";
 			definition = "Indicates the date and time of the agreement in principal between counter-parties prior to actual trade date.\nUsed with fixed income for municipal new issue markets.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getTradeOriginationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ClearingFeeTypeCode clearingFeeType;
 	/**
 	 * Indicates the type of fee for trade executions at an exchange.
 	 * <p>
@@ -543,18 +596,27 @@ public class SecuritiesTrade extends Trade {
 	 * "Indicates the type of fee for trade executions at an exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClearingFeeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClearingFeeType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingFeeType";
 			definition = "Indicates the type of fee for trade executions at an exchange.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ClearingFeeTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getClearingFeeType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Security> security;
 	/**
 	 * Security involved in a trade.
 	 * <p>
@@ -563,8 +625,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#SecuritiesTrade
-	 * Security.SecuritiesTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesTrade
+	 * Security.mmSecuritiesTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -587,19 +649,20 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Security involved in a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security involved in a trade.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSecuritiesTrade;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.SecuritiesTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPricing> tradePrice;
 	/**
 	 * Specifies the executed trade price which is derived from the different
 	 * deal prices.
@@ -609,8 +672,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#SecuritiesTrade
-	 * SecuritiesPricing.SecuritiesTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmSecuritiesTrade
+	 * SecuritiesPricing.mmSecuritiesTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -636,19 +699,20 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradePrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradePrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradePrice";
 			definition = "Specifies the executed trade price which is derived from the different deal prices.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.SecuritiesTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmSecuritiesTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesTradePartyRole> partyRole;
 	/**
 	 * Specifies each role linked to a securities trade and played by a party at
 	 * that step in a securities transaction flow.
@@ -658,8 +722,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradePartyRole#SecuritiesTrade
-	 * SecuritiesTradePartyRole.SecuritiesTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradePartyRole#mmSecuritiesTrade
+	 * SecuritiesTradePartyRole.mmSecuritiesTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -686,19 +750,20 @@ public class SecuritiesTrade extends Trade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to a securities trade and played by a party at that step in a securities transaction flow.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesTradePartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradePartyRole.SecuritiesTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradePartyRole.mmSecuritiesTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradePartyRole.mmObject();
 		}
 	};
+	protected SecuritiesFinancing securitiesFinancingClosingData;
 	/**
 	 * Financing process for which a closing leg is specified.
 	 * <p>
@@ -707,8 +772,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#ClosingLegExecution
-	 * SecuritiesFinancing.ClosingLegExecution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmClosingLegExecution
+	 * SecuritiesFinancing.mmClosingLegExecution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -732,20 +797,21 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Financing process for which a closing leg is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesFinancingClosingData = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesFinancingClosingData = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesFinancingClosingData";
 			definition = "Financing process for which a closing leg is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesFinancing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.ClosingLegExecution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmClosingLegExecution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesTradeExecution> tradingExecution;
 	/**
 	 * The realisation of the trade over one or more transactions.
 	 * <p>
@@ -754,8 +820,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution#RelatedTrade
-	 * SecuritiesTradeExecution.RelatedTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeExecution#mmRelatedTrade
+	 * SecuritiesTradeExecution.mmRelatedTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -781,19 +847,20 @@ public class SecuritiesTrade extends Trade {
 	 * "The realisation of the trade over one or more transactions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingExecution";
 			definition = "The realisation of the trade over one or more transactions.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesTradeExecution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.RelatedTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmRelatedTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeExecution.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Allocation> tradeAllocation;
 	/**
 	 * Information about the allocation of the trade.
 	 * <p>
@@ -802,8 +869,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Allocation#SecuritiesTrade
-	 * Allocation.SecuritiesTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.Allocation#mmSecuritiesTrade
+	 * Allocation.mmSecuritiesTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -827,19 +894,20 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Information about the allocation of the trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeAllocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeAllocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeAllocation";
 			definition = "Information about the allocation of the trade.";
 			minOccurs = 0;
-			type_lazy = () -> Allocation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Allocation.SecuritiesTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Allocation.mmSecuritiesTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Allocation.mmObject();
 		}
 	};
+	protected SecuritiesOrder relatedOrder;
 	/**
 	 * Order which is executed by a trade.
 	 * <p>
@@ -848,8 +916,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#OrderExecution
-	 * SecuritiesOrder.OrderExecution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmOrderExecution
+	 * SecuritiesOrder.mmOrderExecution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -873,20 +941,21 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Order which is executed by a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order which is executed by a trade.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.OrderExecution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmOrderExecution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 		}
 	};
+	protected SecuritiesFinancing securitiesFinancingOpeningData;
 	/**
 	 * Financing process for which an opening leg is specified.
 	 * <p>
@@ -895,8 +964,8 @@ public class SecuritiesTrade extends Trade {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#OpeningLegExecution
-	 * SecuritiesFinancing.OpeningLegExecution}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesFinancing#mmOpeningLegExecution
+	 * SecuritiesFinancing.mmOpeningLegExecution}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -920,20 +989,21 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Financing process for which an opening leg is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesFinancingOpeningData = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesFinancingOpeningData = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesFinancingOpeningData";
 			definition = "Financing process for which an opening leg is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesFinancing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.OpeningLegExecution;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningLegExecution;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesFinancing.mmObject();
 		}
 	};
+	protected TradeTypeCode transactionType;
 	/**
 	 * Indicates the type of transaction of which the order is a component.
 	 * <p>
@@ -961,18 +1031,27 @@ public class SecuritiesTrade extends Trade {
 	 * "Indicates the type of transaction of which the order is a component."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransactionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransactionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionType";
 			definition = "Indicates the type of transaction of which the order is a component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TradeTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getTransactionType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected LegalFrameworkCode legalFramework;
 	/**
 	 * Legal framework of the transaction.
 	 * <p>
@@ -999,18 +1078,27 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Legal framework of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LegalFramework = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLegalFramework = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalFramework";
 			definition = "Legal framework of the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LegalFrameworkCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getLegalFramework", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesTransactionTypeV2Code securitiesTransactionType;
 	/**
 	 * Underlying information about the settlement transaction.
 	 * <p>
@@ -1037,43 +1125,216 @@ public class SecuritiesTrade extends Trade {
 	 * definition} = "Underlying information about the settlement transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SecuritiesTransactionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSecuritiesTransactionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTransactionType";
 			definition = "Underlying information about the settlement transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SecuritiesTransactionTypeV2Code.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTrade.class.getMethod("getSecuritiesTransactionType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTrade";
 				definition = "Specifies trades linked to securities operations such as the exchange of securities, the lending of securities and the transactions related to investment funds.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.SecuritiesTrade, com.tools20022.repository.entity.SecuritiesPricing.SecuritiesTrade,
-						com.tools20022.repository.entity.SecuritiesTradeIdentification.IdentifiedTrade, com.tools20022.repository.entity.SecuritiesQuantity.Trade, com.tools20022.repository.entity.SecuritiesTradeExecution.RelatedTrade,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.SecuritiesTrade, com.tools20022.repository.entity.SecuritiesFinancing.ClosingLegExecution,
-						com.tools20022.repository.entity.SecuritiesFinancing.OpeningLegExecution, com.tools20022.repository.entity.SecuritiesOrder.OrderExecution, com.tools20022.repository.entity.SecuritiesTradePartyRole.SecuritiesTrade,
-						com.tools20022.repository.entity.Allocation.SecuritiesTrade);
-				subType_lazy = () -> Arrays.asList(InvestmentFundTransaction.mmObject(), SecuritiesFinancing.mmObject(), SecuritiesOptionTrade.mmObject());
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecuritiesTrade, com.tools20022.repository.entity.SecuritiesPricing.mmSecuritiesTrade,
+						com.tools20022.repository.entity.SecuritiesTradeIdentification.mmIdentifiedTrade, com.tools20022.repository.entity.SecuritiesQuantity.mmTrade,
+						com.tools20022.repository.entity.SecuritiesTradeExecution.mmRelatedTrade, com.tools20022.repository.entity.SecuritiesTradeStatus.mmSecuritiesTrade,
+						com.tools20022.repository.entity.SecuritiesFinancing.mmClosingLegExecution, com.tools20022.repository.entity.SecuritiesFinancing.mmOpeningLegExecution,
+						com.tools20022.repository.entity.SecuritiesOrder.mmOrderExecution, com.tools20022.repository.entity.SecuritiesTradePartyRole.mmSecuritiesTrade, com.tools20022.repository.entity.Allocation.mmSecuritiesTrade);
+				subType_lazy = () -> Arrays.asList(InvestmentFundTransaction.mmObject(), com.tools20022.repository.entity.SecuritiesFinancing.mmObject(), SecuritiesOptionTrade.mmObject());
 				superType_lazy = () -> Trade.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTrade.SecuritiesTradeRelatedIdentifications, com.tools20022.repository.entity.SecuritiesTrade.TradeAmount,
-						com.tools20022.repository.entity.SecuritiesTrade.OpeningClosingIndicator, com.tools20022.repository.entity.SecuritiesTrade.TradeTransactionCondition,
-						com.tools20022.repository.entity.SecuritiesTrade.SecuritiesTradeStatus, com.tools20022.repository.entity.SecuritiesTrade.Activity, com.tools20022.repository.entity.SecuritiesTrade.TradeQuantity,
-						com.tools20022.repository.entity.SecuritiesTrade.TradeOriginationDate, com.tools20022.repository.entity.SecuritiesTrade.ClearingFeeType, com.tools20022.repository.entity.SecuritiesTrade.Security,
-						com.tools20022.repository.entity.SecuritiesTrade.TradePrice, com.tools20022.repository.entity.SecuritiesTrade.PartyRole, com.tools20022.repository.entity.SecuritiesTrade.SecuritiesFinancingClosingData,
-						com.tools20022.repository.entity.SecuritiesTrade.TradingExecution, com.tools20022.repository.entity.SecuritiesTrade.TradeAllocation, com.tools20022.repository.entity.SecuritiesTrade.RelatedOrder,
-						com.tools20022.repository.entity.SecuritiesTrade.SecuritiesFinancingOpeningData, com.tools20022.repository.entity.SecuritiesTrade.TransactionType, com.tools20022.repository.entity.SecuritiesTrade.LegalFramework,
-						com.tools20022.repository.entity.SecuritiesTrade.SecuritiesTransactionType);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeRelatedIdentifications, com.tools20022.repository.entity.SecuritiesTrade.mmTradeAmount,
+						com.tools20022.repository.entity.SecuritiesTrade.mmOpeningClosingIndicator, com.tools20022.repository.entity.SecuritiesTrade.mmTradeTransactionCondition,
+						com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeStatus, com.tools20022.repository.entity.SecuritiesTrade.mmActivity, com.tools20022.repository.entity.SecuritiesTrade.mmTradeQuantity,
+						com.tools20022.repository.entity.SecuritiesTrade.mmTradeOriginationDate, com.tools20022.repository.entity.SecuritiesTrade.mmClearingFeeType, com.tools20022.repository.entity.SecuritiesTrade.mmSecurity,
+						com.tools20022.repository.entity.SecuritiesTrade.mmTradePrice, com.tools20022.repository.entity.SecuritiesTrade.mmPartyRole, com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesFinancingClosingData,
+						com.tools20022.repository.entity.SecuritiesTrade.mmTradingExecution, com.tools20022.repository.entity.SecuritiesTrade.mmTradeAllocation, com.tools20022.repository.entity.SecuritiesTrade.mmRelatedOrder,
+						com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesFinancingOpeningData, com.tools20022.repository.entity.SecuritiesTrade.mmTransactionType,
+						com.tools20022.repository.entity.SecuritiesTrade.mmLegalFramework, com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTransactionType);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesTrade.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<SecuritiesTradeIdentification> getSecuritiesTradeRelatedIdentifications() {
+		return securitiesTradeRelatedIdentifications;
+	}
+
+	public void setSecuritiesTradeRelatedIdentifications(List<com.tools20022.repository.entity.SecuritiesTradeIdentification> securitiesTradeRelatedIdentifications) {
+		this.securitiesTradeRelatedIdentifications = securitiesTradeRelatedIdentifications;
+	}
+
+	public CurrencyAndAmount getTradeAmount() {
+		return tradeAmount;
+	}
+
+	public void setTradeAmount(CurrencyAndAmount tradeAmount) {
+		this.tradeAmount = tradeAmount;
+	}
+
+	public OpeningClosingCode getOpeningClosingIndicator() {
+		return openingClosingIndicator;
+	}
+
+	public void setOpeningClosingIndicator(OpeningClosingCode openingClosingIndicator) {
+		this.openingClosingIndicator = openingClosingIndicator;
+	}
+
+	public TradeTransactionConditionCode getTradeTransactionCondition() {
+		return tradeTransactionCondition;
+	}
+
+	public void setTradeTransactionCondition(TradeTransactionConditionCode tradeTransactionCondition) {
+		this.tradeTransactionCondition = tradeTransactionCondition;
+	}
+
+	public List<SecuritiesTradeStatus> getSecuritiesTradeStatus() {
+		return securitiesTradeStatus;
+	}
+
+	public void setSecuritiesTradeStatus(List<com.tools20022.repository.entity.SecuritiesTradeStatus> securitiesTradeStatus) {
+		this.securitiesTradeStatus = securitiesTradeStatus;
+	}
+
+	public TransactionActivityCode getActivity() {
+		return activity;
+	}
+
+	public void setActivity(TransactionActivityCode activity) {
+		this.activity = activity;
+	}
+
+	public List<SecuritiesQuantity> getTradeQuantity() {
+		return tradeQuantity;
+	}
+
+	public void setTradeQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> tradeQuantity) {
+		this.tradeQuantity = tradeQuantity;
+	}
+
+	public ISODateTime getTradeOriginationDate() {
+		return tradeOriginationDate;
+	}
+
+	public void setTradeOriginationDate(ISODateTime tradeOriginationDate) {
+		this.tradeOriginationDate = tradeOriginationDate;
+	}
+
+	public ClearingFeeTypeCode getClearingFeeType() {
+		return clearingFeeType;
+	}
+
+	public void setClearingFeeType(ClearingFeeTypeCode clearingFeeType) {
+		this.clearingFeeType = clearingFeeType;
+	}
+
+	public List<Security> getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = security;
+	}
+
+	public List<SecuritiesPricing> getTradePrice() {
+		return tradePrice;
+	}
+
+	public void setTradePrice(List<com.tools20022.repository.entity.SecuritiesPricing> tradePrice) {
+		this.tradePrice = tradePrice;
+	}
+
+	public List<SecuritiesTradePartyRole> getPartyRole() {
+		return partyRole;
+	}
+
+	public void setPartyRole(List<com.tools20022.repository.entity.SecuritiesTradePartyRole> partyRole) {
+		this.partyRole = partyRole;
+	}
+
+	public SecuritiesFinancing getSecuritiesFinancingClosingData() {
+		return securitiesFinancingClosingData;
+	}
+
+	public void setSecuritiesFinancingClosingData(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancingClosingData) {
+		this.securitiesFinancingClosingData = securitiesFinancingClosingData;
+	}
+
+	public List<SecuritiesTradeExecution> getTradingExecution() {
+		return tradingExecution;
+	}
+
+	public void setTradingExecution(List<com.tools20022.repository.entity.SecuritiesTradeExecution> tradingExecution) {
+		this.tradingExecution = tradingExecution;
+	}
+
+	public List<Allocation> getTradeAllocation() {
+		return tradeAllocation;
+	}
+
+	public void setTradeAllocation(List<com.tools20022.repository.entity.Allocation> tradeAllocation) {
+		this.tradeAllocation = tradeAllocation;
+	}
+
+	public SecuritiesOrder getRelatedOrder() {
+		return relatedOrder;
+	}
+
+	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+		this.relatedOrder = relatedOrder;
+	}
+
+	public SecuritiesFinancing getSecuritiesFinancingOpeningData() {
+		return securitiesFinancingOpeningData;
+	}
+
+	public void setSecuritiesFinancingOpeningData(com.tools20022.repository.entity.SecuritiesFinancing securitiesFinancingOpeningData) {
+		this.securitiesFinancingOpeningData = securitiesFinancingOpeningData;
+	}
+
+	public TradeTypeCode getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(TradeTypeCode transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public LegalFrameworkCode getLegalFramework() {
+		return legalFramework;
+	}
+
+	public void setLegalFramework(LegalFrameworkCode legalFramework) {
+		this.legalFramework = legalFramework;
+	}
+
+	public SecuritiesTransactionTypeV2Code getSecuritiesTransactionType() {
+		return securitiesTransactionType;
+	}
+
+	public void setSecuritiesTransactionType(SecuritiesTransactionTypeV2Code securitiesTransactionType) {
+		this.securitiesTransactionType = securitiesTransactionType;
 	}
 }

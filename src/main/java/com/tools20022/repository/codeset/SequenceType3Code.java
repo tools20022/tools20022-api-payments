@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.SequenceTypeCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,25 +36,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * SequenceTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#First
- * SequenceType3Code.First}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#mmFirst
+ * SequenceType3Code.mmFirst}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SequenceType3Code#Recurring
- * SequenceType3Code.Recurring}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#Final
- * SequenceType3Code.Final}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#OneOff
- * SequenceType3Code.OneOff}</li>
+ * {@linkplain com.tools20022.repository.codeset.SequenceType3Code#mmRecurring
+ * SequenceType3Code.mmRecurring}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#mmFinal
+ * SequenceType3Code.mmFinal}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.SequenceType3Code#mmOneOff
+ * SequenceType3Code.mmOneOff}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SequenceType3Code#Represented
- * SequenceType3Code.Represented}</li>
+ * {@linkplain com.tools20022.repository.codeset.SequenceType3Code#mmRepresented
+ * SequenceType3Code.mmRepresented}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -90,9 +92,9 @@ public class SequenceType3Code extends SequenceTypeCode {
 	 * name} = "First"</li>
 	 * </ul>
 	 */
-	public static final MMCode First = new MMCode() {
+	public static final MMCode mmFirst = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "First";
 			owner_lazy = () -> SequenceType3Code.mmObject();
 		}
@@ -113,9 +115,9 @@ public class SequenceType3Code extends SequenceTypeCode {
 	 * name} = "Recurring"</li>
 	 * </ul>
 	 */
-	public static final MMCode Recurring = new MMCode() {
+	public static final MMCode mmRecurring = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Recurring";
 			owner_lazy = () -> SequenceType3Code.mmObject();
 		}
@@ -136,9 +138,9 @@ public class SequenceType3Code extends SequenceTypeCode {
 	 * name} = "Final"</li>
 	 * </ul>
 	 */
-	public static final MMCode Final = new MMCode() {
+	public static final MMCode mmFinal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Final";
 			owner_lazy = () -> SequenceType3Code.mmObject();
 		}
@@ -159,9 +161,9 @@ public class SequenceType3Code extends SequenceTypeCode {
 	 * name} = "OneOff"</li>
 	 * </ul>
 	 */
-	public static final MMCode OneOff = new MMCode() {
+	public static final MMCode mmOneOff = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OneOff";
 			owner_lazy = () -> SequenceType3Code.mmObject();
 		}
@@ -182,9 +184,9 @@ public class SequenceType3Code extends SequenceTypeCode {
 	 * name} = "Represented"</li>
 	 * </ul>
 	 */
-	public static final MMCode Represented = new MMCode() {
+	public static final MMCode mmRepresented = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Represented";
 			owner_lazy = () -> SequenceType3Code.mmObject();
 		}
@@ -193,13 +195,12 @@ public class SequenceType3Code extends SequenceTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("FRST");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SequenceType3Code";
 				definition = "Specifies the type of the current transaction that belongs to a sequence of transactions.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SequenceType3Code.First, com.tools20022.repository.codeset.SequenceType3Code.Recurring, com.tools20022.repository.codeset.SequenceType3Code.Final,
-						com.tools20022.repository.codeset.SequenceType3Code.OneOff, com.tools20022.repository.codeset.SequenceType3Code.Represented);
+				code_lazy = () -> Arrays.asList(SequenceType3Code.mmFirst, SequenceType3Code.mmRecurring, SequenceType3Code.mmFinal, SequenceType3Code.mmOneOff, SequenceType3Code.mmRepresented);
 				trace_lazy = () -> SequenceTypeCode.mmObject();
 			}
 		});

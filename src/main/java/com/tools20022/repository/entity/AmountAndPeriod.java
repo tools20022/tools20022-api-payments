@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -36,25 +36,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.AmountAndPeriod#Period
- * AmountAndPeriod.Period}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AmountAndPeriod#Amount
- * AmountAndPeriod.Amount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AmountAndPeriod#mmPeriod
+ * AmountAndPeriod.mmPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AmountAndPeriod#mmAmount
+ * AmountAndPeriod.mmAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Amount
- * DateTimePeriod.Amount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAmount
+ * DateTimePeriod.mmAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,6 +68,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AmountAndPeriod {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DateTimePeriod period;
 	/**
 	 * Period related to an amount.
 	 * <p>
@@ -76,8 +77,8 @@ public class AmountAndPeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#Amount
-	 * DateTimePeriod.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAmount
+	 * DateTimePeriod.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -101,20 +102,21 @@ public class AmountAndPeriod {
 	 * definition} = "Period related to an amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Period = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AmountAndPeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Period";
 			definition = "Period related to an amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.Amount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmAmount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected CurrencyAndAmount amount;
 	/**
 	 * Amount of this period.
 	 * <p>
@@ -141,30 +143,59 @@ public class AmountAndPeriod {
 	 * definition} = "Amount of this period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AmountAndPeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount of this period.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return AmountAndPeriod.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountAndPeriod";
 				definition = "Relates an amount to a period of time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.Amount);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountAndPeriod.Period, com.tools20022.repository.entity.AmountAndPeriod.Amount);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmAmount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountAndPeriod.mmPeriod, com.tools20022.repository.entity.AmountAndPeriod.mmAmount);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AmountAndPeriod.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DateTimePeriod getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
+		this.period = period;
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
 	}
 }

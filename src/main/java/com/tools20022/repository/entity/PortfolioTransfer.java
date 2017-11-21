@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ISATypeCode;
 import com.tools20022.repository.codeset.PEPISACode;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Transfer by the delivering account servicer to the receiving account servicer
@@ -42,43 +43,44 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#TransferredYear
- * PortfolioTransfer.TransferredYear}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmTransferredYear
+ * PortfolioTransfer.mmTransferredYear}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#CashComponentIndicator
- * PortfolioTransfer.CashComponentIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmCashComponentIndicator
+ * PortfolioTransfer.mmCashComponentIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#AccountFrom
- * PortfolioTransfer.AccountFrom}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PortfolioTransfer#AccountTo
- * PortfolioTransfer.AccountTo}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmAccountFrom
+ * PortfolioTransfer.mmAccountFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#PaymentObligation
- * PortfolioTransfer.PaymentObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmAccountTo
+ * PortfolioTransfer.mmAccountTo}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#TransferredPortfolio
- * PortfolioTransfer.TransferredPortfolio}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmPaymentObligation
+ * PortfolioTransfer.mmPaymentObligation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#SecuritiesDeliveryObligation
- * PortfolioTransfer.SecuritiesDeliveryObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmTransferredPortfolio
+ * PortfolioTransfer.mmTransferredPortfolio}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#TransferredAmount
- * PortfolioTransfer.TransferredAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmSecuritiesDeliveryObligation
+ * PortfolioTransfer.mmSecuritiesDeliveryObligation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#TransferredPercentage
- * PortfolioTransfer.TransferredPercentage}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmTransferredAmount
+ * PortfolioTransfer.mmTransferredAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#TransferDate
- * PortfolioTransfer.TransferDate}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmTransferredPercentage
+ * PortfolioTransfer.mmTransferredPercentage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#NomineeAccount
- * PortfolioTransfer.NomineeAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmTransferDate
+ * PortfolioTransfer.mmTransferDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#PEPOrISAPlan
- * PortfolioTransfer.PEPOrISAPlan}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmNomineeAccount
+ * PortfolioTransfer.mmNomineeAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#CurrentYearISAType
- * PortfolioTransfer.CurrentYearISAType}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmPEPOrISAPlan
+ * PortfolioTransfer.mmPEPOrISAPlan}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioTransfer#mmCurrentYearISAType
+ * PortfolioTransfer.mmCurrentYearISAType}</li>
  * </ul>
  * </li>
  * <li>
@@ -86,29 +88,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccount#DebitPortfolioTransfer
- * InvestmentAccount.DebitPortfolioTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmDebitPortfolioTransfer
+ * InvestmentAccount.mmDebitPortfolioTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccount#CreditPortfolioTransfer
- * InvestmentAccount.CreditPortfolioTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmCreditPortfolioTransfer
+ * InvestmentAccount.mmCreditPortfolioTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccount#RelatedPortfolioTransfer
- * InvestmentAccount.RelatedPortfolioTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmRelatedPortfolioTransfer
+ * InvestmentAccount.mmRelatedPortfolioTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#PaymentSourcePortfolioTransfer
- * PaymentObligation.PaymentSourcePortfolioTransfer}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Portfolio#Transfer
- * Portfolio.Transfer}</li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPaymentSourcePortfolioTransfer
+ * PaymentObligation.mmPaymentSourcePortfolioTransfer}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Portfolio#mmTransfer
+ * Portfolio.mmTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#RelatedPortfolioTransfer
- * SecuritiesDeliveryObligation.RelatedPortfolioTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmRelatedPortfolioTransfer
+ * SecuritiesDeliveryObligation.mmRelatedPortfolioTransfer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -124,6 +126,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PortfolioTransfer {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISOYear transferredYear;
 	/**
 	 * Specifies the year during which the investment plan to be transferred was
 	 * issued.
@@ -152,18 +155,27 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferredYear = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferredYear = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredYear";
 			definition = "Specifies the year during which the investment plan to be transferred was issued.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISOYear.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getTransferredYear", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator cashComponentIndicator;
 	/**
 	 * Indicates whether an ISA investment plan contains a cash component asset
 	 * for transfer.
@@ -193,18 +205,27 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CashComponentIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCashComponentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashComponentIndicator";
 			definition = "Indicates whether an ISA investment plan contains a cash component asset for transfer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getCashComponentIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentAccount> accountFrom;
 	/**
 	 * Specifies the account owned by an investor and from which the assets are
 	 * transferred.
@@ -214,8 +235,8 @@ public class PortfolioTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#DebitPortfolioTransfer
-	 * InvestmentAccount.DebitPortfolioTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmDebitPortfolioTransfer
+	 * InvestmentAccount.mmDebitPortfolioTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -241,19 +262,20 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountFrom = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountFrom = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountFrom";
 			definition = "Specifies the account owned by an investor and from which the assets are transferred.";
 			minOccurs = 0;
-			type_lazy = () -> InvestmentAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.DebitPortfolioTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmDebitPortfolioTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentAccount> accountTo;
 	/**
 	 * Specifies the account owned by an investor and to which the assets are
 	 * transferred.
@@ -263,8 +285,8 @@ public class PortfolioTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#CreditPortfolioTransfer
-	 * InvestmentAccount.CreditPortfolioTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmCreditPortfolioTransfer
+	 * InvestmentAccount.mmCreditPortfolioTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -290,19 +312,20 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountTo = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountTo = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountTo";
 			definition = "Specifies the account owned by an investor and to which the assets are transferred.";
 			minOccurs = 0;
-			type_lazy = () -> InvestmentAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.CreditPortfolioTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmCreditPortfolioTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
 	 * Specifies the cash amount to be transferred in relation with a portfolio
 	 * transfer.
@@ -312,8 +335,8 @@ public class PortfolioTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#PaymentSourcePortfolioTransfer
-	 * PaymentObligation.PaymentSourcePortfolioTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPaymentSourcePortfolioTransfer
+	 * PaymentObligation.mmPaymentSourcePortfolioTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -339,19 +362,20 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Specifies the cash amount to be transferred in relation with a portfolio transfer.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmPaymentSourcePortfolioTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.PaymentSourcePortfolioTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Portfolio> transferredPortfolio;
 	/**
 	 * Specifies the portfolio which has to be transferred.
 	 * <p>
@@ -360,8 +384,8 @@ public class PortfolioTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Portfolio#Transfer
-	 * Portfolio.Transfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.Portfolio#mmTransfer
+	 * Portfolio.mmTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -385,19 +409,20 @@ public class PortfolioTransfer {
 	 * definition} = "Specifies the portfolio which has to be transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TransferredPortfolio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransferredPortfolio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredPortfolio";
 			definition = "Specifies the portfolio which has to be transferred.";
 			minOccurs = 0;
-			type_lazy = () -> Portfolio.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Portfolio.Transfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Portfolio.mmTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation;
 	/**
 	 * Specifies the financial instrument to be transferred in relation with a
 	 * portfolio transfer.
@@ -407,8 +432,8 @@ public class PortfolioTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#RelatedPortfolioTransfer
-	 * SecuritiesDeliveryObligation.RelatedPortfolioTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesDeliveryObligation#mmRelatedPortfolioTransfer
+	 * SecuritiesDeliveryObligation.mmRelatedPortfolioTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -435,19 +460,20 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesDeliveryObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDeliveryObligation";
 			definition = "Specifies the financial instrument to be transferred in relation with a portfolio transfer.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedPortfolioTransfer;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesDeliveryObligation.RelatedPortfolioTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount transferredAmount;
 	/**
 	 * Quantity of financial instrument to transfer expressed as an amount of
 	 * money.
@@ -477,18 +503,27 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferredAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredAmount";
 			definition = "Quantity of financial instrument to transfer expressed as an amount of money.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getTransferredAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate transferredPercentage;
 	/**
 	 * Quantity of financial instrument to transfer expressed as a percentage of
 	 * the investor's total holding.
@@ -518,18 +553,27 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferredPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferredPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferredPercentage";
 			definition = "Quantity of financial instrument to transfer expressed as a percentage of the investor's total holding.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getTransferredPercentage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime transferDate;
 	/**
 	 * Execution date of the transfer instruction.
 	 * <p>
@@ -555,18 +599,27 @@ public class PortfolioTransfer {
 	 * definition} = "Execution date of the transfer instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferDate";
 			definition = "Execution date of the transfer instruction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getTransferDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentAccount nomineeAccount;
 	/**
 	 * Account held in the name of a party that is not the name of the
 	 * beneficial owner of the shares.
@@ -576,8 +629,8 @@ public class PortfolioTransfer {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#RelatedPortfolioTransfer
-	 * InvestmentAccount.RelatedPortfolioTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmRelatedPortfolioTransfer
+	 * InvestmentAccount.mmRelatedPortfolioTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -603,20 +656,21 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NomineeAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNomineeAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NomineeAccount";
 			definition = "Account held in the name of a party that is not the name of the beneficial owner of the shares.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.RelatedPortfolioTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmRelatedPortfolioTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
 		}
 	};
+	protected PEPISACode pEPOrISAPlan;
 	/**
 	 * Specifies whether the investment plan is a PEP or ISA type.
 	 * <p>
@@ -643,18 +697,27 @@ public class PortfolioTransfer {
 	 * "Specifies whether the investment plan is a PEP or ISA type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PEPOrISAPlan = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPEPOrISAPlan = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PEPOrISAPlan";
 			definition = "Specifies whether the investment plan is a PEP or ISA type.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PEPISACode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getPEPOrISAPlan", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISATypeCode currentYearISAType;
 	/**
 	 * Current year ISA is an ISA that was issued during the current fiscal
 	 * year.
@@ -683,36 +746,153 @@ public class PortfolioTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CurrentYearISAType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCurrentYearISAType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CurrentYearISAType";
 			definition = "Current year ISA is an ISA that was issued during the current fiscal year.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISATypeCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioTransfer.class.getMethod("getCurrentYearISAType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioTransfer";
 				definition = "Transfer by the delivering account servicer to the receiving account servicer of a retail or institutional client portfolio. A portfolio can be any grouping of  investments, for example  stocks, bonds, options, warrants. held by an institution or an individual.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.DebitPortfolioTransfer, com.tools20022.repository.entity.InvestmentAccount.CreditPortfolioTransfer,
-						com.tools20022.repository.entity.InvestmentAccount.RelatedPortfolioTransfer, com.tools20022.repository.entity.PaymentObligation.PaymentSourcePortfolioTransfer, com.tools20022.repository.entity.Portfolio.Transfer,
-						com.tools20022.repository.entity.SecuritiesDeliveryObligation.RelatedPortfolioTransfer);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioTransfer.TransferredYear, com.tools20022.repository.entity.PortfolioTransfer.CashComponentIndicator,
-						com.tools20022.repository.entity.PortfolioTransfer.AccountFrom, com.tools20022.repository.entity.PortfolioTransfer.AccountTo, com.tools20022.repository.entity.PortfolioTransfer.PaymentObligation,
-						com.tools20022.repository.entity.PortfolioTransfer.TransferredPortfolio, com.tools20022.repository.entity.PortfolioTransfer.SecuritiesDeliveryObligation,
-						com.tools20022.repository.entity.PortfolioTransfer.TransferredAmount, com.tools20022.repository.entity.PortfolioTransfer.TransferredPercentage, com.tools20022.repository.entity.PortfolioTransfer.TransferDate,
-						com.tools20022.repository.entity.PortfolioTransfer.NomineeAccount, com.tools20022.repository.entity.PortfolioTransfer.PEPOrISAPlan, com.tools20022.repository.entity.PortfolioTransfer.CurrentYearISAType);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmDebitPortfolioTransfer, com.tools20022.repository.entity.InvestmentAccount.mmCreditPortfolioTransfer,
+						com.tools20022.repository.entity.InvestmentAccount.mmRelatedPortfolioTransfer, com.tools20022.repository.entity.PaymentObligation.mmPaymentSourcePortfolioTransfer,
+						com.tools20022.repository.entity.Portfolio.mmTransfer, com.tools20022.repository.entity.SecuritiesDeliveryObligation.mmRelatedPortfolioTransfer);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioTransfer.mmTransferredYear, com.tools20022.repository.entity.PortfolioTransfer.mmCashComponentIndicator,
+						com.tools20022.repository.entity.PortfolioTransfer.mmAccountFrom, com.tools20022.repository.entity.PortfolioTransfer.mmAccountTo, com.tools20022.repository.entity.PortfolioTransfer.mmPaymentObligation,
+						com.tools20022.repository.entity.PortfolioTransfer.mmTransferredPortfolio, com.tools20022.repository.entity.PortfolioTransfer.mmSecuritiesDeliveryObligation,
+						com.tools20022.repository.entity.PortfolioTransfer.mmTransferredAmount, com.tools20022.repository.entity.PortfolioTransfer.mmTransferredPercentage, com.tools20022.repository.entity.PortfolioTransfer.mmTransferDate,
+						com.tools20022.repository.entity.PortfolioTransfer.mmNomineeAccount, com.tools20022.repository.entity.PortfolioTransfer.mmPEPOrISAPlan, com.tools20022.repository.entity.PortfolioTransfer.mmCurrentYearISAType);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PortfolioTransfer.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISOYear getTransferredYear() {
+		return transferredYear;
+	}
+
+	public void setTransferredYear(ISOYear transferredYear) {
+		this.transferredYear = transferredYear;
+	}
+
+	public YesNoIndicator getCashComponentIndicator() {
+		return cashComponentIndicator;
+	}
+
+	public void setCashComponentIndicator(YesNoIndicator cashComponentIndicator) {
+		this.cashComponentIndicator = cashComponentIndicator;
+	}
+
+	public List<InvestmentAccount> getAccountFrom() {
+		return accountFrom;
+	}
+
+	public void setAccountFrom(List<com.tools20022.repository.entity.InvestmentAccount> accountFrom) {
+		this.accountFrom = accountFrom;
+	}
+
+	public List<InvestmentAccount> getAccountTo() {
+		return accountTo;
+	}
+
+	public void setAccountTo(List<com.tools20022.repository.entity.InvestmentAccount> accountTo) {
+		this.accountTo = accountTo;
+	}
+
+	public List<PaymentObligation> getPaymentObligation() {
+		return paymentObligation;
+	}
+
+	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = paymentObligation;
+	}
+
+	public List<Portfolio> getTransferredPortfolio() {
+		return transferredPortfolio;
+	}
+
+	public void setTransferredPortfolio(List<com.tools20022.repository.entity.Portfolio> transferredPortfolio) {
+		this.transferredPortfolio = transferredPortfolio;
+	}
+
+	public List<SecuritiesDeliveryObligation> getSecuritiesDeliveryObligation() {
+		return securitiesDeliveryObligation;
+	}
+
+	public void setSecuritiesDeliveryObligation(List<com.tools20022.repository.entity.SecuritiesDeliveryObligation> securitiesDeliveryObligation) {
+		this.securitiesDeliveryObligation = securitiesDeliveryObligation;
+	}
+
+	public CurrencyAndAmount getTransferredAmount() {
+		return transferredAmount;
+	}
+
+	public void setTransferredAmount(CurrencyAndAmount transferredAmount) {
+		this.transferredAmount = transferredAmount;
+	}
+
+	public PercentageRate getTransferredPercentage() {
+		return transferredPercentage;
+	}
+
+	public void setTransferredPercentage(PercentageRate transferredPercentage) {
+		this.transferredPercentage = transferredPercentage;
+	}
+
+	public ISODateTime getTransferDate() {
+		return transferDate;
+	}
+
+	public void setTransferDate(ISODateTime transferDate) {
+		this.transferDate = transferDate;
+	}
+
+	public InvestmentAccount getNomineeAccount() {
+		return nomineeAccount;
+	}
+
+	public void setNomineeAccount(com.tools20022.repository.entity.InvestmentAccount nomineeAccount) {
+		this.nomineeAccount = nomineeAccount;
+	}
+
+	public PEPISACode getPEPOrISAPlan() {
+		return pEPOrISAPlan;
+	}
+
+	public void setPEPOrISAPlan(PEPISACode pEPOrISAPlan) {
+		this.pEPOrISAPlan = pEPOrISAPlan;
+	}
+
+	public ISATypeCode getCurrentYearISAType() {
+		return currentYearISAType;
+	}
+
+	public void setCurrentYearISAType(ISATypeCode currentYearISAType) {
+		this.currentYearISAType = currentYearISAType;
 	}
 }

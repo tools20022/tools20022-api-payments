@@ -17,15 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.System;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PointOfInteraction1;
 import com.tools20022.repository.msg.PointOfInteractionCapabilities1;
 import com.tools20022.repository.msg.PointOfInteractionComponent1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,71 +46,49 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#CardPaymentAcquiring
- * PointOfInteraction.CardPaymentAcquiring}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmCardPaymentAcquiring
+ * PointOfInteraction.mmCardPaymentAcquiring}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#CardReadingCapabilities
- * PointOfInteraction.CardReadingCapabilities}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmCardReadingCapabilities
+ * PointOfInteraction.mmCardReadingCapabilities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#CardholderVerificationCapabilities
- * PointOfInteraction.CardholderVerificationCapabilities}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmCardholderVerificationCapabilities
+ * PointOfInteraction.mmCardholderVerificationCapabilities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#OnLineCapabilities
- * PointOfInteraction.OnLineCapabilities}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmOnLineCapabilities
+ * PointOfInteraction.mmOnLineCapabilities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#DisplayCapabilities
- * PointOfInteraction.DisplayCapabilities}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmDisplayCapabilities
+ * PointOfInteraction.mmDisplayCapabilities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#PrintLineWidth
- * PointOfInteraction.PrintLineWidth}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmPrintLineWidth
+ * PointOfInteraction.mmPrintLineWidth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#Component
- * PointOfInteraction.Component}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmComponent
+ * PointOfInteraction.mmComponent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#ComponentIdentification
- * PointOfInteraction.ComponentIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmComponentIdentification
+ * PointOfInteraction.mmComponentIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#GroupIdentifier
- * PointOfInteraction.GroupIdentifier}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmGroupIdentifier
+ * PointOfInteraction.mmGroupIdentifier}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#LineWidth
- * PointOfInteraction.LineWidth}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmLineWidth
+ * PointOfInteraction.mmLineWidth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#NumberOfLines
- * PointOfInteraction.NumberOfLines}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PointOfInteraction#ErrorLog
- * PointOfInteraction.ErrorLog}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmNumberOfLines
+ * PointOfInteraction.mmNumberOfLines}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#ComponentVersionNumber
- * PointOfInteraction.ComponentVersionNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmErrorLog
+ * PointOfInteraction.mmErrorLog}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PointOfInteraction#ControllingTerminalManagementSystem
- * PointOfInteraction.ControllingTerminalManagementSystem}</li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmComponentVersionNumber
+ * PointOfInteraction.mmComponentVersionNumber}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PointOfInteraction#mmControllingTerminalManagementSystem
+ * PointOfInteraction.mmControllingTerminalManagementSystem}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#PointOfInteraction
- * CardPaymentAcquiring.PointOfInteraction}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#ControlledPointOfInteraction
- * TerminalManagementSystem.ControlledPointOfInteraction}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PointOfInteraction1#Capabilities
- * PointOfInteraction1.Capabilities}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.System System}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -125,10 +103,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#mmPointOfInteraction
+ * CardPaymentAcquiring.mmPointOfInteraction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#mmControlledPointOfInteraction
+ * TerminalManagementSystem.mmControlledPointOfInteraction}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PointOfInteraction1#mmCapabilities
+ * PointOfInteraction1.mmCapabilities}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.System System}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -144,6 +145,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PointOfInteraction extends System {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CardPaymentAcquiring cardPaymentAcquiring;
 	/**
 	 * Process which uses the point of interaction.
 	 * <p>
@@ -152,8 +154,8 @@ public class PointOfInteraction extends System {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#PointOfInteraction
-	 * CardPaymentAcquiring.PointOfInteraction}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#mmPointOfInteraction
+	 * CardPaymentAcquiring.mmPointOfInteraction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -178,20 +180,21 @@ public class PointOfInteraction extends System {
 	 * definition} = "Process which uses the point of interaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CardPaymentAcquiring = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCardPaymentAcquiring = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPaymentAcquiring";
 			definition = "Process which uses the point of interaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmPointOfInteraction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.PointOfInteraction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CardDataReadingCode cardReadingCapabilities;
 	/**
 	 * Card reading capabilities of the POI performing the transaction.
 	 * <p>
@@ -206,8 +209,8 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#CardReadingCapabilities
-	 * PointOfInteractionCapabilities1.CardReadingCapabilities}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#mmCardReadingCapabilities
+	 * PointOfInteractionCapabilities1.mmCardReadingCapabilities}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -227,19 +230,28 @@ public class PointOfInteraction extends System {
 	 * "Card reading capabilities of the POI performing the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CardReadingCapabilities = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCardReadingCapabilities = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteractionCapabilities1.CardReadingCapabilities);
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmCardReadingCapabilities);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardReadingCapabilities";
 			definition = "Card reading capabilities of the POI performing the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CardDataReadingCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getCardReadingCapabilities", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CardholderVerificationCapabilityCode cardholderVerificationCapabilities;
 	/**
 	 * Type of cardholder verification that could be performed during a
 	 * transaction.
@@ -255,8 +267,8 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#CardholderVerificationCapabilities
-	 * PointOfInteractionCapabilities1.CardholderVerificationCapabilities}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#mmCardholderVerificationCapabilities
+	 * PointOfInteractionCapabilities1.mmCardholderVerificationCapabilities}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -277,19 +289,28 @@ public class PointOfInteraction extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CardholderVerificationCapabilities = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCardholderVerificationCapabilities = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteractionCapabilities1.CardholderVerificationCapabilities);
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmCardholderVerificationCapabilities);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderVerificationCapabilities";
 			definition = "Type of cardholder verification that could be performed during a transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CardholderVerificationCapabilityCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getCardholderVerificationCapabilities", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OnLineCapabilityCode onLineCapabilities;
 	/**
 	 * On-line and off-line capabilities of the POI.
 	 * <p>
@@ -304,8 +325,8 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#OnLineCapabilities
-	 * PointOfInteractionCapabilities1.OnLineCapabilities}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#mmOnLineCapabilities
+	 * PointOfInteractionCapabilities1.mmOnLineCapabilities}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -324,19 +345,28 @@ public class PointOfInteraction extends System {
 	 * definition} = "On-line and off-line capabilities of the POI."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OnLineCapabilities = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOnLineCapabilities = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteractionCapabilities1.OnLineCapabilities);
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmOnLineCapabilities);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLineCapabilities";
 			definition = "On-line and off-line capabilities of the POI.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> OnLineCapabilityCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getOnLineCapabilities", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected UserInterfaceCode displayCapabilities;
 	/**
 	 * Display interfaces components.
 	 * <p>
@@ -351,8 +381,8 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#DisplayCapabilities
-	 * PointOfInteractionCapabilities1.DisplayCapabilities}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#mmDisplayCapabilities
+	 * PointOfInteractionCapabilities1.mmDisplayCapabilities}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -371,19 +401,28 @@ public class PointOfInteraction extends System {
 	 * definition} = "Display interfaces components."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DisplayCapabilities = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDisplayCapabilities = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteractionCapabilities1.DisplayCapabilities);
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmDisplayCapabilities);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisplayCapabilities";
 			definition = "Display interfaces components.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> UserInterfaceCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getDisplayCapabilities", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max3NumericText printLineWidth;
 	/**
 	 * Number of columns of the printer component.
 	 * <p>
@@ -398,8 +437,8 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#PrintLineWidth
-	 * PointOfInteractionCapabilities1.PrintLineWidth}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities1#mmPrintLineWidth
+	 * PointOfInteractionCapabilities1.mmPrintLineWidth}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -418,19 +457,28 @@ public class PointOfInteraction extends System {
 	 * definition} = "Number of columns of the printer component."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PrintLineWidth = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPrintLineWidth = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteractionCapabilities1.PrintLineWidth);
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			derivation_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmPrintLineWidth);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrintLineWidth";
 			definition = "Number of columns of the printer component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getPrintLineWidth", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected POIComponentTypeCode component;
 	/**
 	 * Type of components belonging to a POI.
 	 * <p>
@@ -445,8 +493,8 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteraction1#Component
-	 * PointOfInteraction1.Component}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteraction1#mmComponent
+	 * PointOfInteraction1.mmComponent}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -465,19 +513,28 @@ public class PointOfInteraction extends System {
 	 * definition} = "Type of components belonging to a POI."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Component = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmComponent = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteraction1.Component);
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			derivation_lazy = () -> Arrays.asList(PointOfInteraction1.mmComponent);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Component";
 			definition = "Type of components belonging to a POI.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> POIComponentTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getComponent", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text componentIdentification;
 	/**
 	 * Identification of the POI component assigned by its provider.
 	 * <p>
@@ -504,18 +561,27 @@ public class PointOfInteraction extends System {
 	 * "Identification of the POI component assigned by its provider."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ComponentIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmComponentIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentIdentification";
 			definition = "Identification of the POI component assigned by its provider.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getComponentIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text groupIdentifier;
 	/**
 	 * Identifier assigned by the merchant identifying a set of POI terminals
 	 * performing some categories of transactions.
@@ -544,18 +610,27 @@ public class PointOfInteraction extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GroupIdentifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGroupIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GroupIdentifier";
 			definition = "Identifier assigned by the merchant identifying a set of POI terminals performing some categories of transactions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getGroupIdentifier", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max3NumericText lineWidth;
 	/**
 	 * Number of columns of the display component.
 	 * <p>
@@ -582,18 +657,27 @@ public class PointOfInteraction extends System {
 	 * definition} = "Number of columns of the display component."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LineWidth = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLineWidth = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LineWidth";
 			definition = "Number of columns of the display component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getLineWidth", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max2NumericText numberOfLines;
 	/**
 	 * Number of lines of the display component.
 	 * <p>
@@ -620,18 +704,27 @@ public class PointOfInteraction extends System {
 	 * definition} = "Number of lines of the display component."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NumberOfLines = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumberOfLines = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfLines";
 			definition = "Number of lines of the display component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max2NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getNumberOfLines", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max140Text errorLog;
 	/**
 	 * Error logging transferred by the point of interaction to the terminal
 	 * management system.
@@ -660,18 +753,27 @@ public class PointOfInteraction extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ErrorLog = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmErrorLog = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ErrorLog";
 			definition = "Error logging transferred by the point of interaction to the terminal management system.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getErrorLog", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max16Text componentVersionNumber;
 	/**
 	 * Identification of a version of component belonging to a given model.
 	 * <p>
@@ -698,18 +800,27 @@ public class PointOfInteraction extends System {
 	 * "Identification of a version of component belonging to a given model."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ComponentVersionNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmComponentVersionNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentVersionNumber";
 			definition = "Identification of a version of component belonging to a given model.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PointOfInteraction.class.getMethod("getComponentVersionNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TerminalManagementSystem controllingTerminalManagementSystem;
 	/**
 	 * Terminal management system for which a point of interaction is specified.
 	 * <p>
@@ -718,8 +829,8 @@ public class PointOfInteraction extends System {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#ControlledPointOfInteraction
-	 * TerminalManagementSystem.ControlledPointOfInteraction}</li>
+	 * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#mmControlledPointOfInteraction
+	 * TerminalManagementSystem.mmControlledPointOfInteraction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -746,40 +857,157 @@ public class PointOfInteraction extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ControllingTerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmControllingTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PointOfInteraction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ControllingTerminalManagementSystem";
 			definition = "Terminal management system for which a point of interaction is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> TerminalManagementSystem.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.ControlledPointOfInteraction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmControlledPointOfInteraction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PointOfInteraction";
 				definition = "Point of interaction (POI) is the entry point to a card payment system. It could be a physical or logical card payment terminal containing software and hardware components, it could be a payment system including a set of card payment terminals linked to a local or remote server, or it could be just an interface to make payments as telephone or Internet browser.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentAcquiring.PointOfInteraction, com.tools20022.repository.entity.TerminalManagementSystem.ControlledPointOfInteraction);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PointOfInteraction1.Capabilities);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentAcquiring.mmPointOfInteraction, com.tools20022.repository.entity.TerminalManagementSystem.mmControlledPointOfInteraction);
+				derivationElement_lazy = () -> Arrays.asList(PointOfInteraction1.mmCapabilities);
 				superType_lazy = () -> System.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PointOfInteraction.CardPaymentAcquiring, com.tools20022.repository.entity.PointOfInteraction.CardReadingCapabilities,
-						com.tools20022.repository.entity.PointOfInteraction.CardholderVerificationCapabilities, com.tools20022.repository.entity.PointOfInteraction.OnLineCapabilities,
-						com.tools20022.repository.entity.PointOfInteraction.DisplayCapabilities, com.tools20022.repository.entity.PointOfInteraction.PrintLineWidth, com.tools20022.repository.entity.PointOfInteraction.Component,
-						com.tools20022.repository.entity.PointOfInteraction.ComponentIdentification, com.tools20022.repository.entity.PointOfInteraction.GroupIdentifier, com.tools20022.repository.entity.PointOfInteraction.LineWidth,
-						com.tools20022.repository.entity.PointOfInteraction.NumberOfLines, com.tools20022.repository.entity.PointOfInteraction.ErrorLog, com.tools20022.repository.entity.PointOfInteraction.ComponentVersionNumber,
-						com.tools20022.repository.entity.PointOfInteraction.ControllingTerminalManagementSystem);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PointOfInteraction.mmCardPaymentAcquiring, com.tools20022.repository.entity.PointOfInteraction.mmCardReadingCapabilities,
+						com.tools20022.repository.entity.PointOfInteraction.mmCardholderVerificationCapabilities, com.tools20022.repository.entity.PointOfInteraction.mmOnLineCapabilities,
+						com.tools20022.repository.entity.PointOfInteraction.mmDisplayCapabilities, com.tools20022.repository.entity.PointOfInteraction.mmPrintLineWidth, com.tools20022.repository.entity.PointOfInteraction.mmComponent,
+						com.tools20022.repository.entity.PointOfInteraction.mmComponentIdentification, com.tools20022.repository.entity.PointOfInteraction.mmGroupIdentifier, com.tools20022.repository.entity.PointOfInteraction.mmLineWidth,
+						com.tools20022.repository.entity.PointOfInteraction.mmNumberOfLines, com.tools20022.repository.entity.PointOfInteraction.mmErrorLog, com.tools20022.repository.entity.PointOfInteraction.mmComponentVersionNumber,
+						com.tools20022.repository.entity.PointOfInteraction.mmControllingTerminalManagementSystem);
 				derivationComponent_lazy = () -> Arrays.asList(PointOfInteractionCapabilities1.mmObject(), PointOfInteractionComponent1.mmObject(), PointOfInteraction1.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PointOfInteraction.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CardPaymentAcquiring getCardPaymentAcquiring() {
+		return cardPaymentAcquiring;
+	}
+
+	public void setCardPaymentAcquiring(com.tools20022.repository.entity.CardPaymentAcquiring cardPaymentAcquiring) {
+		this.cardPaymentAcquiring = cardPaymentAcquiring;
+	}
+
+	public CardDataReadingCode getCardReadingCapabilities() {
+		return cardReadingCapabilities;
+	}
+
+	public void setCardReadingCapabilities(CardDataReadingCode cardReadingCapabilities) {
+		this.cardReadingCapabilities = cardReadingCapabilities;
+	}
+
+	public CardholderVerificationCapabilityCode getCardholderVerificationCapabilities() {
+		return cardholderVerificationCapabilities;
+	}
+
+	public void setCardholderVerificationCapabilities(CardholderVerificationCapabilityCode cardholderVerificationCapabilities) {
+		this.cardholderVerificationCapabilities = cardholderVerificationCapabilities;
+	}
+
+	public OnLineCapabilityCode getOnLineCapabilities() {
+		return onLineCapabilities;
+	}
+
+	public void setOnLineCapabilities(OnLineCapabilityCode onLineCapabilities) {
+		this.onLineCapabilities = onLineCapabilities;
+	}
+
+	public UserInterfaceCode getDisplayCapabilities() {
+		return displayCapabilities;
+	}
+
+	public void setDisplayCapabilities(UserInterfaceCode displayCapabilities) {
+		this.displayCapabilities = displayCapabilities;
+	}
+
+	public Max3NumericText getPrintLineWidth() {
+		return printLineWidth;
+	}
+
+	public void setPrintLineWidth(Max3NumericText printLineWidth) {
+		this.printLineWidth = printLineWidth;
+	}
+
+	public POIComponentTypeCode getComponent() {
+		return component;
+	}
+
+	public void setComponent(POIComponentTypeCode component) {
+		this.component = component;
+	}
+
+	public Max35Text getComponentIdentification() {
+		return componentIdentification;
+	}
+
+	public void setComponentIdentification(Max35Text componentIdentification) {
+		this.componentIdentification = componentIdentification;
+	}
+
+	public Max35Text getGroupIdentifier() {
+		return groupIdentifier;
+	}
+
+	public void setGroupIdentifier(Max35Text groupIdentifier) {
+		this.groupIdentifier = groupIdentifier;
+	}
+
+	public Max3NumericText getLineWidth() {
+		return lineWidth;
+	}
+
+	public void setLineWidth(Max3NumericText lineWidth) {
+		this.lineWidth = lineWidth;
+	}
+
+	public Max2NumericText getNumberOfLines() {
+		return numberOfLines;
+	}
+
+	public void setNumberOfLines(Max2NumericText numberOfLines) {
+		this.numberOfLines = numberOfLines;
+	}
+
+	public Max140Text getErrorLog() {
+		return errorLog;
+	}
+
+	public void setErrorLog(Max140Text errorLog) {
+		this.errorLog = errorLog;
+	}
+
+	public Max16Text getComponentVersionNumber() {
+		return componentVersionNumber;
+	}
+
+	public void setComponentVersionNumber(Max16Text componentVersionNumber) {
+		this.componentVersionNumber = componentVersionNumber;
+	}
+
+	public TerminalManagementSystem getControllingTerminalManagementSystem() {
+		return controllingTerminalManagementSystem;
+	}
+
+	public void setControllingTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem controllingTerminalManagementSystem) {
+		this.controllingTerminalManagementSystem = controllingTerminalManagementSystem;
 	}
 }

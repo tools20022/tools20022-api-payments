@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of insurance.
@@ -36,8 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InsurancePartyRole#InsuranceCertificate
- * InsurancePartyRole.InsuranceCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.InsurancePartyRole#mmInsuranceCertificate
+ * InsurancePartyRole.mmInsuranceCertificate}</li>
  * </ul>
  * </li>
  * <li>
@@ -45,8 +49,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#InsurancePartyRole
- * InsuranceCertificate.InsurancePartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#mmInsurancePartyRole
+ * InsuranceCertificate.mmInsurancePartyRole}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -54,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,6 +73,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InsurancePartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate;
 	/**
 	 * Identifies the certificate for which a party plays a role.
 	 * <p>
@@ -77,8 +82,8 @@ public class InsurancePartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#InsurancePartyRole
-	 * InsuranceCertificate.InsurancePartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#mmInsurancePartyRole
+	 * InsuranceCertificate.mmInsurancePartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -104,32 +109,45 @@ public class InsurancePartyRole extends Role {
 	 * "Identifies the certificate for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InsuranceCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InsurancePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InsurancePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceCertificate";
 			definition = "Identifies the certificate for which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmInsurancePartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.InsurancePartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsurancePartyRole";
 				definition = "Role played by a party in the context of insurance.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InsuranceCertificate.InsurancePartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InsuranceCertificate.mmInsurancePartyRole);
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InsurancePartyRole.InsuranceCertificate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InsurancePartyRole.mmInsuranceCertificate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InsurancePartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<InsuranceCertificate> getInsuranceCertificate() {
+		return insuranceCertificate;
+	}
+
+	public void setInsuranceCertificate(List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate) {
+		this.insuranceCertificate = insuranceCertificate;
 	}
 }

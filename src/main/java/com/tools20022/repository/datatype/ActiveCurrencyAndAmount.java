@@ -18,7 +18,9 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMAmount;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ActiveCurrencyCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,11 +34,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * currencyIdentifierSet} =
  * {@linkplain com.tools20022.repository.codeset.ActiveCurrencyCode
  * ActiveCurrencyCode}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMDecimal#getMinInclusive
+ * minInclusive} = "0"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -62,12 +66,15 @@ public class ActiveCurrencyAndAmount {
 	final static public MMAmount mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMAmount() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("6545.56");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActiveCurrencyAndAmount";
 				definition = "A number of monetary units specified in an active currency where the unit of currency is explicit and compliant with ISO 4217.";
 				currencyIdentifierSet_lazy = () -> ActiveCurrencyCode.mmObject();
+				minInclusive = "0";
+				totalDigits = 18;
+				fractionDigits = 5;
 			}
 		});
 		return mmObject_lazy.get();

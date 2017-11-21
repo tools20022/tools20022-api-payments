@@ -18,7 +18,11 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PaymentObligationPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Garnishment1;
+import com.tools20022.repository.msg.RequestedModification6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,11 +39,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Garnishment1#Garnishee
- * Garnishment1.Garnishee}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Garnishment1#mmGarnishee
+ * Garnishment1.mmGarnishee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RequestedModification6#UltimateDebtor
- * RequestedModification6.UltimateDebtor}</li>
+ * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmUltimateDebtor
+ * RequestedModification6.mmUltimateDebtor}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -49,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,12 +73,17 @@ public class UltimateDebtorRole extends PaymentObligationPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UltimateDebtorRole";
 				definition = "Ultimate party that owes an amount of money to the (ultimate) creditor.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Garnishment1.Garnishee, com.tools20022.repository.msg.RequestedModification6.UltimateDebtor);
+				derivationElement_lazy = () -> Arrays.asList(Garnishment1.mmGarnishee, RequestedModification6.mmUltimateDebtor);
 				superType_lazy = () -> PaymentObligationPartyRole.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return UltimateDebtorRole.class;
 			}
 		});
 		return mmObject_lazy.get();

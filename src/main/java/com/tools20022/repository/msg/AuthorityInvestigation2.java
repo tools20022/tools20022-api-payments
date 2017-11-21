@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.InvestigatedParties1Choice;
 import com.tools20022.repository.datatype.Max500Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the requested authority investigation information details.
@@ -33,24 +39,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#Type
- * AuthorityInvestigation2.Type}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#mmType
+ * AuthorityInvestigation2.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#InvestigatedRoles
- * AuthorityInvestigation2.InvestigatedRoles}</li>
+ * {@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#mmInvestigatedRoles
+ * AuthorityInvestigation2.mmInvestigatedRoles}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#AdditionalInvestigatedParties
- * AuthorityInvestigation2.AdditionalInvestigatedParties}</li>
+ * {@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#mmAdditionalInvestigatedParties
+ * AuthorityInvestigation2.mmAdditionalInvestigatedParties}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#AdditionalInformation
- * AuthorityInvestigation2.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.AuthorityInvestigation2#mmAdditionalInformation
+ * AuthorityInvestigation2.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +68,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the requested authority investigation information details."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AuthorityInvestigation2", propOrder = {"type", "investigatedRoles", "additionalInvestigatedParties", "additionalInformation"})
 public class AuthorityInvestigation2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected AuthorityRequestType1 type;
 	/**
 	 * Identifies the type requested information as a code.
 	 * <p>
@@ -93,19 +102,20 @@ public class AuthorityInvestigation2 {
 	 * definition} = "Identifies the type requested information as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AuthorityInvestigation2.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Identifies the type requested information as a code.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> AuthorityRequestType1.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
 		}
 	};
+	protected InvestigatedParties1Choice investigatedRoles;
 	/**
 	 * Identifies the roles the customer plays in the requested information.
 	 * <p>
@@ -135,19 +145,20 @@ public class AuthorityInvestigation2 {
 	 * "Identifies the roles the customer plays in the requested information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute InvestigatedRoles = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmInvestigatedRoles = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AuthorityInvestigation2.mmObject();
 			isDerived = false;
 			xmlTag = "InvstgtdRoles";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestigatedRoles";
 			definition = "Identifies the roles the customer plays in the requested information.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> InvestigatedParties1Choice.mmObject();
 		}
 	};
+	protected InvestigatedParties1Choice additionalInvestigatedParties;
 	/**
 	 * Specifies the additional investigated parties.
 	 * <p>
@@ -176,19 +187,20 @@ public class AuthorityInvestigation2 {
 	 * definition} = "Specifies the additional investigated parties."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInvestigatedParties = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInvestigatedParties = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AuthorityInvestigation2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInvstgtdPties";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInvestigatedParties";
 			definition = "Specifies the additional investigated parties.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			complexType_lazy = () -> InvestigatedParties1Choice.mmObject();
 		}
 	};
+	protected Max500Text additionalInformation;
 	/**
 	 * Additional information, in free text form, to complement the requested
 	 * information.
@@ -219,16 +231,16 @@ public class AuthorityInvestigation2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AuthorityInvestigation2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Additional information, in free text form, to complement the requested information.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
 		}
 	};
@@ -236,14 +248,50 @@ public class AuthorityInvestigation2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AuthorityInvestigation2.Type, com.tools20022.repository.msg.AuthorityInvestigation2.InvestigatedRoles,
-						com.tools20022.repository.msg.AuthorityInvestigation2.AdditionalInvestigatedParties, com.tools20022.repository.msg.AuthorityInvestigation2.AdditionalInformation);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays
+						.asList(AuthorityInvestigation2.mmType, AuthorityInvestigation2.mmInvestigatedRoles, AuthorityInvestigation2.mmAdditionalInvestigatedParties, AuthorityInvestigation2.mmAdditionalInformation);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthorityInvestigation2";
 				definition = "Specifies the requested authority investigation information details.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public AuthorityRequestType1 getType() {
+		return type;
+	}
+
+	public void setType(com.tools20022.repository.msg.AuthorityRequestType1 type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "InvstgtdRoles", required = true)
+	public InvestigatedParties1Choice getInvestigatedRoles() {
+		return investigatedRoles;
+	}
+
+	public void setInvestigatedRoles(InvestigatedParties1Choice investigatedRoles) {
+		this.investigatedRoles = investigatedRoles;
+	}
+
+	@XmlElement(name = "AddtlInvstgtdPties")
+	public InvestigatedParties1Choice getAdditionalInvestigatedParties() {
+		return additionalInvestigatedParties;
+	}
+
+	public void setAdditionalInvestigatedParties(InvestigatedParties1Choice additionalInvestigatedParties) {
+		this.additionalInvestigatedParties = additionalInvestigatedParties;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max500Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max500Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

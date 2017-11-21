@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#General
- * CorporateActionEventProcessingTypeCode.General}</li>
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#mmGeneral
+ * CorporateActionEventProcessingTypeCode.mmGeneral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#Distribution
- * CorporateActionEventProcessingTypeCode.Distribution}</li>
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#mmDistribution
+ * CorporateActionEventProcessingTypeCode.mmDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#Reorganisation
- * CorporateActionEventProcessingTypeCode.Reorganisation}</li>
+ * {@linkplain com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode#mmReorganisation
+ * CorporateActionEventProcessingTypeCode.mmReorganisation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class CorporateActionEventProcessingTypeCode {
 	 * definition} = "No debit or credit of resources."</li>
 	 * </ul>
 	 */
-	public static final MMCode General = new MMCode() {
+	public static final MMCode mmGeneral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "General";
 			definition = "No debit or credit of resources.";
 			owner_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
@@ -119,9 +121,9 @@ public class CorporateActionEventProcessingTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Distribution = new MMCode() {
+	public static final MMCode mmDistribution = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Distribution";
 			definition = "Holder of the relevant security on a certain date, for example, the record date, will receive a benefit without giving up the underlying security.";
 			owner_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
@@ -152,9 +154,9 @@ public class CorporateActionEventProcessingTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Reorganisation = new MMCode() {
+	public static final MMCode mmReorganisation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reorganisation";
 			definition = "Underlying security will be debited and may be replaced by another resource (or resources).";
 			owner_lazy = () -> CorporateActionEventProcessingTypeCode.mmObject();
@@ -165,13 +167,12 @@ public class CorporateActionEventProcessingTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("GENL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionEventProcessingTypeCode";
 				definition = "Specifies the type of event processing.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.General, com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.Distribution,
-						com.tools20022.repository.codeset.CorporateActionEventProcessingTypeCode.Reorganisation);
+				code_lazy = () -> Arrays.asList(CorporateActionEventProcessingTypeCode.mmGeneral, CorporateActionEventProcessingTypeCode.mmDistribution, CorporateActionEventProcessingTypeCode.mmReorganisation);
 			}
 		});
 		return mmObject_lazy.get();

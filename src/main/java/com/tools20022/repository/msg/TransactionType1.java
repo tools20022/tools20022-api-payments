@@ -20,11 +20,21 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CreditDebitCode;
 import com.tools20022.repository.codeset.EntryStatus2Code;
+import com.tools20022.repository.entity.AccountStatus;
 import com.tools20022.repository.entity.CashEntry;
+import com.tools20022.repository.entity.CashManagementService;
+import com.tools20022.repository.entity.Entry;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to identify the transactions to be reported.
@@ -35,13 +45,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionType1#Status
- * TransactionType1.Status}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionType1#mmStatus
+ * TransactionType1.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionType1#CreditDebitIndicator
- * TransactionType1.CreditDebitIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionType1#FloorLimit
- * TransactionType1.FloorLimit}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionType1#mmCreditDebitIndicator
+ * TransactionType1.mmCreditDebitIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionType1#mmFloorLimit
+ * TransactionType1.mmFloorLimit}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -49,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +72,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Set of elements used to identify the transactions to be reported."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TransactionType1", propOrder = {"status", "creditDebitIndicator", "floorLimit"})
 public class TransactionType1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected EntryStatus2Code status;
 	/**
 	 * Specifies the status on the books of the account servicer of the
 	 * transactions to be reported.
@@ -79,8 +92,8 @@ public class TransactionType1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.AccountStatus#EntryStatus
-	 * AccountStatus.EntryStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountStatus#mmEntryStatus
+	 * AccountStatus.mmEntryStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -101,20 +114,21 @@ public class TransactionType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Status = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> AccountStatus.mmEntryStatus;
 			componentContext_lazy = () -> TransactionType1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.AccountStatus.EntryStatus;
 			isDerived = false;
 			xmlTag = "Sts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Status";
 			definition = "Specifies the status on the books of the account servicer of the transactions to be reported.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> EntryStatus2Code.mmObject();
 		}
 	};
+	protected CreditDebitCode creditDebitIndicator;
 	/**
 	 * Indicates whether the reporting request refers to credit or debit
 	 * entries.
@@ -129,8 +143,8 @@ public class TransactionType1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Entry#CreditDebitIndicator
-	 * Entry.CreditDebitIndicator}</li>
+	 * {@linkplain com.tools20022.repository.entity.Entry#mmCreditDebitIndicator
+	 * Entry.mmCreditDebitIndicator}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -151,20 +165,21 @@ public class TransactionType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Entry.mmCreditDebitIndicator;
 			componentContext_lazy = () -> TransactionType1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Entry.CreditDebitIndicator;
 			isDerived = false;
 			xmlTag = "CdtDbtInd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the reporting request refers to credit or debit entries.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.Limit2> floorLimit;
 	/**
 	 * Specifies the minimum value of entries to be reported in the requested
 	 * message.
@@ -176,8 +191,8 @@ public class TransactionType1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashManagementService#LiquidityManagementLimit
-	 * CashManagementService.LiquidityManagementLimit}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashManagementService#mmLiquidityManagementLimit
+	 * CashManagementService.mmLiquidityManagementLimit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -198,33 +213,59 @@ public class TransactionType1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd FloorLimit = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmFloorLimit = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> CashManagementService.mmLiquidityManagementLimit;
 			componentContext_lazy = () -> TransactionType1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashManagementService.LiquidityManagementLimit;
 			isDerived = false;
 			xmlTag = "FlrLmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FloorLimit";
 			definition = "Specifies the minimum value of entries to be reported in the requested message.";
 			minOccurs = 0;
-			type_lazy = () -> Limit2.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.Limit2.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays
-						.asList(com.tools20022.repository.msg.TransactionType1.Status, com.tools20022.repository.msg.TransactionType1.CreditDebitIndicator, com.tools20022.repository.msg.TransactionType1.FloorLimit);
+				messageElement_lazy = () -> Arrays.asList(TransactionType1.mmStatus, TransactionType1.mmCreditDebitIndicator, TransactionType1.mmFloorLimit);
 				trace_lazy = () -> CashEntry.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionType1";
 				definition = "Set of elements used to identify the transactions to be reported.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Sts", required = true)
+	public EntryStatus2Code getStatus() {
+		return status;
+	}
+
+	public void setStatus(EntryStatus2Code status) {
+		this.status = status;
+	}
+
+	@XmlElement(name = "CdtDbtInd", required = true)
+	public CreditDebitCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
+	}
+
+	@XmlElement(name = "FlrLmt")
+	public List<Limit2> getFloorLimit() {
+		return floorLimit;
+	}
+
+	public void setFloorLimit(List<com.tools20022.repository.msg.Limit2> floorLimit) {
+		this.floorLimit = floorLimit;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,20 +31,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.NettingEligibleCode#Gross
- * NettingEligibleCode.Gross}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.NettingEligibleCode#Nett
- * NettingEligibleCode.Nett}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NettingEligibleCode#AggregationForSettlement
- * NettingEligibleCode.AggregationForSettlement}</li>
+ * {@linkplain com.tools20022.repository.codeset.NettingEligibleCode#mmGross
+ * NettingEligibleCode.mmGross}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.NettingEligibleCode#mmNett
+ * NettingEligibleCode.mmNett}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.NettingEligibleCode#mmAggregationForSettlement
+ * NettingEligibleCode.mmAggregationForSettlement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +87,9 @@ public class NettingEligibleCode {
 	 * "Indicates that the trade is not eligible for settlement netting."</li>
 	 * </ul>
 	 */
-	public static final MMCode Gross = new MMCode() {
+	public static final MMCode mmGross = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Gross";
 			definition = "Indicates that the trade is not eligible for settlement netting.";
 			owner_lazy = () -> NettingEligibleCode.mmObject();
@@ -115,9 +118,9 @@ public class NettingEligibleCode {
 	 * "Indicates that the trade is eligible for settlement netting."</li>
 	 * </ul>
 	 */
-	public static final MMCode Nett = new MMCode() {
+	public static final MMCode mmNett = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Nett";
 			definition = "Indicates that the trade is eligible for settlement netting.";
 			owner_lazy = () -> NettingEligibleCode.mmObject();
@@ -148,9 +151,9 @@ public class NettingEligibleCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AggregationForSettlement = new MMCode() {
+	public static final MMCode mmAggregationForSettlement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AggregationForSettlement";
 			definition = "Grouping of receipts/purchases to create one settlement obligation, and the grouping of deliveries/sales to create one settlement obligation.";
 			owner_lazy = () -> NettingEligibleCode.mmObject();
@@ -161,13 +164,12 @@ public class NettingEligibleCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("GROS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NettingEligibleCode";
 				definition = "Specifies whether the trade is eligible for netting.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NettingEligibleCode.Gross, com.tools20022.repository.codeset.NettingEligibleCode.Nett,
-						com.tools20022.repository.codeset.NettingEligibleCode.AggregationForSettlement);
+				code_lazy = () -> Arrays.asList(NettingEligibleCode.mmGross, NettingEligibleCode.mmNett, NettingEligibleCode.mmAggregationForSettlement);
 			}
 		});
 		return mmObject_lazy.get();

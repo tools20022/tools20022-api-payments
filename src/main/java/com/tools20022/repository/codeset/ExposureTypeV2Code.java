@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,100 +33,101 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#CrossCurrencyIRS
- * ExposureTypeV2Code.CrossCurrencyIRS}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCrossCurrencyIRS
+ * ExposureTypeV2Code.mmCrossCurrencyIRS}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#Commodities
- * ExposureTypeV2Code.Commodities}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCommodities
+ * ExposureTypeV2Code.mmCommodities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#CreditDefaultSwap
- * ExposureTypeV2Code.CreditDefaultSwap}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCreditDefaultSwap
+ * ExposureTypeV2Code.mmCreditDefaultSwap}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#CrossProduct
- * ExposureTypeV2Code.CrossProduct}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCrossProduct
+ * ExposureTypeV2Code.mmCrossProduct}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#CreditSupport
- * ExposureTypeV2Code.CreditSupport}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCreditSupport
+ * ExposureTypeV2Code.mmCreditSupport}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#CreditLine
- * ExposureTypeV2Code.CreditLine}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCreditLine
+ * ExposureTypeV2Code.mmCreditLine}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#EquityOption
- * ExposureTypeV2Code.EquityOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmEquityOption
+ * ExposureTypeV2Code.mmEquityOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#EquitySwap
- * ExposureTypeV2Code.EquitySwap}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmEquitySwap
+ * ExposureTypeV2Code.mmEquitySwap}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#ExoticOption
- * ExposureTypeV2Code.ExoticOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmExoticOption
+ * ExposureTypeV2Code.mmExoticOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#ExchangeTradedDerivatives
- * ExposureTypeV2Code.ExchangeTradedDerivatives}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmExchangeTradedDerivatives
+ * ExposureTypeV2Code.mmExchangeTradedDerivatives}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#FixedIncome
- * ExposureTypeV2Code.FixedIncome}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmFixedIncome
+ * ExposureTypeV2Code.mmFixedIncome}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#ForwardForeignExchange
- * ExposureTypeV2Code.ForwardForeignExchange}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmForwardForeignExchange
+ * ExposureTypeV2Code.mmForwardForeignExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#ForeignExchange
- * ExposureTypeV2Code.ForeignExchange}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#Futures
- * ExposureTypeV2Code.Futures}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmForeignExchange
+ * ExposureTypeV2Code.mmForeignExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#Liquidity
- * ExposureTypeV2Code.Liquidity}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmFutures
+ * ExposureTypeV2Code.mmFutures}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#FXOption
- * ExposureTypeV2Code.FXOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmLiquidity
+ * ExposureTypeV2Code.mmLiquidity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#OTCDerivatives
- * ExposureTypeV2Code.OTCDerivatives}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmFXOption
+ * ExposureTypeV2Code.mmFXOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#CashSettlement
- * ExposureTypeV2Code.CashSettlement}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#Repo
- * ExposureTypeV2Code.Repo}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmOTCDerivatives
+ * ExposureTypeV2Code.mmOTCDerivatives}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#SecuritiesBuySellSellBuyBack
- * ExposureTypeV2Code.SecuritiesBuySellSellBuyBack}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmCashSettlement
+ * ExposureTypeV2Code.mmCashSettlement}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmRepo
+ * ExposureTypeV2Code.mmRepo}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#SingleCurrencyIRSExotic
- * ExposureTypeV2Code.SingleCurrencyIRSExotic}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSecuritiesBuySellSellBuyBack
+ * ExposureTypeV2Code.mmSecuritiesBuySellSellBuyBack}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#SingleCurrencyIRS
- * ExposureTypeV2Code.SingleCurrencyIRS}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSingleCurrencyIRSExotic
+ * ExposureTypeV2Code.mmSingleCurrencyIRSExotic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#SecuritiesCrossProducts
- * ExposureTypeV2Code.SecuritiesCrossProducts}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSingleCurrencyIRS
+ * ExposureTypeV2Code.mmSingleCurrencyIRS}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#SecuritiesLendingAndBorrowing
- * ExposureTypeV2Code.SecuritiesLendingAndBorrowing}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSecuritiesCrossProducts
+ * ExposureTypeV2Code.mmSecuritiesCrossProducts}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#SecuredLoan
- * ExposureTypeV2Code.SecuredLoan}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSecuritiesLendingAndBorrowing
+ * ExposureTypeV2Code.mmSecuritiesLendingAndBorrowing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#Swaption
- * ExposureTypeV2Code.Swaption}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSecuredLoan
+ * ExposureTypeV2Code.mmSecuredLoan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#TreasuryCrossProduct
- * ExposureTypeV2Code.TreasuryCrossProduct}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmSwaption
+ * ExposureTypeV2Code.mmSwaption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#BondForward
- * ExposureTypeV2Code.BondForward}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmTreasuryCrossProduct
+ * ExposureTypeV2Code.mmTreasuryCrossProduct}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#ReverseRepurchaseAgreement
- * ExposureTypeV2Code.ReverseRepurchaseAgreement}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmBondForward
+ * ExposureTypeV2Code.mmBondForward}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#ToBeAnnounced
- * ExposureTypeV2Code.ToBeAnnounced}</li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmReverseRepurchaseAgreement
+ * ExposureTypeV2Code.mmReverseRepurchaseAgreement}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ExposureTypeV2Code#mmToBeAnnounced
+ * ExposureTypeV2Code.mmToBeAnnounced}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -171,9 +174,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode CrossCurrencyIRS = new MMCode() {
+	public static final MMCode mmCrossCurrencyIRS = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CrossCurrencyIRS";
 			definition = "Cross currency agreement between two parties (known as counterparties) where one stream of future interest payments is exchanged for another based on a specified principal amount";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -204,9 +207,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Commodities = new MMCode() {
+	public static final MMCode mmCommodities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Commodities";
 			definition = "Any good exchanged during commerce, which includes goods traded on a commodity exchange";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -237,9 +240,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode CreditDefaultSwap = new MMCode() {
+	public static final MMCode mmCreditDefaultSwap = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDefaultSwap";
 			definition = "Swap designed to transfer the credit exposure of fixed income products between parties.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -267,9 +270,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Combination of various types of trades."</li>
 	 * </ul>
 	 */
-	public static final MMCode CrossProduct = new MMCode() {
+	public static final MMCode mmCrossProduct = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CrossProduct";
 			definition = "Combination of various types of trades.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -298,9 +301,9 @@ public class ExposureTypeV2Code {
 	 * "Cash lending/borrowing; letter of credit; signing of master agreement."</li>
 	 * </ul>
 	 */
-	public static final MMCode CreditSupport = new MMCode() {
+	public static final MMCode mmCreditSupport = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditSupport";
 			definition = "Cash lending/borrowing; letter of credit; signing of master agreement.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -328,9 +331,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Opening of a credit line before trading."</li>
 	 * </ul>
 	 */
-	public static final MMCode CreditLine = new MMCode() {
+	public static final MMCode mmCreditLine = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditLine";
 			definition = "Opening of a credit line before trading.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -358,9 +361,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Trading of equity option (also known as stock options)."</li>
 	 * </ul>
 	 */
-	public static final MMCode EquityOption = new MMCode() {
+	public static final MMCode mmEquityOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EquityOption";
 			definition = "Trading of equity option (also known as stock options).";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -391,9 +394,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode EquitySwap = new MMCode() {
+	public static final MMCode mmEquitySwap = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EquitySwap";
 			definition = "Equity swap trades where the return of an equity is exchanged for either a fixed or a floating rate of interest.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -422,9 +425,9 @@ public class ExposureTypeV2Code {
 	 * "Trading of exotic option, for example, a non standard option."</li>
 	 * </ul>
 	 */
-	public static final MMCode ExoticOption = new MMCode() {
+	public static final MMCode mmExoticOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExoticOption";
 			definition = "Trading of exotic option, for example, a non standard option.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -452,9 +455,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Trading of exchanged traded derivatives in general."</li>
 	 * </ul>
 	 */
-	public static final MMCode ExchangeTradedDerivatives = new MMCode() {
+	public static final MMCode mmExchangeTradedDerivatives = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExchangeTradedDerivatives";
 			definition = "Trading of exchanged traded derivatives in general.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -482,9 +485,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Trading of fixed income instruments."</li>
 	 * </ul>
 	 */
-	public static final MMCode FixedIncome = new MMCode() {
+	public static final MMCode mmFixedIncome = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FixedIncome";
 			definition = "Trading of fixed income instruments.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -512,9 +515,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Forward FX trades."</li>
 	 * </ul>
 	 */
-	public static final MMCode ForwardForeignExchange = new MMCode() {
+	public static final MMCode mmForwardForeignExchange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForwardForeignExchange";
 			definition = "Forward FX trades.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -542,9 +545,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "FX trades in general."</li>
 	 * </ul>
 	 */
-	public static final MMCode ForeignExchange = new MMCode() {
+	public static final MMCode mmForeignExchange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForeignExchange";
 			definition = "FX trades in general.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -575,9 +578,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Futures = new MMCode() {
+	public static final MMCode mmFutures = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Futures";
 			definition = "Agreement to buy or sell a specific amount of a commodity or financial instrument at a particular price on a stipulated future date.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -606,9 +609,9 @@ public class ExposureTypeV2Code {
 	 * "In support of settlement via an RTGS or other clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Liquidity = new MMCode() {
+	public static final MMCode mmLiquidity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Liquidity";
 			definition = "In support of settlement via an RTGS or other clearing system.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -640,9 +643,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FXOption = new MMCode() {
+	public static final MMCode mmFXOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FXOption";
 			definition = "A contract that grants the holder the right, but not the obligation, to buy or sell currency at a specified exchange rate during a specified period of time.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -670,9 +673,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "OTC derivatives trading."</li>
 	 * </ul>
 	 */
-	public static final MMCode OTCDerivatives = new MMCode() {
+	public static final MMCode mmOTCDerivatives = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OTCDerivatives";
 			definition = "OTC derivatives trading.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -700,9 +703,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "In support of any type of cash settlement."</li>
 	 * </ul>
 	 */
-	public static final MMCode CashSettlement = new MMCode() {
+	public static final MMCode mmCashSettlement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CashSettlement";
 			definition = "In support of any type of cash settlement.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -730,9 +733,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Relates to repurchase agreement trading."</li>
 	 * </ul>
 	 */
-	public static final MMCode Repo = new MMCode() {
+	public static final MMCode mmRepo = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Repo";
 			definition = "Relates to repurchase agreement trading.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -760,9 +763,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Securities buy sell back."</li>
 	 * </ul>
 	 */
-	public static final MMCode SecuritiesBuySellSellBuyBack = new MMCode() {
+	public static final MMCode mmSecuritiesBuySellSellBuyBack = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesBuySellSellBuyBack";
 			definition = "Securities buy sell back.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -790,9 +793,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Exotic single currency interest rate swap."</li>
 	 * </ul>
 	 */
-	public static final MMCode SingleCurrencyIRSExotic = new MMCode() {
+	public static final MMCode mmSingleCurrencyIRSExotic = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SingleCurrencyIRSExotic";
 			definition = "Exotic single currency interest rate swap.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -820,9 +823,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Single currency interest rate swap."</li>
 	 * </ul>
 	 */
-	public static final MMCode SingleCurrencyIRS = new MMCode() {
+	public static final MMCode mmSingleCurrencyIRS = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SingleCurrencyIRS";
 			definition = "Single currency interest rate swap.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -850,9 +853,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Combination of securities related exposure types."</li>
 	 * </ul>
 	 */
-	public static final MMCode SecuritiesCrossProducts = new MMCode() {
+	public static final MMCode mmSecuritiesCrossProducts = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesCrossProducts";
 			definition = "Combination of securities related exposure types.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -881,9 +884,9 @@ public class ExposureTypeV2Code {
 	 * "Exposure is linked to a securities lending or borrowing activity."</li>
 	 * </ul>
 	 */
-	public static final MMCode SecuritiesLendingAndBorrowing = new MMCode() {
+	public static final MMCode mmSecuritiesLendingAndBorrowing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesLendingAndBorrowing";
 			definition = "Exposure is linked to a securities lending or borrowing activity.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -911,9 +914,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Exposure is linked to a secured loan."</li>
 	 * </ul>
 	 */
-	public static final MMCode SecuredLoan = new MMCode() {
+	public static final MMCode mmSecuredLoan = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuredLoan";
 			definition = "Exposure is linked to a secured loan.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -941,9 +944,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Option on interest rate swap."</li>
 	 * </ul>
 	 */
-	public static final MMCode Swaption = new MMCode() {
+	public static final MMCode mmSwaption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Swaption";
 			definition = "Option on interest rate swap.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -971,9 +974,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "Combination of treasury related exposure types."</li>
 	 * </ul>
 	 */
-	public static final MMCode TreasuryCrossProduct = new MMCode() {
+	public static final MMCode mmTreasuryCrossProduct = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TreasuryCrossProduct";
 			definition = "Combination of treasury related exposure types.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -1004,9 +1007,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode BondForward = new MMCode() {
+	public static final MMCode mmBondForward = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BondForward";
 			definition = "Any securities traded out beyond 3 days which include treasury notes, Japanese Governement Bonds (JGBs) and Gilts.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -1035,9 +1038,9 @@ public class ExposureTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ReverseRepurchaseAgreement = new MMCode() {
+	public static final MMCode mmReverseRepurchaseAgreement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReverseRepurchaseAgreement";
 			definition = "In support of a reverse repurchase agreement transaction.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -1065,9 +1068,9 @@ public class ExposureTypeV2Code {
 	 * definition} = "To be announced (TBA) related collateral."</li>
 	 * </ul>
 	 */
-	public static final MMCode ToBeAnnounced = new MMCode() {
+	public static final MMCode mmToBeAnnounced = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ToBeAnnounced";
 			definition = "To be announced (TBA) related collateral.";
 			owner_lazy = () -> ExposureTypeV2Code.mmObject();
@@ -1078,22 +1081,17 @@ public class ExposureTypeV2Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CCIR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExposureTypeV2Code";
 				definition = "Specifies the underlying business area/type of trade causing the collateral movement.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ExposureTypeV2Code.CrossCurrencyIRS, com.tools20022.repository.codeset.ExposureTypeV2Code.Commodities,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.CreditDefaultSwap, com.tools20022.repository.codeset.ExposureTypeV2Code.CrossProduct, com.tools20022.repository.codeset.ExposureTypeV2Code.CreditSupport,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.CreditLine, com.tools20022.repository.codeset.ExposureTypeV2Code.EquityOption, com.tools20022.repository.codeset.ExposureTypeV2Code.EquitySwap,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.ExoticOption, com.tools20022.repository.codeset.ExposureTypeV2Code.ExchangeTradedDerivatives, com.tools20022.repository.codeset.ExposureTypeV2Code.FixedIncome,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.ForwardForeignExchange, com.tools20022.repository.codeset.ExposureTypeV2Code.ForeignExchange, com.tools20022.repository.codeset.ExposureTypeV2Code.Futures,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.Liquidity, com.tools20022.repository.codeset.ExposureTypeV2Code.FXOption, com.tools20022.repository.codeset.ExposureTypeV2Code.OTCDerivatives,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.CashSettlement, com.tools20022.repository.codeset.ExposureTypeV2Code.Repo, com.tools20022.repository.codeset.ExposureTypeV2Code.SecuritiesBuySellSellBuyBack,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.SingleCurrencyIRSExotic, com.tools20022.repository.codeset.ExposureTypeV2Code.SingleCurrencyIRS,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.SecuritiesCrossProducts, com.tools20022.repository.codeset.ExposureTypeV2Code.SecuritiesLendingAndBorrowing,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.SecuredLoan, com.tools20022.repository.codeset.ExposureTypeV2Code.Swaption, com.tools20022.repository.codeset.ExposureTypeV2Code.TreasuryCrossProduct,
-						com.tools20022.repository.codeset.ExposureTypeV2Code.BondForward, com.tools20022.repository.codeset.ExposureTypeV2Code.ReverseRepurchaseAgreement, com.tools20022.repository.codeset.ExposureTypeV2Code.ToBeAnnounced);
+				code_lazy = () -> Arrays.asList(ExposureTypeV2Code.mmCrossCurrencyIRS, ExposureTypeV2Code.mmCommodities, ExposureTypeV2Code.mmCreditDefaultSwap, ExposureTypeV2Code.mmCrossProduct, ExposureTypeV2Code.mmCreditSupport,
+						ExposureTypeV2Code.mmCreditLine, ExposureTypeV2Code.mmEquityOption, ExposureTypeV2Code.mmEquitySwap, ExposureTypeV2Code.mmExoticOption, ExposureTypeV2Code.mmExchangeTradedDerivatives,
+						ExposureTypeV2Code.mmFixedIncome, ExposureTypeV2Code.mmForwardForeignExchange, ExposureTypeV2Code.mmForeignExchange, ExposureTypeV2Code.mmFutures, ExposureTypeV2Code.mmLiquidity, ExposureTypeV2Code.mmFXOption,
+						ExposureTypeV2Code.mmOTCDerivatives, ExposureTypeV2Code.mmCashSettlement, ExposureTypeV2Code.mmRepo, ExposureTypeV2Code.mmSecuritiesBuySellSellBuyBack, ExposureTypeV2Code.mmSingleCurrencyIRSExotic,
+						ExposureTypeV2Code.mmSingleCurrencyIRS, ExposureTypeV2Code.mmSecuritiesCrossProducts, ExposureTypeV2Code.mmSecuritiesLendingAndBorrowing, ExposureTypeV2Code.mmSecuredLoan, ExposureTypeV2Code.mmSwaption,
+						ExposureTypeV2Code.mmTreasuryCrossProduct, ExposureTypeV2Code.mmBondForward, ExposureTypeV2Code.mmReverseRepurchaseAgreement, ExposureTypeV2Code.mmToBeAnnounced);
 			}
 		});
 		return mmObject_lazy.get();

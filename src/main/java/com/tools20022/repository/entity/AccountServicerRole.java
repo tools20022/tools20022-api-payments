@@ -18,7 +18,10 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AccountPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ParentCashAccount2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,8 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ParentCashAccount2#Servicer
- * ParentCashAccount2.Servicer}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ParentCashAccount2#mmServicer
+ * ParentCashAccount2.mmServicer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -47,8 +50,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,12 +71,17 @@ public class AccountServicerRole extends AccountPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountServicerRole";
 				definition = "Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ParentCashAccount2.Servicer);
+				derivationElement_lazy = () -> Arrays.asList(ParentCashAccount2.mmServicer);
 				superType_lazy = () -> AccountPartyRole.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AccountServicerRole.class;
 			}
 		});
 		return mmObject_lazy.get();

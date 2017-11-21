@@ -17,8 +17,11 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -36,11 +39,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#Account
- * ManagedAccountProduct.Account}</li>
+ * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#mmAccount
+ * ManagedAccountProduct.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#InvestmentAccountContract
- * ManagedAccountProduct.InvestmentAccountContract}</li>
+ * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#mmInvestmentAccountContract
+ * ManagedAccountProduct.mmInvestmentAccountContract}</li>
  * </ul>
  * </li>
  * <li>
@@ -48,18 +51,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#ManagedAccountProduct
- * Account.ManagedAccountProduct}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmManagedAccountProduct
+ * Account.mmManagedAccountProduct}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#ModeledAccount
- * InvestmentAccountContract.ModeledAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmModeledAccount
+ * InvestmentAccountContract.mmModeledAccount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ManagedAccountProduct {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Account account;
 	/**
 	 * Account which is the object of the managed account product.
 	 * <p>
@@ -82,8 +86,8 @@ public class ManagedAccountProduct {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#ManagedAccountProduct
-	 * Account.ManagedAccountProduct}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmManagedAccountProduct
+	 * Account.mmManagedAccountProduct}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -107,20 +111,21 @@ public class ManagedAccountProduct {
 	 * "Account which is the object of the managed account product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ManagedAccountProduct.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account which is the object of the managed account product.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmManagedAccountProduct;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.ManagedAccountProduct;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected InvestmentAccountContract investmentAccountContract;
 	/**
 	 * Contract which manages the investment account that is related to the
 	 * products offered.
@@ -130,8 +135,8 @@ public class ManagedAccountProduct {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#ModeledAccount
-	 * InvestmentAccountContract.ModeledAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmModeledAccount
+	 * InvestmentAccountContract.mmModeledAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -158,32 +163,53 @@ public class ManagedAccountProduct {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ManagedAccountProduct.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountContract";
 			definition = "Contract which manages the investment account that is related to the products offered.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmModeledAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.ModeledAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ManagedAccountProduct";
 				definition = "Product which provides guidance to investors to manage their portfolios.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.ManagedAccountProduct, com.tools20022.repository.entity.InvestmentAccountContract.ModeledAccount);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ManagedAccountProduct.Account, com.tools20022.repository.entity.ManagedAccountProduct.InvestmentAccountContract);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmManagedAccountProduct, com.tools20022.repository.entity.InvestmentAccountContract.mmModeledAccount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ManagedAccountProduct.mmAccount, com.tools20022.repository.entity.ManagedAccountProduct.mmInvestmentAccountContract);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ManagedAccountProduct.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = account;
+	}
+
+	public InvestmentAccountContract getInvestmentAccountContract() {
+		return investmentAccountContract;
+	}
+
+	public void setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
+		this.investmentAccountContract = investmentAccountContract;
 	}
 }

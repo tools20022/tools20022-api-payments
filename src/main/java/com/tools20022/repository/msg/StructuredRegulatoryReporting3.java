@@ -19,14 +19,22 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max10Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Country;
 import com.tools20022.repository.entity.RegulatoryReport;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Information needed due to regulatory and statutory requirements.
@@ -38,23 +46,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#Type
- * StructuredRegulatoryReporting3.Type}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#mmType
+ * StructuredRegulatoryReporting3.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#Date
- * StructuredRegulatoryReporting3.Date}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#mmDate
+ * StructuredRegulatoryReporting3.mmDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#Country
- * StructuredRegulatoryReporting3.Country}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#mmCountry
+ * StructuredRegulatoryReporting3.mmCountry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#Code
- * StructuredRegulatoryReporting3.Code}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#mmCode
+ * StructuredRegulatoryReporting3.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#Amount
- * StructuredRegulatoryReporting3.Amount}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#mmAmount
+ * StructuredRegulatoryReporting3.mmAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#Information
- * StructuredRegulatoryReporting3.Information}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRegulatoryReporting3#mmInformation
+ * StructuredRegulatoryReporting3.mmInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -63,8 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,9 +84,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Information needed due to regulatory and statutory requirements."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "StructuredRegulatoryReporting3", propOrder = {"type", "date", "country", "code", "amount", "information"})
 public class StructuredRegulatoryReporting3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text type;
 	/**
 	 * Specifies the type of the information supplied in the regulatory
 	 * reporting details.
@@ -92,8 +103,8 @@ public class StructuredRegulatoryReporting3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#Type
-	 * RegulatoryReport.Type}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmType
+	 * RegulatoryReport.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -114,20 +125,21 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegulatoryReport.mmType;
 			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.Type;
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of the information supplied in the regulatory reporting details.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ISODate date;
 	/**
 	 * Date related to the specified type of regulatory reporting details.
 	 * <p>
@@ -140,8 +152,8 @@ public class StructuredRegulatoryReporting3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#Date
-	 * RegulatoryReport.Date}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmDate
+	 * RegulatoryReport.mmDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -161,20 +173,21 @@ public class StructuredRegulatoryReporting3 {
 	 * "Date related to the specified type of regulatory reporting details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Date = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegulatoryReport.mmDate;
 			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.Date;
 			isDerived = false;
 			xmlTag = "Dt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Date related to the specified type of regulatory reporting details.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected CountryCode country;
 	/**
 	 * Country related to the specified type of regulatory reporting details.
 	 * <p>
@@ -187,7 +200,8 @@ public class StructuredRegulatoryReporting3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Country#Code Country.Code}</li>
+	 * {@linkplain com.tools20022.repository.entity.Country#mmCode
+	 * Country.mmCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -207,20 +221,21 @@ public class StructuredRegulatoryReporting3 {
 	 * "Country related to the specified type of regulatory reporting details."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Country = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Country.Code;
 			isDerived = false;
 			xmlTag = "Ctry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Country";
 			definition = "Country related to the specified type of regulatory reporting details.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 	};
+	protected Max10Text code;
 	/**
 	 * Specifies the nature, purpose, and reason for the transaction to be
 	 * reported for regulatory and statutory requirements in a coded form.
@@ -234,8 +249,8 @@ public class StructuredRegulatoryReporting3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#Code
-	 * RegulatoryReport.Code}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmCode
+	 * RegulatoryReport.mmCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -256,20 +271,21 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegulatoryReport.mmCode;
 			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.Code;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Specifies the nature, purpose, and reason for the transaction to be reported for regulatory and statutory requirements in a coded form.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max10Text.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
 	 * Amount of money to be reported for regulatory and statutory requirements.
 	 * <p>
@@ -283,8 +299,8 @@ public class StructuredRegulatoryReporting3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#Amount
-	 * RegulatoryReport.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmAmount
+	 * RegulatoryReport.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -305,20 +321,21 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegulatoryReport.mmAmount;
 			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.Amount;
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount of money to be reported for regulatory and statutory requirements.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected List<Max35Text> information;
 	/**
 	 * Additional details that cater for specific domestic regulatory
 	 * requirements.
@@ -332,8 +349,8 @@ public class StructuredRegulatoryReporting3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#Description
-	 * RegulatoryReport.Description}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmDescription
+	 * RegulatoryReport.mmDescription}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -354,13 +371,13 @@ public class StructuredRegulatoryReporting3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Information = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmInformation = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegulatoryReport.mmDescription;
 			componentContext_lazy = () -> StructuredRegulatoryReporting3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.Description;
 			isDerived = false;
 			xmlTag = "Inf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Information";
 			definition = "Additional details that cater for specific domestic regulatory requirements.";
 			minOccurs = 0;
@@ -371,16 +388,69 @@ public class StructuredRegulatoryReporting3 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StructuredRegulatoryReporting3.Type, com.tools20022.repository.msg.StructuredRegulatoryReporting3.Date,
-						com.tools20022.repository.msg.StructuredRegulatoryReporting3.Country, com.tools20022.repository.msg.StructuredRegulatoryReporting3.Code, com.tools20022.repository.msg.StructuredRegulatoryReporting3.Amount,
-						com.tools20022.repository.msg.StructuredRegulatoryReporting3.Information);
+				messageElement_lazy = () -> Arrays.asList(StructuredRegulatoryReporting3.mmType, StructuredRegulatoryReporting3.mmDate, StructuredRegulatoryReporting3.mmCountry, StructuredRegulatoryReporting3.mmCode,
+						StructuredRegulatoryReporting3.mmAmount, StructuredRegulatoryReporting3.mmInformation);
 				trace_lazy = () -> RegulatoryReport.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StructuredRegulatoryReporting3";
 				definition = "Information needed due to regulatory and statutory requirements.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp")
+	public Max35Text getType() {
+		return type;
+	}
+
+	public void setType(Max35Text type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Dt")
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
+	}
+
+	@XmlElement(name = "Ctry")
+	public CountryCode getCountry() {
+		return country;
+	}
+
+	public void setCountry(CountryCode country) {
+		this.country = country;
+	}
+
+	@XmlElement(name = "Cd")
+	public Max10Text getCode() {
+		return code;
+	}
+
+	public void setCode(Max10Text code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Amt")
+	public ActiveOrHistoricCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	@XmlElement(name = "Inf")
+	public List<Max35Text> getInformation() {
+		return information;
+	}
+
+	public void setInformation(List<Max35Text> information) {
+		this.information = information;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InstalmentPlanCode#EqualPayment
- * InstalmentPlanCode.EqualPayment}</li>
+ * {@linkplain com.tools20022.repository.codeset.InstalmentPlanCode#mmEqualPayment
+ * InstalmentPlanCode.mmEqualPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InstalmentPlanCode#InequalPayment
- * InstalmentPlanCode.InequalPayment}</li>
+ * {@linkplain com.tools20022.repository.codeset.InstalmentPlanCode#mmInequalPayment
+ * InstalmentPlanCode.mmInequalPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InstalmentPlanCode#DeferredInstalment
- * InstalmentPlanCode.DeferredInstalment}</li>
+ * {@linkplain com.tools20022.repository.codeset.InstalmentPlanCode#mmDeferredInstalment
+ * InstalmentPlanCode.mmDeferredInstalment}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,9 +82,9 @@ public class InstalmentPlanCode {
 	 * "The payment is split in several instalments of equal amounts."</li>
 	 * </ul>
 	 */
-	public static final MMCode EqualPayment = new MMCode() {
+	public static final MMCode mmEqualPayment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EqualPayment";
 			definition = "The payment is split in several instalments of equal amounts.";
 			owner_lazy = () -> InstalmentPlanCode.mmObject();
@@ -111,9 +113,9 @@ public class InstalmentPlanCode {
 	 * "The payment is split in several instalments of different amounts."</li>
 	 * </ul>
 	 */
-	public static final MMCode InequalPayment = new MMCode() {
+	public static final MMCode mmInequalPayment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InequalPayment";
 			definition = "The payment is split in several instalments of different amounts.";
 			owner_lazy = () -> InstalmentPlanCode.mmObject();
@@ -141,9 +143,9 @@ public class InstalmentPlanCode {
 	 * definition} = "The first instalment is deferred."</li>
 	 * </ul>
 	 */
-	public static final MMCode DeferredInstalment = new MMCode() {
+	public static final MMCode mmDeferredInstalment = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DeferredInstalment";
 			definition = "The first instalment is deferred.";
 			owner_lazy = () -> InstalmentPlanCode.mmObject();
@@ -154,12 +156,11 @@ public class InstalmentPlanCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstalmentPlanCode";
 				definition = "Type of instalment plan.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InstalmentPlanCode.EqualPayment, com.tools20022.repository.codeset.InstalmentPlanCode.InequalPayment,
-						com.tools20022.repository.codeset.InstalmentPlanCode.DeferredInstalment);
+				code_lazy = () -> Arrays.asList(InstalmentPlanCode.mmEqualPayment, InstalmentPlanCode.mmInequalPayment, InstalmentPlanCode.mmDeferredInstalment);
 			}
 		});
 		return mmObject_lazy.get();

@@ -19,9 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CashAccountService;
+import com.tools20022.repository.entity.Service;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Taxable service charge amount conversions to host currency.
@@ -33,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServicesAmount3#SourceAmount
- * BillingServicesAmount3.SourceAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServicesAmount3#mmSourceAmount
+ * BillingServicesAmount3.mmSourceAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServicesAmount3#HostAmount
- * BillingServicesAmount3.HostAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServicesAmount3#mmHostAmount
+ * BillingServicesAmount3.mmHostAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Taxable service charge amount conversions to host currency."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingServicesAmount3", propOrder = {"sourceAmount", "hostAmount"})
 public class BillingServicesAmount3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected AmountAndDirection34 sourceAmount;
 	/**
 	 * Represents the total of all taxable services in a specific tax region for
 	 * a specific currency. For example, all taxable services for a tax region
@@ -74,8 +84,8 @@ public class BillingServicesAmount3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Service#Amount
-	 * Service.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Service#mmAmount
+	 * Service.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -96,21 +106,22 @@ public class BillingServicesAmount3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd SourceAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSourceAmount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> BillingServicesAmount3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Service.Amount;
 			isDerived = false;
 			xmlTag = "SrcAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SourceAmount";
 			definition = "Represents the total of all taxable services in a specific tax region for a specific currency.  For example, all taxable services for a tax region in Euro would be totalled here in the Euro currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndDirection34.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	protected AmountAndDirection34 hostAmount;
 	/**
 	 * Represents the total of all taxable services in a specific tax region for
 	 * a specific currency and is a one-to-one relationship with total taxable
@@ -125,8 +136,8 @@ public class BillingServicesAmount3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Service#Amount
-	 * Service.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Service#mmAmount
+	 * Service.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -147,33 +158,51 @@ public class BillingServicesAmount3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd HostAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmHostAmount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Service.mmAmount;
 			componentContext_lazy = () -> BillingServicesAmount3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Service.Amount;
 			isDerived = false;
 			xmlTag = "HstAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HostAmount";
 			definition = "Represents the total of all taxable services in a specific tax region for a specific currency and is a one-to-one relationship with total taxable charge of services, but represented in the host currency after conversion.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndDirection34.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServicesAmount3.SourceAmount, com.tools20022.repository.msg.BillingServicesAmount3.HostAmount);
+				messageElement_lazy = () -> Arrays.asList(BillingServicesAmount3.mmSourceAmount, BillingServicesAmount3.mmHostAmount);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServicesAmount3";
 				definition = "Taxable service charge amount conversions to host currency.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "SrcAmt", required = true)
+	public AmountAndDirection34 getSourceAmount() {
+		return sourceAmount;
+	}
+
+	public void setSourceAmount(com.tools20022.repository.msg.AmountAndDirection34 sourceAmount) {
+		this.sourceAmount = sourceAmount;
+	}
+
+	@XmlElement(name = "HstAmt", required = true)
+	public AmountAndDirection34 getHostAmount() {
+		return hostAmount;
+	}
+
+	public void setHostAmount(com.tools20022.repository.msg.AmountAndDirection34 hostAmount) {
+		this.hostAmount = hostAmount;
 	}
 }

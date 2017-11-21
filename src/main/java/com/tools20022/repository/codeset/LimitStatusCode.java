@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,21 +31,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Enabled
- * LimitStatusCode.Enabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Disabled
- * LimitStatusCode.Disabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Deleted
- * LimitStatusCode.Deleted}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#Requested
- * LimitStatusCode.Requested}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmEnabled
+ * LimitStatusCode.mmEnabled}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmDisabled
+ * LimitStatusCode.mmDisabled}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmDeleted
+ * LimitStatusCode.mmDeleted}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LimitStatusCode#mmRequested
+ * LimitStatusCode.mmRequested}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +87,9 @@ public class LimitStatusCode {
 	 * definition} = "Limit is currently in effect."</li>
 	 * </ul>
 	 */
-	public static final MMCode Enabled = new MMCode() {
+	public static final MMCode mmEnabled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enabled";
 			definition = "Limit is currently in effect.";
 			owner_lazy = () -> LimitStatusCode.mmObject();
@@ -114,9 +117,9 @@ public class LimitStatusCode {
 	 * definition} = "Limit is not currently in effect."</li>
 	 * </ul>
 	 */
-	public static final MMCode Disabled = new MMCode() {
+	public static final MMCode mmDisabled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disabled";
 			definition = "Limit is not currently in effect.";
 			owner_lazy = () -> LimitStatusCode.mmObject();
@@ -144,9 +147,9 @@ public class LimitStatusCode {
 	 * definition} = "Limit has been deleted or suspended."</li>
 	 * </ul>
 	 */
-	public static final MMCode Deleted = new MMCode() {
+	public static final MMCode mmDeleted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deleted";
 			definition = "Limit has been deleted or suspended.";
 			owner_lazy = () -> LimitStatusCode.mmObject();
@@ -174,9 +177,9 @@ public class LimitStatusCode {
 	 * definition} = "Limit has been asked for and is not yet enabled."</li>
 	 * </ul>
 	 */
-	public static final MMCode Requested = new MMCode() {
+	public static final MMCode mmRequested = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Requested";
 			definition = "Limit has been asked for and is not yet enabled.";
 			owner_lazy = () -> LimitStatusCode.mmObject();
@@ -187,13 +190,12 @@ public class LimitStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ENAB");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitStatusCode";
 				definition = "Specifies the current status of a limit.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LimitStatusCode.Enabled, com.tools20022.repository.codeset.LimitStatusCode.Disabled, com.tools20022.repository.codeset.LimitStatusCode.Deleted,
-						com.tools20022.repository.codeset.LimitStatusCode.Requested);
+				code_lazy = () -> Arrays.asList(LimitStatusCode.mmEnabled, LimitStatusCode.mmDisabled, LimitStatusCode.mmDeleted, LimitStatusCode.mmRequested);
 			}
 		});
 		return mmObject_lazy.get();

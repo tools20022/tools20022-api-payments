@@ -19,12 +19,21 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.AccountClosingRequestV02;
 import com.tools20022.repository.choice.AccountIdentification4Choice;
 import com.tools20022.repository.codeset.ActiveCurrencyCode;
 import com.tools20022.repository.datatype.Max70Text;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Account to or from which a cash entry is made.
@@ -36,12 +45,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AccountForAction2#Identification
- * AccountForAction2.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#Name
- * AccountForAction2.Name}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#Currency
- * AccountForAction2.Currency}</li>
+ * {@linkplain com.tools20022.repository.msg.AccountForAction2#mmIdentification
+ * AccountForAction2.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#mmName
+ * AccountForAction2.mmName}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#mmCurrency
+ * AccountForAction2.mmCurrency}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -52,15 +61,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#AccountIdentification
- * AccountClosingRequestV02.AccountIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#mmAccountIdentification
+ * AccountClosingRequestV02.mmAccountIdentification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,9 +84,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * AccountForAction1}</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AccountForAction2", propOrder = {"identification", "name", "currency"})
 public class AccountForAction2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected AccountIdentification4Choice identification;
 	/**
 	 * Unique and unambiguous identification for the account between the account
 	 * owner and the account servicer.
@@ -92,8 +104,8 @@ public class AccountForAction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Account#Identification
-	 * Account.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmIdentification
+	 * Account.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -114,20 +126,21 @@ public class AccountForAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Account.mmIdentification;
 			componentContext_lazy = () -> AccountForAction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Account.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification for the account between the account owner and the account servicer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
 	};
+	protected Max70Text name;
 	/**
 	 * Name of the account. In case of conflict between the Account
 	 * Identification and the Account Name, it is recommended that the Account
@@ -144,8 +157,8 @@ public class AccountForAction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.AccountIdentification#Name
-	 * AccountIdentification.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmName
+	 * AccountIdentification.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -166,20 +179,21 @@ public class AccountForAction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> AccountIdentification.mmName;
 			componentContext_lazy = () -> AccountForAction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.AccountIdentification.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name of the account. In case of conflict between the Account Identification and the Account Name, it is recommended that the Account Servicer ask for clarification by means of the Request for Additional Information message.\r\n \r\n";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
+	protected ActiveCurrencyCode currency;
 	/**
 	 * Medium of exchange of value.
 	 * <p>
@@ -193,8 +207,8 @@ public class AccountForAction2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Account#BaseCurrency
-	 * Account.BaseCurrency}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmBaseCurrency
+	 * Account.mmBaseCurrency}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -213,17 +227,17 @@ public class AccountForAction2 {
 	 * definition} = "Medium of exchange of value."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Currency = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
 			componentContext_lazy = () -> AccountForAction2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Account.BaseCurrency;
 			isDerived = false;
 			xmlTag = "Ccy";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Currency";
 			definition = "Medium of exchange of value.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
 	};
@@ -231,16 +245,43 @@ public class AccountForAction2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountForAction2.Identification, com.tools20022.repository.msg.AccountForAction2.Name, com.tools20022.repository.msg.AccountForAction2.Currency);
+				messageElement_lazy = () -> Arrays.asList(AccountForAction2.mmIdentification, AccountForAction2.mmName, AccountForAction2.mmCurrency);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountClosingRequestV02.mmAccountIdentification);
 				trace_lazy = () -> CashAccount.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountClosingRequestV02.AccountIdentification);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountForAction2";
 				definition = "Account to or from which a cash entry is made.";
 				previousVersion_lazy = () -> AccountForAction1.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public AccountIdentification4Choice getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(AccountIdentification4Choice identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Nm")
+	public Max70Text getName() {
+		return name;
+	}
+
+	public void setName(Max70Text name) {
+		this.name = name;
+	}
+
+	@XmlElement(name = "Ccy", required = true)
+	public ActiveCurrencyCode getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(ActiveCurrencyCode currency) {
+		this.currency = currency;
 	}
 }

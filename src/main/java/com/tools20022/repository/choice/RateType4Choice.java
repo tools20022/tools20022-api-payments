@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.InterestCalculation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the rate as a percentage or a text.
@@ -34,10 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.RateType4Choice#Percentage
- * RateType4Choice.Percentage}</li>
- * <li>{@linkplain com.tools20022.repository.choice.RateType4Choice#Other
- * RateType4Choice.Other}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.RateType4Choice#mmPercentage
+ * RateType4Choice.mmPercentage}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.RateType4Choice#mmOther
+ * RateType4Choice.mmOther}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the rate as a percentage or a text."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RateType4Choice", propOrder = {"percentage", "other"})
 public class RateType4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate percentage;
 	/**
 	 * Ratio of the amount of interest paid during a certain period of time
 	 * compared to the principal amount of the interest bearing financial
@@ -76,8 +86,8 @@ public class RateType4Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#Rate
-	 * InterestCalculation.Rate}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmRate
+	 * InterestCalculation.mmRate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -98,20 +108,21 @@ public class RateType4Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Percentage = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPercentage = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> InterestCalculation.mmRate;
 			componentContext_lazy = () -> RateType4Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.InterestCalculation.Rate;
 			isDerived = false;
 			xmlTag = "Pctg";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Percentage";
 			definition = "Ratio of the amount of interest paid during a certain period of time compared to the principal amount of the interest bearing financial instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 	};
+	protected Max35Text other;
 	/**
 	 * Rate type expressed, in an other form.
 	 * <p>
@@ -124,8 +135,8 @@ public class RateType4Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#RateType
-	 * InterestCalculation.RateType}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmRateType
+	 * InterestCalculation.mmRateType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -144,17 +155,17 @@ public class RateType4Choice {
 	 * definition} = "Rate type expressed, in an other form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Other = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOther = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> InterestCalculation.mmRateType;
 			componentContext_lazy = () -> RateType4Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.InterestCalculation.RateType;
 			isDerived = false;
 			xmlTag = "Othr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Rate type expressed, in an other form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -162,14 +173,32 @@ public class RateType4Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.RateType4Choice.Percentage, com.tools20022.repository.choice.RateType4Choice.Other);
+				messageElement_lazy = () -> Arrays.asList(RateType4Choice.mmPercentage, RateType4Choice.mmOther);
 				trace_lazy = () -> InterestCalculation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RateType4Choice";
 				definition = "Specifies the rate as a percentage or a text.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Pctg", required = true)
+	public PercentageRate getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(PercentageRate percentage) {
+		this.percentage = percentage;
+	}
+
+	@XmlElement(name = "Othr", required = true)
+	public Max35Text getOther() {
+		return other;
+	}
+
+	public void setOther(Max35Text other) {
+		this.other = other;
 	}
 }

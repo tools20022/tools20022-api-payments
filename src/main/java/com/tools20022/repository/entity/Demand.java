@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DemandTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,19 +39,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#Undertaking
- * Demand.Undertaking}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#SubmissionDateTime
- * Demand.SubmissionDateTime}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#DemandAmount
- * Demand.DemandAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#Type Demand.Type}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#TotalClaimAmount
- * Demand.TotalClaimAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#Payment
- * Demand.Payment}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Demand#AssociatedDocument
- * Demand.AssociatedDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmUndertaking
+ * Demand.mmUndertaking}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmSubmissionDateTime
+ * Demand.mmSubmissionDateTime}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmDemandAmount
+ * Demand.mmDemandAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmType Demand.mmType}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmTotalClaimAmount
+ * Demand.mmTotalClaimAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmPayment
+ * Demand.mmPayment}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Demand#mmAssociatedDocument
+ * Demand.mmAssociatedDocument}</li>
  * </ul>
  * </li>
  * <li>
@@ -59,19 +60,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#PaymentSourceUndertakingDemand
- * PaymentObligation.PaymentSourceUndertakingDemand}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Undertaking#Demand
- * Undertaking.Demand}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UndertakingDocument#Demand
- * UndertakingDocument.Demand}</li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPaymentSourceUndertakingDemand
+ * PaymentObligation.mmPaymentSourceUndertakingDemand}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Undertaking#mmDemand
+ * Undertaking.mmDemand}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmDemand
+ * UndertakingDocument.mmDemand}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,6 +89,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Demand {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Undertaking undertaking;
 	/**
 	 * Undertaking for which a document signed by the beneficiary demanding
 	 * payment is specified.
@@ -96,8 +99,8 @@ public class Demand {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Undertaking#Demand
-	 * Undertaking.Demand}</li>
+	 * {@linkplain com.tools20022.repository.entity.Undertaking#mmDemand
+	 * Undertaking.mmDemand}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -122,20 +125,21 @@ public class Demand {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Undertaking = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUndertaking = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undertaking";
 			definition = "Undertaking for which a document signed by the beneficiary demanding payment is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.mmDemand;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Undertaking.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Undertaking.Demand;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime submissionDateTime;
 	/**
 	 * Date and time the demand is submitted.
 	 * <p>
@@ -160,18 +164,27 @@ public class Demand {
 	 * definition} = "Date and time the demand is submitted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SubmissionDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSubmissionDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmissionDateTime";
 			definition = "Date and time the demand is submitted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Demand.class.getMethod("getSubmissionDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount demandAmount;
 	/**
 	 * Amount to be paid.
 	 * <p>
@@ -197,18 +210,27 @@ public class Demand {
 	 * definition} = "Amount to be paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DemandAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDemandAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DemandAmount";
 			definition = "Amount to be paid.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Demand.class.getMethod("getDemandAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DemandTypeCode type;
 	/**
 	 * Type of demand, for example, pay or extend.
 	 * <p>
@@ -234,18 +256,27 @@ public class Demand {
 	 * definition} = "Type of demand, for example, pay or extend."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Type of demand, for example, pay or extend.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DemandTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Demand.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount totalClaimAmount;
 	/**
 	 * Amount and currency of the total amount claimed (sum of the demand amount
 	 * plus counterparty commission and charges).
@@ -274,18 +305,27 @@ public class Demand {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TotalClaimAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTotalClaimAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalClaimAmount";
 			definition = "Amount and currency of the total amount claimed (sum of the demand amount plus counterparty commission and charges).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Demand.class.getMethod("getTotalClaimAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PaymentObligation payment;
 	/**
 	 * Payment of the demand.
 	 * <p>
@@ -294,8 +334,8 @@ public class Demand {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#PaymentSourceUndertakingDemand
-	 * PaymentObligation.PaymentSourceUndertakingDemand}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPaymentSourceUndertakingDemand
+	 * PaymentObligation.mmPaymentSourceUndertakingDemand}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -318,20 +358,21 @@ public class Demand {
 	 * definition} = "Payment of the demand."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Payment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Payment";
 			definition = "Payment of the demand.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.PaymentSourceUndertakingDemand;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmPaymentSourceUndertakingDemand;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 		}
 	};
+	protected UndertakingDocument associatedDocument;
 	/**
 	 * Documents which are associated with a demand.
 	 * <p>
@@ -340,8 +381,8 @@ public class Demand {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.UndertakingDocument#Demand
-	 * UndertakingDocument.Demand}</li>
+	 * {@linkplain com.tools20022.repository.entity.UndertakingDocument#mmDemand
+	 * UndertakingDocument.mmDemand}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -364,34 +405,96 @@ public class Demand {
 	 * definition} = "Documents which are associated with a demand."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssociatedDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssociatedDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Demand.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Demand.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssociatedDocument";
 			definition = "Documents which are associated with a demand.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> UndertakingDocument.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.Demand;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmDemand;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.UndertakingDocument.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Demand";
 				definition = "Document signed by the beneficiary demanding payment under a demand guarantee or standby letter of credit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.PaymentSourceUndertakingDemand, com.tools20022.repository.entity.Undertaking.Demand,
-						com.tools20022.repository.entity.UndertakingDocument.Demand);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Demand.Undertaking, com.tools20022.repository.entity.Demand.SubmissionDateTime, com.tools20022.repository.entity.Demand.DemandAmount,
-						com.tools20022.repository.entity.Demand.Type, com.tools20022.repository.entity.Demand.TotalClaimAmount, com.tools20022.repository.entity.Demand.Payment, com.tools20022.repository.entity.Demand.AssociatedDocument);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.mmPaymentSourceUndertakingDemand, com.tools20022.repository.entity.Undertaking.mmDemand,
+						com.tools20022.repository.entity.UndertakingDocument.mmDemand);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Demand.mmUndertaking, com.tools20022.repository.entity.Demand.mmSubmissionDateTime, com.tools20022.repository.entity.Demand.mmDemandAmount,
+						com.tools20022.repository.entity.Demand.mmType, com.tools20022.repository.entity.Demand.mmTotalClaimAmount, com.tools20022.repository.entity.Demand.mmPayment,
+						com.tools20022.repository.entity.Demand.mmAssociatedDocument);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Demand.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Undertaking getUndertaking() {
+		return undertaking;
+	}
+
+	public void setUndertaking(com.tools20022.repository.entity.Undertaking undertaking) {
+		this.undertaking = undertaking;
+	}
+
+	public ISODateTime getSubmissionDateTime() {
+		return submissionDateTime;
+	}
+
+	public void setSubmissionDateTime(ISODateTime submissionDateTime) {
+		this.submissionDateTime = submissionDateTime;
+	}
+
+	public CurrencyAndAmount getDemandAmount() {
+		return demandAmount;
+	}
+
+	public void setDemandAmount(CurrencyAndAmount demandAmount) {
+		this.demandAmount = demandAmount;
+	}
+
+	public DemandTypeCode getType() {
+		return type;
+	}
+
+	public void setType(DemandTypeCode type) {
+		this.type = type;
+	}
+
+	public CurrencyAndAmount getTotalClaimAmount() {
+		return totalClaimAmount;
+	}
+
+	public void setTotalClaimAmount(CurrencyAndAmount totalClaimAmount) {
+		this.totalClaimAmount = totalClaimAmount;
+	}
+
+	public PaymentObligation getPayment() {
+		return payment;
+	}
+
+	public void setPayment(com.tools20022.repository.entity.PaymentObligation payment) {
+		this.payment = payment;
+	}
+
+	public UndertakingDocument getAssociatedDocument() {
+		return associatedDocument;
+	}
+
+	public void setAssociatedDocument(com.tools20022.repository.entity.UndertakingDocument associatedDocument) {
+		this.associatedDocument = associatedDocument;
 	}
 }

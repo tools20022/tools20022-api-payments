@@ -18,6 +18,8 @@
 package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIndicator;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -38,8 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,12 +61,12 @@ public class BatchBookingIndicator {
 	final static public MMIndicator mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIndicator() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BatchBookingIndicator";
 				definition = "Identifies whether the sending party requests a single debit or credit entry per individual transaction or a batch entry for the sum of the amounts of all transactions.";
-				meaningWhenFalse = "Identifies that a single entry for each of the transactions in the batch or message is requested. ";
 				meaningWhenTrue = "Identifies that a batch entry for the sum of the amounts of all transactions in the batch or message is requested.";
+				meaningWhenFalse = "Identifies that a single entry for each of the transactions in the batch or message is requested. ";
 			}
 		});
 		return mmObject_lazy.get();

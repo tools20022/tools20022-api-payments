@@ -19,12 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max6Text;
 import com.tools20022.repository.datatype.Max8Text;
 import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.IdentificationIssuerRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Common identification of a service to be billed.
@@ -36,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceCommonIdentification1#Issuer
- * BillingServiceCommonIdentification1.Issuer}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceCommonIdentification1#mmIssuer
+ * BillingServiceCommonIdentification1.mmIssuer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceCommonIdentification1#Identification
- * BillingServiceCommonIdentification1.Identification}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceCommonIdentification1#mmIdentification
+ * BillingServiceCommonIdentification1.mmIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -49,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Common identification of a service to be billed."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingServiceCommonIdentification1", propOrder = {"issuer", "identification"})
 public class BillingServiceCommonIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max6Text issuer;
 	/**
 	 * Defines the issuer of the common code, such as "AFP".
 	 * <p>
@@ -96,20 +105,21 @@ public class BillingServiceCommonIdentification1 {
 	 * definition} = "Defines the issuer of the common code, such as \"AFP\"."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Issuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceCommonIdentification1.mmObject();
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
+			componentContext_lazy = () -> BillingServiceCommonIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Defines the issuer of the common code, such as \"AFP\".";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max6Text.mmObject();
 		}
 	};
+	protected Max8Text identification;
 	/**
 	 * Standard reference code used to uniquely identify this service across
 	 * financial institutions. This is not the financial institution’s internal
@@ -124,8 +134,8 @@ public class BillingServiceCommonIdentification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -146,17 +156,17 @@ public class BillingServiceCommonIdentification1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> BillingServiceCommonIdentification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Standard reference code used to uniquely identify this service across financial institutions. This is not the financial institution’s internal bank service identification.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max8Text.mmObject();
 		}
 	};
@@ -164,14 +174,32 @@ public class BillingServiceCommonIdentification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServiceCommonIdentification1.Issuer, com.tools20022.repository.msg.BillingServiceCommonIdentification1.Identification);
+				messageElement_lazy = () -> Arrays.asList(BillingServiceCommonIdentification1.mmIssuer, BillingServiceCommonIdentification1.mmIdentification);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServiceCommonIdentification1";
 				definition = "Common identification of a service to be billed.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Issr", required = true)
+	public Max6Text getIssuer() {
+		return issuer;
+	}
+
+	public void setIssuer(Max6Text issuer) {
+		this.issuer = issuer;
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public Max8Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max8Text identification) {
+		this.identification = identification;
 	}
 }

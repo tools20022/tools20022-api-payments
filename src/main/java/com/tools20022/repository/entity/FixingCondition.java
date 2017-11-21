@@ -17,14 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BusinessDayConventionCode;
 import com.tools20022.repository.codeset.DisruptionFallbackCode;
 import com.tools20022.repository.codeset.FinancialCenterCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -42,25 +42,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FixingCondition#FixingDateTime
- * FixingCondition.FixingDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmFixingDateTime
+ * FixingCondition.mmFixingDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FixingCondition#NonDeliverableTrade
- * FixingCondition.NonDeliverableTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.FixingCondition#FixingRate
- * FixingCondition.FixingRate}</li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmNonDeliverableTrade
+ * FixingCondition.mmNonDeliverableTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FixingCondition#SettlementRateOption
- * FixingCondition.SettlementRateOption}</li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmFixingRate
+ * FixingCondition.mmFixingRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FixingCondition#FinancialCenter
- * FixingCondition.FinancialCenter}</li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmSettlementRateOption
+ * FixingCondition.mmSettlementRateOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FixingCondition#DisruptionFallback
- * FixingCondition.DisruptionFallback}</li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmFinancialCenter
+ * FixingCondition.mmFinancialCenter}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FixingCondition#BusinessDayConvention
- * FixingCondition.BusinessDayConvention}</li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmDisruptionFallback
+ * FixingCondition.mmDisruptionFallback}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.FixingCondition#mmBusinessDayConvention
+ * FixingCondition.mmBusinessDayConvention}</li>
  * </ul>
  * </li>
  * <li>
@@ -68,18 +69,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CurrencyExchange#FixingConditions
- * CurrencyExchange.FixingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmFixingConditions
+ * CurrencyExchange.mmFixingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.NonDeliverableTrade#FixingConditions
- * NonDeliverableTrade.FixingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.NonDeliverableTrade#mmFixingConditions
+ * NonDeliverableTrade.mmFixingConditions}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class FixingCondition {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODateTime fixingDateTime;
 	/**
 	 * Date and time at which a rate is observed.
 	 * <p>
@@ -120,18 +122,27 @@ public class FixingCondition {
 	 * definition} = "Date and time at which a rate is observed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FixingDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFixingDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingDateTime";
 			definition = "Date and time at which a rate is observed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FixingCondition.class.getMethod("getFixingDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected NonDeliverableTrade nonDeliverableTrade;
 	/**
 	 * Non Deliverable trade for which fixing conditions are specified.
 	 * <p>
@@ -140,8 +151,8 @@ public class FixingCondition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.NonDeliverableTrade#FixingConditions
-	 * NonDeliverableTrade.FixingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.NonDeliverableTrade#mmFixingConditions
+	 * NonDeliverableTrade.mmFixingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -166,20 +177,21 @@ public class FixingCondition {
 	 * "Non Deliverable trade for which fixing conditions are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NonDeliverableTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNonDeliverableTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonDeliverableTrade";
 			definition = "Non Deliverable trade for which fixing conditions are specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmFixingConditions;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.FixingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyExchange fixingRate;
 	/**
 	 * Rate obtained at fixing time by following the fixing conditions (agreed
 	 * upon by the trading parties).
@@ -189,8 +201,8 @@ public class FixingCondition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#FixingConditions
-	 * CurrencyExchange.FixingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmFixingConditions
+	 * CurrencyExchange.mmFixingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -216,20 +228,21 @@ public class FixingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FixingRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFixingRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingRate";
 			definition = "Rate obtained at fixing time by following the fixing conditions (agreed upon by the trading parties).";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CurrencyExchange.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.FixingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmFixingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 		}
 	};
+	protected Max35Text settlementRateOption;
 	/**
 	 * Source used for determining the fixing rate, as provided by various
 	 * financial publishing organisations.
@@ -258,18 +271,27 @@ public class FixingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SettlementRateOption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSettlementRateOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementRateOption";
 			definition = "Source used for determining the fixing rate, as provided by various financial publishing organisations.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FixingCondition.class.getMethod("getSettlementRateOption", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FinancialCenterCode financialCenter;
 	/**
 	 * Financial place taken into account to adjust the date and time, as
 	 * defined within the business day convention.
@@ -299,18 +321,27 @@ public class FixingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FinancialCenter = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCenter";
 			definition = "Financial place taken into account to adjust the date and time, as defined within the business day convention.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FinancialCenterCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FixingCondition.class.getMethod("getFinancialCenter", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DisruptionFallbackCode disruptionFallback;
 	/**
 	 * Method that gives rise to either an alternative basis for determining the
 	 * settlement rate, or an alternative basis for settling a transaction when
@@ -341,18 +372,27 @@ public class FixingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DisruptionFallback = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDisruptionFallback = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisruptionFallback";
 			definition = "Method that gives rise to either an alternative basis for determining the settlement rate, or an alternative basis for settling a transaction when a disruption event has occurred.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DisruptionFallbackCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FixingCondition.class.getMethod("getDisruptionFallback", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BusinessDayConventionCode businessDayConvention;
 	/**
 	 * Convention used for adjusting a date when it is not a business day.
 	 * <p>
@@ -380,32 +420,101 @@ public class FixingCondition {
 	 * "Convention used for adjusting a date when it is not a business day."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BusinessDayConvention = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FixingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FixingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessDayConvention";
 			definition = "Convention used for adjusting a date when it is not a business day.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BusinessDayConventionCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return FixingCondition.class.getMethod("getBusinessDayConvention", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FixingCondition";
 				definition = "Set of parameters used to calculate a rate for instance the fixing rate to be applied to a non-deliverable agreement.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CurrencyExchange.FixingConditions, com.tools20022.repository.entity.NonDeliverableTrade.FixingConditions);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FixingCondition.FixingDateTime, com.tools20022.repository.entity.FixingCondition.NonDeliverableTrade,
-						com.tools20022.repository.entity.FixingCondition.FixingRate, com.tools20022.repository.entity.FixingCondition.SettlementRateOption, com.tools20022.repository.entity.FixingCondition.FinancialCenter,
-						com.tools20022.repository.entity.FixingCondition.DisruptionFallback, com.tools20022.repository.entity.FixingCondition.BusinessDayConvention);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CurrencyExchange.mmFixingConditions, com.tools20022.repository.entity.NonDeliverableTrade.mmFixingConditions);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FixingCondition.mmFixingDateTime, com.tools20022.repository.entity.FixingCondition.mmNonDeliverableTrade,
+						com.tools20022.repository.entity.FixingCondition.mmFixingRate, com.tools20022.repository.entity.FixingCondition.mmSettlementRateOption, com.tools20022.repository.entity.FixingCondition.mmFinancialCenter,
+						com.tools20022.repository.entity.FixingCondition.mmDisruptionFallback, com.tools20022.repository.entity.FixingCondition.mmBusinessDayConvention);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return FixingCondition.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODateTime getFixingDateTime() {
+		return fixingDateTime;
+	}
+
+	public void setFixingDateTime(ISODateTime fixingDateTime) {
+		this.fixingDateTime = fixingDateTime;
+	}
+
+	public NonDeliverableTrade getNonDeliverableTrade() {
+		return nonDeliverableTrade;
+	}
+
+	public void setNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade nonDeliverableTrade) {
+		this.nonDeliverableTrade = nonDeliverableTrade;
+	}
+
+	public CurrencyExchange getFixingRate() {
+		return fixingRate;
+	}
+
+	public void setFixingRate(com.tools20022.repository.entity.CurrencyExchange fixingRate) {
+		this.fixingRate = fixingRate;
+	}
+
+	public Max35Text getSettlementRateOption() {
+		return settlementRateOption;
+	}
+
+	public void setSettlementRateOption(Max35Text settlementRateOption) {
+		this.settlementRateOption = settlementRateOption;
+	}
+
+	public FinancialCenterCode getFinancialCenter() {
+		return financialCenter;
+	}
+
+	public void setFinancialCenter(FinancialCenterCode financialCenter) {
+		this.financialCenter = financialCenter;
+	}
+
+	public DisruptionFallbackCode getDisruptionFallback() {
+		return disruptionFallback;
+	}
+
+	public void setDisruptionFallback(DisruptionFallbackCode disruptionFallback) {
+		this.disruptionFallback = disruptionFallback;
+	}
+
+	public BusinessDayConventionCode getBusinessDayConvention() {
+		return businessDayConvention;
+	}
+
+	public void setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
+		this.businessDayConvention = businessDayConvention;
 	}
 }

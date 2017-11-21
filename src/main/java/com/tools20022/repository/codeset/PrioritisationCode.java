@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,20 +31,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.PrioritisationCode#None
- * PrioritisationCode.None}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PrioritisationCode#BuySide
- * PrioritisationCode.BuySide}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.PrioritisationCode#mmNone
+ * PrioritisationCode.mmNone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PrioritisationCode#SellSide
- * PrioritisationCode.SellSide}</li>
+ * {@linkplain com.tools20022.repository.codeset.PrioritisationCode#mmBuySide
+ * PrioritisationCode.mmBuySide}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.PrioritisationCode#mmSellSide
+ * PrioritisationCode.mmSellSide}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +87,9 @@ public class PrioritisationCode {
 	 * definition} = "None of the sides should be prioritised."</li>
 	 * </ul>
 	 */
-	public static final MMCode None = new MMCode() {
+	public static final MMCode mmNone = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "None";
 			definition = "None of the sides should be prioritised.";
 			owner_lazy = () -> PrioritisationCode.mmObject();
@@ -114,9 +117,9 @@ public class PrioritisationCode {
 	 * definition} = "Buy side is prioritized."</li>
 	 * </ul>
 	 */
-	public static final MMCode BuySide = new MMCode() {
+	public static final MMCode mmBuySide = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BuySide";
 			definition = "Buy side is prioritized.";
 			owner_lazy = () -> PrioritisationCode.mmObject();
@@ -144,9 +147,9 @@ public class PrioritisationCode {
 	 * definition} = "Sell side is prioritised."</li>
 	 * </ul>
 	 */
-	public static final MMCode SellSide = new MMCode() {
+	public static final MMCode mmSellSide = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SellSide";
 			definition = "Sell side is prioritised.";
 			owner_lazy = () -> PrioritisationCode.mmObject();
@@ -157,12 +160,12 @@ public class PrioritisationCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NONE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PrioritisationCode";
 				definition = "Indicates if one side or the other of a cross order should be prioritized.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PrioritisationCode.None, com.tools20022.repository.codeset.PrioritisationCode.BuySide, com.tools20022.repository.codeset.PrioritisationCode.SellSide);
+				code_lazy = () -> Arrays.asList(PrioritisationCode.mmNone, PrioritisationCode.mmBuySide, PrioritisationCode.mmSellSide);
 			}
 		});
 		return mmObject_lazy.get();

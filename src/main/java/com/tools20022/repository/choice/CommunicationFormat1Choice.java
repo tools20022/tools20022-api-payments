@@ -19,10 +19,16 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalCommunicationFormat1Code;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies a choice of format for statements.
@@ -34,18 +40,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CommunicationFormat1Choice#Code
- * CommunicationFormat1Choice.Code}</li>
+ * {@linkplain com.tools20022.repository.choice.CommunicationFormat1Choice#mmCode
+ * CommunicationFormat1Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.CommunicationFormat1Choice#Proprietary
- * CommunicationFormat1Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.CommunicationFormat1Choice#mmProprietary
+ * CommunicationFormat1Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -56,9 +62,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies a choice of format for statements."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CommunicationFormat1Choice", propOrder = {"code", "proprietary"})
 public class CommunicationFormat1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalCommunicationFormat1Code code;
 	/**
 	 * Unique and unambiguous identification of communication format using a
 	 * code list.
@@ -90,19 +99,20 @@ public class CommunicationFormat1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> CommunicationFormat1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Unique and unambiguous identification of communication format using a code list.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalCommunicationFormat1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Unique and unambiguous identification of communication format using a
 	 * proprietary identification scheme.
@@ -133,16 +143,16 @@ public class CommunicationFormat1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> CommunicationFormat1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Unique and unambiguous identification of communication format using a proprietary identification scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -150,13 +160,31 @@ public class CommunicationFormat1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CommunicationFormat1Choice.Code, com.tools20022.repository.choice.CommunicationFormat1Choice.Proprietary);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(CommunicationFormat1Choice.mmCode, CommunicationFormat1Choice.mmProprietary);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommunicationFormat1Choice";
 				definition = "Specifies a choice of format for statements.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalCommunicationFormat1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalCommunicationFormat1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

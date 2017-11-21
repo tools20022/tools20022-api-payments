@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Notification of the entitlement that one party has in relation with a
@@ -39,20 +40,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#EntitlementFixingDate
- * MeetingEntitlement.EntitlementFixingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmEntitlementFixingDate
+ * MeetingEntitlement.mmEntitlementFixingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#EntitlementRatio
- * MeetingEntitlement.EntitlementRatio}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmEntitlementRatio
+ * MeetingEntitlement.mmEntitlementRatio}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#EligiblePosition
- * MeetingEntitlement.EligiblePosition}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmEligiblePosition
+ * MeetingEntitlement.mmEligiblePosition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#RelatedServicing
- * MeetingEntitlement.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmRelatedServicing
+ * MeetingEntitlement.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#EntitlementCalculationDate
- * MeetingEntitlement.EntitlementCalculationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingEntitlement#mmEntitlementCalculationDate
+ * MeetingEntitlement.mmEntitlementCalculationDate}</li>
  * </ul>
  * </li>
  * <li>
@@ -60,18 +61,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#RelatedMeetingEntitlement
- * SecuritiesBalance.RelatedMeetingEntitlement}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmRelatedMeetingEntitlement
+ * SecuritiesBalance.mmRelatedMeetingEntitlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingEntitlement
- * MeetingServicing.MeetingEntitlement}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingEntitlement
+ * MeetingServicing.mmMeetingEntitlement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,6 +88,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MeetingEntitlement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate entitlementFixingDate;
 	/**
 	 * Date at which the positions are struck to note which parties will receive
 	 * the entitlement, e.g. record date, book close date...
@@ -115,18 +117,27 @@ public class MeetingEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EntitlementFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEntitlementFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> MeetingEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitlementFixingDate";
 			definition = "Date at which the positions are struck to note which parties will receive the entitlement, e.g. record date, book close date...";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return MeetingEntitlement.class.getMethod("getEntitlementFixingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number entitlementRatio;
 	/**
 	 * Number of votes assigned to one security.
 	 * <p>
@@ -152,18 +163,27 @@ public class MeetingEntitlement {
 	 * definition} = "Number of votes assigned to one security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EntitlementRatio = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEntitlementRatio = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> MeetingEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitlementRatio";
 			definition = "Number of votes assigned to one security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return MeetingEntitlement.class.getMethod("getEntitlementRatio", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesBalance> eligiblePosition;
 	/**
 	 * Amount of securities that are eligible for the vote.
 	 * <p>
@@ -172,8 +192,8 @@ public class MeetingEntitlement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#RelatedMeetingEntitlement
-	 * SecuritiesBalance.RelatedMeetingEntitlement}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmRelatedMeetingEntitlement
+	 * SecuritiesBalance.mmRelatedMeetingEntitlement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -197,19 +217,20 @@ public class MeetingEntitlement {
 	 * definition} = "Amount of securities that are eligible for the vote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EligiblePosition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEligiblePosition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EligiblePosition";
 			definition = "Amount of securities that are eligible for the vote.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.RelatedMeetingEntitlement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmRelatedMeetingEntitlement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 		}
 	};
+	protected MeetingServicing relatedServicing;
 	/**
 	 * Services which include the entitlement calculation.
 	 * <p>
@@ -218,8 +239,8 @@ public class MeetingEntitlement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingEntitlement
-	 * MeetingServicing.MeetingEntitlement}</li>
+	 * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingEntitlement
+	 * MeetingServicing.mmMeetingEntitlement}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -243,20 +264,21 @@ public class MeetingEntitlement {
 	 * definition} = "Services which include the entitlement calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Services which include the entitlement calculation.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> MeetingServicing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingServicing.MeetingEntitlement;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmMeetingEntitlement;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 		}
 	};
+	protected ISODate entitlementCalculationDate;
 	/**
 	 * Date at which the positions are calculated.
 	 * <p>
@@ -282,32 +304,85 @@ public class MeetingEntitlement {
 	 * definition} = "Date at which the positions are calculated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EntitlementCalculationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEntitlementCalculationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> MeetingEntitlement.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EntitlementCalculationDate";
 			definition = "Date at which the positions are calculated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return MeetingEntitlement.class.getMethod("getEntitlementCalculationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingEntitlement";
 				definition = "Notification of the entitlement that one party has in relation with a specific meeting.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesBalance.RelatedMeetingEntitlement, com.tools20022.repository.entity.MeetingServicing.MeetingEntitlement);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingEntitlement.EntitlementFixingDate, com.tools20022.repository.entity.MeetingEntitlement.EntitlementRatio,
-						com.tools20022.repository.entity.MeetingEntitlement.EligiblePosition, com.tools20022.repository.entity.MeetingEntitlement.RelatedServicing,
-						com.tools20022.repository.entity.MeetingEntitlement.EntitlementCalculationDate);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesBalance.mmRelatedMeetingEntitlement, com.tools20022.repository.entity.MeetingServicing.mmMeetingEntitlement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingEntitlement.mmEntitlementFixingDate, com.tools20022.repository.entity.MeetingEntitlement.mmEntitlementRatio,
+						com.tools20022.repository.entity.MeetingEntitlement.mmEligiblePosition, com.tools20022.repository.entity.MeetingEntitlement.mmRelatedServicing,
+						com.tools20022.repository.entity.MeetingEntitlement.mmEntitlementCalculationDate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return MeetingEntitlement.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODate getEntitlementFixingDate() {
+		return entitlementFixingDate;
+	}
+
+	public void setEntitlementFixingDate(ISODate entitlementFixingDate) {
+		this.entitlementFixingDate = entitlementFixingDate;
+	}
+
+	public Number getEntitlementRatio() {
+		return entitlementRatio;
+	}
+
+	public void setEntitlementRatio(Number entitlementRatio) {
+		this.entitlementRatio = entitlementRatio;
+	}
+
+	public List<SecuritiesBalance> getEligiblePosition() {
+		return eligiblePosition;
+	}
+
+	public void setEligiblePosition(List<com.tools20022.repository.entity.SecuritiesBalance> eligiblePosition) {
+		this.eligiblePosition = eligiblePosition;
+	}
+
+	public MeetingServicing getRelatedServicing() {
+		return relatedServicing;
+	}
+
+	public void setRelatedServicing(com.tools20022.repository.entity.MeetingServicing relatedServicing) {
+		this.relatedServicing = relatedServicing;
+	}
+
+	public ISODate getEntitlementCalculationDate() {
+		return entitlementCalculationDate;
+	}
+
+	public void setEntitlementCalculationDate(ISODate entitlementCalculationDate) {
+		this.entitlementCalculationDate = entitlementCalculationDate;
 	}
 }

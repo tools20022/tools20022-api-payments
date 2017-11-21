@@ -18,7 +18,11 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.TradePartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.LoanContract1;
+import com.tools20022.repository.msg.TradeContract1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,10 +39,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TradeContract1#Buyer
- * TradeContract1.Buyer}</li>
- * <li>{@linkplain com.tools20022.repository.msg.LoanContract1#Buyer
- * LoanContract1.Buyer}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeContract1#mmBuyer
+ * TradeContract1.mmBuyer}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.LoanContract1#mmBuyer
+ * LoanContract1.mmBuyer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -47,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,12 +70,17 @@ public class BuyerRole extends TradePartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BuyerRole";
 				definition = "Party that buys assets, good or services.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TradeContract1.Buyer, com.tools20022.repository.msg.LoanContract1.Buyer);
+				derivationElement_lazy = () -> Arrays.asList(TradeContract1.mmBuyer, LoanContract1.mmBuyer);
 				superType_lazy = () -> TradePartyRole.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return BuyerRole.class;
 			}
 		});
 		return mmObject_lazy.get();

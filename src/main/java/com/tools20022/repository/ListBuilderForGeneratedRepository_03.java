@@ -25,6 +25,13 @@ class ListBuilderForGeneratedRepository_03 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
+		list.add((T) UndertakingStatusCode.mmObject());
+		list.add((T) TerminationReasonCode.mmObject());
+		list.add((T) ExternalTypeOfPartyCode.mmObject());
+		list.add((T) UndertakingNameCode.mmObject());
+		list.add((T) ExternalUndertakingTypeCode.mmObject());
+		list.add((T) GovernanceIdentificationCode.mmObject());
+		list.add((T) ExternalUnderlyingTradeTransactionTypeCode.mmObject());
 		list.add((T) PresentationMediumCode.mmObject());
 		list.add((T) ExternalModelFormIdentificationCode.mmObject());
 		list.add((T) ISO2ALanguageCode.mmObject());
@@ -226,6 +233,8 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) PartiallySettledStatusReasonCode.mmObject());
 		list.add((T) OrderWaiverReasonCode.mmObject());
 		list.add((T) ERISAEligibilityCode.mmObject());
+		list.add((T) UnicodeChartsCode.mmObject());
+		list.add((T) BusinessMessagePriorityCode.mmObject());
 		list.add((T) AmountTypeCode.mmObject());
 		list.add((T) SettlementAdviceTypeCode.mmObject());
 		list.add((T) ExternalDiscrepancyCode.mmObject());

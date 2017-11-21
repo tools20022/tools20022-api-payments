@@ -19,9 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.PaymentPartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides further details on the parties specific to the individual
@@ -34,30 +42,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#InitiatingParty
- * TransactionParties3.InitiatingParty}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3#Debtor
- * TransactionParties3.Debtor}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmInitiatingParty
+ * TransactionParties3.mmInitiatingParty}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3#mmDebtor
+ * TransactionParties3.mmDebtor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#DebtorAccount
- * TransactionParties3.DebtorAccount}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmDebtorAccount
+ * TransactionParties3.mmDebtorAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#UltimateDebtor
- * TransactionParties3.UltimateDebtor}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3#Creditor
- * TransactionParties3.Creditor}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmUltimateDebtor
+ * TransactionParties3.mmUltimateDebtor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionParties3#mmCreditor
+ * TransactionParties3.mmCreditor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#CreditorAccount
- * TransactionParties3.CreditorAccount}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmCreditorAccount
+ * TransactionParties3.mmCreditorAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#UltimateCreditor
- * TransactionParties3.UltimateCreditor}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmUltimateCreditor
+ * TransactionParties3.mmUltimateCreditor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#TradingParty
- * TransactionParties3.TradingParty}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmTradingParty
+ * TransactionParties3.mmTradingParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionParties3#Proprietary
- * TransactionParties3.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionParties3#mmProprietary
+ * TransactionParties3.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -66,8 +74,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,9 +88,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TransactionParties3", propOrder = {"initiatingParty", "debtor", "debtorAccount", "ultimateDebtor", "creditor", "creditorAccount", "ultimateCreditor", "tradingParty", "proprietary"})
 public class TransactionParties3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PartyIdentification43 initiatingParty;
 	/**
 	 * Party that initiated the payment that is reported in the entry.
 	 * <p>
@@ -94,8 +105,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -115,21 +126,22 @@ public class TransactionParties3 {
 	 * "Party that initiated the payment that is reported in the entry."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd InitiatingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmInitiatingParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "InitgPty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InitiatingParty";
 			definition = "Party that initiated the payment that is reported in the entry.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected PartyIdentification43 debtor;
 	/**
 	 * Party that owes an amount of money to the (ultimate) creditor.
 	 * <p>
@@ -141,8 +153,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -162,21 +174,22 @@ public class TransactionParties3 {
 	 * "Party that owes an amount of money to the (ultimate) creditor."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Debtor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmDebtor = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "Dbtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Debtor";
 			definition = "Party that owes an amount of money to the (ultimate) creditor.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected CashAccount24 debtorAccount;
 	/**
 	 * Unambiguous identification of the account of the debtor.
 	 * <p>
@@ -188,8 +201,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentPartyRole#CashAccount
-	 * PaymentPartyRole.CashAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentPartyRole#mmCashAccount
+	 * PaymentPartyRole.mmCashAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -208,21 +221,22 @@ public class TransactionParties3 {
 	 * definition} = "Unambiguous identification of the account of the debtor."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd DebtorAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmDebtorAccount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.CashAccount;
 			isDerived = false;
 			xmlTag = "DbtrAcct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebtorAccount";
 			definition = "Unambiguous identification of the account of the debtor.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CashAccount24.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	protected PartyIdentification43 ultimateDebtor;
 	/**
 	 * Ultimate party that owes an amount of money to the (ultimate) creditor.
 	 * <p>
@@ -234,8 +248,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -256,21 +270,22 @@ public class TransactionParties3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd UltimateDebtor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmUltimateDebtor = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "UltmtDbtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateDebtor";
 			definition = "Ultimate party that owes an amount of money to the (ultimate) creditor.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected PartyIdentification43 creditor;
 	/**
 	 * Party to which an amount of money is due.
 	 * <p>
@@ -282,8 +297,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -302,21 +317,22 @@ public class TransactionParties3 {
 	 * definition} = "Party to which an amount of money is due."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Creditor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCreditor = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "Cdtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Creditor";
 			definition = "Party to which an amount of money is due.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected CashAccount24 creditorAccount;
 	/**
 	 * Unambiguous identification of the account of the creditor to which a
 	 * credit entry has been posted as a result of the payment transaction.
@@ -329,8 +345,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentPartyRole#CashAccount
-	 * PaymentPartyRole.CashAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentPartyRole#mmCashAccount
+	 * PaymentPartyRole.mmCashAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -351,21 +367,22 @@ public class TransactionParties3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd CreditorAccount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCreditorAccount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentPartyRole.mmCashAccount;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentPartyRole.CashAccount;
 			isDerived = false;
 			xmlTag = "CdtrAcct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditorAccount";
 			definition = "Unambiguous identification of the account of the creditor to which a credit entry has been posted as a result of the payment transaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CashAccount24.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.CashAccount24.mmObject();
 		}
 	};
+	protected PartyIdentification43 ultimateCreditor;
 	/**
 	 * Ultimate party to which an amount of money is due.
 	 * <p>
@@ -377,8 +394,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -397,21 +414,22 @@ public class TransactionParties3 {
 	 * definition} = "Ultimate party to which an amount of money is due."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd UltimateCreditor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmUltimateCreditor = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "UltmtCdtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UltimateCreditor";
 			definition = "Ultimate party to which an amount of money is due.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected PartyIdentification43 tradingParty;
 	/**
 	 * Party that plays an active role in planning and executing the
 	 * transactions that create or liquidate investments of the investors
@@ -429,8 +447,8 @@ public class TransactionParties3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -451,21 +469,22 @@ public class TransactionParties3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd TradingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTradingParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TransactionParties3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "TradgPty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradingParty";
 			definition = "Party that plays an active role in planning and executing the transactions that create or liquidate investments of the investors assets, or that move the investor's assets from one investment to another. A trading party is a trade instructor, an investment decision-maker, a post trade administrator, or a trader. In the context of treasury, it is the party that negotiates and executes the treasury transaction.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.ProprietaryParty3> proprietary;
 	/**
 	 * Proprietary party related to the underlying transaction.
 	 * <p>
@@ -492,34 +511,113 @@ public class TransactionParties3 {
 	 * definition} = "Proprietary party related to the underlying transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Proprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> TransactionParties3.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Proprietary party related to the underlying transaction.";
 			minOccurs = 0;
-			type_lazy = () -> ProprietaryParty3.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ProprietaryParty3.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionParties3.InitiatingParty, com.tools20022.repository.msg.TransactionParties3.Debtor,
-						com.tools20022.repository.msg.TransactionParties3.DebtorAccount, com.tools20022.repository.msg.TransactionParties3.UltimateDebtor, com.tools20022.repository.msg.TransactionParties3.Creditor,
-						com.tools20022.repository.msg.TransactionParties3.CreditorAccount, com.tools20022.repository.msg.TransactionParties3.UltimateCreditor, com.tools20022.repository.msg.TransactionParties3.TradingParty,
-						com.tools20022.repository.msg.TransactionParties3.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(TransactionParties3.mmInitiatingParty, TransactionParties3.mmDebtor, TransactionParties3.mmDebtorAccount, TransactionParties3.mmUltimateDebtor, TransactionParties3.mmCreditor,
+						TransactionParties3.mmCreditorAccount, TransactionParties3.mmUltimateCreditor, TransactionParties3.mmTradingParty, TransactionParties3.mmProprietary);
 				trace_lazy = () -> PaymentPartyRole.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionParties3";
 				definition = "Provides further details on the parties specific to the individual transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "InitgPty")
+	public PartyIdentification43 getInitiatingParty() {
+		return initiatingParty;
+	}
+
+	public void setInitiatingParty(com.tools20022.repository.msg.PartyIdentification43 initiatingParty) {
+		this.initiatingParty = initiatingParty;
+	}
+
+	@XmlElement(name = "Dbtr")
+	public PartyIdentification43 getDebtor() {
+		return debtor;
+	}
+
+	public void setDebtor(com.tools20022.repository.msg.PartyIdentification43 debtor) {
+		this.debtor = debtor;
+	}
+
+	@XmlElement(name = "DbtrAcct")
+	public CashAccount24 getDebtorAccount() {
+		return debtorAccount;
+	}
+
+	public void setDebtorAccount(com.tools20022.repository.msg.CashAccount24 debtorAccount) {
+		this.debtorAccount = debtorAccount;
+	}
+
+	@XmlElement(name = "UltmtDbtr")
+	public PartyIdentification43 getUltimateDebtor() {
+		return ultimateDebtor;
+	}
+
+	public void setUltimateDebtor(com.tools20022.repository.msg.PartyIdentification43 ultimateDebtor) {
+		this.ultimateDebtor = ultimateDebtor;
+	}
+
+	@XmlElement(name = "Cdtr")
+	public PartyIdentification43 getCreditor() {
+		return creditor;
+	}
+
+	public void setCreditor(com.tools20022.repository.msg.PartyIdentification43 creditor) {
+		this.creditor = creditor;
+	}
+
+	@XmlElement(name = "CdtrAcct")
+	public CashAccount24 getCreditorAccount() {
+		return creditorAccount;
+	}
+
+	public void setCreditorAccount(com.tools20022.repository.msg.CashAccount24 creditorAccount) {
+		this.creditorAccount = creditorAccount;
+	}
+
+	@XmlElement(name = "UltmtCdtr")
+	public PartyIdentification43 getUltimateCreditor() {
+		return ultimateCreditor;
+	}
+
+	public void setUltimateCreditor(com.tools20022.repository.msg.PartyIdentification43 ultimateCreditor) {
+		this.ultimateCreditor = ultimateCreditor;
+	}
+
+	@XmlElement(name = "TradgPty")
+	public PartyIdentification43 getTradingParty() {
+		return tradingParty;
+	}
+
+	public void setTradingParty(com.tools20022.repository.msg.PartyIdentification43 tradingParty) {
+		this.tradingParty = tradingParty;
+	}
+
+	@XmlElement(name = "Prtry")
+	public List<ProprietaryParty3> getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(List<com.tools20022.repository.msg.ProprietaryParty3> proprietary) {
+		this.proprietary = proprietary;
 	}
 }

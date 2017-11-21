@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISOTime;
 import com.tools20022.repository.entity.TimePeriod;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Particular time span specified between a start time and an end time. The time
@@ -34,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TimePeriodDetails1#FromTime
- * TimePeriodDetails1.FromTime}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TimePeriodDetails1#ToTime
- * TimePeriodDetails1.ToTime}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TimePeriodDetails1#mmFromTime
+ * TimePeriodDetails1.mmFromTime}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TimePeriodDetails1#mmToTime
+ * TimePeriodDetails1.mmToTime}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -45,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TimePeriodDetails1", propOrder = {"fromTime", "toTime"})
 public class TimePeriodDetails1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISOTime fromTime;
 	/**
 	 * Time at which the time span starts.
 	 * <p>
@@ -74,8 +83,8 @@ public class TimePeriodDetails1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.TimePeriod#FromTime
-	 * TimePeriod.FromTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.TimePeriod#mmFromTime
+	 * TimePeriod.mmFromTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -94,20 +103,21 @@ public class TimePeriodDetails1 {
 	 * definition} = "Time at which the time span starts."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute FromTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmFromTime = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> TimePeriod.mmFromTime;
 			componentContext_lazy = () -> TimePeriodDetails1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.TimePeriod.FromTime;
 			isDerived = false;
 			xmlTag = "FrTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FromTime";
 			definition = "Time at which the time span starts.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISOTime.mmObject();
 		}
 	};
+	protected ISOTime toTime;
 	/**
 	 * Time at which the time span ends.
 	 * <p>
@@ -120,8 +130,8 @@ public class TimePeriodDetails1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.TimePeriod#ToTime
-	 * TimePeriod.ToTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.TimePeriod#mmToTime
+	 * TimePeriod.mmToTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -140,17 +150,17 @@ public class TimePeriodDetails1 {
 	 * definition} = "Time at which the time span ends."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ToTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmToTime = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> TimePeriod.mmToTime;
 			componentContext_lazy = () -> TimePeriodDetails1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.TimePeriod.ToTime;
 			isDerived = false;
 			xmlTag = "ToTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ToTime";
 			definition = "Time at which the time span ends.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISOTime.mmObject();
 		}
 	};
@@ -158,14 +168,32 @@ public class TimePeriodDetails1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TimePeriodDetails1.FromTime, com.tools20022.repository.msg.TimePeriodDetails1.ToTime);
+				messageElement_lazy = () -> Arrays.asList(TimePeriodDetails1.mmFromTime, TimePeriodDetails1.mmToTime);
 				trace_lazy = () -> TimePeriod.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TimePeriodDetails1";
 				definition = "Particular time span specified between a start time and an end time. The time period cannot exceed 24 hours.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "FrTm", required = true)
+	public ISOTime getFromTime() {
+		return fromTime;
+	}
+
+	public void setFromTime(ISOTime fromTime) {
+		this.fromTime = fromTime;
+	}
+
+	@XmlElement(name = "ToTm")
+	public ISOTime getToTime() {
+		return toTime;
+	}
+
+	public void setToTime(ISOTime toTime) {
+		this.toTime = toTime;
 	}
 }

@@ -19,9 +19,15 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.BankTransaction;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to identify the type or operations code of a transaction
@@ -34,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure4#Domain
- * BankTransactionCodeStructure4.Domain}</li>
+ * {@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure4#mmDomain
+ * BankTransactionCodeStructure4.mmDomain}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure4#Proprietary
- * BankTransactionCodeStructure4.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.msg.BankTransactionCodeStructure4#mmProprietary
+ * BankTransactionCodeStructure4.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BankTransactionCodeStructure4", propOrder = {"domain", "proprietary"})
 public class BankTransactionCodeStructure4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected BankTransactionCodeStructure5 domain;
 	/**
 	 * Set of elements used to provide the domain, the family and the sub-family
 	 * of the bank transaction code, in a structured and hierarchical format.
@@ -103,21 +112,22 @@ public class BankTransactionCodeStructure4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Domain = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmDomain = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> BankTransactionCodeStructure4.mmObject();
 			businessComponentTrace_lazy = () -> BankTransaction.mmObject();
+			componentContext_lazy = () -> BankTransactionCodeStructure4.mmObject();
 			isDerived = false;
 			xmlTag = "Domn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Domain";
 			definition = "Set of elements used to provide the domain, the family and the sub-family of the bank transaction code, in a structured and hierarchical format.\n\nUsage: If a specific family or sub-family code cannot be provided, the generic family code defined for the domain or the generic sub-family code defined for the family should be provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> BankTransactionCodeStructure5.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.BankTransactionCodeStructure5.mmObject();
 		}
 	};
+	protected ProprietaryBankTransactionCodeStructure1 proprietary;
 	/**
 	 * Bank transaction code in a proprietary form, as defined by the issuer.
 	 * <p>
@@ -130,8 +140,8 @@ public class BankTransactionCodeStructure4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.BankTransaction#ProprietaryIdentification
-	 * BankTransaction.ProprietaryIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.BankTransaction#mmProprietaryIdentification
+	 * BankTransaction.mmProprietaryIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -151,33 +161,51 @@ public class BankTransactionCodeStructure4 {
 	 * "Bank transaction code in a proprietary form, as defined by the issuer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Proprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmProprietary = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> BankTransaction.mmProprietaryIdentification;
 			componentContext_lazy = () -> BankTransactionCodeStructure4.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.BankTransaction.ProprietaryIdentification;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Bank transaction code in a proprietary form, as defined by the issuer.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ProprietaryBankTransactionCodeStructure1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BankTransactionCodeStructure4.Domain, com.tools20022.repository.msg.BankTransactionCodeStructure4.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(BankTransactionCodeStructure4.mmDomain, BankTransactionCodeStructure4.mmProprietary);
 				trace_lazy = () -> BankTransaction.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BankTransactionCodeStructure4";
 				definition = "Set of elements used to identify the type or operations code of a transaction entry.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Domn")
+	public BankTransactionCodeStructure5 getDomain() {
+		return domain;
+	}
+
+	public void setDomain(com.tools20022.repository.msg.BankTransactionCodeStructure5 domain) {
+		this.domain = domain;
+	}
+
+	@XmlElement(name = "Prtry")
+	public ProprietaryBankTransactionCodeStructure1 getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1 proprietary) {
+		this.proprietary = proprietary;
 	}
 }

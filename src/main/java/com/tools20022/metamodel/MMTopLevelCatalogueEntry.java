@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMBusinessProcessCatalogue;
 import com.tools20022.metamodel.MMRepositoryConcept;
 import java.util.function.Supplier;
@@ -29,6 +31,12 @@ import java.util.function.Supplier;
  * artefact in the Repository
  */
 public interface MMTopLevelCatalogueEntry extends MMRepositoryConcept {
+
+	/**
+	 * the BusinessProcessCatalogue that contains all ISO 20022
+	 * TopLevelCatalogueEntries
+	 */
+	public final static MetamodelAttribute<MMTopLevelCatalogueEntry, MMBusinessProcessCatalogue> businessProcessCatalogueAttribute = newAttribute();
 
 	public static MetamodelType<MMTopLevelCatalogueEntry> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMTopLevelCatalogueEntry.class);

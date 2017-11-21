@@ -18,7 +18,10 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.InvoicePartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.StructuredRemittanceInformation13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -36,8 +39,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#Invoicee
- * StructuredRemittanceInformation13.Invoicee}</li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#mmInvoicee
+ * StructuredRemittanceInformation13.mmInvoicee}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -46,8 +49,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,12 +69,17 @@ public class InvoiceeRole extends InvoicePartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvoiceeRole";
 				definition = "Party identified as the liable party on the face of a commercial invoice.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StructuredRemittanceInformation13.Invoicee);
+				derivationElement_lazy = () -> Arrays.asList(StructuredRemittanceInformation13.mmInvoicee);
 				superType_lazy = () -> InvoicePartyRole.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvoiceeRole.class;
 			}
 		});
 		return mmObject_lazy.get();

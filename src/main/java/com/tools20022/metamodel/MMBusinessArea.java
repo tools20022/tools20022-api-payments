@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +35,14 @@ import java.util.Optional;
  */
 public class MMBusinessArea implements MMTopLevelCatalogueEntry {
 
+	/**
+	 * The value of the BusinessArea code.
+	 */
+	public final static MetamodelAttribute<MMBusinessArea, String> codeAttribute = newAttribute();
+	/**
+	 * The MessageDefinition that belongs to the BusinessArea.
+	 */
+	public final static MetamodelAttribute<MMBusinessArea, List<MMMessageDefinition>> messageDefinitionAttribute = newAttribute();
 	protected String code;
 	protected Supplier<List<MMMessageDefinition>> messageDefinition_lazy;
 	protected Supplier<MMBusinessProcessCatalogue> businessProcessCatalogue_lazy;

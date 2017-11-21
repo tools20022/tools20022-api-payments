@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AssetPartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies roles played by a party that are linked to the handling of
@@ -37,30 +41,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#SecuritiesAccount
- * SecuritiesPartyRole.SecuritiesAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#mmSecuritiesAccount
+ * SecuritiesPartyRole.mmSecuritiesAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#CashAccount
- * SecuritiesPartyRole.CashAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#mmCashAccount
+ * SecuritiesPartyRole.mmCashAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#Security
- * SecuritiesPartyRole.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#mmSecurity
+ * SecuritiesPartyRole.mmSecurity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#PartyRole
- * Security.PartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmPartyRole
+ * Security.mmPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccount#SecuritiesPartyRole
- * CashAccount.SecuritiesPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccount#mmSecuritiesPartyRole
+ * CashAccount.mmSecuritiesPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#SecuritiesPartyRole
- * SecuritiesAccount.SecuritiesPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSecuritiesPartyRole
+ * SecuritiesAccount.mmSecuritiesPartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.AssetPartyRole
+ * AssetPartyRole}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -75,14 +82,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.entity.Pledgee Pledgee}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.AssetPartyRole
- * AssetPartyRole}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,6 +102,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesPartyRole extends AssetPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount;
 	/**
 	 * Unambiguous identification of the securities account used in the context
 	 * of the securities party role (such as investor securities account used
@@ -108,8 +113,8 @@ public class SecuritiesPartyRole extends AssetPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#SecuritiesPartyRole
-	 * SecuritiesAccount.SecuritiesPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSecuritiesPartyRole
+	 * SecuritiesAccount.mmSecuritiesPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -135,19 +140,20 @@ public class SecuritiesPartyRole extends AssetPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Unambiguous identification of the securities account used in the context of the securities party role (such as investor securities account used for a corporate action securities distribution)";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.SecuritiesPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
 	 * Unambiguous identification of the cash account used in the context of the
 	 * securities party role (such as investor cash account used for a corporate
@@ -158,8 +164,8 @@ public class SecuritiesPartyRole extends AssetPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#SecuritiesPartyRole
-	 * CashAccount.SecuritiesPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmSecuritiesPartyRole
+	 * CashAccount.mmSecuritiesPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -185,19 +191,20 @@ public class SecuritiesPartyRole extends AssetPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Unambiguous identification of the cash account used in the context of the securities party role (such as investor cash account used for a corporate action cash distribution)";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmSecuritiesPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.SecuritiesPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Security> security;
 	/**
 	 * Specifies the security for which the party plays a role.
 	 * <p>
@@ -206,8 +213,8 @@ public class SecuritiesPartyRole extends AssetPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#PartyRole
-	 * Security.PartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmPartyRole
+	 * Security.mmPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -230,35 +237,64 @@ public class SecuritiesPartyRole extends AssetPartyRole {
 	 * definition} = "Specifies the security for which the party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Specifies the security for which the party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.PartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesPartyRole";
 				definition = "Specifies roles played by a party that are linked to the handling of securities but not related to a specific process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.PartyRole, com.tools20022.repository.entity.CashAccount.SecuritiesPartyRole,
-						com.tools20022.repository.entity.SecuritiesAccount.SecuritiesPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmPartyRole, com.tools20022.repository.entity.CashAccount.mmSecuritiesPartyRole,
+						com.tools20022.repository.entity.SecuritiesAccount.mmSecuritiesPartyRole);
 				subType_lazy = () -> Arrays.asList(SafekeepingPlace.mmObject(), RegistrarRole.mmObject(), BeneficialOwner.mmObject(), CustodianRole.mmObject(), Pledgee.mmObject());
 				superType_lazy = () -> AssetPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPartyRole.SecuritiesAccount, com.tools20022.repository.entity.SecuritiesPartyRole.CashAccount,
-						com.tools20022.repository.entity.SecuritiesPartyRole.Security);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPartyRole.mmSecuritiesAccount, com.tools20022.repository.entity.SecuritiesPartyRole.mmCashAccount,
+						com.tools20022.repository.entity.SecuritiesPartyRole.mmSecurity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<SecuritiesAccount> getSecuritiesAccount() {
+		return securitiesAccount;
+	}
+
+	public void setSecuritiesAccount(List<com.tools20022.repository.entity.SecuritiesAccount> securitiesAccount) {
+		this.securitiesAccount = securitiesAccount;
+	}
+
+	public List<CashAccount> getCashAccount() {
+		return cashAccount;
+	}
+
+	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = cashAccount;
+	}
+
+	public List<Security> getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(List<com.tools20022.repository.entity.Security> security) {
+		this.security = security;
 	}
 }

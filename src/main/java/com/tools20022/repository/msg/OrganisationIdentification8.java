@@ -20,10 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.*;
 import com.tools20022.repository.datatype.AnyBICIdentifier;
 import com.tools20022.repository.entity.OrganisationIdentification;
+import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Unique and unambiguous way to identify an organisation.
@@ -35,11 +44,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.OrganisationIdentification8#AnyBIC
- * OrganisationIdentification8.AnyBIC}</li>
+ * {@linkplain com.tools20022.repository.msg.OrganisationIdentification8#mmAnyBIC
+ * OrganisationIdentification8.mmAnyBIC}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.OrganisationIdentification8#Other
- * OrganisationIdentification8.Other}</li>
+ * {@linkplain com.tools20022.repository.msg.OrganisationIdentification8#mmOther
+ * OrganisationIdentification8.mmOther}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,80 +60,80 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#From
- * AccountAdditionalInformationRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#mmFrom
+ * AccountAdditionalInformationRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#OrganisationIdentification
- * AccountAdditionalInformationRequestV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#mmOrganisationIdentification
+ * AccountAdditionalInformationRequestV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#From
- * AccountClosingAdditionalInformationRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#mmFrom
+ * AccountClosingAdditionalInformationRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#OrganisationIdentification
- * AccountClosingAdditionalInformationRequestV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#mmOrganisationIdentification
+ * AccountClosingAdditionalInformationRequestV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#From
- * AccountClosingAmendmentRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#mmFrom
+ * AccountClosingAmendmentRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#OrganisationIdentification
- * AccountClosingAmendmentRequestV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#mmOrganisationIdentification
+ * AccountClosingAmendmentRequestV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#From
- * AccountClosingRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#mmFrom
+ * AccountClosingRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02#From
- * AccountExcludedMandateMaintenanceAmendmentRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02#mmFrom
+ * AccountExcludedMandateMaintenanceAmendmentRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02#From
- * AccountExcludedMandateMaintenanceRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02#mmFrom
+ * AccountExcludedMandateMaintenanceRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#From
- * AccountMandateMaintenanceAmendmentRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#mmFrom
+ * AccountMandateMaintenanceAmendmentRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#OrganisationIdentification
- * AccountMandateMaintenanceAmendmentRequestV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#mmOrganisationIdentification
+ * AccountMandateMaintenanceAmendmentRequestV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02#From
- * AccountMandateMaintenanceRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02#mmFrom
+ * AccountMandateMaintenanceRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#From
- * AccountOpeningAdditionalInformationRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmFrom
+ * AccountOpeningAdditionalInformationRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#OrganisationIdentification
- * AccountOpeningAdditionalInformationRequestV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmOrganisationIdentification
+ * AccountOpeningAdditionalInformationRequestV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#From
- * AccountOpeningAmendmentRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#mmFrom
+ * AccountOpeningAmendmentRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#From
- * AccountOpeningRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#mmFrom
+ * AccountOpeningRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#From
- * AccountReportRequestV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#mmFrom
+ * AccountReportRequestV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#OrganisationIdentification
- * AccountReportRequestV02.OrganisationIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.area.acmt.AccountReportV02#From
- * AccountReportV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#mmOrganisationIdentification
+ * AccountReportRequestV02.mmOrganisationIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.area.acmt.AccountReportV02#mmFrom
+ * AccountReportV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#From
- * AccountRequestAcknowledgementV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#mmFrom
+ * AccountRequestAcknowledgementV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#OrganisationIdentification
- * AccountRequestAcknowledgementV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#mmOrganisationIdentification
+ * AccountRequestAcknowledgementV02.mmOrganisationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#From
- * AccountRequestRejectionV02.From}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#mmFrom
+ * AccountRequestRejectionV02.mmFrom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#OrganisationIdentification
- * AccountRequestRejectionV02.OrganisationIdentification}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#mmOrganisationIdentification
+ * AccountRequestRejectionV02.mmOrganisationIdentification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -135,9 +144,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Unique and unambiguous way to identify an organisation."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "OrganisationIdentification8", propOrder = {"anyBIC", "other"})
 public class OrganisationIdentification8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected AnyBICIdentifier anyBIC;
 	/**
 	 * Code allocated to a financial institution or non financial institution by
 	 * the ISO 9362 Registration Authority as described in ISO 9362
@@ -154,8 +166,8 @@ public class OrganisationIdentification8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.OrganisationIdentification#AnyBIC
-	 * OrganisationIdentification.AnyBIC}</li>
+	 * {@linkplain com.tools20022.repository.entity.OrganisationIdentification#mmAnyBIC
+	 * OrganisationIdentification.mmAnyBIC}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -176,20 +188,21 @@ public class OrganisationIdentification8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AnyBIC = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAnyBIC = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> OrganisationIdentification.mmAnyBIC;
 			componentContext_lazy = () -> OrganisationIdentification8.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.AnyBIC;
 			isDerived = false;
 			xmlTag = "AnyBIC";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AnyBIC";
 			definition = "Code allocated to a financial institution or non financial institution by the ISO 9362 Registration Authority as described in ISO 9362 \"Banking - Banking telecommunication messages - Business identifier code (BIC)\".";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> AnyBICIdentifier.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.GenericOrganisationIdentification1> other;
 	/**
 	 * Unique identification of an organisation, as assigned by an institution,
 	 * using an identification scheme.
@@ -203,8 +216,8 @@ public class OrganisationIdentification8 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#OtherIdentification
-	 * PartyIdentificationInformation.OtherIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmOtherIdentification
+	 * PartyIdentificationInformation.mmOtherIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -225,44 +238,57 @@ public class OrganisationIdentification8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Other = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
 			componentContext_lazy = () -> OrganisationIdentification8.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.OtherIdentification;
 			isDerived = false;
 			xmlTag = "Othr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Unique identification of an organisation, as assigned by an institution, using an identification scheme.";
 			minOccurs = 0;
-			type_lazy = () -> GenericOrganisationIdentification1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.GenericOrganisationIdentification1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OrganisationIdentification8.AnyBIC, com.tools20022.repository.msg.OrganisationIdentification8.Other);
+				messageElement_lazy = () -> Arrays.asList(OrganisationIdentification8.mmAnyBIC, OrganisationIdentification8.mmOther);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountAdditionalInformationRequestV02.mmFrom, AccountAdditionalInformationRequestV02.mmOrganisationIdentification, AccountClosingAdditionalInformationRequestV02.mmFrom,
+						AccountClosingAdditionalInformationRequestV02.mmOrganisationIdentification, AccountClosingAmendmentRequestV02.mmFrom, AccountClosingAmendmentRequestV02.mmOrganisationIdentification, AccountClosingRequestV02.mmFrom,
+						AccountExcludedMandateMaintenanceAmendmentRequestV02.mmFrom, AccountExcludedMandateMaintenanceRequestV02.mmFrom, AccountMandateMaintenanceAmendmentRequestV02.mmFrom,
+						AccountMandateMaintenanceAmendmentRequestV02.mmOrganisationIdentification, AccountMandateMaintenanceRequestV02.mmFrom, AccountOpeningAdditionalInformationRequestV02.mmFrom,
+						AccountOpeningAdditionalInformationRequestV02.mmOrganisationIdentification, AccountOpeningAmendmentRequestV02.mmFrom, AccountOpeningRequestV02.mmFrom, AccountReportRequestV02.mmFrom,
+						AccountReportRequestV02.mmOrganisationIdentification, AccountReportV02.mmFrom, AccountRequestAcknowledgementV02.mmFrom, AccountRequestAcknowledgementV02.mmOrganisationIdentification,
+						AccountRequestRejectionV02.mmFrom, AccountRequestRejectionV02.mmOrganisationIdentification);
 				trace_lazy = () -> OrganisationIdentification.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02.OrganisationIdentification, com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02.OrganisationIdentification, com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02.OrganisationIdentification, com.tools20022.repository.area.acmt.AccountClosingRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02.From, com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02.From, com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02.OrganisationIdentification,
-						com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02.From, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.OrganisationIdentification, com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountOpeningRequestV02.From, com.tools20022.repository.area.acmt.AccountReportRequestV02.From,
-						com.tools20022.repository.area.acmt.AccountReportRequestV02.OrganisationIdentification, com.tools20022.repository.area.acmt.AccountReportV02.From,
-						com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02.From, com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02.OrganisationIdentification,
-						com.tools20022.repository.area.acmt.AccountRequestRejectionV02.From, com.tools20022.repository.area.acmt.AccountRequestRejectionV02.OrganisationIdentification);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OrganisationIdentification8";
 				definition = "Unique and unambiguous way to identify an organisation.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "AnyBIC")
+	public AnyBICIdentifier getAnyBIC() {
+		return anyBIC;
+	}
+
+	public void setAnyBIC(AnyBICIdentifier anyBIC) {
+		this.anyBIC = anyBIC;
+	}
+
+	@XmlElement(name = "Othr")
+	public List<GenericOrganisationIdentification1> getOther() {
+		return other;
+	}
+
+	public void setOther(List<com.tools20022.repository.msg.GenericOrganisationIdentification1> other) {
+		this.other = other;
 	}
 }

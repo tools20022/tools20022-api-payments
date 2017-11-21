@@ -20,12 +20,16 @@ package com.tools20022.repository.area.auth;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AuthoritiesLatestVersion;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.msg.SupplementaryData1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * This message is sent by the authorities (police, customs, tax authorities,
@@ -47,21 +51,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#OriginalBusinessQuery
- * InformationRequestStatusChangeNotificationV01.OriginalBusinessQuery}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#mmOriginalBusinessQuery
+ * InformationRequestStatusChangeNotificationV01.mmOriginalBusinessQuery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#ConfidentialityStatus
- * InformationRequestStatusChangeNotificationV01.ConfidentialityStatus}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#mmConfidentialityStatus
+ * InformationRequestStatusChangeNotificationV01.mmConfidentialityStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#SupplementaryData
- * InformationRequestStatusChangeNotificationV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#mmSupplementaryData
+ * InformationRequestStatusChangeNotificationV01.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#identifier
- * InformationRequestStatusChangeNotificationV01.identifier}</li>
+ * messageDefinitionIdentifier} = {@code auth.003.001.01}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,9 +76,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "InformationRequestStatusChangeNotificationV01", propOrder = {"originalBusinessQuery", "confidentialityStatus", "supplementaryData"})
 public class InformationRequestStatusChangeNotificationV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text originalBusinessQuery;
 	/**
 	 * Reference of the information request opening message that this message is
 	 * an update of.
@@ -102,17 +107,26 @@ public class InformationRequestStatusChangeNotificationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock OriginalBusinessQuery = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmOriginalBusinessQuery = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "OrgnlBizQry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalBusinessQuery";
 			definition = "Reference of the information request opening message that this message is an update of.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestStatusChangeNotificationV01.class.getMethod("getOriginalBusinessQuery", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator confidentialityStatus;
 	/**
 	 * Specifies the confidentiality status of the investigation.
 	 * <p>
@@ -137,17 +151,26 @@ public class InformationRequestStatusChangeNotificationV01 {
 	 * "Specifies the confidentiality status of the investigation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock ConfidentialityStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmConfidentialityStatus = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "CnfdtltySts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ConfidentialityStatus";
 			definition = "Specifies the confidentiality status of the investigation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestStatusChangeNotificationV01.class.getMethod("getConfidentialityStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that can not be captured in the structured fields
 	 * and/or any other specific block.
@@ -174,58 +197,84 @@ public class InformationRequestStatusChangeNotificationV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "01"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "auth"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "003"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "auth";
-			messageFunctionality = "003";
-			version = "01";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return InformationRequestStatusChangeNotificationV01.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationRequestStatusChangeNotificationV01";
 				definition = "This message is sent by the authorities (police, customs, tax authorities, enforcement authorities) to a financial institution to inform the financial institution that the confidentiality status of the investigation has changed.";
 				rootElement = "Document";
 				xmlTag = "InfReqStsChngNtfctn";
 				businessArea_lazy = () -> AuthoritiesLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.OriginalBusinessQuery,
-						com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.ConfidentialityStatus, com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.mmOriginalBusinessQuery,
+						com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.mmConfidentialityStatus, com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "auth";
+						messageFunctionality = "003";
+						version = "01";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InformationRequestStatusChangeNotificationV01.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlBizQry", required = true)
+	public Max35Text getOriginalBusinessQuery() {
+		return originalBusinessQuery;
+	}
+
+	public void setOriginalBusinessQuery(Max35Text originalBusinessQuery) {
+		this.originalBusinessQuery = originalBusinessQuery;
+	}
+
+	@XmlElement(name = "CnfdtltySts", required = true)
+	public YesNoIndicator getConfidentialityStatus() {
+		return confidentialityStatus;
+	}
+
+	public void setConfidentialityStatus(YesNoIndicator confidentialityStatus) {
+		this.confidentialityStatus = confidentialityStatus;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:auth.003.01.01")
+	static public class Document {
+		@XmlElement(name = "InfReqStsChngNtfctn", required = true)
+		public InformationRequestStatusChangeNotificationV01 messageBody;
 	}
 }

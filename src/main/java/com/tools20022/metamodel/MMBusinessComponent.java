@@ -18,8 +18,14 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import com.tools20022.core.metamodel.RuntimeInstanceAware;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.BusinessElementsHaveUniqueNames;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,8 +37,41 @@ import java.util.Optional;
  * Representation of a (part of a) key business notion, characterized by
  * specific BusinessElements.
  */
-public class MMBusinessComponent implements MMTopLevelDictionaryEntry, MMBusinessElementType, MMBusinessConcept {
+public class MMBusinessComponent implements RuntimeInstanceAware, MMTopLevelDictionaryEntry, MMBusinessElementType, MMBusinessConcept {
 
+	/**
+	 * The BusinessComponents that specialize this BusinessComponent.
+	 */
+	public final static MetamodelAttribute<MMBusinessComponent, List<MMBusinessComponent>> subTypeAttribute = newAttribute();
+	/**
+	 * The BusinessComponent that is specialized by this BusinessComponent.
+	 */
+	public final static MetamodelAttribute<MMBusinessComponent, Optional<MMBusinessComponent>> superTypeAttribute = newAttribute();
+	/**
+	 * A semantic property of a BusinessComponent.
+	 */
+	public final static MetamodelAttribute<MMBusinessComponent, List<MMBusinessElement>> elementAttribute = newAttribute();
+	/**
+	 * All of the MessageComponentTypes that derive from this BusinessComponent.
+	 */
+	public final static MetamodelAttribute<MMBusinessComponent, List<MMMessageComponentType>> derivationComponentAttribute = newAttribute();
+	/**
+	 * Describes the semantics that determine how the BusinessComponent may
+	 * participate in the BusinessAssociation.
+	 */
+	public final static MetamodelAttribute<MMBusinessComponent, List<MMBusinessAssociationEnd>> associationDomainAttribute = newAttribute();
+	/**
+	 * All of the MessageElements that derive from this BusinessComponent.
+	 */
+	public final static MetamodelAttribute<MMBusinessComponent, List<MMMessageElement>> derivationElementAttribute = newAttribute();
+	/**
+	 * All BusinessElements contained by this BusinessComponents have different
+	 * names element-&gt;forAll(el1,el2 : BusinessElement| el1 &lt;&gt; el2
+	 * implies el1.name &lt;&gt; el2.name)
+	 */
+	public final static MetamodelConstraint<MMBusinessComponent> checkBusinessElementsHaveUniqueNames = newConstraint(b -> {
+		new BusinessElementsHaveUniqueNames().accept(b);
+	});
 	protected Supplier<List<MMBusinessComponent>> subType_lazy;
 	protected Supplier<MMBusinessComponent> superType_lazy;
 	protected Supplier<List<MMBusinessElement>> element_lazy;

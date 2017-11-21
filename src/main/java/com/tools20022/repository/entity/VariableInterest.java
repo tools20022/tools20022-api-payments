@@ -17,16 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.InterestRate2Choice;
 import com.tools20022.repository.codeset.FrequencyCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max16Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.FloatingInterestRate4;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies the estimated interest rate and the parameters used for determining
@@ -42,72 +44,42 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#VariableRateChangeFrequency
- * VariableInterest.VariableRateChangeFrequency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#FixingDate
- * VariableInterest.FixingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmVariableRateChangeFrequency
+ * VariableInterest.mmVariableRateChangeFrequency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#InterestCalculation
- * VariableInterest.InterestCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmFixingDate
+ * VariableInterest.mmFixingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#ReportingDate
- * VariableInterest.ReportingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#ResetDate
- * VariableInterest.ResetDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#Arrears
- * VariableInterest.Arrears}</li>
- * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#Index
- * VariableInterest.Index}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmInterestCalculation
+ * VariableInterest.mmInterestCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#YieldCalculation
- * VariableInterest.YieldCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmReportingDate
+ * VariableInterest.mmReportingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#BenchmarkReference
- * VariableInterest.BenchmarkReference}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmResetDate
+ * VariableInterest.mmResetDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#mmArrears
+ * VariableInterest.mmArrears}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.VariableInterest#mmIndex
+ * VariableInterest.mmIndex}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#EstimatedInterestRate
- * VariableInterest.EstimatedInterestRate}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmYieldCalculation
+ * VariableInterest.mmYieldCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#VariableRateValueDate
- * VariableInterest.VariableRateValueDate}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmBenchmarkReference
+ * VariableInterest.mmBenchmarkReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#LifeCalculation
- * VariableInterest.LifeCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmEstimatedInterestRate
+ * VariableInterest.mmEstimatedInterestRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#DurationCalculation
- * VariableInterest.DurationCalculation}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmVariableRateValueDate
+ * VariableInterest.mmVariableRateValueDate}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmLifeCalculation
+ * VariableInterest.mmLifeCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#RelatedVariableInterest
- * Security.RelatedVariableInterest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InterestCalculation#VariableInterest
- * InterestCalculation.VariableInterest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Index#VariableInterest
- * Index.VariableInterest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.YieldCalculation#VariableInterest
- * YieldCalculation.VariableInterest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DurationCalculation#VariableInterest
- * DurationCalculation.VariableInterest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.LifeCalculation#VariableInterest
- * LifeCalculation.VariableInterest}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.InterestRate2Choice#Floating
- * InterestRate2Choice.Floating}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmDurationCalculation
+ * VariableInterest.mmDurationCalculation}</li>
  * </ul>
  * </li>
  * <li>
@@ -119,10 +91,42 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRelatedVariableInterest
+ * Security.mmRelatedVariableInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmVariableInterest
+ * InterestCalculation.mmVariableInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Index#mmVariableInterest
+ * Index.mmVariableInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.YieldCalculation#mmVariableInterest
+ * YieldCalculation.mmVariableInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmVariableInterest
+ * DurationCalculation.mmVariableInterest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.LifeCalculation#mmVariableInterest
+ * LifeCalculation.mmVariableInterest}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.InterestRate2Choice#mmFloating
+ * InterestRate2Choice.mmFloating}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,6 +142,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class VariableInterest {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected FrequencyCode variableRateChangeFrequency;
 	/**
 	 * Specifies the frequency of change to the variable rate of an interest
 	 * bearing instrument.
@@ -167,18 +172,27 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VariableRateChangeFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVariableRateChangeFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateChangeFrequency";
 			definition = "Specifies the frequency of change to the variable rate of an interest bearing instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getVariableRateChangeFrequency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime fixingDate;
 	/**
 	 * Date/time at which the rate determination is made, also called
 	 * determination date, for instance the date the interest rate of a floating
@@ -208,18 +222,27 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFixingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingDate";
 			definition = "Date/time at which the rate determination is made, also called determination date, for instance the date the interest rate of a floating rate note will be/was calculated, according to the terms of the issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getFixingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.InterestCalculation> interestCalculation;
 	/**
 	 * Interest calculation for which a variable interest is used.
 	 * <p>
@@ -228,8 +251,8 @@ public class VariableInterest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#VariableInterest
-	 * InterestCalculation.VariableInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmVariableInterest
+	 * InterestCalculation.mmVariableInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -254,19 +277,20 @@ public class VariableInterest {
 	 * "Interest calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestCalculation";
 			definition = "Interest calculation for which a variable interest is used.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmVariableInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.VariableInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime reportingDate;
 	/**
 	 * Last date the new interest rate must be reported to the market.
 	 * <p>
@@ -293,18 +317,27 @@ public class VariableInterest {
 	 * "Last date the new interest rate must be reported to the market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReportingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReportingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingDate";
 			definition = "Last date the new interest rate must be reported to the market.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getReportingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime resetDate;
 	/**
 	 * Date/time at which the interest rate of an interest bearing instrument
 	 * will be reset, according to the terms of the issue.
@@ -333,18 +366,27 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResetDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResetDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResetDate";
 			definition = "Date/time at which the interest rate of an interest bearing instrument will be reset, according to the terms of the issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getResetDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max16Text arrears;
 	/**
 	 * Indicates that the rate reset will occur at the end of the payment period
 	 * (True case)
@@ -373,18 +415,27 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Arrears = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmArrears = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Arrears";
 			definition = "Indicates that the rate reset will occur at the end of the payment period (True case)";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getArrears", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Index> index;
 	/**
 	 * Identifies the index used for calculating the interest
 	 * <p>
@@ -393,8 +444,8 @@ public class VariableInterest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Index#VariableInterest
-	 * Index.VariableInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.Index#mmVariableInterest
+	 * Index.mmVariableInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -417,19 +468,20 @@ public class VariableInterest {
 	 * definition} = "Identifies the index used for calculating the interest"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Index = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Index";
 			definition = "Identifies the index used for calculating the interest";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Index.mmVariableInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Index.VariableInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YieldCalculation yieldCalculation;
 	/**
 	 * Yield calculation for which a variable interest is used.
 	 * <p>
@@ -438,8 +490,8 @@ public class VariableInterest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.YieldCalculation#VariableInterest
-	 * YieldCalculation.VariableInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.YieldCalculation#mmVariableInterest
+	 * YieldCalculation.mmVariableInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -463,20 +515,21 @@ public class VariableInterest {
 	 * definition} = "Yield calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd YieldCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldCalculation";
 			definition = "Yield calculation for which a variable interest is used.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmVariableInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.YieldCalculation.VariableInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Security benchmarkReference;
 	/**
 	 * Benchmark rate against which variable rate instruments are measured to
 	 * determine the interest rate, for example, LIBOR.
@@ -486,8 +539,8 @@ public class VariableInterest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#RelatedVariableInterest
-	 * Security.RelatedVariableInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmRelatedVariableInterest
+	 * Security.mmRelatedVariableInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -512,20 +565,21 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BenchmarkReference = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBenchmarkReference = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BenchmarkReference";
 			definition = "Benchmark rate against which variable rate instruments are measured to determine the interest rate, for example, LIBOR.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.RelatedVariableInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRelatedVariableInterest;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
 	};
+	protected PercentageRate estimatedInterestRate;
 	/**
 	 * Estimated per annum ratio of interest paid to the principal amount of the
 	 * financial instrument for a specific period of time.
@@ -555,18 +609,27 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EstimatedInterestRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEstimatedInterestRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstimatedInterestRate";
 			definition = "Estimated per annum ratio of interest paid to the principal amount of the financial instrument for a specific period of time.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getEstimatedInterestRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime variableRateValueDate;
 	/**
 	 * Date/time as of which the variable rate is valid.
 	 * <p>
@@ -592,18 +655,27 @@ public class VariableInterest {
 	 * definition} = "Date/time as of which the variable rate is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VariableRateValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVariableRateValueDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateValueDate";
 			definition = "Date/time as of which the variable rate is valid.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VariableInterest.class.getMethod("getVariableRateValueDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected LifeCalculation lifeCalculation;
 	/**
 	 * Lfe calculation for which a variable interest is used.
 	 * <p>
@@ -612,8 +684,8 @@ public class VariableInterest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.LifeCalculation#VariableInterest
-	 * LifeCalculation.VariableInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.LifeCalculation#mmVariableInterest
+	 * LifeCalculation.mmVariableInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -637,20 +709,21 @@ public class VariableInterest {
 	 * definition} = "Lfe calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd LifeCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLifeCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LifeCalculation";
 			definition = "Lfe calculation for which a variable interest is used.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.LifeCalculation.mmVariableInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.LifeCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.LifeCalculation.VariableInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DurationCalculation durationCalculation;
 	/**
 	 * Duration calculation for which a variable interest is used.
 	 * <p>
@@ -659,8 +732,8 @@ public class VariableInterest {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DurationCalculation#VariableInterest
-	 * DurationCalculation.VariableInterest}</li>
+	 * {@linkplain com.tools20022.repository.entity.DurationCalculation#mmVariableInterest
+	 * DurationCalculation.mmVariableInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -685,40 +758,151 @@ public class VariableInterest {
 	 * "Duration calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DurationCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDurationCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VariableInterest.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DurationCalculation";
 			definition = "Duration calculation for which a variable interest is used.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmVariableInterest;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DurationCalculation.VariableInterest;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VariableInterest";
 				definition = "Specifies the estimated interest rate and the parameters used for determining its value.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.RelatedVariableInterest, com.tools20022.repository.entity.InterestCalculation.VariableInterest,
-						com.tools20022.repository.entity.Index.VariableInterest, com.tools20022.repository.entity.YieldCalculation.VariableInterest, com.tools20022.repository.entity.DurationCalculation.VariableInterest,
-						com.tools20022.repository.entity.LifeCalculation.VariableInterest);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InterestRate2Choice.Floating);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VariableInterest.VariableRateChangeFrequency, com.tools20022.repository.entity.VariableInterest.FixingDate,
-						com.tools20022.repository.entity.VariableInterest.InterestCalculation, com.tools20022.repository.entity.VariableInterest.ReportingDate, com.tools20022.repository.entity.VariableInterest.ResetDate,
-						com.tools20022.repository.entity.VariableInterest.Arrears, com.tools20022.repository.entity.VariableInterest.Index, com.tools20022.repository.entity.VariableInterest.YieldCalculation,
-						com.tools20022.repository.entity.VariableInterest.BenchmarkReference, com.tools20022.repository.entity.VariableInterest.EstimatedInterestRate, com.tools20022.repository.entity.VariableInterest.VariableRateValueDate,
-						com.tools20022.repository.entity.VariableInterest.LifeCalculation, com.tools20022.repository.entity.VariableInterest.DurationCalculation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRelatedVariableInterest, com.tools20022.repository.entity.InterestCalculation.mmVariableInterest,
+						com.tools20022.repository.entity.Index.mmVariableInterest, com.tools20022.repository.entity.YieldCalculation.mmVariableInterest, com.tools20022.repository.entity.DurationCalculation.mmVariableInterest,
+						com.tools20022.repository.entity.LifeCalculation.mmVariableInterest);
+				derivationElement_lazy = () -> Arrays.asList(InterestRate2Choice.mmFloating);
+				element_lazy = () -> Arrays
+						.asList(com.tools20022.repository.entity.VariableInterest.mmVariableRateChangeFrequency, com.tools20022.repository.entity.VariableInterest.mmFixingDate,
+								com.tools20022.repository.entity.VariableInterest.mmInterestCalculation, com.tools20022.repository.entity.VariableInterest.mmReportingDate, com.tools20022.repository.entity.VariableInterest.mmResetDate,
+								com.tools20022.repository.entity.VariableInterest.mmArrears, com.tools20022.repository.entity.VariableInterest.mmIndex, com.tools20022.repository.entity.VariableInterest.mmYieldCalculation,
+								com.tools20022.repository.entity.VariableInterest.mmBenchmarkReference, com.tools20022.repository.entity.VariableInterest.mmEstimatedInterestRate,
+								com.tools20022.repository.entity.VariableInterest.mmVariableRateValueDate, com.tools20022.repository.entity.VariableInterest.mmLifeCalculation,
+								com.tools20022.repository.entity.VariableInterest.mmDurationCalculation);
 				derivationComponent_lazy = () -> Arrays.asList(FloatingInterestRate4.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return VariableInterest.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public FrequencyCode getVariableRateChangeFrequency() {
+		return variableRateChangeFrequency;
+	}
+
+	public void setVariableRateChangeFrequency(FrequencyCode variableRateChangeFrequency) {
+		this.variableRateChangeFrequency = variableRateChangeFrequency;
+	}
+
+	public ISODateTime getFixingDate() {
+		return fixingDate;
+	}
+
+	public void setFixingDate(ISODateTime fixingDate) {
+		this.fixingDate = fixingDate;
+	}
+
+	public List<InterestCalculation> getInterestCalculation() {
+		return interestCalculation;
+	}
+
+	public void setInterestCalculation(List<com.tools20022.repository.entity.InterestCalculation> interestCalculation) {
+		this.interestCalculation = interestCalculation;
+	}
+
+	public ISODateTime getReportingDate() {
+		return reportingDate;
+	}
+
+	public void setReportingDate(ISODateTime reportingDate) {
+		this.reportingDate = reportingDate;
+	}
+
+	public ISODateTime getResetDate() {
+		return resetDate;
+	}
+
+	public void setResetDate(ISODateTime resetDate) {
+		this.resetDate = resetDate;
+	}
+
+	public Max16Text getArrears() {
+		return arrears;
+	}
+
+	public void setArrears(Max16Text arrears) {
+		this.arrears = arrears;
+	}
+
+	public List<Index> getIndex() {
+		return index;
+	}
+
+	public void setIndex(List<com.tools20022.repository.entity.Index> index) {
+		this.index = index;
+	}
+
+	public YieldCalculation getYieldCalculation() {
+		return yieldCalculation;
+	}
+
+	public void setYieldCalculation(com.tools20022.repository.entity.YieldCalculation yieldCalculation) {
+		this.yieldCalculation = yieldCalculation;
+	}
+
+	public Security getBenchmarkReference() {
+		return benchmarkReference;
+	}
+
+	public void setBenchmarkReference(com.tools20022.repository.entity.Security benchmarkReference) {
+		this.benchmarkReference = benchmarkReference;
+	}
+
+	public PercentageRate getEstimatedInterestRate() {
+		return estimatedInterestRate;
+	}
+
+	public void setEstimatedInterestRate(PercentageRate estimatedInterestRate) {
+		this.estimatedInterestRate = estimatedInterestRate;
+	}
+
+	public ISODateTime getVariableRateValueDate() {
+		return variableRateValueDate;
+	}
+
+	public void setVariableRateValueDate(ISODateTime variableRateValueDate) {
+		this.variableRateValueDate = variableRateValueDate;
+	}
+
+	public LifeCalculation getLifeCalculation() {
+		return lifeCalculation;
+	}
+
+	public void setLifeCalculation(com.tools20022.repository.entity.LifeCalculation lifeCalculation) {
+		this.lifeCalculation = lifeCalculation;
+	}
+
+	public DurationCalculation getDurationCalculation() {
+		return durationCalculation;
+	}
+
+	public void setDurationCalculation(com.tools20022.repository.entity.DurationCalculation durationCalculation) {
+		this.durationCalculation = durationCalculation;
 	}
 }

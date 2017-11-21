@@ -17,12 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Group of investment funds under the same fund management company.
@@ -37,26 +38,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundFamily#FundFamilyName
- * InvestmentFundFamily.FundFamilyName}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundFamily#mmFundFamilyName
+ * InvestmentFundFamily.mmFundFamilyName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundFamily#InvestmentFund
- * InvestmentFundFamily.InvestmentFund}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundFamily#mmInvestmentFund
+ * InvestmentFundFamily.mmInvestmentFund}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.InvestmentFund#Family
- * InvestmentFund.Family}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.InvestmentFund#mmFamily
+ * InvestmentFund.mmFamily}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,6 +72,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentFundFamily {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max350Text fundFamilyName;
 	/**
 	 * Name of the investment fund family.
 	 * <p>
@@ -96,18 +98,27 @@ public class InvestmentFundFamily {
 	 * definition} = "Name of the investment fund family."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FundFamilyName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFundFamilyName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundFamily.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundFamilyName";
 			definition = "Name of the investment fund family.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundFamily.class.getMethod("getFundFamilyName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentFund> investmentFund;
 	/**
 	 * Pool of financial instruments managed by a professional asset manager and
 	 * belonging to one or several investment fund families that are part of the
@@ -118,8 +129,8 @@ public class InvestmentFundFamily {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFund#Family
-	 * InvestmentFund.Family}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFund#mmFamily
+	 * InvestmentFund.mmFamily}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -145,31 +156,52 @@ public class InvestmentFundFamily {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundFamily.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundFamily.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFund";
 			definition = "Pool of financial instruments managed by a professional asset manager and belonging to one or several investment fund families that are part of the same investment fund network.";
 			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmFamily;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.Family;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundFamily";
 				definition = "Group of investment funds under the same fund management company.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.Family);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundFamily.FundFamilyName, com.tools20022.repository.entity.InvestmentFundFamily.InvestmentFund);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.mmFamily);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundFamily.mmFundFamilyName, com.tools20022.repository.entity.InvestmentFundFamily.mmInvestmentFund);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentFundFamily.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max350Text getFundFamilyName() {
+		return fundFamilyName;
+	}
+
+	public void setFundFamilyName(Max350Text fundFamilyName) {
+		this.fundFamilyName = fundFamilyName;
+	}
+
+	public List<InvestmentFund> getInvestmentFund() {
+		return investmentFund;
+	}
+
+	public void setInvestmentFund(List<com.tools20022.repository.entity.InvestmentFund> investmentFund) {
+		this.investmentFund = investmentFund;
 	}
 }

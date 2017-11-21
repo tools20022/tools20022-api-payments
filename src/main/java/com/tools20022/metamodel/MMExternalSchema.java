@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
-import com.tools20022.metamodel.constraints.DeriveMMExternalSchema_isTechnical;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import com.tools20022.metamodel.derived.DeriveMMExternalSchema_isTechnical;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +35,16 @@ import java.util.Optional;
  */
 public class MMExternalSchema implements MMMessageComponentType {
 
+	/**
+	 * Identifies the description of the content model of an ExternalSchema,
+	 * through (a set of) URI.
+	 */
+	public final static MetamodelAttribute<MMExternalSchema, List<String>> namespaceListAttribute = newAttribute();
+	/**
+	 * Specifies whether it is required for the content model of the
+	 * ExternalSchema to be validated.
+	 */
+	public final static MetamodelAttribute<MMExternalSchema, MMProcessContent> processContentAttribute = newAttribute();
 	protected List<String> namespaceList;
 	protected MMProcessContent processContent;
 	protected Supplier<List<MMMessageBuildingBlock>> messageBuildingBlock_lazy;

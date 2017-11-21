@@ -19,11 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CreditDebitCode;
 import com.tools20022.repository.datatype.NonNegativeDecimalNumber;
 import com.tools20022.repository.entity.CashEntry;
+import com.tools20022.repository.entity.Entry;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Resulting debit or credit amount of the netted amounts for all debit and
@@ -35,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection35#Amount
- * AmountAndDirection35.Amount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AmountAndDirection35#mmAmount
+ * AmountAndDirection35.mmAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AmountAndDirection35#CreditDebitIndicator
- * AmountAndDirection35.CreditDebitIndicator}</li>
+ * {@linkplain com.tools20022.repository.msg.AmountAndDirection35#mmCreditDebitIndicator
+ * AmountAndDirection35.mmCreditDebitIndicator}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,9 +68,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AmountAndDirection35", propOrder = {"amount", "creditDebitIndicator"})
 public class AmountAndDirection35 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected NonNegativeDecimalNumber amount;
 	/**
 	 * Resulting amount of the netted amounts for all debit and credit entries.
 	 * <p>
@@ -98,20 +108,21 @@ public class AmountAndDirection35 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> AmountAndDirection35.mmObject();
 			businessComponentTrace_lazy = () -> CashEntry.mmObject();
+			componentContext_lazy = () -> AmountAndDirection35.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Resulting amount of the netted amounts for all debit and credit entries.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> NonNegativeDecimalNumber.mmObject();
 		}
 	};
+	protected CreditDebitCode creditDebitIndicator;
 	/**
 	 * Indicates whether the amount is a credit or a debit amount.
 	 * <p>
@@ -125,8 +136,8 @@ public class AmountAndDirection35 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Entry#CreditDebitIndicator
-	 * Entry.CreditDebitIndicator}</li>
+	 * {@linkplain com.tools20022.repository.entity.Entry#mmCreditDebitIndicator
+	 * Entry.mmCreditDebitIndicator}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -146,17 +157,17 @@ public class AmountAndDirection35 {
 	 * "Indicates whether the amount is a credit or a debit amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreditDebitIndicator = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreditDebitIndicator = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Entry.mmCreditDebitIndicator;
 			componentContext_lazy = () -> AmountAndDirection35.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Entry.CreditDebitIndicator;
 			isDerived = false;
 			xmlTag = "CdtDbtInd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Indicates whether the amount is a credit or a debit amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CreditDebitCode.mmObject();
 		}
 	};
@@ -164,14 +175,32 @@ public class AmountAndDirection35 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AmountAndDirection35.Amount, com.tools20022.repository.msg.AmountAndDirection35.CreditDebitIndicator);
+				messageElement_lazy = () -> Arrays.asList(AmountAndDirection35.mmAmount, AmountAndDirection35.mmCreditDebitIndicator);
 				trace_lazy = () -> CashEntry.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountAndDirection35";
 				definition = "Resulting debit or credit amount of the netted amounts for all debit and credit entries.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Amt", required = true)
+	public NonNegativeDecimalNumber getAmount() {
+		return amount;
+	}
+
+	public void setAmount(NonNegativeDecimalNumber amount) {
+		this.amount = amount;
+	}
+
+	@XmlElement(name = "CdtDbtInd", required = true)
+	public CreditDebitCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(CreditDebitCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
 	}
 }

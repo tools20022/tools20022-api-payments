@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CaseForwardingNotificationCode;
 import com.tools20022.repository.entity.InvestigationResolution;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CaseForwardingNotification3;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,25 +39,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Reassignment#Justification
- * Reassignment.Justification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Reassignment#ReassignedCase
- * Reassignment.ReassignedCase}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Reassignment#mmJustification
+ * Reassignment.mmJustification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Reassignment#mmReassignedCase
+ * Reassignment.mmReassignedCase}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InvestigationCase#Reassignment
- * InvestigationCase.Reassignment}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.InvestigationResolution
- * InvestigationResolution}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -67,10 +56,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InvestigationCase#mmReassignment
+ * InvestigationCase.mmReassignment}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.InvestigationResolution
+ * InvestigationResolution}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,6 +88,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Reassignment extends InvestigationResolution {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CaseForwardingNotificationCode justification;
 	/**
 	 * Justification for the forward action.
 	 * <p>
@@ -100,8 +103,8 @@ public class Reassignment extends InvestigationResolution {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CaseForwardingNotification3#Justification
-	 * CaseForwardingNotification3.Justification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CaseForwardingNotification3#mmJustification
+	 * CaseForwardingNotification3.mmJustification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -119,19 +122,28 @@ public class Reassignment extends InvestigationResolution {
 	 * definition} = "Justification for the forward action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Justification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmJustification = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CaseForwardingNotification3.Justification);
-			elementContext_lazy = () -> Reassignment.mmObject();
+			derivation_lazy = () -> Arrays.asList(CaseForwardingNotification3.mmJustification);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reassignment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Justification";
 			definition = "Justification for the forward action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CaseForwardingNotificationCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Reassignment.class.getMethod("getJustification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestigationCase reassignedCase;
 	/**
 	 * Specifies the investigation case that is assigned.
 	 * <p>
@@ -140,8 +152,8 @@ public class Reassignment extends InvestigationResolution {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestigationCase#Reassignment
-	 * InvestigationCase.Reassignment}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestigationCase#mmReassignment
+	 * InvestigationCase.mmReassignment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -164,34 +176,55 @@ public class Reassignment extends InvestigationResolution {
 	 * definition} = "Specifies the investigation case that is assigned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ReassignedCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReassignedCase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Reassignment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reassignment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReassignedCase";
 			definition = "Specifies the investigation case that is assigned.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmReassignment;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestigationCase.Reassignment;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reassignment";
 				definition = "Action that consists in forwarding an investigation case assignment to another party which becomes the new assignee.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestigationCase.Reassignment);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestigationCase.mmReassignment);
 				superType_lazy = () -> InvestigationResolution.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reassignment.Justification, com.tools20022.repository.entity.Reassignment.ReassignedCase);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reassignment.mmJustification, com.tools20022.repository.entity.Reassignment.mmReassignedCase);
 				derivationComponent_lazy = () -> Arrays.asList(CaseForwardingNotification3.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Reassignment.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CaseForwardingNotificationCode getJustification() {
+		return justification;
+	}
+
+	public void setJustification(CaseForwardingNotificationCode justification) {
+		this.justification = justification;
+	}
+
+	public InvestigationCase getReassignedCase() {
+		return reassignedCase;
+	}
+
+	public void setReassignedCase(com.tools20022.repository.entity.InvestigationCase reassignedCase) {
+		this.reassignedCase = reassignedCase;
 	}
 }

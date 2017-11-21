@@ -22,6 +22,7 @@ import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.msg.*;
+import com.tools20022.repository.other.SignatureEnvelope;
 import com.tools20022.repository.other.SignatureEnvelopeReference;
 import com.tools20022.repository.other.SkipProcessing;
 import com.tools20022.repository.other.SupplementaryDataEnvelope1;
@@ -31,6 +32,11 @@ class ListBuilderForGeneratedRepository_02 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
+		list.add((T) Mandate10.mmObject());
+		list.add((T) RequestedModification6.mmObject());
+		list.add((T) UnableToApplyJustification3Choice.mmObject());
+		list.add((T) OriginalPaymentInstruction23.mmObject());
+		list.add((T) OriginalPaymentInstruction21.mmObject());
 		list.add((T) MandateCancellation5.mmObject());
 		list.add((T) MandateAmendment5.mmObject());
 		list.add((T) PaymentInstruction23.mmObject());
@@ -91,6 +97,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) PaymentComplementaryInformation6.mmObject());
 		list.add((T) SkipProcessing.mmObject());
 		list.add((T) SupplementaryDataEnvelope1.mmObject());
+		list.add((T) SignatureEnvelope.mmObject());
 		list.add((T) SignatureEnvelopeReference.mmObject());
 		list.add((T) Max35Text.mmObject());
 		list.add((T) ISODateTime.mmObject());
@@ -524,13 +531,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) Instruction5Code.mmObject());
 		list.add((T) ExternalMandateReason1Code.mmObject());
 		list.add((T) SequenceType2Code.mmObject());
-		list.add((T) UndertakingStatusCode.mmObject());
-		list.add((T) TerminationReasonCode.mmObject());
-		list.add((T) ExternalTypeOfPartyCode.mmObject());
-		list.add((T) UndertakingNameCode.mmObject());
-		list.add((T) ExternalUndertakingTypeCode.mmObject());
-		list.add((T) GovernanceIdentificationCode.mmObject());
-		list.add((T) ExternalUnderlyingTradeTransactionTypeCode.mmObject());
+		list.add((T) ISONormalisedDateTime.mmObject());
 		ListBuilderForGeneratedRepository_03.addElems(list);
 		return list;
 	}

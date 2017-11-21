@@ -19,10 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Price;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to identify a proprietary price.
@@ -33,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryPrice2#Type
- * ProprietaryPrice2.Type}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryPrice2#Price
- * ProprietaryPrice2.Price}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryPrice2#mmType
+ * ProprietaryPrice2.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryPrice2#mmPrice
+ * ProprietaryPrice2.mmPrice}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -44,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -56,9 +63,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Set of elements used to identify a proprietary price."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ProprietaryPrice2", propOrder = {"type", "price"})
 public class ProprietaryPrice2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text type;
 	/**
 	 * Specifies the type of price.
 	 * <p>
@@ -86,19 +96,20 @@ public class ProprietaryPrice2 {
 	 * definition} = "Specifies the type of price."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ProprietaryPrice2.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of price.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount price;
 	/**
 	 * Proprietary price specification related to the underlying transaction.
 	 * <p>
@@ -132,17 +143,17 @@ public class ProprietaryPrice2 {
 	 * "Proprietary price specification related to the underlying transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Price = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPrice = new MMMessageAttribute() {
 		{
+			businessComponentTrace_lazy = () -> Price.mmObject();
 			componentContext_lazy = () -> ProprietaryPrice2.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
 			xmlTag = "Pric";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Price";
 			definition = "Proprietary price specification related to the underlying transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
@@ -150,14 +161,32 @@ public class ProprietaryPrice2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryPrice2.Type, com.tools20022.repository.msg.ProprietaryPrice2.Price);
-				trace_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(ProprietaryPrice2.mmType, ProprietaryPrice2.mmPrice);
+				trace_lazy = () -> Price.mmObject();
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProprietaryPrice2";
 				definition = "Set of elements used to identify a proprietary price.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public Max35Text getType() {
+		return type;
+	}
+
+	public void setType(Max35Text type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Pric", required = true)
+	public ActiveOrHistoricCurrencyAndAmount getPrice() {
+		return price;
+	}
+
+	public void setPrice(ActiveOrHistoricCurrencyAndAmount price) {
+		this.price = price;
 	}
 }

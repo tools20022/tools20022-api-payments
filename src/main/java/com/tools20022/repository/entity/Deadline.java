@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,17 +38,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Deadline#RelatedCorporateActionEvent
- * Deadline.RelatedCorporateActionEvent}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Deadline#MarketDeadline
- * Deadline.MarketDeadline}</li>
+ * {@linkplain com.tools20022.repository.entity.Deadline#mmRelatedCorporateActionEvent
+ * Deadline.mmRelatedCorporateActionEvent}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Deadline#mmMarketDeadline
+ * Deadline.mmMarketDeadline}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Deadline#IntermediaryDeadline
- * Deadline.IntermediaryDeadline}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Deadline#STPDeadline
- * Deadline.STPDeadline}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Deadline#RelatedMeeting
- * Deadline.RelatedMeeting}</li>
+ * {@linkplain com.tools20022.repository.entity.Deadline#mmIntermediaryDeadline
+ * Deadline.mmIntermediaryDeadline}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Deadline#mmSTPDeadline
+ * Deadline.mmSTPDeadline}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Deadline#mmRelatedMeeting
+ * Deadline.mmRelatedMeeting}</li>
  * </ul>
  * </li>
  * <li>
@@ -56,17 +56,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Deadline
- * CorporateActionEvent.Deadline}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Meeting#Deadline
- * Meeting.Deadline}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmDeadline
+ * CorporateActionEvent.mmDeadline}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmDeadline
+ * Meeting.mmDeadline}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Deadline {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionEvent relatedCorporateActionEvent;
 	/**
 	 * Related corporate action event.
 	 * <p>
@@ -90,8 +91,8 @@ public class Deadline {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Deadline
-	 * CorporateActionEvent.Deadline}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmDeadline
+	 * CorporateActionEvent.mmDeadline}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -115,20 +116,21 @@ public class Deadline {
 	 * definition} = "Related corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCorporateActionEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Deadline.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateActionEvent";
 			definition = "Related corporate action event.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.Deadline;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmDeadline;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
+	protected ISODateTime marketDeadline;
 	/**
 	 * Date by which the action should have been completed. This deadline is set
 	 * by the issuer.
@@ -156,18 +158,27 @@ public class Deadline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MarketDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMarketDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Deadline.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketDeadline";
 			definition = "Date by which the action should have been completed.  This deadline is set by the issuer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Deadline.class.getMethod("getMarketDeadline", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime intermediaryDeadline;
 	/**
 	 * Date by which the action should have been completed. This deadline is set
 	 * by an intermediary.
@@ -195,18 +206,27 @@ public class Deadline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IntermediaryDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIntermediaryDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Deadline.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntermediaryDeadline";
 			definition = "Date by which the action should have been completed. This deadline is set by an intermediary.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Deadline.class.getMethod("getIntermediaryDeadline", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime sTPDeadline;
 	/**
 	 * Date by which the action should have been completed. This deadline is set
 	 * by the issuer. (STP or Electronic mode)
@@ -234,18 +254,27 @@ public class Deadline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute STPDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSTPDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Deadline.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "STPDeadline";
 			definition = "Date by which the action should have been completed. This deadline is set by the issuer. (STP or Electronic mode)";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Deadline.class.getMethod("getSTPDeadline", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Meeting relatedMeeting;
 	/**
 	 * Meeting for which deadlines are specified.
 	 * <p>
@@ -254,8 +283,8 @@ public class Deadline {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#Deadline
-	 * Meeting.Deadline}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmDeadline
+	 * Meeting.mmDeadline}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -277,33 +306,78 @@ public class Deadline {
 	 * definition} = "Meeting for which deadlines are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Deadline.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedMeeting";
 			definition = "Meeting for which deadlines are specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.Deadline;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmDeadline;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Deadline";
 				definition = "Specifies the different deadlines available for the different processes related to corporate action processes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionEvent.Deadline, com.tools20022.repository.entity.Meeting.Deadline);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Deadline.RelatedCorporateActionEvent, com.tools20022.repository.entity.Deadline.MarketDeadline,
-						com.tools20022.repository.entity.Deadline.IntermediaryDeadline, com.tools20022.repository.entity.Deadline.STPDeadline, com.tools20022.repository.entity.Deadline.RelatedMeeting);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionEvent.mmDeadline, com.tools20022.repository.entity.Meeting.mmDeadline);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Deadline.mmRelatedCorporateActionEvent, com.tools20022.repository.entity.Deadline.mmMarketDeadline,
+						com.tools20022.repository.entity.Deadline.mmIntermediaryDeadline, com.tools20022.repository.entity.Deadline.mmSTPDeadline, com.tools20022.repository.entity.Deadline.mmRelatedMeeting);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Deadline.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionEvent getRelatedCorporateActionEvent() {
+		return relatedCorporateActionEvent;
+	}
+
+	public void setRelatedCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateActionEvent) {
+		this.relatedCorporateActionEvent = relatedCorporateActionEvent;
+	}
+
+	public ISODateTime getMarketDeadline() {
+		return marketDeadline;
+	}
+
+	public void setMarketDeadline(ISODateTime marketDeadline) {
+		this.marketDeadline = marketDeadline;
+	}
+
+	public ISODateTime getIntermediaryDeadline() {
+		return intermediaryDeadline;
+	}
+
+	public void setIntermediaryDeadline(ISODateTime intermediaryDeadline) {
+		this.intermediaryDeadline = intermediaryDeadline;
+	}
+
+	public ISODateTime getSTPDeadline() {
+		return sTPDeadline;
+	}
+
+	public void setSTPDeadline(ISODateTime sTPDeadline) {
+		this.sTPDeadline = sTPDeadline;
+	}
+
+	public Meeting getRelatedMeeting() {
+		return relatedMeeting;
+	}
+
+	public void setRelatedMeeting(com.tools20022.repository.entity.Meeting relatedMeeting) {
+		this.relatedMeeting = relatedMeeting;
 	}
 }

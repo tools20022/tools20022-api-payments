@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Status of a securities trade.
@@ -39,50 +40,50 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#MatchingStatus
- * SecuritiesTradeStatus.MatchingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmMatchingStatus
+ * SecuritiesTradeStatus.mmMatchingStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#AffirmationStatus
- * SecuritiesTradeStatus.AffirmationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmAffirmationStatus
+ * SecuritiesTradeStatus.mmAffirmationStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#Reason
- * SecuritiesTradeStatus.Reason}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmReason
+ * SecuritiesTradeStatus.mmReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#SecuritiesTrade
- * SecuritiesTradeStatus.SecuritiesTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmSecuritiesTrade
+ * SecuritiesTradeStatus.mmSecuritiesTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#TransactionStatus
- * SecuritiesTradeStatus.TransactionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmTransactionStatus
+ * SecuritiesTradeStatus.mmTransactionStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#ReplacementProcessingStatus
- * SecuritiesTradeStatus.ReplacementProcessingStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmReplacementProcessingStatus
+ * SecuritiesTradeStatus.mmReplacementProcessingStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#CancellationStatus
- * SecuritiesTradeStatus.CancellationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmCancellationStatus
+ * SecuritiesTradeStatus.mmCancellationStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#CancellationRight
- * SecuritiesTradeStatus.CancellationRight}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmCancellationRight
+ * SecuritiesTradeStatus.mmCancellationRight}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#TransferStatus
- * SecuritiesTradeStatus.TransferStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmTransferStatus
+ * SecuritiesTradeStatus.mmTransferStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#AllegedStatus
- * SecuritiesTradeStatus.AllegedStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmAllegedStatus
+ * SecuritiesTradeStatus.mmAllegedStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#CollateralAllocationStatus
- * SecuritiesTradeStatus.CollateralAllocationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmCollateralAllocationStatus
+ * SecuritiesTradeStatus.mmCollateralAllocationStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#RepoCallRequestStatus
- * SecuritiesTradeStatus.RepoCallRequestStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmRepoCallRequestStatus
+ * SecuritiesTradeStatus.mmRepoCallRequestStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#SettlementConditionModificationStatus
- * SecuritiesTradeStatus.SettlementConditionModificationStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmSettlementConditionModificationStatus
+ * SecuritiesTradeStatus.mmSettlementConditionModificationStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#MatchingProcess
- * SecuritiesTradeStatus.MatchingProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmMatchingProcess
+ * SecuritiesTradeStatus.mmMatchingProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#RelatedSecuritiesTransfer
- * SecuritiesTradeStatus.RelatedSecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatus#mmRelatedSecuritiesTransfer
+ * SecuritiesTradeStatus.mmRelatedSecuritiesTransfer}</li>
  * </ul>
  * </li>
  * <li>
@@ -90,13 +91,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesTradeStatus
- * SecuritiesTrade.SecuritiesTradeStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Status
- * SecuritiesTransfer.Status}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesTradeStatus
+ * SecuritiesTrade.mmSecuritiesTradeStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmStatus
+ * SecuritiesTransfer.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatusReason#SecuritiesTradeStatus
- * SecuritiesTradeStatusReason.SecuritiesTradeStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatusReason#mmSecuritiesTradeStatus
+ * SecuritiesTradeStatusReason.mmSecuritiesTradeStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -104,8 +105,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,6 +120,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesTradeStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected MatchingStatusCode matchingStatus;
 	/**
 	 * Status of matching of a trade.
 	 * <p>
@@ -145,18 +147,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Status of matching of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MatchingStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMatchingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchingStatus";
 			definition = "Status of matching of a trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> MatchingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getMatchingStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AffirmationStatusCode affirmationStatus;
 	/**
 	 * Status of affirmation of a trade.
 	 * <p>
@@ -183,18 +194,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Status of affirmation of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AffirmationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAffirmationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AffirmationStatus";
 			definition = "Status of affirmation of a trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AffirmationStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getAffirmationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesTradeStatusReason> reason;
 	/**
 	 * Specifies the reasons for the status. It is derived from the relationship
 	 * between Status and Status Reason.
@@ -204,8 +224,8 @@ public class SecuritiesTradeStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatusReason#SecuritiesTradeStatus
-	 * SecuritiesTradeStatusReason.SecuritiesTradeStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTradeStatusReason#mmSecuritiesTradeStatus
+	 * SecuritiesTradeStatusReason.mmSecuritiesTradeStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -232,19 +252,20 @@ public class SecuritiesTradeStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Reason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Specifies the reasons for the status. It is derived from the relationship between Status and Status Reason.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesTradeStatusReason.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.SecuritiesTradeStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmSecuritiesTradeStatus;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesTrade> securitiesTrade;
 	/**
 	 * Specifies the trade which has a specific status.
 	 * <p>
@@ -253,8 +274,8 @@ public class SecuritiesTradeStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#SecuritiesTradeStatus
-	 * SecuritiesTrade.SecuritiesTradeStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecuritiesTradeStatus
+	 * SecuritiesTrade.mmSecuritiesTradeStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -278,19 +299,20 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Specifies the trade which has a specific status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesTrade";
 			definition = "Specifies the trade which has a specific status.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.SecuritiesTradeStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected TransactionStatusCode transactionStatus;
 	/**
 	 * Status of an investment fund transaction.
 	 * <p>
@@ -317,18 +339,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Status of an investment fund transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransactionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransactionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionStatus";
 			definition = "Status of an investment fund transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TransactionStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getTransactionStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ReplacementProcessingStatusCode replacementProcessingStatus;
 	/**
 	 * Provides the processing status of the replacement request.
 	 * <p>
@@ -356,18 +387,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * "Provides the processing status of the replacement request."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReplacementProcessingStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReplacementProcessingStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReplacementProcessingStatus";
 			definition = "Provides the processing status of the replacement request.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ReplacementProcessingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getReplacementProcessingStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CancellationStatusCode cancellationStatus;
 	/**
 	 * Status of the cancellation of a trade.
 	 * <p>
@@ -394,18 +434,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Status of the cancellation of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancellationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancellationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationStatus";
 			definition = "Status of the cancellation of a trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CancellationStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getCancellationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CancellationRightCode cancellationRight;
 	/**
 	 * Cancellation right of an investor with respect to an order.
 	 * <p>
@@ -433,18 +482,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * "Cancellation right of an investor with respect to an order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancellationRight = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancellationRight = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationRight";
 			definition = "Cancellation right of an investor with respect to an order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CancellationRightCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getCancellationRight", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TransferStatusCode transferStatus;
 	/**
 	 * Status of the transfer is accepted, sent to next party, matched, already
 	 * executed, or settled.
@@ -474,18 +532,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransferStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransferStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransferStatus";
 			definition = "Status of the transfer is accepted, sent to next party, matched, already executed, or settled.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TransferStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getTransferStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AllegementStatusCode allegedStatus;
 	/**
 	 * Provides the status of an allegement.
 	 * <p>
@@ -512,18 +579,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Provides the status of an allegement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AllegedStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAllegedStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllegedStatus";
 			definition = "Provides the status of an allegement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AllegementStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getAllegedStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AllocationStatusCode collateralAllocationStatus;
 	/**
 	 * Provides the status of allocation of collateral to cover the instruction.
 	 * <p>
@@ -552,18 +628,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CollateralAllocationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCollateralAllocationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAllocationStatus";
 			definition = "Provides the status of allocation of collateral to cover the instruction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AllocationStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getCollateralAllocationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RepoCallRequestStatusCode repoCallRequestStatus;
 	/**
 	 * Specifies additional information about the status of the repurchase
 	 * agreement call processed instruction.
@@ -593,18 +678,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RepoCallRequestStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRepoCallRequestStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepoCallRequestStatus";
 			definition = "Specifies additional information about the status of the repurchase agreement call processed instruction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RepoCallRequestStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getRepoCallRequestStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SettlementConditionModificationStatusStatusCode settlementConditionModificationStatus;
 	/**
 	 * Provides the status of the securities settlement condition modification
 	 * request.
@@ -634,18 +728,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SettlementConditionModificationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSettlementConditionModificationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementConditionModificationStatus";
 			definition = "Provides the status of the securities settlement condition modification request.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SettlementConditionModificationStatusStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getSettlementConditionModificationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected MatchingProcessCode matchingProcess;
 	/**
 	 * Specifies the matching status of a trade.
 	 * <p>
@@ -672,18 +775,27 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Specifies the matching status of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MatchingProcess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMatchingProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MatchingProcess";
 			definition = "Specifies the matching status of a trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> MatchingProcessCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesTradeStatus.class.getMethod("getMatchingProcess", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesTransfer relatedSecuritiesTransfer;
 	/**
 	 * Transfer operation for which a status is provided
 	 * <p>
@@ -692,8 +804,8 @@ public class SecuritiesTradeStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Status
-	 * SecuritiesTransfer.Status}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmStatus
+	 * SecuritiesTransfer.mmStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -717,40 +829,165 @@ public class SecuritiesTradeStatus extends Status {
 	 * definition} = "Transfer operation for which a status is provided"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSecuritiesTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesTradeStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesTradeStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesTransfer";
 			definition = "Transfer operation for which a status is provided";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesTransfer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.Status;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmStatus;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesTradeStatus";
 				definition = "Status of a securities trade.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTrade.SecuritiesTradeStatus, com.tools20022.repository.entity.SecuritiesTransfer.Status,
-						com.tools20022.repository.entity.SecuritiesTradeStatusReason.SecuritiesTradeStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTrade.mmSecuritiesTradeStatus, com.tools20022.repository.entity.SecuritiesTransfer.mmStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatusReason.mmSecuritiesTradeStatus);
 				superType_lazy = () -> Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTradeStatus.MatchingStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.AffirmationStatus,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.Reason, com.tools20022.repository.entity.SecuritiesTradeStatus.SecuritiesTrade, com.tools20022.repository.entity.SecuritiesTradeStatus.TransactionStatus,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.ReplacementProcessingStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.CancellationStatus,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.CancellationRight, com.tools20022.repository.entity.SecuritiesTradeStatus.TransferStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.AllegedStatus,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.CollateralAllocationStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.RepoCallRequestStatus,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.SettlementConditionModificationStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.MatchingProcess,
-						com.tools20022.repository.entity.SecuritiesTradeStatus.RelatedSecuritiesTransfer);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesTradeStatus.mmMatchingStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.mmAffirmationStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmReason, com.tools20022.repository.entity.SecuritiesTradeStatus.mmSecuritiesTrade, com.tools20022.repository.entity.SecuritiesTradeStatus.mmTransactionStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmReplacementProcessingStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.mmCancellationStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmCancellationRight, com.tools20022.repository.entity.SecuritiesTradeStatus.mmTransferStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmAllegedStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.mmCollateralAllocationStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmRepoCallRequestStatus, com.tools20022.repository.entity.SecuritiesTradeStatus.mmSettlementConditionModificationStatus,
+						com.tools20022.repository.entity.SecuritiesTradeStatus.mmMatchingProcess, com.tools20022.repository.entity.SecuritiesTradeStatus.mmRelatedSecuritiesTransfer);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesTradeStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public MatchingStatusCode getMatchingStatus() {
+		return matchingStatus;
+	}
+
+	public void setMatchingStatus(MatchingStatusCode matchingStatus) {
+		this.matchingStatus = matchingStatus;
+	}
+
+	public AffirmationStatusCode getAffirmationStatus() {
+		return affirmationStatus;
+	}
+
+	public void setAffirmationStatus(AffirmationStatusCode affirmationStatus) {
+		this.affirmationStatus = affirmationStatus;
+	}
+
+	public List<SecuritiesTradeStatusReason> getReason() {
+		return reason;
+	}
+
+	public void setReason(List<com.tools20022.repository.entity.SecuritiesTradeStatusReason> reason) {
+		this.reason = reason;
+	}
+
+	public List<SecuritiesTrade> getSecuritiesTrade() {
+		return securitiesTrade;
+	}
+
+	public void setSecuritiesTrade(List<com.tools20022.repository.entity.SecuritiesTrade> securitiesTrade) {
+		this.securitiesTrade = securitiesTrade;
+	}
+
+	public TransactionStatusCode getTransactionStatus() {
+		return transactionStatus;
+	}
+
+	public void setTransactionStatus(TransactionStatusCode transactionStatus) {
+		this.transactionStatus = transactionStatus;
+	}
+
+	public ReplacementProcessingStatusCode getReplacementProcessingStatus() {
+		return replacementProcessingStatus;
+	}
+
+	public void setReplacementProcessingStatus(ReplacementProcessingStatusCode replacementProcessingStatus) {
+		this.replacementProcessingStatus = replacementProcessingStatus;
+	}
+
+	public CancellationStatusCode getCancellationStatus() {
+		return cancellationStatus;
+	}
+
+	public void setCancellationStatus(CancellationStatusCode cancellationStatus) {
+		this.cancellationStatus = cancellationStatus;
+	}
+
+	public CancellationRightCode getCancellationRight() {
+		return cancellationRight;
+	}
+
+	public void setCancellationRight(CancellationRightCode cancellationRight) {
+		this.cancellationRight = cancellationRight;
+	}
+
+	public TransferStatusCode getTransferStatus() {
+		return transferStatus;
+	}
+
+	public void setTransferStatus(TransferStatusCode transferStatus) {
+		this.transferStatus = transferStatus;
+	}
+
+	public AllegementStatusCode getAllegedStatus() {
+		return allegedStatus;
+	}
+
+	public void setAllegedStatus(AllegementStatusCode allegedStatus) {
+		this.allegedStatus = allegedStatus;
+	}
+
+	public AllocationStatusCode getCollateralAllocationStatus() {
+		return collateralAllocationStatus;
+	}
+
+	public void setCollateralAllocationStatus(AllocationStatusCode collateralAllocationStatus) {
+		this.collateralAllocationStatus = collateralAllocationStatus;
+	}
+
+	public RepoCallRequestStatusCode getRepoCallRequestStatus() {
+		return repoCallRequestStatus;
+	}
+
+	public void setRepoCallRequestStatus(RepoCallRequestStatusCode repoCallRequestStatus) {
+		this.repoCallRequestStatus = repoCallRequestStatus;
+	}
+
+	public SettlementConditionModificationStatusStatusCode getSettlementConditionModificationStatus() {
+		return settlementConditionModificationStatus;
+	}
+
+	public void setSettlementConditionModificationStatus(SettlementConditionModificationStatusStatusCode settlementConditionModificationStatus) {
+		this.settlementConditionModificationStatus = settlementConditionModificationStatus;
+	}
+
+	public MatchingProcessCode getMatchingProcess() {
+		return matchingProcess;
+	}
+
+	public void setMatchingProcess(MatchingProcessCode matchingProcess) {
+		this.matchingProcess = matchingProcess;
+	}
+
+	public SecuritiesTransfer getRelatedSecuritiesTransfer() {
+		return relatedSecuritiesTransfer;
+	}
+
+	public void setRelatedSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer relatedSecuritiesTransfer) {
+		this.relatedSecuritiesTransfer = relatedSecuritiesTransfer;
 	}
 }

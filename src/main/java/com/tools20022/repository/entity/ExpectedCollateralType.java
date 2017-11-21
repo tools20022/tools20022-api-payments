@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CollateralTypeCode;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,17 +38,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#VariationMarginRelatedCall
- * ExpectedCollateralType.VariationMarginRelatedCall}</li>
+ * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#mmVariationMarginRelatedCall
+ * ExpectedCollateralType.mmVariationMarginRelatedCall}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#Delivery
- * ExpectedCollateralType.Delivery}</li>
+ * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#mmDelivery
+ * ExpectedCollateralType.mmDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#Return
- * ExpectedCollateralType.Return}</li>
+ * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#mmReturn
+ * ExpectedCollateralType.mmReturn}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#SegregatedIndependentAmountRelatedCall
- * ExpectedCollateralType.SegregatedIndependentAmountRelatedCall}</li>
+ * {@linkplain com.tools20022.repository.entity.ExpectedCollateralType#mmSegregatedIndependentAmountRelatedCall
+ * ExpectedCollateralType.mmSegregatedIndependentAmountRelatedCall}</li>
  * </ul>
  * </li>
  * <li>
@@ -56,18 +56,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MarginCall#ExpectedVariationMarginType
- * MarginCall.ExpectedVariationMarginType}</li>
+ * {@linkplain com.tools20022.repository.entity.MarginCall#mmExpectedVariationMarginType
+ * MarginCall.mmExpectedVariationMarginType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MarginCall#ExpectedSegregatedIndependentAmountType
- * MarginCall.ExpectedSegregatedIndependentAmountType}</li>
+ * {@linkplain com.tools20022.repository.entity.MarginCall#mmExpectedSegregatedIndependentAmountType
+ * MarginCall.mmExpectedSegregatedIndependentAmountType}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,6 +81,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ExpectedCollateralType {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected MarginCall variationMarginRelatedCall;
 	/**
 	 * Call for which a variation margin type is specified.
 	 * <p>
@@ -89,8 +90,8 @@ public class ExpectedCollateralType {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MarginCall#ExpectedVariationMarginType
-	 * MarginCall.ExpectedVariationMarginType}</li>
+	 * {@linkplain com.tools20022.repository.entity.MarginCall#mmExpectedVariationMarginType
+	 * MarginCall.mmExpectedVariationMarginType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -114,20 +115,21 @@ public class ExpectedCollateralType {
 	 * definition} = "Call for which a variation margin type is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd VariationMarginRelatedCall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmVariationMarginRelatedCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ExpectedCollateralType.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMarginRelatedCall";
 			definition = "Call for which a variation margin type is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> MarginCall.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.ExpectedVariationMarginType;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.mmExpectedVariationMarginType;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 		}
 	};
+	protected CollateralTypeCode delivery;
 	/**
 	 * Type of collateral that will be delivered.
 	 * <p>
@@ -154,18 +156,27 @@ public class ExpectedCollateralType {
 	 * definition} = "Type of collateral that will be delivered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Delivery = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDelivery = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ExpectedCollateralType.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Delivery";
 			definition = "Type of collateral that will be delivered.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CollateralTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ExpectedCollateralType.class.getMethod("getDelivery", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CollateralTypeCode return_;
 	/**
 	 * Type of collateral that will be returned.
 	 * <p>
@@ -192,18 +203,27 @@ public class ExpectedCollateralType {
 	 * definition} = "Type of collateral that will be returned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Return = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReturn = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ExpectedCollateralType.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Return";
 			definition = "Type of collateral that will be returned.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CollateralTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ExpectedCollateralType.class.getMethod("getReturn", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected MarginCall segregatedIndependentAmountRelatedCall;
 	/**
 	 * Call for which a segregated independent amount type is specified.
 	 * <p>
@@ -212,8 +232,8 @@ public class ExpectedCollateralType {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MarginCall#ExpectedSegregatedIndependentAmountType
-	 * MarginCall.ExpectedSegregatedIndependentAmountType}</li>
+	 * {@linkplain com.tools20022.repository.entity.MarginCall#mmExpectedSegregatedIndependentAmountType
+	 * MarginCall.mmExpectedSegregatedIndependentAmountType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -238,33 +258,70 @@ public class ExpectedCollateralType {
 	 * "Call for which a segregated independent amount type is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SegregatedIndependentAmountRelatedCall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSegregatedIndependentAmountRelatedCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ExpectedCollateralType.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ExpectedCollateralType.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmountRelatedCall";
 			definition = "Call for which a segregated independent amount type is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> MarginCall.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.ExpectedSegregatedIndependentAmountType;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.mmExpectedSegregatedIndependentAmountType;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "ExpectedCollateralType";
 				definition = "Expected collateral type.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MarginCall.ExpectedVariationMarginType, com.tools20022.repository.entity.MarginCall.ExpectedSegregatedIndependentAmountType);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExpectedCollateralType.VariationMarginRelatedCall, com.tools20022.repository.entity.ExpectedCollateralType.Delivery,
-						com.tools20022.repository.entity.ExpectedCollateralType.Return, com.tools20022.repository.entity.ExpectedCollateralType.SegregatedIndependentAmountRelatedCall);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MarginCall.mmExpectedVariationMarginType, com.tools20022.repository.entity.MarginCall.mmExpectedSegregatedIndependentAmountType);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExpectedCollateralType.mmVariationMarginRelatedCall, com.tools20022.repository.entity.ExpectedCollateralType.mmDelivery,
+						com.tools20022.repository.entity.ExpectedCollateralType.mmReturn, com.tools20022.repository.entity.ExpectedCollateralType.mmSegregatedIndependentAmountRelatedCall);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ExpectedCollateralType.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public MarginCall getVariationMarginRelatedCall() {
+		return variationMarginRelatedCall;
+	}
+
+	public void setVariationMarginRelatedCall(com.tools20022.repository.entity.MarginCall variationMarginRelatedCall) {
+		this.variationMarginRelatedCall = variationMarginRelatedCall;
+	}
+
+	public CollateralTypeCode getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(CollateralTypeCode delivery) {
+		this.delivery = delivery;
+	}
+
+	public CollateralTypeCode getReturn() {
+		return return_;
+	}
+
+	public void setReturn(CollateralTypeCode return_) {
+		this.return_ = return_;
+	}
+
+	public MarginCall getSegregatedIndependentAmountRelatedCall() {
+		return segregatedIndependentAmountRelatedCall;
+	}
+
+	public void setSegregatedIndependentAmountRelatedCall(com.tools20022.repository.entity.MarginCall segregatedIndependentAmountRelatedCall) {
+		this.segregatedIndependentAmountRelatedCall = segregatedIndependentAmountRelatedCall;
 	}
 }

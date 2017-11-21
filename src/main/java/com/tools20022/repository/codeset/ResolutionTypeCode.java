@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,20 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#Ordinary
- * ResolutionTypeCode.Ordinary}</li>
+ * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#mmOrdinary
+ * ResolutionTypeCode.mmOrdinary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#Extraordinary
- * ResolutionTypeCode.Extraordinary}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#Special
- * ResolutionTypeCode.Special}</li>
+ * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#mmExtraordinary
+ * ResolutionTypeCode.mmExtraordinary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ResolutionTypeCode#mmSpecial
+ * ResolutionTypeCode.mmSpecial}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -87,9 +90,9 @@ public class ResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Ordinary = new MMCode() {
+	public static final MMCode mmOrdinary = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ordinary";
 			definition = "Meeting resolution is ordinary and is not subject to any specific voting requirements.";
 			owner_lazy = () -> ResolutionTypeCode.mmObject();
@@ -120,9 +123,9 @@ public class ResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Extraordinary = new MMCode() {
+	public static final MMCode mmExtraordinary = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Extraordinary";
 			definition = "Meeting resolution is extraordinary and may be subject to specific voting requirements.";
 			owner_lazy = () -> ResolutionTypeCode.mmObject();
@@ -153,9 +156,9 @@ public class ResolutionTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Special = new MMCode() {
+	public static final MMCode mmSpecial = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Special";
 			definition = "Resolution that is neither ordinary nor extraordinary (eg. decision on an investment strategy).";
 			owner_lazy = () -> ResolutionTypeCode.mmObject();
@@ -166,13 +169,12 @@ public class ResolutionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ORDI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResolutionTypeCode";
 				definition = "Specifies the type of resolution.";
-				code_lazy = () -> Arrays
-						.asList(com.tools20022.repository.codeset.ResolutionTypeCode.Ordinary, com.tools20022.repository.codeset.ResolutionTypeCode.Extraordinary, com.tools20022.repository.codeset.ResolutionTypeCode.Special);
+				code_lazy = () -> Arrays.asList(ResolutionTypeCode.mmOrdinary, ResolutionTypeCode.mmExtraordinary, ResolutionTypeCode.mmSpecial);
 			}
 		});
 		return mmObject_lazy.get();

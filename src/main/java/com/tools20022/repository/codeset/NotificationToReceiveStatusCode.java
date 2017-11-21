@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,14 +33,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#ReceivedButDifferent
- * NotificationToReceiveStatusCode.ReceivedButDifferent}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#mmReceivedButDifferent
+ * NotificationToReceiveStatusCode.mmReceivedButDifferent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#Received
- * NotificationToReceiveStatusCode.Received}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#mmReceived
+ * NotificationToReceiveStatusCode.mmReceived}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#NotReceived
- * NotificationToReceiveStatusCode.NotReceived}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationToReceiveStatusCode#mmNotReceived
+ * NotificationToReceiveStatusCode.mmNotReceived}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -51,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -98,9 +100,9 @@ public class NotificationToReceiveStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ReceivedButDifferent = new MMCode() {
+	public static final MMCode mmReceivedButDifferent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceivedButDifferent";
 			definition = "Event(s) as described in the notification to receive occurred but details are different.";
 			owner_lazy = () -> NotificationToReceiveStatusCode.mmObject();
@@ -129,9 +131,9 @@ public class NotificationToReceiveStatusCode {
 	 * "Event(s) as described in the notification to receive occurred."</li>
 	 * </ul>
 	 */
-	public static final MMCode Received = new MMCode() {
+	public static final MMCode mmReceived = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Received";
 			definition = "Event(s) as described in the notification to receive occurred.";
 			owner_lazy = () -> NotificationToReceiveStatusCode.mmObject();
@@ -160,9 +162,9 @@ public class NotificationToReceiveStatusCode {
 	 * "Event(s) as described in the notification to receive did not occur."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotReceived = new MMCode() {
+	public static final MMCode mmNotReceived = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotReceived";
 			definition = "Event(s) as described in the notification to receive did not occur.";
 			owner_lazy = () -> NotificationToReceiveStatusCode.mmObject();
@@ -173,13 +175,12 @@ public class NotificationToReceiveStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("RCBD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationToReceiveStatusCode";
 				definition = "Specifies whether or not the event as mentioned in the notification occurred. Details of the event can be different from the details as per notification.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NotificationToReceiveStatusCode.ReceivedButDifferent, com.tools20022.repository.codeset.NotificationToReceiveStatusCode.Received,
-						com.tools20022.repository.codeset.NotificationToReceiveStatusCode.NotReceived);
+				code_lazy = () -> Arrays.asList(NotificationToReceiveStatusCode.mmReceivedButDifferent, NotificationToReceiveStatusCode.mmReceived, NotificationToReceiveStatusCode.mmNotReceived);
 				derivation_lazy = () -> Arrays.asList(NotificationStatus3Code.mmObject());
 			}
 		});

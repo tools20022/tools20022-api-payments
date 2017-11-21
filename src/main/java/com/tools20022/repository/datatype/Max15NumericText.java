@@ -17,7 +17,9 @@
 
 package com.tools20022.repository.datatype;
 
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.metamodel.MMText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -25,11 +27,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
+ * "[0-9]{1,15}"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -48,10 +52,11 @@ public class Max15NumericText {
 	final static public MMText mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMText() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Max15NumericText";
 				definition = "Specifies a numeric string with a maximum length of 15 digits.";
+				pattern = "[0-9]{1,15}";
 			}
 		});
 		return mmObject_lazy.get();

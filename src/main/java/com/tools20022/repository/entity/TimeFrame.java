@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,25 +39,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#TradeMinus
- * TimeFrame.TradeMinus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#RenunciationMinus
- * TimeFrame.RenunciationMinus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#mmTradeMinus
+ * TimeFrame.mmTradeMinus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TimeFrame#SubscriptionSettlementRelatedFundProcessing
- * TimeFrame.SubscriptionSettlementRelatedFundProcessing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#TradePlus
- * TimeFrame.TradePlus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#RenunciationPlus
- * TimeFrame.RenunciationPlus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#Prepayment
- * TimeFrame.Prepayment}</li>
+ * {@linkplain com.tools20022.repository.entity.TimeFrame#mmRenunciationMinus
+ * TimeFrame.mmRenunciationMinus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TimeFrame#OtherTimeFrameDescription
- * TimeFrame.OtherTimeFrameDescription}</li>
+ * {@linkplain com.tools20022.repository.entity.TimeFrame#mmSubscriptionSettlementRelatedFundProcessing
+ * TimeFrame.mmSubscriptionSettlementRelatedFundProcessing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#mmTradePlus
+ * TimeFrame.mmTradePlus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TimeFrame#RelatedProcessingCharacteristics
- * TimeFrame.RelatedProcessingCharacteristics}</li>
+ * {@linkplain com.tools20022.repository.entity.TimeFrame#mmRenunciationPlus
+ * TimeFrame.mmRenunciationPlus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TimeFrame#mmPrepayment
+ * TimeFrame.mmPrepayment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TimeFrame#mmOtherTimeFrameDescription
+ * TimeFrame.mmOtherTimeFrameDescription}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TimeFrame#mmRelatedProcessingCharacteristics
+ * TimeFrame.mmRelatedProcessingCharacteristics}</li>
  * </ul>
  * </li>
  * <li>
@@ -65,18 +67,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#SettlementCycle
- * InvestmentFundClassProcessingCharacteristics.SettlementCycle}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#mmSettlementCycle
+ * InvestmentFundClassProcessingCharacteristics.mmSettlementCycle}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#DealingCutOffTimeFrame
- * InvestmentFundClassProcessingCharacteristics.DealingCutOffTimeFrame}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#mmDealingCutOffTimeFrame
+ * InvestmentFundClassProcessingCharacteristics.mmDealingCutOffTimeFrame}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,6 +94,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TimeFrame {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Number tradeMinus;
 	/**
 	 * An agreed number of days before the Trade date (T) used to define
 	 * standard timeframes e.g. T-1 Dealing cut off or T-2 prepayment condition<br>
@@ -120,18 +123,27 @@ public class TimeFrame {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradeMinus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradeMinus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeMinus";
 			definition = "An agreed number of days before the Trade date (T) used to define standard timeframes e.g. T-1 Dealing cut off or T-2 prepayment condition\r\nWhere = T is the date that the price is applied to a transaction,";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TimeFrame.class.getMethod("getTradeMinus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number renunciationMinus;
 	/**
 	 * An agreed number of days before the Renunciation of Title documents are
 	 * received used to define standard timeframes in redemption.
@@ -159,18 +171,27 @@ public class TimeFrame {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RenunciationMinus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRenunciationMinus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenunciationMinus";
 			definition = "An agreed number of days before the Renunciation of Title documents are received used to define standard timeframes in redemption.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TimeFrame.class.getMethod("getRenunciationMinus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentFundClassProcessingCharacteristics subscriptionSettlementRelatedFundProcessing;
 	/**
 	 * Fund processing characteristics related to a subscription cycle.
 	 * <p>
@@ -179,8 +200,8 @@ public class TimeFrame {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#SettlementCycle
-	 * InvestmentFundClassProcessingCharacteristics.SettlementCycle}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#mmSettlementCycle
+	 * InvestmentFundClassProcessingCharacteristics.mmSettlementCycle}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -205,20 +226,21 @@ public class TimeFrame {
 	 * "Fund processing characteristics related to a subscription cycle."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SubscriptionSettlementRelatedFundProcessing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSubscriptionSettlementRelatedFundProcessing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionSettlementRelatedFundProcessing";
 			definition = "Fund processing characteristics related to a subscription cycle.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.SettlementCycle;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmSettlementCycle;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 		}
 	};
+	protected Number tradePlus;
 	/**
 	 * An agreed number of days after the Trade date (T) used to define standard
 	 * timeframes e.g T+3 settlement period. <br>
@@ -247,18 +269,27 @@ public class TimeFrame {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradePlus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradePlus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradePlus";
 			definition = "An agreed number of days after the Trade date (T) used to define standard timeframes e.g T+3 settlement period. \r\nWhere = T is the date that the price is applied to a transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TimeFrame.class.getMethod("getTradePlus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number renunciationPlus;
 	/**
 	 * An agreed number of days after the renunciation of title documents are
 	 * received used to define standard timeframes in Redemption e.g R+3
@@ -287,18 +318,27 @@ public class TimeFrame {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RenunciationPlus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRenunciationPlus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RenunciationPlus";
 			definition = "An agreed number of days after the renunciation of title documents are received used to define standard timeframes in Redemption e.g R+3 Redemption settlement cycle.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TimeFrame.class.getMethod("getRenunciationPlus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator prepayment;
 	/**
 	 * Indicates whether pre-payment is necessary.
 	 * <p>
@@ -324,18 +364,27 @@ public class TimeFrame {
 	 * definition} = "Indicates whether pre-payment is necessary."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Prepayment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPrepayment = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Prepayment";
 			definition = "Indicates whether pre-payment is necessary.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TimeFrame.class.getMethod("getPrepayment", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text otherTimeFrameDescription;
 	/**
 	 * Specifies a description of any other TimeFrame that may be used for the
 	 * DealingCutOffTimeFrame
@@ -363,18 +412,27 @@ public class TimeFrame {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OtherTimeFrameDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOtherTimeFrameDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OtherTimeFrameDescription";
 			definition = "Specifies a description of any other TimeFrame that may be used for the DealingCutOffTimeFrame";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TimeFrame.class.getMethod("getOtherTimeFrameDescription", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentFundClassProcessingCharacteristics relatedProcessingCharacteristics;
 	/**
 	 * Processing characteristics for which a cut off time frame is specified.
 	 * <p>
@@ -383,8 +441,8 @@ public class TimeFrame {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#DealingCutOffTimeFrame
-	 * InvestmentFundClassProcessingCharacteristics.DealingCutOffTimeFrame}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#mmDealingCutOffTimeFrame
+	 * InvestmentFundClassProcessingCharacteristics.mmDealingCutOffTimeFrame}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -410,35 +468,104 @@ public class TimeFrame {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedProcessingCharacteristics = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedProcessingCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TimeFrame.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TimeFrame.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedProcessingCharacteristics";
 			definition = "Processing characteristics for which a cut off time frame is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.DealingCutOffTimeFrame;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmDealingCutOffTimeFrame;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TimeFrame";
 				definition = "TimeFrame or period concept that allows definition of a period as number of days before or after a defined activity.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.SettlementCycle,
-						com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.DealingCutOffTimeFrame);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TimeFrame.TradeMinus, com.tools20022.repository.entity.TimeFrame.RenunciationMinus,
-						com.tools20022.repository.entity.TimeFrame.SubscriptionSettlementRelatedFundProcessing, com.tools20022.repository.entity.TimeFrame.TradePlus, com.tools20022.repository.entity.TimeFrame.RenunciationPlus,
-						com.tools20022.repository.entity.TimeFrame.Prepayment, com.tools20022.repository.entity.TimeFrame.OtherTimeFrameDescription, com.tools20022.repository.entity.TimeFrame.RelatedProcessingCharacteristics);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmSettlementCycle,
+						com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmDealingCutOffTimeFrame);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TimeFrame.mmTradeMinus, com.tools20022.repository.entity.TimeFrame.mmRenunciationMinus,
+						com.tools20022.repository.entity.TimeFrame.mmSubscriptionSettlementRelatedFundProcessing, com.tools20022.repository.entity.TimeFrame.mmTradePlus, com.tools20022.repository.entity.TimeFrame.mmRenunciationPlus,
+						com.tools20022.repository.entity.TimeFrame.mmPrepayment, com.tools20022.repository.entity.TimeFrame.mmOtherTimeFrameDescription, com.tools20022.repository.entity.TimeFrame.mmRelatedProcessingCharacteristics);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TimeFrame.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Number getTradeMinus() {
+		return tradeMinus;
+	}
+
+	public void setTradeMinus(Number tradeMinus) {
+		this.tradeMinus = tradeMinus;
+	}
+
+	public Number getRenunciationMinus() {
+		return renunciationMinus;
+	}
+
+	public void setRenunciationMinus(Number renunciationMinus) {
+		this.renunciationMinus = renunciationMinus;
+	}
+
+	public InvestmentFundClassProcessingCharacteristics getSubscriptionSettlementRelatedFundProcessing() {
+		return subscriptionSettlementRelatedFundProcessing;
+	}
+
+	public void setSubscriptionSettlementRelatedFundProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics subscriptionSettlementRelatedFundProcessing) {
+		this.subscriptionSettlementRelatedFundProcessing = subscriptionSettlementRelatedFundProcessing;
+	}
+
+	public Number getTradePlus() {
+		return tradePlus;
+	}
+
+	public void setTradePlus(Number tradePlus) {
+		this.tradePlus = tradePlus;
+	}
+
+	public Number getRenunciationPlus() {
+		return renunciationPlus;
+	}
+
+	public void setRenunciationPlus(Number renunciationPlus) {
+		this.renunciationPlus = renunciationPlus;
+	}
+
+	public YesNoIndicator getPrepayment() {
+		return prepayment;
+	}
+
+	public void setPrepayment(YesNoIndicator prepayment) {
+		this.prepayment = prepayment;
+	}
+
+	public Max350Text getOtherTimeFrameDescription() {
+		return otherTimeFrameDescription;
+	}
+
+	public void setOtherTimeFrameDescription(Max350Text otherTimeFrameDescription) {
+		this.otherTimeFrameDescription = otherTimeFrameDescription;
+	}
+
+	public InvestmentFundClassProcessingCharacteristics getRelatedProcessingCharacteristics() {
+		return relatedProcessingCharacteristics;
+	}
+
+	public void setRelatedProcessingCharacteristics(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics relatedProcessingCharacteristics) {
+		this.relatedProcessingCharacteristics = relatedProcessingCharacteristics;
 	}
 }

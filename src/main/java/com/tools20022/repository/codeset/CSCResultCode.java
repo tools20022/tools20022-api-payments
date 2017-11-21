@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,26 +31,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#CSCMatch
- * CSCResultCode.CSCMatch}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#CSCNoMatch
- * CSCResultCode.CSCNoMatch}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#CSCTechnical
- * CSCResultCode.CSCTechnical}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#mmCSCMatch
+ * CSCResultCode.mmCSCMatch}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#mmCSCNoMatch
+ * CSCResultCode.mmCSCNoMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CSCResultCode#CSCNotTechnical
- * CSCResultCode.CSCNotTechnical}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#CSCMissing
- * CSCResultCode.CSCMissing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#CSCNotUsed
- * CSCResultCode.CSCNotUsed}</li>
+ * {@linkplain com.tools20022.repository.codeset.CSCResultCode#mmCSCTechnical
+ * CSCResultCode.mmCSCTechnical}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.CSCResultCode#mmCSCNotTechnical
+ * CSCResultCode.mmCSCNotTechnical}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#mmCSCMissing
+ * CSCResultCode.mmCSCMissing}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CSCResultCode#mmCSCNotUsed
+ * CSCResultCode.mmCSCNotUsed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +92,9 @@ public class CSCResultCode {
 	 * definition} = "Card security code match."</li>
 	 * </ul>
 	 */
-	public static final MMCode CSCMatch = new MMCode() {
+	public static final MMCode mmCSCMatch = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCMatch";
 			definition = "Card security code match.";
 			owner_lazy = () -> CSCResultCode.mmObject();
@@ -119,9 +122,9 @@ public class CSCResultCode {
 	 * definition} = "No card security code match."</li>
 	 * </ul>
 	 */
-	public static final MMCode CSCNoMatch = new MMCode() {
+	public static final MMCode mmCSCNoMatch = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCNoMatch";
 			definition = "No card security code match.";
 			owner_lazy = () -> CSCResultCode.mmObject();
@@ -149,9 +152,9 @@ public class CSCResultCode {
 	 * definition} = "Card security code not processed for technical reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode CSCTechnical = new MMCode() {
+	public static final MMCode mmCSCTechnical = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCTechnical";
 			definition = "Card security code not processed for technical reason.";
 			owner_lazy = () -> CSCResultCode.mmObject();
@@ -180,9 +183,9 @@ public class CSCResultCode {
 	 * "Card security code not processed for non-technical reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode CSCNotTechnical = new MMCode() {
+	public static final MMCode mmCSCNotTechnical = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCNotTechnical";
 			definition = "Card security code not processed for non-technical reason.";
 			owner_lazy = () -> CSCResultCode.mmObject();
@@ -210,9 +213,9 @@ public class CSCResultCode {
 	 * definition} = "Card security code missing in request."</li>
 	 * </ul>
 	 */
-	public static final MMCode CSCMissing = new MMCode() {
+	public static final MMCode mmCSCMissing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCMissing";
 			definition = "Card security code missing in request.";
 			owner_lazy = () -> CSCResultCode.mmObject();
@@ -240,9 +243,9 @@ public class CSCResultCode {
 	 * definition} = "Card security code not used by issuer."</li>
 	 * </ul>
 	 */
-	public static final MMCode CSCNotUsed = new MMCode() {
+	public static final MMCode mmCSCNotUsed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCNotUsed";
 			definition = "Card security code not used by issuer.";
 			owner_lazy = () -> CSCResultCode.mmObject();
@@ -253,13 +256,12 @@ public class CSCResultCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CMCH");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CSCResultCode";
 				definition = "Result of the printed CSC (Card Security Code) validation.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CSCResultCode.CSCMatch, com.tools20022.repository.codeset.CSCResultCode.CSCNoMatch, com.tools20022.repository.codeset.CSCResultCode.CSCTechnical,
-						com.tools20022.repository.codeset.CSCResultCode.CSCNotTechnical, com.tools20022.repository.codeset.CSCResultCode.CSCMissing, com.tools20022.repository.codeset.CSCResultCode.CSCNotUsed);
+				code_lazy = () -> Arrays.asList(CSCResultCode.mmCSCMatch, CSCResultCode.mmCSCNoMatch, CSCResultCode.mmCSCTechnical, CSCResultCode.mmCSCNotTechnical, CSCResultCode.mmCSCMissing, CSCResultCode.mmCSCNotUsed);
 			}
 		});
 		return mmObject_lazy.get();

@@ -19,11 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.DiscountAmountType1Choice;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
+import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.entity.Discount;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the amount with a specific type.
@@ -34,10 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DiscountAmountAndType1#Type
- * DiscountAmountAndType1.Type}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DiscountAmountAndType1#Amount
- * DiscountAmountAndType1.Amount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DiscountAmountAndType1#mmType
+ * DiscountAmountAndType1.mmType}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DiscountAmountAndType1#mmAmount
+ * DiscountAmountAndType1.mmAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -45,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -57,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the amount with a specific type."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DiscountAmountAndType1", propOrder = {"type", "amount"})
 public class DiscountAmountAndType1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected DiscountAmountType1Choice type;
 	/**
 	 * Specifies the type of the amount.
 	 * <p>
@@ -92,20 +103,21 @@ public class DiscountAmountAndType1 {
 	 * definition} = "Specifies the type of the amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> DiscountAmountAndType1.mmObject();
 			businessComponentTrace_lazy = () -> Discount.mmObject();
+			componentContext_lazy = () -> DiscountAmountAndType1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of the amount.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			complexType_lazy = () -> DiscountAmountType1Choice.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount amount;
 	/**
 	 * Amount of money, which has been typed.
 	 * <p>
@@ -119,8 +131,8 @@ public class DiscountAmountAndType1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#Amount
-	 * Adjustment.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmAmount
+	 * Adjustment.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -139,17 +151,17 @@ public class DiscountAmountAndType1 {
 	 * definition} = "Amount of money, which has been typed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Amount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Adjustment.mmAmount;
 			componentContext_lazy = () -> DiscountAmountAndType1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Adjustment.Amount;
 			isDerived = false;
 			xmlTag = "Amt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Amount of money, which has been typed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
@@ -157,14 +169,32 @@ public class DiscountAmountAndType1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DiscountAmountAndType1.Type, com.tools20022.repository.msg.DiscountAmountAndType1.Amount);
+				messageElement_lazy = () -> Arrays.asList(DiscountAmountAndType1.mmType, DiscountAmountAndType1.mmAmount);
 				trace_lazy = () -> Discount.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DiscountAmountAndType1";
 				definition = "Specifies the amount with a specific type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp")
+	public DiscountAmountType1Choice getType() {
+		return type;
+	}
+
+	public void setType(DiscountAmountType1Choice type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Amt", required = true)
+	public ActiveOrHistoricCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+		this.amount = amount;
 	}
 }

@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +35,22 @@ import java.util.Optional;
  */
 public class MMXor implements MMRepositoryConcept {
 
+	/**
+	 * Message Elements impacted by the XOR.
+	 */
+	public final static MetamodelAttribute<MMXor, List<MMMessageElement>> impactedElementsAttribute = newAttribute();
+	/**
+	 * Message Component owning the XOR.
+	 */
+	public final static MetamodelAttribute<MMXor, Optional<MMMessageComponent>> messageComponentAttribute = newAttribute();
+	/**
+	 * MessageBuildingBlocks impacted by the XOR.
+	 */
+	public final static MetamodelAttribute<MMXor, List<MMMessageBuildingBlock>> impactedMessageBuildingBlocksAttribute = newAttribute();
+	/**
+	 * Message Definition owning the XOR.
+	 */
+	public final static MetamodelAttribute<MMXor, Optional<MMMessageDefinition>> messageDefinitionAttribute = newAttribute();
 	protected Supplier<List<MMMessageElement>> impactedElements_lazy;
 	protected Supplier<MMMessageComponent> messageComponent_lazy;
 	protected Supplier<List<MMMessageBuildingBlock>> impactedMessageBuildingBlocks_lazy;

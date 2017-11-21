@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,39 +32,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#LetterOfCredit
- * CollateralTypeCode.LetterOfCredit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CollateralTypeCode#Cash
- * CollateralTypeCode.Cash}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmLetterOfCredit
+ * CollateralTypeCode.mmLetterOfCredit}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmCash
+ * CollateralTypeCode.mmCash}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#Securities
- * CollateralTypeCode.Securities}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmSecurities
+ * CollateralTypeCode.mmSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#PhysicalEntities
- * CollateralTypeCode.PhysicalEntities}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmPhysicalEntities
+ * CollateralTypeCode.mmPhysicalEntities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#Insurance
- * CollateralTypeCode.Insurance}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmInsurance
+ * CollateralTypeCode.mmInsurance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#StockCertificate
- * CollateralTypeCode.StockCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CollateralTypeCode#Bond
- * CollateralTypeCode.Bond}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmStockCertificate
+ * CollateralTypeCode.mmStockCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmBond
+ * CollateralTypeCode.mmBond}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#BankGuarantee
- * CollateralTypeCode.BankGuarantee}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CollateralTypeCode#Other
- * CollateralTypeCode.Other}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmBankGuarantee
+ * CollateralTypeCode.mmBankGuarantee}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmOther
+ * CollateralTypeCode.mmOther}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#Commodity
- * CollateralTypeCode.Commodity}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralTypeCode#mmCommodity
+ * CollateralTypeCode.mmCommodity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -109,9 +111,9 @@ public class CollateralTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode LetterOfCredit = new MMCode() {
+	public static final MMCode mmLetterOfCredit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LetterOfCredit";
 			definition = "Instrument issued by a bank substituting its name and credit standing for that of its customer. A letter of credit is a written undertaking of the bank, issued for the account of a customer (the applicant), to honour a demand for payment, upon the beneficiary's compliance with the terms and conditions set forth in the undertaking.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -139,9 +141,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is cash."</li>
 	 * </ul>
 	 */
-	public static final MMCode Cash = new MMCode() {
+	public static final MMCode mmCash = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cash";
 			definition = "Collateral type is cash.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -169,9 +171,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is securities."</li>
 	 * </ul>
 	 */
-	public static final MMCode Securities = new MMCode() {
+	public static final MMCode mmSecurities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Securities";
 			definition = "Collateral type is securities.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -202,9 +204,9 @@ public class CollateralTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PhysicalEntities = new MMCode() {
+	public static final MMCode mmPhysicalEntities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalEntities";
 			definition = "Collateral type are physical entities, for example, airplanes for debt issued by the airline industry.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -232,9 +234,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is an insurance contract."</li>
 	 * </ul>
 	 */
-	public static final MMCode Insurance = new MMCode() {
+	public static final MMCode mmInsurance = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Insurance";
 			definition = "Collateral type is an insurance contract.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -262,9 +264,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is stock certificates."</li>
 	 * </ul>
 	 */
-	public static final MMCode StockCertificate = new MMCode() {
+	public static final MMCode mmStockCertificate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StockCertificate";
 			definition = "Collateral type is stock certificates.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -292,9 +294,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is bonds."</li>
 	 * </ul>
 	 */
-	public static final MMCode Bond = new MMCode() {
+	public static final MMCode mmBond = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Bond";
 			definition = "Collateral type is bonds.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -322,9 +324,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is a bank guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMCode BankGuarantee = new MMCode() {
+	public static final MMCode mmBankGuarantee = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BankGuarantee";
 			definition = "Collateral type is a bank guarantee.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -352,9 +354,9 @@ public class CollateralTypeCode {
 	 * definition} = "Other assets that could be used as collateral."</li>
 	 * </ul>
 	 */
-	public static final MMCode Other = new MMCode() {
+	public static final MMCode mmOther = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Other assets that could be used as collateral.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -382,9 +384,9 @@ public class CollateralTypeCode {
 	 * definition} = "Collateral type is commodities."</li>
 	 * </ul>
 	 */
-	public static final MMCode Commodity = new MMCode() {
+	public static final MMCode mmCommodity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Commodity";
 			definition = "Collateral type is commodities.";
 			owner_lazy = () -> CollateralTypeCode.mmObject();
@@ -395,15 +397,13 @@ public class CollateralTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("LCRE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralTypeCode";
 				definition = "Specifies the type of collateral.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CollateralTypeCode.LetterOfCredit, com.tools20022.repository.codeset.CollateralTypeCode.Cash,
-						com.tools20022.repository.codeset.CollateralTypeCode.Securities, com.tools20022.repository.codeset.CollateralTypeCode.PhysicalEntities, com.tools20022.repository.codeset.CollateralTypeCode.Insurance,
-						com.tools20022.repository.codeset.CollateralTypeCode.StockCertificate, com.tools20022.repository.codeset.CollateralTypeCode.Bond, com.tools20022.repository.codeset.CollateralTypeCode.BankGuarantee,
-						com.tools20022.repository.codeset.CollateralTypeCode.Other, com.tools20022.repository.codeset.CollateralTypeCode.Commodity);
+				code_lazy = () -> Arrays.asList(CollateralTypeCode.mmLetterOfCredit, CollateralTypeCode.mmCash, CollateralTypeCode.mmSecurities, CollateralTypeCode.mmPhysicalEntities, CollateralTypeCode.mmInsurance,
+						CollateralTypeCode.mmStockCertificate, CollateralTypeCode.mmBond, CollateralTypeCode.mmBankGuarantee, CollateralTypeCode.mmOther, CollateralTypeCode.mmCommodity);
 			}
 		});
 		return mmObject_lazy.get();

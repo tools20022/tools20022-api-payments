@@ -20,11 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max1025Text;
 import com.tools20022.repository.entity.Collateral;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Further details on the contract collateral.
@@ -36,14 +43,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractCollateral1#TotalAmount
- * ContractCollateral1.TotalAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractCollateral1#mmTotalAmount
+ * ContractCollateral1.mmTotalAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractCollateral1#CollateralDescription
- * ContractCollateral1.CollateralDescription}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractCollateral1#mmCollateralDescription
+ * ContractCollateral1.mmCollateralDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractCollateral1#AdditionalInformation
- * ContractCollateral1.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractCollateral1#mmAdditionalInformation
+ * ContractCollateral1.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,8 +58,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,9 +70,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Further details on the contract collateral. "</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ContractCollateral1", propOrder = {"totalAmount", "collateralDescription", "additionalInformation"})
 public class ContractCollateral1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ActiveCurrencyAndAmount totalAmount;
 	/**
 	 * Total amount of the collateral as defined in the contract.
 	 * <p>
@@ -79,8 +89,8 @@ public class ContractCollateral1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Collateral#CollateralAmount
-	 * Collateral.CollateralAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralAmount
+	 * Collateral.mmCollateralAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -100,20 +110,21 @@ public class ContractCollateral1 {
 	 * "Total amount of the collateral as defined in the contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Collateral.mmCollateralAmount;
 			componentContext_lazy = () -> ContractCollateral1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Collateral.CollateralAmount;
 			isDerived = false;
 			xmlTag = "TtlAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalAmount";
 			definition = "Total amount of the collateral as defined in the contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.CashCollateral5> collateralDescription;
 	/**
 	 * Detailed description of the collateral.
 	 * <p>
@@ -144,20 +155,21 @@ public class ContractCollateral1 {
 	 * definition} = "Detailed description of the collateral."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd CollateralDescription = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCollateralDescription = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> ContractCollateral1.mmObject();
 			businessComponentTrace_lazy = () -> Collateral.mmObject();
+			componentContext_lazy = () -> ContractCollateral1.mmObject();
 			isDerived = false;
 			xmlTag = "CollDesc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralDescription";
 			definition = "Detailed description of the collateral.";
 			minOccurs = 0;
-			type_lazy = () -> CashCollateral5.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.CashCollateral5.mmObject();
 		}
 	};
+	protected Max1025Text additionalInformation;
 	/**
 	 * Further information on the contract collateral.
 	 * <p>
@@ -185,16 +197,16 @@ public class ContractCollateral1 {
 	 * definition} = "Further information on the contract collateral."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ContractCollateral1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Further information on the contract collateral.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max1025Text.mmObject();
 		}
 	};
@@ -202,15 +214,41 @@ public class ContractCollateral1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractCollateral1.TotalAmount, com.tools20022.repository.msg.ContractCollateral1.CollateralDescription,
-						com.tools20022.repository.msg.ContractCollateral1.AdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(ContractCollateral1.mmTotalAmount, ContractCollateral1.mmCollateralDescription, ContractCollateral1.mmAdditionalInformation);
 				trace_lazy = () -> Collateral.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractCollateral1";
 				definition = "Further details on the contract collateral. ";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "TtlAmt", required = true)
+	public ActiveCurrencyAndAmount getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(ActiveCurrencyAndAmount totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	@XmlElement(name = "CollDesc")
+	public List<CashCollateral5> getCollateralDescription() {
+		return collateralDescription;
+	}
+
+	public void setCollateralDescription(List<com.tools20022.repository.msg.CashCollateral5> collateralDescription) {
+		this.collateralDescription = collateralDescription;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max1025Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max1025Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

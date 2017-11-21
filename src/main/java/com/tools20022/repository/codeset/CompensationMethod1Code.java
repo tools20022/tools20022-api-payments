@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CompensationMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,24 +36,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * CompensationMethodCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#No
- * CompensationMethod1Code.No}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#Debited
- * CompensationMethod1Code.Debited}</li>
+ * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#mmNo
+ * CompensationMethod1Code.mmNo}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#Invoiced
- * CompensationMethod1Code.Invoiced}</li>
+ * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#mmDebited
+ * CompensationMethod1Code.mmDebited}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#DelayedDebit
- * CompensationMethod1Code.DelayedDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#mmInvoiced
+ * CompensationMethod1Code.mmInvoiced}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.CompensationMethod1Code#mmDelayedDebit
+ * CompensationMethod1Code.mmDelayedDebit}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +92,9 @@ public class CompensationMethod1Code extends CompensationMethodCode {
 	 * name} = "No"</li>
 	 * </ul>
 	 */
-	public static final MMCode No = new MMCode() {
+	public static final MMCode mmNo = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "No";
 			owner_lazy = () -> CompensationMethod1Code.mmObject();
 		}
@@ -112,9 +115,9 @@ public class CompensationMethod1Code extends CompensationMethodCode {
 	 * name} = "Debited"</li>
 	 * </ul>
 	 */
-	public static final MMCode Debited = new MMCode() {
+	public static final MMCode mmDebited = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Debited";
 			owner_lazy = () -> CompensationMethod1Code.mmObject();
 		}
@@ -135,9 +138,9 @@ public class CompensationMethod1Code extends CompensationMethodCode {
 	 * name} = "Invoiced"</li>
 	 * </ul>
 	 */
-	public static final MMCode Invoiced = new MMCode() {
+	public static final MMCode mmInvoiced = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Invoiced";
 			owner_lazy = () -> CompensationMethod1Code.mmObject();
 		}
@@ -158,9 +161,9 @@ public class CompensationMethod1Code extends CompensationMethodCode {
 	 * name} = "DelayedDebit"</li>
 	 * </ul>
 	 */
-	public static final MMCode DelayedDebit = new MMCode() {
+	public static final MMCode mmDelayedDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DelayedDebit";
 			owner_lazy = () -> CompensationMethod1Code.mmObject();
 		}
@@ -169,13 +172,12 @@ public class CompensationMethod1Code extends CompensationMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NOCP");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CompensationMethod1Code";
 				definition = "Defines if and how charges and taxes due are paid to the financial institution.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CompensationMethod1Code.No, com.tools20022.repository.codeset.CompensationMethod1Code.Debited,
-						com.tools20022.repository.codeset.CompensationMethod1Code.Invoiced, com.tools20022.repository.codeset.CompensationMethod1Code.DelayedDebit);
+				code_lazy = () -> Arrays.asList(CompensationMethod1Code.mmNo, CompensationMethod1Code.mmDebited, CompensationMethod1Code.mmInvoiced, CompensationMethod1Code.mmDelayedDebit);
 				trace_lazy = () -> CompensationMethodCode.mmObject();
 			}
 		});

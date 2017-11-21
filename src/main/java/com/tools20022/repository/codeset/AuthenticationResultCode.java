@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,30 +32,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#Denial
- * AuthenticationResultCode.Denial}</li>
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#mmDenial
+ * AuthenticationResultCode.mmDenial}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#NonParticipation
- * AuthenticationResultCode.NonParticipation}</li>
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#mmNonParticipation
+ * AuthenticationResultCode.mmNonParticipation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#UnableToAuthenticate
- * AuthenticationResultCode.UnableToAuthenticate}</li>
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#mmUnableToAuthenticate
+ * AuthenticationResultCode.mmUnableToAuthenticate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#MerchantNotEnroled
- * AuthenticationResultCode.MerchantNotEnroled}</li>
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#mmMerchantNotEnroled
+ * AuthenticationResultCode.mmMerchantNotEnroled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#WithCryptogram
- * AuthenticationResultCode.WithCryptogram}</li>
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#mmWithCryptogram
+ * AuthenticationResultCode.mmWithCryptogram}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#WithoutCryptogram
- * AuthenticationResultCode.WithoutCryptogram}</li>
+ * {@linkplain com.tools20022.repository.codeset.AuthenticationResultCode#mmWithoutCryptogram
+ * AuthenticationResultCode.mmWithoutCryptogram}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,9 +90,9 @@ public class AuthenticationResultCode {
 	 * definition} = "The authentication didn’t succeed"</li>
 	 * </ul>
 	 */
-	public static final MMCode Denial = new MMCode() {
+	public static final MMCode mmDenial = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Denial";
 			definition = "The authentication didn’t succeed";
 			owner_lazy = () -> AuthenticationResultCode.mmObject();
@@ -119,9 +121,9 @@ public class AuthenticationResultCode {
 	 * "The card does not participate in the authentication programme"</li>
 	 * </ul>
 	 */
-	public static final MMCode NonParticipation = new MMCode() {
+	public static final MMCode mmNonParticipation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonParticipation";
 			definition = "The card does not participate in the authentication programme";
 			owner_lazy = () -> AuthenticationResultCode.mmObject();
@@ -149,9 +151,9 @@ public class AuthenticationResultCode {
 	 * definition} = "The authentication couldn’t be carried out"</li>
 	 * </ul>
 	 */
-	public static final MMCode UnableToAuthenticate = new MMCode() {
+	public static final MMCode mmUnableToAuthenticate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnableToAuthenticate";
 			definition = "The authentication couldn’t be carried out";
 			owner_lazy = () -> AuthenticationResultCode.mmObject();
@@ -179,9 +181,9 @@ public class AuthenticationResultCode {
 	 * definition} = "Merchant not enrolled in the authentication programme"</li>
 	 * </ul>
 	 */
-	public static final MMCode MerchantNotEnroled = new MMCode() {
+	public static final MMCode mmMerchantNotEnroled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MerchantNotEnroled";
 			definition = "Merchant not enrolled in the authentication programme";
 			owner_lazy = () -> AuthenticationResultCode.mmObject();
@@ -209,9 +211,9 @@ public class AuthenticationResultCode {
 	 * definition} = "Authentication succeeded with a cryptogram"</li>
 	 * </ul>
 	 */
-	public static final MMCode WithCryptogram = new MMCode() {
+	public static final MMCode mmWithCryptogram = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WithCryptogram";
 			definition = "Authentication succeeded with a cryptogram";
 			owner_lazy = () -> AuthenticationResultCode.mmObject();
@@ -239,9 +241,9 @@ public class AuthenticationResultCode {
 	 * definition} = "Authentication succeeded without a cryptogram"</li>
 	 * </ul>
 	 */
-	public static final MMCode WithoutCryptogram = new MMCode() {
+	public static final MMCode mmWithoutCryptogram = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WithoutCryptogram";
 			definition = "Authentication succeeded without a cryptogram";
 			owner_lazy = () -> AuthenticationResultCode.mmObject();
@@ -252,13 +254,12 @@ public class AuthenticationResultCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationResultCode";
 				definition = "Specifies the result of authentication done";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AuthenticationResultCode.Denial, com.tools20022.repository.codeset.AuthenticationResultCode.NonParticipation,
-						com.tools20022.repository.codeset.AuthenticationResultCode.UnableToAuthenticate, com.tools20022.repository.codeset.AuthenticationResultCode.MerchantNotEnroled,
-						com.tools20022.repository.codeset.AuthenticationResultCode.WithCryptogram, com.tools20022.repository.codeset.AuthenticationResultCode.WithoutCryptogram);
+				code_lazy = () -> Arrays.asList(AuthenticationResultCode.mmDenial, AuthenticationResultCode.mmNonParticipation, AuthenticationResultCode.mmUnableToAuthenticate, AuthenticationResultCode.mmMerchantNotEnroled,
+						AuthenticationResultCode.mmWithCryptogram, AuthenticationResultCode.mmWithoutCryptogram);
 			}
 		});
 		return mmObject_lazy.get();

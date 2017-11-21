@@ -18,10 +18,12 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
-import com.tools20022.metamodel.constraints.DeriveMMMessageAssociationEnd_isTechnical;
-import com.tools20022.metamodel.constraints.DeriveMMMessageAssociationEnd_memberType;
-import com.tools20022.metamodel.constraints.DeriveMMMessageAssociationEnd_xmlMemberType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import com.tools20022.metamodel.derived.DeriveMMMessageAssociationEnd_isTechnical;
+import com.tools20022.metamodel.derived.DeriveMMMessageAssociationEnd_memberType;
+import com.tools20022.metamodel.derived.DeriveMMMessageAssociationEnd_xmlMemberType;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -34,6 +36,15 @@ import java.util.Optional;
  */
 public class MMMessageAssociationEnd implements MMMessageElement {
 
+	/**
+	 * Indicates if the message element is a composite.
+	 */
+	public final static MetamodelAttribute<MMMessageAssociationEnd, Boolean> isCompositeAttribute = newAttribute();
+	/**
+	 * The MessageComponentType which specifies the complex content model of a
+	 * MessageAssociationEnd.
+	 */
+	public final static MetamodelAttribute<MMMessageAssociationEnd, MMMessageComponentType> typeAttribute = newAttribute();
 	protected boolean isComposite;
 	protected Supplier<MMMessageComponentType> type_lazy;
 	protected Supplier<MMBusinessComponent> businessComponentTrace_lazy;

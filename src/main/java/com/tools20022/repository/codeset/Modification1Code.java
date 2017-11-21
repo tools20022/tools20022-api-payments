@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,22 +31,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.Modification1Code#NoChange
- * Modification1Code.NoChange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.Modification1Code#Modification
- * Modification1Code.Modification}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Modification1Code#Deletion
- * Modification1Code.Deletion}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Modification1Code#Addition
- * Modification1Code.Addition}</li>
+ * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmNoChange
+ * Modification1Code.mmNoChange}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmModification
+ * Modification1Code.mmModification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmDeletion
+ * Modification1Code.mmDeletion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.Modification1Code#mmAddition
+ * Modification1Code.mmAddition}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -81,9 +86,9 @@ public class Modification1Code {
 	 * name} = "NoChange"</li>
 	 * </ul>
 	 */
-	public static final MMCode NoChange = new MMCode() {
+	public static final MMCode mmNoChange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoChange";
 			owner_lazy = () -> Modification1Code.mmObject();
 		}
@@ -104,9 +109,9 @@ public class Modification1Code {
 	 * name} = "Modification"</li>
 	 * </ul>
 	 */
-	public static final MMCode Modification = new MMCode() {
+	public static final MMCode mmModification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Modification";
 			owner_lazy = () -> Modification1Code.mmObject();
 		}
@@ -127,9 +132,9 @@ public class Modification1Code {
 	 * name} = "Deletion"</li>
 	 * </ul>
 	 */
-	public static final MMCode Deletion = new MMCode() {
+	public static final MMCode mmDeletion = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deletion";
 			owner_lazy = () -> Modification1Code.mmObject();
 		}
@@ -150,9 +155,9 @@ public class Modification1Code {
 	 * name} = "Addition"</li>
 	 * </ul>
 	 */
-	public static final MMCode Addition = new MMCode() {
+	public static final MMCode mmAddition = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Addition";
 			owner_lazy = () -> Modification1Code.mmObject();
 		}
@@ -161,13 +166,12 @@ public class Modification1Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NOCH");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Modification1Code";
 				definition = "Specifies if an item is added, modified, deleted or unchanged.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Modification1Code.NoChange, com.tools20022.repository.codeset.Modification1Code.Modification, com.tools20022.repository.codeset.Modification1Code.Deletion,
-						com.tools20022.repository.codeset.Modification1Code.Addition);
+				code_lazy = () -> Arrays.asList(Modification1Code.mmNoChange, Modification1Code.mmModification, Modification1Code.mmDeletion, Modification1Code.mmAddition);
 			}
 		});
 		return mmObject_lazy.get();

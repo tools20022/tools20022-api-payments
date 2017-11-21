@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,45 +39,45 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#PerSecurity
- * IncentivePremium.PerSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.IncentivePremium#PerVote
- * IncentivePremium.PerVote}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmPerSecurity
+ * IncentivePremium.mmPerSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.IncentivePremium#mmPerVote
+ * IncentivePremium.mmPerVote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#PerAttendee
- * IncentivePremium.PerAttendee}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmPerAttendee
+ * IncentivePremium.mmPerAttendee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#Description
- * IncentivePremium.Description}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmDescription
+ * IncentivePremium.mmDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#PremiumAmount
- * IncentivePremium.PremiumAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmPremiumAmount
+ * IncentivePremium.mmPremiumAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#PaymentDate
- * IncentivePremium.PaymentDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.IncentivePremium#Meeting
- * IncentivePremium.Meeting}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmPaymentDate
+ * IncentivePremium.mmPaymentDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.IncentivePremium#mmMeeting
+ * IncentivePremium.mmMeeting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IncentivePremium#CorporateActionDistribution
- * IncentivePremium.CorporateActionDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.IncentivePremium#mmCorporateActionDistribution
+ * IncentivePremium.mmCorporateActionDistribution}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Meeting#IncentivePremium
- * Meeting.IncentivePremium}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmIncentivePremium
+ * Meeting.mmIncentivePremium}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Distribution#IncentivePremium
- * Distribution.IncentivePremium}</li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmIncentivePremium
+ * Distribution.mmIncentivePremium}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,6 +93,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class IncentivePremium {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Number perSecurity;
 	/**
 	 * Number of securities giving right to a premium.
 	 * <p>
@@ -118,18 +119,27 @@ public class IncentivePremium {
 	 * definition} = "Number of securities giving right to a premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PerSecurity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPerSecurity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerSecurity";
 			definition = "Number of securities giving right to a premium.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IncentivePremium.class.getMethod("getPerSecurity", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number perVote;
 	/**
 	 * Number of votes giving right to a premium.
 	 * <p>
@@ -155,18 +165,27 @@ public class IncentivePremium {
 	 * definition} = "Number of votes giving right to a premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PerVote = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPerVote = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerVote";
 			definition = "Number of votes giving right to a premium.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IncentivePremium.class.getMethod("getPerVote", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator perAttendee;
 	/**
 	 * Indicates that the premium is given per attendee.
 	 * <p>
@@ -193,18 +212,27 @@ public class IncentivePremium {
 	 * definition} = "Indicates that the premium is given per attendee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PerAttendee = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPerAttendee = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerAttendee";
 			definition = "Indicates that the premium is given per attendee.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IncentivePremium.class.getMethod("getPerAttendee", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text description;
 	/**
 	 * Description of the premium.
 	 * <p>
@@ -230,18 +258,27 @@ public class IncentivePremium {
 	 * definition} = "Description of the premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Description = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Description of the premium.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IncentivePremium.class.getMethod("getDescription", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount premiumAmount;
 	/**
 	 * Cash premium paid per security, per vote or per attendee.
 	 * <p>
@@ -269,18 +306,27 @@ public class IncentivePremium {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumAmount";
 			definition = "Cash premium paid per security, per vote or per attendee.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IncentivePremium.class.getMethod("getPremiumAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime paymentDate;
 	/**
 	 * Date/time for the payment of the premium.
 	 * <p>
@@ -306,18 +352,27 @@ public class IncentivePremium {
 	 * definition} = "Date/time for the payment of the premium."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PaymentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPaymentDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentDate";
 			definition = "Date/time for the payment of the premium.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return IncentivePremium.class.getMethod("getPaymentDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Meeting meeting;
 	/**
 	 * Meeting for which an incentive premium is specified.
 	 * <p>
@@ -326,8 +381,8 @@ public class IncentivePremium {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#IncentivePremium
-	 * Meeting.IncentivePremium}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmIncentivePremium
+	 * Meeting.mmIncentivePremium}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -350,20 +405,21 @@ public class IncentivePremium {
 	 * definition} = "Meeting for which an incentive premium is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Meeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which an incentive premium is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmIncentivePremium;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.IncentivePremium;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Distribution corporateActionDistribution;
 	/**
 	 * CorporateActionDistribution for which an incentive premium is specified.
 	 * <p>
@@ -372,8 +428,8 @@ public class IncentivePremium {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Distribution#IncentivePremium
-	 * Distribution.IncentivePremium}</li>
+	 * {@linkplain com.tools20022.repository.entity.Distribution#mmIncentivePremium
+	 * Distribution.mmIncentivePremium}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -399,34 +455,103 @@ public class IncentivePremium {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> IncentivePremium.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "CorporateActionDistribution for which an incentive premium is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Distribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.IncentivePremium;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmIncentivePremium;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IncentivePremium";
 				definition = "Cash premium made available if the securities holder consents or participates to an event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.IncentivePremium, com.tools20022.repository.entity.Distribution.IncentivePremium);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IncentivePremium.PerSecurity, com.tools20022.repository.entity.IncentivePremium.PerVote, com.tools20022.repository.entity.IncentivePremium.PerAttendee,
-						com.tools20022.repository.entity.IncentivePremium.Description, com.tools20022.repository.entity.IncentivePremium.PremiumAmount, com.tools20022.repository.entity.IncentivePremium.PaymentDate,
-						com.tools20022.repository.entity.IncentivePremium.Meeting, com.tools20022.repository.entity.IncentivePremium.CorporateActionDistribution);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmIncentivePremium, com.tools20022.repository.entity.Distribution.mmIncentivePremium);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IncentivePremium.mmPerSecurity, com.tools20022.repository.entity.IncentivePremium.mmPerVote,
+						com.tools20022.repository.entity.IncentivePremium.mmPerAttendee, com.tools20022.repository.entity.IncentivePremium.mmDescription, com.tools20022.repository.entity.IncentivePremium.mmPremiumAmount,
+						com.tools20022.repository.entity.IncentivePremium.mmPaymentDate, com.tools20022.repository.entity.IncentivePremium.mmMeeting, com.tools20022.repository.entity.IncentivePremium.mmCorporateActionDistribution);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return IncentivePremium.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Number getPerSecurity() {
+		return perSecurity;
+	}
+
+	public void setPerSecurity(Number perSecurity) {
+		this.perSecurity = perSecurity;
+	}
+
+	public Number getPerVote() {
+		return perVote;
+	}
+
+	public void setPerVote(Number perVote) {
+		this.perVote = perVote;
+	}
+
+	public YesNoIndicator getPerAttendee() {
+		return perAttendee;
+	}
+
+	public void setPerAttendee(YesNoIndicator perAttendee) {
+		this.perAttendee = perAttendee;
+	}
+
+	public Max350Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max350Text description) {
+		this.description = description;
+	}
+
+	public CurrencyAndAmount getPremiumAmount() {
+		return premiumAmount;
+	}
+
+	public void setPremiumAmount(CurrencyAndAmount premiumAmount) {
+		this.premiumAmount = premiumAmount;
+	}
+
+	public ISODateTime getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(ISODateTime paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	public Meeting getMeeting() {
+		return meeting;
+	}
+
+	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+		this.meeting = meeting;
+	}
+
+	public Distribution getCorporateActionDistribution() {
+		return corporateActionDistribution;
+	}
+
+	public void setCorporateActionDistribution(com.tools20022.repository.entity.Distribution corporateActionDistribution) {
+		this.corporateActionDistribution = corporateActionDistribution;
 	}
 }

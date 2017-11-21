@@ -17,16 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.ContractRegistrationReference1Choice;
 import com.tools20022.repository.codeset.CommunicationMethodCode;
 import com.tools20022.repository.codeset.PriorityCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Contract;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,136 +44,61 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#Certificate
- * RegisteredContract.Certificate}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmCertificate
+ * RegisteredContract.mmCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#ContractBalance
- * RegisteredContract.ContractBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmContractBalance
+ * RegisteredContract.mmContractBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#ReportingParty
- * RegisteredContract.ReportingParty}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmReportingParty
+ * RegisteredContract.mmReportingParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
- * RegisteredContract.Identification}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+ * RegisteredContract.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#DeliveryDate
- * RegisteredContract.DeliveryDate}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmDeliveryDate
+ * RegisteredContract.mmDeliveryDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#RegistrationAgent
- * RegisteredContract.RegistrationAgent}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmRegistrationAgent
+ * RegisteredContract.mmRegistrationAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#ReceivingParty
- * RegisteredContract.ReceivingParty}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RegisteredContract#Priority
- * RegisteredContract.Priority}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmReceivingParty
+ * RegisteredContract.mmReceivingParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#RegistrationDate
- * RegisteredContract.RegistrationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmPriority
+ * RegisteredContract.mmPriority}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#ClosureReason
- * RegisteredContract.ClosureReason}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmRegistrationDate
+ * RegisteredContract.mmRegistrationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#ClosureDate
- * RegisteredContract.ClosureDate}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmClosureReason
+ * RegisteredContract.mmClosureReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#PaymentScheduleType
- * RegisteredContract.PaymentScheduleType}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmClosureDate
+ * RegisteredContract.mmClosureDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#SubmissionDate
- * RegisteredContract.SubmissionDate}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmPaymentScheduleType
+ * RegisteredContract.mmPaymentScheduleType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#SendingParty
- * RegisteredContract.SendingParty}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmSubmissionDate
+ * RegisteredContract.mmSubmissionDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#DeliveryMethod
- * RegisteredContract.DeliveryMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmSendingParty
+ * RegisteredContract.mmSendingParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#SubmissionMethod
- * RegisteredContract.SubmissionMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmDeliveryMethod
+ * RegisteredContract.mmDeliveryMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#RelatedPayment
- * RegisteredContract.RelatedPayment}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmSubmissionMethod
+ * RegisteredContract.mmSubmissionMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#Attachment
- * RegisteredContract.Attachment}</li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmRelatedPayment
+ * RegisteredContract.mmRelatedPayment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmAttachment
+ * RegisteredContract.mmAttachment}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#RelatedCertificate
- * GenericIdentification.RelatedCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#RelatedContract
- * Document.RelatedContract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Payment#ContractRegistration
- * Payment.ContractRegistration}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#RelatedClosureReason
- * StatusReason.RelatedClosureReason}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashBalance#RelatedRegisteredContract
- * CashBalance.RelatedRegisteredContract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentTerms#RelatedPaymentScheduleType
- * PaymentTerms.RelatedPaymentScheduleType}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedReportingParty
- * RegulatoryReportingRole.RelatedReportingParty}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedRegistrationAgent
- * RegulatoryReportingRole.RelatedRegistrationAgent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedReceivingParty
- * RegulatoryReportingRole.RelatedReceivingParty}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedSendingParty
- * RegulatoryReportingRole.RelatedSendingParty}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract4#RegisteredContractJournal
- * RegisteredContract4.RegisteredContractJournal}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract4#Amendment
- * RegisteredContract4.Amendment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistration1#ContractRegistrationOpening
- * ContractRegistration1.ContractRegistrationOpening}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#RegisteredContract
- * ContractRegistrationStatement1.RegisteredContract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#SupportingDocumentJournal
- * ContractRegistrationStatement1.SupportingDocumentJournal}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#AdditionalSupportingDocumentJournal
- * ContractRegistrationStatement1.AdditionalSupportingDocumentJournal}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract1#RegisteredContractAmendment
- * RegisteredContract1.RegisteredContractAmendment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionCertificate1#Amendment
- * TransactionCertificate1.Amendment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionCertificate1#CertificateRecord
- * TransactionCertificate1.CertificateRecord}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SupportingDocument1#Amendment
- * SupportingDocument1.Amendment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContract5#RegisteredContractJournal
- * RegisteredContract5.RegisteredContractJournal}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract5#Amendment
- * RegisteredContract5.Amendment}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Contract Contract}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -216,10 +141,89 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmRelatedCertificate
+ * GenericIdentification.mmRelatedCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmRelatedContract
+ * Document.mmRelatedContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Payment#mmContractRegistration
+ * Payment.mmContractRegistration}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmRelatedClosureReason
+ * StatusReason.mmRelatedClosureReason}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashBalance#mmRelatedRegisteredContract
+ * CashBalance.mmRelatedRegisteredContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentTerms#mmRelatedPaymentScheduleType
+ * PaymentTerms.mmRelatedPaymentScheduleType}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedReportingParty
+ * RegulatoryReportingRole.mmRelatedReportingParty}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedRegistrationAgent
+ * RegulatoryReportingRole.mmRelatedRegistrationAgent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedReceivingParty
+ * RegulatoryReportingRole.mmRelatedReceivingParty}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedSendingParty
+ * RegulatoryReportingRole.mmRelatedSendingParty}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmRegisteredContractJournal
+ * RegisteredContract4.mmRegisteredContractJournal}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmAmendment
+ * RegisteredContract4.mmAmendment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmContractRegistrationOpening
+ * ContractRegistration1.mmContractRegistrationOpening}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#mmRegisteredContract
+ * ContractRegistrationStatement1.mmRegisteredContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#mmSupportingDocumentJournal
+ * ContractRegistrationStatement1.mmSupportingDocumentJournal}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#mmAdditionalSupportingDocumentJournal
+ * ContractRegistrationStatement1.mmAdditionalSupportingDocumentJournal}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract1#mmRegisteredContractAmendment
+ * RegisteredContract1.mmRegisteredContractAmendment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionCertificate1#mmAmendment
+ * TransactionCertificate1.mmAmendment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionCertificate1#mmCertificateRecord
+ * TransactionCertificate1.mmCertificateRecord}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.SupportingDocument1#mmAmendment
+ * SupportingDocument1.mmAmendment}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmRegisteredContractJournal
+ * RegisteredContract5.mmRegisteredContractJournal}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmAmendment
+ * RegisteredContract5.mmAmendment}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Contract Contract}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -235,6 +239,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RegisteredContract extends Contract {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected GenericIdentification certificate;
 	/**
 	 * Certificate against which all transactions in the scope of the regulatory
 	 * requirements are registered.
@@ -244,8 +249,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#RelatedCertificate
-	 * GenericIdentification.RelatedCertificate}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmRelatedCertificate
+	 * GenericIdentification.mmRelatedCertificate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -258,11 +263,11 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#Certificate
-	 * SupportingDocument1.Certificate}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#mmCertificate
+	 * SupportingDocument1.mmCertificate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#TransactionCertificate
-	 * RegulatoryReportingNotification1.TransactionCertificate}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmTransactionCertificate
+	 * RegulatoryReportingNotification1.mmTransactionCertificate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -283,21 +288,22 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Certificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCertificate = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocument1.Certificate, com.tools20022.repository.msg.RegulatoryReportingNotification1.TransactionCertificate);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocument1.mmCertificate, RegulatoryReportingNotification1.mmTransactionCertificate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Certificate";
 			definition = "Certificate against which all transactions in the scope of the regulatory requirements are registered.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.RelatedCertificate;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedCertificate;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected CashBalance contractBalance;
 	/**
 	 * Contract balance on date of contract registration.
 	 * <p>
@@ -306,8 +312,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashBalance#RelatedRegisteredContract
-	 * CashBalance.RelatedRegisteredContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashBalance#mmRelatedRegisteredContract
+	 * CashBalance.mmRelatedRegisteredContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -319,17 +325,17 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#ContractBalance
-	 * RegisteredContract4.ContractBalance}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmContractBalance
+	 * RegisteredContract4.mmContractBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#ContractBalance
-	 * ContractRegistration2.ContractBalance}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#mmContractBalance
+	 * ContractRegistration2.mmContractBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#ContractBalance
-	 * RegisteredContract5.ContractBalance}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmContractBalance
+	 * RegisteredContract5.mmContractBalance}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#ContractBalance
-	 * RegisteredContract3.ContractBalance}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmContractBalance
+	 * RegisteredContract3.mmContractBalance}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -348,22 +354,22 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Contract balance on date of contract registration."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ContractBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmContractBalance = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.ContractBalance, com.tools20022.repository.msg.ContractRegistration2.ContractBalance,
-					com.tools20022.repository.msg.RegisteredContract5.ContractBalance, com.tools20022.repository.msg.RegisteredContract3.ContractBalance);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmContractBalance, ContractRegistration2.mmContractBalance, RegisteredContract5.mmContractBalance, RegisteredContract3.mmContractBalance);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractBalance";
 			definition = "Contract balance on date of contract registration.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CashBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashBalance.RelatedRegisteredContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashBalance.mmRelatedRegisteredContract;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashBalance.mmObject();
 		}
 	};
+	protected RegulatoryReportingRole reportingParty;
 	/**
 	 * Party which must register the contract for regulatory reporting reasons.
 	 * <p>
@@ -372,8 +378,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedReportingParty
-	 * RegulatoryReportingRole.RelatedReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedReportingParty
+	 * RegulatoryReportingRole.mmRelatedReportingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -386,32 +392,32 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#ReportingParty
-	 * RegisteredContract4.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmReportingParty
+	 * RegisteredContract4.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration1#ReportingParty
-	 * ContractRegistration1.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmReportingParty
+	 * ContractRegistration1.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#ReportingParty
-	 * RegisteredContract2.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#mmReportingParty
+	 * RegisteredContract2.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#ReportingParty
-	 * ContractRegistrationStatement1.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#mmReportingParty
+	 * ContractRegistrationStatement1.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyControlGroupStatus1#ReportingParty
-	 * CurrencyControlGroupStatus1.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyControlGroupStatus1#mmReportingParty
+	 * CurrencyControlGroupStatus1.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1#ReportingParty
-	 * ContractRegistrationStatementRequest1.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1#mmReportingParty
+	 * ContractRegistrationStatementRequest1.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract1#ReportingParty
-	 * RegisteredContract1.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract1#mmReportingParty
+	 * RegisteredContract1.mmReportingParty}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#AccountOwner
-	 * SupportingDocument1.AccountOwner}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#mmAccountOwner
+	 * SupportingDocument1.mmAccountOwner}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#AccountOwner
-	 * RegulatoryReportingNotification1.AccountOwner}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmAccountOwner
+	 * RegulatoryReportingNotification1.mmAccountOwner}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -432,24 +438,24 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ReportingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReportingParty = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.ReportingParty, com.tools20022.repository.msg.ContractRegistration1.ReportingParty,
-					com.tools20022.repository.msg.RegisteredContract2.ReportingParty, com.tools20022.repository.msg.ContractRegistrationStatement1.ReportingParty, com.tools20022.repository.msg.CurrencyControlGroupStatus1.ReportingParty,
-					com.tools20022.repository.msg.ContractRegistrationStatementRequest1.ReportingParty, com.tools20022.repository.msg.RegisteredContract1.ReportingParty, com.tools20022.repository.msg.SupportingDocument1.AccountOwner,
-					com.tools20022.repository.msg.RegulatoryReportingNotification1.AccountOwner);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmReportingParty, ContractRegistration1.mmReportingParty, RegisteredContract2.mmReportingParty, ContractRegistrationStatement1.mmReportingParty,
+					CurrencyControlGroupStatus1.mmReportingParty, ContractRegistrationStatementRequest1.mmReportingParty, RegisteredContract1.mmReportingParty, SupportingDocument1.mmAccountOwner,
+					RegulatoryReportingNotification1.mmAccountOwner);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingParty";
 			definition = "Party which must register the contract for regulatory reporting reasons.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RegulatoryReportingRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.RelatedReportingParty;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReportingParty;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 		}
 	};
+	protected Max35Text identification;
 	/**
 	 * Unique and unambiguous identification of the registered contract.
 	 * <p>
@@ -463,56 +469,58 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#RegisteredContractIdentification
-	 * RegisteredContract4.RegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmRegisteredContractIdentification
+	 * RegisteredContract4.mmRegisteredContractIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#PreviousRegisteredContractIdentification
-	 * RegisteredContract4.PreviousRegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmPreviousRegisteredContractIdentification
+	 * RegisteredContract4.mmPreviousRegisteredContractIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration1#ContractRegistrationIdentification
-	 * ContractRegistration1.ContractRegistrationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmContractRegistrationIdentification
+	 * ContractRegistration1.mmContractRegistrationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#RegisteredContractClosureIdentification
-	 * RegisteredContract2.RegisteredContractClosureIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#mmRegisteredContractClosureIdentification
+	 * RegisteredContract2.mmRegisteredContractClosureIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#OriginalRegisteredContract
-	 * RegisteredContract2.OriginalRegisteredContract}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#mmOriginalRegisteredContract
+	 * RegisteredContract2.mmOriginalRegisteredContract}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1#RegisteredContractIdentification
-	 * ContractRegistrationStatementRequest1.RegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1#mmRegisteredContractIdentification
+	 * ContractRegistrationStatementRequest1.mmRegisteredContractIdentification}
+	 * </li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract1#ContractRegistrationAmendmentIdentification
-	 * RegisteredContract1.ContractRegistrationAmendmentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract1#mmContractRegistrationAmendmentIdentification
+	 * RegisteredContract1.mmContractRegistrationAmendmentIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#ContractReference
-	 * SupportingDocument1.ContractReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#mmContractReference
+	 * SupportingDocument1.mmContractReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#UniqueIdentification
-	 * RegisteredContractJournal1.UniqueIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmUniqueIdentification
+	 * RegisteredContractJournal1.mmUniqueIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentAmendment1#OriginalDocumentIdentification
-	 * DocumentAmendment1.OriginalDocumentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentAmendment1#mmOriginalDocumentIdentification
+	 * DocumentAmendment1.mmOriginalDocumentIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#PreviousRegistrationIdentification
-	 * ContractRegistration2.PreviousRegistrationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#mmPreviousRegistrationIdentification
+	 * ContractRegistration2.mmPreviousRegistrationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.ContractRegistrationReference1Choice#RegisteredContractIdentification
-	 * ContractRegistrationReference1Choice.RegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.choice.ContractRegistrationReference1Choice#mmRegisteredContractIdentification
+	 * ContractRegistrationReference1Choice.mmRegisteredContractIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#RegisteredContractIdentification
-	 * RegisteredContract5.RegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmRegisteredContractIdentification
+	 * RegisteredContract5.mmRegisteredContractIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#PreviousRegisteredContractIdentification
-	 * RegisteredContract5.PreviousRegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmPreviousRegisteredContractIdentification
+	 * RegisteredContract5.mmPreviousRegisteredContractIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#RegisteredContractAmendmentIdentification
-	 * RegisteredContract3.RegisteredContractAmendmentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmRegisteredContractAmendmentIdentification
+	 * RegisteredContract3.mmRegisteredContractAmendmentIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#OriginalRegisteredContractIdentification
-	 * RegisteredContract3.OriginalRegisteredContractIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmOriginalRegisteredContractIdentification
+	 * RegisteredContract3.mmOriginalRegisteredContractIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#TransactionNotificationIdentification
-	 * RegulatoryReportingNotification1.TransactionNotificationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmTransactionNotificationIdentification
+	 * RegulatoryReportingNotification1.mmTransactionNotificationIdentification}
+	 * </li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -532,27 +540,33 @@ public class RegisteredContract extends Contract {
 	 * "Unique and unambiguous identification of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Identification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.RegisteredContractIdentification, com.tools20022.repository.msg.RegisteredContract4.PreviousRegisteredContractIdentification,
-					com.tools20022.repository.msg.ContractRegistration1.ContractRegistrationIdentification, com.tools20022.repository.msg.RegisteredContract2.RegisteredContractClosureIdentification,
-					com.tools20022.repository.msg.RegisteredContract2.OriginalRegisteredContract, com.tools20022.repository.msg.ContractRegistrationStatementRequest1.RegisteredContractIdentification,
-					com.tools20022.repository.msg.RegisteredContract1.ContractRegistrationAmendmentIdentification, com.tools20022.repository.msg.SupportingDocument1.ContractReference,
-					com.tools20022.repository.msg.RegisteredContractJournal1.UniqueIdentification, com.tools20022.repository.msg.DocumentAmendment1.OriginalDocumentIdentification,
-					com.tools20022.repository.msg.ContractRegistration2.PreviousRegistrationIdentification, com.tools20022.repository.choice.ContractRegistrationReference1Choice.RegisteredContractIdentification,
-					com.tools20022.repository.msg.RegisteredContract5.RegisteredContractIdentification, com.tools20022.repository.msg.RegisteredContract5.PreviousRegisteredContractIdentification,
-					com.tools20022.repository.msg.RegisteredContract3.RegisteredContractAmendmentIdentification, com.tools20022.repository.msg.RegisteredContract3.OriginalRegisteredContractIdentification,
-					com.tools20022.repository.msg.RegulatoryReportingNotification1.TransactionNotificationIdentification);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmRegisteredContractIdentification, RegisteredContract4.mmPreviousRegisteredContractIdentification, ContractRegistration1.mmContractRegistrationIdentification,
+					RegisteredContract2.mmRegisteredContractClosureIdentification, RegisteredContract2.mmOriginalRegisteredContract, ContractRegistrationStatementRequest1.mmRegisteredContractIdentification,
+					RegisteredContract1.mmContractRegistrationAmendmentIdentification, SupportingDocument1.mmContractReference, RegisteredContractJournal1.mmUniqueIdentification, DocumentAmendment1.mmOriginalDocumentIdentification,
+					ContractRegistration2.mmPreviousRegistrationIdentification, ContractRegistrationReference1Choice.mmRegisteredContractIdentification, RegisteredContract5.mmRegisteredContractIdentification,
+					RegisteredContract5.mmPreviousRegisteredContractIdentification, RegisteredContract3.mmRegisteredContractAmendmentIdentification, RegisteredContract3.mmOriginalRegisteredContractIdentification,
+					RegulatoryReportingNotification1.mmTransactionNotificationIdentification);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODate deliveryDate;
 	/**
 	 * Provides the date for the delivery of the registered contract.
 	 * <p>
@@ -579,18 +593,27 @@ public class RegisteredContract extends Contract {
 	 * "Provides the date for the delivery of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DeliveryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDeliveryDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryDate";
 			definition = "Provides the date for the delivery of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getDeliveryDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RegulatoryReportingRole registrationAgent;
 	/**
 	 * Agent which is in charge of the registration of the contract.
 	 * <p>
@@ -599,8 +622,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedRegistrationAgent
-	 * RegulatoryReportingRole.RelatedRegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedRegistrationAgent
+	 * RegulatoryReportingRole.mmRelatedRegistrationAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -613,41 +636,41 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#RegistrationAgent
-	 * RegisteredContract4.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmRegistrationAgent
+	 * RegisteredContract4.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#IssuerFinancialInstitution
-	 * RegisteredContract4.IssuerFinancialInstitution}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmIssuerFinancialInstitution
+	 * RegisteredContract4.mmIssuerFinancialInstitution}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration1#RegistrationAgent
-	 * ContractRegistration1.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmRegistrationAgent
+	 * ContractRegistration1.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#RegistrationAgent
-	 * RegisteredContract2.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#mmRegistrationAgent
+	 * RegisteredContract2.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#RegistrationAgent
-	 * ContractRegistrationStatement1.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#mmRegistrationAgent
+	 * ContractRegistrationStatement1.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyControlGroupStatus1#RegistrationAgent
-	 * CurrencyControlGroupStatus1.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyControlGroupStatus1#mmRegistrationAgent
+	 * CurrencyControlGroupStatus1.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1#RegistrationAgent
-	 * ContractRegistrationStatementRequest1.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatementRequest1#mmRegistrationAgent
+	 * ContractRegistrationStatementRequest1.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract1#RegistrationAgent
-	 * RegisteredContract1.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract1#mmRegistrationAgent
+	 * RegisteredContract1.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#AccountServicer
-	 * SupportingDocument1.AccountServicer}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocument1#mmAccountServicer
+	 * SupportingDocument1.mmAccountServicer}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#RegistrationAgent
-	 * RegisteredContractJournal1.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmRegistrationAgent
+	 * RegisteredContractJournal1.mmRegistrationAgent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#IssuerFinancialInstitution
-	 * RegisteredContract5.IssuerFinancialInstitution}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmIssuerFinancialInstitution
+	 * RegisteredContract5.mmIssuerFinancialInstitution}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#AccountServicer
-	 * RegulatoryReportingNotification1.AccountServicer}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegulatoryReportingNotification1#mmAccountServicer
+	 * RegulatoryReportingNotification1.mmAccountServicer}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -667,25 +690,24 @@ public class RegisteredContract extends Contract {
 	 * "Agent which is in charge of the registration of the contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RegistrationAgent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRegistrationAgent = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.RegistrationAgent, com.tools20022.repository.msg.RegisteredContract4.IssuerFinancialInstitution,
-					com.tools20022.repository.msg.ContractRegistration1.RegistrationAgent, com.tools20022.repository.msg.RegisteredContract2.RegistrationAgent, com.tools20022.repository.msg.ContractRegistrationStatement1.RegistrationAgent,
-					com.tools20022.repository.msg.CurrencyControlGroupStatus1.RegistrationAgent, com.tools20022.repository.msg.ContractRegistrationStatementRequest1.RegistrationAgent,
-					com.tools20022.repository.msg.RegisteredContract1.RegistrationAgent, com.tools20022.repository.msg.SupportingDocument1.AccountServicer, com.tools20022.repository.msg.RegisteredContractJournal1.RegistrationAgent,
-					com.tools20022.repository.msg.RegisteredContract5.IssuerFinancialInstitution, com.tools20022.repository.msg.RegulatoryReportingNotification1.AccountServicer);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmRegistrationAgent, RegisteredContract4.mmIssuerFinancialInstitution, ContractRegistration1.mmRegistrationAgent, RegisteredContract2.mmRegistrationAgent,
+					ContractRegistrationStatement1.mmRegistrationAgent, CurrencyControlGroupStatus1.mmRegistrationAgent, ContractRegistrationStatementRequest1.mmRegistrationAgent, RegisteredContract1.mmRegistrationAgent,
+					SupportingDocument1.mmAccountServicer, RegisteredContractJournal1.mmRegistrationAgent, RegisteredContract5.mmIssuerFinancialInstitution, RegulatoryReportingNotification1.mmAccountServicer);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationAgent";
 			definition = "Agent which is in charge of the registration of the contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RegulatoryReportingRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.RelatedRegistrationAgent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedRegistrationAgent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 		}
 	};
+	protected RegulatoryReportingRole receivingParty;
 	/**
 	 * Party which receives support information about the registered contract.
 	 * <p>
@@ -694,8 +716,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedReceivingParty
-	 * RegulatoryReportingRole.RelatedReceivingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedReceivingParty
+	 * RegulatoryReportingRole.mmRelatedReceivingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -708,8 +730,8 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Receiver
-	 * SupportingDocumentRequestOrLetter1.Receiver}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmReceiver
+	 * SupportingDocumentRequestOrLetter1.mmReceiver}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -730,21 +752,22 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ReceivingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReceivingParty = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Receiver);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmReceiver);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingParty";
 			definition = "Party which receives support information about the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RegulatoryReportingRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.RelatedReceivingParty;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReceivingParty;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 		}
 	};
+	protected PriorityCode priority;
 	/**
 	 * Priority requested for the registered contract.
 	 * <p>
@@ -758,14 +781,14 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#Priority
-	 * RegisteredContract2.Priority}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#mmPriority
+	 * RegisteredContract2.mmPriority}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#Priority
-	 * ContractRegistration2.Priority}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#mmPriority
+	 * ContractRegistration2.mmPriority}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#Priority
-	 * RegisteredContract3.Priority}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmPriority
+	 * RegisteredContract3.mmPriority}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -784,19 +807,28 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Priority requested for the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Priority = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract2.Priority, com.tools20022.repository.msg.ContractRegistration2.Priority, com.tools20022.repository.msg.RegisteredContract3.Priority);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract2.mmPriority, ContractRegistration2.mmPriority, RegisteredContract3.mmPriority);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Priority";
 			definition = "Priority requested for the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PriorityCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getPriority", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODate registrationDate;
 	/**
 	 * Provides the date for the registration of the registered contract.
 	 * <p>
@@ -823,18 +855,27 @@ public class RegisteredContract extends Contract {
 	 * "Provides the date for the registration of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegistrationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegistrationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDate";
 			definition = "Provides the date for the registration of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getRegistrationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected StatusReason closureReason;
 	/**
 	 * Reason of closure of the contract.
 	 * <p>
@@ -843,8 +884,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.StatusReason#RelatedClosureReason
-	 * StatusReason.RelatedClosureReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.StatusReason#mmRelatedClosureReason
+	 * StatusReason.mmRelatedClosureReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -856,11 +897,11 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#ClosureReason
-	 * RegisteredContract2.ClosureReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract2#mmClosureReason
+	 * RegisteredContract2.mmClosureReason}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#ClosureReason
-	 * RegisteredContractJournal1.ClosureReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmClosureReason
+	 * RegisteredContractJournal1.mmClosureReason}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -879,21 +920,22 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Reason of closure of the contract. "</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClosureReason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClosureReason = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract2.ClosureReason, com.tools20022.repository.msg.RegisteredContractJournal1.ClosureReason);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract2.mmClosureReason, RegisteredContractJournal1.mmClosureReason);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureReason";
 			definition = "Reason of closure of the contract. ";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> StatusReason.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.StatusReason.RelatedClosureReason;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.StatusReason.mmRelatedClosureReason;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 		}
 	};
+	protected ISODate closureDate;
 	/**
 	 * Date of closure of the contract.
 	 * <p>
@@ -919,18 +961,27 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Date of closure of the contract. "</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClosureDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClosureDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosureDate";
 			definition = "Date of closure of the contract. ";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getClosureDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PaymentTerms paymentScheduleType;
 	/**
 	 * Type of the payment schedule provided in the contract.
 	 * <p>
@@ -939,8 +990,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentTerms#RelatedPaymentScheduleType
-	 * PaymentTerms.RelatedPaymentScheduleType}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentTerms#mmRelatedPaymentScheduleType
+	 * PaymentTerms.mmRelatedPaymentScheduleType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -952,17 +1003,17 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#PaymentScheduleType
-	 * RegisteredContract4.PaymentScheduleType}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmPaymentScheduleType
+	 * RegisteredContract4.mmPaymentScheduleType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#PaymentScheduleType
-	 * ContractRegistration2.PaymentScheduleType}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#mmPaymentScheduleType
+	 * ContractRegistration2.mmPaymentScheduleType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#PaymentScheduleType
-	 * RegisteredContract5.PaymentScheduleType}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmPaymentScheduleType
+	 * RegisteredContract5.mmPaymentScheduleType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#PaymentScheduleType
-	 * RegisteredContract3.PaymentScheduleType}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmPaymentScheduleType
+	 * RegisteredContract3.mmPaymentScheduleType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -981,22 +1032,22 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Type of the payment schedule provided in the contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentScheduleType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentScheduleType = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.PaymentScheduleType, com.tools20022.repository.msg.ContractRegistration2.PaymentScheduleType,
-					com.tools20022.repository.msg.RegisteredContract5.PaymentScheduleType, com.tools20022.repository.msg.RegisteredContract3.PaymentScheduleType);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmPaymentScheduleType, ContractRegistration2.mmPaymentScheduleType, RegisteredContract5.mmPaymentScheduleType, RegisteredContract3.mmPaymentScheduleType);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentScheduleType";
 			definition = "Type of the payment schedule provided in the contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PaymentTerms.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.RelatedPaymentScheduleType;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmRelatedPaymentScheduleType;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 		}
 	};
+	protected ISODate submissionDate;
 	/**
 	 * Provides the date for the submission of the registered contract.
 	 * <p>
@@ -1010,8 +1061,8 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#AmendmentDate
-	 * RegisteredContractAmendment1.AmendmentDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#mmAmendmentDate
+	 * RegisteredContractAmendment1.mmAmendmentDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1031,19 +1082,28 @@ public class RegisteredContract extends Contract {
 	 * "Provides the date for the submission of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SubmissionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSubmissionDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContractAmendment1.AmendmentDate);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContractAmendment1.mmAmendmentDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmissionDate";
 			definition = "Provides the date for the submission of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getSubmissionDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RegulatoryReportingRole sendingParty;
 	/**
 	 * Party which sends support information about the registered contract.
 	 * <p>
@@ -1052,8 +1112,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#RelatedSendingParty
-	 * RegulatoryReportingRole.RelatedSendingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReportingRole#mmRelatedSendingParty
+	 * RegulatoryReportingRole.mmRelatedSendingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1066,8 +1126,8 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Sender
-	 * SupportingDocumentRequestOrLetter1.Sender}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmSender
+	 * SupportingDocumentRequestOrLetter1.mmSender}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1087,21 +1147,22 @@ public class RegisteredContract extends Contract {
 	 * "Party which sends support information about the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SendingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSendingParty = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Sender);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmSender);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SendingParty";
 			definition = "Party which sends support information about the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RegulatoryReportingRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.RelatedSendingParty;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedSendingParty;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
 		}
 	};
+	protected CommunicationMethodCode deliveryMethod;
 	/**
 	 * Provides the communication method for the delivery of the registered
 	 * contract.
@@ -1117,11 +1178,11 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#Delivery
-	 * RegisteredContract4.Delivery}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmDelivery
+	 * RegisteredContract4.mmDelivery}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#Delivery
-	 * RegisteredContract5.Delivery}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmDelivery
+	 * RegisteredContract5.mmDelivery}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1142,19 +1203,28 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DeliveryMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDeliveryMethod = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.Delivery, com.tools20022.repository.msg.RegisteredContract5.Delivery);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmDelivery, RegisteredContract5.mmDelivery);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryMethod";
 			definition = "Provides the communication method for the delivery of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethodCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getDeliveryMethod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CommunicationMethodCode submissionMethod;
 	/**
 	 * Provides the communication method for the submission of the registered
 	 * contract.
@@ -1170,11 +1240,11 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#Submission
-	 * RegisteredContract4.Submission}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract4#mmSubmission
+	 * RegisteredContract4.mmSubmission}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#Submission
-	 * RegisteredContract5.Submission}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract5#mmSubmission
+	 * RegisteredContract5.mmSubmission}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1195,19 +1265,28 @@ public class RegisteredContract extends Contract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SubmissionMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSubmissionMethod = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.Submission, com.tools20022.repository.msg.RegisteredContract5.Submission);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(RegisteredContract4.mmSubmission, RegisteredContract5.mmSubmission);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubmissionMethod";
 			definition = "Provides the communication method for the submission of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CommunicationMethodCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RegisteredContract.class.getMethod("getSubmissionMethod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Payment relatedPayment;
 	/**
 	 * Provides the payment related of the registered contract.
 	 * <p>
@@ -1216,8 +1295,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Payment#ContractRegistration
-	 * Payment.ContractRegistration}</li>
+	 * {@linkplain com.tools20022.repository.entity.Payment#mmContractRegistration
+	 * Payment.mmContractRegistration}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1240,20 +1319,21 @@ public class RegisteredContract extends Contract {
 	 * definition} = "Provides the payment related of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPayment";
 			definition = "Provides the payment related of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Payment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.ContractRegistration;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmContractRegistration;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
 		}
 	};
+	protected Document attachment;
 	/**
 	 * Documents provided as attachments to the registered contract.
 	 * <p>
@@ -1262,8 +1342,8 @@ public class RegisteredContract extends Contract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Document#RelatedContract
-	 * Document.RelatedContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmRelatedContract
+	 * Document.mmRelatedContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1274,24 +1354,25 @@ public class RegisteredContract extends Contract {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Attachment
-	 * SupportingDocumentRequestOrLetter1.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmAttachment
+	 * SupportingDocumentRequestOrLetter1.mmAttachment}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#Attachment
-	 * SupportingDocumentEntry1.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmAttachment
+	 * SupportingDocumentEntry1.mmAttachment}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#Attachment
-	 * ContractRegistration2.Attachment}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.TradeContract1#Attachment
-	 * TradeContract1.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistration2#mmAttachment
+	 * ContractRegistration2.mmAttachment}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionCertificateRecord1#Attachment
-	 * TransactionCertificateRecord1.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.msg.TradeContract1#mmAttachment
+	 * TradeContract1.mmAttachment}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#Attachment
-	 * RegisteredContract3.Attachment}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.LoanContract1#Attachment
-	 * LoanContract1.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionCertificateRecord1#mmAttachment
+	 * TransactionCertificateRecord1.mmAttachment}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContract3#mmAttachment
+	 * RegisteredContract3.mmAttachment}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.LoanContract1#mmAttachment
+	 * LoanContract1.mmAttachment}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1311,56 +1392,202 @@ public class RegisteredContract extends Contract {
 	 * "Documents provided as attachments to the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Attachment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAttachment = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Attachment, com.tools20022.repository.msg.SupportingDocumentEntry1.Attachment,
-					com.tools20022.repository.msg.ContractRegistration2.Attachment, com.tools20022.repository.msg.TradeContract1.Attachment, com.tools20022.repository.msg.TransactionCertificateRecord1.Attachment,
-					com.tools20022.repository.msg.RegisteredContract3.Attachment, com.tools20022.repository.msg.LoanContract1.Attachment);
-			elementContext_lazy = () -> RegisteredContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmAttachment, SupportingDocumentEntry1.mmAttachment, ContractRegistration2.mmAttachment, TradeContract1.mmAttachment,
+					TransactionCertificateRecord1.mmAttachment, RegisteredContract3.mmAttachment, LoanContract1.mmAttachment);
+			elementContext_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Attachment";
 			definition = "Documents provided as attachments to the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmRelatedContract;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.RelatedContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContract";
 				definition = "Contract registered for regulatory purpose by a registration agent for the journaling of payments made against the contract.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.RelatedCertificate, com.tools20022.repository.entity.Document.RelatedContract,
-						com.tools20022.repository.entity.Payment.ContractRegistration, com.tools20022.repository.entity.StatusReason.RelatedClosureReason, com.tools20022.repository.entity.CashBalance.RelatedRegisteredContract,
-						com.tools20022.repository.entity.PaymentTerms.RelatedPaymentScheduleType, com.tools20022.repository.entity.RegulatoryReportingRole.RelatedReportingParty,
-						com.tools20022.repository.entity.RegulatoryReportingRole.RelatedRegistrationAgent, com.tools20022.repository.entity.RegulatoryReportingRole.RelatedReceivingParty,
-						com.tools20022.repository.entity.RegulatoryReportingRole.RelatedSendingParty);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.RegisteredContractJournal, com.tools20022.repository.msg.RegisteredContract4.Amendment,
-						com.tools20022.repository.msg.ContractRegistration1.ContractRegistrationOpening, com.tools20022.repository.msg.ContractRegistrationStatement1.RegisteredContract,
-						com.tools20022.repository.msg.ContractRegistrationStatement1.SupportingDocumentJournal, com.tools20022.repository.msg.ContractRegistrationStatement1.AdditionalSupportingDocumentJournal,
-						com.tools20022.repository.msg.RegisteredContract1.RegisteredContractAmendment, com.tools20022.repository.msg.TransactionCertificate1.Amendment,
-						com.tools20022.repository.msg.TransactionCertificate1.CertificateRecord, com.tools20022.repository.msg.SupportingDocument1.Amendment, com.tools20022.repository.msg.RegisteredContract5.RegisteredContractJournal,
-						com.tools20022.repository.msg.RegisteredContract5.Amendment);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmRelatedCertificate, com.tools20022.repository.entity.Document.mmRelatedContract,
+						com.tools20022.repository.entity.Payment.mmContractRegistration, com.tools20022.repository.entity.StatusReason.mmRelatedClosureReason, com.tools20022.repository.entity.CashBalance.mmRelatedRegisteredContract,
+						com.tools20022.repository.entity.PaymentTerms.mmRelatedPaymentScheduleType, com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReportingParty,
+						com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedRegistrationAgent, com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReceivingParty,
+						com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedSendingParty);
+				derivationElement_lazy = () -> Arrays.asList(RegisteredContract4.mmRegisteredContractJournal, RegisteredContract4.mmAmendment, ContractRegistration1.mmContractRegistrationOpening,
+						ContractRegistrationStatement1.mmRegisteredContract, ContractRegistrationStatement1.mmSupportingDocumentJournal, ContractRegistrationStatement1.mmAdditionalSupportingDocumentJournal,
+						RegisteredContract1.mmRegisteredContractAmendment, TransactionCertificate1.mmAmendment, TransactionCertificate1.mmCertificateRecord, SupportingDocument1.mmAmendment, RegisteredContract5.mmRegisteredContractJournal,
+						RegisteredContract5.mmAmendment);
 				superType_lazy = () -> Contract.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegisteredContract.Certificate, com.tools20022.repository.entity.RegisteredContract.ContractBalance,
-						com.tools20022.repository.entity.RegisteredContract.ReportingParty, com.tools20022.repository.entity.RegisteredContract.Identification, com.tools20022.repository.entity.RegisteredContract.DeliveryDate,
-						com.tools20022.repository.entity.RegisteredContract.RegistrationAgent, com.tools20022.repository.entity.RegisteredContract.ReceivingParty, com.tools20022.repository.entity.RegisteredContract.Priority,
-						com.tools20022.repository.entity.RegisteredContract.RegistrationDate, com.tools20022.repository.entity.RegisteredContract.ClosureReason, com.tools20022.repository.entity.RegisteredContract.ClosureDate,
-						com.tools20022.repository.entity.RegisteredContract.PaymentScheduleType, com.tools20022.repository.entity.RegisteredContract.SubmissionDate, com.tools20022.repository.entity.RegisteredContract.SendingParty,
-						com.tools20022.repository.entity.RegisteredContract.DeliveryMethod, com.tools20022.repository.entity.RegisteredContract.SubmissionMethod, com.tools20022.repository.entity.RegisteredContract.RelatedPayment,
-						com.tools20022.repository.entity.RegisteredContract.Attachment);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegisteredContract.mmCertificate, com.tools20022.repository.entity.RegisteredContract.mmContractBalance,
+						com.tools20022.repository.entity.RegisteredContract.mmReportingParty, com.tools20022.repository.entity.RegisteredContract.mmIdentification, com.tools20022.repository.entity.RegisteredContract.mmDeliveryDate,
+						com.tools20022.repository.entity.RegisteredContract.mmRegistrationAgent, com.tools20022.repository.entity.RegisteredContract.mmReceivingParty, com.tools20022.repository.entity.RegisteredContract.mmPriority,
+						com.tools20022.repository.entity.RegisteredContract.mmRegistrationDate, com.tools20022.repository.entity.RegisteredContract.mmClosureReason, com.tools20022.repository.entity.RegisteredContract.mmClosureDate,
+						com.tools20022.repository.entity.RegisteredContract.mmPaymentScheduleType, com.tools20022.repository.entity.RegisteredContract.mmSubmissionDate, com.tools20022.repository.entity.RegisteredContract.mmSendingParty,
+						com.tools20022.repository.entity.RegisteredContract.mmDeliveryMethod, com.tools20022.repository.entity.RegisteredContract.mmSubmissionMethod, com.tools20022.repository.entity.RegisteredContract.mmRelatedPayment,
+						com.tools20022.repository.entity.RegisteredContract.mmAttachment);
 				derivationComponent_lazy = () -> Arrays.asList(RegisteredContract4.mmObject(), ContractRegistration1.mmObject(), RegisteredContract2.mmObject(), ContractRegistrationStatement1.mmObject(),
 						ContractRegistrationStatementRequest1.mmObject(), RegisteredContract1.mmObject(), SupportingDocument1.mmObject(), RegisteredContractAmendment1.mmObject(), RegisteredContractJournal1.mmObject(),
 						DocumentAmendment1.mmObject(), ContractRegistration2.mmObject(), ContractRegistrationReference1Choice.mmObject(), TransactionCertificateRecord1.mmObject(), RegisteredContract5.mmObject(),
 						RegisteredContract3.mmObject(), RegulatoryReportingNotification1.mmObject());
 			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return RegisteredContract.class;
+			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public GenericIdentification getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(com.tools20022.repository.entity.GenericIdentification certificate) {
+		this.certificate = certificate;
+	}
+
+	public CashBalance getContractBalance() {
+		return contractBalance;
+	}
+
+	public void setContractBalance(com.tools20022.repository.entity.CashBalance contractBalance) {
+		this.contractBalance = contractBalance;
+	}
+
+	public RegulatoryReportingRole getReportingParty() {
+		return reportingParty;
+	}
+
+	public void setReportingParty(com.tools20022.repository.entity.RegulatoryReportingRole reportingParty) {
+		this.reportingParty = reportingParty;
+	}
+
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	public ISODate getDeliveryDate() {
+		return deliveryDate;
+	}
+
+	public void setDeliveryDate(ISODate deliveryDate) {
+		this.deliveryDate = deliveryDate;
+	}
+
+	public RegulatoryReportingRole getRegistrationAgent() {
+		return registrationAgent;
+	}
+
+	public void setRegistrationAgent(com.tools20022.repository.entity.RegulatoryReportingRole registrationAgent) {
+		this.registrationAgent = registrationAgent;
+	}
+
+	public RegulatoryReportingRole getReceivingParty() {
+		return receivingParty;
+	}
+
+	public void setReceivingParty(com.tools20022.repository.entity.RegulatoryReportingRole receivingParty) {
+		this.receivingParty = receivingParty;
+	}
+
+	public PriorityCode getPriority() {
+		return priority;
+	}
+
+	public void setPriority(PriorityCode priority) {
+		this.priority = priority;
+	}
+
+	public ISODate getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(ISODate registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public StatusReason getClosureReason() {
+		return closureReason;
+	}
+
+	public void setClosureReason(com.tools20022.repository.entity.StatusReason closureReason) {
+		this.closureReason = closureReason;
+	}
+
+	public ISODate getClosureDate() {
+		return closureDate;
+	}
+
+	public void setClosureDate(ISODate closureDate) {
+		this.closureDate = closureDate;
+	}
+
+	public PaymentTerms getPaymentScheduleType() {
+		return paymentScheduleType;
+	}
+
+	public void setPaymentScheduleType(com.tools20022.repository.entity.PaymentTerms paymentScheduleType) {
+		this.paymentScheduleType = paymentScheduleType;
+	}
+
+	public ISODate getSubmissionDate() {
+		return submissionDate;
+	}
+
+	public void setSubmissionDate(ISODate submissionDate) {
+		this.submissionDate = submissionDate;
+	}
+
+	public RegulatoryReportingRole getSendingParty() {
+		return sendingParty;
+	}
+
+	public void setSendingParty(com.tools20022.repository.entity.RegulatoryReportingRole sendingParty) {
+		this.sendingParty = sendingParty;
+	}
+
+	public CommunicationMethodCode getDeliveryMethod() {
+		return deliveryMethod;
+	}
+
+	public void setDeliveryMethod(CommunicationMethodCode deliveryMethod) {
+		this.deliveryMethod = deliveryMethod;
+	}
+
+	public CommunicationMethodCode getSubmissionMethod() {
+		return submissionMethod;
+	}
+
+	public void setSubmissionMethod(CommunicationMethodCode submissionMethod) {
+		this.submissionMethod = submissionMethod;
+	}
+
+	public Payment getRelatedPayment() {
+		return relatedPayment;
+	}
+
+	public void setRelatedPayment(com.tools20022.repository.entity.Payment relatedPayment) {
+		this.relatedPayment = relatedPayment;
+	}
+
+	public Document getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(com.tools20022.repository.entity.Document attachment) {
+		this.attachment = attachment;
 	}
 }

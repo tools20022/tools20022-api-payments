@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,17 +32,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.TEFRARulesCode#C
- * TEFRARulesCode.C}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.TEFRARulesCode#D
- * TEFRARulesCode.D}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.TEFRARulesCode#mmC
+ * TEFRARulesCode.mmC}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.TEFRARulesCode#mmD
+ * TEFRARulesCode.mmD}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class TEFRARulesCode {
 	 * "Indicates that the security is issued under the TEFRA rule C."</li>
 	 * </ul>
 	 */
-	public static final MMCode C = new MMCode() {
+	public static final MMCode mmC = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "C";
 			definition = "Indicates that the security is issued under the TEFRA rule C.";
 			owner_lazy = () -> TEFRARulesCode.mmObject();
@@ -115,9 +117,9 @@ public class TEFRARulesCode {
 	 * "Indicates that the security is issued under the TEFRA rule D."</li>
 	 * </ul>
 	 */
-	public static final MMCode D = new MMCode() {
+	public static final MMCode mmD = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "D";
 			definition = "Indicates that the security is issued under the TEFRA rule D.";
 			owner_lazy = () -> TEFRARulesCode.mmObject();
@@ -128,12 +130,12 @@ public class TEFRARulesCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("RULC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TEFRARulesCode";
 				definition = "Indicates the Tax Equity and Fiscal Responsibility Act (TEFRA) rule levied by the Internal Revenue Service under which the security is issued.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TEFRARulesCode.C, com.tools20022.repository.codeset.TEFRARulesCode.D);
+				code_lazy = () -> Arrays.asList(TEFRARulesCode.mmC, TEFRARulesCode.mmD);
 			}
 		});
 		return mmObject_lazy.get();

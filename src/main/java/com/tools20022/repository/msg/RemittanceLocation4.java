@@ -20,10 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.ContactPoint;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to provide information on the remittance advice.
@@ -35,11 +42,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceLocation4#RemittanceIdentification
- * RemittanceLocation4.RemittanceIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation4#mmRemittanceIdentification
+ * RemittanceLocation4.mmRemittanceIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceLocation4#RemittanceLocationDetails
- * RemittanceLocation4.RemittanceLocationDetails}</li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceLocation4#mmRemittanceLocationDetails
+ * RemittanceLocation4.mmRemittanceLocationDetails}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,9 +68,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Set of elements used to provide information on the remittance advice."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RemittanceLocation4", propOrder = {"remittanceIdentification", "remittanceLocationDetails"})
 public class RemittanceLocation4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text remittanceIdentification;
 	/**
 	 * Unique identification, as assigned by the initiating party, to
 	 * unambiguously identify the remittance information sent separately from
@@ -95,19 +105,20 @@ public class RemittanceLocation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RemittanceIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRemittanceIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> RemittanceLocation4.mmObject();
 			isDerived = false;
 			xmlTag = "RmtId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemittanceIdentification";
 			definition = "Unique identification, as assigned by the initiating party, to unambiguously identify the remittance information sent separately from the payment instruction, such as a remittance advice.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.RemittanceLocationDetails1> remittanceLocationDetails;
 	/**
 	 * Set of elements used to provide information on the location and/or
 	 * delivery of the remittance information.
@@ -142,32 +153,50 @@ public class RemittanceLocation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd RemittanceLocationDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRemittanceLocationDetails = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> RemittanceLocation4.mmObject();
 			businessComponentTrace_lazy = () -> ContactPoint.mmObject();
+			componentContext_lazy = () -> RemittanceLocation4.mmObject();
 			isDerived = false;
 			xmlTag = "RmtLctnDtls";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RemittanceLocationDetails";
 			definition = "Set of elements used to provide information on the location and/or delivery of the remittance information.";
 			minOccurs = 0;
-			type_lazy = () -> RemittanceLocationDetails1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.RemittanceLocationDetails1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RemittanceLocation4.RemittanceIdentification, com.tools20022.repository.msg.RemittanceLocation4.RemittanceLocationDetails);
+				messageElement_lazy = () -> Arrays.asList(RemittanceLocation4.mmRemittanceIdentification, RemittanceLocation4.mmRemittanceLocationDetails);
 				trace_lazy = () -> ContactPoint.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceLocation4";
 				definition = "Set of elements used to provide information on the remittance advice.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RmtId")
+	public Max35Text getRemittanceIdentification() {
+		return remittanceIdentification;
+	}
+
+	public void setRemittanceIdentification(Max35Text remittanceIdentification) {
+		this.remittanceIdentification = remittanceIdentification;
+	}
+
+	@XmlElement(name = "RmtLctnDtls")
+	public List<RemittanceLocationDetails1> getRemittanceLocationDetails() {
+		return remittanceLocationDetails;
+	}
+
+	public void setRemittanceLocationDetails(List<com.tools20022.repository.msg.RemittanceLocationDetails1> remittanceLocationDetails) {
+		this.remittanceLocationDetails = remittanceLocationDetails;
 	}
 }

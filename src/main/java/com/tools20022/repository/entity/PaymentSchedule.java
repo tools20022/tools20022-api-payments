@@ -19,11 +19,14 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessAttribute;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.PaymentDateRange1;
 import com.tools20022.repository.msg.PaymentDateRange2;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,12 +42,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.PaymentSchedule#Date
- * PaymentSchedule.Date}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PaymentSchedule#Amount
- * PaymentSchedule.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PaymentSchedule#Rate
- * PaymentSchedule.Rate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PaymentSchedule#mmDate
+ * PaymentSchedule.mmDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PaymentSchedule#mmAmount
+ * PaymentSchedule.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.PaymentSchedule#mmRate
+ * PaymentSchedule.mmRate}</li>
  * </ul>
  * </li>
  * <li>
@@ -60,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,6 +78,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PaymentSchedule {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODateTime date;
 	/**
 	 * Date/time at which the partial payment is to be done.
 	 * <p>
@@ -88,15 +92,17 @@ public class PaymentSchedule {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentDateRange2#ExpectedDate
-	 * PaymentDateRange2.ExpectedDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange2#DueDate
-	 * PaymentDateRange2.DueDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentDateRange2#mmExpectedDate
+	 * PaymentDateRange2.mmExpectedDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentDateRange1#ExpectedDate
-	 * PaymentDateRange1.ExpectedDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange1#DueDate
-	 * PaymentDateRange1.DueDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentDateRange2#mmDueDate
+	 * PaymentDateRange2.mmDueDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentDateRange1#mmExpectedDate
+	 * PaymentDateRange1.mmExpectedDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentDateRange1#mmDueDate
+	 * PaymentDateRange1.mmDueDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -115,20 +121,28 @@ public class PaymentSchedule {
 	 * definition} = "Date/time at which the partial payment is to be done."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Date = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentDateRange2.ExpectedDate, com.tools20022.repository.msg.PaymentDateRange2.DueDate, com.tools20022.repository.msg.PaymentDateRange1.ExpectedDate,
-					com.tools20022.repository.msg.PaymentDateRange1.DueDate);
-			elementContext_lazy = () -> PaymentSchedule.mmObject();
+			derivation_lazy = () -> Arrays.asList(PaymentDateRange2.mmExpectedDate, PaymentDateRange2.mmDueDate, PaymentDateRange1.mmExpectedDate, PaymentDateRange1.mmDueDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date/time at which the partial payment is to be done.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PaymentSchedule.class.getMethod("getDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount amount;
 	/**
 	 * Amount of the partial payment.
 	 * <p>
@@ -142,8 +156,8 @@ public class PaymentSchedule {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange2#Amount
-	 * PaymentDateRange2.Amount}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.PaymentDateRange2#mmAmount
+	 * PaymentDateRange2.mmAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -162,19 +176,28 @@ public class PaymentSchedule {
 	 * definition} = "Amount of the partial payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentDateRange2.Amount);
-			elementContext_lazy = () -> PaymentSchedule.mmObject();
+			derivation_lazy = () -> Arrays.asList(PaymentDateRange2.mmAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of the partial payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PaymentSchedule.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate rate;
 	/**
 	 * Partial payment expressed as a rate.
 	 * <p>
@@ -201,30 +224,67 @@ public class PaymentSchedule {
 	 * definition} = "Partial payment expressed as a rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Rate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PaymentSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Partial payment expressed as a rate.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return PaymentSchedule.class.getMethod("getRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentSchedule";
 				definition = "Schedule for partial payments of an issue.";
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentSchedule.Date, com.tools20022.repository.entity.PaymentSchedule.Amount, com.tools20022.repository.entity.PaymentSchedule.Rate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentSchedule.mmDate, com.tools20022.repository.entity.PaymentSchedule.mmAmount, com.tools20022.repository.entity.PaymentSchedule.mmRate);
 				derivationComponent_lazy = () -> Arrays.asList(PaymentDateRange2.mmObject(), PaymentDateRange1.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PaymentSchedule.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODateTime getDate() {
+		return date;
+	}
+
+	public void setDate(ISODateTime date) {
+		this.date = date;
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public PercentageRate getRate() {
+		return rate;
+	}
+
+	public void setRate(PercentageRate rate) {
+		this.rate = rate;
 	}
 }

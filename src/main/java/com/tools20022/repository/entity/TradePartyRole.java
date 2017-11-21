@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.OptionPartyCode;
 import com.tools20022.repository.codeset.TradingCapacityCode;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Trading party in a commercial, securities, treasury trade. This role may also
@@ -39,28 +40,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.TradePartyRole#Account
- * TradePartyRole.Account}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradePartyRole#mmAccount
+ * TradePartyRole.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradePartyRole#TradingPartyCapacity
- * TradePartyRole.TradingPartyCapacity}</li>
+ * {@linkplain com.tools20022.repository.entity.TradePartyRole#mmTradingPartyCapacity
+ * TradePartyRole.mmTradingPartyCapacity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradePartyRole#BuyerOrSeller
- * TradePartyRole.BuyerOrSeller}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradePartyRole#Trade
- * TradePartyRole.Trade}</li>
+ * {@linkplain com.tools20022.repository.entity.TradePartyRole#mmBuyerOrSeller
+ * TradePartyRole.mmBuyerOrSeller}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradePartyRole#mmTrade
+ * TradePartyRole.mmTrade}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Account#TradePartyRole
- * Account.TradePartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Trade#TradePartyRole
- * Trade.TradePartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmTradePartyRole
+ * Account.mmTradePartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Trade#mmTradePartyRole
+ * Trade.mmTradePartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -79,13 +82,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,6 +102,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TradePartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Account> account;
 	/**
 	 * Unambiguous identification of the account used in the context of the
 	 * party role.
@@ -110,8 +112,8 @@ public class TradePartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#TradePartyRole
-	 * Account.TradePartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmTradePartyRole
+	 * Account.mmTradePartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -136,19 +138,20 @@ public class TradePartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Unambiguous identification of the account used in the context of the party role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmTradePartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.TradePartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected TradingCapacityCode tradingPartyCapacity;
 	/**
 	 * Specifies the role of a trading party in a transaction.
 	 * <p>
@@ -175,18 +178,27 @@ public class TradePartyRole extends Role {
 	 * definition} = "Specifies the role of a trading party in a transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradingPartyCapacity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradingPartyCapacity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPartyCapacity";
 			definition = "Specifies the role of a trading party in a transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TradingCapacityCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradePartyRole.class.getMethod("getTradingPartyCapacity", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OptionPartyCode buyerOrSeller;
 	/**
 	 * Specifies the party which is the buyer or the seller.
 	 * <p>
@@ -213,18 +225,27 @@ public class TradePartyRole extends Role {
 	 * definition} = "Specifies the party which is the buyer or the seller."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BuyerOrSeller = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBuyerOrSeller = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyerOrSeller";
 			definition = "Specifies the party which is the buyer or the seller.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> OptionPartyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradePartyRole.class.getMethod("getBuyerOrSeller", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Trade> trade;
 	/**
 	 * Trade in which a party plays a role.
 	 * <p>
@@ -233,8 +254,8 @@ public class TradePartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Trade#TradePartyRole
-	 * Trade.TradePartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Trade#mmTradePartyRole
+	 * Trade.mmTradePartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -257,35 +278,72 @@ public class TradePartyRole extends Role {
 	 * definition} = "Trade in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Trade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Trade in which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmTradePartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.TradePartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradePartyRole";
 				definition = "Trading party in a commercial, securities, treasury trade. This role may also represent parties which play different intermediary roles in a trade.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.TradePartyRole, com.tools20022.repository.entity.Trade.TradePartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmTradePartyRole, com.tools20022.repository.entity.Trade.mmTradePartyRole);
 				subType_lazy = () -> Arrays.asList(SecuritiesTradePartyRole.mmObject(), BuyerRole.mmObject(), Borrower.mmObject(), SellerRole.mmObject(), Lender.mmObject(), Broker.mmObject(), TreasuryTradePartyRole.mmObject(),
 						CommercialTradePartyRole.mmObject(), StockExchange.mmObject());
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradePartyRole.Account, com.tools20022.repository.entity.TradePartyRole.TradingPartyCapacity,
-						com.tools20022.repository.entity.TradePartyRole.BuyerOrSeller, com.tools20022.repository.entity.TradePartyRole.Trade);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradePartyRole.mmAccount, com.tools20022.repository.entity.TradePartyRole.mmTradingPartyCapacity,
+						com.tools20022.repository.entity.TradePartyRole.mmBuyerOrSeller, com.tools20022.repository.entity.TradePartyRole.mmTrade);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TradePartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Account> getAccount() {
+		return account;
+	}
+
+	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = account;
+	}
+
+	public TradingCapacityCode getTradingPartyCapacity() {
+		return tradingPartyCapacity;
+	}
+
+	public void setTradingPartyCapacity(TradingCapacityCode tradingPartyCapacity) {
+		this.tradingPartyCapacity = tradingPartyCapacity;
+	}
+
+	public OptionPartyCode getBuyerOrSeller() {
+		return buyerOrSeller;
+	}
+
+	public void setBuyerOrSeller(OptionPartyCode buyerOrSeller) {
+		this.buyerOrSeller = buyerOrSeller;
+	}
+
+	public List<Trade> getTrade() {
+		return trade;
+	}
+
+	public void setTrade(List<com.tools20022.repository.entity.Trade> trade) {
+		this.trade = trade;
 	}
 }

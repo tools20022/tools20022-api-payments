@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.IndividualPayment;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,40 +40,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CreditTransfer#StandingOrder
- * CreditTransfer.StandingOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.CreditTransfer#mmStandingOrder
+ * CreditTransfer.mmStandingOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CreditTransfer#RelatedStandingOrder
- * CreditTransfer.RelatedStandingOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.CreditTransfer#mmRelatedStandingOrder
+ * CreditTransfer.mmRelatedStandingOrder}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#CreditTransfer
- * CashStandingOrder.CreditTransfer}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#UnderlyingCustomerCreditTransfer
- * CreditTransferTransaction23.UnderlyingCustomerCreditTransfer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PaymentInstruction23#CreditTransferTransaction
- * PaymentInstruction23.CreditTransferTransaction}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.PaymentInstruction22#CreditTransferTransactionInformation
- * PaymentInstruction22.CreditTransferTransactionInformation}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.IndividualPayment
- * IndividualPayment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -91,10 +64,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmCreditTransfer
+ * CashStandingOrder.mmCreditTransfer}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction23#mmUnderlyingCustomerCreditTransfer
+ * CreditTransferTransaction23.mmUnderlyingCustomerCreditTransfer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentInstruction23#mmCreditTransferTransaction
+ * PaymentInstruction23.mmCreditTransferTransaction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentInstruction22#mmCreditTransferTransactionInformation
+ * PaymentInstruction22.mmCreditTransferTransactionInformation}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.IndividualPayment
+ * IndividualPayment}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -110,6 +110,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CreditTransfer extends IndividualPayment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator standingOrder;
 	/**
 	 * Transaction is a standing order. This information is derived from the
 	 * presence of detailed standing order specification.
@@ -139,18 +140,27 @@ public class CreditTransfer extends IndividualPayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StandingOrder = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStandingOrder = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CreditTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingOrder";
 			definition = "Transaction is a standing order. This information is derived from the presence of detailed standing order specification.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CreditTransfer.class.getMethod("getStandingOrder", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CashStandingOrder relatedStandingOrder;
 	/**
 	 * Standing order which creates the credit transfers.
 	 * <p>
@@ -159,8 +169,8 @@ public class CreditTransfer extends IndividualPayment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashStandingOrder#CreditTransfer
-	 * CashStandingOrder.CreditTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmCreditTransfer
+	 * CashStandingOrder.mmCreditTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -184,37 +194,57 @@ public class CreditTransfer extends IndividualPayment {
 	 * definition} = "Standing order which creates the credit transfers."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedStandingOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CreditTransfer.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedStandingOrder";
 			definition = "Standing order which creates the credit transfers.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CashStandingOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.CreditTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditTransfer";
 				definition = "Payment made by transferring an amount of money from a debtor to a creditor. The payment flows through one or more financial institutions or systems.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashStandingOrder.CreditTransfer);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CreditTransferTransaction23.UnderlyingCustomerCreditTransfer, com.tools20022.repository.msg.PaymentInstruction23.CreditTransferTransaction,
-						com.tools20022.repository.msg.PaymentInstruction22.CreditTransferTransactionInformation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer);
+				derivationElement_lazy = () -> Arrays.asList(CreditTransferTransaction23.mmUnderlyingCustomerCreditTransfer, PaymentInstruction23.mmCreditTransferTransaction, PaymentInstruction22.mmCreditTransferTransactionInformation);
 				superType_lazy = () -> IndividualPayment.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CreditTransfer.StandingOrder, com.tools20022.repository.entity.CreditTransfer.RelatedStandingOrder);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CreditTransfer.mmStandingOrder, com.tools20022.repository.entity.CreditTransfer.mmRelatedStandingOrder);
 				derivationComponent_lazy = () -> Arrays.asList(CreditTransferTransaction23.mmObject(), CreditTransferTransaction25.mmObject(), CreditTransferTransaction24.mmObject(), CreditTransferTransaction26.mmObject(),
 						CreditTransferTransaction22.mmObject());
 			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CreditTransfer.class;
+			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator getStandingOrder() {
+		return standingOrder;
+	}
+
+	public void setStandingOrder(YesNoIndicator standingOrder) {
+		this.standingOrder = standingOrder;
+	}
+
+	public CashStandingOrder getRelatedStandingOrder() {
+		return relatedStandingOrder;
+	}
+
+	public void setRelatedStandingOrder(com.tools20022.repository.entity.CashStandingOrder relatedStandingOrder) {
+		this.relatedStandingOrder = relatedStandingOrder;
 	}
 }

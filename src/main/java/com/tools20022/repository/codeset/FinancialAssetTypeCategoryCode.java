@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,30 +32,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Equities
- * FinancialAssetTypeCategoryCode.Equities}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#mmEquities
+ * FinancialAssetTypeCategoryCode.mmEquities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#DebtInstruments
- * FinancialAssetTypeCategoryCode.DebtInstruments}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#mmDebtInstruments
+ * FinancialAssetTypeCategoryCode.mmDebtInstruments}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Entitlements
- * FinancialAssetTypeCategoryCode.Entitlements}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#mmEntitlements
+ * FinancialAssetTypeCategoryCode.mmEntitlements}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Derivatives
- * FinancialAssetTypeCategoryCode.Derivatives}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#mmDerivatives
+ * FinancialAssetTypeCategoryCode.mmDerivatives}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#MoneyMarket
- * FinancialAssetTypeCategoryCode.MoneyMarket}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#mmMoneyMarket
+ * FinancialAssetTypeCategoryCode.mmMoneyMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#Others
- * FinancialAssetTypeCategoryCode.Others}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode#mmOthers
+ * FinancialAssetTypeCategoryCode.mmOthers}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -94,9 +96,9 @@ public class FinancialAssetTypeCategoryCode {
 	 * definition} = "Balance attributed to equities."</li>
 	 * </ul>
 	 */
-	public static final MMCode Equities = new MMCode() {
+	public static final MMCode mmEquities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Equities";
 			definition = "Balance attributed to equities.";
 			owner_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
@@ -124,9 +126,9 @@ public class FinancialAssetTypeCategoryCode {
 	 * definition} = "Balance attributed to debt instruments."</li>
 	 * </ul>
 	 */
-	public static final MMCode DebtInstruments = new MMCode() {
+	public static final MMCode mmDebtInstruments = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DebtInstruments";
 			definition = "Balance attributed to debt instruments.";
 			owner_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
@@ -154,9 +156,9 @@ public class FinancialAssetTypeCategoryCode {
 	 * definition} = "Balance attributed to entitlements."</li>
 	 * </ul>
 	 */
-	public static final MMCode Entitlements = new MMCode() {
+	public static final MMCode mmEntitlements = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Entitlements";
 			definition = "Balance attributed to entitlements.";
 			owner_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
@@ -184,9 +186,9 @@ public class FinancialAssetTypeCategoryCode {
 	 * definition} = "Balance attributed to derivatives."</li>
 	 * </ul>
 	 */
-	public static final MMCode Derivatives = new MMCode() {
+	public static final MMCode mmDerivatives = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Derivatives";
 			definition = "Balance attributed to derivatives.";
 			owner_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
@@ -214,9 +216,9 @@ public class FinancialAssetTypeCategoryCode {
 	 * definition} = "Balance attributed to money market instruments."</li>
 	 * </ul>
 	 */
-	public static final MMCode MoneyMarket = new MMCode() {
+	public static final MMCode mmMoneyMarket = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MoneyMarket";
 			definition = "Balance attributed to money market instruments.";
 			owner_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
@@ -247,9 +249,9 @@ public class FinancialAssetTypeCategoryCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Others = new MMCode() {
+	public static final MMCode mmOthers = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Others";
 			definition = "Other financial asset type balance according to a different classification, which is not explictly defined.";
 			owner_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
@@ -260,14 +262,13 @@ public class FinancialAssetTypeCategoryCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("EQTY");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialAssetTypeCategoryCode";
 				definition = "Categorization of financial asset type.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode.Equities, com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode.DebtInstruments,
-						com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode.Entitlements, com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode.Derivatives,
-						com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode.MoneyMarket, com.tools20022.repository.codeset.FinancialAssetTypeCategoryCode.Others);
+				code_lazy = () -> Arrays.asList(FinancialAssetTypeCategoryCode.mmEquities, FinancialAssetTypeCategoryCode.mmDebtInstruments, FinancialAssetTypeCategoryCode.mmEntitlements, FinancialAssetTypeCategoryCode.mmDerivatives,
+						FinancialAssetTypeCategoryCode.mmMoneyMarket, FinancialAssetTypeCategoryCode.mmOthers);
 			}
 		});
 		return mmObject_lazy.get();

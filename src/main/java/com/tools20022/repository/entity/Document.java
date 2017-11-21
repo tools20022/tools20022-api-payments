@@ -17,22 +17,20 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
-import com.tools20022.repository.choice.CreditorReferenceType1Choice;
-import com.tools20022.repository.choice.DocumentLineType1Choice;
-import com.tools20022.repository.choice.GarnishmentType1Choice;
-import com.tools20022.repository.choice.ReferredDocumentType3Choice;
+import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.CopyDuplicateCode;
 import com.tools20022.repository.codeset.DataSetTypeCode;
 import com.tools20022.repository.codeset.DocumentTypeCode;
 import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * General information that unambiguously identifies a document, such as
@@ -47,155 +45,58 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Document#IssueDate
- * Document.IssueDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#CopyDuplicate
- * Document.CopyDuplicate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#PlaceOfStorage
- * Document.PlaceOfStorage}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#PaymentObligation
- * Document.PaymentObligation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Type Document.Type}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Amount
- * Document.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Agreement
- * Document.Agreement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#PlaceOfIssue
- * Document.PlaceOfIssue}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#DocumentVersion
- * Document.DocumentVersion}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Status
- * Document.Status}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Reconciliation
- * Document.Reconciliation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#LetterOfCredit
- * Document.LetterOfCredit}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#PartyRole
- * Document.PartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#DataSetType
- * Document.DataSetType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Transport
- * Document.Transport}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#SignedIndicator
- * Document.SignedIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#RemittedAmount
- * Document.RemittedAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Guarantee
- * Document.Guarantee}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Language
- * Document.Language}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Purpose
- * Document.Purpose}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmIssueDate
+ * Document.mmIssueDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmCopyDuplicate
+ * Document.mmCopyDuplicate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmPlaceOfStorage
+ * Document.mmPlaceOfStorage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Document#DocumentIdentification
- * Document.DocumentIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Evidence
- * Document.Evidence}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#CommercialTrade
- * Document.CommercialTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Presentation
- * Document.Presentation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#RelatedContract
- * Document.RelatedContract}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.Document#mmPaymentObligation
+ * Document.mmPaymentObligation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmType
+ * Document.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmAmount
+ * Document.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmAgreement
+ * Document.mmAgreement}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmPlaceOfIssue
+ * Document.mmPlaceOfIssue}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmDocumentVersion
+ * Document.mmDocumentVersion}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmStatus
+ * Document.mmStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmReconciliation
+ * Document.mmReconciliation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmLetterOfCredit
+ * Document.mmLetterOfCredit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmPartyRole
+ * Document.mmPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmDataSetType
+ * Document.mmDataSetType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmTransport
+ * Document.mmTransport}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmSignedIndicator
+ * Document.mmSignedIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmRemittedAmount
+ * Document.mmRemittedAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmGuarantee
+ * Document.mmGuarantee}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmLanguage
+ * Document.mmLanguage}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmPurpose
+ * Document.mmPurpose}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentifiedDocument
- * GenericIdentification.IdentifiedDocument}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ContactPoint#StoredDocument
- * ContactPoint.StoredDocument}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Location#IssuedDocument
- * Location.IssuedDocument}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#Document
- * Agreement.Document}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DocumentPartyRole#Document
- * DocumentPartyRole.Document}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#AssociatedDocument
- * PaymentObligation.AssociatedDocument}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Presentation#PresentedDocument
- * Presentation.PresentedDocument}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CommercialTrade#Documents
- * CommercialTrade.Documents}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Transport#TransportDocuments
- * Transport.TransportDocuments}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LetterOfCredit#Document
- * LetterOfCredit.Document}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#Document
- * Guarantee.Document}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Reconciliation#Document
- * Reconciliation.Document}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Evidence#RelatedDocument
- * Evidence.RelatedDocument}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#Attachment
- * RegisteredContract.Attachment}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CreditorReferenceType2#CodeOrProprietary
- * CreditorReferenceType2.CodeOrProprietary}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceInformation2#Unstructured
- * RemittanceInformation2.Unstructured}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineType1#CodeOrProprietary
- * DocumentLineType1.CodeOrProprietary}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#Description
- * DocumentLineInformation1.Description}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.GarnishmentType1#CodeOrProprietary
- * GarnishmentType1.CodeOrProprietary}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ReferredDocumentType4#CodeOrProprietary
- * ReferredDocumentType4.CodeOrProprietary}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceInformation11#Unstructured
- * RemittanceInformation11.Unstructured}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceInformation11#Structured
- * RemittanceInformation11.Structured}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#ReferredDocumentInformation
- * StructuredRemittanceInformation13.ReferredDocumentInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#AdditionalRemittanceInformation
- * StructuredRemittanceInformation13.AdditionalRemittanceInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7#LineDetails
- * ReferredDocumentInformation7.LineDetails}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RequestedModification6#RemittanceInformation
- * RequestedModification6.RemittanceInformation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.RemittanceInformation13#Structured
- * RemittanceInformation13.Structured}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.PrivateCertificate
- * PrivateCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.InsuranceCertificate
- * InsuranceCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecurityCertificate
- * SecurityCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradeCertificate
- * TradeCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Assessment Assessment}</li>
+ * {@linkplain com.tools20022.repository.entity.Document#mmDocumentIdentification
+ * Document.mmDocumentIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmEvidence
+ * Document.mmEvidence}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmCommercialTrade
+ * Document.mmCommercialTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmPresentation
+ * Document.mmPresentation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmRelatedContract
+ * Document.mmRelatedContract}</li>
  * </ul>
  * </li>
  * <li>
@@ -256,10 +157,110 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentifiedDocument
+ * GenericIdentification.mmIdentifiedDocument}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ContactPoint#mmStoredDocument
+ * ContactPoint.mmStoredDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Location#mmIssuedDocument
+ * Location.mmIssuedDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmDocument
+ * Agreement.mmDocument}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DocumentPartyRole#mmDocument
+ * DocumentPartyRole.mmDocument}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmAssociatedDocument
+ * PaymentObligation.mmAssociatedDocument}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Presentation#mmPresentedDocument
+ * Presentation.mmPresentedDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CommercialTrade#mmDocuments
+ * CommercialTrade.mmDocuments}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Transport#mmTransportDocuments
+ * Transport.mmTransportDocuments}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LetterOfCredit#mmDocument
+ * LetterOfCredit.mmDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmDocument
+ * Guarantee.mmDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Reconciliation#mmDocument
+ * Reconciliation.mmDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Evidence#mmRelatedDocument
+ * Evidence.mmRelatedDocument}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmAttachment
+ * RegisteredContract.mmAttachment}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CreditorReferenceType2#mmCodeOrProprietary
+ * CreditorReferenceType2.mmCodeOrProprietary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceInformation2#mmUnstructured
+ * RemittanceInformation2.mmUnstructured}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineType1#mmCodeOrProprietary
+ * DocumentLineType1.mmCodeOrProprietary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#mmDescription
+ * DocumentLineInformation1.mmDescription}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GarnishmentType1#mmCodeOrProprietary
+ * GarnishmentType1.mmCodeOrProprietary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReferredDocumentType4#mmCodeOrProprietary
+ * ReferredDocumentType4.mmCodeOrProprietary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceInformation11#mmUnstructured
+ * RemittanceInformation11.mmUnstructured}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceInformation11#mmStructured
+ * RemittanceInformation11.mmStructured}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#mmReferredDocumentInformation
+ * StructuredRemittanceInformation13.mmReferredDocumentInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#mmAdditionalRemittanceInformation
+ * StructuredRemittanceInformation13.mmAdditionalRemittanceInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7#mmLineDetails
+ * ReferredDocumentInformation7.mmLineDetails}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RequestedModification6#mmRemittanceInformation
+ * RequestedModification6.mmRemittanceInformation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.RemittanceInformation13#mmStructured
+ * RemittanceInformation13.mmStructured}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.PrivateCertificate
+ * PrivateCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.InsuranceCertificate
+ * InsuranceCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecurityCertificate
+ * SecurityCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradeCertificate
+ * TradeCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Assessment Assessment}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -275,6 +276,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Document {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODateTime issueDate;
 	/**
 	 * Issue date of the document.
 	 * <p>
@@ -288,35 +290,35 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification22#DateOfIssue
-	 * DocumentIdentification22.DateOfIssue}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification22#mmDateOfIssue
+	 * DocumentIdentification22.mmDateOfIssue}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#RelatedDate
-	 * DocumentLineIdentification1.RelatedDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#mmRelatedDate
+	 * DocumentLineIdentification1.mmRelatedDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Date
-	 * SupportingDocumentRequestOrLetter1.Date}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmDate
+	 * SupportingDocumentRequestOrLetter1.mmDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#DueDate
-	 * SupportingDocumentRequestOrLetter1.DueDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmDueDate
+	 * SupportingDocumentRequestOrLetter1.mmDueDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification29#DateOfIssue
-	 * DocumentIdentification29.DateOfIssue}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification29#mmDateOfIssue
+	 * DocumentIdentification29.mmDateOfIssue}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentGeneralInformation3#IssueDate
-	 * DocumentGeneralInformation3.IssueDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentGeneralInformation3#mmIssueDate
+	 * DocumentGeneralInformation3.mmIssueDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification28#DateOfIssue
-	 * DocumentIdentification28.DateOfIssue}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification28#mmDateOfIssue
+	 * DocumentIdentification28.mmDateOfIssue}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7#RelatedDate
-	 * ReferredDocumentInformation7.RelatedDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7#mmRelatedDate
+	 * ReferredDocumentInformation7.mmRelatedDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingStatement2#CreationDateTime
-	 * BillingStatement2.CreationDateTime}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingStatement2#mmCreationDateTime
+	 * BillingStatement2.mmCreationDateTime}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReferredMandateDocument1#RelatedDate
-	 * ReferredMandateDocument1.RelatedDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReferredMandateDocument1#mmRelatedDate
+	 * ReferredMandateDocument1.mmRelatedDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -334,22 +336,30 @@ public class Document {
 	 * definition} = "Issue date of the document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IssueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIssueDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentIdentification22.DateOfIssue, com.tools20022.repository.msg.DocumentLineIdentification1.RelatedDate,
-					com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Date, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.DueDate, com.tools20022.repository.msg.DocumentIdentification29.DateOfIssue,
-					com.tools20022.repository.msg.DocumentGeneralInformation3.IssueDate, com.tools20022.repository.msg.DocumentIdentification28.DateOfIssue, com.tools20022.repository.msg.ReferredDocumentInformation7.RelatedDate,
-					com.tools20022.repository.msg.BillingStatement2.CreationDateTime, com.tools20022.repository.msg.ReferredMandateDocument1.RelatedDate);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(DocumentIdentification22.mmDateOfIssue, DocumentLineIdentification1.mmRelatedDate, SupportingDocumentRequestOrLetter1.mmDate, SupportingDocumentRequestOrLetter1.mmDueDate,
+					DocumentIdentification29.mmDateOfIssue, DocumentGeneralInformation3.mmIssueDate, DocumentIdentification28.mmDateOfIssue, ReferredDocumentInformation7.mmRelatedDate, BillingStatement2.mmCreationDateTime,
+					ReferredMandateDocument1.mmRelatedDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDate";
 			definition = "Issue date of the document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getIssueDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CopyDuplicateCode copyDuplicate;
 	/**
 	 * Specifies if this document is a copy, a duplicate, or a duplicate of a
 	 * copy.
@@ -378,18 +388,27 @@ public class Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CopyDuplicate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCopyDuplicate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CopyDuplicate";
 			definition = "Specifies if this document is a copy, a duplicate, or a duplicate of a copy.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CopyDuplicateCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getCopyDuplicate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.ContactPoint> placeOfStorage;
 	/**
 	 * Specifies where the document is stored.
 	 * <p>
@@ -398,8 +417,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPoint#StoredDocument
-	 * ContactPoint.StoredDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPoint#mmStoredDocument
+	 * ContactPoint.mmStoredDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -411,20 +430,20 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OriginalItemReference4#RelatedRemittanceInformation
-	 * OriginalItemReference4.RelatedRemittanceInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.OriginalItemReference4#mmRelatedRemittanceInformation
+	 * OriginalItemReference4.mmRelatedRemittanceInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#RelatedRemittanceInformation
-	 * EntryTransaction8.RelatedRemittanceInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmRelatedRemittanceInformation
+	 * EntryTransaction8.mmRelatedRemittanceInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.NotificationItem6#RelatedRemittanceInformation
-	 * NotificationItem6.RelatedRemittanceInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.NotificationItem6#mmRelatedRemittanceInformation
+	 * NotificationItem6.mmRelatedRemittanceInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21#RelatedRemittanceInformation
-	 * DirectDebitTransactionInformation21.RelatedRemittanceInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21#mmRelatedRemittanceInformation
+	 * DirectDebitTransactionInformation21.mmRelatedRemittanceInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation22#RelatedRemittanceInformation
-	 * DirectDebitTransactionInformation22.RelatedRemittanceInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation22#mmRelatedRemittanceInformation
+	 * DirectDebitTransactionInformation22.mmRelatedRemittanceInformation}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -442,22 +461,22 @@ public class Document {
 	 * definition} = "Specifies where the document is stored."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PlaceOfStorage = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPlaceOfStorage = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OriginalItemReference4.RelatedRemittanceInformation, com.tools20022.repository.msg.EntryTransaction8.RelatedRemittanceInformation,
-					com.tools20022.repository.msg.NotificationItem6.RelatedRemittanceInformation, com.tools20022.repository.msg.DirectDebitTransactionInformation21.RelatedRemittanceInformation,
-					com.tools20022.repository.msg.DirectDebitTransactionInformation22.RelatedRemittanceInformation);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(OriginalItemReference4.mmRelatedRemittanceInformation, EntryTransaction8.mmRelatedRemittanceInformation, NotificationItem6.mmRelatedRemittanceInformation,
+					DirectDebitTransactionInformation21.mmRelatedRemittanceInformation, DirectDebitTransactionInformation22.mmRelatedRemittanceInformation);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfStorage";
 			definition = "Specifies where the document is stored.";
 			minOccurs = 0;
-			type_lazy = () -> ContactPoint.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.StoredDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmStoredDocument;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
 		}
 	};
+	protected PaymentObligation paymentObligation;
 	/**
 	 * Document which is referred to in a payment obligation.
 	 * <p>
@@ -466,8 +485,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#AssociatedDocument
-	 * PaymentObligation.AssociatedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmAssociatedDocument
+	 * PaymentObligation.mmAssociatedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -490,20 +509,21 @@ public class Document {
 	 * definition} = "Document which is referred to in a payment obligation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Document which is referred to in a payment obligation.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmAssociatedDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.AssociatedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DocumentTypeCode type;
 	/**
 	 * Specifies the type of the document, for example commercial invoice.
 	 * <p>
@@ -518,47 +538,47 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.CreditorReferenceType1Choice#Code
-	 * CreditorReferenceType1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.CreditorReferenceType1Choice#mmCode
+	 * CreditorReferenceType1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.CreditorReferenceType1Choice#Proprietary
-	 * CreditorReferenceType1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.CreditorReferenceType1Choice#mmProprietary
+	 * CreditorReferenceType1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#Type
-	 * DocumentLineIdentification1.Type}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#mmType
+	 * DocumentLineIdentification1.mmType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.DocumentLineType1Choice#Code
-	 * DocumentLineType1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.DocumentLineType1Choice#mmCode
+	 * DocumentLineType1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.DocumentLineType1Choice#Proprietary
-	 * DocumentLineType1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.DocumentLineType1Choice#mmProprietary
+	 * DocumentLineType1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.GarnishmentType1Choice#Code
-	 * GarnishmentType1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.GarnishmentType1Choice#mmCode
+	 * GarnishmentType1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.GarnishmentType1Choice#Proprietary
-	 * GarnishmentType1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.GarnishmentType1Choice#mmProprietary
+	 * GarnishmentType1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#Code
-	 * ReferredDocumentType3Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#mmCode
+	 * ReferredDocumentType3Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#Proprietary
-	 * ReferredDocumentType3Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#mmProprietary
+	 * ReferredDocumentType3Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Type
-	 * SupportingDocumentRequestOrLetter1.Type}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmType
+	 * SupportingDocumentRequestOrLetter1.mmType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#DocumentType
-	 * SupportingDocumentEntry1.DocumentType}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmDocumentType
+	 * SupportingDocumentEntry1.mmDocumentType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentGeneralInformation3#DocumentType
-	 * DocumentGeneralInformation3.DocumentType}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentGeneralInformation3#mmDocumentType
+	 * DocumentGeneralInformation3.mmDocumentType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7#Type
-	 * ReferredDocumentInformation7.Type}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReferredDocumentInformation7#mmType
+	 * ReferredDocumentInformation7.mmType}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReferredMandateDocument1#Type
-	 * ReferredMandateDocument1.Type}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReferredMandateDocument1#mmType
+	 * ReferredMandateDocument1.mmType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -577,23 +597,30 @@ public class Document {
 	 * "Specifies the type of the document, for example commercial invoice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.choice.CreditorReferenceType1Choice.Code, com.tools20022.repository.choice.CreditorReferenceType1Choice.Proprietary,
-					com.tools20022.repository.msg.DocumentLineIdentification1.Type, com.tools20022.repository.choice.DocumentLineType1Choice.Code, com.tools20022.repository.choice.DocumentLineType1Choice.Proprietary,
-					com.tools20022.repository.choice.GarnishmentType1Choice.Code, com.tools20022.repository.choice.GarnishmentType1Choice.Proprietary, com.tools20022.repository.choice.ReferredDocumentType3Choice.Code,
-					com.tools20022.repository.choice.ReferredDocumentType3Choice.Proprietary, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Type, com.tools20022.repository.msg.SupportingDocumentEntry1.DocumentType,
-					com.tools20022.repository.msg.DocumentGeneralInformation3.DocumentType, com.tools20022.repository.msg.ReferredDocumentInformation7.Type, com.tools20022.repository.msg.ReferredMandateDocument1.Type);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(CreditorReferenceType1Choice.mmCode, CreditorReferenceType1Choice.mmProprietary, DocumentLineIdentification1.mmType, DocumentLineType1Choice.mmCode, DocumentLineType1Choice.mmProprietary,
+					GarnishmentType1Choice.mmCode, GarnishmentType1Choice.mmProprietary, ReferredDocumentType3Choice.mmCode, ReferredDocumentType3Choice.mmProprietary, SupportingDocumentRequestOrLetter1.mmType,
+					SupportingDocumentEntry1.mmDocumentType, DocumentGeneralInformation3.mmDocumentType, ReferredDocumentInformation7.mmType, ReferredMandateDocument1.mmType);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of the document, for example commercial invoice.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DocumentTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount amount;
 	/**
 	 * Amount of money and currency of a document. <br>
 	 * The amount can be either the original amount due and payable for instance
@@ -611,26 +638,26 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#Amount
-	 * DocumentLineInformation1.Amount}</li>
+	 * {@linkplain com.tools20022.repository.msg.DocumentLineInformation1#mmAmount
+	 * DocumentLineInformation1.mmAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#TotalAmount
-	 * SupportingDocumentEntry1.TotalAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmTotalAmount
+	 * SupportingDocumentEntry1.mmTotalAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#TotalAmountAfterShipment
-	 * SupportingDocumentEntry1.TotalAmountAfterShipment}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmTotalAmountAfterShipment
+	 * SupportingDocumentEntry1.mmTotalAmountAfterShipment}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#TotalAmountInContractCurrency
-	 * SupportingDocumentEntry1.TotalAmountInContractCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmTotalAmountInContractCurrency
+	 * SupportingDocumentEntry1.mmTotalAmountInContractCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#TotalAmountAfterShipmentInContractCurrency
-	 * SupportingDocumentEntry1.TotalAmountAfterShipmentInContractCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmTotalAmountAfterShipmentInContractCurrency
+	 * SupportingDocumentEntry1.mmTotalAmountAfterShipmentInContractCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionCertificateContract1#TransactionAmountInContractCurrency
-	 * TransactionCertificateContract1.TransactionAmountInContractCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionCertificateContract1#mmTransactionAmountInContractCurrency
+	 * TransactionCertificateContract1.mmTransactionAmountInContractCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#ReferredDocumentAmount
-	 * StructuredRemittanceInformation13.ReferredDocumentAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.StructuredRemittanceInformation13#mmReferredDocumentAmount
+	 * StructuredRemittanceInformation13.mmReferredDocumentAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -650,22 +677,29 @@ public class Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentLineInformation1.Amount, com.tools20022.repository.msg.SupportingDocumentEntry1.TotalAmount,
-					com.tools20022.repository.msg.SupportingDocumentEntry1.TotalAmountAfterShipment, com.tools20022.repository.msg.SupportingDocumentEntry1.TotalAmountInContractCurrency,
-					com.tools20022.repository.msg.SupportingDocumentEntry1.TotalAmountAfterShipmentInContractCurrency, com.tools20022.repository.msg.TransactionCertificateContract1.TransactionAmountInContractCurrency,
-					com.tools20022.repository.msg.StructuredRemittanceInformation13.ReferredDocumentAmount);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(DocumentLineInformation1.mmAmount, SupportingDocumentEntry1.mmTotalAmount, SupportingDocumentEntry1.mmTotalAmountAfterShipment, SupportingDocumentEntry1.mmTotalAmountInContractCurrency,
+					SupportingDocumentEntry1.mmTotalAmountAfterShipmentInContractCurrency, TransactionCertificateContract1.mmTransactionAmountInContractCurrency, StructuredRemittanceInformation13.mmReferredDocumentAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money and currency of a document. \r\nThe amount can be either the original amount due and payable for instance the ordered amount, or the amount actually remitted for the referred document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Agreement> agreement;
 	/**
 	 * Agreement which is materialised by a document
 	 * <p>
@@ -674,8 +708,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Agreement#Document
-	 * Agreement.Document}</li>
+	 * {@linkplain com.tools20022.repository.entity.Agreement#mmDocument
+	 * Agreement.mmDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -698,19 +732,20 @@ public class Document {
 	 * definition} = "Agreement which is materialised by a document"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Agreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Agreement";
 			definition = "Agreement which is materialised by a document";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Agreement.mmDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Agreement.Document;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Location placeOfIssue;
 	/**
 	 * Place where the document was issued.
 	 * <p>
@@ -719,8 +754,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Location#IssuedDocument
-	 * Location.IssuedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.Location#mmIssuedDocument
+	 * Location.mmIssuedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -742,20 +777,21 @@ public class Document {
 	 * definition} = "Place where the document was issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PlaceOfIssue = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPlaceOfIssue = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfIssue";
 			definition = "Place where the document was issued.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Location.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.IssuedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmIssuedDocument;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 		}
 	};
+	protected Number documentVersion;
 	/**
 	 * Unambiguous identification of the version of a document.
 	 * <p>
@@ -780,18 +816,27 @@ public class Document {
 	 * definition} = "Unambiguous identification of the version of a document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DocumentVersion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDocumentVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentVersion";
 			definition = "Unambiguous identification of the version of a document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getDocumentVersion", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max140Text status;
 	/**
 	 * Status of the document (eg delivered, paid, etc.)
 	 * <p>
@@ -805,10 +850,10 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#RegulatoryRuleValidation
-	 * ContractRegistrationStatement1.RegulatoryRuleValidation}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.BillingStatement2#Status
-	 * BillingStatement2.Status}</li>
+	 * {@linkplain com.tools20022.repository.msg.ContractRegistrationStatement1#mmRegulatoryRuleValidation
+	 * ContractRegistrationStatement1.mmRegulatoryRuleValidation}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.BillingStatement2#mmStatus
+	 * BillingStatement2.mmStatus}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -826,19 +871,28 @@ public class Document {
 	 * definition} = "Status of the document (eg delivered, paid, etc.)"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Status = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractRegistrationStatement1.RegulatoryRuleValidation, com.tools20022.repository.msg.BillingStatement2.Status);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(ContractRegistrationStatement1.mmRegulatoryRuleValidation, BillingStatement2.mmStatus);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status of the document (eg delivered, paid, etc.)";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Reconciliation> reconciliation;
 	/**
 	 * Reconciliation process for which a document is specified.
 	 * <p>
@@ -847,8 +901,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Reconciliation#Document
-	 * Reconciliation.Document}</li>
+	 * {@linkplain com.tools20022.repository.entity.Reconciliation#mmDocument
+	 * Reconciliation.mmDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -872,19 +926,20 @@ public class Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Reconciliation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reconciliation";
 			definition = "Reconciliation process for which a document is specified.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Reconciliation.Document;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LetterOfCredit letterOfCredit;
 	/**
 	 * Written undertaking by a bank to honour a demand for payment.
 	 * <p>
@@ -893,8 +948,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.LetterOfCredit#Document
-	 * LetterOfCredit.Document}</li>
+	 * {@linkplain com.tools20022.repository.entity.LetterOfCredit#mmDocument
+	 * LetterOfCredit.mmDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -918,20 +973,21 @@ public class Document {
 	 * "Written undertaking by a bank to honour a demand for payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd LetterOfCredit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLetterOfCredit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LetterOfCredit";
 			definition = "Written undertaking by a bank to honour a demand for payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.Document;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.DocumentPartyRole> partyRole;
 	/**
 	 * Role played by a party in the context of a document or in the context of
 	 * the business linked to the document.
@@ -941,8 +997,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DocumentPartyRole#Document
-	 * DocumentPartyRole.Document}</li>
+	 * {@linkplain com.tools20022.repository.entity.DocumentPartyRole#mmDocument
+	 * DocumentPartyRole.mmDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -967,19 +1023,20 @@ public class Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Role played by a party in the context of a document or in the context of the business linked to the document.";
 			minOccurs = 0;
-			type_lazy = () -> DocumentPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DocumentPartyRole.Document;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.DocumentPartyRole.mmDocument;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DocumentPartyRole.mmObject();
 		}
 	};
+	protected DataSetTypeCode dataSetType;
 	/**
 	 * Specifies the type of data set in which the document is included.
 	 * <p>
@@ -1006,18 +1063,27 @@ public class Document {
 	 * "Specifies the type of data set in which the document is included."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DataSetType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDataSetType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DataSetType";
 			definition = "Specifies the type of data set in which the document is included.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DataSetTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getDataSetType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Transport transport;
 	/**
 	 * Transport process for which related documents are specified.
 	 * <p>
@@ -1026,8 +1092,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Transport#TransportDocuments
-	 * Transport.TransportDocuments}</li>
+	 * {@linkplain com.tools20022.repository.entity.Transport#mmTransportDocuments
+	 * Transport.mmTransportDocuments}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1051,20 +1117,21 @@ public class Document {
 	 * "Transport process for which related documents are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Transport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Transport";
 			definition = "Transport process for which related documents are specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmTransportDocuments;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.TransportDocuments;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator signedIndicator;
 	/**
 	 * Indication whether the document must be signed or not.
 	 * <p>
@@ -1090,18 +1157,27 @@ public class Document {
 	 * definition} = "Indication whether the document must be signed or not."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SignedIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSignedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignedIndicator";
 			definition = "Indication whether the document must be signed or not.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getSignedIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount remittedAmount;
 	/**
 	 * Amount of money remitted for the referred document.
 	 * <p>
@@ -1116,11 +1192,11 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RemittanceAmount2#RemittedAmount
-	 * RemittanceAmount2.RemittedAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.RemittanceAmount2#mmRemittedAmount
+	 * RemittanceAmount2.mmRemittedAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Garnishment1#RemittedAmount
-	 * Garnishment1.RemittedAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.Garnishment1#mmRemittedAmount
+	 * Garnishment1.mmRemittedAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1138,19 +1214,28 @@ public class Document {
 	 * definition} = "Amount of money remitted for the referred document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RemittedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRemittedAmount = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RemittanceAmount2.RemittedAmount, com.tools20022.repository.msg.Garnishment1.RemittedAmount);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(RemittanceAmount2.mmRemittedAmount, Garnishment1.mmRemittedAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RemittedAmount";
 			definition = "Amount of money remitted for the referred document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getRemittedAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Guarantee> guarantee;
 	/**
 	 * Guarantee that is described in a document.
 	 * <p>
@@ -1159,8 +1244,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Guarantee#Document
-	 * Guarantee.Document}</li>
+	 * {@linkplain com.tools20022.repository.entity.Guarantee#mmDocument
+	 * Guarantee.mmDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1183,19 +1268,20 @@ public class Document {
 	 * definition} = "Guarantee that is described in a document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Guarantee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Guarantee";
 			definition = "Guarantee that is described in a document.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Guarantee.mmDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Guarantee.Document;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LanguageCode language;
 	/**
 	 * Language used for textual information in the document.
 	 * <p>
@@ -1220,18 +1306,27 @@ public class Document {
 	 * definition} = "Language used for textual information in the document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Language = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language used for textual information in the document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getLanguage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text purpose;
 	/**
 	 * Specifies the function of the document.
 	 * <p>
@@ -1245,8 +1340,8 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#Subject
-	 * SupportingDocumentRequestOrLetter1.Subject}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmSubject
+	 * SupportingDocumentRequestOrLetter1.mmSubject}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1264,19 +1359,28 @@ public class Document {
 	 * definition} = "Specifies the function of the document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Purpose = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.Subject);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmSubject);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Specifies the function of the document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Document.class.getMethod("getPurpose", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected GenericIdentification documentIdentification;
 	/**
 	 * Identification of a document for instance unique identification of the
 	 * purchase order, assigned by the buyer.
@@ -1286,8 +1390,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentifiedDocument
-	 * GenericIdentification.IdentifiedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentifiedDocument
+	 * GenericIdentification.mmIdentifiedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1300,40 +1404,44 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#RequestOrLetterIdentification
-	 * SupportingDocumentRequestOrLetter1.RequestOrLetterIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmRequestOrLetterIdentification
+	 * SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#OriginalReferences
-	 * SupportingDocumentRequestOrLetter1.OriginalReferences}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1#mmOriginalReferences
+	 * SupportingDocumentRequestOrLetter1.mmOriginalReferences}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionCertificate1#Certificate
-	 * TransactionCertificate1.Certificate}</li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionCertificate1#mmCertificate
+	 * TransactionCertificate1.mmCertificate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#OriginalDocument
-	 * SupportingDocumentEntry1.OriginalDocument}</li>
+	 * {@linkplain com.tools20022.repository.msg.SupportingDocumentEntry1#mmOriginalDocument
+	 * SupportingDocumentEntry1.mmOriginalDocument}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CertificateReference1#Identification
-	 * CertificateReference1.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CertificateReference1#mmIdentification
+	 * CertificateReference1.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionCertificateContract1#ContractReference
-	 * TransactionCertificateContract1.ContractReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionCertificateContract1#mmContractReference
+	 * TransactionCertificateContract1.mmContractReference}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.ContractRegistrationReference1Choice#Contract
-	 * ContractRegistrationReference1Choice.Contract}</li>
+	 * {@linkplain com.tools20022.repository.choice.ContractRegistrationReference1Choice#mmContract
+	 * ContractRegistrationReference1Choice.mmContract}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyControlRecordStatus1#DocumentIdentification
-	 * CurrencyControlRecordStatus1.DocumentIdentification}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate10#MandateReference
-	 * Mandate10.MandateReference}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate9#MandateReference
-	 * Mandate9.MandateReference}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate11#MandateReference
-	 * Mandate11.MandateReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyControlRecordStatus1#mmDocumentIdentification
+	 * CurrencyControlRecordStatus1.mmDocumentIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReferredMandateDocument1#CreditorReference
-	 * ReferredMandateDocument1.CreditorReference}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Mandate8#MandateReference
-	 * Mandate8.MandateReference}</li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate10#mmMandateReference
+	 * Mandate10.mmMandateReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate9#mmMandateReference
+	 * Mandate9.mmMandateReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate11#mmMandateReference
+	 * Mandate11.mmMandateReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReferredMandateDocument1#mmCreditorReference
+	 * ReferredMandateDocument1.mmCreditorReference}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Mandate8#mmMandateReference
+	 * Mandate8.mmMandateReference}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1353,25 +1461,24 @@ public class Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DocumentIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDocumentIdentification = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.RequestOrLetterIdentification, com.tools20022.repository.msg.SupportingDocumentRequestOrLetter1.OriginalReferences,
-					com.tools20022.repository.msg.TransactionCertificate1.Certificate, com.tools20022.repository.msg.SupportingDocumentEntry1.OriginalDocument, com.tools20022.repository.msg.CertificateReference1.Identification,
-					com.tools20022.repository.msg.TransactionCertificateContract1.ContractReference, com.tools20022.repository.choice.ContractRegistrationReference1Choice.Contract,
-					com.tools20022.repository.msg.CurrencyControlRecordStatus1.DocumentIdentification, com.tools20022.repository.msg.Mandate10.MandateReference, com.tools20022.repository.msg.Mandate9.MandateReference,
-					com.tools20022.repository.msg.Mandate11.MandateReference, com.tools20022.repository.msg.ReferredMandateDocument1.CreditorReference, com.tools20022.repository.msg.Mandate8.MandateReference);
-			elementContext_lazy = () -> Document.mmObject();
+			derivation_lazy = () -> Arrays.asList(SupportingDocumentRequestOrLetter1.mmRequestOrLetterIdentification, SupportingDocumentRequestOrLetter1.mmOriginalReferences, TransactionCertificate1.mmCertificate,
+					SupportingDocumentEntry1.mmOriginalDocument, CertificateReference1.mmIdentification, TransactionCertificateContract1.mmContractReference, ContractRegistrationReference1Choice.mmContract,
+					CurrencyControlRecordStatus1.mmDocumentIdentification, Mandate10.mmMandateReference, Mandate9.mmMandateReference, Mandate11.mmMandateReference, ReferredMandateDocument1.mmCreditorReference, Mandate8.mmMandateReference);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DocumentIdentification";
 			definition = "Identification of a document for instance unique identification of the purchase order, assigned by the buyer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentifiedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentifiedDocument;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Evidence> evidence;
 	/**
 	 * Proof of evidence which uses a document.
 	 * <p>
@@ -1380,8 +1487,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Evidence#RelatedDocument
-	 * Evidence.RelatedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.Evidence#mmRelatedDocument
+	 * Evidence.mmRelatedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1403,19 +1510,20 @@ public class Document {
 	 * definition} = "Proof of evidence which uses a document."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Evidence = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEvidence = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Evidence";
 			definition = "Proof of evidence which uses a document.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Evidence.mmRelatedDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Evidence.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Evidence.RelatedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CommercialTrade> commercialTrade;
 	/**
 	 * Trade for which a certificare is issued.
 	 * <p>
@@ -1424,8 +1532,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CommercialTrade#Documents
-	 * CommercialTrade.Documents}</li>
+	 * {@linkplain com.tools20022.repository.entity.CommercialTrade#mmDocuments
+	 * CommercialTrade.mmDocuments}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1448,19 +1556,20 @@ public class Document {
 	 * definition} = "Trade for which a certificare is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CommercialTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialTrade";
 			definition = "Trade for which a certificare is issued.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmDocuments;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTrade.Documents;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Presentation presentation;
 	/**
 	 * Presentation of documents and statements.
 	 * <p>
@@ -1469,8 +1578,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Presentation#PresentedDocument
-	 * Presentation.PresentedDocument}</li>
+	 * {@linkplain com.tools20022.repository.entity.Presentation#mmPresentedDocument
+	 * Presentation.mmPresentedDocument}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1493,20 +1602,21 @@ public class Document {
 	 * definition} = "Presentation of documents and statements."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Presentation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPresentation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Presentation";
 			definition = "Presentation of documents and statements.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Presentation.mmPresentedDocument;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Presentation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Presentation.PresentedDocument;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected RegisteredContract relatedContract;
 	/**
 	 * Related document which materialises the agreement.
 	 * <p>
@@ -1515,8 +1625,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Attachment
-	 * RegisteredContract.Attachment}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmAttachment
+	 * RegisteredContract.mmAttachment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1539,54 +1649,259 @@ public class Document {
 	 * definition} = "Related document which materialises the agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Document.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedContract";
 			definition = "Related document which materialises the agreement.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RegisteredContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Attachment;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmAttachment;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Document";
 				definition = "General information that unambiguously identifies a document, such as identification number and issue date time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.IdentifiedDocument, com.tools20022.repository.entity.ContactPoint.StoredDocument,
-						com.tools20022.repository.entity.Location.IssuedDocument, com.tools20022.repository.entity.Agreement.Document, com.tools20022.repository.entity.DocumentPartyRole.Document,
-						com.tools20022.repository.entity.PaymentObligation.AssociatedDocument, com.tools20022.repository.entity.Presentation.PresentedDocument, com.tools20022.repository.entity.CommercialTrade.Documents,
-						com.tools20022.repository.entity.Transport.TransportDocuments, com.tools20022.repository.entity.LetterOfCredit.Document, com.tools20022.repository.entity.Guarantee.Document,
-						com.tools20022.repository.entity.Reconciliation.Document, com.tools20022.repository.entity.Evidence.RelatedDocument, com.tools20022.repository.entity.RegisteredContract.Attachment);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CreditorReferenceType2.CodeOrProprietary, com.tools20022.repository.msg.RemittanceInformation2.Unstructured,
-						com.tools20022.repository.msg.DocumentLineType1.CodeOrProprietary, com.tools20022.repository.msg.DocumentLineInformation1.Description, com.tools20022.repository.msg.GarnishmentType1.CodeOrProprietary,
-						com.tools20022.repository.msg.ReferredDocumentType4.CodeOrProprietary, com.tools20022.repository.msg.RemittanceInformation11.Unstructured, com.tools20022.repository.msg.RemittanceInformation11.Structured,
-						com.tools20022.repository.msg.StructuredRemittanceInformation13.ReferredDocumentInformation, com.tools20022.repository.msg.StructuredRemittanceInformation13.AdditionalRemittanceInformation,
-						com.tools20022.repository.msg.ReferredDocumentInformation7.LineDetails, com.tools20022.repository.msg.RequestedModification6.RemittanceInformation, com.tools20022.repository.msg.RemittanceInformation13.Structured);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentifiedDocument, com.tools20022.repository.entity.ContactPoint.mmStoredDocument,
+						com.tools20022.repository.entity.Location.mmIssuedDocument, com.tools20022.repository.entity.Agreement.mmDocument, com.tools20022.repository.entity.DocumentPartyRole.mmDocument,
+						com.tools20022.repository.entity.PaymentObligation.mmAssociatedDocument, com.tools20022.repository.entity.Presentation.mmPresentedDocument, com.tools20022.repository.entity.CommercialTrade.mmDocuments,
+						com.tools20022.repository.entity.Transport.mmTransportDocuments, com.tools20022.repository.entity.LetterOfCredit.mmDocument, com.tools20022.repository.entity.Guarantee.mmDocument,
+						com.tools20022.repository.entity.Reconciliation.mmDocument, com.tools20022.repository.entity.Evidence.mmRelatedDocument, com.tools20022.repository.entity.RegisteredContract.mmAttachment);
+				derivationElement_lazy = () -> Arrays.asList(CreditorReferenceType2.mmCodeOrProprietary, RemittanceInformation2.mmUnstructured, DocumentLineType1.mmCodeOrProprietary, DocumentLineInformation1.mmDescription,
+						GarnishmentType1.mmCodeOrProprietary, ReferredDocumentType4.mmCodeOrProprietary, RemittanceInformation11.mmUnstructured, RemittanceInformation11.mmStructured,
+						StructuredRemittanceInformation13.mmReferredDocumentInformation, StructuredRemittanceInformation13.mmAdditionalRemittanceInformation, ReferredDocumentInformation7.mmLineDetails,
+						RequestedModification6.mmRemittanceInformation, RemittanceInformation13.mmStructured);
 				subType_lazy = () -> Arrays.asList(PrivateCertificate.mmObject(), InsuranceCertificate.mmObject(), SecurityCertificate.mmObject(), TradeCertificate.mmObject(), Assessment.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Document.IssueDate, com.tools20022.repository.entity.Document.CopyDuplicate, com.tools20022.repository.entity.Document.PlaceOfStorage,
-						com.tools20022.repository.entity.Document.PaymentObligation, com.tools20022.repository.entity.Document.Type, com.tools20022.repository.entity.Document.Amount, com.tools20022.repository.entity.Document.Agreement,
-						com.tools20022.repository.entity.Document.PlaceOfIssue, com.tools20022.repository.entity.Document.DocumentVersion, com.tools20022.repository.entity.Document.Status,
-						com.tools20022.repository.entity.Document.Reconciliation, com.tools20022.repository.entity.Document.LetterOfCredit, com.tools20022.repository.entity.Document.PartyRole,
-						com.tools20022.repository.entity.Document.DataSetType, com.tools20022.repository.entity.Document.Transport, com.tools20022.repository.entity.Document.SignedIndicator,
-						com.tools20022.repository.entity.Document.RemittedAmount, com.tools20022.repository.entity.Document.Guarantee, com.tools20022.repository.entity.Document.Language, com.tools20022.repository.entity.Document.Purpose,
-						com.tools20022.repository.entity.Document.DocumentIdentification, com.tools20022.repository.entity.Document.Evidence, com.tools20022.repository.entity.Document.CommercialTrade,
-						com.tools20022.repository.entity.Document.Presentation, com.tools20022.repository.entity.Document.RelatedContract);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Document.mmIssueDate, com.tools20022.repository.entity.Document.mmCopyDuplicate, com.tools20022.repository.entity.Document.mmPlaceOfStorage,
+						com.tools20022.repository.entity.Document.mmPaymentObligation, com.tools20022.repository.entity.Document.mmType, com.tools20022.repository.entity.Document.mmAmount,
+						com.tools20022.repository.entity.Document.mmAgreement, com.tools20022.repository.entity.Document.mmPlaceOfIssue, com.tools20022.repository.entity.Document.mmDocumentVersion,
+						com.tools20022.repository.entity.Document.mmStatus, com.tools20022.repository.entity.Document.mmReconciliation, com.tools20022.repository.entity.Document.mmLetterOfCredit,
+						com.tools20022.repository.entity.Document.mmPartyRole, com.tools20022.repository.entity.Document.mmDataSetType, com.tools20022.repository.entity.Document.mmTransport,
+						com.tools20022.repository.entity.Document.mmSignedIndicator, com.tools20022.repository.entity.Document.mmRemittedAmount, com.tools20022.repository.entity.Document.mmGuarantee,
+						com.tools20022.repository.entity.Document.mmLanguage, com.tools20022.repository.entity.Document.mmPurpose, com.tools20022.repository.entity.Document.mmDocumentIdentification,
+						com.tools20022.repository.entity.Document.mmEvidence, com.tools20022.repository.entity.Document.mmCommercialTrade, com.tools20022.repository.entity.Document.mmPresentation,
+						com.tools20022.repository.entity.Document.mmRelatedContract);
 				derivationComponent_lazy = () -> Arrays.asList(CreditorReferenceType1Choice.mmObject(), CreditorReferenceType2.mmObject(), RemittanceAmount2.mmObject(), RemittanceInformation2.mmObject(),
 						DocumentIdentification22.mmObject(), DocumentLineType1.mmObject(), DocumentLineIdentification1.mmObject(), DocumentLineInformation1.mmObject(), DocumentLineType1Choice.mmObject(), GarnishmentType1Choice.mmObject(),
 						GarnishmentType1.mmObject(), ReferredDocumentType3Choice.mmObject(), ReferredDocumentType4.mmObject(), SupportingDocumentRequestOrLetter1.mmObject(), DocumentIdentification29.mmObject(),
 						SupportingDocumentEntry1.mmObject(), DocumentGeneralInformation3.mmObject(), CertificateReference1.mmObject(), DocumentIdentification28.mmObject(), RemittanceInformation11.mmObject(),
 						StructuredRemittanceInformation13.mmObject(), ReferredDocumentInformation7.mmObject(), RemittanceInformation13.mmObject(), ReferredMandateDocument1.mmObject());
 			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Document.class;
+			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODateTime getIssueDate() {
+		return issueDate;
+	}
+
+	public void setIssueDate(ISODateTime issueDate) {
+		this.issueDate = issueDate;
+	}
+
+	public CopyDuplicateCode getCopyDuplicate() {
+		return copyDuplicate;
+	}
+
+	public void setCopyDuplicate(CopyDuplicateCode copyDuplicate) {
+		this.copyDuplicate = copyDuplicate;
+	}
+
+	public List<ContactPoint> getPlaceOfStorage() {
+		return placeOfStorage;
+	}
+
+	public void setPlaceOfStorage(List<com.tools20022.repository.entity.ContactPoint> placeOfStorage) {
+		this.placeOfStorage = placeOfStorage;
+	}
+
+	public PaymentObligation getPaymentObligation() {
+		return paymentObligation;
+	}
+
+	public void setPaymentObligation(com.tools20022.repository.entity.PaymentObligation paymentObligation) {
+		this.paymentObligation = paymentObligation;
+	}
+
+	public DocumentTypeCode getType() {
+		return type;
+	}
+
+	public void setType(DocumentTypeCode type) {
+		this.type = type;
+	}
+
+	public ActiveCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public List<Agreement> getAgreement() {
+		return agreement;
+	}
+
+	public void setAgreement(List<com.tools20022.repository.entity.Agreement> agreement) {
+		this.agreement = agreement;
+	}
+
+	public Location getPlaceOfIssue() {
+		return placeOfIssue;
+	}
+
+	public void setPlaceOfIssue(com.tools20022.repository.entity.Location placeOfIssue) {
+		this.placeOfIssue = placeOfIssue;
+	}
+
+	public Number getDocumentVersion() {
+		return documentVersion;
+	}
+
+	public void setDocumentVersion(Number documentVersion) {
+		this.documentVersion = documentVersion;
+	}
+
+	public Max140Text getStatus() {
+		return status;
+	}
+
+	public void setStatus(Max140Text status) {
+		this.status = status;
+	}
+
+	public List<Reconciliation> getReconciliation() {
+		return reconciliation;
+	}
+
+	public void setReconciliation(List<com.tools20022.repository.entity.Reconciliation> reconciliation) {
+		this.reconciliation = reconciliation;
+	}
+
+	public LetterOfCredit getLetterOfCredit() {
+		return letterOfCredit;
+	}
+
+	public void setLetterOfCredit(com.tools20022.repository.entity.LetterOfCredit letterOfCredit) {
+		this.letterOfCredit = letterOfCredit;
+	}
+
+	public List<DocumentPartyRole> getPartyRole() {
+		return partyRole;
+	}
+
+	public void setPartyRole(List<com.tools20022.repository.entity.DocumentPartyRole> partyRole) {
+		this.partyRole = partyRole;
+	}
+
+	public DataSetTypeCode getDataSetType() {
+		return dataSetType;
+	}
+
+	public void setDataSetType(DataSetTypeCode dataSetType) {
+		this.dataSetType = dataSetType;
+	}
+
+	public Transport getTransport() {
+		return transport;
+	}
+
+	public void setTransport(com.tools20022.repository.entity.Transport transport) {
+		this.transport = transport;
+	}
+
+	public YesNoIndicator getSignedIndicator() {
+		return signedIndicator;
+	}
+
+	public void setSignedIndicator(YesNoIndicator signedIndicator) {
+		this.signedIndicator = signedIndicator;
+	}
+
+	public CurrencyAndAmount getRemittedAmount() {
+		return remittedAmount;
+	}
+
+	public void setRemittedAmount(CurrencyAndAmount remittedAmount) {
+		this.remittedAmount = remittedAmount;
+	}
+
+	public List<Guarantee> getGuarantee() {
+		return guarantee;
+	}
+
+	public void setGuarantee(List<com.tools20022.repository.entity.Guarantee> guarantee) {
+		this.guarantee = guarantee;
+	}
+
+	public LanguageCode getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(LanguageCode language) {
+		this.language = language;
+	}
+
+	public Max35Text getPurpose() {
+		return purpose;
+	}
+
+	public void setPurpose(Max35Text purpose) {
+		this.purpose = purpose;
+	}
+
+	public GenericIdentification getDocumentIdentification() {
+		return documentIdentification;
+	}
+
+	public void setDocumentIdentification(com.tools20022.repository.entity.GenericIdentification documentIdentification) {
+		this.documentIdentification = documentIdentification;
+	}
+
+	public List<Evidence> getEvidence() {
+		return evidence;
+	}
+
+	public void setEvidence(List<com.tools20022.repository.entity.Evidence> evidence) {
+		this.evidence = evidence;
+	}
+
+	public List<CommercialTrade> getCommercialTrade() {
+		return commercialTrade;
+	}
+
+	public void setCommercialTrade(List<com.tools20022.repository.entity.CommercialTrade> commercialTrade) {
+		this.commercialTrade = commercialTrade;
+	}
+
+	public Presentation getPresentation() {
+		return presentation;
+	}
+
+	public void setPresentation(com.tools20022.repository.entity.Presentation presentation) {
+		this.presentation = presentation;
+	}
+
+	public RegisteredContract getRelatedContract() {
+		return relatedContract;
+	}
+
+	public void setRelatedContract(com.tools20022.repository.entity.RegisteredContract relatedContract) {
+		this.relatedContract = relatedContract;
 	}
 }

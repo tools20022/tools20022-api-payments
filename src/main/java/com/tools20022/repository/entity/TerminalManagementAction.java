@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,23 +38,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#Type
- * TerminalManagementAction.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#mmType
+ * TerminalManagementAction.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#Trigger
- * TerminalManagementAction.Trigger}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#mmTrigger
+ * TerminalManagementAction.mmTrigger}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#AdditionalProcess
- * TerminalManagementAction.AdditionalProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#mmAdditionalProcess
+ * TerminalManagementAction.mmAdditionalProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#ActionResult
- * TerminalManagementAction.ActionResult}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#mmActionResult
+ * TerminalManagementAction.mmActionResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#ActionToProcess
- * TerminalManagementAction.ActionToProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#mmActionToProcess
+ * TerminalManagementAction.mmActionToProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#TerminalManagementSystem
- * TerminalManagementAction.TerminalManagementSystem}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementAction#mmTerminalManagementSystem
+ * TerminalManagementAction.mmTerminalManagementSystem}</li>
  * </ul>
  * </li>
  * <li>
@@ -62,15 +62,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#Action
- * TerminalManagementSystem.Action}</li>
+ * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#mmAction
+ * TerminalManagementSystem.mmAction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,6 +85,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TerminalManagementAction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected TerminalManagementActionCode type;
 	/**
 	 * Types of terminal management action to be performed by a point of
 	 * interaction.
@@ -114,18 +115,27 @@ public class TerminalManagementAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TerminalManagementAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Types of terminal management action to be performed by a point of interaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementActionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TerminalManagementAction.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TerminalManagementActionTriggerCode trigger;
 	/**
 	 * Event to start the terminal management action by the point of interaction
 	 * (POI).
@@ -155,18 +165,27 @@ public class TerminalManagementAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Trigger = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTrigger = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TerminalManagementAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trigger";
 			definition = "Event to start the terminal management action by the point of interaction (POI).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementActionTriggerCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TerminalManagementAction.class.getMethod("getTrigger", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TerminalManagementAdditionalProcessCode additionalProcess;
 	/**
 	 * Additional process to perform before starting or after the terminal
 	 * management action by the point of interaction (POI).
@@ -196,18 +215,27 @@ public class TerminalManagementAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AdditionalProcess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAdditionalProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TerminalManagementAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalProcess";
 			definition = "Additional process to perform before starting or after the terminal management action by the point of interaction (POI).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementAdditionalProcessCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TerminalManagementAction.class.getMethod("getAdditionalProcess", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TerminalManagementActionResultCode actionResult;
 	/**
 	 * List of action result codes.
 	 * <p>
@@ -234,18 +262,27 @@ public class TerminalManagementAction {
 	 * definition} = "List of action result codes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ActionResult = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmActionResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TerminalManagementAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionResult";
 			definition = "List of action result codes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementActionResultCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TerminalManagementAction.class.getMethod("getActionResult", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TerminalManagementErrorActionCode actionToProcess;
 	/**
 	 * Action to be processed.
 	 * <p>
@@ -272,18 +309,27 @@ public class TerminalManagementAction {
 	 * definition} = "Action to be processed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ActionToProcess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmActionToProcess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TerminalManagementAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActionToProcess";
 			definition = "Action to be processed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementErrorActionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TerminalManagementAction.class.getMethod("getActionToProcess", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TerminalManagementSystem terminalManagementSystem;
 	/**
 	 * Terminal management system from which an action took place
 	 * <p>
@@ -292,8 +338,8 @@ public class TerminalManagementAction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#Action
-	 * TerminalManagementSystem.Action}</li>
+	 * {@linkplain com.tools20022.repository.entity.TerminalManagementSystem#mmAction
+	 * TerminalManagementSystem.mmAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -319,34 +365,87 @@ public class TerminalManagementAction {
 	 * "Terminal management system from which an action took place"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TerminalManagementAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminalManagementSystem";
 			definition = "Terminal management system from which an action took place";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmAction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.Action;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementAction";
 				definition = "Terminal management action to be performed by the point of interaction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.Action);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementAction.Type, com.tools20022.repository.entity.TerminalManagementAction.Trigger,
-						com.tools20022.repository.entity.TerminalManagementAction.AdditionalProcess, com.tools20022.repository.entity.TerminalManagementAction.ActionResult,
-						com.tools20022.repository.entity.TerminalManagementAction.ActionToProcess, com.tools20022.repository.entity.TerminalManagementAction.TerminalManagementSystem);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.mmAction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementAction.mmType, com.tools20022.repository.entity.TerminalManagementAction.mmTrigger,
+						com.tools20022.repository.entity.TerminalManagementAction.mmAdditionalProcess, com.tools20022.repository.entity.TerminalManagementAction.mmActionResult,
+						com.tools20022.repository.entity.TerminalManagementAction.mmActionToProcess, com.tools20022.repository.entity.TerminalManagementAction.mmTerminalManagementSystem);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TerminalManagementAction.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public TerminalManagementActionCode getType() {
+		return type;
+	}
+
+	public void setType(TerminalManagementActionCode type) {
+		this.type = type;
+	}
+
+	public TerminalManagementActionTriggerCode getTrigger() {
+		return trigger;
+	}
+
+	public void setTrigger(TerminalManagementActionTriggerCode trigger) {
+		this.trigger = trigger;
+	}
+
+	public TerminalManagementAdditionalProcessCode getAdditionalProcess() {
+		return additionalProcess;
+	}
+
+	public void setAdditionalProcess(TerminalManagementAdditionalProcessCode additionalProcess) {
+		this.additionalProcess = additionalProcess;
+	}
+
+	public TerminalManagementActionResultCode getActionResult() {
+		return actionResult;
+	}
+
+	public void setActionResult(TerminalManagementActionResultCode actionResult) {
+		this.actionResult = actionResult;
+	}
+
+	public TerminalManagementErrorActionCode getActionToProcess() {
+		return actionToProcess;
+	}
+
+	public void setActionToProcess(TerminalManagementErrorActionCode actionToProcess) {
+		this.actionToProcess = actionToProcess;
+	}
+
+	public TerminalManagementSystem getTerminalManagementSystem() {
+		return terminalManagementSystem;
+	}
+
+	public void setTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem terminalManagementSystem) {
+		this.terminalManagementSystem = terminalManagementSystem;
 	}
 }

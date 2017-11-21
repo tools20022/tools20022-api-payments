@@ -19,10 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.InformationRequestOpeningV01;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max140Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the date by when the financial institutiion needs to provide a
@@ -34,10 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.DueDate1#DueDate
- * DueDate1.DueDate}</li>
- * <li>{@linkplain com.tools20022.repository.msg.DueDate1#AdditionalInformation
- * DueDate1.AdditionalInformation}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.DueDate1#mmDueDate
+ * DueDate1.mmDueDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.DueDate1#mmAdditionalInformation
+ * DueDate1.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>
@@ -45,15 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestOpeningV01#DueDate
- * InformationRequestOpeningV01.DueDate}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestOpeningV01#mmDueDate
+ * InformationRequestOpeningV01.mmDueDate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,9 +74,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DueDate1", propOrder = {"dueDate", "additionalInformation"})
 public class DueDate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate dueDate;
 	/**
 	 * Specifies the date when the authority needs the response in situations
 	 * where the response or part of it will not be given electronically but on
@@ -99,19 +110,20 @@ public class DueDate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DueDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDueDate = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DueDate1.mmObject();
 			isDerived = false;
 			xmlTag = "DueDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DueDate";
 			definition = "Specifies the date when the authority needs the response in situations where the response or part of it will not be given electronically but on paper in manual process.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected Max140Text additionalInformation;
 	/**
 	 * Specifies the reason why the authority needs the information on due date.
 	 * <p>
@@ -140,16 +152,16 @@ public class DueDate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DueDate1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Specifies the reason why the authority needs the information on due date.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
@@ -157,14 +169,32 @@ public class DueDate1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DueDate1.DueDate, com.tools20022.repository.msg.DueDate1.AdditionalInformation);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestOpeningV01.DueDate);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(DueDate1.mmDueDate, DueDate1.mmAdditionalInformation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(InformationRequestOpeningV01.mmDueDate);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DueDate1";
 				definition = "Specifies the date by when the financial institutiion needs to provide a response.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "DueDt")
+	public ISODate getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(ISODate dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max140Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max140Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

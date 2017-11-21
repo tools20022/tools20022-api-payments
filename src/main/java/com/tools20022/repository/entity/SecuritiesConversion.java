@@ -17,14 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.LoanContract1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Conversion exchange of securities, generally convertible bonds or preferred
@@ -40,127 +42,128 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionPrice
- * SecuritiesConversion.ConversionPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionPrice
+ * SecuritiesConversion.mmConversionPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionDate
- * SecuritiesConversion.ConversionDate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionDate
+ * SecuritiesConversion.mmConversionDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#MinimumExercisableQuantity
- * SecuritiesConversion.MinimumExercisableQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmMinimumExercisableQuantity
+ * SecuritiesConversion.mmMinimumExercisableQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#MinimumExercisableMultipleQuantity
- * SecuritiesConversion.MinimumExercisableMultipleQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmMinimumExercisableMultipleQuantity
+ * SecuritiesConversion.mmMinimumExercisableMultipleQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#MaximumExercisableQuantity
- * SecuritiesConversion.MaximumExercisableQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmMaximumExercisableQuantity
+ * SecuritiesConversion.mmMaximumExercisableQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionType
- * SecuritiesConversion.ConversionType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionType
+ * SecuritiesConversion.mmConversionType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionPeriod
- * SecuritiesConversion.ConversionPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionPeriod
+ * SecuritiesConversion.mmConversionPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionRatioDenominator
- * SecuritiesConversion.ConversionRatioDenominator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionRatioDenominator
+ * SecuritiesConversion.mmConversionRatioDenominator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionRatioNumerator
- * SecuritiesConversion.ConversionRatioNumerator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesConversion#Ratio
- * SecuritiesConversion.Ratio}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionRatioNumerator
+ * SecuritiesConversion.mmConversionRatioNumerator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionUnitCurrency
- * SecuritiesConversion.ConversionUnitCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmRatio
+ * SecuritiesConversion.mmRatio}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#RelatedOption
- * SecuritiesConversion.RelatedOption}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionUnitCurrency
+ * SecuritiesConversion.mmConversionUnitCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#BusinessDayConvention
- * SecuritiesConversion.BusinessDayConvention}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmRelatedOption
+ * SecuritiesConversion.mmRelatedOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionChoice
- * SecuritiesConversion.ConversionChoice}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmBusinessDayConvention
+ * SecuritiesConversion.mmBusinessDayConvention}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionFixedExchangeRate
- * SecuritiesConversion.ConversionFixedExchangeRate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionChoice
+ * SecuritiesConversion.mmConversionChoice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionMarginAmount
- * SecuritiesConversion.ConversionMarginAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionFixedExchangeRate
+ * SecuritiesConversion.mmConversionFixedExchangeRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionOption
- * SecuritiesConversion.ConversionOption}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionMarginAmount
+ * SecuritiesConversion.mmConversionMarginAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionQuotedCurrency
- * SecuritiesConversion.ConversionQuotedCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionOption
+ * SecuritiesConversion.mmConversionOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#FinancialCenter
- * SecuritiesConversion.FinancialCenter}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionQuotedCurrency
+ * SecuritiesConversion.mmConversionQuotedCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#MinimumNoticeDays
- * SecuritiesConversion.MinimumNoticeDays}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmFinancialCenter
+ * SecuritiesConversion.mmFinancialCenter}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#NoticePeriodType
- * SecuritiesConversion.NoticePeriodType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmMinimumNoticeDays
+ * SecuritiesConversion.mmMinimumNoticeDays}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ProtectionAgainstDilutionIndicator
- * SecuritiesConversion.ProtectionAgainstDilutionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmNoticePeriodType
+ * SecuritiesConversion.mmNoticePeriodType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ReverseConversionIndicator
- * SecuritiesConversion.ReverseConversionIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmProtectionAgainstDilutionIndicator
+ * SecuritiesConversion.mmProtectionAgainstDilutionIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#SecurityIdentification
- * SecuritiesConversion.SecurityIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmReverseConversionIndicator
+ * SecuritiesConversion.mmReverseConversionIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#PartyType
- * SecuritiesConversion.PartyType}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmSecurityIdentification
+ * SecuritiesConversion.mmSecurityIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ContractSize
- * SecuritiesConversion.ContractSize}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmPartyType
+ * SecuritiesConversion.mmPartyType}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmContractSize
+ * SecuritiesConversion.mmContractSize}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Conversion
- * Security.Conversion}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmConversion
+ * Security.mmConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedSecuritiesConversion
- * SecuritiesPricing.RelatedSecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedSecuritiesConversion
+ * SecuritiesPricing.mmRelatedSecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#SecuritiesConversion
- * DateTimePeriod.SecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmSecuritiesConversion
+ * DateTimePeriod.mmSecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumExercisableQuantitySecuritiesConversion
- * SecuritiesQuantity.MinimumExercisableQuantitySecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumExercisableQuantitySecuritiesConversion
+ * SecuritiesQuantity.mmMinimumExercisableQuantitySecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumExercisableMultipleQuantitySecuritiesConversion
- * SecuritiesQuantity.MinimumExercisableMultipleQuantitySecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumExercisableMultipleQuantitySecuritiesConversion
+ * SecuritiesQuantity.mmMinimumExercisableMultipleQuantitySecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumExercisableQuantitySecuritiesConversion
- * SecuritiesQuantity.MaximumExercisableQuantitySecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumExercisableQuantitySecuritiesConversion
+ * SecuritiesQuantity.mmMaximumExercisableQuantitySecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RatioDenominatorSecuritiesConversion
- * SecuritiesQuantity.RatioDenominatorSecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRatioDenominatorSecuritiesConversion
+ * SecuritiesQuantity.mmRatioDenominatorSecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RatioNumeratorSecuritiesConversion
- * SecuritiesQuantity.RatioNumeratorSecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRatioNumeratorSecuritiesConversion
+ * SecuritiesQuantity.mmRatioNumeratorSecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CurrencyExchange#CurrencyExchangeForSecuritiesConversion
- * CurrencyExchange.CurrencyExchangeForSecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmCurrencyExchangeForSecuritiesConversion
+ * CurrencyExchange.mmCurrencyExchangeForSecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Option#OptionConversionInformation
- * Option.OptionConversionInformation}</li>
+ * {@linkplain com.tools20022.repository.entity.Option#mmOptionConversionInformation
+ * Option.mmOptionConversionInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.UnderlyingRatio#SecuritiesConversion
- * UnderlyingRatio.SecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.UnderlyingRatio#mmSecuritiesConversion
+ * UnderlyingRatio.mmSecuritiesConversion}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,6 +179,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesConversion {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesPricing conversionPrice;
 	/**
 	 * Price of one target security in the conversion.
 	 * <p>
@@ -184,8 +188,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedSecuritiesConversion
-	 * SecuritiesPricing.RelatedSecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedSecuritiesConversion
+	 * SecuritiesPricing.mmRelatedSecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -209,20 +213,21 @@ public class SecuritiesConversion {
 	 * definition} = "Price of one target security in the conversion."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ConversionPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConversionPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionPrice";
 			definition = "Price of one target security in the conversion.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.RelatedSecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedSecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected ISODateTime conversionDate;
 	/**
 	 * Deadline by which a convertible security must be converted according to
 	 * the terms of the issue.
@@ -251,18 +256,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionDate";
 			definition = "Deadline by which a convertible security must be converted according to the terms of the issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity minimumExercisableQuantity;
 	/**
 	 * Minimum quantity of financial instrument or lot of rights/warrants that
 	 * must be exercised.
@@ -272,8 +286,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumExercisableQuantitySecuritiesConversion
-	 * SecuritiesQuantity.MinimumExercisableQuantitySecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumExercisableQuantitySecuritiesConversion
+	 * SecuritiesQuantity.mmMinimumExercisableQuantitySecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -299,20 +313,21 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumExercisableQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumExercisableQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableQuantity";
 			definition = "Minimum quantity of financial instrument or lot of rights/warrants that must be exercised.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MinimumExercisableQuantitySecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumExercisableQuantitySecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity minimumExercisableMultipleQuantity;
 	/**
 	 * Minimum multiple quantity of financial instrument or lot of
 	 * rights/warrants that must be exercised.
@@ -322,9 +337,9 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumExercisableMultipleQuantitySecuritiesConversion
-	 * SecuritiesQuantity.MinimumExercisableMultipleQuantitySecuritiesConversion
-	 * }</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumExercisableMultipleQuantitySecuritiesConversion
+	 * SecuritiesQuantity.
+	 * mmMinimumExercisableMultipleQuantitySecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -350,20 +365,21 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumExercisableMultipleQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumExercisableMultipleQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumExercisableMultipleQuantity";
 			definition = "Minimum multiple quantity of financial instrument or lot of rights/warrants that must be exercised.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MinimumExercisableMultipleQuantitySecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumExercisableMultipleQuantitySecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity maximumExercisableQuantity;
 	/**
 	 * Indicates the maximum quantity of financial instrument that may be
 	 * exercised in the event.
@@ -373,8 +389,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumExercisableQuantitySecuritiesConversion
-	 * SecuritiesQuantity.MaximumExercisableQuantitySecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumExercisableQuantitySecuritiesConversion
+	 * SecuritiesQuantity.mmMaximumExercisableQuantitySecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -400,20 +416,21 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MaximumExercisableQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMaximumExercisableQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumExercisableQuantity";
 			definition = "Indicates the maximum quantity of financial instrument that may be exercised in the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MaximumExercisableQuantitySecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumExercisableQuantitySecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected ConversionTypeCode conversionType;
 	/**
 	 * Specifies the conversion type of an instrument.
 	 * <p>
@@ -440,18 +457,27 @@ public class SecuritiesConversion {
 	 * definition} = "Specifies the conversion type of an instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionType";
 			definition = "Specifies the conversion type of an instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ConversionTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod conversionPeriod;
 	/**
 	 * Period during which a convertible security may be converted according to
 	 * the terms of the issue.
@@ -461,8 +487,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#SecuritiesConversion
-	 * DateTimePeriod.SecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmSecuritiesConversion
+	 * DateTimePeriod.mmSecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -488,20 +514,21 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ConversionPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConversionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionPeriod";
 			definition = "Period during which a convertible security may be converted according to the terms of the issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.SecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmSecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected SecuritiesQuantity conversionRatioDenominator;
 	/**
 	 * Number of held securities for the conversion.
 	 * <p>
@@ -510,8 +537,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RatioDenominatorSecuritiesConversion
-	 * SecuritiesQuantity.RatioDenominatorSecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRatioDenominatorSecuritiesConversion
+	 * SecuritiesQuantity.mmRatioDenominatorSecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -535,20 +562,21 @@ public class SecuritiesConversion {
 	 * definition} = "Number of held securities for the conversion."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ConversionRatioDenominator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConversionRatioDenominator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionRatioDenominator";
 			definition = "Number of held securities for the conversion.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.RatioDenominatorSecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRatioDenominatorSecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity conversionRatioNumerator;
 	/**
 	 * Number of target securities for the conversion.
 	 * <p>
@@ -557,8 +585,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RatioNumeratorSecuritiesConversion
-	 * SecuritiesQuantity.RatioNumeratorSecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRatioNumeratorSecuritiesConversion
+	 * SecuritiesQuantity.mmRatioNumeratorSecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -582,20 +610,21 @@ public class SecuritiesConversion {
 	 * definition} = "Number of target securities for the conversion."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ConversionRatioNumerator = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConversionRatioNumerator = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionRatioNumerator";
 			definition = "Number of target securities for the conversion.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.RatioNumeratorSecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRatioNumeratorSecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.UnderlyingRatio> ratio;
 	/**
 	 * Ratio applied to convert the related security.
 	 * <p>
@@ -604,8 +633,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.UnderlyingRatio#SecuritiesConversion
-	 * UnderlyingRatio.SecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.UnderlyingRatio#mmSecuritiesConversion
+	 * UnderlyingRatio.mmSecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -629,19 +658,20 @@ public class SecuritiesConversion {
 	 * definition} = "Ratio applied to convert the related security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Ratio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRatio = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ratio";
 			definition = "Ratio applied to convert the related security.";
 			minOccurs = 0;
-			type_lazy = () -> UnderlyingRatio.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.SecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmSecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.UnderlyingRatio.mmObject();
 		}
 	};
+	protected CurrencyExchange conversionUnitCurrency;
 	/**
 	 * Currency in which the rate of exchange is expressed in a currency
 	 * exchange. In the example 1GBP = xxxCUR, the unit currency is GBP.
@@ -651,8 +681,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#CurrencyExchangeForSecuritiesConversion
-	 * CurrencyExchange.CurrencyExchangeForSecuritiesConversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmCurrencyExchangeForSecuritiesConversion
+	 * CurrencyExchange.mmCurrencyExchangeForSecuritiesConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -678,20 +708,21 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ConversionUnitCurrency = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConversionUnitCurrency = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionUnitCurrency";
 			definition = "Currency in which the rate of exchange is expressed in a currency exchange. In the example 1GBP = xxxCUR, the unit currency is GBP.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CurrencyExchange.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.CurrencyExchangeForSecuritiesConversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForSecuritiesConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 		}
 	};
+	protected Option relatedOption;
 	/**
 	 * Option for which securities conversion information is provided.
 	 * <p>
@@ -700,8 +731,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Option#OptionConversionInformation
-	 * Option.OptionConversionInformation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Option#mmOptionConversionInformation
+	 * Option.mmOptionConversionInformation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -725,20 +756,21 @@ public class SecuritiesConversion {
 	 * "Option for which securities conversion information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOption";
 			definition = "Option for which securities conversion information is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Option.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Option.OptionConversionInformation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Option.mmOptionConversionInformation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
 		}
 	};
+	protected BusinessDayConventionCode businessDayConvention;
 	/**
 	 * Convention used for adjusting a date when it is not a business day.
 	 * <p>
@@ -766,18 +798,27 @@ public class SecuritiesConversion {
 	 * "Convention used for adjusting a date when it is not a business day."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BusinessDayConvention = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessDayConvention";
 			definition = "Convention used for adjusting a date when it is not a business day.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BusinessDayConventionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getBusinessDayConvention", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ChoiceCode conversionChoice;
 	/**
 	 * Specifies whether the conversion is mandatory or optional.
 	 * <p>
@@ -804,18 +845,27 @@ public class SecuritiesConversion {
 	 * "Specifies whether the conversion is mandatory or optional."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionChoice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionChoice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionChoice";
 			definition = "Specifies whether the conversion is mandatory or optional.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ChoiceCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionChoice", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BaseOneRate conversionFixedExchangeRate;
 	/**
 	 * Currency exchange rate between the bond currency and the underlying
 	 * equity currency used to calculate the convertion ratio.
@@ -844,18 +894,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionFixedExchangeRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionFixedExchangeRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionFixedExchangeRate";
 			definition = "Currency exchange rate between the bond currency and the underlying equity currency used to calculate the convertion ratio.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionFixedExchangeRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount conversionMarginAmount;
 	/**
 	 * Amount of cash needed for the conversion.
 	 * <p>
@@ -882,18 +941,27 @@ public class SecuritiesConversion {
 	 * definition} = "Amount of cash needed for the conversion."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionMarginAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionMarginAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionMarginAmount";
 			definition = "Amount of cash needed for the conversion.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionMarginAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionOptionCode conversionOption;
 	/**
 	 * Specifies information about the choices offered to the holder of a
 	 * conversion.
@@ -923,18 +991,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionOption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionOption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionOption";
 			definition = "Specifies information about the choices offered to the holder of a conversion.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionOptionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionOption", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode conversionQuotedCurrency;
 	/**
 	 * Currency into which the base currency is converted, in a currency
 	 * exchange.
@@ -949,8 +1026,8 @@ public class SecuritiesConversion {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LoanContract1#SettlementCurrency
-	 * LoanContract1.SettlementCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.LoanContract1#mmSettlementCurrency
+	 * LoanContract1.mmSettlementCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -971,19 +1048,28 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ConversionQuotedCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmConversionQuotedCurrency = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LoanContract1.SettlementCurrency);
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			derivation_lazy = () -> Arrays.asList(LoanContract1.mmSettlementCurrency);
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConversionQuotedCurrency";
 			definition = "Currency into which the base currency is converted, in a currency exchange.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getConversionQuotedCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FinancialCenterCode financialCenter;
 	/**
 	 * Financial place taken into account to adjust the date and time, as
 	 * defined within the business day convention.
@@ -1013,18 +1099,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FinancialCenter = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCenter";
 			definition = "Financial place  taken into account to adjust the date and time, as defined within the business day convention.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FinancialCenterCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getFinancialCenter", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number minimumNoticeDays;
 	/**
 	 * Minimum number of days that must be given by either the issuer or the
 	 * holder before conversion can take place.
@@ -1053,18 +1148,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MinimumNoticeDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMinimumNoticeDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumNoticeDays";
 			definition = "Minimum number of days that must be given by either the issuer or the holder before conversion can take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getMinimumNoticeDays", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected NoticePeriodTypeCode noticePeriodType;
 	/**
 	 * Specifies the type of notice period.
 	 * <p>
@@ -1091,18 +1195,27 @@ public class SecuritiesConversion {
 	 * definition} = "Specifies the type of notice period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NoticePeriodType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNoticePeriodType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoticePeriodType";
 			definition = "Specifies the type of notice period.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> NoticePeriodTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getNoticePeriodType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator protectionAgainstDilutionIndicator;
 	/**
 	 * Indicates whether the security is protected against dilution with regards
 	 * to capital events.
@@ -1132,18 +1245,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ProtectionAgainstDilutionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProtectionAgainstDilutionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProtectionAgainstDilutionIndicator";
 			definition = "Indicates whether the security is protected against dilution with regards to capital events.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getProtectionAgainstDilutionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator reverseConversionIndicator;
 	/**
 	 * Indicates whether the bond is convertible into an equity and back to the
 	 * bond.
@@ -1173,18 +1295,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReverseConversionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReverseConversionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReverseConversionIndicator";
 			definition = "Indicates whether the bond is convertible into an equity and back to the bond.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getReverseConversionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Security securityIdentification;
 	/**
 	 * ISIN identification of the related financial instrument into which this
 	 * security can be converted.
@@ -1194,8 +1325,8 @@ public class SecuritiesConversion {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#Conversion
-	 * Security.Conversion}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmConversion
+	 * Security.mmConversion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1220,20 +1351,21 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecurityIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurityIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityIdentification";
 			definition = "ISIN identification of the related financial instrument into which this security can be converted.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.Conversion;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmConversion;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
 	};
+	protected PartyTypeCode partyType;
 	/**
 	 * Specifies if the issuer or the holder are allowed to convert the security
 	 * into another one.
@@ -1263,18 +1395,27 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyType";
 			definition = "Specifies if the issuer or the holder are allowed to convert the security into another one.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PartyTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getPartyType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BaseOneRate contractSize;
 	/**
 	 * Ratio or multiplying factor used to convert one contract into a quantity.
 	 * <p>
@@ -1302,46 +1443,268 @@ public class SecuritiesConversion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ContractSize = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmContractSize = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesConversion.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractSize";
 			definition = "Ratio or multiplying factor used to convert one contract into a quantity.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesConversion.class.getMethod("getContractSize", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesConversion";
 				definition = "Conversion exchange of securities, generally convertible bonds or preferred equities, into another form of securities, usually common equities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.Conversion, com.tools20022.repository.entity.SecuritiesPricing.RelatedSecuritiesConversion,
-						com.tools20022.repository.entity.DateTimePeriod.SecuritiesConversion, com.tools20022.repository.entity.SecuritiesQuantity.MinimumExercisableQuantitySecuritiesConversion,
-						com.tools20022.repository.entity.SecuritiesQuantity.MinimumExercisableMultipleQuantitySecuritiesConversion, com.tools20022.repository.entity.SecuritiesQuantity.MaximumExercisableQuantitySecuritiesConversion,
-						com.tools20022.repository.entity.SecuritiesQuantity.RatioDenominatorSecuritiesConversion, com.tools20022.repository.entity.SecuritiesQuantity.RatioNumeratorSecuritiesConversion,
-						com.tools20022.repository.entity.CurrencyExchange.CurrencyExchangeForSecuritiesConversion, com.tools20022.repository.entity.Option.OptionConversionInformation,
-						com.tools20022.repository.entity.UnderlyingRatio.SecuritiesConversion);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesConversion.ConversionPrice, com.tools20022.repository.entity.SecuritiesConversion.ConversionDate,
-						com.tools20022.repository.entity.SecuritiesConversion.MinimumExercisableQuantity, com.tools20022.repository.entity.SecuritiesConversion.MinimumExercisableMultipleQuantity,
-						com.tools20022.repository.entity.SecuritiesConversion.MaximumExercisableQuantity, com.tools20022.repository.entity.SecuritiesConversion.ConversionType,
-						com.tools20022.repository.entity.SecuritiesConversion.ConversionPeriod, com.tools20022.repository.entity.SecuritiesConversion.ConversionRatioDenominator,
-						com.tools20022.repository.entity.SecuritiesConversion.ConversionRatioNumerator, com.tools20022.repository.entity.SecuritiesConversion.Ratio,
-						com.tools20022.repository.entity.SecuritiesConversion.ConversionUnitCurrency, com.tools20022.repository.entity.SecuritiesConversion.RelatedOption,
-						com.tools20022.repository.entity.SecuritiesConversion.BusinessDayConvention, com.tools20022.repository.entity.SecuritiesConversion.ConversionChoice,
-						com.tools20022.repository.entity.SecuritiesConversion.ConversionFixedExchangeRate, com.tools20022.repository.entity.SecuritiesConversion.ConversionMarginAmount,
-						com.tools20022.repository.entity.SecuritiesConversion.ConversionOption, com.tools20022.repository.entity.SecuritiesConversion.ConversionQuotedCurrency,
-						com.tools20022.repository.entity.SecuritiesConversion.FinancialCenter, com.tools20022.repository.entity.SecuritiesConversion.MinimumNoticeDays, com.tools20022.repository.entity.SecuritiesConversion.NoticePeriodType,
-						com.tools20022.repository.entity.SecuritiesConversion.ProtectionAgainstDilutionIndicator, com.tools20022.repository.entity.SecuritiesConversion.ReverseConversionIndicator,
-						com.tools20022.repository.entity.SecuritiesConversion.SecurityIdentification, com.tools20022.repository.entity.SecuritiesConversion.PartyType, com.tools20022.repository.entity.SecuritiesConversion.ContractSize);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmConversion, com.tools20022.repository.entity.SecuritiesPricing.mmRelatedSecuritiesConversion,
+						com.tools20022.repository.entity.DateTimePeriod.mmSecuritiesConversion, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumExercisableQuantitySecuritiesConversion,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumExercisableMultipleQuantitySecuritiesConversion, com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumExercisableQuantitySecuritiesConversion,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmRatioDenominatorSecuritiesConversion, com.tools20022.repository.entity.SecuritiesQuantity.mmRatioNumeratorSecuritiesConversion,
+						com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForSecuritiesConversion, com.tools20022.repository.entity.Option.mmOptionConversionInformation,
+						com.tools20022.repository.entity.UnderlyingRatio.mmSecuritiesConversion);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesConversion.mmConversionPrice, com.tools20022.repository.entity.SecuritiesConversion.mmConversionDate,
+						com.tools20022.repository.entity.SecuritiesConversion.mmMinimumExercisableQuantity, com.tools20022.repository.entity.SecuritiesConversion.mmMinimumExercisableMultipleQuantity,
+						com.tools20022.repository.entity.SecuritiesConversion.mmMaximumExercisableQuantity, com.tools20022.repository.entity.SecuritiesConversion.mmConversionType,
+						com.tools20022.repository.entity.SecuritiesConversion.mmConversionPeriod, com.tools20022.repository.entity.SecuritiesConversion.mmConversionRatioDenominator,
+						com.tools20022.repository.entity.SecuritiesConversion.mmConversionRatioNumerator, com.tools20022.repository.entity.SecuritiesConversion.mmRatio,
+						com.tools20022.repository.entity.SecuritiesConversion.mmConversionUnitCurrency, com.tools20022.repository.entity.SecuritiesConversion.mmRelatedOption,
+						com.tools20022.repository.entity.SecuritiesConversion.mmBusinessDayConvention, com.tools20022.repository.entity.SecuritiesConversion.mmConversionChoice,
+						com.tools20022.repository.entity.SecuritiesConversion.mmConversionFixedExchangeRate, com.tools20022.repository.entity.SecuritiesConversion.mmConversionMarginAmount,
+						com.tools20022.repository.entity.SecuritiesConversion.mmConversionOption, com.tools20022.repository.entity.SecuritiesConversion.mmConversionQuotedCurrency,
+						com.tools20022.repository.entity.SecuritiesConversion.mmFinancialCenter, com.tools20022.repository.entity.SecuritiesConversion.mmMinimumNoticeDays,
+						com.tools20022.repository.entity.SecuritiesConversion.mmNoticePeriodType, com.tools20022.repository.entity.SecuritiesConversion.mmProtectionAgainstDilutionIndicator,
+						com.tools20022.repository.entity.SecuritiesConversion.mmReverseConversionIndicator, com.tools20022.repository.entity.SecuritiesConversion.mmSecurityIdentification,
+						com.tools20022.repository.entity.SecuritiesConversion.mmPartyType, com.tools20022.repository.entity.SecuritiesConversion.mmContractSize);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesConversion.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesPricing getConversionPrice() {
+		return conversionPrice;
+	}
+
+	public void setConversionPrice(com.tools20022.repository.entity.SecuritiesPricing conversionPrice) {
+		this.conversionPrice = conversionPrice;
+	}
+
+	public ISODateTime getConversionDate() {
+		return conversionDate;
+	}
+
+	public void setConversionDate(ISODateTime conversionDate) {
+		this.conversionDate = conversionDate;
+	}
+
+	public SecuritiesQuantity getMinimumExercisableQuantity() {
+		return minimumExercisableQuantity;
+	}
+
+	public void setMinimumExercisableQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumExercisableQuantity) {
+		this.minimumExercisableQuantity = minimumExercisableQuantity;
+	}
+
+	public SecuritiesQuantity getMinimumExercisableMultipleQuantity() {
+		return minimumExercisableMultipleQuantity;
+	}
+
+	public void setMinimumExercisableMultipleQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumExercisableMultipleQuantity) {
+		this.minimumExercisableMultipleQuantity = minimumExercisableMultipleQuantity;
+	}
+
+	public SecuritiesQuantity getMaximumExercisableQuantity() {
+		return maximumExercisableQuantity;
+	}
+
+	public void setMaximumExercisableQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumExercisableQuantity) {
+		this.maximumExercisableQuantity = maximumExercisableQuantity;
+	}
+
+	public ConversionTypeCode getConversionType() {
+		return conversionType;
+	}
+
+	public void setConversionType(ConversionTypeCode conversionType) {
+		this.conversionType = conversionType;
+	}
+
+	public DateTimePeriod getConversionPeriod() {
+		return conversionPeriod;
+	}
+
+	public void setConversionPeriod(com.tools20022.repository.entity.DateTimePeriod conversionPeriod) {
+		this.conversionPeriod = conversionPeriod;
+	}
+
+	public SecuritiesQuantity getConversionRatioDenominator() {
+		return conversionRatioDenominator;
+	}
+
+	public void setConversionRatioDenominator(com.tools20022.repository.entity.SecuritiesQuantity conversionRatioDenominator) {
+		this.conversionRatioDenominator = conversionRatioDenominator;
+	}
+
+	public SecuritiesQuantity getConversionRatioNumerator() {
+		return conversionRatioNumerator;
+	}
+
+	public void setConversionRatioNumerator(com.tools20022.repository.entity.SecuritiesQuantity conversionRatioNumerator) {
+		this.conversionRatioNumerator = conversionRatioNumerator;
+	}
+
+	public List<UnderlyingRatio> getRatio() {
+		return ratio;
+	}
+
+	public void setRatio(List<com.tools20022.repository.entity.UnderlyingRatio> ratio) {
+		this.ratio = ratio;
+	}
+
+	public CurrencyExchange getConversionUnitCurrency() {
+		return conversionUnitCurrency;
+	}
+
+	public void setConversionUnitCurrency(com.tools20022.repository.entity.CurrencyExchange conversionUnitCurrency) {
+		this.conversionUnitCurrency = conversionUnitCurrency;
+	}
+
+	public Option getRelatedOption() {
+		return relatedOption;
+	}
+
+	public void setRelatedOption(com.tools20022.repository.entity.Option relatedOption) {
+		this.relatedOption = relatedOption;
+	}
+
+	public BusinessDayConventionCode getBusinessDayConvention() {
+		return businessDayConvention;
+	}
+
+	public void setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
+		this.businessDayConvention = businessDayConvention;
+	}
+
+	public ChoiceCode getConversionChoice() {
+		return conversionChoice;
+	}
+
+	public void setConversionChoice(ChoiceCode conversionChoice) {
+		this.conversionChoice = conversionChoice;
+	}
+
+	public BaseOneRate getConversionFixedExchangeRate() {
+		return conversionFixedExchangeRate;
+	}
+
+	public void setConversionFixedExchangeRate(BaseOneRate conversionFixedExchangeRate) {
+		this.conversionFixedExchangeRate = conversionFixedExchangeRate;
+	}
+
+	public CurrencyAndAmount getConversionMarginAmount() {
+		return conversionMarginAmount;
+	}
+
+	public void setConversionMarginAmount(CurrencyAndAmount conversionMarginAmount) {
+		this.conversionMarginAmount = conversionMarginAmount;
+	}
+
+	public CorporateActionOptionCode getConversionOption() {
+		return conversionOption;
+	}
+
+	public void setConversionOption(CorporateActionOptionCode conversionOption) {
+		this.conversionOption = conversionOption;
+	}
+
+	public CurrencyCode getConversionQuotedCurrency() {
+		return conversionQuotedCurrency;
+	}
+
+	public void setConversionQuotedCurrency(CurrencyCode conversionQuotedCurrency) {
+		this.conversionQuotedCurrency = conversionQuotedCurrency;
+	}
+
+	public FinancialCenterCode getFinancialCenter() {
+		return financialCenter;
+	}
+
+	public void setFinancialCenter(FinancialCenterCode financialCenter) {
+		this.financialCenter = financialCenter;
+	}
+
+	public Number getMinimumNoticeDays() {
+		return minimumNoticeDays;
+	}
+
+	public void setMinimumNoticeDays(Number minimumNoticeDays) {
+		this.minimumNoticeDays = minimumNoticeDays;
+	}
+
+	public NoticePeriodTypeCode getNoticePeriodType() {
+		return noticePeriodType;
+	}
+
+	public void setNoticePeriodType(NoticePeriodTypeCode noticePeriodType) {
+		this.noticePeriodType = noticePeriodType;
+	}
+
+	public YesNoIndicator getProtectionAgainstDilutionIndicator() {
+		return protectionAgainstDilutionIndicator;
+	}
+
+	public void setProtectionAgainstDilutionIndicator(YesNoIndicator protectionAgainstDilutionIndicator) {
+		this.protectionAgainstDilutionIndicator = protectionAgainstDilutionIndicator;
+	}
+
+	public YesNoIndicator getReverseConversionIndicator() {
+		return reverseConversionIndicator;
+	}
+
+	public void setReverseConversionIndicator(YesNoIndicator reverseConversionIndicator) {
+		this.reverseConversionIndicator = reverseConversionIndicator;
+	}
+
+	public Security getSecurityIdentification() {
+		return securityIdentification;
+	}
+
+	public void setSecurityIdentification(com.tools20022.repository.entity.Security securityIdentification) {
+		this.securityIdentification = securityIdentification;
+	}
+
+	public PartyTypeCode getPartyType() {
+		return partyType;
+	}
+
+	public void setPartyType(PartyTypeCode partyType) {
+		this.partyType = partyType;
+	}
+
+	public BaseOneRate getContractSize() {
+		return contractSize;
+	}
+
+	public void setContractSize(BaseOneRate contractSize) {
+		this.contractSize = contractSize;
 	}
 }

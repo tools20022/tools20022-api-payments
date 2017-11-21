@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.MandateClassificationCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,21 +36,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#Fixed
- * MandateClassification1Code.Fixed}</li>
+ * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#mmFixed
+ * MandateClassification1Code.mmFixed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#UsageBased
- * MandateClassification1Code.UsageBased}</li>
+ * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#mmUsageBased
+ * MandateClassification1Code.mmUsageBased}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#Variable
- * MandateClassification1Code.Variable}</li>
+ * {@linkplain com.tools20022.repository.codeset.MandateClassification1Code#mmVariable
+ * MandateClassification1Code.mmVariable}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,9 +81,9 @@ public class MandateClassification1Code extends MandateClassificationCode {
 	 * name} = "Fixed"</li>
 	 * </ul>
 	 */
-	public static final MMCode Fixed = new MMCode() {
+	public static final MMCode mmFixed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fixed";
 			owner_lazy = () -> MandateClassification1Code.mmObject();
 		}
@@ -102,9 +104,9 @@ public class MandateClassification1Code extends MandateClassificationCode {
 	 * name} = "UsageBased"</li>
 	 * </ul>
 	 */
-	public static final MMCode UsageBased = new MMCode() {
+	public static final MMCode mmUsageBased = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UsageBased";
 			owner_lazy = () -> MandateClassification1Code.mmObject();
 		}
@@ -125,9 +127,9 @@ public class MandateClassification1Code extends MandateClassificationCode {
 	 * name} = "Variable"</li>
 	 * </ul>
 	 */
-	public static final MMCode Variable = new MMCode() {
+	public static final MMCode mmVariable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Variable";
 			owner_lazy = () -> MandateClassification1Code.mmObject();
 		}
@@ -136,12 +138,11 @@ public class MandateClassification1Code extends MandateClassificationCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateClassification1Code";
 				definition = "Specifies the type of direct debit amount, such as fixed or variable.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MandateClassification1Code.Fixed, com.tools20022.repository.codeset.MandateClassification1Code.UsageBased,
-						com.tools20022.repository.codeset.MandateClassification1Code.Variable);
+				code_lazy = () -> Arrays.asList(MandateClassification1Code.mmFixed, MandateClassification1Code.mmUsageBased, MandateClassification1Code.mmVariable);
 				trace_lazy = () -> MandateClassificationCode.mmObject();
 			}
 		});

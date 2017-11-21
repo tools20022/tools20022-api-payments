@@ -19,11 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.InformationRequestResponseV01;
 import com.tools20022.repository.choice.DateOrDateTimePeriodChoice;
 import com.tools20022.repository.choice.InvestigationResult1Choice;
 import com.tools20022.repository.datatype.Max500Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the return indicators and the investigation result.
@@ -35,17 +42,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#ResponsePeriod
- * ReturnIndicator1.ResponsePeriod}</li>
+ * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#mmResponsePeriod
+ * ReturnIndicator1.mmResponsePeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#AuthorityRequestType
- * ReturnIndicator1.AuthorityRequestType}</li>
+ * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#mmAuthorityRequestType
+ * ReturnIndicator1.mmAuthorityRequestType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#InvestigationResult
- * ReturnIndicator1.InvestigationResult}</li>
+ * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#mmInvestigationResult
+ * ReturnIndicator1.mmInvestigationResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#AdditionalInformation
- * ReturnIndicator1.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.ReturnIndicator1#mmAdditionalInformation
+ * ReturnIndicator1.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>
@@ -53,15 +60,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#ReturnIndicator
- * InformationRequestResponseV01.ReturnIndicator}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmReturnIndicator
+ * InformationRequestResponseV01.mmReturnIndicator}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,9 +79,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides the return indicators and the investigation result."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ReturnIndicator1", propOrder = {"responsePeriod", "authorityRequestType", "investigationResult", "additionalInformation"})
 public class ReturnIndicator1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected DateOrDateTimePeriodChoice responsePeriod;
 	/**
 	 * Specifies the dates between which period the response results relate to.
 	 * <p>
@@ -105,19 +115,20 @@ public class ReturnIndicator1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ResponsePeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmResponsePeriod = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReturnIndicator1.mmObject();
 			isDerived = false;
 			xmlTag = "RspnPrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResponsePeriod";
 			definition = "Specifies the dates between which period the response results relate to.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			complexType_lazy = () -> DateOrDateTimePeriodChoice.mmObject();
 		}
 	};
+	protected AuthorityRequestType1 authorityRequestType;
 	/**
 	 * Identifies the authority request type as a code.
 	 * <p>
@@ -146,19 +157,20 @@ public class ReturnIndicator1 {
 	 * definition} = "Identifies the authority request type as a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AuthorityRequestType = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAuthorityRequestType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReturnIndicator1.mmObject();
 			isDerived = false;
 			xmlTag = "AuthrtyReqTp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AuthorityRequestType";
 			definition = "Identifies the authority request type as a code.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> AuthorityRequestType1.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.AuthorityRequestType1.mmObject();
 		}
 	};
+	protected InvestigationResult1Choice investigationResult;
 	/**
 	 * Provides the investigation result.
 	 * <p>
@@ -187,19 +199,20 @@ public class ReturnIndicator1 {
 	 * definition} = "Provides the investigation result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute InvestigationResult = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmInvestigationResult = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReturnIndicator1.mmObject();
 			isDerived = false;
 			xmlTag = "InvstgtnRslt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestigationResult";
 			definition = "Provides the investigation result.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> InvestigationResult1Choice.mmObject();
 		}
 	};
+	protected Max500Text additionalInformation;
 	/**
 	 * Additional information, in free text form, to complement the
 	 * investigation result.
@@ -230,16 +243,16 @@ public class ReturnIndicator1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReturnIndicator1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Additional information, in free text form, to complement the investigation result.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max500Text.mmObject();
 		}
 	};
@@ -247,15 +260,50 @@ public class ReturnIndicator1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReturnIndicator1.ResponsePeriod, com.tools20022.repository.msg.ReturnIndicator1.AuthorityRequestType,
-						com.tools20022.repository.msg.ReturnIndicator1.InvestigationResult, com.tools20022.repository.msg.ReturnIndicator1.AdditionalInformation);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestResponseV01.ReturnIndicator);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(ReturnIndicator1.mmResponsePeriod, ReturnIndicator1.mmAuthorityRequestType, ReturnIndicator1.mmInvestigationResult, ReturnIndicator1.mmAdditionalInformation);
+				messageBuildingBlock_lazy = () -> Arrays.asList(InformationRequestResponseV01.mmReturnIndicator);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReturnIndicator1";
 				definition = "Provides the return indicators and the investigation result.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RspnPrd")
+	public DateOrDateTimePeriodChoice getResponsePeriod() {
+		return responsePeriod;
+	}
+
+	public void setResponsePeriod(DateOrDateTimePeriodChoice responsePeriod) {
+		this.responsePeriod = responsePeriod;
+	}
+
+	@XmlElement(name = "AuthrtyReqTp", required = true)
+	public AuthorityRequestType1 getAuthorityRequestType() {
+		return authorityRequestType;
+	}
+
+	public void setAuthorityRequestType(com.tools20022.repository.msg.AuthorityRequestType1 authorityRequestType) {
+		this.authorityRequestType = authorityRequestType;
+	}
+
+	@XmlElement(name = "InvstgtnRslt", required = true)
+	public InvestigationResult1Choice getInvestigationResult() {
+		return investigationResult;
+	}
+
+	public void setInvestigationResult(InvestigationResult1Choice investigationResult) {
+		this.investigationResult = investigationResult;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public Max500Text getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(Max500Text additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

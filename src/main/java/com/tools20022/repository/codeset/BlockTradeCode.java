@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,17 +32,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#Parent
- * BlockTradeCode.Parent}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#Child
- * BlockTradeCode.Child}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#mmParent
+ * BlockTradeCode.mmParent}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.BlockTradeCode#mmChild
+ * BlockTradeCode.mmChild}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class BlockTradeCode {
 	 * definition} = "Transaction is a block trade parent."</li>
 	 * </ul>
 	 */
-	public static final MMCode Parent = new MMCode() {
+	public static final MMCode mmParent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Parent";
 			definition = "Transaction is a block trade parent.";
 			owner_lazy = () -> BlockTradeCode.mmObject();
@@ -113,9 +115,9 @@ public class BlockTradeCode {
 	 * definition} = "Transaction is a block trade child."</li>
 	 * </ul>
 	 */
-	public static final MMCode Child = new MMCode() {
+	public static final MMCode mmChild = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Child";
 			definition = "Transaction is a block trade child.";
 			owner_lazy = () -> BlockTradeCode.mmObject();
@@ -126,12 +128,12 @@ public class BlockTradeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("BLPA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BlockTradeCode";
 				definition = "Specifies whether the instruction is the parent or a children of a block trade.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BlockTradeCode.Parent, com.tools20022.repository.codeset.BlockTradeCode.Child);
+				code_lazy = () -> Arrays.asList(BlockTradeCode.mmParent, BlockTradeCode.mmChild);
 			}
 		});
 		return mmObject_lazy.get();

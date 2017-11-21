@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,40 +40,42 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ClassAction#ClassActionNumber
- * ClassAction.ClassActionNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.ClassAction#mmClassActionNumber
+ * ClassAction.mmClassActionNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ClassAction#LeadPlaintiffDeadline
- * ClassAction.LeadPlaintiffDeadline}</li>
+ * {@linkplain com.tools20022.repository.entity.ClassAction#mmLeadPlaintiffDeadline
+ * ClassAction.mmLeadPlaintiffDeadline}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ClassAction#CourtApprovalDate
- * ClassAction.CourtApprovalDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ClassAction#ClaimPeriod
- * ClassAction.ClaimPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ClassAction#FilingDate
- * ClassAction.FilingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ClassAction#HearingDate
- * ClassAction.HearingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ClassAction#CorporateEvent
- * ClassAction.CorporateEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.ClassAction#mmCourtApprovalDate
+ * ClassAction.mmCourtApprovalDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ClassAction#mmClaimPeriod
+ * ClassAction.mmClaimPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ClassAction#mmFilingDate
+ * ClassAction.mmFilingDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ClassAction#mmHearingDate
+ * ClassAction.mmHearingDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ClassAction#mmCorporateEvent
+ * ClassAction.mmCorporateEvent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#ClassAction
- * DateTimePeriod.ClassAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#RelatedClassAction
- * CorporateActionEvent.RelatedClassAction}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmClassAction
+ * DateTimePeriod.mmClassAction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmRelatedClassAction
+ * CorporateActionEvent.mmRelatedClassAction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,6 +91,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ClassAction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text classActionNumber;
 	/**
 	 * Reference assigned by a court to a class action.
 	 * <p>
@@ -113,18 +116,27 @@ public class ClassAction {
 	 * definition} = "Reference assigned by a court to a class action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClassActionNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClassActionNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassActionNumber";
 			definition = "Reference assigned by a court to a class action.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ClassAction.class.getMethod("getClassActionNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime leadPlaintiffDeadline;
 	/**
 	 * Last day an investor can become a lead plaintiff.
 	 * <p>
@@ -149,18 +161,27 @@ public class ClassAction {
 	 * definition} = "Last day an investor can become a lead plaintiff."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LeadPlaintiffDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLeadPlaintiffDeadline = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LeadPlaintiffDeadline";
 			definition = "Last day an investor can become a lead plaintiff.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ClassAction.class.getMethod("getLeadPlaintiffDeadline", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime courtApprovalDate;
 	/**
 	 * Date upon which the High Court provided approval.
 	 * <p>
@@ -185,18 +206,27 @@ public class ClassAction {
 	 * definition} = "Date upon which the High Court provided approval."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CourtApprovalDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCourtApprovalDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CourtApprovalDate";
 			definition = "Date upon which the High Court provided approval.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ClassAction.class.getMethod("getCourtApprovalDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod claimPeriod;
 	/**
 	 * Period assigned by the court in a class action. It determines the
 	 * client's eligible transactions that will be included in the class action
@@ -207,8 +237,8 @@ public class ClassAction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ClassAction
-	 * DateTimePeriod.ClassAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmClassAction
+	 * DateTimePeriod.mmClassAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -233,20 +263,21 @@ public class ClassAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClaimPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClaimPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClaimPeriod";
 			definition = "Period assigned by the court in a class action. It determines the client's eligible transactions that will be included in the class action and used to determine the resulting entitlement.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.ClassAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmClassAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected ISODateTime filingDate;
 	/**
 	 * Date on which the action was filed at the applicable court.
 	 * <p>
@@ -272,18 +303,27 @@ public class ClassAction {
 	 * "Date on which the action was filed at the applicable court."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FilingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFilingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FilingDate";
 			definition = "Date on which the action was filed at the applicable court.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ClassAction.class.getMethod("getFilingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime hearingDate;
 	/**
 	 * Date for the hearing between the plaintiff and defendant, as set by the
 	 * court.
@@ -311,18 +351,27 @@ public class ClassAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute HearingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmHearingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HearingDate";
 			definition = "Date for the hearing between the plaintiff and defendant, as set by the court.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ClassAction.class.getMethod("getHearingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionEvent corporateEvent;
 	/**
 	 * Corporate event for which class action is specified.
 	 * <p>
@@ -331,8 +380,8 @@ public class ClassAction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#RelatedClassAction
-	 * CorporateActionEvent.RelatedClassAction}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmRelatedClassAction
+	 * CorporateActionEvent.mmRelatedClassAction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -356,34 +405,95 @@ public class ClassAction {
 	 * definition} = "Corporate event for which class action is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ClassAction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateEvent";
 			definition = "Corporate event for which class action is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.RelatedClassAction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmRelatedClassAction;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClassAction";
 				definition = "Form of lawsuit in which a group of shareholders collectively bring a claim to court, mainly because it would be too expensive for each individual shareholder to launch their own lawsuit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.ClassAction, com.tools20022.repository.entity.CorporateActionEvent.RelatedClassAction);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClassAction.ClassActionNumber, com.tools20022.repository.entity.ClassAction.LeadPlaintiffDeadline,
-						com.tools20022.repository.entity.ClassAction.CourtApprovalDate, com.tools20022.repository.entity.ClassAction.ClaimPeriod, com.tools20022.repository.entity.ClassAction.FilingDate,
-						com.tools20022.repository.entity.ClassAction.HearingDate, com.tools20022.repository.entity.ClassAction.CorporateEvent);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmClassAction, com.tools20022.repository.entity.CorporateActionEvent.mmRelatedClassAction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClassAction.mmClassActionNumber, com.tools20022.repository.entity.ClassAction.mmLeadPlaintiffDeadline,
+						com.tools20022.repository.entity.ClassAction.mmCourtApprovalDate, com.tools20022.repository.entity.ClassAction.mmClaimPeriod, com.tools20022.repository.entity.ClassAction.mmFilingDate,
+						com.tools20022.repository.entity.ClassAction.mmHearingDate, com.tools20022.repository.entity.ClassAction.mmCorporateEvent);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ClassAction.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getClassActionNumber() {
+		return classActionNumber;
+	}
+
+	public void setClassActionNumber(Max35Text classActionNumber) {
+		this.classActionNumber = classActionNumber;
+	}
+
+	public ISODateTime getLeadPlaintiffDeadline() {
+		return leadPlaintiffDeadline;
+	}
+
+	public void setLeadPlaintiffDeadline(ISODateTime leadPlaintiffDeadline) {
+		this.leadPlaintiffDeadline = leadPlaintiffDeadline;
+	}
+
+	public ISODateTime getCourtApprovalDate() {
+		return courtApprovalDate;
+	}
+
+	public void setCourtApprovalDate(ISODateTime courtApprovalDate) {
+		this.courtApprovalDate = courtApprovalDate;
+	}
+
+	public DateTimePeriod getClaimPeriod() {
+		return claimPeriod;
+	}
+
+	public void setClaimPeriod(com.tools20022.repository.entity.DateTimePeriod claimPeriod) {
+		this.claimPeriod = claimPeriod;
+	}
+
+	public ISODateTime getFilingDate() {
+		return filingDate;
+	}
+
+	public void setFilingDate(ISODateTime filingDate) {
+		this.filingDate = filingDate;
+	}
+
+	public ISODateTime getHearingDate() {
+		return hearingDate;
+	}
+
+	public void setHearingDate(ISODateTime hearingDate) {
+		this.hearingDate = hearingDate;
+	}
+
+	public CorporateActionEvent getCorporateEvent() {
+		return corporateEvent;
+	}
+
+	public void setCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent corporateEvent) {
+		this.corporateEvent = corporateEvent;
 	}
 }

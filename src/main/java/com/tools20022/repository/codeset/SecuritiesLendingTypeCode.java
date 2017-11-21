@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingTypeCode#NewRegistration
- * SecuritiesLendingTypeCode.NewRegistration}</li>
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingTypeCode#mmNewRegistration
+ * SecuritiesLendingTypeCode.mmNewRegistration}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingTypeCode#RollOverRenewal
- * SecuritiesLendingTypeCode.RollOverRenewal}</li>
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingTypeCode#mmRollOverRenewal
+ * SecuritiesLendingTypeCode.mmRollOverRenewal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingTypeCode#CallBack
- * SecuritiesLendingTypeCode.CallBack}</li>
+ * {@linkplain com.tools20022.repository.codeset.SecuritiesLendingTypeCode#mmCallBack
+ * SecuritiesLendingTypeCode.mmCallBack}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class SecuritiesLendingTypeCode {
 	 * definition} = "Securities lending contract is new and registered."</li>
 	 * </ul>
 	 */
-	public static final MMCode NewRegistration = new MMCode() {
+	public static final MMCode mmNewRegistration = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NewRegistration";
 			definition = "Securities lending contract is new and registered.";
 			owner_lazy = () -> SecuritiesLendingTypeCode.mmObject();
@@ -115,9 +117,9 @@ public class SecuritiesLendingTypeCode {
 	 * definition} = "Securities lending contract is renewed."</li>
 	 * </ul>
 	 */
-	public static final MMCode RollOverRenewal = new MMCode() {
+	public static final MMCode mmRollOverRenewal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RollOverRenewal";
 			definition = "Securities lending contract is renewed.";
 			owner_lazy = () -> SecuritiesLendingTypeCode.mmObject();
@@ -145,9 +147,9 @@ public class SecuritiesLendingTypeCode {
 	 * definition} = "Securities lending contract is called back."</li>
 	 * </ul>
 	 */
-	public static final MMCode CallBack = new MMCode() {
+	public static final MMCode mmCallBack = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CallBack";
 			definition = "Securities lending contract is called back.";
 			owner_lazy = () -> SecuritiesLendingTypeCode.mmObject();
@@ -158,13 +160,12 @@ public class SecuritiesLendingTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NWRG");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesLendingTypeCode";
 				definition = "Type of securities lending contract.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SecuritiesLendingTypeCode.NewRegistration, com.tools20022.repository.codeset.SecuritiesLendingTypeCode.RollOverRenewal,
-						com.tools20022.repository.codeset.SecuritiesLendingTypeCode.CallBack);
+				code_lazy = () -> Arrays.asList(SecuritiesLendingTypeCode.mmNewRegistration, SecuritiesLendingTypeCode.mmRollOverRenewal, SecuritiesLendingTypeCode.mmCallBack);
 			}
 		});
 		return mmObject_lazy.get();

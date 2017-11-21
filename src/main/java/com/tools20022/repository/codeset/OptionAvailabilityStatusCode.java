@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#Inactive
- * OptionAvailabilityStatusCode.Inactive}</li>
+ * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#mmInactive
+ * OptionAvailabilityStatusCode.mmInactive}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#Cancelled
- * OptionAvailabilityStatusCode.Cancelled}</li>
+ * {@linkplain com.tools20022.repository.codeset.OptionAvailabilityStatusCode#mmCancelled
+ * OptionAvailabilityStatusCode.mmCancelled}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,9 +88,9 @@ public class OptionAvailabilityStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Inactive = new MMCode() {
+	public static final MMCode mmInactive = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Inactive";
 			definition = "Option is not active and can no longer be responded to. Any responses already processed against this option will remain valid, for example, expired option.";
 			owner_lazy = () -> OptionAvailabilityStatusCode.mmObject();
@@ -121,9 +123,9 @@ public class OptionAvailabilityStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Cancelled = new MMCode() {
+	public static final MMCode mmCancelled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cancelled";
 			definition = "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required.";
 			owner_lazy = () -> OptionAvailabilityStatusCode.mmObject();
@@ -134,12 +136,12 @@ public class OptionAvailabilityStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("INTV");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OptionAvailabilityStatusCode";
 				definition = "Specifies the status of the option availability.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OptionAvailabilityStatusCode.Inactive, com.tools20022.repository.codeset.OptionAvailabilityStatusCode.Cancelled);
+				code_lazy = () -> Arrays.asList(OptionAvailabilityStatusCode.mmInactive, OptionAvailabilityStatusCode.mmCancelled);
 			}
 		});
 		return mmObject_lazy.get();

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,27 +33,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#Complete
- * NotificationStatusCode.Complete}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmComplete
+ * NotificationStatusCode.mmComplete}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#PreliminaryEventConfirmed
- * NotificationStatusCode.PreliminaryEventConfirmed}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmPreliminaryEventConfirmed
+ * NotificationStatusCode.mmPreliminaryEventConfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#PreliminaryEventUnconfirmed
- * NotificationStatusCode.PreliminaryEventUnconfirmed}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmPreliminaryEventUnconfirmed
+ * NotificationStatusCode.mmPreliminaryEventUnconfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#EventConfirmed
- * NotificationStatusCode.EventConfirmed}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmEventConfirmed
+ * NotificationStatusCode.mmEventConfirmed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#EventUnconfirmed
- * NotificationStatusCode.EventUnconfirmed}</li>
+ * {@linkplain com.tools20022.repository.codeset.NotificationStatusCode#mmEventUnconfirmed
+ * NotificationStatusCode.mmEventUnconfirmed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -94,9 +96,9 @@ public class NotificationStatusCode {
 	 * definition} = "The notification contains all the details."</li>
 	 * </ul>
 	 */
-	public static final MMCode Complete = new MMCode() {
+	public static final MMCode mmComplete = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Complete";
 			definition = "The notification contains all the details.";
 			owner_lazy = () -> NotificationStatusCode.mmObject();
@@ -127,9 +129,9 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PreliminaryEventConfirmed = new MMCode() {
+	public static final MMCode mmPreliminaryEventConfirmed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreliminaryEventConfirmed";
 			definition = "Notification may not contain complete details, however, the occurrence of the event has been confirmed by the issuer or other official source.";
 			owner_lazy = () -> NotificationStatusCode.mmObject();
@@ -161,9 +163,9 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PreliminaryEventUnconfirmed = new MMCode() {
+	public static final MMCode mmPreliminaryEventUnconfirmed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreliminaryEventUnconfirmed";
 			definition = "Notification may not contain complete details as the occurrence of the event has not been confirmed by the issuer or other official source at the time the notification was sent.";
 			owner_lazy = () -> NotificationStatusCode.mmObject();
@@ -194,9 +196,9 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode EventConfirmed = new MMCode() {
+	public static final MMCode mmEventConfirmed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EventConfirmed";
 			definition = "Notification may not contain complete details, however, the occurrence of the event has been confirmed by the issuer or other official source.";
 			owner_lazy = () -> NotificationStatusCode.mmObject();
@@ -227,9 +229,9 @@ public class NotificationStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode EventUnconfirmed = new MMCode() {
+	public static final MMCode mmEventUnconfirmed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EventUnconfirmed";
 			definition = "The occurrence of the event has not been confirmed by the issuer or other official source at the time the notification was sent.";
 			owner_lazy = () -> NotificationStatusCode.mmObject();
@@ -240,14 +242,13 @@ public class NotificationStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("COMP");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationStatusCode";
 				definition = "Specifies if the occurrence of the event contained in the notification is confirmed or unconfirmed. Details of the event can be complete or incomplete.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NotificationStatusCode.Complete, com.tools20022.repository.codeset.NotificationStatusCode.PreliminaryEventConfirmed,
-						com.tools20022.repository.codeset.NotificationStatusCode.PreliminaryEventUnconfirmed, com.tools20022.repository.codeset.NotificationStatusCode.EventConfirmed,
-						com.tools20022.repository.codeset.NotificationStatusCode.EventUnconfirmed);
+				code_lazy = () -> Arrays.asList(NotificationStatusCode.mmComplete, NotificationStatusCode.mmPreliminaryEventConfirmed, NotificationStatusCode.mmPreliminaryEventUnconfirmed, NotificationStatusCode.mmEventConfirmed,
+						NotificationStatusCode.mmEventUnconfirmed);
 			}
 		});
 		return mmObject_lazy.get();

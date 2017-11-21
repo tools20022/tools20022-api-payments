@@ -19,9 +19,11 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
 import com.tools20022.core.metamodel.GeneratedMetamodelBean;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
 import com.tools20022.core.metamodel.OrphanMetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMMessagingEndpoint;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.StandardMetamodel2013;
@@ -37,6 +39,10 @@ import java.util.Optional;
  */
 public class MMMessageTransportSystem implements OrphanMetamodelType, MMModelEntity {
 
+	/**
+	 * a MessagingEndpoint owned by a single MessageTransportSystem
+	 */
+	public final static MetamodelAttribute<MMMessageTransportSystem, List<MMMessagingEndpoint>> endpointAttribute = newAttribute();
 	protected Supplier<List<MMMessagingEndpoint>> endpoint_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;
 	protected Supplier<MMModelEntity> previousVersion_lazy;

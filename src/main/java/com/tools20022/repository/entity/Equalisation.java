@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,18 +40,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Equalisation#Amount
- * Equalisation.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Equalisation#Date
- * Equalisation.Date}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Equalisation#Rate
- * Equalisation.Rate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Equalisation#mmAmount
+ * Equalisation.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Equalisation#mmDate
+ * Equalisation.mmDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Equalisation#mmRate
+ * Equalisation.mmRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Equalisation#RelatedInvestmentFundTransaction
- * Equalisation.RelatedInvestmentFundTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.Equalisation#mmRelatedInvestmentFundTransaction
+ * Equalisation.mmRelatedInvestmentFundTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Equalisation#CreditDebitIndicator
- * Equalisation.CreditDebitIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.Equalisation#mmCreditDebitIndicator
+ * Equalisation.mmCreditDebitIndicator}</li>
  * </ul>
  * </li>
  * <li>
@@ -59,15 +59,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundClass#Equalisation
- * InvestmentFundClass.Equalisation}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundClass#mmEqualisation
+ * InvestmentFundClass.mmEqualisation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,6 +83,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Equalisation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount amount;
 	/**
 	 * Amount of money resulting from the calculation of the equalisation.
 	 * <p>
@@ -109,18 +110,27 @@ public class Equalisation {
 	 * "Amount of money resulting from the calculation of the equalisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Equalisation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Equalisation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of money resulting from the calculation of the equalisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Equalisation.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime date;
 	/**
 	 * Date on which all or part of any holding bought in a unit trust is
 	 * subject to being treated as capital rather than income. This is normally
@@ -149,18 +159,27 @@ public class Equalisation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Date = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Equalisation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Equalisation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date on which all or part of any holding bought in a unit trust is subject to being treated as capital rather than income. This is normally one day after the previous distribution's ex date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Equalisation.class.getMethod("getDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate rate;
 	/**
 	 * Rate used for calculation of the equalisation.
 	 * <p>
@@ -186,18 +205,27 @@ public class Equalisation {
 	 * definition} = "Rate used for calculation of the equalisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Rate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Equalisation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Equalisation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Rate used for calculation of the equalisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Equalisation.class.getMethod("getRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentFundClass relatedInvestmentFundTransaction;
 	/**
 	 * Investment fund transaction for which equalisation is specified.
 	 * <p>
@@ -206,8 +234,8 @@ public class Equalisation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClass#Equalisation
-	 * InvestmentFundClass.Equalisation}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClass#mmEqualisation
+	 * InvestmentFundClass.mmEqualisation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -231,20 +259,21 @@ public class Equalisation {
 	 * "Investment fund transaction for which equalisation is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedInvestmentFundTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedInvestmentFundTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Equalisation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Equalisation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentFundTransaction";
 			definition = "Investment fund transaction for which equalisation is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundClass.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.Equalisation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmEqualisation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClass.mmObject();
 		}
 	};
+	protected DebitCreditCode creditDebitIndicator;
 	/**
 	 * Debit for a negative amount or credit for a positive amount.
 	 * <p>
@@ -271,31 +300,84 @@ public class Equalisation {
 	 * "Debit for a negative amount or credit for a positive amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Equalisation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Equalisation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Debit for a negative amount or credit for a positive amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Equalisation.class.getMethod("getCreditDebitIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Equalisation";
 				definition = "Part of an investor's subscription amount that is held by the fund in order to pay incentive / performance fees at the end of the fiscal year.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClass.Equalisation);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Equalisation.Amount, com.tools20022.repository.entity.Equalisation.Date, com.tools20022.repository.entity.Equalisation.Rate,
-						com.tools20022.repository.entity.Equalisation.RelatedInvestmentFundTransaction, com.tools20022.repository.entity.Equalisation.CreditDebitIndicator);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundClass.mmEqualisation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Equalisation.mmAmount, com.tools20022.repository.entity.Equalisation.mmDate, com.tools20022.repository.entity.Equalisation.mmRate,
+						com.tools20022.repository.entity.Equalisation.mmRelatedInvestmentFundTransaction, com.tools20022.repository.entity.Equalisation.mmCreditDebitIndicator);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Equalisation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public ISODateTime getDate() {
+		return date;
+	}
+
+	public void setDate(ISODateTime date) {
+		this.date = date;
+	}
+
+	public PercentageRate getRate() {
+		return rate;
+	}
+
+	public void setRate(PercentageRate rate) {
+		this.rate = rate;
+	}
+
+	public InvestmentFundClass getRelatedInvestmentFundTransaction() {
+		return relatedInvestmentFundTransaction;
+	}
+
+	public void setRelatedInvestmentFundTransaction(com.tools20022.repository.entity.InvestmentFundClass relatedInvestmentFundTransaction) {
+		this.relatedInvestmentFundTransaction = relatedInvestmentFundTransaction;
+	}
+
+	public DebitCreditCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
 	}
 }

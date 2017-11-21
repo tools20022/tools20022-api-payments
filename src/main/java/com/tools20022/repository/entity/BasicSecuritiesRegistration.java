@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RegistrationCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Information related to registration of securities.
@@ -40,44 +41,44 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#Security
- * BasicSecuritiesRegistration.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSecurity
+ * BasicSecuritiesRegistration.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#RegistrationInstruction
- * BasicSecuritiesRegistration.RegistrationInstruction}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmRegistrationInstruction
+ * BasicSecuritiesRegistration.mmRegistrationInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#CertificationIdentification
- * BasicSecuritiesRegistration.CertificationIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmCertificationIdentification
+ * BasicSecuritiesRegistration.mmCertificationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#CertificationDate
- * BasicSecuritiesRegistration.CertificationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmCertificationDate
+ * BasicSecuritiesRegistration.mmCertificationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#SecuritiesCertificate
- * BasicSecuritiesRegistration.SecuritiesCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSecuritiesCertificate
+ * BasicSecuritiesRegistration.mmSecuritiesCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#SplitPeriod
- * BasicSecuritiesRegistration.SplitPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSplitPeriod
+ * BasicSecuritiesRegistration.mmSplitPeriod}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Registration
- * Security.Registration}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmRegistration
+ * Security.mmRegistration}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedSecuritiesRegistration
- * DateTimePeriod.RelatedSecuritiesRegistration}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedSecuritiesRegistration
+ * DateTimePeriod.mmRelatedSecuritiesRegistration}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#BasicRegistration
- * SecuritiesCertificate.BasicRegistration}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#mmBasicRegistration
+ * SecuritiesCertificate.mmBasicRegistration}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,6 +92,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class BasicSecuritiesRegistration {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Security security;
 	/**
 	 * Security for which registration information is provided.
 	 * <p>
@@ -99,8 +101,8 @@ public class BasicSecuritiesRegistration {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#Registration
-	 * Security.Registration}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmRegistration
+	 * Security.mmRegistration}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -123,20 +125,21 @@ public class BasicSecuritiesRegistration {
 	 * definition} = "Security for which registration information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BasicSecuritiesRegistration.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which registration information is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRegistration;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.Registration;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected RegistrationCode registrationInstruction;
 	/**
 	 * Specifies whether registration should occur upon receipt.
 	 * <p>
@@ -164,18 +167,27 @@ public class BasicSecuritiesRegistration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegistrationInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegistrationInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BasicSecuritiesRegistration.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationInstruction";
 			definition = "Specifies whether registration should occur upon receipt.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RegistrationCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BasicSecuritiesRegistration.class.getMethod("getRegistrationInstruction", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text certificationIdentification;
 	/**
 	 * Identification assigned to a deposit.
 	 * <p>
@@ -201,18 +213,27 @@ public class BasicSecuritiesRegistration {
 	 * definition} = "Identification assigned to a deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CertificationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCertificationIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BasicSecuritiesRegistration.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationIdentification";
 			definition = "Identification assigned to a deposit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BasicSecuritiesRegistration.class.getMethod("getCertificationIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime certificationDate;
 	/**
 	 * Date/time at which the certificates in the deposit were validated by the
 	 * agent.
@@ -241,18 +262,27 @@ public class BasicSecuritiesRegistration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CertificationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCertificationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BasicSecuritiesRegistration.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CertificationDate";
 			definition = "Date/time at which the certificates in the deposit were validated by the agent.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BasicSecuritiesRegistration.class.getMethod("getCertificationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesCertificate> securitiesCertificate;
 	/**
 	 * Unique and unambiguous identification of a certificate assigned by the
 	 * issuer.
@@ -262,8 +292,8 @@ public class BasicSecuritiesRegistration {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#BasicRegistration
-	 * SecuritiesCertificate.BasicRegistration}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesCertificate#mmBasicRegistration
+	 * SecuritiesCertificate.mmBasicRegistration}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -290,19 +320,20 @@ public class BasicSecuritiesRegistration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BasicSecuritiesRegistration.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesCertificate";
 			definition = "Unique and unambiguous identification of a certificate assigned by the issuer.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmBasicRegistration;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesCertificate.BasicRegistration;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DateTimePeriod splitPeriod;
 	/**
 	 * Period during which a physical certificate can be split.
 	 * <p>
@@ -311,8 +342,8 @@ public class BasicSecuritiesRegistration {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedSecuritiesRegistration
-	 * DateTimePeriod.RelatedSecuritiesRegistration}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedSecuritiesRegistration
+	 * DateTimePeriod.mmRelatedSecuritiesRegistration}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -336,35 +367,88 @@ public class BasicSecuritiesRegistration {
 	 * definition} = "Period during which a physical certificate can be split."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SplitPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSplitPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BasicSecuritiesRegistration.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SplitPeriod";
 			definition = "Period during which a physical certificate can be split.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RelatedSecuritiesRegistration;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesRegistration;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BasicSecuritiesRegistration";
 				definition = "Information related to registration of securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.Registration, com.tools20022.repository.entity.DateTimePeriod.RelatedSecuritiesRegistration,
-						com.tools20022.repository.entity.SecuritiesCertificate.BasicRegistration);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BasicSecuritiesRegistration.Security, com.tools20022.repository.entity.BasicSecuritiesRegistration.RegistrationInstruction,
-						com.tools20022.repository.entity.BasicSecuritiesRegistration.CertificationIdentification, com.tools20022.repository.entity.BasicSecuritiesRegistration.CertificationDate,
-						com.tools20022.repository.entity.BasicSecuritiesRegistration.SecuritiesCertificate, com.tools20022.repository.entity.BasicSecuritiesRegistration.SplitPeriod);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRegistration, com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesRegistration,
+						com.tools20022.repository.entity.SecuritiesCertificate.mmBasicRegistration);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSecurity, com.tools20022.repository.entity.BasicSecuritiesRegistration.mmRegistrationInstruction,
+						com.tools20022.repository.entity.BasicSecuritiesRegistration.mmCertificationIdentification, com.tools20022.repository.entity.BasicSecuritiesRegistration.mmCertificationDate,
+						com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSecuritiesCertificate, com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSplitPeriod);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return BasicSecuritiesRegistration.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Security getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(com.tools20022.repository.entity.Security security) {
+		this.security = security;
+	}
+
+	public RegistrationCode getRegistrationInstruction() {
+		return registrationInstruction;
+	}
+
+	public void setRegistrationInstruction(RegistrationCode registrationInstruction) {
+		this.registrationInstruction = registrationInstruction;
+	}
+
+	public Max35Text getCertificationIdentification() {
+		return certificationIdentification;
+	}
+
+	public void setCertificationIdentification(Max35Text certificationIdentification) {
+		this.certificationIdentification = certificationIdentification;
+	}
+
+	public ISODateTime getCertificationDate() {
+		return certificationDate;
+	}
+
+	public void setCertificationDate(ISODateTime certificationDate) {
+		this.certificationDate = certificationDate;
+	}
+
+	public List<SecuritiesCertificate> getSecuritiesCertificate() {
+		return securitiesCertificate;
+	}
+
+	public void setSecuritiesCertificate(List<com.tools20022.repository.entity.SecuritiesCertificate> securitiesCertificate) {
+		this.securitiesCertificate = securitiesCertificate;
+	}
+
+	public DateTimePeriod getSplitPeriod() {
+		return splitPeriod;
+	}
+
+	public void setSplitPeriod(com.tools20022.repository.entity.DateTimePeriod splitPeriod) {
+		this.splitPeriod = splitPeriod;
 	}
 }

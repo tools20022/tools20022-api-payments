@@ -17,8 +17,11 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#RelatedOption
- * CorporateActionOptionServicing.RelatedOption}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#mmRelatedOption
+ * CorporateActionOptionServicing.mmRelatedOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#RelatedServicing
- * CorporateActionOptionServicing.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionOptionServicing#mmRelatedServicing
+ * CorporateActionOptionServicing.mmRelatedServicing}</li>
  * </ul>
  * </li>
  * <li>
@@ -49,18 +52,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionOption#CorporateActionOptionServicing
- * CorporateActionOption.CorporateActionOptionServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionOption#mmCorporateActionOptionServicing
+ * CorporateActionOption.mmCorporateActionOptionServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionOptionServicing
- * CorporateActionServicing.CorporateActionOptionServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionOptionServicing
+ * CorporateActionServicing.mmCorporateActionOptionServicing}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,6 +79,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionOptionServicing {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionOption relatedOption;
 	/**
 	 * Specifies the option for which an entitlement is calculated
 	 * <p>
@@ -84,8 +88,8 @@ public class CorporateActionOptionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionOption#CorporateActionOptionServicing
-	 * CorporateActionOption.CorporateActionOptionServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionOption#mmCorporateActionOptionServicing
+	 * CorporateActionOption.mmCorporateActionOptionServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -111,20 +115,21 @@ public class CorporateActionOptionServicing {
 	 * "Specifies the option for which an entitlement is calculated"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionOptionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOptionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOption";
 			definition = "Specifies the option for which an entitlement is calculated";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionOption.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.CorporateActionOptionServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmCorporateActionOptionServicing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
 		}
 	};
+	protected CorporateActionServicing relatedServicing;
 	/**
 	 * Process which groups the activities related to corporate action
 	 * servicing.
@@ -134,8 +139,8 @@ public class CorporateActionOptionServicing {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#CorporateActionOptionServicing
-	 * CorporateActionServicing.CorporateActionOptionServicing}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionServicing#mmCorporateActionOptionServicing
+	 * CorporateActionServicing.mmCorporateActionOptionServicing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -162,32 +167,54 @@ public class CorporateActionOptionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionOptionServicing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionOptionServicing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Process which groups the activities related to corporate action servicing.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionServicing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.CorporateActionOptionServicing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionOptionServicing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionOptionServicing";
 				definition = "Option servicing process which calculates the entitlement based on a corporate action option.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionOption.CorporateActionOptionServicing, com.tools20022.repository.entity.CorporateActionServicing.CorporateActionOptionServicing);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionOptionServicing.RelatedOption, com.tools20022.repository.entity.CorporateActionOptionServicing.RelatedServicing);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionOption.mmCorporateActionOptionServicing,
+						com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionOptionServicing);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionOptionServicing.mmRelatedOption, com.tools20022.repository.entity.CorporateActionOptionServicing.mmRelatedServicing);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionOptionServicing.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionOption getRelatedOption() {
+		return relatedOption;
+	}
+
+	public void setRelatedOption(com.tools20022.repository.entity.CorporateActionOption relatedOption) {
+		this.relatedOption = relatedOption;
+	}
+
+	public CorporateActionServicing getRelatedServicing() {
+		return relatedServicing;
+	}
+
+	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+		this.relatedServicing = relatedServicing;
 	}
 }

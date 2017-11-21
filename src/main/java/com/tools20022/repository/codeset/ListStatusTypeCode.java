@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,27 +32,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#Acknowledgement
- * ListStatusTypeCode.Acknowledgement}</li>
+ * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#mmAcknowledgement
+ * ListStatusTypeCode.mmAcknowledgement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#Response
- * ListStatusTypeCode.Response}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#AllDone
- * ListStatusTypeCode.AllDone}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#Alert
- * ListStatusTypeCode.Alert}</li>
+ * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#mmResponse
+ * ListStatusTypeCode.mmResponse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#ExecutionStarted
- * ListStatusTypeCode.ExecutionStarted}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#Timed
- * ListStatusTypeCode.Timed}</li>
+ * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#mmAllDone
+ * ListStatusTypeCode.mmAllDone}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#mmAlert
+ * ListStatusTypeCode.mmAlert}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#mmExecutionStarted
+ * ListStatusTypeCode.mmExecutionStarted}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ListStatusTypeCode#mmTimed
+ * ListStatusTypeCode.mmTimed}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -91,9 +94,9 @@ public class ListStatusTypeCode {
 	 * definition} = "Status is an acknowledgement of the ListOrder."</li>
 	 * </ul>
 	 */
-	public static final MMCode Acknowledgement = new MMCode() {
+	public static final MMCode mmAcknowledgement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Acknowledgement";
 			definition = "Status is an acknowledgement of the ListOrder.";
 			owner_lazy = () -> ListStatusTypeCode.mmObject();
@@ -121,9 +124,9 @@ public class ListStatusTypeCode {
 	 * definition} = "Status is a response to a previously sent StatusRequest."</li>
 	 * </ul>
 	 */
-	public static final MMCode Response = new MMCode() {
+	public static final MMCode mmResponse = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Response";
 			definition = "Status is a response to a previously sent StatusRequest.";
 			owner_lazy = () -> ListStatusTypeCode.mmObject();
@@ -151,9 +154,9 @@ public class ListStatusTypeCode {
 	 * definition} = "Status indicates that the ListOrder has been executed."</li>
 	 * </ul>
 	 */
-	public static final MMCode AllDone = new MMCode() {
+	public static final MMCode mmAllDone = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllDone";
 			definition = "Status indicates that the ListOrder has been executed.";
 			owner_lazy = () -> ListStatusTypeCode.mmObject();
@@ -184,9 +187,9 @@ public class ListStatusTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Alert = new MMCode() {
+	public static final MMCode mmAlert = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Alert";
 			definition = "Status indicates that any of the individual orders of the ListOrder have a status that requires something to be done.";
 			owner_lazy = () -> ListStatusTypeCode.mmObject();
@@ -214,9 +217,9 @@ public class ListStatusTypeCode {
 	 * definition} = "Status indicates that the Execution has started."</li>
 	 * </ul>
 	 */
-	public static final MMCode ExecutionStarted = new MMCode() {
+	public static final MMCode mmExecutionStarted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExecutionStarted";
 			definition = "Status indicates that the Execution has started.";
 			owner_lazy = () -> ListStatusTypeCode.mmObject();
@@ -245,9 +248,9 @@ public class ListStatusTypeCode {
 	 * "Status indicated that time limit for the order has expired."</li>
 	 * </ul>
 	 */
-	public static final MMCode Timed = new MMCode() {
+	public static final MMCode mmTimed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Timed";
 			definition = "Status indicated that time limit for the order has expired.";
 			owner_lazy = () -> ListStatusTypeCode.mmObject();
@@ -258,14 +261,13 @@ public class ListStatusTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACKN");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ListStatusTypeCode";
 				definition = "Identifies the type of status.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ListStatusTypeCode.Acknowledgement, com.tools20022.repository.codeset.ListStatusTypeCode.Response,
-						com.tools20022.repository.codeset.ListStatusTypeCode.AllDone, com.tools20022.repository.codeset.ListStatusTypeCode.Alert, com.tools20022.repository.codeset.ListStatusTypeCode.ExecutionStarted,
-						com.tools20022.repository.codeset.ListStatusTypeCode.Timed);
+				code_lazy = () -> Arrays.asList(ListStatusTypeCode.mmAcknowledgement, ListStatusTypeCode.mmResponse, ListStatusTypeCode.mmAllDone, ListStatusTypeCode.mmAlert, ListStatusTypeCode.mmExecutionStarted,
+						ListStatusTypeCode.mmTimed);
 			}
 		});
 		return mmObject_lazy.get();

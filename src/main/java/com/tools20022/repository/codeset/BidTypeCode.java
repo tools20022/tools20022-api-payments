@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,19 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#NonDisclosed
- * BidTypeCode.NonDisclosed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#Disclosed
- * BidTypeCode.Disclosed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#NoBid
- * BidTypeCode.NoBid}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#mmNonDisclosed
+ * BidTypeCode.mmNonDisclosed}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#mmDisclosed
+ * BidTypeCode.mmDisclosed}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.BidTypeCode#mmNoBid
+ * BidTypeCode.mmNoBid}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -81,9 +83,9 @@ public class BidTypeCode {
 	 * definition} = "Bid type is non disclosed."</li>
 	 * </ul>
 	 */
-	public static final MMCode NonDisclosed = new MMCode() {
+	public static final MMCode mmNonDisclosed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonDisclosed";
 			definition = "Bid type is non disclosed.";
 			owner_lazy = () -> BidTypeCode.mmObject();
@@ -110,9 +112,9 @@ public class BidTypeCode {
 	 * definition} = "Bid type is disclosed."</li>
 	 * </ul>
 	 */
-	public static final MMCode Disclosed = new MMCode() {
+	public static final MMCode mmDisclosed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disclosed";
 			definition = "Bid type is disclosed.";
 			owner_lazy = () -> BidTypeCode.mmObject();
@@ -139,9 +141,9 @@ public class BidTypeCode {
 	 * definition} = "List order is not related to a bid."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoBid = new MMCode() {
+	public static final MMCode mmNoBid = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoBid";
 			definition = "List order is not related to a bid.";
 			owner_lazy = () -> BidTypeCode.mmObject();
@@ -152,12 +154,12 @@ public class BidTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NDIS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BidTypeCode";
 				definition = "Code to identify the type of bid request.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BidTypeCode.NonDisclosed, com.tools20022.repository.codeset.BidTypeCode.Disclosed, com.tools20022.repository.codeset.BidTypeCode.NoBid);
+				code_lazy = () -> Arrays.asList(BidTypeCode.mmNonDisclosed, BidTypeCode.mmDisclosed, BidTypeCode.mmNoBid);
 			}
 		});
 		return mmObject_lazy.get();

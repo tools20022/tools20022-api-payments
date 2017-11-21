@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.GuarantyTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Partial or full coverage of amounts by a party other than the debtor.
@@ -39,38 +40,39 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#CoveredAmount
- * Guarantee.CoveredAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#EffectivePeriod
- * Guarantee.EffectivePeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#GuaranteeType
- * Guarantee.GuaranteeType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#CoveredPercentage
- * Guarantee.CoveredPercentage}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#Document
- * Guarantee.Document}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#GuaranteedTrade
- * Guarantee.GuaranteedTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#ExcessAmount
- * Guarantee.ExcessAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmCoveredAmount
+ * Guarantee.mmCoveredAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmEffectivePeriod
+ * Guarantee.mmEffectivePeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmGuaranteeType
+ * Guarantee.mmGuaranteeType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Guarantee#GuaranteePartyRole
- * Guarantee.GuaranteePartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.Guarantee#mmCoveredPercentage
+ * Guarantee.mmCoveredPercentage}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmDocument
+ * Guarantee.mmDocument}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmGuaranteedTrade
+ * Guarantee.mmGuaranteedTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmExcessAmount
+ * Guarantee.mmExcessAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Guarantee#mmGuaranteePartyRole
+ * Guarantee.mmGuaranteePartyRole}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Trade#Guarantee
- * Trade.Guarantee}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Guarantee
- * DateTimePeriod.Guarantee}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Document#Guarantee
- * Document.Guarantee}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Trade#mmGuarantee
+ * Trade.mmGuarantee}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmGuarantee
+ * DateTimePeriod.mmGuarantee}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmGuarantee
+ * Document.mmGuarantee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GuaranteePartyRole#Guarantee
- * GuaranteePartyRole.Guarantee}</li>
+ * {@linkplain com.tools20022.repository.entity.GuaranteePartyRole#mmGuarantee
+ * GuaranteePartyRole.mmGuarantee}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -78,8 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Guarantee extends Asset {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount coveredAmount;
 	/**
 	 * Amount covered by the guarantee.
 	 * <p>
@@ -119,18 +122,27 @@ public class Guarantee extends Asset {
 	 * definition} = "Amount covered by the guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CoveredAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCoveredAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoveredAmount";
 			definition = "Amount covered by the guarantee.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Guarantee.class.getMethod("getCoveredAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod effectivePeriod;
 	/**
 	 * Period during which the guarantee is valid.
 	 * <p>
@@ -139,8 +151,8 @@ public class Guarantee extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#Guarantee
-	 * DateTimePeriod.Guarantee}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmGuarantee
+	 * DateTimePeriod.mmGuarantee}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -163,20 +175,21 @@ public class Guarantee extends Asset {
 	 * definition} = "Period during which the guarantee is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EffectivePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the guarantee is valid.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.Guarantee;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmGuarantee;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected GuarantyTypeCode guaranteeType;
 	/**
 	 * Specifies the type of security granted by an organisation with the role
 	 * as 'guarantor', for example, suretyship.
@@ -205,18 +218,27 @@ public class Guarantee extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GuaranteeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGuaranteeType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteeType";
 			definition = "Specifies the type of security granted by an organisation with the role as 'guarantor', for example, suretyship.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> GuarantyTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Guarantee.class.getMethod("getGuaranteeType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate coveredPercentage;
 	/**
 	 * Amount covered by the guarantee, expressed as a percentage.
 	 * <p>
@@ -243,18 +265,27 @@ public class Guarantee extends Asset {
 	 * "Amount covered by the guarantee, expressed as a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CoveredPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCoveredPercentage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoveredPercentage";
 			definition = "Amount covered by the guarantee, expressed as a percentage.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Guarantee.class.getMethod("getCoveredPercentage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Document> document;
 	/**
 	 * Document which contains the description of the guarantee.
 	 * <p>
@@ -263,8 +294,8 @@ public class Guarantee extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Guarantee
-	 * Document.Guarantee}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmGuarantee
+	 * Document.mmGuarantee}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -287,19 +318,20 @@ public class Guarantee extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Document = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Document";
 			definition = "Document which contains the description of the guarantee.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmGuarantee;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.Guarantee;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Trade guaranteedTrade;
 	/**
 	 * Trade which is partially or fully covered by a guarantee.
 	 * <p>
@@ -307,8 +339,9 @@ public class Guarantee extends Asset {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Trade#Guarantee
-	 * Trade.Guarantee}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Trade#mmGuarantee
+	 * Trade.mmGuarantee}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -331,20 +364,21 @@ public class Guarantee extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd GuaranteedTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmGuaranteedTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GuaranteedTrade";
 			definition = "Trade which is partially or fully covered by a guarantee.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmGuarantee;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.Guarantee;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount excessAmount;
 	/**
 	 * Amount not covered by the guarantee.
 	 * <p>
@@ -370,18 +404,27 @@ public class Guarantee extends Asset {
 	 * definition} = "Amount not covered by the guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExcessAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExcessAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExcessAmount";
 			definition = "Amount not covered by the guarantee.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Guarantee.class.getMethod("getExcessAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected GuaranteePartyRole guaranteePartyRole;
 	/**
 	 * Specifies the roles played by a party in the context of guarantees.
 	 * <p>
@@ -390,8 +433,8 @@ public class Guarantee extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GuaranteePartyRole#Guarantee
-	 * GuaranteePartyRole.Guarantee}</li>
+	 * {@linkplain com.tools20022.repository.entity.GuaranteePartyRole#mmGuarantee
+	 * GuaranteePartyRole.mmGuarantee}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -415,36 +458,105 @@ public class Guarantee extends Asset {
 	 * "Specifies the roles played by a party in the context of guarantees."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd GuaranteePartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmGuaranteePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Guarantee.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GuaranteePartyRole";
 			definition = "Specifies the roles played by a party in the context of guarantees.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GuaranteePartyRole.mmGuarantee;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.GuaranteePartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GuaranteePartyRole.Guarantee;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Guarantee";
 				definition = "Partial or full coverage of amounts by a party other than the debtor.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.Guarantee, com.tools20022.repository.entity.DateTimePeriod.Guarantee, com.tools20022.repository.entity.Document.Guarantee,
-						com.tools20022.repository.entity.GuaranteePartyRole.Guarantee);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmGuarantee, com.tools20022.repository.entity.DateTimePeriod.mmGuarantee, com.tools20022.repository.entity.Document.mmGuarantee,
+						com.tools20022.repository.entity.GuaranteePartyRole.mmGuarantee);
 				superType_lazy = () -> Asset.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Guarantee.CoveredAmount, com.tools20022.repository.entity.Guarantee.EffectivePeriod, com.tools20022.repository.entity.Guarantee.GuaranteeType,
-						com.tools20022.repository.entity.Guarantee.CoveredPercentage, com.tools20022.repository.entity.Guarantee.Document, com.tools20022.repository.entity.Guarantee.GuaranteedTrade,
-						com.tools20022.repository.entity.Guarantee.ExcessAmount, com.tools20022.repository.entity.Guarantee.GuaranteePartyRole);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Guarantee.mmCoveredAmount, com.tools20022.repository.entity.Guarantee.mmEffectivePeriod, com.tools20022.repository.entity.Guarantee.mmGuaranteeType,
+						com.tools20022.repository.entity.Guarantee.mmCoveredPercentage, com.tools20022.repository.entity.Guarantee.mmDocument, com.tools20022.repository.entity.Guarantee.mmGuaranteedTrade,
+						com.tools20022.repository.entity.Guarantee.mmExcessAmount, com.tools20022.repository.entity.Guarantee.mmGuaranteePartyRole);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Guarantee.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getCoveredAmount() {
+		return coveredAmount;
+	}
+
+	public void setCoveredAmount(CurrencyAndAmount coveredAmount) {
+		this.coveredAmount = coveredAmount;
+	}
+
+	public DateTimePeriod getEffectivePeriod() {
+		return effectivePeriod;
+	}
+
+	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = effectivePeriod;
+	}
+
+	public GuarantyTypeCode getGuaranteeType() {
+		return guaranteeType;
+	}
+
+	public void setGuaranteeType(GuarantyTypeCode guaranteeType) {
+		this.guaranteeType = guaranteeType;
+	}
+
+	public PercentageRate getCoveredPercentage() {
+		return coveredPercentage;
+	}
+
+	public void setCoveredPercentage(PercentageRate coveredPercentage) {
+		this.coveredPercentage = coveredPercentage;
+	}
+
+	public List<Document> getDocument() {
+		return document;
+	}
+
+	public void setDocument(List<com.tools20022.repository.entity.Document> document) {
+		this.document = document;
+	}
+
+	public Trade getGuaranteedTrade() {
+		return guaranteedTrade;
+	}
+
+	public void setGuaranteedTrade(com.tools20022.repository.entity.Trade guaranteedTrade) {
+		this.guaranteedTrade = guaranteedTrade;
+	}
+
+	public CurrencyAndAmount getExcessAmount() {
+		return excessAmount;
+	}
+
+	public void setExcessAmount(CurrencyAndAmount excessAmount) {
+		this.excessAmount = excessAmount;
+	}
+
+	public GuaranteePartyRole getGuaranteePartyRole() {
+		return guaranteePartyRole;
+	}
+
+	public void setGuaranteePartyRole(com.tools20022.repository.entity.GuaranteePartyRole guaranteePartyRole) {
+		this.guaranteePartyRole = guaranteePartyRole;
 	}
 }

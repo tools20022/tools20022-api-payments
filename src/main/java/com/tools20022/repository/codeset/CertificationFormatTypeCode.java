@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CertificationFormatTypeCode#Electronic
- * CertificationFormatTypeCode.Electronic}</li>
+ * {@linkplain com.tools20022.repository.codeset.CertificationFormatTypeCode#mmElectronic
+ * CertificationFormatTypeCode.mmElectronic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CertificationFormatTypeCode#Physical
- * CertificationFormatTypeCode.Physical}</li>
+ * {@linkplain com.tools20022.repository.codeset.CertificationFormatTypeCode#mmPhysical
+ * CertificationFormatTypeCode.mmPhysical}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class CertificationFormatTypeCode {
 	 * definition} = "Certification must be provided in electronic format."</li>
 	 * </ul>
 	 */
-	public static final MMCode Electronic = new MMCode() {
+	public static final MMCode mmElectronic = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Electronic";
 			definition = "Certification must be provided in electronic format.";
 			owner_lazy = () -> CertificationFormatTypeCode.mmObject();
@@ -115,9 +117,9 @@ public class CertificationFormatTypeCode {
 	 * definition} = "Certification must be provided in physical format."</li>
 	 * </ul>
 	 */
-	public static final MMCode Physical = new MMCode() {
+	public static final MMCode mmPhysical = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Physical";
 			definition = "Certification must be provided in physical format.";
 			owner_lazy = () -> CertificationFormatTypeCode.mmObject();
@@ -128,12 +130,12 @@ public class CertificationFormatTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ELEC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CertificationFormatTypeCode";
 				definition = "Specifies the certification format required, that is, physical or electronic format.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CertificationFormatTypeCode.Electronic, com.tools20022.repository.codeset.CertificationFormatTypeCode.Physical);
+				code_lazy = () -> Arrays.asList(CertificationFormatTypeCode.mmElectronic, CertificationFormatTypeCode.mmPhysical);
 			}
 		});
 		return mmObject_lazy.get();

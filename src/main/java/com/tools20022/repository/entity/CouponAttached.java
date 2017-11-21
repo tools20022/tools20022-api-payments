@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max3NumericText;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,33 +40,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#Date
- * CouponAttached.Date}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#Number
- * CouponAttached.Number}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#Security
- * CouponAttached.Security}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#mmDate
+ * CouponAttached.mmDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#mmNumber
+ * CouponAttached.mmNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#mmSecurity
+ * CouponAttached.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CouponAttached#CouponClippingDate
- * CouponAttached.CouponClippingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CouponAttached#mmCouponClippingDate
+ * CouponAttached.mmCouponClippingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CouponAttached#Identification
- * CouponAttached.Identification}</li>
+ * {@linkplain com.tools20022.repository.entity.CouponAttached#mmIdentification
+ * CouponAttached.mmIdentification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#CouponAttached
- * Security.CouponAttached}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmCouponAttached
+ * Security.mmCouponAttached}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CouponAttached {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate date;
 	/**
 	 * Date of the coupon attached to the physical security.
 	 * <p>
@@ -107,18 +108,27 @@ public class CouponAttached {
 	 * definition} = "Date of the coupon attached to the physical security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Date = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CouponAttached.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date of the coupon attached to the physical security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CouponAttached.class.getMethod("getDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max3NumericText number;
 	/**
 	 * Number of the coupon attached to the physical security.
 	 * <p>
@@ -145,18 +155,27 @@ public class CouponAttached {
 	 * definition} = "Number of the coupon attached to the physical security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Number = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CouponAttached.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Number";
 			definition = "Number of the coupon attached to the physical security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CouponAttached.class.getMethod("getNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Security security;
 	/**
 	 * Instrument to which a coupon is specified.
 	 * <p>
@@ -165,8 +184,8 @@ public class CouponAttached {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#CouponAttached
-	 * Security.CouponAttached}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmCouponAttached
+	 * Security.mmCouponAttached}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -189,20 +208,21 @@ public class CouponAttached {
 	 * definition} = "Instrument to which a coupon is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CouponAttached.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Instrument to which a coupon is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmCouponAttached;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.CouponAttached;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime couponClippingDate;
 	/**
 	 * Date on which the coupons are to be/were submitted for payment of
 	 * interest.
@@ -231,18 +251,27 @@ public class CouponAttached {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CouponClippingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCouponClippingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CouponAttached.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CouponClippingDate";
 			definition = "Date on which the coupons are to be/were submitted for payment of interest.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CouponAttached.class.getMethod("getCouponClippingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text identification;
 	/**
 	 * Identification of the coupon.
 	 * <p>
@@ -268,31 +297,84 @@ public class CouponAttached {
 	 * definition} = "Identification of the coupon."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Identification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CouponAttached.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification of the coupon.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CouponAttached.class.getMethod("getIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CouponAttached";
 				definition = "Physical certificates representing rights attached to the physical certificates representing a security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.CouponAttached);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CouponAttached.Date, com.tools20022.repository.entity.CouponAttached.Number, com.tools20022.repository.entity.CouponAttached.Security,
-						com.tools20022.repository.entity.CouponAttached.CouponClippingDate, com.tools20022.repository.entity.CouponAttached.Identification);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmCouponAttached);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CouponAttached.mmDate, com.tools20022.repository.entity.CouponAttached.mmNumber, com.tools20022.repository.entity.CouponAttached.mmSecurity,
+						com.tools20022.repository.entity.CouponAttached.mmCouponClippingDate, com.tools20022.repository.entity.CouponAttached.mmIdentification);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CouponAttached.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
+	}
+
+	public Max3NumericText getNumber() {
+		return number;
+	}
+
+	public void setNumber(Max3NumericText number) {
+		this.number = number;
+	}
+
+	public Security getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(com.tools20022.repository.entity.Security security) {
+		this.security = security;
+	}
+
+	public ISODateTime getCouponClippingDate() {
+		return couponClippingDate;
+	}
+
+	public void setCouponClippingDate(ISODateTime couponClippingDate) {
+		this.couponClippingDate = couponClippingDate;
+	}
+
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
 	}
 }

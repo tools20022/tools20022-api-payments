@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#Novation
- * NovationStatusCode.Novation}</li>
+ * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#mmNovation
+ * NovationStatusCode.mmNovation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#NoNovation
- * NovationStatusCode.NoNovation}</li>
+ * {@linkplain com.tools20022.repository.codeset.NovationStatusCode#mmNoNovation
+ * NovationStatusCode.mmNoNovation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,9 +78,9 @@ public class NovationStatusCode {
 	 * definition} = "Transaction is a novation."</li>
 	 * </ul>
 	 */
-	public static final MMCode Novation = new MMCode() {
+	public static final MMCode mmNovation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Novation";
 			definition = "Transaction is a novation.";
 			owner_lazy = () -> NovationStatusCode.mmObject();
@@ -106,9 +108,9 @@ public class NovationStatusCode {
 	 * definition} = "Transaction is not a novation."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoNovation = new MMCode() {
+	public static final MMCode mmNoNovation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoNovation";
 			definition = "Transaction is not a novation.";
 			owner_lazy = () -> NovationStatusCode.mmObject();
@@ -119,11 +121,11 @@ public class NovationStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NovationStatusCode";
 				definition = "Specifies the status of the novation.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.NovationStatusCode.Novation, com.tools20022.repository.codeset.NovationStatusCode.NoNovation);
+				code_lazy = () -> Arrays.asList(NovationStatusCode.mmNovation, NovationStatusCode.mmNoNovation);
 			}
 		});
 		return mmObject_lazy.get();

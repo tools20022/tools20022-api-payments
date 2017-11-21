@@ -17,14 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CorporateActionCalculationMethodCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -42,70 +42,70 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#ProposedRate
- * BiddingConditions.ProposedRate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmProposedRate
+ * BiddingConditions.mmProposedRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#OversubscriptionRate
- * BiddingConditions.OversubscriptionRate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmOversubscriptionRate
+ * BiddingConditions.mmOversubscriptionRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#InformationToComplyWith
- * BiddingConditions.InformationToComplyWith}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmInformationToComplyWith
+ * BiddingConditions.mmInformationToComplyWith}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#SubscriptionCostDebitDate
- * BiddingConditions.SubscriptionCostDebitDate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmSubscriptionCostDebitDate
+ * BiddingConditions.mmSubscriptionCostDebitDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#MaximumAllowedOverSubscription
- * BiddingConditions.MaximumAllowedOverSubscription}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmMaximumAllowedOverSubscription
+ * BiddingConditions.mmMaximumAllowedOverSubscription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#ProrationRate
- * BiddingConditions.ProrationRate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmProrationRate
+ * BiddingConditions.mmProrationRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#ApplicableRate
- * BiddingConditions.ApplicableRate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmApplicableRate
+ * BiddingConditions.mmApplicableRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#FrontEndOddLotQuantity
- * BiddingConditions.FrontEndOddLotQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmFrontEndOddLotQuantity
+ * BiddingConditions.mmFrontEndOddLotQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#BackEndOddLotQuantity
- * BiddingConditions.BackEndOddLotQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmBackEndOddLotQuantity
+ * BiddingConditions.mmBackEndOddLotQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#TransformationRate
- * BiddingConditions.TransformationRate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmTransformationRate
+ * BiddingConditions.mmTransformationRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#ProrationDate
- * BiddingConditions.ProrationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmProrationDate
+ * BiddingConditions.mmProrationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#CompulsoryPurchasePeriod
- * BiddingConditions.CompulsoryPurchasePeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmCompulsoryPurchasePeriod
+ * BiddingConditions.mmCompulsoryPurchasePeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#PercentageSought
- * BiddingConditions.PercentageSought}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmPercentageSought
+ * BiddingConditions.mmPercentageSought}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#BidInterval
- * BiddingConditions.BidInterval}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmBidInterval
+ * BiddingConditions.mmBidInterval}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#MaximumPrice
- * BiddingConditions.MaximumPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmMaximumPrice
+ * BiddingConditions.mmMaximumPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#MinimumPrice
- * BiddingConditions.MinimumPrice}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmMinimumPrice
+ * BiddingConditions.mmMinimumPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#MaximumQuantity
- * BiddingConditions.MaximumQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmMaximumQuantity
+ * BiddingConditions.mmMaximumQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#MinimumQuantitySought
- * BiddingConditions.MinimumQuantitySought}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmMinimumQuantitySought
+ * BiddingConditions.mmMinimumQuantitySought}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#BaseDenomination
- * BiddingConditions.BaseDenomination}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmBaseDenomination
+ * BiddingConditions.mmBaseDenomination}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#CalculationMethod
- * BiddingConditions.CalculationMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmCalculationMethod
+ * BiddingConditions.mmCalculationMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#AdditionalSubscriptionCost
- * BiddingConditions.AdditionalSubscriptionCost}</li>
- * <li>{@linkplain com.tools20022.repository.entity.BiddingConditions#Event
- * BiddingConditions.Event}</li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmAdditionalSubscriptionCost
+ * BiddingConditions.mmAdditionalSubscriptionCost}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.BiddingConditions#mmEvent
+ * BiddingConditions.mmEvent}</li>
  * </ul>
  * </li>
  * <li>
@@ -113,45 +113,45 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#MaximumPriceBiddingConditions
- * SecuritiesPricing.MaximumPriceBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMaximumPriceBiddingConditions
+ * SecuritiesPricing.mmMaximumPriceBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#MinimumPriceBiddingConditions
- * SecuritiesPricing.MinimumPriceBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMinimumPriceBiddingConditions
+ * SecuritiesPricing.mmMinimumPriceBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BiddingConditions
- * DateTimePeriod.BiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBiddingConditions
+ * DateTimePeriod.mmBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#BackEndOddLotBiddingConditions
- * SecuritiesQuantity.BackEndOddLotBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmBackEndOddLotBiddingConditions
+ * SecuritiesQuantity.mmBackEndOddLotBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#BiddingConditions
- * SecuritiesQuantity.BiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmBiddingConditions
+ * SecuritiesQuantity.mmBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumQuantityBiddingConditions
- * SecuritiesQuantity.MaximumQuantityBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumQuantityBiddingConditions
+ * SecuritiesQuantity.mmMaximumQuantityBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#FrontEndOddLotBiddingConditions
- * SecuritiesQuantity.FrontEndOddLotBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmFrontEndOddLotBiddingConditions
+ * SecuritiesQuantity.mmFrontEndOddLotBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumQuantityBiddingConditions
- * SecuritiesQuantity.MinimumQuantityBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumQuantityBiddingConditions
+ * SecuritiesQuantity.mmMinimumQuantityBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BiddingConditions
- * CorporateActionEvent.BiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBiddingConditions
+ * CorporateActionEvent.mmBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RateAndAmount#MaximumAllowedBiddingConditions
- * RateAndAmount.MaximumAllowedBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmMaximumAllowedBiddingConditions
+ * RateAndAmount.mmMaximumAllowedBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RateAndAmount#RateBiddingConditions
- * RateAndAmount.RateBiddingConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmRateBiddingConditions
+ * RateAndAmount.mmRateBiddingConditions}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -167,6 +167,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class BiddingConditions {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PercentageRate proposedRate;
 	/**
 	 * Rate proposed in a remarketing of variable rate notes.
 	 * <p>
@@ -193,18 +194,27 @@ public class BiddingConditions {
 	 * definition} = "Rate proposed in a remarketing of variable rate notes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ProposedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProposedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProposedRate";
 			definition = "Rate proposed in a remarketing of variable rate notes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getProposedRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate oversubscriptionRate;
 	/**
 	 * Rate of allowed over-subscription.
 	 * <p>
@@ -231,18 +241,27 @@ public class BiddingConditions {
 	 * definition} = "Rate of allowed over-subscription."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OversubscriptionRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOversubscriptionRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OversubscriptionRate";
 			definition = "Rate of allowed over-subscription.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getOversubscriptionRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text informationToComplyWith;
 	/**
 	 * Provides information conditions to the account owner that are to be
 	 * complied with, eg, not open to US/Canadian residents, QIB or SIL to be
@@ -272,18 +291,27 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InformationToComplyWith = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInformationToComplyWith = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationToComplyWith";
 			definition = "Provides information conditions to the account owner that are to be complied with, eg, not open to US/Canadian residents, QIB or SIL to be provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getInformationToComplyWith", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime subscriptionCostDebitDate;
 	/**
 	 * Date by which cash must be in place in order to take part in the event.
 	 * <p>
@@ -311,18 +339,27 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SubscriptionCostDebitDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSubscriptionCostDebitDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionCostDebitDate";
 			definition = "Date by which cash must be in place in order to take part in the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getSubscriptionCostDebitDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RateAndAmount maximumAllowedOverSubscription;
 	/**
 	 * A maximum percentage of shares available through the over subscription
 	 * privilege, usually a percentage of the basic subscription shares, eg, an
@@ -334,8 +371,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#MaximumAllowedBiddingConditions
-	 * RateAndAmount.MaximumAllowedBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmMaximumAllowedBiddingConditions
+	 * RateAndAmount.mmMaximumAllowedBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -361,20 +398,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MaximumAllowedOverSubscription = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMaximumAllowedOverSubscription = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumAllowedOverSubscription";
 			definition = "A maximum percentage of shares available through the over subscription privilege, usually a percentage of the basic subscription shares, eg, an account owner subscribing to 100 shares may over subscribe to a maximum of 50 additional shares when the over subscription maximum is 50%.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RateAndAmount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.MaximumAllowedBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmMaximumAllowedBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 		}
 	};
+	protected PercentageRate prorationRate;
 	/**
 	 * Proportionate allocation used for the offer.
 	 * <p>
@@ -401,18 +439,27 @@ public class BiddingConditions {
 	 * definition} = "Proportionate allocation used for the offer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ProrationRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProrationRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProrationRate";
 			definition = "Proportionate allocation used for the offer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getProrationRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RateAndAmount applicableRate;
 	/**
 	 * Rate applicable to the event announced, eg, redemption rate for a
 	 * redemption event.
@@ -422,8 +469,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#RateBiddingConditions
-	 * RateAndAmount.RateBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmRateBiddingConditions
+	 * RateAndAmount.mmRateBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -449,20 +496,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ApplicableRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmApplicableRate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableRate";
 			definition = "Rate applicable to the event announced, eg, redemption rate for a redemption event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RateAndAmount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.RateBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmRateBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 		}
 	};
+	protected SecuritiesQuantity frontEndOddLotQuantity;
 	/**
 	 * Specifies that if an order is prorated holders of odd lots who tender
 	 * their full position will not have tendered position prorated but rather
@@ -473,8 +521,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#FrontEndOddLotBiddingConditions
-	 * SecuritiesQuantity.FrontEndOddLotBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmFrontEndOddLotBiddingConditions
+	 * SecuritiesQuantity.mmFrontEndOddLotBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -500,20 +548,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FrontEndOddLotQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFrontEndOddLotQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FrontEndOddLotQuantity";
 			definition = "Specifies that if an order is prorated holders of odd lots who tender their full position will not have tendered position prorated but rather accepted in full.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.FrontEndOddLotBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmFrontEndOddLotBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity backEndOddLotQuantity;
 	/**
 	 * Represents the presence of a back end odd lot provision and the quantity
 	 * of equity required after proration to be eligible for this privilege.
@@ -523,8 +572,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#BackEndOddLotBiddingConditions
-	 * SecuritiesQuantity.BackEndOddLotBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmBackEndOddLotBiddingConditions
+	 * SecuritiesQuantity.mmBackEndOddLotBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -550,20 +599,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BackEndOddLotQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBackEndOddLotQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BackEndOddLotQuantity";
 			definition = "Represents the presence of a back end odd lot provision and the quantity of equity required after proration to be eligible for this privilege.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.BackEndOddLotBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmBackEndOddLotBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected PercentageRate transformationRate;
 	/**
 	 * Rate used to determine the cash consideration split across outturn
 	 * settlement transactions that are the result of a transformation of the
@@ -594,18 +644,27 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransformationRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransformationRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransformationRate";
 			definition = "Rate used to determine the cash consideration split across outturn settlement transactions that are the result of a transformation of the parent transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getTransformationRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime prorationDate;
 	/**
 	 * Date (and time) at which an issuer will determine the proration
 	 * amount/quantity of an offer.
@@ -634,18 +693,27 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ProrationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmProrationDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProrationDate";
 			definition = "Date (and time) at which an issuer will determine the proration amount/quantity of an offer.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getProrationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod compulsoryPurchasePeriod;
 	/**
 	 * Period during a take-over where any outstanding equity must be purchased
 	 * by the take-over company.
@@ -655,8 +723,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BiddingConditions
-	 * DateTimePeriod.BiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBiddingConditions
+	 * DateTimePeriod.mmBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -682,20 +750,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CompulsoryPurchasePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCompulsoryPurchasePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CompulsoryPurchasePeriod";
 			definition = "Period during a take-over where any outstanding equity must be purchased by the take-over company.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.BiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected PercentageRate percentageSought;
 	/**
 	 * Percentage of securities the offeror/issuer will purchase or redeem under
 	 * the terms of the event. This can be a number or the term "any and all".
@@ -725,18 +794,27 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PercentageSought = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPercentageSought = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageSought";
 			definition = "Percentage of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getPercentageSought", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount bidInterval;
 	/**
 	 * Acceptable price increment used for submitting a bid.
 	 * <p>
@@ -763,18 +841,27 @@ public class BiddingConditions {
 	 * definition} = "Acceptable price increment used for submitting a bid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BidInterval = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBidInterval = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BidInterval";
 			definition = "Acceptable price increment used for submitting a bid.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getBidInterval", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesPricing maximumPrice;
 	/**
 	 * Maximum or cap price at which a holder can bid, e.g. on a Dutch auction
 	 * offer.
@@ -784,8 +871,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#MaximumPriceBiddingConditions
-	 * SecuritiesPricing.MaximumPriceBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMaximumPriceBiddingConditions
+	 * SecuritiesPricing.mmMaximumPriceBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -811,20 +898,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MaximumPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMaximumPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumPrice";
 			definition = "Maximum or cap price at which a holder can bid, e.g. on a Dutch auction offer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.MaximumPriceBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmMaximumPriceBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected SecuritiesPricing minimumPrice;
 	/**
 	 * Minimum or floor price at which a holder can bid, e.g. on a Dutch auction
 	 * offer.
@@ -834,8 +922,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#MinimumPriceBiddingConditions
-	 * SecuritiesPricing.MinimumPriceBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMinimumPriceBiddingConditions
+	 * SecuritiesPricing.mmMinimumPriceBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -861,20 +949,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumPrice";
 			definition = "Minimum or floor price at which a holder can bid, e.g. on a Dutch auction offer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.MinimumPriceBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmMinimumPriceBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected SecuritiesQuantity maximumQuantity;
 	/**
 	 * Maximum number of securities the offeror is requesting to complete the
 	 * event.
@@ -884,8 +973,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumQuantityBiddingConditions
-	 * SecuritiesQuantity.MaximumQuantityBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumQuantityBiddingConditions
+	 * SecuritiesQuantity.mmMaximumQuantityBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -911,20 +1000,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MaximumQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMaximumQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumQuantity";
 			definition = "Maximum number of securities the offeror is requesting to complete the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MaximumQuantityBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumQuantityBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity minimumQuantitySought;
 	/**
 	 * Minimum quantity of securities the offeror/issuer will purchase or redeem
 	 * under the terms of the event. This can be a number or the term
@@ -935,8 +1025,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumQuantityBiddingConditions
-	 * SecuritiesQuantity.MinimumQuantityBiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumQuantityBiddingConditions
+	 * SecuritiesQuantity.mmMinimumQuantityBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -962,20 +1052,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumQuantitySought = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumQuantitySought = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantitySought";
 			definition = "Minimum quantity of securities the offeror/issuer will purchase or redeem under the terms of the event. This can be a number or the term \"any and all\".";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MinimumQuantityBiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected SecuritiesQuantity baseDenomination;
 	/**
 	 * The minimum integral amount of securities that each account owner must
 	 * have remaining after the called amounts are applied.
@@ -985,8 +1076,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#BiddingConditions
-	 * SecuritiesQuantity.BiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmBiddingConditions
+	 * SecuritiesQuantity.mmBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1012,20 +1103,21 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BaseDenomination = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBaseDenomination = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BaseDenomination";
 			definition = "The minimum integral amount of securities that each account owner must have remaining after the called amounts are applied.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.BiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected CorporateActionCalculationMethodCode calculationMethod;
 	/**
 	 * The method of calculation of drawings and partial redemptions.
 	 * <p>
@@ -1053,18 +1145,27 @@ public class BiddingConditions {
 	 * "The method of calculation of drawings and partial redemptions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CalculationMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCalculationMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationMethod";
 			definition = "The method of calculation of drawings and partial redemptions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionCalculationMethodCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getCalculationMethod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount additionalSubscriptionCost;
 	/**
 	 * Additional costs - coming on top of the subscription costs - which the
 	 * subscriber should pay as per the subscription process.
@@ -1094,18 +1195,27 @@ public class BiddingConditions {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AdditionalSubscriptionCost = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAdditionalSubscriptionCost = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AdditionalSubscriptionCost";
 			definition = "Additional costs - coming on top of the subscription costs - which the subscriber should pay as per the subscription process.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return BiddingConditions.class.getMethod("getAdditionalSubscriptionCost", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionEvent event;
 	/**
 	 * Event to which the bidding conditions apply.
 	 * <p>
@@ -1114,8 +1224,8 @@ public class BiddingConditions {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BiddingConditions
-	 * CorporateActionEvent.BiddingConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBiddingConditions
+	 * CorporateActionEvent.mmBiddingConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1140,45 +1250,227 @@ public class BiddingConditions {
 	 * definition} = "Event to which the bidding conditions apply."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Event = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> BiddingConditions.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Event";
 			definition = "Event to which the bidding conditions apply.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.BiddingConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmBiddingConditions;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BiddingConditions";
 				definition = "Specifies the conditions under which securities can be acquired as part of a corporate action.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.MaximumPriceBiddingConditions, com.tools20022.repository.entity.SecuritiesPricing.MinimumPriceBiddingConditions,
-						com.tools20022.repository.entity.DateTimePeriod.BiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.BackEndOddLotBiddingConditions,
-						com.tools20022.repository.entity.SecuritiesQuantity.BiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.MaximumQuantityBiddingConditions,
-						com.tools20022.repository.entity.SecuritiesQuantity.FrontEndOddLotBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.MinimumQuantityBiddingConditions,
-						com.tools20022.repository.entity.CorporateActionEvent.BiddingConditions, com.tools20022.repository.entity.RateAndAmount.MaximumAllowedBiddingConditions,
-						com.tools20022.repository.entity.RateAndAmount.RateBiddingConditions);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BiddingConditions.ProposedRate, com.tools20022.repository.entity.BiddingConditions.OversubscriptionRate,
-						com.tools20022.repository.entity.BiddingConditions.InformationToComplyWith, com.tools20022.repository.entity.BiddingConditions.SubscriptionCostDebitDate,
-						com.tools20022.repository.entity.BiddingConditions.MaximumAllowedOverSubscription, com.tools20022.repository.entity.BiddingConditions.ProrationRate, com.tools20022.repository.entity.BiddingConditions.ApplicableRate,
-						com.tools20022.repository.entity.BiddingConditions.FrontEndOddLotQuantity, com.tools20022.repository.entity.BiddingConditions.BackEndOddLotQuantity,
-						com.tools20022.repository.entity.BiddingConditions.TransformationRate, com.tools20022.repository.entity.BiddingConditions.ProrationDate, com.tools20022.repository.entity.BiddingConditions.CompulsoryPurchasePeriod,
-						com.tools20022.repository.entity.BiddingConditions.PercentageSought, com.tools20022.repository.entity.BiddingConditions.BidInterval, com.tools20022.repository.entity.BiddingConditions.MaximumPrice,
-						com.tools20022.repository.entity.BiddingConditions.MinimumPrice, com.tools20022.repository.entity.BiddingConditions.MaximumQuantity, com.tools20022.repository.entity.BiddingConditions.MinimumQuantitySought,
-						com.tools20022.repository.entity.BiddingConditions.BaseDenomination, com.tools20022.repository.entity.BiddingConditions.CalculationMethod,
-						com.tools20022.repository.entity.BiddingConditions.AdditionalSubscriptionCost, com.tools20022.repository.entity.BiddingConditions.Event);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmMaximumPriceBiddingConditions, com.tools20022.repository.entity.SecuritiesPricing.mmMinimumPriceBiddingConditions,
+						com.tools20022.repository.entity.DateTimePeriod.mmBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.mmBackEndOddLotBiddingConditions,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumQuantityBiddingConditions,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmFrontEndOddLotBiddingConditions, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityBiddingConditions,
+						com.tools20022.repository.entity.CorporateActionEvent.mmBiddingConditions, com.tools20022.repository.entity.RateAndAmount.mmMaximumAllowedBiddingConditions,
+						com.tools20022.repository.entity.RateAndAmount.mmRateBiddingConditions);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BiddingConditions.mmProposedRate, com.tools20022.repository.entity.BiddingConditions.mmOversubscriptionRate,
+						com.tools20022.repository.entity.BiddingConditions.mmInformationToComplyWith, com.tools20022.repository.entity.BiddingConditions.mmSubscriptionCostDebitDate,
+						com.tools20022.repository.entity.BiddingConditions.mmMaximumAllowedOverSubscription, com.tools20022.repository.entity.BiddingConditions.mmProrationRate,
+						com.tools20022.repository.entity.BiddingConditions.mmApplicableRate, com.tools20022.repository.entity.BiddingConditions.mmFrontEndOddLotQuantity,
+						com.tools20022.repository.entity.BiddingConditions.mmBackEndOddLotQuantity, com.tools20022.repository.entity.BiddingConditions.mmTransformationRate,
+						com.tools20022.repository.entity.BiddingConditions.mmProrationDate, com.tools20022.repository.entity.BiddingConditions.mmCompulsoryPurchasePeriod,
+						com.tools20022.repository.entity.BiddingConditions.mmPercentageSought, com.tools20022.repository.entity.BiddingConditions.mmBidInterval, com.tools20022.repository.entity.BiddingConditions.mmMaximumPrice,
+						com.tools20022.repository.entity.BiddingConditions.mmMinimumPrice, com.tools20022.repository.entity.BiddingConditions.mmMaximumQuantity, com.tools20022.repository.entity.BiddingConditions.mmMinimumQuantitySought,
+						com.tools20022.repository.entity.BiddingConditions.mmBaseDenomination, com.tools20022.repository.entity.BiddingConditions.mmCalculationMethod,
+						com.tools20022.repository.entity.BiddingConditions.mmAdditionalSubscriptionCost, com.tools20022.repository.entity.BiddingConditions.mmEvent);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return BiddingConditions.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PercentageRate getProposedRate() {
+		return proposedRate;
+	}
+
+	public void setProposedRate(PercentageRate proposedRate) {
+		this.proposedRate = proposedRate;
+	}
+
+	public PercentageRate getOversubscriptionRate() {
+		return oversubscriptionRate;
+	}
+
+	public void setOversubscriptionRate(PercentageRate oversubscriptionRate) {
+		this.oversubscriptionRate = oversubscriptionRate;
+	}
+
+	public Max350Text getInformationToComplyWith() {
+		return informationToComplyWith;
+	}
+
+	public void setInformationToComplyWith(Max350Text informationToComplyWith) {
+		this.informationToComplyWith = informationToComplyWith;
+	}
+
+	public ISODateTime getSubscriptionCostDebitDate() {
+		return subscriptionCostDebitDate;
+	}
+
+	public void setSubscriptionCostDebitDate(ISODateTime subscriptionCostDebitDate) {
+		this.subscriptionCostDebitDate = subscriptionCostDebitDate;
+	}
+
+	public RateAndAmount getMaximumAllowedOverSubscription() {
+		return maximumAllowedOverSubscription;
+	}
+
+	public void setMaximumAllowedOverSubscription(com.tools20022.repository.entity.RateAndAmount maximumAllowedOverSubscription) {
+		this.maximumAllowedOverSubscription = maximumAllowedOverSubscription;
+	}
+
+	public PercentageRate getProrationRate() {
+		return prorationRate;
+	}
+
+	public void setProrationRate(PercentageRate prorationRate) {
+		this.prorationRate = prorationRate;
+	}
+
+	public RateAndAmount getApplicableRate() {
+		return applicableRate;
+	}
+
+	public void setApplicableRate(com.tools20022.repository.entity.RateAndAmount applicableRate) {
+		this.applicableRate = applicableRate;
+	}
+
+	public SecuritiesQuantity getFrontEndOddLotQuantity() {
+		return frontEndOddLotQuantity;
+	}
+
+	public void setFrontEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity frontEndOddLotQuantity) {
+		this.frontEndOddLotQuantity = frontEndOddLotQuantity;
+	}
+
+	public SecuritiesQuantity getBackEndOddLotQuantity() {
+		return backEndOddLotQuantity;
+	}
+
+	public void setBackEndOddLotQuantity(com.tools20022.repository.entity.SecuritiesQuantity backEndOddLotQuantity) {
+		this.backEndOddLotQuantity = backEndOddLotQuantity;
+	}
+
+	public PercentageRate getTransformationRate() {
+		return transformationRate;
+	}
+
+	public void setTransformationRate(PercentageRate transformationRate) {
+		this.transformationRate = transformationRate;
+	}
+
+	public ISODateTime getProrationDate() {
+		return prorationDate;
+	}
+
+	public void setProrationDate(ISODateTime prorationDate) {
+		this.prorationDate = prorationDate;
+	}
+
+	public DateTimePeriod getCompulsoryPurchasePeriod() {
+		return compulsoryPurchasePeriod;
+	}
+
+	public void setCompulsoryPurchasePeriod(com.tools20022.repository.entity.DateTimePeriod compulsoryPurchasePeriod) {
+		this.compulsoryPurchasePeriod = compulsoryPurchasePeriod;
+	}
+
+	public PercentageRate getPercentageSought() {
+		return percentageSought;
+	}
+
+	public void setPercentageSought(PercentageRate percentageSought) {
+		this.percentageSought = percentageSought;
+	}
+
+	public CurrencyAndAmount getBidInterval() {
+		return bidInterval;
+	}
+
+	public void setBidInterval(CurrencyAndAmount bidInterval) {
+		this.bidInterval = bidInterval;
+	}
+
+	public SecuritiesPricing getMaximumPrice() {
+		return maximumPrice;
+	}
+
+	public void setMaximumPrice(com.tools20022.repository.entity.SecuritiesPricing maximumPrice) {
+		this.maximumPrice = maximumPrice;
+	}
+
+	public SecuritiesPricing getMinimumPrice() {
+		return minimumPrice;
+	}
+
+	public void setMinimumPrice(com.tools20022.repository.entity.SecuritiesPricing minimumPrice) {
+		this.minimumPrice = minimumPrice;
+	}
+
+	public SecuritiesQuantity getMaximumQuantity() {
+		return maximumQuantity;
+	}
+
+	public void setMaximumQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumQuantity) {
+		this.maximumQuantity = maximumQuantity;
+	}
+
+	public SecuritiesQuantity getMinimumQuantitySought() {
+		return minimumQuantitySought;
+	}
+
+	public void setMinimumQuantitySought(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantitySought) {
+		this.minimumQuantitySought = minimumQuantitySought;
+	}
+
+	public SecuritiesQuantity getBaseDenomination() {
+		return baseDenomination;
+	}
+
+	public void setBaseDenomination(com.tools20022.repository.entity.SecuritiesQuantity baseDenomination) {
+		this.baseDenomination = baseDenomination;
+	}
+
+	public CorporateActionCalculationMethodCode getCalculationMethod() {
+		return calculationMethod;
+	}
+
+	public void setCalculationMethod(CorporateActionCalculationMethodCode calculationMethod) {
+		this.calculationMethod = calculationMethod;
+	}
+
+	public CurrencyAndAmount getAdditionalSubscriptionCost() {
+		return additionalSubscriptionCost;
+	}
+
+	public void setAdditionalSubscriptionCost(CurrencyAndAmount additionalSubscriptionCost) {
+		this.additionalSubscriptionCost = additionalSubscriptionCost;
+	}
+
+	public CorporateActionEvent getEvent() {
+		return event;
+	}
+
+	public void setEvent(com.tools20022.repository.entity.CorporateActionEvent event) {
+		this.event = event;
 	}
 }

@@ -20,13 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.CreditSideTaxDebtor;
 import com.tools20022.repository.entity.DebitSideTaxDebtor;
 import com.tools20022.repository.entity.Tax;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Details about tax paid, or to be paid, to the government in accordance with
@@ -39,29 +46,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#Creditor
- * TaxInformation3.Creditor}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#Debtor
- * TaxInformation3.Debtor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#mmCreditor
+ * TaxInformation3.mmCreditor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#mmDebtor
+ * TaxInformation3.mmDebtor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TaxInformation3#AdministrationZone
- * TaxInformation3.AdministrationZone}</li>
+ * {@linkplain com.tools20022.repository.msg.TaxInformation3#mmAdministrationZone
+ * TaxInformation3.mmAdministrationZone}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TaxInformation3#ReferenceNumber
- * TaxInformation3.ReferenceNumber}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#Method
- * TaxInformation3.Method}</li>
+ * {@linkplain com.tools20022.repository.msg.TaxInformation3#mmReferenceNumber
+ * TaxInformation3.mmReferenceNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#mmMethod
+ * TaxInformation3.mmMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TaxInformation3#TotalTaxableBaseAmount
- * TaxInformation3.TotalTaxableBaseAmount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#TotalTaxAmount
- * TaxInformation3.TotalTaxAmount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#Date
- * TaxInformation3.Date}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#SequenceNumber
- * TaxInformation3.SequenceNumber}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#Record
- * TaxInformation3.Record}</li>
+ * {@linkplain com.tools20022.repository.msg.TaxInformation3#mmTotalTaxableBaseAmount
+ * TaxInformation3.mmTotalTaxableBaseAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TaxInformation3#mmTotalTaxAmount
+ * TaxInformation3.mmTotalTaxAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#mmDate
+ * TaxInformation3.mmDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TaxInformation3#mmSequenceNumber
+ * TaxInformation3.mmSequenceNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxInformation3#mmRecord
+ * TaxInformation3.mmRecord}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -69,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,9 +99,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TaxInformation3", propOrder = {"creditor", "debtor", "administrationZone", "referenceNumber", "method", "totalTaxableBaseAmount", "totalTaxAmount", "date", "sequenceNumber", "record"})
 public class TaxInformation3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected TaxParty1 creditor;
 	/**
 	 * Party on the credit side of the transaction to which the tax applies.
 	 * <p>
@@ -125,28 +137,29 @@ public class TaxInformation3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#Creditor
-	 * TaxInformation4.Creditor}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmCreditor
+	 * TaxInformation4.mmCreditor}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Creditor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCreditor = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> TaxInformation3.mmObject();
 			businessComponentTrace_lazy = () -> CreditSideTaxDebtor.mmObject();
+			componentContext_lazy = () -> TaxInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "Cdtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Creditor";
 			definition = "Party on the credit side of the transaction to which the tax applies.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.Creditor);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmCreditor);
 			maxOccurs = 1;
-			type_lazy = () -> TaxParty1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TaxParty1.mmObject();
 		}
 	};
+	protected TaxParty2 debtor;
 	/**
 	 * Set of elements used to identify the party on the debit side of the
 	 * transaction to which the tax applies.
@@ -181,28 +194,29 @@ public class TaxInformation3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#Debtor
-	 * TaxInformation4.Debtor}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmDebtor
+	 * TaxInformation4.mmDebtor}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Debtor = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmDebtor = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> TaxInformation3.mmObject();
 			businessComponentTrace_lazy = () -> DebitSideTaxDebtor.mmObject();
+			componentContext_lazy = () -> TaxInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "Dbtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Debtor";
 			definition = "Set of elements used to identify the party on the debit side of the transaction to which the tax applies.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.Debtor);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmDebtor);
 			maxOccurs = 1;
-			type_lazy = () -> TaxParty2.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TaxParty2.mmObject();
 		}
 	};
+	protected Max35Text administrationZone;
 	/**
 	 * Territorial part of a country to which the tax payment is related.
 	 * <p>
@@ -215,8 +229,8 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#AdministrationZone
-	 * Tax.AdministrationZone}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmAdministrationZone
+	 * Tax.mmAdministrationZone}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -238,27 +252,28 @@ public class TaxInformation3 {
 	 * nextVersions} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#AdministrationZone
-	 * TaxInformation4.AdministrationZone}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#mmAdministrationZone
+	 * TaxInformation4.mmAdministrationZone}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdministrationZone = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdministrationZone = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmAdministrationZone;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.AdministrationZone;
 			isDerived = false;
 			xmlTag = "AdmstnZn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdministrationZone";
 			definition = "Territorial part of a country to which the tax payment is related.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.AdministrationZone);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmAdministrationZone);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max140Text referenceNumber;
 	/**
 	 * Tax reference information that is specific to a taxing agency.
 	 * <p>
@@ -271,8 +286,8 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Identification
-	 * Tax.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmIdentification
+	 * Tax.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -294,27 +309,28 @@ public class TaxInformation3 {
 	 * nextVersions} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#ReferenceNumber
-	 * TaxInformation4.ReferenceNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#mmReferenceNumber
+	 * TaxInformation4.mmReferenceNumber}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ReferenceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmReferenceNumber = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmIdentification;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Identification;
 			isDerived = false;
 			xmlTag = "RefNb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReferenceNumber";
 			definition = "Tax reference information that is specific to a taxing agency.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.ReferenceNumber);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmReferenceNumber);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected Max35Text method;
 	/**
 	 * Method used to indicate the underlying business or how the tax is paid.
 	 * <p>
@@ -327,7 +343,7 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Method Tax.Method}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmMethod Tax.mmMethod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -349,27 +365,28 @@ public class TaxInformation3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#Method
-	 * TaxInformation4.Method}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmMethod
+	 * TaxInformation4.mmMethod}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Method = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMethod = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmMethod;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Method;
 			isDerived = false;
 			xmlTag = "Mtd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Method";
 			definition = "Method used to indicate the underlying business or how the tax is paid.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.Method);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmMethod);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount totalTaxableBaseAmount;
 	/**
 	 * Total amount of money on which the tax is based.
 	 * <p>
@@ -383,8 +400,8 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#TaxableBaseAmount
-	 * Tax.TaxableBaseAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmTaxableBaseAmount
+	 * Tax.mmTaxableBaseAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -405,27 +422,28 @@ public class TaxInformation3 {
 	 * nextVersions} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#TotalTaxableBaseAmount
-	 * TaxInformation4.TotalTaxableBaseAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#mmTotalTaxableBaseAmount
+	 * TaxInformation4.mmTotalTaxableBaseAmount}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalTaxableBaseAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalTaxableBaseAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmTaxableBaseAmount;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.TaxableBaseAmount;
 			isDerived = false;
 			xmlTag = "TtlTaxblBaseAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalTaxableBaseAmount";
 			definition = "Total amount of money on which the tax is based.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.TotalTaxableBaseAmount);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmTotalTaxableBaseAmount);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount totalTaxAmount;
 	/**
 	 * Total amount of money as result of the calculation of the tax.
 	 * <p>
@@ -439,7 +457,7 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Amount Tax.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmAmount Tax.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -461,27 +479,28 @@ public class TaxInformation3 {
 	 * nextVersions} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#TotalTaxAmount
-	 * TaxInformation4.TotalTaxAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#mmTotalTaxAmount
+	 * TaxInformation4.mmTotalTaxAmount}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalTaxAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalTaxAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmAmount;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Amount;
 			isDerived = false;
 			xmlTag = "TtlTaxAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalTaxAmount";
 			definition = "Total amount of money as result of the calculation of the tax.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.TotalTaxAmount);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmTotalTaxAmount);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected ISODate date;
 	/**
 	 * Date by which tax is due.
 	 * <p>
@@ -494,7 +513,8 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#TaxDate Tax.TaxDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmTaxDate Tax.mmTaxDate}
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -514,27 +534,28 @@ public class TaxInformation3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#Date
-	 * TaxInformation4.Date}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmDate
+	 * TaxInformation4.mmDate}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Date = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmTaxDate;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.TaxDate;
 			isDerived = false;
 			xmlTag = "Dt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Date by which tax is due.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.Date);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmDate);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected Number sequenceNumber;
 	/**
 	 * Sequential number of the tax report.
 	 * <p>
@@ -564,26 +585,27 @@ public class TaxInformation3 {
 	 * nextVersions} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#SequenceNumber
-	 * TaxInformation4.SequenceNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.TaxInformation4#mmSequenceNumber
+	 * TaxInformation4.mmSequenceNumber}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute SequenceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSequenceNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> TaxInformation3.mmObject();
 			isDerived = false;
 			xmlTag = "SeqNb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SequenceNumber";
 			definition = "Sequential number of the tax report.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.SequenceNumber);
-			minOccurs = 0;
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmSequenceNumber);
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.TaxRecord1> record;
 	/**
 	 * Record of tax details.
 	 * <p>
@@ -594,7 +616,7 @@ public class TaxInformation3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Tax#Record Tax.Record}</li>
+	 * {@linkplain com.tools20022.repository.entity.Tax#mmRecord Tax.mmRecord}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -614,43 +636,131 @@ public class TaxInformation3 {
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#Record
-	 * TaxInformation4.Record}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.TaxInformation4#mmRecord
+	 * TaxInformation4.mmRecord}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Record = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRecord = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Tax.mmRecord;
 			componentContext_lazy = () -> TaxInformation3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Tax.Record;
 			isDerived = false;
 			xmlTag = "Rcrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Record";
 			definition = "Record of tax details.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation4.Record);
+			nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmRecord);
 			minOccurs = 0;
-			type_lazy = () -> TaxRecord1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TaxRecord1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxInformation3.Creditor, com.tools20022.repository.msg.TaxInformation3.Debtor, com.tools20022.repository.msg.TaxInformation3.AdministrationZone,
-						com.tools20022.repository.msg.TaxInformation3.ReferenceNumber, com.tools20022.repository.msg.TaxInformation3.Method, com.tools20022.repository.msg.TaxInformation3.TotalTaxableBaseAmount,
-						com.tools20022.repository.msg.TaxInformation3.TotalTaxAmount, com.tools20022.repository.msg.TaxInformation3.Date, com.tools20022.repository.msg.TaxInformation3.SequenceNumber,
-						com.tools20022.repository.msg.TaxInformation3.Record);
+				messageElement_lazy = () -> Arrays.asList(TaxInformation3.mmCreditor, TaxInformation3.mmDebtor, TaxInformation3.mmAdministrationZone, TaxInformation3.mmReferenceNumber, TaxInformation3.mmMethod,
+						TaxInformation3.mmTotalTaxableBaseAmount, TaxInformation3.mmTotalTaxAmount, TaxInformation3.mmDate, TaxInformation3.mmSequenceNumber, TaxInformation3.mmRecord);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxInformation3";
 				definition = "Details about tax paid, or to be paid, to the government in accordance with the law, including pre-defined parameters such as thresholds and type of account.";
 				nextVersions_lazy = () -> Arrays.asList(TaxInformation4.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cdtr")
+	public TaxParty1 getCreditor() {
+		return creditor;
+	}
+
+	public void setCreditor(com.tools20022.repository.msg.TaxParty1 creditor) {
+		this.creditor = creditor;
+	}
+
+	@XmlElement(name = "Dbtr")
+	public TaxParty2 getDebtor() {
+		return debtor;
+	}
+
+	public void setDebtor(com.tools20022.repository.msg.TaxParty2 debtor) {
+		this.debtor = debtor;
+	}
+
+	@XmlElement(name = "AdmstnZn")
+	public Max35Text getAdministrationZone() {
+		return administrationZone;
+	}
+
+	public void setAdministrationZone(Max35Text administrationZone) {
+		this.administrationZone = administrationZone;
+	}
+
+	@XmlElement(name = "RefNb")
+	public Max140Text getReferenceNumber() {
+		return referenceNumber;
+	}
+
+	public void setReferenceNumber(Max140Text referenceNumber) {
+		this.referenceNumber = referenceNumber;
+	}
+
+	@XmlElement(name = "Mtd")
+	public Max35Text getMethod() {
+		return method;
+	}
+
+	public void setMethod(Max35Text method) {
+		this.method = method;
+	}
+
+	@XmlElement(name = "TtlTaxblBaseAmt")
+	public ActiveOrHistoricCurrencyAndAmount getTotalTaxableBaseAmount() {
+		return totalTaxableBaseAmount;
+	}
+
+	public void setTotalTaxableBaseAmount(ActiveOrHistoricCurrencyAndAmount totalTaxableBaseAmount) {
+		this.totalTaxableBaseAmount = totalTaxableBaseAmount;
+	}
+
+	@XmlElement(name = "TtlTaxAmt")
+	public ActiveOrHistoricCurrencyAndAmount getTotalTaxAmount() {
+		return totalTaxAmount;
+	}
+
+	public void setTotalTaxAmount(ActiveOrHistoricCurrencyAndAmount totalTaxAmount) {
+		this.totalTaxAmount = totalTaxAmount;
+	}
+
+	@XmlElement(name = "Dt")
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
+	}
+
+	@XmlElement(name = "SeqNb")
+	public Number getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	public void setSequenceNumber(Number sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
+
+	@XmlElement(name = "Rcrd")
+	public List<TaxRecord1> getRecord() {
+		return record;
+	}
+
+	public void setRecord(List<com.tools20022.repository.msg.TaxRecord1> record) {
+		this.record = record;
 	}
 }

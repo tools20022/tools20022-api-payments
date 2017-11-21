@@ -19,11 +19,19 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Organisation;
+import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.entity.TaxPartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies an entity involved in a trade activity.
@@ -35,12 +43,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TradeParty2#PartyIdentification
- * TradeParty2.PartyIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TradeParty2#LegalOrganisation
- * TradeParty2.LegalOrganisation}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TradeParty2#TaxParty
- * TradeParty2.TaxParty}</li>
+ * {@linkplain com.tools20022.repository.msg.TradeParty2#mmPartyIdentification
+ * TradeParty2.mmPartyIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TradeParty2#mmLegalOrganisation
+ * TradeParty2.mmLegalOrganisation}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeParty2#mmTaxParty
+ * TradeParty2.mmTaxParty}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies an entity involved in a trade activity."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TradeParty2", propOrder = {"partyIdentification", "legalOrganisation", "taxParty"})
 public class TradeParty2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PartyIdentification77 partyIdentification;
 	/**
 	 * Unique identification, as assigned by an organisation, to unambiguously
 	 * identify a party.
@@ -75,8 +87,8 @@ public class TradeParty2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -96,21 +108,22 @@ public class TradeParty2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PartyIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPartyIdentification = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> TradeParty2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "PtyId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartyIdentification";
 			definition = "Unique identification, as assigned by an organisation, to unambiguously identify a party.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification77.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
 		}
 	};
+	protected LegalOrganisation2 legalOrganisation;
 	/**
 	 * Legally constituted organization specified for this trade party.
 	 * <p>
@@ -141,21 +154,22 @@ public class TradeParty2 {
 	 * "Legally constituted organization specified for this trade party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd LegalOrganisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmLegalOrganisation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> TradeParty2.mmObject();
 			businessComponentTrace_lazy = () -> Organisation.mmObject();
+			componentContext_lazy = () -> TradeParty2.mmObject();
 			isDerived = false;
 			xmlTag = "LglOrg";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LegalOrganisation";
 			definition = "Legally constituted organization specified for this trade party.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> LegalOrganisation2.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.LegalOrganisation2.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.TaxParty3> taxParty;
 	/**
 	 * Entity involved in an activity.
 	 * <p>
@@ -184,32 +198,59 @@ public class TradeParty2 {
 	 * definition} = "Entity involved in an activity."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd TaxParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTaxParty = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> TradeParty2.mmObject();
 			businessComponentTrace_lazy = () -> TaxPartyRole.mmObject();
+			componentContext_lazy = () -> TradeParty2.mmObject();
 			isDerived = false;
 			xmlTag = "TaxPty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxParty";
 			definition = "Entity involved in an activity.";
 			minOccurs = 0;
-			type_lazy = () -> TaxParty3.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TaxParty3.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TradeParty2.PartyIdentification, com.tools20022.repository.msg.TradeParty2.LegalOrganisation, com.tools20022.repository.msg.TradeParty2.TaxParty);
+				messageElement_lazy = () -> Arrays.asList(TradeParty2.mmPartyIdentification, TradeParty2.mmLegalOrganisation, TradeParty2.mmTaxParty);
 				trace_lazy = () -> Role.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeParty2";
 				definition = "Specifies an entity involved in a trade activity.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "PtyId", required = true)
+	public PartyIdentification77 getPartyIdentification() {
+		return partyIdentification;
+	}
+
+	public void setPartyIdentification(com.tools20022.repository.msg.PartyIdentification77 partyIdentification) {
+		this.partyIdentification = partyIdentification;
+	}
+
+	@XmlElement(name = "LglOrg")
+	public LegalOrganisation2 getLegalOrganisation() {
+		return legalOrganisation;
+	}
+
+	public void setLegalOrganisation(com.tools20022.repository.msg.LegalOrganisation2 legalOrganisation) {
+		this.legalOrganisation = legalOrganisation;
+	}
+
+	@XmlElement(name = "TaxPty")
+	public List<TaxParty3> getTaxParty() {
+		return taxParty;
+	}
+
+	public void setTaxParty(List<com.tools20022.repository.msg.TaxParty3> taxParty) {
+		this.taxParty = taxParty;
 	}
 }

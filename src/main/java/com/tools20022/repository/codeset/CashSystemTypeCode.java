@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,20 +31,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#ACH
- * CashSystemTypeCode.ACH}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#mmACH
+ * CashSystemTypeCode.mmACH}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#ChequeClearing
- * CashSystemTypeCode.ChequeClearing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#RTGS
- * CashSystemTypeCode.RTGS}</li>
+ * {@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#mmChequeClearing
+ * CashSystemTypeCode.mmChequeClearing}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CashSystemTypeCode#mmRTGS
+ * CashSystemTypeCode.mmRTGS}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -87,9 +89,9 @@ public class CashSystemTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ACH = new MMCode() {
+	public static final MMCode mmACH = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ACH";
 			definition = "Automated Clearing House. Payment system that clears cash transfers and settles the proceeds in a lump sum, usually on a multilateral netting basis.";
 			owner_lazy = () -> CashSystemTypeCode.mmObject();
@@ -120,9 +122,9 @@ public class CashSystemTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ChequeClearing = new MMCode() {
+	public static final MMCode mmChequeClearing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ChequeClearing";
 			definition = "Payment system that clears physical or truncated cheques and settles the proceeds in a lump sum, usually on a multilateral netting basis.";
 			owner_lazy = () -> CashSystemTypeCode.mmObject();
@@ -153,9 +155,9 @@ public class CashSystemTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RTGS = new MMCode() {
+	public static final MMCode mmRTGS = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RTGS";
 			definition = "Real Time Gross Settlement System. Payment system that simultaneously clears individual transfers and settles them in central bank money.";
 			owner_lazy = () -> CashSystemTypeCode.mmObject();
@@ -166,12 +168,12 @@ public class CashSystemTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACHS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashSystemTypeCode";
 				definition = "Specifies a type of payment system.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CashSystemTypeCode.ACH, com.tools20022.repository.codeset.CashSystemTypeCode.ChequeClearing, com.tools20022.repository.codeset.CashSystemTypeCode.RTGS);
+				code_lazy = () -> Arrays.asList(CashSystemTypeCode.mmACH, CashSystemTypeCode.mmChequeClearing, CashSystemTypeCode.mmRTGS);
 			}
 		});
 		return mmObject_lazy.get();

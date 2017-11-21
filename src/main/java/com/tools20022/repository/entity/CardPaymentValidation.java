@@ -17,9 +17,7 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CardholderAddressVerificationResultCode;
 import com.tools20022.repository.codeset.CSCResultCode;
 import com.tools20022.repository.codeset.FailureReasonCode;
@@ -28,8 +26,11 @@ import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max500Text;
 import com.tools20022.repository.datatype.Min6Max8Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Results and parameters of the card payment verification.
@@ -45,47 +46,47 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#TransactionSuccess
- * CardPaymentValidation.TransactionSuccess}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmTransactionSuccess
+ * CardPaymentValidation.mmTransactionSuccess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#MerchantOverride
- * CardPaymentValidation.MerchantOverride}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmMerchantOverride
+ * CardPaymentValidation.mmMerchantOverride}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#ValidityDate
- * CardPaymentValidation.ValidityDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmValidityDate
+ * CardPaymentValidation.mmValidityDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#CardPayment
- * CardPaymentValidation.CardPayment}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmCardPayment
+ * CardPaymentValidation.mmCardPayment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Response
- * CardPaymentValidation.Response}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmResponse
+ * CardPaymentValidation.mmResponse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#AuthorisationCode
- * CardPaymentValidation.AuthorisationCode}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmAuthorisationCode
+ * CardPaymentValidation.mmAuthorisationCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#OnLineReason
- * CardPaymentValidation.OnLineReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmOnLineReason
+ * CardPaymentValidation.mmOnLineReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Balance
- * CardPaymentValidation.Balance}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmBalance
+ * CardPaymentValidation.mmBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#CardholderAddressVerificationResult
- * CardPaymentValidation.CardholderAddressVerificationResult}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmCardholderAddressVerificationResult
+ * CardPaymentValidation.mmCardholderAddressVerificationResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#CSCResult
- * CardPaymentValidation.CSCResult}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmCSCResult
+ * CardPaymentValidation.mmCSCResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#DeclinedProductCode
- * CardPaymentValidation.DeclinedProductCode}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmDeclinedProductCode
+ * CardPaymentValidation.mmDeclinedProductCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#ElectronicCommerceAuthenticationResult
- * CardPaymentValidation.ElectronicCommerceAuthenticationResult}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmElectronicCommerceAuthenticationResult
+ * CardPaymentValidation.mmElectronicCommerceAuthenticationResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#FailureReason
- * CardPaymentValidation.FailureReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmFailureReason
+ * CardPaymentValidation.mmFailureReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Signature
- * CardPaymentValidation.Signature}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmSignature
+ * CardPaymentValidation.mmSignature}</li>
  * </ul>
  * </li>
  * <li>
@@ -93,27 +94,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashBalance#RelatedCardPaymentValidationProcess
- * CashBalance.RelatedCardPaymentValidationProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.CashBalance#mmRelatedCardPaymentValidationProcess
+ * CashBalance.mmRelatedCardPaymentValidationProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Signature#CardPaymentValidation
- * Signature.CardPaymentValidation}</li>
+ * {@linkplain com.tools20022.repository.entity.Signature#mmCardPaymentValidation
+ * Signature.mmCardPaymentValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#Validation
- * CardPaymentAcquiring.Validation}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#mmValidation
+ * CardPaymentAcquiring.mmValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductCategory#RelatedCardPaymentValidation
- * ProductCategory.RelatedCardPaymentValidation}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductCategory#mmRelatedCardPaymentValidation
+ * ProductCategory.mmRelatedCardPaymentValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Response#RelatedCardPaymentValidation
- * Response.RelatedCardPaymentValidation}</li>
+ * {@linkplain com.tools20022.repository.entity.Response#mmRelatedCardPaymentValidation
+ * Response.mmRelatedCardPaymentValidation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -127,6 +128,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CardPaymentValidation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected TrueFalseIndicator transactionSuccess;
 	/**
 	 * Outcome of the transaction at the acceptor.
 	 * <p>
@@ -153,18 +155,27 @@ public class CardPaymentValidation {
 	 * definition} = "Outcome of the transaction at the acceptor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TransactionSuccess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTransactionSuccess = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionSuccess";
 			definition = "Outcome of the transaction at the acceptor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getTransactionSuccess", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TrueFalseIndicator merchantOverride;
 	/**
 	 * Indicate that the acceptor has forced the transaction in spite of the
 	 * authorisation result (online or offline), or incident to complete the
@@ -195,18 +206,27 @@ public class CardPaymentValidation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MerchantOverride = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMerchantOverride = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MerchantOverride";
 			definition = "Indicate that the acceptor has forced the transaction in spite of the authorisation result (online or offline), or incident to complete the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getMerchantOverride", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODate validityDate;
 	/**
 	 * Transaction authorisation deadline to complete the related payment.
 	 * <p>
@@ -233,18 +253,27 @@ public class CardPaymentValidation {
 	 * "Transaction authorisation deadline to complete the related payment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ValidityDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmValidityDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityDate";
 			definition = "Transaction authorisation deadline to complete the related payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getValidityDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CardPaymentAcquiring cardPayment;
 	/**
 	 * Card payment to which the validation process applies.
 	 * <p>
@@ -253,8 +282,8 @@ public class CardPaymentValidation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#Validation
-	 * CardPaymentAcquiring.Validation}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPaymentAcquiring#mmValidation
+	 * CardPaymentAcquiring.mmValidation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -279,20 +308,21 @@ public class CardPaymentValidation {
 	 * definition} = "Card payment to which the validation process applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardPayment";
 			definition = "Card payment to which the validation process applies.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CardPaymentAcquiring.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.Validation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmValidation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Response> response;
 	/**
 	 * Response to an authorisation request.
 	 * <p>
@@ -301,8 +331,8 @@ public class CardPaymentValidation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Response#RelatedCardPaymentValidation
-	 * Response.RelatedCardPaymentValidation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Response#mmRelatedCardPaymentValidation
+	 * Response.mmRelatedCardPaymentValidation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -325,19 +355,20 @@ public class CardPaymentValidation {
 	 * definition} = "Response to an authorisation request."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Response = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmResponse = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Response";
 			definition = "Response to an authorisation request.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Response.mmRelatedCardPaymentValidation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Response.RelatedCardPaymentValidation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Min6Max8Text authorisationCode;
 	/**
 	 * Value assigned by the authorising party.
 	 * <p>
@@ -364,18 +395,27 @@ public class CardPaymentValidation {
 	 * definition} = "Value assigned by the authorising party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AuthorisationCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAuthorisationCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisationCode";
 			definition = "Value assigned by the authorising party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Min6Max8Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getAuthorisationCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OnLineReasonCode onLineReason;
 	/**
 	 * Reason to process an online authorisation.
 	 * <p>
@@ -402,18 +442,27 @@ public class CardPaymentValidation {
 	 * definition} = "Reason to process an online authorisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OnLineReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOnLineReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OnLineReason";
 			definition = "Reason to process an online authorisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> OnLineReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getOnLineReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CashBalance balance;
 	/**
 	 * Balance of the account attached to the payment card.
 	 * <p>
@@ -422,8 +471,8 @@ public class CardPaymentValidation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashBalance#RelatedCardPaymentValidationProcess
-	 * CashBalance.RelatedCardPaymentValidationProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashBalance#mmRelatedCardPaymentValidationProcess
+	 * CashBalance.mmRelatedCardPaymentValidationProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -447,20 +496,21 @@ public class CardPaymentValidation {
 	 * definition} = "Balance of the account attached to the payment card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Balance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Balance of the account attached to the payment card.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CashBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashBalance.RelatedCardPaymentValidationProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashBalance.mmRelatedCardPaymentValidationProcess;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashBalance.mmObject();
 		}
 	};
+	protected CardholderAddressVerificationResultCode cardholderAddressVerificationResult;
 	/**
 	 * Result of the cardholder verification address checks on the street number
 	 * and the postal code.
@@ -490,18 +540,27 @@ public class CardPaymentValidation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CardholderAddressVerificationResult = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCardholderAddressVerificationResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CardholderAddressVerificationResult";
 			definition = "Result of the cardholder verification address checks on the street number and the postal code.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CardholderAddressVerificationResultCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getCardholderAddressVerificationResult", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CSCResultCode cSCResult;
 	/**
 	 * Result of the printed CSC (Card Security Code) validation.
 	 * <p>
@@ -529,18 +588,27 @@ public class CardPaymentValidation {
 	 * "Result of the printed CSC (Card Security Code) validation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CSCResult = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCSCResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSCResult";
 			definition = "Result of the printed CSC (Card Security Code) validation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CSCResultCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getCSCResult", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.ProductCategory> declinedProductCode;
 	/**
 	 * Product code for which the payment authorisation was declined.
 	 * <p>
@@ -549,8 +617,8 @@ public class CardPaymentValidation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductCategory#RelatedCardPaymentValidation
-	 * ProductCategory.RelatedCardPaymentValidation}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductCategory#mmRelatedCardPaymentValidation
+	 * ProductCategory.mmRelatedCardPaymentValidation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -575,19 +643,20 @@ public class CardPaymentValidation {
 	 * "Product code for which the payment authorisation was declined."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DeclinedProductCode = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDeclinedProductCode = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeclinedProductCode";
 			definition = "Product code for which the payment authorisation was declined.";
 			minOccurs = 0;
-			type_lazy = () -> ProductCategory.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductCategory.RelatedCardPaymentValidation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmRelatedCardPaymentValidation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ProductCategory.mmObject();
 		}
 	};
+	protected Max500Text electronicCommerceAuthenticationResult;
 	/**
 	 * Result of an e-commerce authentication process.
 	 * <p>
@@ -613,18 +682,27 @@ public class CardPaymentValidation {
 	 * definition} = "Result of an e-commerce authentication process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ElectronicCommerceAuthenticationResult = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmElectronicCommerceAuthenticationResult = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicCommerceAuthenticationResult";
 			definition = "Result of an e-commerce authentication process.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max500Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getElectronicCommerceAuthenticationResult", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FailureReasonCode failureReason;
 	/**
 	 * Incident occuring during the transaction.
 	 * <p>
@@ -651,18 +729,27 @@ public class CardPaymentValidation {
 	 * definition} = "Incident occuring during the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FailureReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFailureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailureReason";
 			definition = "Incident occuring during the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FailureReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CardPaymentValidation.class.getMethod("getFailureReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Signature> signature;
 	/**
 	 * Signature of the message to display or print.
 	 * <p>
@@ -671,8 +758,8 @@ public class CardPaymentValidation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Signature#CardPaymentValidation
-	 * Signature.CardPaymentValidation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Signature#mmCardPaymentValidation
+	 * Signature.mmCardPaymentValidation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -696,39 +783,155 @@ public class CardPaymentValidation {
 	 * definition} = "Signature of the message to display or print."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Signature = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSignature = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CardPaymentValidation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Signature";
 			definition = "Signature of the message to display or print.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Signature.mmCardPaymentValidation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Signature.CardPaymentValidation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentValidation";
 				definition = "Results and parameters of the card payment verification.";
-				associationDomain_lazy = () -> Arrays
-						.asList(com.tools20022.repository.entity.CashBalance.RelatedCardPaymentValidationProcess, com.tools20022.repository.entity.Signature.CardPaymentValidation,
-								com.tools20022.repository.entity.CardPaymentAcquiring.Validation, com.tools20022.repository.entity.ProductCategory.RelatedCardPaymentValidation,
-								com.tools20022.repository.entity.Response.RelatedCardPaymentValidation);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentValidation.TransactionSuccess, com.tools20022.repository.entity.CardPaymentValidation.MerchantOverride,
-						com.tools20022.repository.entity.CardPaymentValidation.ValidityDate, com.tools20022.repository.entity.CardPaymentValidation.CardPayment, com.tools20022.repository.entity.CardPaymentValidation.Response,
-						com.tools20022.repository.entity.CardPaymentValidation.AuthorisationCode, com.tools20022.repository.entity.CardPaymentValidation.OnLineReason, com.tools20022.repository.entity.CardPaymentValidation.Balance,
-						com.tools20022.repository.entity.CardPaymentValidation.CardholderAddressVerificationResult, com.tools20022.repository.entity.CardPaymentValidation.CSCResult,
-						com.tools20022.repository.entity.CardPaymentValidation.DeclinedProductCode, com.tools20022.repository.entity.CardPaymentValidation.ElectronicCommerceAuthenticationResult,
-						com.tools20022.repository.entity.CardPaymentValidation.FailureReason, com.tools20022.repository.entity.CardPaymentValidation.Signature);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashBalance.mmRelatedCardPaymentValidationProcess, com.tools20022.repository.entity.Signature.mmCardPaymentValidation,
+						com.tools20022.repository.entity.CardPaymentAcquiring.mmValidation, com.tools20022.repository.entity.ProductCategory.mmRelatedCardPaymentValidation,
+						com.tools20022.repository.entity.Response.mmRelatedCardPaymentValidation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentValidation.mmTransactionSuccess, com.tools20022.repository.entity.CardPaymentValidation.mmMerchantOverride,
+						com.tools20022.repository.entity.CardPaymentValidation.mmValidityDate, com.tools20022.repository.entity.CardPaymentValidation.mmCardPayment, com.tools20022.repository.entity.CardPaymentValidation.mmResponse,
+						com.tools20022.repository.entity.CardPaymentValidation.mmAuthorisationCode, com.tools20022.repository.entity.CardPaymentValidation.mmOnLineReason, com.tools20022.repository.entity.CardPaymentValidation.mmBalance,
+						com.tools20022.repository.entity.CardPaymentValidation.mmCardholderAddressVerificationResult, com.tools20022.repository.entity.CardPaymentValidation.mmCSCResult,
+						com.tools20022.repository.entity.CardPaymentValidation.mmDeclinedProductCode, com.tools20022.repository.entity.CardPaymentValidation.mmElectronicCommerceAuthenticationResult,
+						com.tools20022.repository.entity.CardPaymentValidation.mmFailureReason, com.tools20022.repository.entity.CardPaymentValidation.mmSignature);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CardPaymentValidation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public TrueFalseIndicator getTransactionSuccess() {
+		return transactionSuccess;
+	}
+
+	public void setTransactionSuccess(TrueFalseIndicator transactionSuccess) {
+		this.transactionSuccess = transactionSuccess;
+	}
+
+	public TrueFalseIndicator getMerchantOverride() {
+		return merchantOverride;
+	}
+
+	public void setMerchantOverride(TrueFalseIndicator merchantOverride) {
+		this.merchantOverride = merchantOverride;
+	}
+
+	public ISODate getValidityDate() {
+		return validityDate;
+	}
+
+	public void setValidityDate(ISODate validityDate) {
+		this.validityDate = validityDate;
+	}
+
+	public CardPaymentAcquiring getCardPayment() {
+		return cardPayment;
+	}
+
+	public void setCardPayment(com.tools20022.repository.entity.CardPaymentAcquiring cardPayment) {
+		this.cardPayment = cardPayment;
+	}
+
+	public List<Response> getResponse() {
+		return response;
+	}
+
+	public void setResponse(List<com.tools20022.repository.entity.Response> response) {
+		this.response = response;
+	}
+
+	public Min6Max8Text getAuthorisationCode() {
+		return authorisationCode;
+	}
+
+	public void setAuthorisationCode(Min6Max8Text authorisationCode) {
+		this.authorisationCode = authorisationCode;
+	}
+
+	public OnLineReasonCode getOnLineReason() {
+		return onLineReason;
+	}
+
+	public void setOnLineReason(OnLineReasonCode onLineReason) {
+		this.onLineReason = onLineReason;
+	}
+
+	public CashBalance getBalance() {
+		return balance;
+	}
+
+	public void setBalance(com.tools20022.repository.entity.CashBalance balance) {
+		this.balance = balance;
+	}
+
+	public CardholderAddressVerificationResultCode getCardholderAddressVerificationResult() {
+		return cardholderAddressVerificationResult;
+	}
+
+	public void setCardholderAddressVerificationResult(CardholderAddressVerificationResultCode cardholderAddressVerificationResult) {
+		this.cardholderAddressVerificationResult = cardholderAddressVerificationResult;
+	}
+
+	public CSCResultCode getCSCResult() {
+		return cSCResult;
+	}
+
+	public void setCSCResult(CSCResultCode cSCResult) {
+		this.cSCResult = cSCResult;
+	}
+
+	public List<ProductCategory> getDeclinedProductCode() {
+		return declinedProductCode;
+	}
+
+	public void setDeclinedProductCode(List<com.tools20022.repository.entity.ProductCategory> declinedProductCode) {
+		this.declinedProductCode = declinedProductCode;
+	}
+
+	public Max500Text getElectronicCommerceAuthenticationResult() {
+		return electronicCommerceAuthenticationResult;
+	}
+
+	public void setElectronicCommerceAuthenticationResult(Max500Text electronicCommerceAuthenticationResult) {
+		this.electronicCommerceAuthenticationResult = electronicCommerceAuthenticationResult;
+	}
+
+	public FailureReasonCode getFailureReason() {
+		return failureReason;
+	}
+
+	public void setFailureReason(FailureReasonCode failureReason) {
+		this.failureReason = failureReason;
+	}
+
+	public List<Signature> getSignature() {
+		return signature;
+	}
+
+	public void setSignature(List<com.tools20022.repository.entity.Signature> signature) {
+		this.signature = signature;
 	}
 }

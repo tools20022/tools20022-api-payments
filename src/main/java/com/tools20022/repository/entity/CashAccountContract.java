@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AccountContract;
-import com.tools20022.repository.msg.AccountContract2;
-import com.tools20022.repository.msg.AccountContract3;
-import com.tools20022.repository.msg.AccountContract4;
-import com.tools20022.repository.msg.AccountReport15;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Account contract established between the organisation or the group to which
@@ -41,57 +42,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountContract#CashAccount
- * CashAccountContract.CashAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountContract#mmCashAccount
+ * CashAccountContract.mmCashAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountContract#TransferCashAccount
- * CashAccountContract.TransferCashAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountContract#mmTransferCashAccount
+ * CashAccountContract.mmTransferCashAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountContract#Services
- * CashAccountContract.Services}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountContract#mmServices
+ * CashAccountContract.mmServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountContract#BalanceTransfer
- * CashAccountContract.BalanceTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountContract#mmBalanceTransfer
+ * CashAccountContract.mmBalanceTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountContract#CashAccountMandate
- * CashAccountContract.CashAccountMandate}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountContract#mmCashAccountMandate
+ * CashAccountContract.mmCashAccountMandate}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccount#CashAccountContract
- * CashAccount.CashAccountContract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccount#ClosedAccountContract
- * CashAccount.ClosedAccountContract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedAccountClosingTerms
- * PaymentObligation.RelatedAccountClosingTerms}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountService#CashAccountContract
- * CashAccountService.CashAccountContract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccountMandate#CashAccountContract
- * CashAccountMandate.CashAccountContract}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.AccountReport15#UnderlyingMasterAgreement
- * AccountReport15.UnderlyingMasterAgreement}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AccountReport15#ContractDates
- * AccountReport15.ContractDates}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.AccountContract
- * AccountContract}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -107,10 +73,46 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashAccountContract
+ * CashAccount.mmCashAccountContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashAccount#mmClosedAccountContract
+ * CashAccount.mmClosedAccountContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedAccountClosingTerms
+ * PaymentObligation.mmRelatedAccountClosingTerms}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountService#mmCashAccountContract
+ * CashAccountService.mmCashAccountContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashAccountMandate#mmCashAccountContract
+ * CashAccountMandate.mmCashAccountContract}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.AccountReport15#mmUnderlyingMasterAgreement
+ * AccountReport15.mmUnderlyingMasterAgreement}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.AccountReport15#mmContractDates
+ * AccountReport15.mmContractDates}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.AccountContract
+ * AccountContract}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -126,6 +128,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CashAccountContract extends AccountContract {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
 	 * Specifies the account which is managed by the stipulations of the
 	 * contract. it is derived from the association between AccountContract and
@@ -136,8 +139,8 @@ public class CashAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#CashAccountContract
-	 * CashAccount.CashAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashAccountContract
+	 * CashAccount.mmCashAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -148,16 +151,17 @@ public class CashAccountContract extends AccountContract {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountReport15#Account
-	 * AccountReport15.Account}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.AccountReport15#mmAccount
+	 * AccountReport15.mmAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountReport15#ReferenceAccount
-	 * AccountReport15.ReferenceAccount}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.ReportingRequest3#Account
-	 * ReportingRequest3.Account}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountReport15#mmReferenceAccount
+	 * AccountReport15.mmReferenceAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingStatement2#AccountCharacteristics
-	 * BillingStatement2.AccountCharacteristics}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingRequest3#mmAccount
+	 * ReportingRequest3.mmAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.BillingStatement2#mmAccountCharacteristics
+	 * BillingStatement2.mmAccountCharacteristics}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -178,21 +182,21 @@ public class CashAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountReport15.Account, com.tools20022.repository.msg.AccountReport15.ReferenceAccount, com.tools20022.repository.msg.ReportingRequest3.Account,
-					com.tools20022.repository.msg.BillingStatement2.AccountCharacteristics);
-			elementContext_lazy = () -> CashAccountContract.mmObject();
+			derivation_lazy = () -> Arrays.asList(AccountReport15.mmAccount, AccountReport15.mmReferenceAccount, ReportingRequest3.mmAccount, BillingStatement2.mmAccountCharacteristics);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Specifies the account which is managed by the stipulations of the contract. it is derived from the association between AccountContract and Account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmCashAccountContract;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.CashAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CashAccount> transferCashAccount;
 	/**
 	 * Identification of the account to/from which the balance of the account
 	 * must be transferred.
@@ -202,8 +206,8 @@ public class CashAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#ClosedAccountContract
-	 * CashAccount.ClosedAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmClosedAccountContract
+	 * CashAccount.mmClosedAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -229,19 +233,20 @@ public class CashAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TransferCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTransferCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransferCashAccount";
 			definition = "Identification of the account to/from which the balance of the account must be transferred.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmClosedAccountContract;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.ClosedAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CashAccountService> services;
 	/**
 	 * Operations on a bank account that are allowed as part of the services
 	 * offered to the owners of a bank account. It is derived from the
@@ -252,8 +257,8 @@ public class CashAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccountService#CashAccountContract
-	 * CashAccountService.CashAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccountService#mmCashAccountContract
+	 * CashAccountService.mmCashAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -279,19 +284,20 @@ public class CashAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Services = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Operations on a bank account that are allowed as part of the services offered to the owners of a bank account. It is derived from the association between AccountContract and AccountService.";
 			minOccurs = 0;
-			type_lazy = () -> CashAccountService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountService.CashAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmCashAccountContract;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PaymentObligation> balanceTransfer;
 	/**
 	 * Specifies the transfer of a positive balance (fully or partially) or the
 	 * transfer of cash to compensate a negative balance. This transfer occurs
@@ -303,8 +309,8 @@ public class CashAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedAccountClosingTerms
-	 * PaymentObligation.RelatedAccountClosingTerms}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedAccountClosingTerms
+	 * PaymentObligation.mmRelatedAccountClosingTerms}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -330,19 +336,20 @@ public class CashAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BalanceTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBalanceTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BalanceTransfer";
 			definition = "Specifies the transfer of a positive balance (fully or partially) or the transfer of cash to compensate a negative balance. This transfer occurs at the closing of the account. It contains the identification of the account to which or from which the amount must be transferred.";
 			minOccurs = 0;
-			type_lazy = () -> PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.RelatedAccountClosingTerms;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRelatedAccountClosingTerms;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 		}
 	};
+	protected CashAccountMandate cashAccountMandate;
 	/**
 	 * Mandate associated with a cash account contract.
 	 * <p>
@@ -351,8 +358,8 @@ public class CashAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccountMandate#CashAccountContract
-	 * CashAccountMandate.CashAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccountMandate#mmCashAccountContract
+	 * CashAccountMandate.mmCashAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -376,38 +383,83 @@ public class CashAccountContract extends AccountContract {
 	 * definition} = "Mandate associated with a cash account contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashAccountMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashAccountMandate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccountMandate";
 			definition = "Mandate associated with a cash account contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmCashAccountContract;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.CashAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountContract";
 				definition = "Account contract established between the organisation or the group to which the organisation belongs, and the account servicer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.CashAccountContract, com.tools20022.repository.entity.CashAccount.ClosedAccountContract,
-						com.tools20022.repository.entity.PaymentObligation.RelatedAccountClosingTerms, com.tools20022.repository.entity.CashAccountService.CashAccountContract,
-						com.tools20022.repository.entity.CashAccountMandate.CashAccountContract);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountReport15.UnderlyingMasterAgreement, com.tools20022.repository.msg.AccountReport15.ContractDates);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCashAccountContract, com.tools20022.repository.entity.CashAccount.mmClosedAccountContract,
+						com.tools20022.repository.entity.PaymentObligation.mmRelatedAccountClosingTerms, com.tools20022.repository.entity.CashAccountService.mmCashAccountContract,
+						com.tools20022.repository.entity.CashAccountMandate.mmCashAccountContract);
+				derivationElement_lazy = () -> Arrays.asList(AccountReport15.mmUnderlyingMasterAgreement, AccountReport15.mmContractDates);
 				superType_lazy = () -> AccountContract.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountContract.CashAccount, com.tools20022.repository.entity.CashAccountContract.TransferCashAccount,
-						com.tools20022.repository.entity.CashAccountContract.Services, com.tools20022.repository.entity.CashAccountContract.BalanceTransfer, com.tools20022.repository.entity.CashAccountContract.CashAccountMandate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountContract.mmCashAccount, com.tools20022.repository.entity.CashAccountContract.mmTransferCashAccount,
+						com.tools20022.repository.entity.CashAccountContract.mmServices, com.tools20022.repository.entity.CashAccountContract.mmBalanceTransfer, com.tools20022.repository.entity.CashAccountContract.mmCashAccountMandate);
 				derivationComponent_lazy = () -> Arrays.asList(AccountContract4.mmObject(), AccountContract2.mmObject(), AccountContract3.mmObject(), AccountReport15.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CashAccountContract.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<CashAccount> getCashAccount() {
+		return cashAccount;
+	}
+
+	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = cashAccount;
+	}
+
+	public List<CashAccount> getTransferCashAccount() {
+		return transferCashAccount;
+	}
+
+	public void setTransferCashAccount(List<com.tools20022.repository.entity.CashAccount> transferCashAccount) {
+		this.transferCashAccount = transferCashAccount;
+	}
+
+	public List<CashAccountService> getServices() {
+		return services;
+	}
+
+	public void setServices(List<com.tools20022.repository.entity.CashAccountService> services) {
+		this.services = services;
+	}
+
+	public List<PaymentObligation> getBalanceTransfer() {
+		return balanceTransfer;
+	}
+
+	public void setBalanceTransfer(List<com.tools20022.repository.entity.PaymentObligation> balanceTransfer) {
+		this.balanceTransfer = balanceTransfer;
+	}
+
+	public CashAccountMandate getCashAccountMandate() {
+		return cashAccountMandate;
+	}
+
+	public void setCashAccountMandate(com.tools20022.repository.entity.CashAccountMandate cashAccountMandate) {
+		this.cashAccountMandate = cashAccountMandate;
 	}
 }

@@ -17,16 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.GlobalNoteCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max256Text;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.LoanContract1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Preparation/bringing to market of a security (also known as primary market or
@@ -41,77 +43,82 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssueDate
- * Issuance.IssueDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmIssueDate
+ * Issuance.mmIssueDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Issuance#IssueDiscountAllowance
- * Issuance.IssueDiscountAllowance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#InterestShortfall
- * Issuance.InterestShortfall}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#RealisedLoss
- * Issuance.RealisedLoss}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#Purpose
- * Issuance.Purpose}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssueSize
- * Issuance.IssueSize}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssueNominalAmount
- * Issuance.IssueNominalAmount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#EventInformation
- * Issuance.EventInformation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssuedAsset
- * Issuance.IssuedAsset}</li>
+ * {@linkplain com.tools20022.repository.entity.Issuance#mmIssueDiscountAllowance
+ * Issuance.mmIssueDiscountAllowance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Issuance#OriginalIssueDiscount
- * Issuance.OriginalIssueDiscount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssuePlace
- * Issuance.IssuePlace}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#GlobalNoteType
- * Issuance.GlobalNoteType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#CapitalRaised
- * Issuance.CapitalRaised}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#SubscriptionPeriod
- * Issuance.SubscriptionPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#Minimum
- * Issuance.Minimum}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssuePrice
- * Issuance.IssuePrice}</li>
+ * {@linkplain com.tools20022.repository.entity.Issuance#mmInterestShortfall
+ * Issuance.mmInterestShortfall}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmRealisedLoss
+ * Issuance.mmRealisedLoss}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmPurpose
+ * Issuance.mmPurpose}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmIssueSize
+ * Issuance.mmIssueSize}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Issuance#mmIssueNominalAmount
+ * Issuance.mmIssueNominalAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmEventInformation
+ * Issuance.mmEventInformation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmIssuedAsset
+ * Issuance.mmIssuedAsset}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Issuance#mmOriginalIssueDiscount
+ * Issuance.mmOriginalIssueDiscount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmIssuePlace
+ * Issuance.mmIssuePlace}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmGlobalNoteType
+ * Issuance.mmGlobalNoteType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmCapitalRaised
+ * Issuance.mmCapitalRaised}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Issuance#mmSubscriptionPeriod
+ * Issuance.mmSubscriptionPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmMinimum
+ * Issuance.mmMinimum}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmIssuePrice
+ * Issuance.mmIssuePrice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Asset#Issuance
- * Asset.Issuance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesPricing#Issuance
- * SecuritiesPricing.Issuance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#Issuance
- * TradingMarket.Issuance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Issuance
- * DateTimePeriod.Issuance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Asset#mmIssuance
+ * Asset.mmIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedIssuance
- * SecuritiesQuantity.RelatedIssuance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Issuance
- * SecuritiesQuantity.Issuance}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmIssuance
+ * SecuritiesPricing.mmIssuance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmIssuance
+ * TradingMarket.mmIssuance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmIssuance
+ * DateTimePeriod.mmIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Issuance
- * CorporateActionEvent.Issuance}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedIssuance
+ * SecuritiesQuantity.mmRelatedIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RateAndAmount#InterestRelatedIssuance
- * RateAndAmount.InterestRelatedIssuance}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmIssuance
+ * SecuritiesQuantity.mmIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RateAndAmount#LossRelatedIssuance
- * RateAndAmount.LossRelatedIssuance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Capital#AssetIssuance
- * Capital.AssetIssuance}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmIssuance
+ * CorporateActionEvent.mmIssuance}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmInterestRelatedIssuance
+ * RateAndAmount.mmInterestRelatedIssuance}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmLossRelatedIssuance
+ * RateAndAmount.mmLossRelatedIssuance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Capital#mmAssetIssuance
+ * Capital.mmAssetIssuance}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -127,6 +134,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Issuance {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODateTime issueDate;
 	/**
 	 * Date/time at which the security was made available.
 	 * <p>
@@ -139,8 +147,8 @@ public class Issuance {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.LoanContract1#StartDate
-	 * LoanContract1.StartDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.LoanContract1#mmStartDate
+	 * LoanContract1.mmStartDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -158,19 +166,28 @@ public class Issuance {
 	 * definition} = "Date/time at which the security was made available."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IssueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIssueDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LoanContract1.StartDate);
-			elementContext_lazy = () -> Issuance.mmObject();
+			derivation_lazy = () -> Arrays.asList(LoanContract1.mmStartDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDate";
 			definition = "Date/time at which the security was made available.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Issuance.class.getMethod("getIssueDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount issueDiscountAllowance;
 	/**
 	 * Discount on a new issue or tranche of an existing issue.
 	 * <p>
@@ -196,18 +213,27 @@ public class Issuance {
 	 * definition} = "Discount on a new issue or tranche of an existing issue."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IssueDiscountAllowance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIssueDiscountAllowance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueDiscountAllowance";
 			definition = "Discount on a new issue or tranche of an existing issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Issuance.class.getMethod("getIssueDiscountAllowance", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RateAndAmount interestShortfall;
 	/**
 	 * For structured security issues where there is a set schedule of principal
 	 * and interest payments for the life of the issue, this is the difference
@@ -219,8 +245,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#InterestRelatedIssuance
-	 * RateAndAmount.InterestRelatedIssuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmInterestRelatedIssuance
+	 * RateAndAmount.mmInterestRelatedIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -245,20 +271,21 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestShortfall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestShortfall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestShortfall";
 			definition = "For structured security issues where there is a set schedule of principal and interest payments for the life of the issue, this is the difference between the actual rate of the interest payment and the expected or scheduled rate of the interest payment .";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RateAndAmount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.InterestRelatedIssuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmInterestRelatedIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 		}
 	};
+	protected RateAndAmount realisedLoss;
 	/**
 	 * For structured security issues where there is a set schedule of principal
 	 * and interest payments for the life of the issue, this is the difference
@@ -270,8 +297,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#LossRelatedIssuance
-	 * RateAndAmount.LossRelatedIssuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.RateAndAmount#mmLossRelatedIssuance
+	 * RateAndAmount.mmLossRelatedIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -296,20 +323,21 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RealisedLoss = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRealisedLoss = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RealisedLoss";
 			definition = "For structured security issues where there is a set schedule of principal and interest payments for the life of the issue, this is the difference between the actual rate of the capital or principal repayment and the scheduled capital repayment.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RateAndAmount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.LossRelatedIssuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmLossRelatedIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RateAndAmount.mmObject();
 		}
 	};
+	protected Max256Text purpose;
 	/**
 	 * Reason for which money is raised through the issuance of a security.
 	 * <p>
@@ -335,18 +363,27 @@ public class Issuance {
 	 * "Reason for which money is raised through the issuance of a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Purpose = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Reason for which money is raised through the issuance of a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Issuance.class.getMethod("getPurpose", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number issueSize;
 	/**
 	 * Identifies the issue size range.
 	 * <p>
@@ -371,18 +408,27 @@ public class Issuance {
 	 * definition} = "Identifies the issue size range."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IssueSize = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIssueSize = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueSize";
 			definition = "Identifies the issue size range.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Issuance.class.getMethod("getIssueSize", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity issueNominalAmount;
 	/**
 	 * Total original amount or quantity published.
 	 * <p>
@@ -391,8 +437,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Issuance
-	 * SecuritiesQuantity.Issuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmIssuance
+	 * SecuritiesQuantity.mmIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -415,20 +461,21 @@ public class Issuance {
 	 * definition} = "Total original amount or quantity published."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IssueNominalAmount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssueNominalAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssueNominalAmount";
 			definition = "Total original amount or quantity published.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.Issuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected CorporateActionEvent eventInformation;
 	/**
 	 * Parameters of the event.
 	 * <p>
@@ -437,8 +484,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#Issuance
-	 * CorporateActionEvent.Issuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmIssuance
+	 * CorporateActionEvent.mmIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -462,20 +509,21 @@ public class Issuance {
 	 * definition} = "Parameters of the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EventInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEventInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventInformation";
 			definition = "Parameters of the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.Issuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
+	protected Asset issuedAsset;
 	/**
 	 * Asset which is issued.
 	 * <p>
@@ -483,8 +531,9 @@ public class Issuance {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Asset#Issuance
-	 * Asset.Issuance}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Asset#mmIssuance
+	 * Asset.mmIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -506,20 +555,21 @@ public class Issuance {
 	 * definition} = "Asset which is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IssuedAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuedAsset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuedAsset";
 			definition = "Asset which is issued.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Asset.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.Issuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
 		}
 	};
+	protected SecuritiesPricing originalIssueDiscount;
 	/**
 	 * Discount from par value at the time the security is issued.
 	 * <p>
@@ -528,8 +578,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Issuance
-	 * SecuritiesPricing.Issuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmIssuance
+	 * SecuritiesPricing.mmIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -553,20 +603,21 @@ public class Issuance {
 	 * "Discount from par value at the time the security is issued."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OriginalIssueDiscount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOriginalIssueDiscount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OriginalIssueDiscount";
 			definition = "Discount from par value at the time the security is issued.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Issuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected TradingMarket issuePlace;
 	/**
 	 * Primary market or country where an asset is issued by the issuer or its
 	 * agent.
@@ -576,8 +627,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingMarket#Issuance
-	 * TradingMarket.Issuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingMarket#mmIssuance
+	 * TradingMarket.mmIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -602,20 +653,21 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd IssuePlace = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuePlace = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuePlace";
 			definition = "Primary market or country where an asset is issued by the issuer or its agent.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> TradingMarket.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.Issuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 		}
 	};
+	protected GlobalNoteCode globalNoteType;
 	/**
 	 * Identifies if the security will be issued in New Global Note (NGN) or
 	 * Classical Global Note (CGN).<br>
@@ -650,18 +702,27 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GlobalNoteType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGlobalNoteType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GlobalNoteType";
 			definition = "Identifies if the security will be issued in New Global Note (NGN) or Classical Global Note (CGN).\r\nNew Global Note (NGN): Form of global certificate which refers to the books and records of the ICSDs to determine the issue outstanding amount (IOA). \r\nClassical Global Note (CGN): Form of global certificate which requires physical annotation on the attached schedule to reflect changes in the issue outstanding amount (IOA).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> GlobalNoteCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Issuance.class.getMethod("getGlobalNoteType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Capital> capitalRaised;
 	/**
 	 * Capital raised through the issuance of an asset.
 	 * <p>
@@ -670,8 +731,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Capital#AssetIssuance
-	 * Capital.AssetIssuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.Capital#mmAssetIssuance
+	 * Capital.mmAssetIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -693,19 +754,20 @@ public class Issuance {
 	 * definition} = "Capital raised through the issuance of an asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CapitalRaised = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCapitalRaised = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CapitalRaised";
 			definition = "Capital raised through the issuance of an asset.";
 			minOccurs = 0;
-			type_lazy = () -> Capital.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Capital.AssetIssuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Capital.mmAssetIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Capital.mmObject();
 		}
 	};
+	protected DateTimePeriod subscriptionPeriod;
 	/**
 	 * Period during which the security can be subscribed to.
 	 * <p>
@@ -714,8 +776,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#Issuance
-	 * DateTimePeriod.Issuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmIssuance
+	 * DateTimePeriod.mmIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -738,20 +800,21 @@ public class Issuance {
 	 * definition} = "Period during which the security can be subscribed to."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SubscriptionPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSubscriptionPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubscriptionPeriod";
 			definition = "Period during which the security can be subscribed to.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.Issuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected SecuritiesQuantity minimum;
 	/**
 	 * Minimum or incremental denomination required for the transfer or change
 	 * of ownership of a security.
@@ -761,8 +824,8 @@ public class Issuance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedIssuance
-	 * SecuritiesQuantity.RelatedIssuance}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedIssuance
+	 * SecuritiesQuantity.mmRelatedIssuance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -787,20 +850,21 @@ public class Issuance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Minimum = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimum = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Minimum";
 			definition = "Minimum or incremental denomination required for the transfer or change of ownership of a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.RelatedIssuance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedIssuance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected CurrencyAndAmount issuePrice;
 	/**
 	 * Initial issue price of a financial instrument.
 	 * <p>
@@ -826,38 +890,179 @@ public class Issuance {
 	 * definition} = "Initial issue price of a financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IssuePrice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIssuePrice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Issuance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IssuePrice";
 			definition = "Initial issue price of a financial instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Issuance.class.getMethod("getIssuePrice", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Issuance";
 				definition = "Preparation/bringing to market of a security (also known as primary market or Initial Public Offering (IPO) issuance).";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.Issuance, com.tools20022.repository.entity.SecuritiesPricing.Issuance, com.tools20022.repository.entity.TradingMarket.Issuance,
-						com.tools20022.repository.entity.DateTimePeriod.Issuance, com.tools20022.repository.entity.SecuritiesQuantity.RelatedIssuance, com.tools20022.repository.entity.SecuritiesQuantity.Issuance,
-						com.tools20022.repository.entity.CorporateActionEvent.Issuance, com.tools20022.repository.entity.RateAndAmount.InterestRelatedIssuance, com.tools20022.repository.entity.RateAndAmount.LossRelatedIssuance,
-						com.tools20022.repository.entity.Capital.AssetIssuance);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Issuance.IssueDate, com.tools20022.repository.entity.Issuance.IssueDiscountAllowance, com.tools20022.repository.entity.Issuance.InterestShortfall,
-						com.tools20022.repository.entity.Issuance.RealisedLoss, com.tools20022.repository.entity.Issuance.Purpose, com.tools20022.repository.entity.Issuance.IssueSize,
-						com.tools20022.repository.entity.Issuance.IssueNominalAmount, com.tools20022.repository.entity.Issuance.EventInformation, com.tools20022.repository.entity.Issuance.IssuedAsset,
-						com.tools20022.repository.entity.Issuance.OriginalIssueDiscount, com.tools20022.repository.entity.Issuance.IssuePlace, com.tools20022.repository.entity.Issuance.GlobalNoteType,
-						com.tools20022.repository.entity.Issuance.CapitalRaised, com.tools20022.repository.entity.Issuance.SubscriptionPeriod, com.tools20022.repository.entity.Issuance.Minimum,
-						com.tools20022.repository.entity.Issuance.IssuePrice);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmIssuance, com.tools20022.repository.entity.SecuritiesPricing.mmIssuance, com.tools20022.repository.entity.TradingMarket.mmIssuance,
+						com.tools20022.repository.entity.DateTimePeriod.mmIssuance, com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedIssuance, com.tools20022.repository.entity.SecuritiesQuantity.mmIssuance,
+						com.tools20022.repository.entity.CorporateActionEvent.mmIssuance, com.tools20022.repository.entity.RateAndAmount.mmInterestRelatedIssuance, com.tools20022.repository.entity.RateAndAmount.mmLossRelatedIssuance,
+						com.tools20022.repository.entity.Capital.mmAssetIssuance);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Issuance.mmIssueDate, com.tools20022.repository.entity.Issuance.mmIssueDiscountAllowance, com.tools20022.repository.entity.Issuance.mmInterestShortfall,
+						com.tools20022.repository.entity.Issuance.mmRealisedLoss, com.tools20022.repository.entity.Issuance.mmPurpose, com.tools20022.repository.entity.Issuance.mmIssueSize,
+						com.tools20022.repository.entity.Issuance.mmIssueNominalAmount, com.tools20022.repository.entity.Issuance.mmEventInformation, com.tools20022.repository.entity.Issuance.mmIssuedAsset,
+						com.tools20022.repository.entity.Issuance.mmOriginalIssueDiscount, com.tools20022.repository.entity.Issuance.mmIssuePlace, com.tools20022.repository.entity.Issuance.mmGlobalNoteType,
+						com.tools20022.repository.entity.Issuance.mmCapitalRaised, com.tools20022.repository.entity.Issuance.mmSubscriptionPeriod, com.tools20022.repository.entity.Issuance.mmMinimum,
+						com.tools20022.repository.entity.Issuance.mmIssuePrice);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Issuance.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODateTime getIssueDate() {
+		return issueDate;
+	}
+
+	public void setIssueDate(ISODateTime issueDate) {
+		this.issueDate = issueDate;
+	}
+
+	public CurrencyAndAmount getIssueDiscountAllowance() {
+		return issueDiscountAllowance;
+	}
+
+	public void setIssueDiscountAllowance(CurrencyAndAmount issueDiscountAllowance) {
+		this.issueDiscountAllowance = issueDiscountAllowance;
+	}
+
+	public RateAndAmount getInterestShortfall() {
+		return interestShortfall;
+	}
+
+	public void setInterestShortfall(com.tools20022.repository.entity.RateAndAmount interestShortfall) {
+		this.interestShortfall = interestShortfall;
+	}
+
+	public RateAndAmount getRealisedLoss() {
+		return realisedLoss;
+	}
+
+	public void setRealisedLoss(com.tools20022.repository.entity.RateAndAmount realisedLoss) {
+		this.realisedLoss = realisedLoss;
+	}
+
+	public Max256Text getPurpose() {
+		return purpose;
+	}
+
+	public void setPurpose(Max256Text purpose) {
+		this.purpose = purpose;
+	}
+
+	public Number getIssueSize() {
+		return issueSize;
+	}
+
+	public void setIssueSize(Number issueSize) {
+		this.issueSize = issueSize;
+	}
+
+	public SecuritiesQuantity getIssueNominalAmount() {
+		return issueNominalAmount;
+	}
+
+	public void setIssueNominalAmount(com.tools20022.repository.entity.SecuritiesQuantity issueNominalAmount) {
+		this.issueNominalAmount = issueNominalAmount;
+	}
+
+	public CorporateActionEvent getEventInformation() {
+		return eventInformation;
+	}
+
+	public void setEventInformation(com.tools20022.repository.entity.CorporateActionEvent eventInformation) {
+		this.eventInformation = eventInformation;
+	}
+
+	public Asset getIssuedAsset() {
+		return issuedAsset;
+	}
+
+	public void setIssuedAsset(com.tools20022.repository.entity.Asset issuedAsset) {
+		this.issuedAsset = issuedAsset;
+	}
+
+	public SecuritiesPricing getOriginalIssueDiscount() {
+		return originalIssueDiscount;
+	}
+
+	public void setOriginalIssueDiscount(com.tools20022.repository.entity.SecuritiesPricing originalIssueDiscount) {
+		this.originalIssueDiscount = originalIssueDiscount;
+	}
+
+	public TradingMarket getIssuePlace() {
+		return issuePlace;
+	}
+
+	public void setIssuePlace(com.tools20022.repository.entity.TradingMarket issuePlace) {
+		this.issuePlace = issuePlace;
+	}
+
+	public GlobalNoteCode getGlobalNoteType() {
+		return globalNoteType;
+	}
+
+	public void setGlobalNoteType(GlobalNoteCode globalNoteType) {
+		this.globalNoteType = globalNoteType;
+	}
+
+	public List<Capital> getCapitalRaised() {
+		return capitalRaised;
+	}
+
+	public void setCapitalRaised(List<com.tools20022.repository.entity.Capital> capitalRaised) {
+		this.capitalRaised = capitalRaised;
+	}
+
+	public DateTimePeriod getSubscriptionPeriod() {
+		return subscriptionPeriod;
+	}
+
+	public void setSubscriptionPeriod(com.tools20022.repository.entity.DateTimePeriod subscriptionPeriod) {
+		this.subscriptionPeriod = subscriptionPeriod;
+	}
+
+	public SecuritiesQuantity getMinimum() {
+		return minimum;
+	}
+
+	public void setMinimum(com.tools20022.repository.entity.SecuritiesQuantity minimum) {
+		this.minimum = minimum;
+	}
+
+	public CurrencyAndAmount getIssuePrice() {
+		return issuePrice;
+	}
+
+	public void setIssuePrice(CurrencyAndAmount issuePrice) {
+		this.issuePrice = issuePrice;
 	}
 }

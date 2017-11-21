@@ -20,11 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.OrganisationIdentification;
+import com.tools20022.repository.entity.PartyName;
+import com.tools20022.repository.entity.PostalAddress;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Information that locates and identifies a specific branch of a financial
@@ -36,12 +45,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.BranchData2#Identification
- * BranchData2.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BranchData2#Name
- * BranchData2.Name}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BranchData2#PostalAddress
- * BranchData2.PostalAddress}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BranchData2#mmIdentification
+ * BranchData2.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BranchData2#mmName
+ * BranchData2.mmName}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BranchData2#mmPostalAddress
+ * BranchData2.mmPostalAddress}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,9 +74,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BranchData2", propOrder = {"identification", "name", "postalAddress"})
 public class BranchData2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text identification;
 	/**
 	 * Unique and unambiguous identification of a branch of a financial
 	 * institution.
@@ -81,8 +93,8 @@ public class BranchData2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -102,20 +114,21 @@ public class BranchData2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> BranchData2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification of a branch of a financial institution.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max140Text name;
 	/**
 	 * Name by which an agent is known and which is usually used to identify
 	 * that agent.
@@ -129,8 +142,8 @@ public class BranchData2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PartyName#Name
-	 * PartyName.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyName#mmName
+	 * PartyName.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -150,20 +163,21 @@ public class BranchData2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> BranchData2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PartyName.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name by which an agent is known and which is usually used to identify that agent.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected PostalAddress6 postalAddress;
 	/**
 	 * Information that locates and identifies a specific address, as defined by
 	 * postal services.
@@ -197,33 +211,60 @@ public class BranchData2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PostalAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
 		{
+			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
 			componentContext_lazy = () -> BranchData2.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
 			xmlTag = "PstlAdr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostalAddress";
 			definition = "Information that locates and identifies a specific address, as defined by postal services.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PostalAddress6.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PostalAddress6.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BranchData2.Identification, com.tools20022.repository.msg.BranchData2.Name, com.tools20022.repository.msg.BranchData2.PostalAddress);
+				messageElement_lazy = () -> Arrays.asList(BranchData2.mmIdentification, BranchData2.mmName, BranchData2.mmPostalAddress);
 				trace_lazy = () -> OrganisationIdentification.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BranchData2";
 				definition = "Information that locates and identifies a specific branch of a financial institution.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id")
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Nm")
+	public Max140Text getName() {
+		return name;
+	}
+
+	public void setName(Max140Text name) {
+		this.name = name;
+	}
+
+	@XmlElement(name = "PstlAdr")
+	public PostalAddress6 getPostalAddress() {
+		return postalAddress;
+	}
+
+	public void setPostalAddress(com.tools20022.repository.msg.PostalAddress6 postalAddress) {
+		this.postalAddress = postalAddress;
 	}
 }

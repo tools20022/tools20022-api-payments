@@ -19,12 +19,19 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CommercialTrade;
 import com.tools20022.repository.entity.Contract;
+import com.tools20022.repository.entity.Loan;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.LoanContract1;
 import com.tools20022.repository.msg.TradeContract1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Choice of the type of underlying contract.
@@ -36,11 +43,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.UnderlyingContract1Choice#Loan
- * UnderlyingContract1Choice.Loan}</li>
+ * {@linkplain com.tools20022.repository.choice.UnderlyingContract1Choice#mmLoan
+ * UnderlyingContract1Choice.mmLoan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.UnderlyingContract1Choice#Trade
- * UnderlyingContract1Choice.Trade}</li>
+ * {@linkplain com.tools20022.repository.choice.UnderlyingContract1Choice#mmTrade
+ * UnderlyingContract1Choice.mmTrade}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Choice of the type of underlying contract."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "UnderlyingContract1Choice", propOrder = {"loan", "trade"})
 public class UnderlyingContract1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected LoanContract1 loan;
 	/**
 	 * Underlying registered contract is a loan.
 	 * <p>
@@ -93,21 +103,22 @@ public class UnderlyingContract1Choice {
 	 * definition} = "Underlying registered contract is a loan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Loan = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmLoan = new MMMessageAssociationEnd() {
 		{
+			businessComponentTrace_lazy = () -> Loan.mmObject();
 			componentContext_lazy = () -> UnderlyingContract1Choice.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.Loan.mmObject();
 			isDerived = false;
 			xmlTag = "Ln";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Loan";
 			definition = "Underlying registered contract is a loan.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> LoanContract1.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> LoanContract1.mmObject();
 		}
 	};
+	protected TradeContract1 trade;
 	/**
 	 * Underlying registered contract is a commercial trade.
 	 * <p>
@@ -139,33 +150,51 @@ public class UnderlyingContract1Choice {
 	 * definition} = "Underlying registered contract is a commercial trade."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Trade = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTrade = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> UnderlyingContract1Choice.mmObject();
 			businessComponentTrace_lazy = () -> CommercialTrade.mmObject();
+			componentContext_lazy = () -> UnderlyingContract1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Trad";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Trade";
 			definition = "Underlying registered contract is a commercial trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> TradeContract1.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> TradeContract1.mmObject();
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.UnderlyingContract1Choice.Loan, com.tools20022.repository.choice.UnderlyingContract1Choice.Trade);
+				messageElement_lazy = () -> Arrays.asList(UnderlyingContract1Choice.mmLoan, UnderlyingContract1Choice.mmTrade);
 				trace_lazy = () -> Contract.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingContract1Choice";
 				definition = "Choice of the type of underlying contract.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Ln", required = true)
+	public LoanContract1 getLoan() {
+		return loan;
+	}
+
+	public void setLoan(LoanContract1 loan) {
+		this.loan = loan;
+	}
+
+	@XmlElement(name = "Trad", required = true)
+	public TradeContract1 getTrade() {
+		return trade;
+	}
+
+	public void setTrade(TradeContract1 trade) {
+		this.trade = trade;
 	}
 }

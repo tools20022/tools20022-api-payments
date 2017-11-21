@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ProxyTypeCode;
 import com.tools20022.repository.datatype.Max350Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,17 +39,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#NotificationAddress
- * ProxyAppointmentCondition.NotificationAddress}</li>
+ * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#mmNotificationAddress
+ * ProxyAppointmentCondition.mmNotificationAddress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#Meeting
- * ProxyAppointmentCondition.Meeting}</li>
+ * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#mmMeeting
+ * ProxyAppointmentCondition.mmMeeting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#RegistrationMethod
- * ProxyAppointmentCondition.RegistrationMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#mmRegistrationMethod
+ * ProxyAppointmentCondition.mmRegistrationMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#AllowedProxyType
- * ProxyAppointmentCondition.AllowedProxyType}</li>
+ * {@linkplain com.tools20022.repository.entity.ProxyAppointmentCondition#mmAllowedProxyType
+ * ProxyAppointmentCondition.mmAllowedProxyType}</li>
  * </ul>
  * </li>
  * <li>
@@ -57,18 +57,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ContactPoint#RelatedProxyAppointment
- * ContactPoint.RelatedProxyAppointment}</li>
+ * {@linkplain com.tools20022.repository.entity.ContactPoint#mmRelatedProxyAppointment
+ * ContactPoint.mmRelatedProxyAppointment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Meeting#ProxyAppointmentConditions
- * Meeting.ProxyAppointmentConditions}</li>
+ * {@linkplain com.tools20022.repository.entity.Meeting#mmProxyAppointmentConditions
+ * Meeting.mmProxyAppointmentConditions}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ProxyAppointmentCondition {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ContactPoint notificationAddress;
 	/**
 	 * Address where the information on the proxy should be sent.
 	 * <p>
@@ -90,8 +91,8 @@ public class ProxyAppointmentCondition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPoint#RelatedProxyAppointment
-	 * ContactPoint.RelatedProxyAppointment}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPoint#mmRelatedProxyAppointment
+	 * ContactPoint.mmRelatedProxyAppointment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -116,20 +117,21 @@ public class ProxyAppointmentCondition {
 	 * "Address where the information on the proxy should be sent."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NotificationAddress = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNotificationAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProxyAppointmentCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotificationAddress";
 			definition = "Address where the information on the proxy should be sent.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> ContactPoint.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.RelatedProxyAppointment;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmRelatedProxyAppointment;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
 		}
 	};
+	protected Meeting meeting;
 	/**
 	 * Specifies the meeting to which the proxy appointment conditions aplly.
 	 * <p>
@@ -138,8 +140,8 @@ public class ProxyAppointmentCondition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#ProxyAppointmentConditions
-	 * Meeting.ProxyAppointmentConditions}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmProxyAppointmentConditions
+	 * Meeting.mmProxyAppointmentConditions}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -163,20 +165,21 @@ public class ProxyAppointmentCondition {
 	 * "Specifies the meeting to which the proxy appointment conditions aplly."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Meeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProxyAppointmentCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Specifies the meeting to which the proxy appointment conditions aplly.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmProxyAppointmentConditions;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.ProxyAppointmentConditions;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max350Text registrationMethod;
 	/**
 	 * Indicates how to register a proxy.
 	 * <p>
@@ -202,18 +205,27 @@ public class ProxyAppointmentCondition {
 	 * definition} = "Indicates how to register a proxy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegistrationMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegistrationMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ProxyAppointmentCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationMethod";
 			definition = "Indicates how to register a proxy.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ProxyAppointmentCondition.class.getMethod("getRegistrationMethod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ProxyTypeCode allowedProxyType;
 	/**
 	 * Specifies who can be assigned as a proxy.
 	 * <p>
@@ -240,31 +252,76 @@ public class ProxyAppointmentCondition {
 	 * definition} = "Specifies who can be assigned as a proxy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AllowedProxyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAllowedProxyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ProxyAppointmentCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProxyAppointmentCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AllowedProxyType";
 			definition = "Specifies who can be assigned as a proxy.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ProxyTypeCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return ProxyAppointmentCondition.class.getMethod("getAllowedProxyType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProxyAppointmentCondition";
 				definition = "Conditions that must be met to appoint a proxy.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.RelatedProxyAppointment, com.tools20022.repository.entity.Meeting.ProxyAppointmentConditions);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProxyAppointmentCondition.NotificationAddress, com.tools20022.repository.entity.ProxyAppointmentCondition.Meeting,
-						com.tools20022.repository.entity.ProxyAppointmentCondition.RegistrationMethod, com.tools20022.repository.entity.ProxyAppointmentCondition.AllowedProxyType);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.mmRelatedProxyAppointment, com.tools20022.repository.entity.Meeting.mmProxyAppointmentConditions);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProxyAppointmentCondition.mmNotificationAddress, com.tools20022.repository.entity.ProxyAppointmentCondition.mmMeeting,
+						com.tools20022.repository.entity.ProxyAppointmentCondition.mmRegistrationMethod, com.tools20022.repository.entity.ProxyAppointmentCondition.mmAllowedProxyType);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ProxyAppointmentCondition.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ContactPoint getNotificationAddress() {
+		return notificationAddress;
+	}
+
+	public void setNotificationAddress(com.tools20022.repository.entity.ContactPoint notificationAddress) {
+		this.notificationAddress = notificationAddress;
+	}
+
+	public Meeting getMeeting() {
+		return meeting;
+	}
+
+	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+		this.meeting = meeting;
+	}
+
+	public Max350Text getRegistrationMethod() {
+		return registrationMethod;
+	}
+
+	public void setRegistrationMethod(Max350Text registrationMethod) {
+		this.registrationMethod = registrationMethod;
+	}
+
+	public ProxyTypeCode getAllowedProxyType() {
+		return allowedProxyType;
+	}
+
+	public void setAllowedProxyType(ProxyTypeCode allowedProxyType) {
+		this.allowedProxyType = allowedProxyType;
 	}
 }

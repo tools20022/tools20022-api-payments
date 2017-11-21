@@ -20,11 +20,18 @@ package com.tools20022.repository.choice;
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.UnableToApplyV05;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.MissingOrIncorrectInformation3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the details of missing or incorrect information or the complete set
@@ -37,14 +44,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.UnableToApplyJustification3Choice#AnyInformation
- * UnableToApplyJustification3Choice.AnyInformation}</li>
+ * {@linkplain com.tools20022.repository.choice.UnableToApplyJustification3Choice#mmAnyInformation
+ * UnableToApplyJustification3Choice.mmAnyInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.UnableToApplyJustification3Choice#MissingOrIncorrectInformation
- * UnableToApplyJustification3Choice.MissingOrIncorrectInformation}</li>
+ * {@linkplain com.tools20022.repository.choice.UnableToApplyJustification3Choice#mmMissingOrIncorrectInformation
+ * UnableToApplyJustification3Choice.mmMissingOrIncorrectInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.UnableToApplyJustification3Choice#PossibleDuplicateInstruction
- * UnableToApplyJustification3Choice.PossibleDuplicateInstruction}</li>
+ * {@linkplain com.tools20022.repository.choice.UnableToApplyJustification3Choice#mmPossibleDuplicateInstruction
+ * UnableToApplyJustification3Choice.mmPossibleDuplicateInstruction}</li>
  * </ul>
  * </li>
  * <li>
@@ -52,15 +59,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#Justification
- * UnableToApplyV05.Justification}</li>
+ * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#mmJustification
+ * UnableToApplyV05.mmJustification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,9 +80,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "UnableToApplyJustification3Choice", propOrder = {"anyInformation", "missingOrIncorrectInformation", "possibleDuplicateInstruction"})
 public class UnableToApplyJustification3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator anyInformation;
 	/**
 	 * Indicates whether or not all available information on the underlying
 	 * payment instruction is requested.
@@ -107,19 +117,20 @@ public class UnableToApplyJustification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AnyInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAnyInformation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> UnableToApplyJustification3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "AnyInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AnyInformation";
 			definition = "Indicates whether or not all available information on the underlying payment instruction is requested.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	protected MissingOrIncorrectInformation3 missingOrIncorrectInformation;
 	/**
 	 * Set of elements used to indicate which information is missing or
 	 * incorrect.
@@ -150,20 +161,21 @@ public class UnableToApplyJustification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd MissingOrIncorrectInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmMissingOrIncorrectInformation = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> UnableToApplyJustification3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "MssngOrIncrrctInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MissingOrIncorrectInformation";
 			definition = "Set of elements used to indicate which information is missing or incorrect.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> MissingOrIncorrectInformation3.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> MissingOrIncorrectInformation3.mmObject();
 		}
 	};
+	protected TrueFalseIndicator possibleDuplicateInstruction;
 	/**
 	 * Indicates whether or not the referred item is a possible duplicate of a
 	 * previous instruction or entry.
@@ -195,16 +207,16 @@ public class UnableToApplyJustification3Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PossibleDuplicateInstruction = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPossibleDuplicateInstruction = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> UnableToApplyJustification3Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PssblDplctInstr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PossibleDuplicateInstruction";
 			definition = "Indicates whether or not the referred item is a possible duplicate of a previous instruction or entry.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 	};
@@ -212,15 +224,42 @@ public class UnableToApplyJustification3Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.UnableToApplyJustification3Choice.AnyInformation, com.tools20022.repository.choice.UnableToApplyJustification3Choice.MissingOrIncorrectInformation,
-						com.tools20022.repository.choice.UnableToApplyJustification3Choice.PossibleDuplicateInstruction);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.UnableToApplyV05.Justification);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(UnableToApplyJustification3Choice.mmAnyInformation, UnableToApplyJustification3Choice.mmMissingOrIncorrectInformation,
+						UnableToApplyJustification3Choice.mmPossibleDuplicateInstruction);
+				messageBuildingBlock_lazy = () -> Arrays.asList(UnableToApplyV05.mmJustification);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnableToApplyJustification3Choice";
 				definition = "Specifies the details of missing or incorrect information or the complete set of available information.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "AnyInf", required = true)
+	public YesNoIndicator getAnyInformation() {
+		return anyInformation;
+	}
+
+	public void setAnyInformation(YesNoIndicator anyInformation) {
+		this.anyInformation = anyInformation;
+	}
+
+	@XmlElement(name = "MssngOrIncrrctInf", required = true)
+	public MissingOrIncorrectInformation3 getMissingOrIncorrectInformation() {
+		return missingOrIncorrectInformation;
+	}
+
+	public void setMissingOrIncorrectInformation(MissingOrIncorrectInformation3 missingOrIncorrectInformation) {
+		this.missingOrIncorrectInformation = missingOrIncorrectInformation;
+	}
+
+	@XmlElement(name = "PssblDplctInstr", required = true)
+	public TrueFalseIndicator getPossibleDuplicateInstruction() {
+		return possibleDuplicateInstruction;
+	}
+
+	public void setPossibleDuplicateInstruction(TrueFalseIndicator possibleDuplicateInstruction) {
+		this.possibleDuplicateInstruction = possibleDuplicateInstruction;
 	}
 }

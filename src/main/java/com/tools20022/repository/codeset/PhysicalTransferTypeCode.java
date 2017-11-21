@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,24 +33,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#Physical
- * PhysicalTransferTypeCode.Physical}</li>
+ * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#mmPhysical
+ * PhysicalTransferTypeCode.mmPhysical}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#Dematerialised
- * PhysicalTransferTypeCode.Dematerialised}</li>
+ * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#mmDematerialised
+ * PhysicalTransferTypeCode.mmDematerialised}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#Cash
- * PhysicalTransferTypeCode.Cash}</li>
+ * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#mmCash
+ * PhysicalTransferTypeCode.mmCash}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#Optional
- * PhysicalTransferTypeCode.Optional}</li>
+ * {@linkplain com.tools20022.repository.codeset.PhysicalTransferTypeCode#mmOptional
+ * PhysicalTransferTypeCode.mmOptional}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -91,9 +93,9 @@ public class PhysicalTransferTypeCode {
 	 * definition} = "Physical transfer."</li>
 	 * </ul>
 	 */
-	public static final MMCode Physical = new MMCode() {
+	public static final MMCode mmPhysical = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Physical";
 			definition = "Physical transfer.";
 			owner_lazy = () -> PhysicalTransferTypeCode.mmObject();
@@ -121,9 +123,9 @@ public class PhysicalTransferTypeCode {
 	 * definition} = "Dematerialised transfer."</li>
 	 * </ul>
 	 */
-	public static final MMCode Dematerialised = new MMCode() {
+	public static final MMCode mmDematerialised = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Dematerialised";
 			definition = "Dematerialised transfer.";
 			owner_lazy = () -> PhysicalTransferTypeCode.mmObject();
@@ -151,9 +153,9 @@ public class PhysicalTransferTypeCode {
 	 * definition} = "Cash transfer."</li>
 	 * </ul>
 	 */
-	public static final MMCode Cash = new MMCode() {
+	public static final MMCode mmCash = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cash";
 			definition = "Cash transfer.";
 			owner_lazy = () -> PhysicalTransferTypeCode.mmObject();
@@ -182,9 +184,9 @@ public class PhysicalTransferTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Optional = new MMCode() {
+	public static final MMCode mmOptional = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Optional";
 			definition = "Determined by a third party or optional for counterparty.";
 			owner_lazy = () -> PhysicalTransferTypeCode.mmObject();
@@ -195,13 +197,12 @@ public class PhysicalTransferTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PHYS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PhysicalTransferTypeCode";
 				definition = "Specifies whether the financial instrument is to be physically delivered or is a dematerilized transfer.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PhysicalTransferTypeCode.Physical, com.tools20022.repository.codeset.PhysicalTransferTypeCode.Dematerialised,
-						com.tools20022.repository.codeset.PhysicalTransferTypeCode.Cash, com.tools20022.repository.codeset.PhysicalTransferTypeCode.Optional);
+				code_lazy = () -> Arrays.asList(PhysicalTransferTypeCode.mmPhysical, PhysicalTransferTypeCode.mmDematerialised, PhysicalTransferTypeCode.mmCash, PhysicalTransferTypeCode.mmOptional);
 			}
 		});
 		return mmObject_lazy.get();

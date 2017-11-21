@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#InitialProposal
- * CollateralProposalResponseCode.InitialProposal}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#mmInitialProposal
+ * CollateralProposalResponseCode.mmInitialProposal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#CounterProposal
- * CollateralProposalResponseCode.CounterProposal}</li>
+ * {@linkplain com.tools20022.repository.codeset.CollateralProposalResponseCode#mmCounterProposal
+ * CollateralProposalResponseCode.mmCounterProposal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -87,9 +89,9 @@ public class CollateralProposalResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InitialProposal = new MMCode() {
+	public static final MMCode mmInitialProposal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InitialProposal";
 			definition = "Indicates that the collateral proposal response is an initial proposal.";
 			owner_lazy = () -> CollateralProposalResponseCode.mmObject();
@@ -118,9 +120,9 @@ public class CollateralProposalResponseCode {
 	 * "Indicates that the collateral proposal response is a counter proposal."</li>
 	 * </ul>
 	 */
-	public static final MMCode CounterProposal = new MMCode() {
+	public static final MMCode mmCounterProposal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CounterProposal";
 			definition = "Indicates that the collateral proposal response is a counter proposal.";
 			owner_lazy = () -> CollateralProposalResponseCode.mmObject();
@@ -131,12 +133,12 @@ public class CollateralProposalResponseCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("INPR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralProposalResponseCode";
 				definition = "Specifies if the collateral proposal response is an initial or a counter proposal.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CollateralProposalResponseCode.InitialProposal, com.tools20022.repository.codeset.CollateralProposalResponseCode.CounterProposal);
+				code_lazy = () -> Arrays.asList(CollateralProposalResponseCode.mmInitialProposal, CollateralProposalResponseCode.mmCounterProposal);
 			}
 		});
 		return mmObject_lazy.get();

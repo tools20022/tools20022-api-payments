@@ -19,10 +19,15 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
 import com.tools20022.core.metamodel.GeneratedMetamodelBean;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
 import com.tools20022.core.metamodel.OrphanMetamodelType;
-import com.tools20022.metamodel.constraints.DeriveMMSyntax_generatedFor;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.GeneratedForDerivation;
+import com.tools20022.metamodel.derived.DeriveMMSyntax_generatedFor;
 import com.tools20022.metamodel.MMEncoding;
 import com.tools20022.metamodel.MMMessageSet;
 import com.tools20022.metamodel.MMModelEntity;
@@ -37,6 +42,21 @@ import java.util.Optional;
  */
 public class MMSyntax implements OrphanMetamodelType, MMModelEntity {
 
+	/**
+	 * the set of possible encodings for a given Syntax
+	 */
+	public final static MetamodelAttribute<MMSyntax, List<MMEncoding>> possibleEncodingsAttribute = newAttribute();
+	/**
+	 * the scheme in which a syntax is encoded
+	 */
+	public final static MetamodelAttribute<MMSyntax, List<MMMessageSet>> generatedForAttribute = newAttribute();
+	/**
+	 * the syntax that is valid for a MessageSet, based on the Encoding used
+	 * generatedFor-&gt; asBag()=possibleEncodings.messageSet
+	 */
+	public final static MetamodelConstraint<MMSyntax> checkGeneratedForDerivation = newConstraint(b -> {
+		new GeneratedForDerivation().accept(b);
+	});
 	protected Supplier<List<MMEncoding>> possibleEncodings_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;
 	protected Supplier<MMModelEntity> previousVersion_lazy;

@@ -17,11 +17,17 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.PartyAndCertificate2;
+import com.tools20022.repository.msg.PartyAndCertificate3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of a security certificate
@@ -37,8 +43,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecurityCertificatePartyRole#SecurityCertificate
- * SecurityCertificatePartyRole.SecurityCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.SecurityCertificatePartyRole#mmSecurityCertificate
+ * SecurityCertificatePartyRole.mmSecurityCertificate}</li>
  * </ul>
  * </li>
  * <li>
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecurityCertificate#SecurityCertificatePartyRole
- * SecurityCertificate.SecurityCertificatePartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.SecurityCertificate#mmSecurityCertificatePartyRole
+ * SecurityCertificate.mmSecurityCertificatePartyRole}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -55,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecurityCertificatePartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.SecurityCertificate> securityCertificate;
 	/**
 	 * Identifies the security certificate for which a party plays a role.
 	 * <p>
@@ -79,8 +86,8 @@ public class SecurityCertificatePartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecurityCertificate#SecurityCertificatePartyRole
-	 * SecurityCertificate.SecurityCertificatePartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecurityCertificate#mmSecurityCertificatePartyRole
+	 * SecurityCertificate.mmSecurityCertificatePartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -92,11 +99,11 @@ public class SecurityCertificatePartyRole extends Role {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyAndCertificate2#Certificate
-	 * PartyAndCertificate2.Certificate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PartyAndCertificate2#mmCertificate
+	 * PartyAndCertificate2.mmCertificate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#Certificate
-	 * PartyAndCertificate3.Certificate}</li>
+	 * {@linkplain com.tools20022.repository.msg.PartyAndCertificate3#mmCertificate
+	 * PartyAndCertificate3.mmCertificate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -116,33 +123,46 @@ public class SecurityCertificatePartyRole extends Role {
 	 * "Identifies the security certificate for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecurityCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurityCertificate = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyAndCertificate2.Certificate, com.tools20022.repository.msg.PartyAndCertificate3.Certificate);
-			elementContext_lazy = () -> SecurityCertificatePartyRole.mmObject();
+			derivation_lazy = () -> Arrays.asList(PartyAndCertificate2.mmCertificate, PartyAndCertificate3.mmCertificate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificatePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityCertificate";
 			definition = "Identifies the security certificate for which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmSecurityCertificatePartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.SecurityCertificatePartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityCertificatePartyRole";
 				definition = "Role played by a party in the context of a security certificate";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecurityCertificate.SecurityCertificatePartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecurityCertificate.mmSecurityCertificatePartyRole);
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecurityCertificatePartyRole.SecurityCertificate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecurityCertificatePartyRole.mmSecurityCertificate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecurityCertificatePartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<SecurityCertificate> getSecurityCertificate() {
+		return securityCertificate;
+	}
+
+	public void setSecurityCertificate(List<com.tools20022.repository.entity.SecurityCertificate> securityCertificate) {
+		this.securityCertificate = securityCertificate;
 	}
 }

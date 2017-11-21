@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentStatusCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,24 +36,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#PartiallyAcceptedCancellationRequest
- * GroupCancellationStatus1Code.PartiallyAcceptedCancellationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmPartiallyAcceptedCancellationRequest
+ * GroupCancellationStatus1Code.mmPartiallyAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#RejectedCancellationRequest
- * GroupCancellationStatus1Code.RejectedCancellationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmRejectedCancellationRequest
+ * GroupCancellationStatus1Code.mmRejectedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#AcceptedCancellationRequest
- * GroupCancellationStatus1Code.AcceptedCancellationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmAcceptedCancellationRequest
+ * GroupCancellationStatus1Code.mmAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#PendingCancellationRequest
- * GroupCancellationStatus1Code.PendingCancellationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.GroupCancellationStatus1Code#mmPendingCancellationRequest
+ * GroupCancellationStatus1Code.mmPendingCancellationRequest}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -87,9 +89,9 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "PartiallyAcceptedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode PartiallyAcceptedCancellationRequest = new MMCode() {
+	public static final MMCode mmPartiallyAcceptedCancellationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartiallyAcceptedCancellationRequest";
 			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
 		}
@@ -110,9 +112,9 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "RejectedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode RejectedCancellationRequest = new MMCode() {
+	public static final MMCode mmRejectedCancellationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RejectedCancellationRequest";
 			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
 		}
@@ -133,9 +135,9 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedCancellationRequest = new MMCode() {
+	public static final MMCode mmAcceptedCancellationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedCancellationRequest";
 			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
 		}
@@ -156,9 +158,9 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	 * name} = "PendingCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode PendingCancellationRequest = new MMCode() {
+	public static final MMCode mmPendingCancellationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PendingCancellationRequest";
 			owner_lazy = () -> GroupCancellationStatus1Code.mmObject();
 		}
@@ -167,14 +169,13 @@ public class GroupCancellationStatus1Code extends PaymentStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PACR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GroupCancellationStatus1Code";
 				definition = "Specifies the status of a group of cancellation requests.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GroupCancellationStatus1Code.PartiallyAcceptedCancellationRequest,
-						com.tools20022.repository.codeset.GroupCancellationStatus1Code.RejectedCancellationRequest, com.tools20022.repository.codeset.GroupCancellationStatus1Code.AcceptedCancellationRequest,
-						com.tools20022.repository.codeset.GroupCancellationStatus1Code.PendingCancellationRequest);
+				code_lazy = () -> Arrays.asList(GroupCancellationStatus1Code.mmPartiallyAcceptedCancellationRequest, GroupCancellationStatus1Code.mmRejectedCancellationRequest, GroupCancellationStatus1Code.mmAcceptedCancellationRequest,
+						GroupCancellationStatus1Code.mmPendingCancellationRequest);
 				trace_lazy = () -> PaymentStatusCode.mmObject();
 			}
 		});

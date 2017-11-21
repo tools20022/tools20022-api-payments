@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the authority request type.
@@ -34,18 +40,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AuthorityRequestType1#MessageNameIdentification
- * AuthorityRequestType1.MessageNameIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.AuthorityRequestType1#mmMessageNameIdentification
+ * AuthorityRequestType1.mmMessageNameIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AuthorityRequestType1#MessageName
- * AuthorityRequestType1.MessageName}</li>
+ * {@linkplain com.tools20022.repository.msg.AuthorityRequestType1#mmMessageName
+ * AuthorityRequestType1.mmMessageName}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -56,9 +62,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the authority request type."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AuthorityRequestType1", propOrder = {"messageNameIdentification", "messageName"})
 public class AuthorityRequestType1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text messageNameIdentification;
 	/**
 	 * Specifies the requested message name identifier.
 	 * <p>
@@ -86,19 +95,20 @@ public class AuthorityRequestType1 {
 	 * definition} = "Specifies the requested message name identifier."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute MessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMessageNameIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AuthorityRequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNmId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageNameIdentification";
 			definition = "Specifies the requested message name identifier.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max140Text messageName;
 	/**
 	 * Specifies the message name.
 	 * <p>
@@ -126,16 +136,16 @@ public class AuthorityRequestType1 {
 	 * definition} = "Specifies the message name."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute MessageName = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMessageName = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> AuthorityRequestType1.mmObject();
 			isDerived = false;
 			xmlTag = "MsgNm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageName";
 			definition = "Specifies the message name.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
@@ -143,13 +153,31 @@ public class AuthorityRequestType1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AuthorityRequestType1.MessageNameIdentification, com.tools20022.repository.msg.AuthorityRequestType1.MessageName);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(AuthorityRequestType1.mmMessageNameIdentification, AuthorityRequestType1.mmMessageName);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthorityRequestType1";
 				definition = "Specifies the authority request type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "MsgNmId", required = true)
+	public Max35Text getMessageNameIdentification() {
+		return messageNameIdentification;
+	}
+
+	public void setMessageNameIdentification(Max35Text messageNameIdentification) {
+		this.messageNameIdentification = messageNameIdentification;
+	}
+
+	@XmlElement(name = "MsgNm")
+	public Max140Text getMessageName() {
+		return messageName;
+	}
+
+	public void setMessageName(Max140Text messageName) {
+		this.messageName = messageName;
 	}
 }

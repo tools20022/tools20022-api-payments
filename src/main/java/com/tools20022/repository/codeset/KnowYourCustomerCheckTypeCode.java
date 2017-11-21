@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,21 +33,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#Ordinary
- * KnowYourCustomerCheckTypeCode.Ordinary}</li>
+ * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#mmOrdinary
+ * KnowYourCustomerCheckTypeCode.mmOrdinary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#Simple
- * KnowYourCustomerCheckTypeCode.Simple}</li>
+ * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#mmSimple
+ * KnowYourCustomerCheckTypeCode.mmSimple}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#Enhanced
- * KnowYourCustomerCheckTypeCode.Enhanced}</li>
+ * {@linkplain com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode#mmEnhanced
+ * KnowYourCustomerCheckTypeCode.mmEnhanced}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,9 +85,9 @@ public class KnowYourCustomerCheckTypeCode {
 	 * "Ordinary check, typically carried out on standard accounts."</li>
 	 * </ul>
 	 */
-	public static final MMCode Ordinary = new MMCode() {
+	public static final MMCode mmOrdinary = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ordinary";
 			definition = "Ordinary check, typically carried out on standard accounts.";
 			owner_lazy = () -> KnowYourCustomerCheckTypeCode.mmObject();
@@ -117,9 +119,9 @@ public class KnowYourCustomerCheckTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Simple = new MMCode() {
+	public static final MMCode mmSimple = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Simple";
 			definition = "Simple check, typically carried out on accounts that have a low risk of anti-money laundering, such as an account owned by a financial institution.";
 			owner_lazy = () -> KnowYourCustomerCheckTypeCode.mmObject();
@@ -150,9 +152,9 @@ public class KnowYourCustomerCheckTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Enhanced = new MMCode() {
+	public static final MMCode mmEnhanced = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enhanced";
 			definition = "Enhanced check, typically carried out on accounts that are considered high risk. ";
 			owner_lazy = () -> KnowYourCustomerCheckTypeCode.mmObject();
@@ -163,12 +165,11 @@ public class KnowYourCustomerCheckTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KnowYourCustomerCheckTypeCode";
 				definition = "Specifies the type of Know Your Customer (KYC) or anti-money laundering due diligence to which the investor has been subjected.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode.Ordinary, com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode.Simple,
-						com.tools20022.repository.codeset.KnowYourCustomerCheckTypeCode.Enhanced);
+				code_lazy = () -> Arrays.asList(KnowYourCustomerCheckTypeCode.mmOrdinary, KnowYourCustomerCheckTypeCode.mmSimple, KnowYourCustomerCheckTypeCode.mmEnhanced);
 			}
 		});
 		return mmObject_lazy.get();

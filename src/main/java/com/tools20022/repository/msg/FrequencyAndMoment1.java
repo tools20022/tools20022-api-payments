@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Frequency6Code;
 import com.tools20022.repository.datatype.Exact2NumericText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Defines a frequency in terms a specific moment within a specified period
@@ -34,18 +40,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.FrequencyAndMoment1#Type
- * FrequencyAndMoment1.Type}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.FrequencyAndMoment1#mmType
+ * FrequencyAndMoment1.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.FrequencyAndMoment1#PointInTime
- * FrequencyAndMoment1.PointInTime}</li>
+ * {@linkplain com.tools20022.repository.msg.FrequencyAndMoment1#mmPointInTime
+ * FrequencyAndMoment1.mmPointInTime}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +64,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "FrequencyAndMoment1", propOrder = {"type", "pointInTime"})
 public class FrequencyAndMoment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Frequency6Code type;
 	/**
 	 * Period for which the number of instructions are to be created and
 	 * processed.
@@ -92,19 +101,20 @@ public class FrequencyAndMoment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> FrequencyAndMoment1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Period for which the number of instructions are to be created and processed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Frequency6Code.mmObject();
 		}
 	};
+	protected Exact2NumericText pointInTime;
 	/**
 	 * Further information on the exact point in time the event should take
 	 * place.
@@ -136,16 +146,16 @@ public class FrequencyAndMoment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PointInTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPointInTime = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> FrequencyAndMoment1.mmObject();
 			isDerived = false;
 			xmlTag = "PtInTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PointInTime";
 			definition = "Further information on the exact point in time the event should take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Exact2NumericText.mmObject();
 		}
 	};
@@ -153,13 +163,31 @@ public class FrequencyAndMoment1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FrequencyAndMoment1.Type, com.tools20022.repository.msg.FrequencyAndMoment1.PointInTime);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(FrequencyAndMoment1.mmType, FrequencyAndMoment1.mmPointInTime);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FrequencyAndMoment1";
 				definition = "Defines a frequency in terms a specific moment within a specified period type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public Frequency6Code getType() {
+		return type;
+	}
+
+	public void setType(Frequency6Code type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "PtInTm", required = true)
+	public Exact2NumericText getPointInTime() {
+		return pointInTime;
+	}
+
+	public void setPointInTime(Exact2NumericText pointInTime) {
+		this.pointInTime = pointInTime;
 	}
 }

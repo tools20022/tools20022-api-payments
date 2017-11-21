@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.TransactionEnvironmentCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,21 +36,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment1Code#Merchant
- * TransactionEnvironment1Code.Merchant}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment1Code#mmMerchant
+ * TransactionEnvironment1Code.mmMerchant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment1Code#Private
- * TransactionEnvironment1Code.Private}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment1Code#mmPrivate
+ * TransactionEnvironment1Code.mmPrivate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment1Code#Public
- * TransactionEnvironment1Code.Public}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment1Code#mmPublic
+ * TransactionEnvironment1Code.mmPublic}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class TransactionEnvironment1Code extends TransactionEnvironmentCode {
 	 * name} = "Merchant"</li>
 	 * </ul>
 	 */
-	public static final MMCode Merchant = new MMCode() {
+	public static final MMCode mmMerchant = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Merchant";
 			owner_lazy = () -> TransactionEnvironment1Code.mmObject();
 		}
@@ -107,9 +109,9 @@ public class TransactionEnvironment1Code extends TransactionEnvironmentCode {
 	 * name} = "Private"</li>
 	 * </ul>
 	 */
-	public static final MMCode Private = new MMCode() {
+	public static final MMCode mmPrivate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Private";
 			owner_lazy = () -> TransactionEnvironment1Code.mmObject();
 		}
@@ -130,9 +132,9 @@ public class TransactionEnvironment1Code extends TransactionEnvironmentCode {
 	 * name} = "Public"</li>
 	 * </ul>
 	 */
-	public static final MMCode Public = new MMCode() {
+	public static final MMCode mmPublic = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Public";
 			owner_lazy = () -> TransactionEnvironment1Code.mmObject();
 		}
@@ -141,13 +143,12 @@ public class TransactionEnvironment1Code extends TransactionEnvironmentCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("MERC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionEnvironment1Code";
 				definition = "Indicates the environment of the transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionEnvironment1Code.Merchant, com.tools20022.repository.codeset.TransactionEnvironment1Code.Private,
-						com.tools20022.repository.codeset.TransactionEnvironment1Code.Public);
+				code_lazy = () -> Arrays.asList(TransactionEnvironment1Code.mmMerchant, TransactionEnvironment1Code.mmPrivate, TransactionEnvironment1Code.mmPublic);
 				trace_lazy = () -> TransactionEnvironmentCode.mmObject();
 			}
 		});

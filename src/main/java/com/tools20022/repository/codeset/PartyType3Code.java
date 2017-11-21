@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PartyTypeCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -33,29 +35,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyType3Code#OriginatingPOI
- * PartyType3Code.OriginatingPOI}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#Merchant
- * PartyType3Code.Merchant}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#Acceptor
- * PartyType3Code.Acceptor}</li>
+ * {@linkplain com.tools20022.repository.codeset.PartyType3Code#mmOriginatingPOI
+ * PartyType3Code.mmOriginatingPOI}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#mmMerchant
+ * PartyType3Code.mmMerchant}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#mmAcceptor
+ * PartyType3Code.mmAcceptor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyType3Code#IntermediaryAgent
- * PartyType3Code.IntermediaryAgent}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#Acquirer
- * PartyType3Code.Acquirer}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#CardIssuer
- * PartyType3Code.CardIssuer}</li>
+ * {@linkplain com.tools20022.repository.codeset.PartyType3Code#mmIntermediaryAgent
+ * PartyType3Code.mmIntermediaryAgent}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#mmAcquirer
+ * PartyType3Code.mmAcquirer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PartyType3Code#DelegateIssuer
- * PartyType3Code.DelegateIssuer}</li>
+ * {@linkplain com.tools20022.repository.codeset.PartyType3Code#mmCardIssuer
+ * PartyType3Code.mmCardIssuer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.PartyType3Code#mmDelegateIssuer
+ * PartyType3Code.mmDelegateIssuer}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,9 +95,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "OriginatingPOI"</li>
 	 * </ul>
 	 */
-	public static final MMCode OriginatingPOI = new MMCode() {
+	public static final MMCode mmOriginatingPOI = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginatingPOI";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -115,9 +118,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "Merchant"</li>
 	 * </ul>
 	 */
-	public static final MMCode Merchant = new MMCode() {
+	public static final MMCode mmMerchant = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Merchant";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -138,9 +141,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "Acceptor"</li>
 	 * </ul>
 	 */
-	public static final MMCode Acceptor = new MMCode() {
+	public static final MMCode mmAcceptor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Acceptor";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -161,9 +164,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "IntermediaryAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode IntermediaryAgent = new MMCode() {
+	public static final MMCode mmIntermediaryAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IntermediaryAgent";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -184,9 +187,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "Acquirer"</li>
 	 * </ul>
 	 */
-	public static final MMCode Acquirer = new MMCode() {
+	public static final MMCode mmAcquirer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Acquirer";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -207,9 +210,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "CardIssuer"</li>
 	 * </ul>
 	 */
-	public static final MMCode CardIssuer = new MMCode() {
+	public static final MMCode mmCardIssuer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardIssuer";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -230,9 +233,9 @@ public class PartyType3Code extends PartyTypeCode {
 	 * name} = "DelegateIssuer"</li>
 	 * </ul>
 	 */
-	public static final MMCode DelegateIssuer = new MMCode() {
+	public static final MMCode mmDelegateIssuer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DelegateIssuer";
 			owner_lazy = () -> PartyType3Code.mmObject();
 		}
@@ -241,14 +244,13 @@ public class PartyType3Code extends PartyTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("OPOI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType3Code";
 				definition = "Identification of the type of entity involved in a transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PartyType3Code.OriginatingPOI, com.tools20022.repository.codeset.PartyType3Code.Merchant, com.tools20022.repository.codeset.PartyType3Code.Acceptor,
-						com.tools20022.repository.codeset.PartyType3Code.IntermediaryAgent, com.tools20022.repository.codeset.PartyType3Code.Acquirer, com.tools20022.repository.codeset.PartyType3Code.CardIssuer,
-						com.tools20022.repository.codeset.PartyType3Code.DelegateIssuer);
+				code_lazy = () -> Arrays.asList(PartyType3Code.mmOriginatingPOI, PartyType3Code.mmMerchant, PartyType3Code.mmAcceptor, PartyType3Code.mmIntermediaryAgent, PartyType3Code.mmAcquirer, PartyType3Code.mmCardIssuer,
+						PartyType3Code.mmDelegateIssuer);
 				trace_lazy = () -> PartyTypeCode.mmObject();
 			}
 		});

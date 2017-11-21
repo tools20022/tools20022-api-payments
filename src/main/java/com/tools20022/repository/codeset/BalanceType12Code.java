@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.BalanceTypeCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -33,42 +35,43 @@ import java.util.concurrent.atomic.AtomicReference;
  * BalanceTypeCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.BalanceType12Code#Expected
- * BalanceType12Code.Expected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#OpeningAvailable
- * BalanceType12Code.OpeningAvailable}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmExpected
+ * BalanceType12Code.mmExpected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#InterimAvailable
- * BalanceType12Code.InterimAvailable}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmOpeningAvailable
+ * BalanceType12Code.mmOpeningAvailable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ClosingAvailable
- * BalanceType12Code.ClosingAvailable}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmInterimAvailable
+ * BalanceType12Code.mmInterimAvailable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ForwardAvailable
- * BalanceType12Code.ForwardAvailable}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmClosingAvailable
+ * BalanceType12Code.mmClosingAvailable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#ClosingBooked
- * BalanceType12Code.ClosingBooked}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmForwardAvailable
+ * BalanceType12Code.mmForwardAvailable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#InterimBooked
- * BalanceType12Code.InterimBooked}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmClosingBooked
+ * BalanceType12Code.mmClosingBooked}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#OpeningBooked
- * BalanceType12Code.OpeningBooked}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmInterimBooked
+ * BalanceType12Code.mmInterimBooked}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#PreviouslyClosedBooked
- * BalanceType12Code.PreviouslyClosedBooked}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmOpeningBooked
+ * BalanceType12Code.mmOpeningBooked}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#Information
- * BalanceType12Code.Information}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmPreviouslyClosedBooked
+ * BalanceType12Code.mmPreviouslyClosedBooked}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceType12Code#mmInformation
+ * BalanceType12Code.mmInformation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -104,9 +107,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "Expected"</li>
 	 * </ul>
 	 */
-	public static final MMCode Expected = new MMCode() {
+	public static final MMCode mmExpected = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Expected";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -127,9 +130,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "OpeningAvailable"</li>
 	 * </ul>
 	 */
-	public static final MMCode OpeningAvailable = new MMCode() {
+	public static final MMCode mmOpeningAvailable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OpeningAvailable";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -150,9 +153,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "InterimAvailable"</li>
 	 * </ul>
 	 */
-	public static final MMCode InterimAvailable = new MMCode() {
+	public static final MMCode mmInterimAvailable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InterimAvailable";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -173,9 +176,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "ClosingAvailable"</li>
 	 * </ul>
 	 */
-	public static final MMCode ClosingAvailable = new MMCode() {
+	public static final MMCode mmClosingAvailable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosingAvailable";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -196,9 +199,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "ForwardAvailable"</li>
 	 * </ul>
 	 */
-	public static final MMCode ForwardAvailable = new MMCode() {
+	public static final MMCode mmForwardAvailable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForwardAvailable";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -219,9 +222,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "ClosingBooked"</li>
 	 * </ul>
 	 */
-	public static final MMCode ClosingBooked = new MMCode() {
+	public static final MMCode mmClosingBooked = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosingBooked";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -242,9 +245,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "InterimBooked"</li>
 	 * </ul>
 	 */
-	public static final MMCode InterimBooked = new MMCode() {
+	public static final MMCode mmInterimBooked = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InterimBooked";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -265,9 +268,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "OpeningBooked"</li>
 	 * </ul>
 	 */
-	public static final MMCode OpeningBooked = new MMCode() {
+	public static final MMCode mmOpeningBooked = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OpeningBooked";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -288,9 +291,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "PreviouslyClosedBooked"</li>
 	 * </ul>
 	 */
-	public static final MMCode PreviouslyClosedBooked = new MMCode() {
+	public static final MMCode mmPreviouslyClosedBooked = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreviouslyClosedBooked";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -311,9 +314,9 @@ public class BalanceType12Code extends BalanceTypeCode {
 	 * name} = "Information"</li>
 	 * </ul>
 	 */
-	public static final MMCode Information = new MMCode() {
+	public static final MMCode mmInformation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Information";
 			owner_lazy = () -> BalanceType12Code.mmObject();
 		}
@@ -322,15 +325,13 @@ public class BalanceType12Code extends BalanceTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("XPCD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceType12Code";
 				definition = "Specifies the balance type.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceType12Code.Expected, com.tools20022.repository.codeset.BalanceType12Code.OpeningAvailable,
-						com.tools20022.repository.codeset.BalanceType12Code.InterimAvailable, com.tools20022.repository.codeset.BalanceType12Code.ClosingAvailable, com.tools20022.repository.codeset.BalanceType12Code.ForwardAvailable,
-						com.tools20022.repository.codeset.BalanceType12Code.ClosingBooked, com.tools20022.repository.codeset.BalanceType12Code.InterimBooked, com.tools20022.repository.codeset.BalanceType12Code.OpeningBooked,
-						com.tools20022.repository.codeset.BalanceType12Code.PreviouslyClosedBooked, com.tools20022.repository.codeset.BalanceType12Code.Information);
+				code_lazy = () -> Arrays.asList(BalanceType12Code.mmExpected, BalanceType12Code.mmOpeningAvailable, BalanceType12Code.mmInterimAvailable, BalanceType12Code.mmClosingAvailable, BalanceType12Code.mmForwardAvailable,
+						BalanceType12Code.mmClosingBooked, BalanceType12Code.mmInterimBooked, BalanceType12Code.mmOpeningBooked, BalanceType12Code.mmPreviouslyClosedBooked, BalanceType12Code.mmInformation);
 				trace_lazy = () -> BalanceTypeCode.mmObject();
 			}
 		});

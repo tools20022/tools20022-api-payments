@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PriorityCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,14 +39,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InformationQualifier#SystemBusinessInformation
- * InformationQualifier.SystemBusinessInformation}</li>
+ * {@linkplain com.tools20022.repository.entity.InformationQualifier#mmSystemBusinessInformation
+ * InformationQualifier.mmSystemBusinessInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InformationQualifier#IsFormatted
- * InformationQualifier.IsFormatted}</li>
+ * {@linkplain com.tools20022.repository.entity.InformationQualifier#mmIsFormatted
+ * InformationQualifier.mmIsFormatted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InformationQualifier#Priority
- * InformationQualifier.Priority}</li>
+ * {@linkplain com.tools20022.repository.entity.InformationQualifier#mmPriority
+ * InformationQualifier.mmPriority}</li>
  * </ul>
  * </li>
  * <li>
@@ -54,15 +54,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SystemBusinessInformation#Qualifier
- * SystemBusinessInformation.Qualifier}</li>
+ * {@linkplain com.tools20022.repository.entity.SystemBusinessInformation#mmQualifier
+ * SystemBusinessInformation.mmQualifier}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,6 +78,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InformationQualifier {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SystemBusinessInformation systemBusinessInformation;
 	/**
 	 * System for which a qualifier is specified.
 	 * <p>
@@ -86,8 +87,8 @@ public class InformationQualifier {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SystemBusinessInformation#Qualifier
-	 * SystemBusinessInformation.Qualifier}</li>
+	 * {@linkplain com.tools20022.repository.entity.SystemBusinessInformation#mmQualifier
+	 * SystemBusinessInformation.mmQualifier}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -112,20 +113,21 @@ public class InformationQualifier {
 	 * definition} = "System for which a qualifier is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SystemBusinessInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystemBusinessInformation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InformationQualifier.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystemBusinessInformation";
 			definition = "System for which a qualifier is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmQualifier;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemBusinessInformation.Qualifier;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator isFormatted;
 	/**
 	 * Indicates whether the information is formatted.
 	 * <p>
@@ -152,18 +154,27 @@ public class InformationQualifier {
 	 * definition} = "Indicates whether the information is formatted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IsFormatted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIsFormatted = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InformationQualifier.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IsFormatted";
 			definition = "Indicates whether the information is formatted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationQualifier.class.getMethod("getIsFormatted", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PriorityCode priority;
 	/**
 	 * Priority of the information.
 	 * <p>
@@ -189,31 +200,68 @@ public class InformationQualifier {
 	 * definition} = "Priority of the information."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Priority = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPriority = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InformationQualifier.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InformationQualifier.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Priority";
 			definition = "Priority of the information.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PriorityCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return InformationQualifier.class.getMethod("getPriority", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InformationQualifier";
 				definition = "Further qualifies the information provided in terms of its importance and its format.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemBusinessInformation.Qualifier);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InformationQualifier.SystemBusinessInformation, com.tools20022.repository.entity.InformationQualifier.IsFormatted,
-						com.tools20022.repository.entity.InformationQualifier.Priority);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemBusinessInformation.mmQualifier);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InformationQualifier.mmSystemBusinessInformation, com.tools20022.repository.entity.InformationQualifier.mmIsFormatted,
+						com.tools20022.repository.entity.InformationQualifier.mmPriority);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InformationQualifier.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SystemBusinessInformation getSystemBusinessInformation() {
+		return systemBusinessInformation;
+	}
+
+	public void setSystemBusinessInformation(com.tools20022.repository.entity.SystemBusinessInformation systemBusinessInformation) {
+		this.systemBusinessInformation = systemBusinessInformation;
+	}
+
+	public YesNoIndicator getIsFormatted() {
+		return isFormatted;
+	}
+
+	public void setIsFormatted(YesNoIndicator isFormatted) {
+		this.isFormatted = isFormatted;
+	}
+
+	public PriorityCode getPriority() {
+		return priority;
+	}
+
+	public void setPriority(PriorityCode priority) {
+		this.priority = priority;
 	}
 }

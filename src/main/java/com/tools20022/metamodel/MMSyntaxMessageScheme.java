@@ -17,8 +17,10 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -32,6 +34,11 @@ import java.util.Optional;
  */
 public class MMSyntaxMessageScheme implements MMTopLevelCatalogueEntry {
 
+	/**
+	 * the MessageDefinitionTrace from the SyntaxMessageScheme to the
+	 * MessageDefinition
+	 */
+	public final static MetamodelAttribute<MMSyntaxMessageScheme, Optional<MMMessageDefinition>> messageDefinitionTraceAttribute = newAttribute();
 	protected Supplier<MMMessageDefinition> messageDefinitionTrace_lazy;
 	protected Supplier<MMBusinessProcessCatalogue> businessProcessCatalogue_lazy;
 	protected String name;

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,23 +32,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#ActualAmount
- * AmountPriceTypeCode.ActualAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#mmActualAmount
+ * AmountPriceTypeCode.mmActualAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#Discount
- * AmountPriceTypeCode.Discount}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#Lot
- * AmountPriceTypeCode.Lot}</li>
+ * {@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#mmDiscount
+ * AmountPriceTypeCode.mmDiscount}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#mmLot
+ * AmountPriceTypeCode.mmLot}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#Premium
- * AmountPriceTypeCode.Premium}</li>
+ * {@linkplain com.tools20022.repository.codeset.AmountPriceTypeCode#mmPremium
+ * AmountPriceTypeCode.mmPremium}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +90,9 @@ public class AmountPriceTypeCode {
 	 * "Price expressed as a currency and amount per unit or per share."</li>
 	 * </ul>
 	 */
-	public static final MMCode ActualAmount = new MMCode() {
+	public static final MMCode mmActualAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ActualAmount";
 			definition = "Price expressed as a currency and amount per unit or per share.";
 			owner_lazy = () -> AmountPriceTypeCode.mmObject();
@@ -118,9 +120,9 @@ public class AmountPriceTypeCode {
 	 * definition} = "Price expressed as a discount amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode Discount = new MMCode() {
+	public static final MMCode mmDiscount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Discount";
 			definition = "Price expressed as a discount amount.";
 			owner_lazy = () -> AmountPriceTypeCode.mmObject();
@@ -148,9 +150,9 @@ public class AmountPriceTypeCode {
 	 * definition} = "Price expressed as an amount of money per lot."</li>
 	 * </ul>
 	 */
-	public static final MMCode Lot = new MMCode() {
+	public static final MMCode mmLot = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lot";
 			definition = "Price expressed as an amount of money per lot.";
 			owner_lazy = () -> AmountPriceTypeCode.mmObject();
@@ -178,9 +180,9 @@ public class AmountPriceTypeCode {
 	 * definition} = "Price expressed as a premium."</li>
 	 * </ul>
 	 */
-	public static final MMCode Premium = new MMCode() {
+	public static final MMCode mmPremium = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Premium";
 			definition = "Price expressed as a premium.";
 			owner_lazy = () -> AmountPriceTypeCode.mmObject();
@@ -191,13 +193,12 @@ public class AmountPriceTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACTU");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountPriceTypeCode";
 				definition = "Specifies the amount price type.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AmountPriceTypeCode.ActualAmount, com.tools20022.repository.codeset.AmountPriceTypeCode.Discount, com.tools20022.repository.codeset.AmountPriceTypeCode.Lot,
-						com.tools20022.repository.codeset.AmountPriceTypeCode.Premium);
+				code_lazy = () -> Arrays.asList(AmountPriceTypeCode.mmActualAmount, AmountPriceTypeCode.mmDiscount, AmountPriceTypeCode.mmLot, AmountPriceTypeCode.mmPremium);
 			}
 		});
 		return mmObject_lazy.get();

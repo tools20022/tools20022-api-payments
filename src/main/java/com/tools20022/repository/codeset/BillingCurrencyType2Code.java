@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.BillingCurrencyTypeCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,24 +36,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#Account
- * BillingCurrencyType2Code.Account}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#mmAccount
+ * BillingCurrencyType2Code.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#Settlement
- * BillingCurrencyType2Code.Settlement}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#mmSettlement
+ * BillingCurrencyType2Code.mmSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#Pricing
- * BillingCurrencyType2Code.Pricing}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#mmPricing
+ * BillingCurrencyType2Code.mmPricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#Host
- * BillingCurrencyType2Code.Host}</li>
+ * {@linkplain com.tools20022.repository.codeset.BillingCurrencyType2Code#mmHost
+ * BillingCurrencyType2Code.mmHost}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +90,9 @@ public class BillingCurrencyType2Code extends BillingCurrencyTypeCode {
 	 * name} = "Account"</li>
 	 * </ul>
 	 */
-	public static final MMCode Account = new MMCode() {
+	public static final MMCode mmAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			owner_lazy = () -> BillingCurrencyType2Code.mmObject();
 		}
@@ -111,9 +113,9 @@ public class BillingCurrencyType2Code extends BillingCurrencyTypeCode {
 	 * name} = "Settlement"</li>
 	 * </ul>
 	 */
-	public static final MMCode Settlement = new MMCode() {
+	public static final MMCode mmSettlement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Settlement";
 			owner_lazy = () -> BillingCurrencyType2Code.mmObject();
 		}
@@ -134,9 +136,9 @@ public class BillingCurrencyType2Code extends BillingCurrencyTypeCode {
 	 * name} = "Pricing"</li>
 	 * </ul>
 	 */
-	public static final MMCode Pricing = new MMCode() {
+	public static final MMCode mmPricing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pricing";
 			owner_lazy = () -> BillingCurrencyType2Code.mmObject();
 		}
@@ -157,9 +159,9 @@ public class BillingCurrencyType2Code extends BillingCurrencyTypeCode {
 	 * name} = "Host"</li>
 	 * </ul>
 	 */
-	public static final MMCode Host = new MMCode() {
+	public static final MMCode mmHost = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Host";
 			owner_lazy = () -> BillingCurrencyType2Code.mmObject();
 		}
@@ -168,13 +170,12 @@ public class BillingCurrencyType2Code extends BillingCurrencyTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACCT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingCurrencyType2Code";
 				definition = "Defines the type of currency to be used for the billing of a service.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BillingCurrencyType2Code.Account, com.tools20022.repository.codeset.BillingCurrencyType2Code.Settlement,
-						com.tools20022.repository.codeset.BillingCurrencyType2Code.Pricing, com.tools20022.repository.codeset.BillingCurrencyType2Code.Host);
+				code_lazy = () -> Arrays.asList(BillingCurrencyType2Code.mmAccount, BillingCurrencyType2Code.mmSettlement, BillingCurrencyType2Code.mmPricing, BillingCurrencyType2Code.mmHost);
 				trace_lazy = () -> BillingCurrencyTypeCode.mmObject();
 			}
 		});

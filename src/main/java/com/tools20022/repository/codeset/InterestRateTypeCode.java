@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,27 +31,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#Fixed
- * InterestRateTypeCode.Fixed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#Forfeit
- * InterestRateTypeCode.Forfeit}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#mmFixed
+ * InterestRateTypeCode.mmFixed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#Variable
- * InterestRateTypeCode.Variable}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#mmForfeit
+ * InterestRateTypeCode.mmForfeit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#Scheduled
- * InterestRateTypeCode.Scheduled}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#mmVariable
+ * InterestRateTypeCode.mmVariable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#Unscheduled
- * InterestRateTypeCode.Unscheduled}</li>
+ * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#mmScheduled
+ * InterestRateTypeCode.mmScheduled}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.InterestRateTypeCode#mmUnscheduled
+ * InterestRateTypeCode.mmUnscheduled}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -90,9 +93,9 @@ public class InterestRateTypeCode {
 	 * definition} = "Rate is fixed."</li>
 	 * </ul>
 	 */
-	public static final MMCode Fixed = new MMCode() {
+	public static final MMCode mmFixed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Fixed";
 			definition = "Rate is fixed.";
 			owner_lazy = () -> InterestRateTypeCode.mmObject();
@@ -123,9 +126,9 @@ public class InterestRateTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Forfeit = new MMCode() {
+	public static final MMCode mmForfeit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Forfeit";
 			definition = "No specific repurchase rate applies to the transaction Repo, only a forfeit.";
 			owner_lazy = () -> InterestRateTypeCode.mmObject();
@@ -153,9 +156,9 @@ public class InterestRateTypeCode {
 	 * definition} = "Rate is variable."</li>
 	 * </ul>
 	 */
-	public static final MMCode Variable = new MMCode() {
+	public static final MMCode mmVariable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Variable";
 			definition = "Rate is variable.";
 			owner_lazy = () -> InterestRateTypeCode.mmObject();
@@ -183,9 +186,9 @@ public class InterestRateTypeCode {
 	 * definition} = "Rate of the scheduled payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode Scheduled = new MMCode() {
+	public static final MMCode mmScheduled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Scheduled";
 			definition = "Rate of the scheduled payment.";
 			owner_lazy = () -> InterestRateTypeCode.mmObject();
@@ -213,9 +216,9 @@ public class InterestRateTypeCode {
 	 * definition} = "Rate of the unscheduled payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode Unscheduled = new MMCode() {
+	public static final MMCode mmUnscheduled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unscheduled";
 			definition = "Rate of the unscheduled payment.";
 			owner_lazy = () -> InterestRateTypeCode.mmObject();
@@ -226,13 +229,12 @@ public class InterestRateTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("FIXE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InterestRateTypeCode";
 				definition = "Specifies the type of interest rate.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InterestRateTypeCode.Fixed, com.tools20022.repository.codeset.InterestRateTypeCode.Forfeit, com.tools20022.repository.codeset.InterestRateTypeCode.Variable,
-						com.tools20022.repository.codeset.InterestRateTypeCode.Scheduled, com.tools20022.repository.codeset.InterestRateTypeCode.Unscheduled);
+				code_lazy = () -> Arrays.asList(InterestRateTypeCode.mmFixed, InterestRateTypeCode.mmForfeit, InterestRateTypeCode.mmVariable, InterestRateTypeCode.mmScheduled, InterestRateTypeCode.mmUnscheduled);
 			}
 		});
 		return mmObject_lazy.get();

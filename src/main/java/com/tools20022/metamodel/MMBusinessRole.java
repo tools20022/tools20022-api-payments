@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +35,14 @@ import java.util.Optional;
  */
 public class MMBusinessRole implements MMRepositoryConcept {
 
+	/**
+	 * the BusinessRoleTrace for a BusinessRole
+	 */
+	public final static MetamodelAttribute<MMBusinessRole, List<MMParticipant>> businessRoleTraceAttribute = newAttribute();
+	/**
+	 * the BusinessProcess that owns the BusinessRole
+	 */
+	public final static MetamodelAttribute<MMBusinessRole, MMBusinessProcess> businessProcessAttribute = newAttribute();
 	protected Supplier<List<MMParticipant>> businessRoleTrace_lazy;
 	protected Supplier<MMBusinessProcess> businessProcess_lazy;
 	protected String name;

@@ -20,11 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.CaseStatusReportRequestV03;
+import com.tools20022.repository.area.camt.CaseStatusReportV04;
+import com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04;
 import com.tools20022.repository.choice.Party12Choice;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies generic information about an investigation report.
@@ -35,14 +44,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#Identification
- * ReportHeader4.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#From
- * ReportHeader4.From}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#To
- * ReportHeader4.To}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#CreationDateTime
- * ReportHeader4.CreationDateTime}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#mmIdentification
+ * ReportHeader4.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#mmFrom
+ * ReportHeader4.mmFrom}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ReportHeader4#mmTo
+ * ReportHeader4.mmTo}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReportHeader4#mmCreationDateTime
+ * ReportHeader4.mmCreationDateTime}</li>
  * </ul>
  * </li>
  * <li>
@@ -50,21 +60,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#Header
- * NotificationOfCaseAssignmentV04.Header}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#mmHeader
+ * NotificationOfCaseAssignmentV04.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportRequestV03#RequestHeader
- * CaseStatusReportRequestV03.RequestHeader}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportRequestV03#mmRequestHeader
+ * CaseStatusReportRequestV03.mmRequestHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportV04#Header
- * CaseStatusReportV04.Header}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportV04#mmHeader
+ * CaseStatusReportV04.mmHeader}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,9 +85,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies generic information about an investigation report."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ReportHeader4", propOrder = {"identification", "from", "to", "creationDateTime"})
 public class ReportHeader4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text identification;
 	/**
 	 * Point to point reference as assigned by the case assigner to
 	 * unambiguously identify the case status report.
@@ -107,19 +120,20 @@ public class ReportHeader4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Identification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReportHeader4.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Point to point reference as assigned by the case assigner to unambiguously identify the case status report.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Party12Choice from;
 	/**
 	 * Party reporting the status of the investigation case.
 	 * <p>
@@ -145,20 +159,21 @@ public class ReportHeader4 {
 	 * definition} = "Party reporting the status of the investigation case."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd From = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmFrom = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> ReportHeader4.mmObject();
 			isDerived = false;
 			xmlTag = "Fr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "From";
 			definition = "Party reporting the status of the investigation case.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Party12Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> Party12Choice.mmObject();
 		}
 	};
+	protected Party12Choice to;
 	/**
 	 * Party to which the status of the case is reported.
 	 * <p>
@@ -184,20 +199,21 @@ public class ReportHeader4 {
 	 * definition} = "Party to which the status of the case is reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd To = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmTo = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> ReportHeader4.mmObject();
 			isDerived = false;
 			xmlTag = "To";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "To";
 			definition = "Party to which the status of the case is reported.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Party12Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> Party12Choice.mmObject();
 		}
 	};
+	protected ISODateTime creationDateTime;
 	/**
 	 * Date and time at which the message was created.
 	 * <p>
@@ -224,16 +240,16 @@ public class ReportHeader4 {
 	 * definition} = "Date and time at which the message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ReportHeader4.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreationDateTime";
 			definition = "Date and time at which the message was created.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
@@ -241,16 +257,50 @@ public class ReportHeader4 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportHeader4.Identification, com.tools20022.repository.msg.ReportHeader4.From, com.tools20022.repository.msg.ReportHeader4.To,
-						com.tools20022.repository.msg.ReportHeader4.CreationDateTime);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04.Header, com.tools20022.repository.area.camt.CaseStatusReportRequestV03.RequestHeader,
-						com.tools20022.repository.area.camt.CaseStatusReportV04.Header);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(ReportHeader4.mmIdentification, ReportHeader4.mmFrom, ReportHeader4.mmTo, ReportHeader4.mmCreationDateTime);
+				messageBuildingBlock_lazy = () -> Arrays.asList(NotificationOfCaseAssignmentV04.mmHeader, CaseStatusReportRequestV03.mmRequestHeader, CaseStatusReportV04.mmHeader);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReportHeader4";
 				definition = "Specifies generic information about an investigation report.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public Max35Text getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Max35Text identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Fr", required = true)
+	public Party12Choice getFrom() {
+		return from;
+	}
+
+	public void setFrom(Party12Choice from) {
+		this.from = from;
+	}
+
+	@XmlElement(name = "To", required = true)
+	public Party12Choice getTo() {
+		return to;
+	}
+
+	public void setTo(Party12Choice to) {
+		this.to = to;
+	}
+
+	@XmlElement(name = "CreDtTm", required = true)
+	public ISODateTime getCreationDateTime() {
+		return creationDateTime;
+	}
+
+	public void setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = creationDateTime;
 	}
 }

@@ -19,9 +19,15 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements to identify a proprietary reference.
@@ -32,18 +38,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryReference1#Type
- * ProprietaryReference1.Type}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryReference1#mmType
+ * ProprietaryReference1.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ProprietaryReference1#Reference
- * ProprietaryReference1.Reference}</li>
+ * {@linkplain com.tools20022.repository.msg.ProprietaryReference1#mmReference
+ * ProprietaryReference1.mmReference}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -54,9 +60,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Set of elements to identify a proprietary reference."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ProprietaryReference1", propOrder = {"type", "reference"})
 public class ProprietaryReference1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text type;
 	/**
 	 * Identifies the type of reference reported.
 	 * <p>
@@ -84,19 +93,20 @@ public class ProprietaryReference1 {
 	 * definition} = "Identifies the type of reference reported."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Type = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ProprietaryReference1.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Identifies the type of reference reported.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text reference;
 	/**
 	 * Proprietary reference specification related to the underlying
 	 * transaction.
@@ -127,16 +137,16 @@ public class ProprietaryReference1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Reference = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmReference = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> ProprietaryReference1.mmObject();
 			isDerived = false;
 			xmlTag = "Ref";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reference";
 			definition = "Proprietary reference specification related to the underlying transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -144,13 +154,31 @@ public class ProprietaryReference1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryReference1.Type, com.tools20022.repository.msg.ProprietaryReference1.Reference);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(ProprietaryReference1.mmType, ProprietaryReference1.mmReference);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProprietaryReference1";
 				definition = "Set of elements to identify a proprietary reference.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp", required = true)
+	public Max35Text getType() {
+		return type;
+	}
+
+	public void setType(Max35Text type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Ref", required = true)
+	public Max35Text getReference() {
+		return reference;
+	}
+
+	public void setReference(Max35Text reference) {
+		this.reference = reference;
 	}
 }

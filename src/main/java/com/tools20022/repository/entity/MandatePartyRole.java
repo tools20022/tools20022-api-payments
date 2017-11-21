@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Role played by a party in the context of a mandate.
@@ -35,18 +39,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.MandatePartyRole#Mandate
- * MandatePartyRole.Mandate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.MandatePartyRole#mmMandate
+ * MandatePartyRole.mmMandate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Mandate#MandatePartyRole
- * Mandate.MandatePartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Mandate#mmMandatePartyRole
+ * Mandate.mmMandatePartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -54,13 +60,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +78,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MandatePartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Mandate> mandate;
 	/**
 	 * Identifies the mandate in which a party plays a role.
 	 * <p>
@@ -82,8 +87,8 @@ public class MandatePartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Mandate#MandatePartyRole
-	 * Mandate.MandatePartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Mandate#mmMandatePartyRole
+	 * Mandate.mmMandatePartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -106,33 +111,46 @@ public class MandatePartyRole extends Role {
 	 * definition} = "Identifies the mandate in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Mandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MandatePartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MandatePartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mandate";
 			definition = "Identifies the mandate in which a party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Mandate.mmMandatePartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Mandate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Mandate.MandatePartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandatePartyRole";
 				definition = "Role played by a party in the context of a mandate.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Mandate.MandatePartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Mandate.mmMandatePartyRole);
 				subType_lazy = () -> Arrays.asList(MandateHolder.mmObject());
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MandatePartyRole.Mandate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MandatePartyRole.mmMandate);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return MandatePartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Mandate> getMandate() {
+		return mandate;
+	}
+
+	public void setMandate(List<com.tools20022.repository.entity.Mandate> mandate) {
+		this.mandate = mandate;
 	}
 }

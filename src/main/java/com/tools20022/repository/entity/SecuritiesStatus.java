@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RegistrationProcessingStatusCode;
 import com.tools20022.repository.codeset.SecuritiesPaymentStatusCode;
 import com.tools20022.repository.codeset.SecurityStatusCode;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,23 +40,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesStatus#PaymentStatus
- * SecuritiesStatus.PaymentStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesStatus#Status
- * SecuritiesStatus.Status}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesStatus#mmPaymentStatus
+ * SecuritiesStatus.mmPaymentStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesStatus#mmStatus
+ * SecuritiesStatus.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesStatus#RegistrationStatus
- * SecuritiesStatus.RegistrationStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesStatus#Security
- * SecuritiesStatus.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesStatus#mmRegistrationStatus
+ * SecuritiesStatus.mmRegistrationStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesStatus#mmSecurity
+ * SecuritiesStatus.mmSecurity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecurityStatus
- * Security.SecurityStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSecurityStatus
+ * Security.mmSecurityStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -64,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,6 +79,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SecuritiesStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesPaymentStatusCode paymentStatus;
 	/**
 	 * Status of payment of a security at a particular time.
 	 * <p>
@@ -105,18 +106,27 @@ public class SecuritiesStatus extends Status {
 	 * definition} = "Status of payment of a security at a particular time."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PaymentStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPaymentStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentStatus";
 			definition = "Status of payment of a security at a particular time.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SecuritiesPaymentStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesStatus.class.getMethod("getPaymentStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecurityStatusCode status;
 	/**
 	 * Specifies the status of the security within its lifecycle.
 	 * <p>
@@ -144,18 +154,27 @@ public class SecuritiesStatus extends Status {
 	 * "Specifies the status of the security within its lifecycle."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Status = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Specifies the status of the security within its lifecycle.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SecurityStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesStatus.class.getMethod("getStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RegistrationProcessingStatusCode registrationStatus;
 	/**
 	 * Specifies the status of the registration of the securities.
 	 * <p>
@@ -183,18 +202,27 @@ public class SecuritiesStatus extends Status {
 	 * "Specifies the status of the registration of the securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegistrationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegistrationStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> SecuritiesStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationStatus";
 			definition = "Specifies the status of the registration of the securities.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RegistrationProcessingStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return SecuritiesStatus.class.getMethod("getRegistrationStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Security security;
 	/**
 	 * Security for which a status is provided.
 	 * <p>
@@ -203,8 +231,8 @@ public class SecuritiesStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#SecurityStatus
-	 * Security.SecurityStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmSecurityStatus
+	 * Security.mmSecurityStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -227,34 +255,71 @@ public class SecuritiesStatus extends Status {
 	 * definition} = "Security for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SecuritiesStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a status is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmSecurityStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.SecurityStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesStatus";
 				definition = "Specifies the status of the security within its lifecycle.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.SecurityStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmSecurityStatus);
 				superType_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesStatus.PaymentStatus, com.tools20022.repository.entity.SecuritiesStatus.Status,
-						com.tools20022.repository.entity.SecuritiesStatus.RegistrationStatus, com.tools20022.repository.entity.SecuritiesStatus.Security);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesStatus.mmPaymentStatus, com.tools20022.repository.entity.SecuritiesStatus.mmStatus,
+						com.tools20022.repository.entity.SecuritiesStatus.mmRegistrationStatus, com.tools20022.repository.entity.SecuritiesStatus.mmSecurity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SecuritiesStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesPaymentStatusCode getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(SecuritiesPaymentStatusCode paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+
+	public SecurityStatusCode getStatus() {
+		return status;
+	}
+
+	public void setStatus(SecurityStatusCode status) {
+		this.status = status;
+	}
+
+	public RegistrationProcessingStatusCode getRegistrationStatus() {
+		return registrationStatus;
+	}
+
+	public void setRegistrationStatus(RegistrationProcessingStatusCode registrationStatus) {
+		this.registrationStatus = registrationStatus;
+	}
+
+	public Security getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(com.tools20022.repository.entity.Security security) {
+		this.security = security;
 	}
 }

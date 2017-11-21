@@ -20,12 +20,22 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.camt.ResolutionOfInvestigationV07;
 import com.tools20022.repository.choice.Purpose2Choice;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.CashEntry;
+import com.tools20022.repository.entity.Entry;
+import com.tools20022.repository.entity.PaymentObligation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides further details on the statement entry for the resolution of the
@@ -38,23 +48,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#OriginalGroupInformation
- * StatementResolutionEntry2.OriginalGroupInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#mmOriginalGroupInformation
+ * StatementResolutionEntry2.mmOriginalGroupInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#OriginalStatementIdentification
- * StatementResolutionEntry2.OriginalStatementIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#mmOriginalStatementIdentification
+ * StatementResolutionEntry2.mmOriginalStatementIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#AccountServicerReference
- * StatementResolutionEntry2.AccountServicerReference}</li>
+ * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#mmAccountServicerReference
+ * StatementResolutionEntry2.mmAccountServicerReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#CorrectedAmount
- * StatementResolutionEntry2.CorrectedAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#mmCorrectedAmount
+ * StatementResolutionEntry2.mmCorrectedAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#Charges
- * StatementResolutionEntry2.Charges}</li>
+ * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#mmCharges
+ * StatementResolutionEntry2.mmCharges}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#Purpose
- * StatementResolutionEntry2.Purpose}</li>
+ * {@linkplain com.tools20022.repository.msg.StatementResolutionEntry2#mmPurpose
+ * StatementResolutionEntry2.mmPurpose}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -64,15 +74,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#StatementDetails
- * ResolutionOfInvestigationV07.StatementDetails}</li>
+ * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#mmStatementDetails
+ * ResolutionOfInvestigationV07.mmStatementDetails}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,9 +95,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "StatementResolutionEntry2", propOrder = {"originalGroupInformation", "originalStatementIdentification", "accountServicerReference", "correctedAmount", "charges", "purpose"})
 public class StatementResolutionEntry2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected OriginalGroupInformation3 originalGroupInformation;
 	/**
 	 * Provides information on the original message.
 	 * <p>
@@ -115,20 +128,21 @@ public class StatementResolutionEntry2 {
 	 * definition} = "Provides information on the original message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalGroupInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalGroupInformation = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlGrpInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalGroupInformation";
 			definition = "Provides information on the original message.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> OriginalGroupInformation3.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.OriginalGroupInformation3.mmObject();
 		}
 	};
+	protected Max35Text originalStatementIdentification;
 	/**
 	 * Unique identification, as assigned by the account servicer, to
 	 * unambiguously identify the original statement.
@@ -159,19 +173,20 @@ public class StatementResolutionEntry2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalStatementIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalStatementIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlStmtId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalStatementIdentification";
 			definition = "Unique identification, as assigned by the account servicer, to unambiguously identify the original statement.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text accountServicerReference;
 	/**
 	 * Unique reference, as assigned by the account servicing institution, to
 	 * unambiguously identify the entry.
@@ -185,8 +200,8 @@ public class StatementResolutionEntry2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Entry#AccountServicerTransactionIdentification
-	 * Entry.AccountServicerTransactionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Entry#mmAccountServicerTransactionIdentification
+	 * Entry.mmAccountServicerTransactionIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -207,20 +222,21 @@ public class StatementResolutionEntry2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AccountServicerReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAccountServicerReference = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Entry.mmAccountServicerTransactionIdentification;
 			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Entry.AccountServicerTransactionIdentification;
 			isDerived = false;
 			xmlTag = "AcctSvcrRef";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountServicerReference";
 			definition = "Unique reference, as assigned by the account servicing institution, to unambiguously identify the entry.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyAndAmount correctedAmount;
 	/**
 	 * Corrected debit or credit amount, compared to the original entry where
 	 * the amount is incorrect.
@@ -238,8 +254,8 @@ public class StatementResolutionEntry2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashEntry#Amount
-	 * CashEntry.Amount}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashEntry#mmAmount
+	 * CashEntry.mmAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -260,20 +276,21 @@ public class StatementResolutionEntry2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CorrectedAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCorrectedAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> CashEntry.mmAmount;
 			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashEntry.Amount;
 			isDerived = false;
 			xmlTag = "CrrctdAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorrectedAmount";
 			definition = "Corrected debit or credit amount, compared to the original entry where the amount is incorrect.\n\nUsage: This amount may only be present if an incorrect statement entry has been reported.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.Charges3> charges;
 	/**
 	 * Provides information on the charges included in the original entry
 	 * amount.
@@ -285,8 +302,8 @@ public class StatementResolutionEntry2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashEntry#Charges
-	 * CashEntry.Charges}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashEntry#mmCharges
+	 * CashEntry.mmCharges}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -307,20 +324,21 @@ public class StatementResolutionEntry2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Charges = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCharges = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> CashEntry.mmCharges;
 			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashEntry.Charges;
 			isDerived = false;
 			xmlTag = "Chrgs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Charges";
 			definition = "Provides information on the charges included in the original entry amount.";
 			minOccurs = 0;
-			type_lazy = () -> Charges3.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.Charges3.mmObject();
 		}
 	};
+	protected Purpose2Choice purpose;
 	/**
 	 * Underlying reason for the payment transaction. Usage: Purpose is used by
 	 * the end-customers, that is initiating party, (ultimate) debtor,
@@ -336,8 +354,8 @@ public class StatementResolutionEntry2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#Purpose
-	 * PaymentObligation.Purpose}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPurpose
+	 * PaymentObligation.mmPurpose}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -358,36 +376,89 @@ public class StatementResolutionEntry2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Purpose = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPurpose = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
 			componentContext_lazy = () -> StatementResolutionEntry2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentObligation.Purpose;
 			isDerived = false;
 			xmlTag = "Purp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Purpose";
 			definition = "Underlying reason for the payment transaction.\nUsage: Purpose is used by the end-customers, that is initiating party, (ultimate) debtor, (ultimate) creditor to provide information concerning the nature of the payment. Purpose is a content element, which is not used for processing by any of the agents involved in the payment chain.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Purpose2Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> Purpose2Choice.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.StatementResolutionEntry2.OriginalGroupInformation, com.tools20022.repository.msg.StatementResolutionEntry2.OriginalStatementIdentification,
-						com.tools20022.repository.msg.StatementResolutionEntry2.AccountServicerReference, com.tools20022.repository.msg.StatementResolutionEntry2.CorrectedAmount,
-						com.tools20022.repository.msg.StatementResolutionEntry2.Charges, com.tools20022.repository.msg.StatementResolutionEntry2.Purpose);
+				messageElement_lazy = () -> Arrays.asList(StatementResolutionEntry2.mmOriginalGroupInformation, StatementResolutionEntry2.mmOriginalStatementIdentification, StatementResolutionEntry2.mmAccountServicerReference,
+						StatementResolutionEntry2.mmCorrectedAmount, StatementResolutionEntry2.mmCharges, StatementResolutionEntry2.mmPurpose);
+				messageBuildingBlock_lazy = () -> Arrays.asList(ResolutionOfInvestigationV07.mmStatementDetails);
 				trace_lazy = () -> CashEntry.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.ResolutionOfInvestigationV07.StatementDetails);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatementResolutionEntry2";
 				definition = "Provides further details on the statement entry for the resolution of the investigation.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlGrpInf")
+	public OriginalGroupInformation3 getOriginalGroupInformation() {
+		return originalGroupInformation;
+	}
+
+	public void setOriginalGroupInformation(com.tools20022.repository.msg.OriginalGroupInformation3 originalGroupInformation) {
+		this.originalGroupInformation = originalGroupInformation;
+	}
+
+	@XmlElement(name = "OrgnlStmtId")
+	public Max35Text getOriginalStatementIdentification() {
+		return originalStatementIdentification;
+	}
+
+	public void setOriginalStatementIdentification(Max35Text originalStatementIdentification) {
+		this.originalStatementIdentification = originalStatementIdentification;
+	}
+
+	@XmlElement(name = "AcctSvcrRef")
+	public Max35Text getAccountServicerReference() {
+		return accountServicerReference;
+	}
+
+	public void setAccountServicerReference(Max35Text accountServicerReference) {
+		this.accountServicerReference = accountServicerReference;
+	}
+
+	@XmlElement(name = "CrrctdAmt")
+	public ActiveOrHistoricCurrencyAndAmount getCorrectedAmount() {
+		return correctedAmount;
+	}
+
+	public void setCorrectedAmount(ActiveOrHistoricCurrencyAndAmount correctedAmount) {
+		this.correctedAmount = correctedAmount;
+	}
+
+	@XmlElement(name = "Chrgs")
+	public List<Charges3> getCharges() {
+		return charges;
+	}
+
+	public void setCharges(List<com.tools20022.repository.msg.Charges3> charges) {
+		this.charges = charges;
+	}
+
+	@XmlElement(name = "Purp")
+	public Purpose2Choice getPurpose() {
+		return purpose;
+	}
+
+	public void setPurpose(Purpose2Choice purpose) {
+		this.purpose = purpose;
 	}
 }

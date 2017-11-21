@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.function.Supplier;
@@ -32,6 +34,22 @@ import java.util.Optional;
  */
 public class MMMessagingEndpoint implements MMModelEntity {
 
+	/**
+	 * the MessageTransportSystem that owns and uses this MessagingEndpoint
+	 */
+	public final static MetamodelAttribute<MMMessagingEndpoint, MMMessageTransportSystem> transportSystemAttribute = newAttribute();
+	/**
+	 * the TransportMessage that is received by the receiving MessagingEndpoint
+	 */
+	public final static MetamodelAttribute<MMMessagingEndpoint, List<MMTransportMessage>> receivedMessageAttribute = newAttribute();
+	/**
+	 * the TransportMessage that is sent by the sending MessagingEndpoint
+	 */
+	public final static MetamodelAttribute<MMMessagingEndpoint, List<MMTransportMessage>> sentMessageAttribute = newAttribute();
+	/**
+	 * an Address used to identify the MessagingEndpoint
+	 */
+	public final static MetamodelAttribute<MMMessagingEndpoint, List<MMAddress>> locationAttribute = newAttribute();
 	protected Supplier<MMMessageTransportSystem> transportSystem_lazy;
 	protected Supplier<List<MMTransportMessage>> receivedMessage_lazy;
 	protected Supplier<List<MMTransportMessage>> sentMessage_lazy;

@@ -20,10 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.DecimalNumber;
+import com.tools20022.repository.entity.AccountService;
 import com.tools20022.repository.entity.CashAccountService;
+import com.tools20022.repository.entity.Product;
+import com.tools20022.repository.entity.ProductQuantity;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the detailed parameters a service to be billed.
@@ -35,17 +44,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#BankService
- * BillingServiceParameters2.BankService}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#mmBankService
+ * BillingServiceParameters2.mmBankService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#Volume
- * BillingServiceParameters2.Volume}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#mmVolume
+ * BillingServiceParameters2.mmVolume}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#UnitPrice
- * BillingServiceParameters2.UnitPrice}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#mmUnitPrice
+ * BillingServiceParameters2.mmUnitPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#ServiceChargeAmount
- * BillingServiceParameters2.ServiceChargeAmount}</li>
+ * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#mmServiceChargeAmount
+ * BillingServiceParameters2.mmServiceChargeAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -54,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,9 +75,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the detailed parameters a service to be billed."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingServiceParameters2", propOrder = {"bankService", "volume", "unitPrice", "serviceChargeAmount"})
 public class BillingServiceParameters2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected BillingServiceIdentification2 bankService;
 	/**
 	 * Specifies the details to fully identify the bank service.
 	 * <p>
@@ -103,20 +115,21 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute BankService = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmBankService = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> BillingServiceParameters2.mmObject();
 			businessComponentTrace_lazy = () -> CashAccountService.mmObject();
+			componentContext_lazy = () -> BillingServiceParameters2.mmObject();
 			isDerived = false;
 			xmlTag = "BkSvc";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BankService";
 			definition = "Specifies the details to fully identify the bank service.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> BillingServiceIdentification2.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.BillingServiceIdentification2.mmObject();
 		}
 	};
+	protected DecimalNumber volume;
 	/**
 	 * Count or number of items (volume) involved in the charge.
 	 * <p>
@@ -130,8 +143,8 @@ public class BillingServiceParameters2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.ProductQuantity#Value
-	 * ProductQuantity.Value}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductQuantity#mmValue
+	 * ProductQuantity.mmValue}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -151,20 +164,21 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Volume = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmVolume = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
 			componentContext_lazy = () -> BillingServiceParameters2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.ProductQuantity.Value;
 			isDerived = false;
 			xmlTag = "Vol";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Volume";
 			definition = "Count or number of items (volume) involved in the charge.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	protected AmountAndDirection34 unitPrice;
 	/**
 	 * Price per item or unit used to calculate the charge expressed in the
 	 * pricing currency.
@@ -177,8 +191,8 @@ public class BillingServiceParameters2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Product#UnitPrice
-	 * Product.UnitPrice}</li>
+	 * {@linkplain com.tools20022.repository.entity.Product#mmUnitPrice
+	 * Product.mmUnitPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -199,21 +213,22 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd UnitPrice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmUnitPrice = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Product.mmUnitPrice;
 			componentContext_lazy = () -> BillingServiceParameters2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Product.UnitPrice;
 			isDerived = false;
 			xmlTag = "UnitPric";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnitPrice";
 			definition = "Price per item or unit used to calculate the charge expressed in the pricing currency.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndDirection34.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
+	protected AmountAndDirection34 serviceChargeAmount;
 	/**
 	 * Amount of the calculated charge expressed in the pricing currency,
 	 * exclusive of any tax.
@@ -226,8 +241,8 @@ public class BillingServiceParameters2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.AccountService#AccountAdministrationCharge
-	 * AccountService.AccountAdministrationCharge}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountService#mmAccountAdministrationCharge
+	 * AccountService.mmAccountAdministrationCharge}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -248,34 +263,69 @@ public class BillingServiceParameters2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ServiceChargeAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmServiceChargeAmount = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> AccountService.mmAccountAdministrationCharge;
 			componentContext_lazy = () -> BillingServiceParameters2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.AccountService.AccountAdministrationCharge;
 			isDerived = false;
 			xmlTag = "SvcChrgAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ServiceChargeAmount";
 			definition = "Amount of the calculated charge expressed in the pricing currency, exclusive of any tax.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndDirection34.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AmountAndDirection34.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServiceParameters2.BankService, com.tools20022.repository.msg.BillingServiceParameters2.Volume,
-						com.tools20022.repository.msg.BillingServiceParameters2.UnitPrice, com.tools20022.repository.msg.BillingServiceParameters2.ServiceChargeAmount);
+				messageElement_lazy = () -> Arrays.asList(BillingServiceParameters2.mmBankService, BillingServiceParameters2.mmVolume, BillingServiceParameters2.mmUnitPrice, BillingServiceParameters2.mmServiceChargeAmount);
 				trace_lazy = () -> CashAccountService.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingServiceParameters2";
 				definition = "Specifies the detailed parameters a service to be billed.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "BkSvc", required = true)
+	public BillingServiceIdentification2 getBankService() {
+		return bankService;
+	}
+
+	public void setBankService(com.tools20022.repository.msg.BillingServiceIdentification2 bankService) {
+		this.bankService = bankService;
+	}
+
+	@XmlElement(name = "Vol")
+	public DecimalNumber getVolume() {
+		return volume;
+	}
+
+	public void setVolume(DecimalNumber volume) {
+		this.volume = volume;
+	}
+
+	@XmlElement(name = "UnitPric")
+	public AmountAndDirection34 getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(com.tools20022.repository.msg.AmountAndDirection34 unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	@XmlElement(name = "SvcChrgAmt", required = true)
+	public AmountAndDirection34 getServiceChargeAmount() {
+		return serviceChargeAmount;
+	}
+
+	public void setServiceChargeAmount(com.tools20022.repository.msg.AmountAndDirection34 serviceChargeAmount) {
+		this.serviceChargeAmount = serviceChargeAmount;
 	}
 }

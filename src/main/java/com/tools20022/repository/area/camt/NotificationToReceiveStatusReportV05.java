@@ -20,12 +20,16 @@ package com.tools20022.repository.area.camt;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.CashManagementLatestVersion;
 import com.tools20022.repository.msg.GroupHeader60;
 import com.tools20022.repository.msg.OriginalNotification9;
 import com.tools20022.repository.msg.SupplementaryData1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * <b>Scope</b><br>
@@ -56,21 +60,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#GroupHeader
- * NotificationToReceiveStatusReportV05.GroupHeader}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#mmGroupHeader
+ * NotificationToReceiveStatusReportV05.mmGroupHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#OriginalNotificationAndStatus
- * NotificationToReceiveStatusReportV05.OriginalNotificationAndStatus}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#mmOriginalNotificationAndStatus
+ * NotificationToReceiveStatusReportV05.mmOriginalNotificationAndStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#SupplementaryData
- * NotificationToReceiveStatusReportV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#mmSupplementaryData
+ * NotificationToReceiveStatusReportV05.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#identifier
- * NotificationToReceiveStatusReportV05.identifier}</li>
+ * messageDefinitionIdentifier} = {@code camt.059.001.05}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,9 +85,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "NotificationToReceiveStatusReportV05", propOrder = {"groupHeader", "originalNotificationAndStatus", "supplementaryData"})
 public class NotificationToReceiveStatusReportV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected GroupHeader60 groupHeader;
 	/**
 	 * Set of elements used to provide further details on the message.
 	 * <p>
@@ -109,17 +114,26 @@ public class NotificationToReceiveStatusReportV05 {
 	 * "Set of elements used to provide further details on the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock GroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "GrpHdr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupHeader";
 			definition = "Set of elements used to provide further details on the message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> GroupHeader60.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return NotificationToReceiveStatusReportV05.class.getMethod("getGroupHeader", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OriginalNotification9 originalNotificationAndStatus;
 	/**
 	 * Set of elements used to identify the original notification and to provide
 	 * the status.
@@ -146,17 +160,26 @@ public class NotificationToReceiveStatusReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock OriginalNotificationAndStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmOriginalNotificationAndStatus = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "OrgnlNtfctnAndSts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalNotificationAndStatus";
 			definition = "Set of elements used to identify the original notification and to provide the status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> OriginalNotification9.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return NotificationToReceiveStatusReportV05.class.getMethod("getOriginalNotificationAndStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -183,58 +206,84 @@ public class NotificationToReceiveStatusReportV05 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "05"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "camt"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "059"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "camt";
-			messageFunctionality = "059";
-			version = "05";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return NotificationToReceiveStatusReportV05.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NotificationToReceiveStatusReportV05";
 				definition = "Scope\r\nThe NotificationToReceiveStatusReport message is sent by an account servicing institution to an account owner or to a party acting on the account owner's behalf. It is used to notify the account owner about the status of one or more expected payments that were advised in a previous NotificationToReceive message.\r\nUsage\r\nThe NotificationToReceiveStatusReport message is sent in response to a NotificationToReceive message and can be used in either a direct or a relay scenario. It is used to advise the account owner of receipt of the funds as expected. It is also used to notify the account owner of non-receipt of funds or of discrepancies in the funds received.";
 				rootElement = "Document";
 				xmlTag = "NtfctnToRcvStsRpt";
 				businessArea_lazy = () -> CashManagementLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.GroupHeader,
-						com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.OriginalNotificationAndStatus, com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.mmGroupHeader,
+						com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.mmOriginalNotificationAndStatus, com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "camt";
+						messageFunctionality = "059";
+						version = "05";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return NotificationToReceiveStatusReportV05.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "GrpHdr", required = true)
+	public GroupHeader60 getGroupHeader() {
+		return groupHeader;
+	}
+
+	public void setGroupHeader(GroupHeader60 groupHeader) {
+		this.groupHeader = groupHeader;
+	}
+
+	@XmlElement(name = "OrgnlNtfctnAndSts", required = true)
+	public OriginalNotification9 getOriginalNotificationAndStatus() {
+		return originalNotificationAndStatus;
+	}
+
+	public void setOriginalNotificationAndStatus(OriginalNotification9 originalNotificationAndStatus) {
+		this.originalNotificationAndStatus = originalNotificationAndStatus;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:camt.059.05.05")
+	static public class Document {
+		@XmlElement(name = "NtfctnToRcvStsRpt", required = true)
+		public NotificationToReceiveStatusReportV05 messageBody;
 	}
 }

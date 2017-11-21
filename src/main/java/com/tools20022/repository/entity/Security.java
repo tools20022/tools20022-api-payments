@@ -17,15 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.EntryTransaction8;
+import com.tools20022.repository.msg.LoanContract1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Financial instruments representing a sum of rights of the investor vis-a-vis
@@ -40,137 +43,147 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Identification
- * Security.Identification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmIdentification
+ * Security.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#RegisteredDistributionCountry
- * Security.RegisteredDistributionCountry}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRegisteredDistributionCountry
+ * Security.mmRegisteredDistributionCountry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#DenominationCurrency
- * Security.DenominationCurrency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#RegistrationForm
- * Security.RegistrationForm}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmDenominationCurrency
+ * Security.mmDenominationCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmRegistrationForm
+ * Security.mmRegistrationForm}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#DematerialisedIndicator
- * Security.DematerialisedIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#EUSavingsDirective
- * Security.EUSavingsDirective}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesQuantity
- * Security.SecuritiesQuantity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Fees Security.Fees}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Pricing
- * Security.Pricing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesAccount
- * Security.SecuritiesAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#TradingMarket
- * Security.TradingMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#PlaceOfListing
- * Security.PlaceOfListing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Registration
- * Security.Registration}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Restriction
- * Security.Restriction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#CorporateEvent
- * Security.CorporateEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmDematerialisedIndicator
+ * Security.mmDematerialisedIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#TemporaryFinancialInstrumentIndicator
- * Security.TemporaryFinancialInstrumentIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#AvailableDate
- * Security.AvailableDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#DeclarationDetails
- * Security.DeclarationDetails}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Spread
- * Security.Spread}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Dividend
- * Security.Dividend}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Balance
- * Security.Balance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#FungibleIndicator
- * Security.FungibleIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Appearance
- * Security.Appearance}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmEUSavingsDirective
+ * Security.mmEUSavingsDirective}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#NearTermPositionLimit
- * Security.NearTermPositionLimit}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesQuantity
+ * Security.mmSecuritiesQuantity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmFees
+ * Security.mmFees}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmPricing
+ * Security.mmPricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#ContractSettlementMonth
- * Security.ContractSettlementMonth}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesAccount
+ * Security.mmSecuritiesAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmTradingMarket
+ * Security.mmTradingMarket}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmPlaceOfListing
+ * Security.mmPlaceOfListing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmRegistration
+ * Security.mmRegistration}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmRestriction
+ * Security.mmRestriction}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmCorporateEvent
+ * Security.mmCorporateEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#MinimumTradingPricingIncrement
- * Security.MinimumTradingPricingIncrement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Rating
- * Security.Rating}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#CouponAttached
- * Security.CouponAttached}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Sector
- * Security.Sector}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmTemporaryFinancialInstrumentIndicator
+ * Security.mmTemporaryFinancialInstrumentIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmAvailableDate
+ * Security.mmAvailableDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#WarrantAttachedOnDelivery
- * Security.WarrantAttachedOnDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmDeclarationDetails
+ * Security.mmDeclarationDetails}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSpread
+ * Security.mmSpread}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmDividend
+ * Security.mmDividend}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmBalance
+ * Security.mmBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#StrippableIndicator
- * Security.StrippableIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#FirstDealingDate
- * Security.FirstDealingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#TaxDetails
- * Security.TaxDetails}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesTrade
- * Security.SecuritiesTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmFungibleIndicator
+ * Security.mmFungibleIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmAppearance
+ * Security.mmAppearance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#RegistrationJurisdiction
- * Security.RegistrationJurisdiction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#PartyRole
- * Security.PartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecurityStatus
- * Security.SecurityStatus}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Modification
- * Security.Modification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#RedemptionSchedule
- * Security.RedemptionSchedule}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmNearTermPositionLimit
+ * Security.mmNearTermPositionLimit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#SecuritiesSettlement
- * Security.SecuritiesSettlement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesTransfer
- * Security.SecuritiesTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmContractSettlementMonth
+ * Security.mmContractSettlementMonth}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#CorporateActionStandingInstructions
- * Security.CorporateActionStandingInstructions}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Quote
- * Security.Quote}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#SecuritiesOrder
- * Security.SecuritiesOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmMinimumTradingPricingIncrement
+ * Security.mmMinimumTradingPricingIncrement}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmRating
+ * Security.mmRating}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmCouponAttached
+ * Security.mmCouponAttached}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSector
+ * Security.mmSector}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#RelatedVariableInterest
- * Security.RelatedVariableInterest}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Conversion
- * Security.Conversion}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#ComponentSecurity
- * Security.ComponentSecurity}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmWarrantAttachedOnDelivery
+ * Security.mmWarrantAttachedOnDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#RecompositionIndicator
- * Security.RecompositionIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#Series
- * Security.Series}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmStrippableIndicator
+ * Security.mmStrippableIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmFirstDealingDate
+ * Security.mmFirstDealingDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmTaxDetails
+ * Security.mmTaxDetails}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSecuritiesTrade
+ * Security.mmSecuritiesTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#PercentageOfDebtClaim
- * Security.PercentageOfDebtClaim}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#CoverRate
- * Security.CoverRate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#MaturityRedemption
- * Security.MaturityRedemption}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#RelatedMarginCall
- * Security.RelatedMarginCall}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#CloseLink
- * Security.CloseLink}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRegistrationJurisdiction
+ * Security.mmRegistrationJurisdiction}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmPartyRole
+ * Security.mmPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSecurityStatus
+ * Security.mmSecurityStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmModification
+ * Security.mmModification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#PotentialEuroSystemEligibility
- * Security.PotentialEuroSystemEligibility}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#MinimumQuantity
- * Security.MinimumQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRedemptionSchedule
+ * Security.mmRedemptionSchedule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Security#RestrictedIndicator
- * Security.RestrictedIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesSettlement
+ * Security.mmSecuritiesSettlement}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmSecuritiesTransfer
+ * Security.mmSecuritiesTransfer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmCorporateActionStandingInstructions
+ * Security.mmCorporateActionStandingInstructions}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmQuote
+ * Security.mmQuote}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSecuritiesOrder
+ * Security.mmSecuritiesOrder}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRelatedVariableInterest
+ * Security.mmRelatedVariableInterest}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmConversion
+ * Security.mmConversion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmComponentSecurity
+ * Security.mmComponentSecurity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRecompositionIndicator
+ * Security.mmRecompositionIndicator}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmSeries
+ * Security.mmSeries}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmPercentageOfDebtClaim
+ * Security.mmPercentageOfDebtClaim}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmCoverRate
+ * Security.mmCoverRate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmMaturityRedemption
+ * Security.mmMaturityRedemption}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRelatedMarginCall
+ * Security.mmRelatedMarginCall}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmCloseLink
+ * Security.mmCloseLink}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmPotentialEuroSystemEligibility
+ * Security.mmPotentialEuroSystemEligibility}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmMinimumQuantity
+ * Security.mmMinimumQuantity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRestrictedIndicator
+ * Security.mmRestrictedIndicator}</li>
  * </ul>
  * </li>
  * <li>
@@ -178,92 +191,100 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#IdentifiedSecurity
- * SecuritiesIdentification.IdentifiedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Dividend#Security
- * Dividend.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesPricing#Security
- * SecuritiesPricing.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Party#CloseLinkSecurity
- * Party.CloseLinkSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RedemptionSchedule#Security
- * RedemptionSchedule.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmIdentifiedSecurity
+ * SecuritiesIdentification.mmIdentifiedSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Dividend#mmSecurity
+ * Dividend.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#TradedSecurity
- * TradingMarket.TradedSecurity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmSecurity
+ * SecuritiesPricing.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Party#mmCloseLinkSecurity
+ * Party.mmCloseLinkSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#ListedSecurity
- * TradingMarket.ListedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesAccount#Security
- * SecuritiesAccount.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTax#Security
- * SecuritiesTax.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmSecurity
+ * RedemptionSchedule.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#SecurityIdentification
- * SecuritiesQuantity.SecurityIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradedSecurity
+ * TradingMarket.mmTradedSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumQuantityDebt
- * SecuritiesQuantity.MinimumQuantityDebt}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#Security
- * SecuritiesTrade.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Security
- * SecuritiesTransfer.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmListedSecurity
+ * TradingMarket.mmListedSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#Security
- * SecuritiesPartyRole.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSecurity
+ * SecuritiesAccount.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTax#mmSecurity
+ * SecuritiesTax.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#Security
- * SecuritiesSettlement.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmSecurityIdentification
+ * SecuritiesQuantity.mmSecurityIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesRelatedFees#Security
- * SecuritiesRelatedFees.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesStatus#Security
- * SecuritiesStatus.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumQuantityDebt
+ * SecuritiesQuantity.mmMinimumQuantityDebt}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecurity
+ * SecuritiesTrade.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VariableInterest#BenchmarkReference
- * VariableInterest.BenchmarkReference}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#Security
- * CouponAttached.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmSecurity
+ * SecuritiesTransfer.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#SecurityIdentification
- * SecuritiesConversion.SecurityIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#mmSecurity
+ * SecuritiesPartyRole.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#Security
- * BasicSecuritiesRegistration.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmSecurity
+ * SecuritiesSettlement.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesRestriction#Security
- * SecuritiesRestriction.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesBalance#Security
- * SecuritiesBalance.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesRelatedFees#mmSecurity
+ * SecuritiesRelatedFees.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesStatus#mmSecurity
+ * SecuritiesStatus.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#UnderlyingSecurity
- * CorporateActionEvent.UnderlyingSecurity}</li>
+ * {@linkplain com.tools20022.repository.entity.VariableInterest#mmBenchmarkReference
+ * VariableInterest.mmBenchmarkReference}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CouponAttached#mmSecurity
+ * CouponAttached.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesModification#NewSecurityReferenceData
- * SecuritiesModification.NewSecurityReferenceData}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Spread#BenchmarkSecurity
- * Spread.BenchmarkSecurity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmSecurityIdentification
+ * SecuritiesConversion.mmSecurityIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#OrderedSecurity
- * SecuritiesOrder.OrderedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Rating#Security
- * Rating.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Sector#Security
- * Sector.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSecurity
+ * BasicSecuritiesRegistration.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Jurisdiction#RegisteredSecurities
- * Jurisdiction.RegisteredSecurities}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesRestriction#mmSecurity
+ * SecuritiesRestriction.mmSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#Security
- * AgentCorporateActionStandingInstruction.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.MarginCall#Security
- * MarginCall.Security}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Quote#QuotedSecurity
- * Quote.QuotedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ComponentSecurity#Security
- * ComponentSecurity.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmSecurity
+ * SecuritiesBalance.mmSecurity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmUnderlyingSecurity
+ * CorporateActionEvent.mmUnderlyingSecurity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesModification#mmNewSecurityReferenceData
+ * SecuritiesModification.mmNewSecurityReferenceData}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Spread#mmBenchmarkSecurity
+ * Spread.mmBenchmarkSecurity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmOrderedSecurity
+ * SecuritiesOrder.mmOrderedSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Rating#mmSecurity
+ * Rating.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Sector#mmSecurity
+ * Sector.mmSecurity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Jurisdiction#mmRegisteredSecurities
+ * Jurisdiction.mmRegisteredSecurities}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#mmSecurity
+ * AgentCorporateActionStandingInstruction.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.MarginCall#mmSecurity
+ * MarginCall.mmSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Quote#mmQuotedSecurity
+ * Quote.mmQuotedSecurity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ComponentSecurity#mmSecurity
+ * ComponentSecurity.mmSecurity}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -274,13 +295,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.entity.Entitlement Entitlement}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -296,6 +315,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Security extends Asset {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.SecuritiesIdentification> identification;
 	/**
 	 * Way(s) of identifying the security.
 	 * <p>
@@ -304,8 +324,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#IdentifiedSecurity
-	 * SecuritiesIdentification.IdentifiedSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmIdentifiedSecurity
+	 * SecuritiesIdentification.mmIdentifiedSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -318,11 +338,11 @@ public class Security extends Asset {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LoanContract1#ContractDocumentIdentification
-	 * LoanContract1.ContractDocumentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.LoanContract1#mmContractDocumentIdentification
+	 * LoanContract1.mmContractDocumentIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#FinancialInstrumentIdentification
-	 * EntryTransaction8.FinancialInstrumentIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmFinancialInstrumentIdentification
+	 * EntryTransaction8.mmFinancialInstrumentIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -340,20 +360,21 @@ public class Security extends Asset {
 	 * definition} = "Way(s) of identifying the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Identification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LoanContract1.ContractDocumentIdentification, com.tools20022.repository.msg.EntryTransaction8.FinancialInstrumentIdentification);
-			elementContext_lazy = () -> Security.mmObject();
+			derivation_lazy = () -> Arrays.asList(LoanContract1.mmContractDocumentIdentification, EntryTransaction8.mmFinancialInstrumentIdentification);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Way(s) of identifying the security.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.IdentifiedSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmIdentifiedSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 		}
 	};
+	protected CountryCode registeredDistributionCountry;
 	/**
 	 * Country in which the processing characteristic applies.
 	 * <p>
@@ -378,18 +399,27 @@ public class Security extends Asset {
 	 * definition} = "Country in which the processing characteristic applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegisteredDistributionCountry = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegisteredDistributionCountry = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegisteredDistributionCountry";
 			definition = "Country in which the processing characteristic applies.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getRegisteredDistributionCountry", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode denominationCurrency;
 	/**
 	 * Currency in which a security is issued or redenominated.
 	 * <p>
@@ -414,18 +444,27 @@ public class Security extends Asset {
 	 * definition} = "Currency in which a security is issued or redenominated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DenominationCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDenominationCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DenominationCurrency";
 			definition = "Currency in which a security is issued or redenominated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getDenominationCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FormOfSecurityCode registrationForm;
 	/**
 	 * Specifies the form, ie, ownership, of the security.
 	 * <p>
@@ -451,18 +490,27 @@ public class Security extends Asset {
 	 * definition} = "Specifies the form, ie, ownership, of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RegistrationForm = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRegistrationForm = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationForm";
 			definition = "Specifies the form, ie, ownership, of the security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FormOfSecurityCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getRegistrationForm", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator dematerialisedIndicator;
 	/**
 	 * Indicates whether a security exists only as an electronic record, ie,
 	 * there is no physical document representing the security.
@@ -491,18 +539,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DematerialisedIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDematerialisedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DematerialisedIndicator";
 			definition = "Indicates whether a security exists only as an electronic record, ie, there is no physical document representing the security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getDematerialisedIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected EUSavingsDirectiveCode eUSavingsDirective;
 	/**
 	 * Indicates whether the investment fund class is subject to the European
 	 * Union Saving Directive.
@@ -531,18 +588,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EUSavingsDirective = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEUSavingsDirective = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EUSavingsDirective";
 			definition = "Indicates whether the investment fund class is subject to the European Union Saving Directive.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> EUSavingsDirectiveCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getEUSavingsDirective", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity;
 	/**
 	 * Specifies the quantity associated with a security.
 	 * <p>
@@ -551,8 +617,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#SecurityIdentification
-	 * SecuritiesQuantity.SecurityIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmSecurityIdentification
+	 * SecuritiesQuantity.mmSecurityIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -575,19 +641,20 @@ public class Security extends Asset {
 	 * definition} = "Specifies the quantity associated with a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Specifies the quantity associated with a security.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmSecurityIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.SecurityIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesRelatedFees> fees;
 	/**
 	 * Fees related to securities.
 	 * <p>
@@ -596,8 +663,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesRelatedFees#Security
-	 * SecuritiesRelatedFees.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesRelatedFees#mmSecurity
+	 * SecuritiesRelatedFees.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -621,19 +688,20 @@ public class Security extends Asset {
 	 * definition} = "Fees related to securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Fees = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFees = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fees";
 			definition = "Fees related to securities.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesRelatedFees.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesRelatedFees.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPricing> pricing;
 	/**
 	 * Information on the price of the security.
 	 * <p>
@@ -642,8 +710,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Security
-	 * SecuritiesPricing.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmSecurity
+	 * SecuritiesPricing.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -666,19 +734,20 @@ public class Security extends Asset {
 	 * definition} = "Information on the price of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Pricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pricing";
 			definition = "Information on the price of the security.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected SecuritiesAccount securitiesAccount;
 	/**
 	 * Account on which the security is held.
 	 * <p>
@@ -687,8 +756,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#Security
-	 * SecuritiesAccount.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmSecurity
+	 * SecuritiesAccount.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -711,20 +780,21 @@ public class Security extends Asset {
 	 * definition} = "Account on which the security is held."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesAccount";
 			definition = "Account on which the security is held.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.TradingMarket> tradingMarket;
 	/**
 	 * Market(s) on which the security is traded.
 	 * <p>
@@ -733,8 +803,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingMarket#TradedSecurity
-	 * TradingMarket.TradedSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradedSecurity
+	 * TradingMarket.mmTradedSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -757,19 +827,20 @@ public class Security extends Asset {
 	 * definition} = "Market(s) on which the security is traded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingMarket";
 			definition = "Market(s) on which the security is traded.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmTradedSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.TradedSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.TradingMarket> placeOfListing;
 	/**
 	 * Market(s) on which the security is listed.
 	 * <p>
@@ -778,8 +849,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingMarket#ListedSecurity
-	 * TradingMarket.ListedSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingMarket#mmListedSecurity
+	 * TradingMarket.mmListedSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -802,19 +873,20 @@ public class Security extends Asset {
 	 * definition} = "Market(s) on which the security is listed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PlaceOfListing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPlaceOfListing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfListing";
 			definition = "Market(s) on which the security is listed.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmListedSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.ListedSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.BasicSecuritiesRegistration> registration;
 	/**
 	 * Information related to registration of securities.
 	 * <p>
@@ -823,8 +895,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#Security
-	 * BasicSecuritiesRegistration.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSecurity
+	 * BasicSecuritiesRegistration.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -848,19 +920,20 @@ public class Security extends Asset {
 	 * definition} = "Information related to registration of securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Registration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Registration";
 			definition = "Information related to registration of securities.";
 			minOccurs = 0;
-			type_lazy = () -> BasicSecuritiesRegistration.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesRestriction> restriction;
 	/**
 	 * Regulatory restriction(s) linked to the security.
 	 * <p>
@@ -869,8 +942,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesRestriction#Security
-	 * SecuritiesRestriction.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesRestriction#mmSecurity
+	 * SecuritiesRestriction.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -894,19 +967,20 @@ public class Security extends Asset {
 	 * definition} = "Regulatory restriction(s) linked to the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Restriction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRestriction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Restriction";
 			definition = "Regulatory restriction(s) linked to the security.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesRestriction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CorporateActionEvent> corporateEvent;
 	/**
 	 * Corporate event linked to the security
 	 * <p>
@@ -915,8 +989,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#UnderlyingSecurity
-	 * CorporateActionEvent.UnderlyingSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmUnderlyingSecurity
+	 * CorporateActionEvent.mmUnderlyingSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -929,8 +1003,8 @@ public class Security extends Asset {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#CorporateAction
-	 * EntryTransaction8.CorporateAction}</li>
+	 * {@linkplain com.tools20022.repository.msg.EntryTransaction8#mmCorporateAction
+	 * EntryTransaction8.mmCorporateAction}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -948,20 +1022,21 @@ public class Security extends Asset {
 	 * definition} = "Corporate event linked to the security"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateEvent = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EntryTransaction8.CorporateAction);
-			elementContext_lazy = () -> Security.mmObject();
+			derivation_lazy = () -> Arrays.asList(EntryTransaction8.mmCorporateAction);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateEvent";
 			definition = "Corporate event linked to the security";
 			minOccurs = 0;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.UnderlyingSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmUnderlyingSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
+	protected YesNoIndicator temporaryFinancialInstrumentIndicator;
 	/**
 	 * Specifies that the security is a temporary security.
 	 * <p>
@@ -987,18 +1062,27 @@ public class Security extends Asset {
 	 * definition} = "Specifies that the security is a temporary security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TemporaryFinancialInstrumentIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTemporaryFinancialInstrumentIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TemporaryFinancialInstrumentIndicator";
 			definition = "Specifies that the security is a temporary security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getTemporaryFinancialInstrumentIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime availableDate;
 	/**
 	 * Date on which securities become available for sale.
 	 * <p>
@@ -1023,18 +1107,27 @@ public class Security extends Asset {
 	 * definition} = "Date on which securities become available for sale."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AvailableDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAvailableDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AvailableDate";
 			definition = "Date on which securities become available for sale.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getAvailableDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text declarationDetails;
 	/**
 	 * Provides declaration details narrative relative to the financial
 	 * instrument, eg, beneficial ownership.
@@ -1062,18 +1155,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DeclarationDetails = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDeclarationDetails = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeclarationDetails";
 			definition = "Provides declaration details narrative relative to the financial instrument, eg, beneficial ownership.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getDeclarationDetails", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Spread spread;
 	/**
 	 * Spread that uses the security as benchmark reference.
 	 * <p>
@@ -1082,8 +1184,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Spread#BenchmarkSecurity
-	 * Spread.BenchmarkSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.Spread#mmBenchmarkSecurity
+	 * Spread.mmBenchmarkSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1105,20 +1207,21 @@ public class Security extends Asset {
 	 * definition} = "Spread that uses the security as benchmark reference."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Spread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Spread";
 			definition = "Spread that uses the security as benchmark reference.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmBenchmarkSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.BenchmarkSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Dividend> dividend;
 	/**
 	 * Dividend per financial instrument.
 	 * <p>
@@ -1127,8 +1230,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Dividend#Security
-	 * Dividend.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.Dividend#mmSecurity
+	 * Dividend.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1150,19 +1253,20 @@ public class Security extends Asset {
 	 * definition} = "Dividend per financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Dividend = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDividend = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dividend";
 			definition = "Dividend per financial instrument.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Dividend.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Dividend.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesBalance balance;
 	/**
 	 * Balance of the account which holds a specific security.
 	 * <p>
@@ -1171,8 +1275,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#Security
-	 * SecuritiesBalance.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesBalance#mmSecurity
+	 * SecuritiesBalance.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1195,20 +1299,21 @@ public class Security extends Asset {
 	 * definition} = "Balance of the account which holds a specific security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Balance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Balance of the account which holds a specific security.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesBalance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 		}
 	};
+	protected YesNoIndicator fungibleIndicator;
 	/**
 	 * Indicates whether a security is interchangeable, ie, the security is
 	 * allowed to be replaced by another security, without loss of value.
@@ -1237,18 +1342,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FungibleIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFungibleIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FungibleIndicator";
 			definition = "Indicates whether a security is interchangeable, ie, the security is allowed to be replaced by another security, without loss of value.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getFungibleIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AppearanceCode appearance;
 	/**
 	 * Specifies the deliverability of a security.
 	 * <p>
@@ -1274,18 +1388,27 @@ public class Security extends Asset {
 	 * definition} = "Specifies the deliverability of a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Appearance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAppearance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Appearance";
 			definition = "Specifies the deliverability of a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AppearanceCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getAppearance", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number nearTermPositionLimit;
 	/**
 	 * Position limit in the near-term contract for a given exchange-traded
 	 * product.
@@ -1313,18 +1436,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NearTermPositionLimit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNearTermPositionLimit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NearTermPositionLimit";
 			definition = "Position limit in the near-term contract for a given exchange-traded product.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getNearTermPositionLimit", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISOYearMonth contractSettlementMonth;
 	/**
 	 * Specifies when the contract (i.e. MBS/TBA) will settle.
 	 * <p>
@@ -1350,18 +1482,27 @@ public class Security extends Asset {
 	 * definition} = "Specifies when the contract (i.e. MBS/TBA) will settle."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ContractSettlementMonth = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmContractSettlementMonth = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ContractSettlementMonth";
 			definition = "Specifies when the contract (i.e. MBS/TBA) will settle.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISOYearMonth.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getContractSettlementMonth", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number minimumTradingPricingIncrement;
 	/**
 	 * Minimum price increase for a given exchange-traded Instrument
 	 * <p>
@@ -1387,18 +1528,27 @@ public class Security extends Asset {
 	 * "Minimum price increase for a given exchange-traded Instrument"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MinimumTradingPricingIncrement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMinimumTradingPricingIncrement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumTradingPricingIncrement";
 			definition = "Minimum price increase for a given exchange-traded Instrument";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getMinimumTradingPricingIncrement", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Rating> rating;
 	/**
 	 * Rating(s) of the security.
 	 * <p>
@@ -1406,8 +1556,9 @@ public class Security extends Asset {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Rating#Security
-	 * Rating.Security}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Rating#mmSecurity
+	 * Rating.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1429,19 +1580,20 @@ public class Security extends Asset {
 	 * definition} = "Rating(s) of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Rating = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRating = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rating";
 			definition = "Rating(s) of the security.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Rating.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Rating.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.CouponAttached> couponAttached;
 	/**
 	 * Coupon information of the security.
 	 * <p>
@@ -1450,8 +1602,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CouponAttached#Security
-	 * CouponAttached.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.CouponAttached#mmSecurity
+	 * CouponAttached.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1474,19 +1626,20 @@ public class Security extends Asset {
 	 * definition} = "Coupon information of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CouponAttached = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCouponAttached = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CouponAttached";
 			definition = "Coupon information of the security.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CouponAttached.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CouponAttached.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Sector sector;
 	/**
 	 * Indicates the market sector the security is classified as
 	 * pharmaceuticals, automobile, housing, etc.
@@ -1495,8 +1648,9 @@ public class Security extends Asset {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Sector#Security
-	 * Sector.Security}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Sector#mmSecurity
+	 * Sector.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1520,20 +1674,21 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Sector = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Indicates the market sector the security is classified as pharmaceuticals, automobile, housing, etc.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Sector.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Sector.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Sector.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator warrantAttachedOnDelivery;
 	/**
 	 * Indicates whether the warrants on a financial instrument (which has been
 	 * traded cum warrants) will be attached on delivery.
@@ -1562,18 +1717,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute WarrantAttachedOnDelivery = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmWarrantAttachedOnDelivery = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WarrantAttachedOnDelivery";
 			definition = "Indicates whether the warrants on a financial instrument (which has been traded cum warrants) will be attached on delivery.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getWarrantAttachedOnDelivery", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator strippableIndicator;
 	/**
 	 * Indicates whether the interest is separable from the principal.
 	 * <p>
@@ -1600,18 +1764,27 @@ public class Security extends Asset {
 	 * "Indicates whether the interest is separable from the principal."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StrippableIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStrippableIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StrippableIndicator";
 			definition = "Indicates whether the interest is separable from the principal.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getStrippableIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime firstDealingDate;
 	/**
 	 * Date on which new securities begin trading.
 	 * <p>
@@ -1636,18 +1809,27 @@ public class Security extends Asset {
 	 * definition} = "Date on which new securities begin trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FirstDealingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFirstDealingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstDealingDate";
 			definition = "Date on which new securities begin trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getFirstDealingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesTax> taxDetails;
 	/**
 	 * Tax details of the security.
 	 * <p>
@@ -1656,8 +1838,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTax#Security
-	 * SecuritiesTax.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTax#mmSecurity
+	 * SecuritiesTax.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1680,19 +1862,20 @@ public class Security extends Asset {
 	 * definition} = "Tax details of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TaxDetails = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTaxDetails = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxDetails";
 			definition = "Tax details of the security.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesTax.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTax.mmObject();
 		}
 	};
+	protected SecuritiesTrade securitiesTrade;
 	/**
 	 * Trade in which the security is involved.
 	 * <p>
@@ -1701,8 +1884,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#Security
-	 * SecuritiesTrade.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTrade#mmSecurity
+	 * SecuritiesTrade.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1725,20 +1908,21 @@ public class Security extends Asset {
 	 * definition} = "Trade in which the security is involved."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesTrade";
 			definition = "Trade in which the security is involved.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTrade.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Jurisdiction registrationJurisdiction;
 	/**
 	 * Jurisdiction (country, county, state, province, city) in which the
 	 * security is legally recorded for regulatory and/or tax purposes.
@@ -1748,8 +1932,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Jurisdiction#RegisteredSecurities
-	 * Jurisdiction.RegisteredSecurities}</li>
+	 * {@linkplain com.tools20022.repository.entity.Jurisdiction#mmRegisteredSecurities
+	 * Jurisdiction.mmRegisteredSecurities}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1774,20 +1958,21 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RegistrationJurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRegistrationJurisdiction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationJurisdiction";
 			definition = "Jurisdiction (country, county, state, province, city) in which the security is legally recorded for regulatory and/or tax purposes.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Jurisdiction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.RegisteredSecurities;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmRegisteredSecurities;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPartyRole> partyRole;
 	/**
 	 * Specifies roles played by a party that are linked to the handling of
 	 * securities but not related to a specific process.
@@ -1797,8 +1982,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#Security
-	 * SecuritiesPartyRole.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPartyRole#mmSecurity
+	 * SecuritiesPartyRole.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1823,19 +2008,20 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies roles played by a party that are linked to the handling of securities but not related to a specific process.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPartyRole.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesStatus> securityStatus;
 	/**
 	 * Specifies the status of the security within its lifecycle.
 	 * <p>
@@ -1844,8 +2030,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesStatus#Security
-	 * SecuritiesStatus.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesStatus#mmSecurity
+	 * SecuritiesStatus.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1869,19 +2055,20 @@ public class Security extends Asset {
 	 * "Specifies the status of the security within its lifecycle."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecurityStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurityStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityStatus";
 			definition = "Specifies the status of the security within its lifecycle.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesStatus.mmObject();
 		}
 	};
+	protected SecuritiesModification modification;
 	/**
 	 * Modification process which applies to a specific security.
 	 * <p>
@@ -1890,8 +2077,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesModification#NewSecurityReferenceData
-	 * SecuritiesModification.NewSecurityReferenceData}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesModification#mmNewSecurityReferenceData
+	 * SecuritiesModification.mmNewSecurityReferenceData}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1916,20 +2103,21 @@ public class Security extends Asset {
 	 * "Modification process which applies to a specific security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Modification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmModification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Modification";
 			definition = "Modification process which applies to a specific security.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesModification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.NewSecurityReferenceData;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmNewSecurityReferenceData;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.RedemptionSchedule> redemptionSchedule;
 	/**
 	 * RedemptionSchedule(s) linked to the security.
 	 * <p>
@@ -1938,8 +2126,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#Security
-	 * RedemptionSchedule.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmSecurity
+	 * RedemptionSchedule.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1962,19 +2150,20 @@ public class Security extends Asset {
 	 * definition} = "RedemptionSchedule(s) linked to the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RedemptionSchedule = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRedemptionSchedule = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionSchedule";
 			definition = "RedemptionSchedule(s) linked to the security.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement;
 	/**
 	 * Settlement of a specific security.
 	 * <p>
@@ -1983,8 +2172,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#Security
-	 * SecuritiesSettlement.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlement#mmSecurity
+	 * SecuritiesSettlement.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2008,19 +2197,20 @@ public class Security extends Asset {
 	 * definition} = "Settlement of a specific security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesSettlement";
 			definition = "Settlement of a specific security.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesTransfer securitiesTransfer;
 	/**
 	 * Transfer process in which that security is transferred..
 	 * <p>
@@ -2029,8 +2219,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#Security
-	 * SecuritiesTransfer.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesTransfer#mmSecurity
+	 * SecuritiesTransfer.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2053,20 +2243,21 @@ public class Security extends Asset {
 	 * definition} = "Transfer process in which that security is transferred.."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SecuritiesTransfer";
 			definition = "Transfer process in which that security is transferred..";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesTransfer.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.AgentCorporateActionStandingInstruction> corporateActionStandingInstructions;
 	/**
 	 * Standing instructions related to the security in the context of corporate
 	 * action.
@@ -2076,8 +2267,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#Security
-	 * AgentCorporateActionStandingInstruction.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.AgentCorporateActionStandingInstruction#mmSecurity
+	 * AgentCorporateActionStandingInstruction.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2103,19 +2294,20 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionStandingInstructions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionStandingInstructions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStandingInstructions";
 			definition = "Standing instructions related to the security in the context of corporate action.";
 			minOccurs = 0;
-			type_lazy = () -> AgentCorporateActionStandingInstruction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmObject();
 		}
 	};
+	protected Quote quote;
 	/**
 	 * Quote of a security.
 	 * <p>
@@ -2124,8 +2316,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Quote#QuotedSecurity
-	 * Quote.QuotedSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.Quote#mmQuotedSecurity
+	 * Quote.mmQuotedSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2147,20 +2339,21 @@ public class Security extends Asset {
 	 * definition} = "Quote of a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Quote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quote";
 			definition = "Quote of a security.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmQuotedSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.QuotedSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesOrder securitiesOrder;
 	/**
 	 * Order for which a specific security is indicated.
 	 * <p>
@@ -2169,8 +2362,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#OrderedSecurity
-	 * SecuritiesOrder.OrderedSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmOrderedSecurity
+	 * SecuritiesOrder.mmOrderedSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2193,20 +2386,21 @@ public class Security extends Asset {
 	 * definition} = "Order for which a specific security is indicated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesOrder";
 			definition = "Order for which a specific security is indicated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmOrderedSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.OrderedSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected VariableInterest relatedVariableInterest;
 	/**
 	 * Variable interest parameters specified for interest related to a
 	 * financial instrument.
@@ -2216,8 +2410,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.VariableInterest#BenchmarkReference
-	 * VariableInterest.BenchmarkReference}</li>
+	 * {@linkplain com.tools20022.repository.entity.VariableInterest#mmBenchmarkReference
+	 * VariableInterest.mmBenchmarkReference}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2242,20 +2436,21 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedVariableInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedVariableInterest = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedVariableInterest";
 			definition = "Variable interest parameters specified for interest related to a financial instrument.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> VariableInterest.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.BenchmarkReference;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmBenchmarkReference;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesConversion> conversion;
 	/**
 	 * Information on the conversion exchange of an entitlement or of preferred
 	 * equities or of convertible bonds, into another form of securities,
@@ -2266,8 +2461,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#SecurityIdentification
-	 * SecuritiesConversion.SecurityIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmSecurityIdentification
+	 * SecuritiesConversion.mmSecurityIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2293,19 +2488,20 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Conversion = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Conversion";
 			definition = "Information on the conversion exchange of an entitlement or of preferred equities or of convertible bonds, into another form of securities, usually common equities.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesConversion.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.SecurityIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmSecurityIdentification;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.ComponentSecurity> componentSecurity;
 	/**
 	 * The security is part of the component security.
 	 * <p>
@@ -2314,8 +2510,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ComponentSecurity#Security
-	 * ComponentSecurity.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.ComponentSecurity#mmSecurity
+	 * ComponentSecurity.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2338,19 +2534,20 @@ public class Security extends Asset {
 	 * definition} = "The security is part of the component security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ComponentSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmComponentSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentSecurity";
 			definition = "The security is part of the component security.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmSecurity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator recompositionIndicator;
 	/**
 	 * Indicates whether the interest and the principal can be recomposed. This
 	 * is the reverse operation of stripping.
@@ -2379,18 +2576,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RecompositionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRecompositionIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RecompositionIndicator";
 			definition = "Indicates whether the interest and the principal can be recomposed. This is the reverse operation of stripping.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getRecompositionIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text series;
 	/**
 	 * Identifier that links multiple security classes.
 	 * <p>
@@ -2415,18 +2621,27 @@ public class Security extends Asset {
 	 * definition} = "Identifier that links multiple security classes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Series = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSeries = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Series";
 			definition = "Identifier that links multiple security classes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getSeries", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate percentageOfDebtClaim;
 	/**
 	 * Percentage of the underlying assets of a fund that represents a debt and
 	 * is in the scope of the EU Savings directive.
@@ -2455,18 +2670,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PercentageOfDebtClaim = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPercentageOfDebtClaim = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PercentageOfDebtClaim";
 			definition = "Percentage of the underlying assets of a fund that represents a debt and is in the scope of the EU Savings directive.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getPercentageOfDebtClaim", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate coverRate;
 	/**
 	 * Amount of dividends the issuer intends to pay out the following year
 	 * based on their normalised earnings.
@@ -2495,18 +2719,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CoverRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCoverRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoverRate";
 			definition = "Amount of dividends the issuer intends to pay out the following year based on their normalised earnings.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getCoverRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected MaturityRedemptionTypeCode maturityRedemption;
 	/**
 	 * Return of an investor's principal in a security at maturity.
 	 * <p>
@@ -2533,18 +2766,27 @@ public class Security extends Asset {
 	 * "Return of an investor's principal in a security at maturity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MaturityRedemption = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMaturityRedemption = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MaturityRedemption";
 			definition = "Return of an investor's principal in a security at maturity.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> MaturityRedemptionTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getMaturityRedemption", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected MarginCall relatedMarginCall;
 	/**
 	 * Margin call for which the associated securities are specified.
 	 * <p>
@@ -2553,8 +2795,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MarginCall#Security
-	 * MarginCall.Security}</li>
+	 * {@linkplain com.tools20022.repository.entity.MarginCall#mmSecurity
+	 * MarginCall.mmSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2578,20 +2820,21 @@ public class Security extends Asset {
 	 * "Margin call for which the associated securities are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedMarginCall = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedMarginCall = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedMarginCall";
 			definition = "Margin call for which the associated securities are specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> MarginCall.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.Security;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.MarginCall.mmSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.MarginCall.mmObject();
 		}
 	};
+	protected Party closeLink;
 	/**
 	 * Situation in which two entities are linked because one of these entities
 	 * owns some of the capital of the other one, or has a control relationship
@@ -2602,8 +2845,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Party#CloseLinkSecurity
-	 * Party.CloseLinkSecurity}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmCloseLinkSecurity
+	 * Party.mmCloseLinkSecurity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2627,20 +2870,21 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CloseLink = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCloseLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CloseLink";
 			definition = "Situation in which two entities are linked because one of these entities owns some of the capital of the other one, or has a control relationship with it.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Party.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Party.CloseLinkSecurity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Party.mmCloseLinkSecurity;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 		}
 	};
+	protected YesNoIndicator potentialEuroSystemEligibility;
 	/**
 	 * Indicates that the security is intended to be held in a manner that could
 	 * allow the Eurosystem eligibility.
@@ -2669,18 +2913,27 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PotentialEuroSystemEligibility = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPotentialEuroSystemEligibility = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PotentialEuroSystemEligibility";
 			definition = "Indicates that the security is intended to be held in a manner that could allow the Eurosystem eligibility.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getPotentialEuroSystemEligibility", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity minimumQuantity;
 	/**
 	 * Indicates the minimum tradable quantity of a security.
 	 * <p>
@@ -2689,8 +2942,8 @@ public class Security extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumQuantityDebt
-	 * SecuritiesQuantity.MinimumQuantityDebt}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumQuantityDebt
+	 * SecuritiesQuantity.mmMinimumQuantityDebt}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2713,20 +2966,21 @@ public class Security extends Asset {
 	 * definition} = "Indicates the minimum tradable quantity of a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumQuantity";
 			definition = "Indicates the minimum tradable quantity of a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityDebt;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MinimumQuantityDebt;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator restrictedIndicator;
 	/**
 	 * Identifies if the securities is restricted or not (as per Rule 144 of the
 	 * Securities and Exchange Commission,that sets the conditions under which
@@ -2756,61 +3010,531 @@ public class Security extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RestrictedIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRestrictedIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Security.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RestrictedIndicator";
 			definition = "Identifies if the securities is restricted or not (as per Rule 144 of the Securities and Exchange Commission,that sets the conditions under which restricted, unregistered and control securities can be sold).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Security.class.getMethod("getRestrictedIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Security";
 				definition = "Financial instruments representing a sum of rights of the investor vis-a-vis the issuer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.IdentifiedSecurity, com.tools20022.repository.entity.Dividend.Security,
-						com.tools20022.repository.entity.SecuritiesPricing.Security, com.tools20022.repository.entity.Party.CloseLinkSecurity, com.tools20022.repository.entity.RedemptionSchedule.Security,
-						com.tools20022.repository.entity.TradingMarket.TradedSecurity, com.tools20022.repository.entity.TradingMarket.ListedSecurity, com.tools20022.repository.entity.SecuritiesAccount.Security,
-						com.tools20022.repository.entity.SecuritiesTax.Security, com.tools20022.repository.entity.SecuritiesQuantity.SecurityIdentification, com.tools20022.repository.entity.SecuritiesQuantity.MinimumQuantityDebt,
-						com.tools20022.repository.entity.SecuritiesTrade.Security, com.tools20022.repository.entity.SecuritiesTransfer.Security, com.tools20022.repository.entity.SecuritiesPartyRole.Security,
-						com.tools20022.repository.entity.SecuritiesSettlement.Security, com.tools20022.repository.entity.SecuritiesRelatedFees.Security, com.tools20022.repository.entity.SecuritiesStatus.Security,
-						com.tools20022.repository.entity.VariableInterest.BenchmarkReference, com.tools20022.repository.entity.CouponAttached.Security, com.tools20022.repository.entity.SecuritiesConversion.SecurityIdentification,
-						com.tools20022.repository.entity.BasicSecuritiesRegistration.Security, com.tools20022.repository.entity.SecuritiesRestriction.Security, com.tools20022.repository.entity.SecuritiesBalance.Security,
-						com.tools20022.repository.entity.CorporateActionEvent.UnderlyingSecurity, com.tools20022.repository.entity.SecuritiesModification.NewSecurityReferenceData, com.tools20022.repository.entity.Spread.BenchmarkSecurity,
-						com.tools20022.repository.entity.SecuritiesOrder.OrderedSecurity, com.tools20022.repository.entity.Rating.Security, com.tools20022.repository.entity.Sector.Security,
-						com.tools20022.repository.entity.Jurisdiction.RegisteredSecurities, com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.Security, com.tools20022.repository.entity.MarginCall.Security,
-						com.tools20022.repository.entity.Quote.QuotedSecurity, com.tools20022.repository.entity.ComponentSecurity.Security);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.mmIdentifiedSecurity, com.tools20022.repository.entity.Dividend.mmSecurity,
+						com.tools20022.repository.entity.SecuritiesPricing.mmSecurity, com.tools20022.repository.entity.Party.mmCloseLinkSecurity, com.tools20022.repository.entity.RedemptionSchedule.mmSecurity,
+						com.tools20022.repository.entity.TradingMarket.mmTradedSecurity, com.tools20022.repository.entity.TradingMarket.mmListedSecurity, com.tools20022.repository.entity.SecuritiesAccount.mmSecurity,
+						com.tools20022.repository.entity.SecuritiesTax.mmSecurity, com.tools20022.repository.entity.SecuritiesQuantity.mmSecurityIdentification, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumQuantityDebt,
+						com.tools20022.repository.entity.SecuritiesTrade.mmSecurity, com.tools20022.repository.entity.SecuritiesTransfer.mmSecurity, com.tools20022.repository.entity.SecuritiesPartyRole.mmSecurity,
+						com.tools20022.repository.entity.SecuritiesSettlement.mmSecurity, com.tools20022.repository.entity.SecuritiesRelatedFees.mmSecurity, com.tools20022.repository.entity.SecuritiesStatus.mmSecurity,
+						com.tools20022.repository.entity.VariableInterest.mmBenchmarkReference, com.tools20022.repository.entity.CouponAttached.mmSecurity, com.tools20022.repository.entity.SecuritiesConversion.mmSecurityIdentification,
+						com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSecurity, com.tools20022.repository.entity.SecuritiesRestriction.mmSecurity, com.tools20022.repository.entity.SecuritiesBalance.mmSecurity,
+						com.tools20022.repository.entity.CorporateActionEvent.mmUnderlyingSecurity, com.tools20022.repository.entity.SecuritiesModification.mmNewSecurityReferenceData,
+						com.tools20022.repository.entity.Spread.mmBenchmarkSecurity, com.tools20022.repository.entity.SecuritiesOrder.mmOrderedSecurity, com.tools20022.repository.entity.Rating.mmSecurity,
+						com.tools20022.repository.entity.Sector.mmSecurity, com.tools20022.repository.entity.Jurisdiction.mmRegisteredSecurities, com.tools20022.repository.entity.AgentCorporateActionStandingInstruction.mmSecurity,
+						com.tools20022.repository.entity.MarginCall.mmSecurity, com.tools20022.repository.entity.Quote.mmQuotedSecurity, com.tools20022.repository.entity.ComponentSecurity.mmSecurity);
 				subType_lazy = () -> Arrays.asList(InvestmentFundClass.mmObject(), Debt.mmObject(), Warrant.mmObject(), Entitlement.mmObject());
 				superType_lazy = () -> Asset.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.Identification, com.tools20022.repository.entity.Security.RegisteredDistributionCountry,
-						com.tools20022.repository.entity.Security.DenominationCurrency, com.tools20022.repository.entity.Security.RegistrationForm, com.tools20022.repository.entity.Security.DematerialisedIndicator,
-						com.tools20022.repository.entity.Security.EUSavingsDirective, com.tools20022.repository.entity.Security.SecuritiesQuantity, com.tools20022.repository.entity.Security.Fees,
-						com.tools20022.repository.entity.Security.Pricing, com.tools20022.repository.entity.Security.SecuritiesAccount, com.tools20022.repository.entity.Security.TradingMarket,
-						com.tools20022.repository.entity.Security.PlaceOfListing, com.tools20022.repository.entity.Security.Registration, com.tools20022.repository.entity.Security.Restriction,
-						com.tools20022.repository.entity.Security.CorporateEvent, com.tools20022.repository.entity.Security.TemporaryFinancialInstrumentIndicator, com.tools20022.repository.entity.Security.AvailableDate,
-						com.tools20022.repository.entity.Security.DeclarationDetails, com.tools20022.repository.entity.Security.Spread, com.tools20022.repository.entity.Security.Dividend, com.tools20022.repository.entity.Security.Balance,
-						com.tools20022.repository.entity.Security.FungibleIndicator, com.tools20022.repository.entity.Security.Appearance, com.tools20022.repository.entity.Security.NearTermPositionLimit,
-						com.tools20022.repository.entity.Security.ContractSettlementMonth, com.tools20022.repository.entity.Security.MinimumTradingPricingIncrement, com.tools20022.repository.entity.Security.Rating,
-						com.tools20022.repository.entity.Security.CouponAttached, com.tools20022.repository.entity.Security.Sector, com.tools20022.repository.entity.Security.WarrantAttachedOnDelivery,
-						com.tools20022.repository.entity.Security.StrippableIndicator, com.tools20022.repository.entity.Security.FirstDealingDate, com.tools20022.repository.entity.Security.TaxDetails,
-						com.tools20022.repository.entity.Security.SecuritiesTrade, com.tools20022.repository.entity.Security.RegistrationJurisdiction, com.tools20022.repository.entity.Security.PartyRole,
-						com.tools20022.repository.entity.Security.SecurityStatus, com.tools20022.repository.entity.Security.Modification, com.tools20022.repository.entity.Security.RedemptionSchedule,
-						com.tools20022.repository.entity.Security.SecuritiesSettlement, com.tools20022.repository.entity.Security.SecuritiesTransfer, com.tools20022.repository.entity.Security.CorporateActionStandingInstructions,
-						com.tools20022.repository.entity.Security.Quote, com.tools20022.repository.entity.Security.SecuritiesOrder, com.tools20022.repository.entity.Security.RelatedVariableInterest,
-						com.tools20022.repository.entity.Security.Conversion, com.tools20022.repository.entity.Security.ComponentSecurity, com.tools20022.repository.entity.Security.RecompositionIndicator,
-						com.tools20022.repository.entity.Security.Series, com.tools20022.repository.entity.Security.PercentageOfDebtClaim, com.tools20022.repository.entity.Security.CoverRate,
-						com.tools20022.repository.entity.Security.MaturityRedemption, com.tools20022.repository.entity.Security.RelatedMarginCall, com.tools20022.repository.entity.Security.CloseLink,
-						com.tools20022.repository.entity.Security.PotentialEuroSystemEligibility, com.tools20022.repository.entity.Security.MinimumQuantity, com.tools20022.repository.entity.Security.RestrictedIndicator);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmIdentification, com.tools20022.repository.entity.Security.mmRegisteredDistributionCountry,
+						com.tools20022.repository.entity.Security.mmDenominationCurrency, com.tools20022.repository.entity.Security.mmRegistrationForm, com.tools20022.repository.entity.Security.mmDematerialisedIndicator,
+						com.tools20022.repository.entity.Security.mmEUSavingsDirective, com.tools20022.repository.entity.Security.mmSecuritiesQuantity, com.tools20022.repository.entity.Security.mmFees,
+						com.tools20022.repository.entity.Security.mmPricing, com.tools20022.repository.entity.Security.mmSecuritiesAccount, com.tools20022.repository.entity.Security.mmTradingMarket,
+						com.tools20022.repository.entity.Security.mmPlaceOfListing, com.tools20022.repository.entity.Security.mmRegistration, com.tools20022.repository.entity.Security.mmRestriction,
+						com.tools20022.repository.entity.Security.mmCorporateEvent, com.tools20022.repository.entity.Security.mmTemporaryFinancialInstrumentIndicator, com.tools20022.repository.entity.Security.mmAvailableDate,
+						com.tools20022.repository.entity.Security.mmDeclarationDetails, com.tools20022.repository.entity.Security.mmSpread, com.tools20022.repository.entity.Security.mmDividend,
+						com.tools20022.repository.entity.Security.mmBalance, com.tools20022.repository.entity.Security.mmFungibleIndicator, com.tools20022.repository.entity.Security.mmAppearance,
+						com.tools20022.repository.entity.Security.mmNearTermPositionLimit, com.tools20022.repository.entity.Security.mmContractSettlementMonth, com.tools20022.repository.entity.Security.mmMinimumTradingPricingIncrement,
+						com.tools20022.repository.entity.Security.mmRating, com.tools20022.repository.entity.Security.mmCouponAttached, com.tools20022.repository.entity.Security.mmSector,
+						com.tools20022.repository.entity.Security.mmWarrantAttachedOnDelivery, com.tools20022.repository.entity.Security.mmStrippableIndicator, com.tools20022.repository.entity.Security.mmFirstDealingDate,
+						com.tools20022.repository.entity.Security.mmTaxDetails, com.tools20022.repository.entity.Security.mmSecuritiesTrade, com.tools20022.repository.entity.Security.mmRegistrationJurisdiction,
+						com.tools20022.repository.entity.Security.mmPartyRole, com.tools20022.repository.entity.Security.mmSecurityStatus, com.tools20022.repository.entity.Security.mmModification,
+						com.tools20022.repository.entity.Security.mmRedemptionSchedule, com.tools20022.repository.entity.Security.mmSecuritiesSettlement, com.tools20022.repository.entity.Security.mmSecuritiesTransfer,
+						com.tools20022.repository.entity.Security.mmCorporateActionStandingInstructions, com.tools20022.repository.entity.Security.mmQuote, com.tools20022.repository.entity.Security.mmSecuritiesOrder,
+						com.tools20022.repository.entity.Security.mmRelatedVariableInterest, com.tools20022.repository.entity.Security.mmConversion, com.tools20022.repository.entity.Security.mmComponentSecurity,
+						com.tools20022.repository.entity.Security.mmRecompositionIndicator, com.tools20022.repository.entity.Security.mmSeries, com.tools20022.repository.entity.Security.mmPercentageOfDebtClaim,
+						com.tools20022.repository.entity.Security.mmCoverRate, com.tools20022.repository.entity.Security.mmMaturityRedemption, com.tools20022.repository.entity.Security.mmRelatedMarginCall,
+						com.tools20022.repository.entity.Security.mmCloseLink, com.tools20022.repository.entity.Security.mmPotentialEuroSystemEligibility, com.tools20022.repository.entity.Security.mmMinimumQuantity,
+						com.tools20022.repository.entity.Security.mmRestrictedIndicator);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Security.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<SecuritiesIdentification> getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(List<com.tools20022.repository.entity.SecuritiesIdentification> identification) {
+		this.identification = identification;
+	}
+
+	public CountryCode getRegisteredDistributionCountry() {
+		return registeredDistributionCountry;
+	}
+
+	public void setRegisteredDistributionCountry(CountryCode registeredDistributionCountry) {
+		this.registeredDistributionCountry = registeredDistributionCountry;
+	}
+
+	public CurrencyCode getDenominationCurrency() {
+		return denominationCurrency;
+	}
+
+	public void setDenominationCurrency(CurrencyCode denominationCurrency) {
+		this.denominationCurrency = denominationCurrency;
+	}
+
+	public FormOfSecurityCode getRegistrationForm() {
+		return registrationForm;
+	}
+
+	public void setRegistrationForm(FormOfSecurityCode registrationForm) {
+		this.registrationForm = registrationForm;
+	}
+
+	public YesNoIndicator getDematerialisedIndicator() {
+		return dematerialisedIndicator;
+	}
+
+	public void setDematerialisedIndicator(YesNoIndicator dematerialisedIndicator) {
+		this.dematerialisedIndicator = dematerialisedIndicator;
+	}
+
+	public EUSavingsDirectiveCode getEUSavingsDirective() {
+		return eUSavingsDirective;
+	}
+
+	public void setEUSavingsDirective(EUSavingsDirectiveCode eUSavingsDirective) {
+		this.eUSavingsDirective = eUSavingsDirective;
+	}
+
+	public List<SecuritiesQuantity> getSecuritiesQuantity() {
+		return securitiesQuantity;
+	}
+
+	public void setSecuritiesQuantity(List<com.tools20022.repository.entity.SecuritiesQuantity> securitiesQuantity) {
+		this.securitiesQuantity = securitiesQuantity;
+	}
+
+	public List<SecuritiesRelatedFees> getFees() {
+		return fees;
+	}
+
+	public void setFees(List<com.tools20022.repository.entity.SecuritiesRelatedFees> fees) {
+		this.fees = fees;
+	}
+
+	public List<SecuritiesPricing> getPricing() {
+		return pricing;
+	}
+
+	public void setPricing(List<com.tools20022.repository.entity.SecuritiesPricing> pricing) {
+		this.pricing = pricing;
+	}
+
+	public SecuritiesAccount getSecuritiesAccount() {
+		return securitiesAccount;
+	}
+
+	public void setSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount securitiesAccount) {
+		this.securitiesAccount = securitiesAccount;
+	}
+
+	public List<TradingMarket> getTradingMarket() {
+		return tradingMarket;
+	}
+
+	public void setTradingMarket(List<com.tools20022.repository.entity.TradingMarket> tradingMarket) {
+		this.tradingMarket = tradingMarket;
+	}
+
+	public List<TradingMarket> getPlaceOfListing() {
+		return placeOfListing;
+	}
+
+	public void setPlaceOfListing(List<com.tools20022.repository.entity.TradingMarket> placeOfListing) {
+		this.placeOfListing = placeOfListing;
+	}
+
+	public List<BasicSecuritiesRegistration> getRegistration() {
+		return registration;
+	}
+
+	public void setRegistration(List<com.tools20022.repository.entity.BasicSecuritiesRegistration> registration) {
+		this.registration = registration;
+	}
+
+	public List<SecuritiesRestriction> getRestriction() {
+		return restriction;
+	}
+
+	public void setRestriction(List<com.tools20022.repository.entity.SecuritiesRestriction> restriction) {
+		this.restriction = restriction;
+	}
+
+	public List<CorporateActionEvent> getCorporateEvent() {
+		return corporateEvent;
+	}
+
+	public void setCorporateEvent(List<com.tools20022.repository.entity.CorporateActionEvent> corporateEvent) {
+		this.corporateEvent = corporateEvent;
+	}
+
+	public YesNoIndicator getTemporaryFinancialInstrumentIndicator() {
+		return temporaryFinancialInstrumentIndicator;
+	}
+
+	public void setTemporaryFinancialInstrumentIndicator(YesNoIndicator temporaryFinancialInstrumentIndicator) {
+		this.temporaryFinancialInstrumentIndicator = temporaryFinancialInstrumentIndicator;
+	}
+
+	public ISODateTime getAvailableDate() {
+		return availableDate;
+	}
+
+	public void setAvailableDate(ISODateTime availableDate) {
+		this.availableDate = availableDate;
+	}
+
+	public Max350Text getDeclarationDetails() {
+		return declarationDetails;
+	}
+
+	public void setDeclarationDetails(Max350Text declarationDetails) {
+		this.declarationDetails = declarationDetails;
+	}
+
+	public Spread getSpread() {
+		return spread;
+	}
+
+	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+		this.spread = spread;
+	}
+
+	public List<Dividend> getDividend() {
+		return dividend;
+	}
+
+	public void setDividend(List<com.tools20022.repository.entity.Dividend> dividend) {
+		this.dividend = dividend;
+	}
+
+	public SecuritiesBalance getBalance() {
+		return balance;
+	}
+
+	public void setBalance(com.tools20022.repository.entity.SecuritiesBalance balance) {
+		this.balance = balance;
+	}
+
+	public YesNoIndicator getFungibleIndicator() {
+		return fungibleIndicator;
+	}
+
+	public void setFungibleIndicator(YesNoIndicator fungibleIndicator) {
+		this.fungibleIndicator = fungibleIndicator;
+	}
+
+	public AppearanceCode getAppearance() {
+		return appearance;
+	}
+
+	public void setAppearance(AppearanceCode appearance) {
+		this.appearance = appearance;
+	}
+
+	public Number getNearTermPositionLimit() {
+		return nearTermPositionLimit;
+	}
+
+	public void setNearTermPositionLimit(Number nearTermPositionLimit) {
+		this.nearTermPositionLimit = nearTermPositionLimit;
+	}
+
+	public ISOYearMonth getContractSettlementMonth() {
+		return contractSettlementMonth;
+	}
+
+	public void setContractSettlementMonth(ISOYearMonth contractSettlementMonth) {
+		this.contractSettlementMonth = contractSettlementMonth;
+	}
+
+	public Number getMinimumTradingPricingIncrement() {
+		return minimumTradingPricingIncrement;
+	}
+
+	public void setMinimumTradingPricingIncrement(Number minimumTradingPricingIncrement) {
+		this.minimumTradingPricingIncrement = minimumTradingPricingIncrement;
+	}
+
+	public List<Rating> getRating() {
+		return rating;
+	}
+
+	public void setRating(List<com.tools20022.repository.entity.Rating> rating) {
+		this.rating = rating;
+	}
+
+	public List<CouponAttached> getCouponAttached() {
+		return couponAttached;
+	}
+
+	public void setCouponAttached(List<com.tools20022.repository.entity.CouponAttached> couponAttached) {
+		this.couponAttached = couponAttached;
+	}
+
+	public Sector getSector() {
+		return sector;
+	}
+
+	public void setSector(com.tools20022.repository.entity.Sector sector) {
+		this.sector = sector;
+	}
+
+	public YesNoIndicator getWarrantAttachedOnDelivery() {
+		return warrantAttachedOnDelivery;
+	}
+
+	public void setWarrantAttachedOnDelivery(YesNoIndicator warrantAttachedOnDelivery) {
+		this.warrantAttachedOnDelivery = warrantAttachedOnDelivery;
+	}
+
+	public YesNoIndicator getStrippableIndicator() {
+		return strippableIndicator;
+	}
+
+	public void setStrippableIndicator(YesNoIndicator strippableIndicator) {
+		this.strippableIndicator = strippableIndicator;
+	}
+
+	public ISODateTime getFirstDealingDate() {
+		return firstDealingDate;
+	}
+
+	public void setFirstDealingDate(ISODateTime firstDealingDate) {
+		this.firstDealingDate = firstDealingDate;
+	}
+
+	public List<SecuritiesTax> getTaxDetails() {
+		return taxDetails;
+	}
+
+	public void setTaxDetails(List<com.tools20022.repository.entity.SecuritiesTax> taxDetails) {
+		this.taxDetails = taxDetails;
+	}
+
+	public SecuritiesTrade getSecuritiesTrade() {
+		return securitiesTrade;
+	}
+
+	public void setSecuritiesTrade(com.tools20022.repository.entity.SecuritiesTrade securitiesTrade) {
+		this.securitiesTrade = securitiesTrade;
+	}
+
+	public Jurisdiction getRegistrationJurisdiction() {
+		return registrationJurisdiction;
+	}
+
+	public void setRegistrationJurisdiction(com.tools20022.repository.entity.Jurisdiction registrationJurisdiction) {
+		this.registrationJurisdiction = registrationJurisdiction;
+	}
+
+	public List<SecuritiesPartyRole> getPartyRole() {
+		return partyRole;
+	}
+
+	public void setPartyRole(List<com.tools20022.repository.entity.SecuritiesPartyRole> partyRole) {
+		this.partyRole = partyRole;
+	}
+
+	public List<SecuritiesStatus> getSecurityStatus() {
+		return securityStatus;
+	}
+
+	public void setSecurityStatus(List<com.tools20022.repository.entity.SecuritiesStatus> securityStatus) {
+		this.securityStatus = securityStatus;
+	}
+
+	public SecuritiesModification getModification() {
+		return modification;
+	}
+
+	public void setModification(com.tools20022.repository.entity.SecuritiesModification modification) {
+		this.modification = modification;
+	}
+
+	public List<RedemptionSchedule> getRedemptionSchedule() {
+		return redemptionSchedule;
+	}
+
+	public void setRedemptionSchedule(List<com.tools20022.repository.entity.RedemptionSchedule> redemptionSchedule) {
+		this.redemptionSchedule = redemptionSchedule;
+	}
+
+	public List<SecuritiesSettlement> getSecuritiesSettlement() {
+		return securitiesSettlement;
+	}
+
+	public void setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
+		this.securitiesSettlement = securitiesSettlement;
+	}
+
+	public SecuritiesTransfer getSecuritiesTransfer() {
+		return securitiesTransfer;
+	}
+
+	public void setSecuritiesTransfer(com.tools20022.repository.entity.SecuritiesTransfer securitiesTransfer) {
+		this.securitiesTransfer = securitiesTransfer;
+	}
+
+	public List<AgentCorporateActionStandingInstruction> getCorporateActionStandingInstructions() {
+		return corporateActionStandingInstructions;
+	}
+
+	public void setCorporateActionStandingInstructions(List<com.tools20022.repository.entity.AgentCorporateActionStandingInstruction> corporateActionStandingInstructions) {
+		this.corporateActionStandingInstructions = corporateActionStandingInstructions;
+	}
+
+	public Quote getQuote() {
+		return quote;
+	}
+
+	public void setQuote(com.tools20022.repository.entity.Quote quote) {
+		this.quote = quote;
+	}
+
+	public SecuritiesOrder getSecuritiesOrder() {
+		return securitiesOrder;
+	}
+
+	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+		this.securitiesOrder = securitiesOrder;
+	}
+
+	public VariableInterest getRelatedVariableInterest() {
+		return relatedVariableInterest;
+	}
+
+	public void setRelatedVariableInterest(com.tools20022.repository.entity.VariableInterest relatedVariableInterest) {
+		this.relatedVariableInterest = relatedVariableInterest;
+	}
+
+	public List<SecuritiesConversion> getConversion() {
+		return conversion;
+	}
+
+	public void setConversion(List<com.tools20022.repository.entity.SecuritiesConversion> conversion) {
+		this.conversion = conversion;
+	}
+
+	public List<ComponentSecurity> getComponentSecurity() {
+		return componentSecurity;
+	}
+
+	public void setComponentSecurity(List<com.tools20022.repository.entity.ComponentSecurity> componentSecurity) {
+		this.componentSecurity = componentSecurity;
+	}
+
+	public YesNoIndicator getRecompositionIndicator() {
+		return recompositionIndicator;
+	}
+
+	public void setRecompositionIndicator(YesNoIndicator recompositionIndicator) {
+		this.recompositionIndicator = recompositionIndicator;
+	}
+
+	public Max35Text getSeries() {
+		return series;
+	}
+
+	public void setSeries(Max35Text series) {
+		this.series = series;
+	}
+
+	public PercentageRate getPercentageOfDebtClaim() {
+		return percentageOfDebtClaim;
+	}
+
+	public void setPercentageOfDebtClaim(PercentageRate percentageOfDebtClaim) {
+		this.percentageOfDebtClaim = percentageOfDebtClaim;
+	}
+
+	public PercentageRate getCoverRate() {
+		return coverRate;
+	}
+
+	public void setCoverRate(PercentageRate coverRate) {
+		this.coverRate = coverRate;
+	}
+
+	public MaturityRedemptionTypeCode getMaturityRedemption() {
+		return maturityRedemption;
+	}
+
+	public void setMaturityRedemption(MaturityRedemptionTypeCode maturityRedemption) {
+		this.maturityRedemption = maturityRedemption;
+	}
+
+	public MarginCall getRelatedMarginCall() {
+		return relatedMarginCall;
+	}
+
+	public void setRelatedMarginCall(com.tools20022.repository.entity.MarginCall relatedMarginCall) {
+		this.relatedMarginCall = relatedMarginCall;
+	}
+
+	public Party getCloseLink() {
+		return closeLink;
+	}
+
+	public void setCloseLink(com.tools20022.repository.entity.Party closeLink) {
+		this.closeLink = closeLink;
+	}
+
+	public YesNoIndicator getPotentialEuroSystemEligibility() {
+		return potentialEuroSystemEligibility;
+	}
+
+	public void setPotentialEuroSystemEligibility(YesNoIndicator potentialEuroSystemEligibility) {
+		this.potentialEuroSystemEligibility = potentialEuroSystemEligibility;
+	}
+
+	public SecuritiesQuantity getMinimumQuantity() {
+		return minimumQuantity;
+	}
+
+	public void setMinimumQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumQuantity) {
+		this.minimumQuantity = minimumQuantity;
+	}
+
+	public YesNoIndicator getRestrictedIndicator() {
+		return restrictedIndicator;
+	}
+
+	public void setRestrictedIndicator(YesNoIndicator restrictedIndicator) {
+		this.restrictedIndicator = restrictedIndicator;
 	}
 }

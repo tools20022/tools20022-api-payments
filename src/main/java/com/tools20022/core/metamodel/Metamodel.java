@@ -8,11 +8,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * This class creates a labeled button. The application can cause
- * some action to happen when the button is pushed. This image
- * depicts three views of a "<code>Quit</code>" button as it appears
- * under the Solaris operating system:
- * 
  * @author bukodi
  *
  */

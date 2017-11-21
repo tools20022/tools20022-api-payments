@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CopyDuplicateCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,20 +36,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#CopyDuplicate
- * CopyDuplicate1Code.CopyDuplicate}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#Copy
- * CopyDuplicate1Code.Copy}</li>
+ * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#mmCopyDuplicate
+ * CopyDuplicate1Code.mmCopyDuplicate}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#mmCopy
+ * CopyDuplicate1Code.mmCopy}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#Duplicate
- * CopyDuplicate1Code.Duplicate}</li>
+ * {@linkplain com.tools20022.repository.codeset.CopyDuplicate1Code#mmDuplicate
+ * CopyDuplicate1Code.mmDuplicate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	 * name} = "CopyDuplicate"</li>
 	 * </ul>
 	 */
-	public static final MMCode CopyDuplicate = new MMCode() {
+	public static final MMCode mmCopyDuplicate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CopyDuplicate";
 			owner_lazy = () -> CopyDuplicate1Code.mmObject();
 		}
@@ -108,9 +110,9 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	 * name} = "Copy"</li>
 	 * </ul>
 	 */
-	public static final MMCode Copy = new MMCode() {
+	public static final MMCode mmCopy = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Copy";
 			owner_lazy = () -> CopyDuplicate1Code.mmObject();
 		}
@@ -131,9 +133,9 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	 * name} = "Duplicate"</li>
 	 * </ul>
 	 */
-	public static final MMCode Duplicate = new MMCode() {
+	public static final MMCode mmDuplicate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Duplicate";
 			owner_lazy = () -> CopyDuplicate1Code.mmObject();
 		}
@@ -142,12 +144,12 @@ public class CopyDuplicate1Code extends CopyDuplicateCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CODU");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CopyDuplicate1Code";
 				definition = "Specifies if this document is a copy, a duplicate, or a duplicate of a copy.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CopyDuplicate1Code.CopyDuplicate, com.tools20022.repository.codeset.CopyDuplicate1Code.Copy, com.tools20022.repository.codeset.CopyDuplicate1Code.Duplicate);
+				code_lazy = () -> Arrays.asList(CopyDuplicate1Code.mmCopyDuplicate, CopyDuplicate1Code.mmCopy, CopyDuplicate1Code.mmDuplicate);
 				trace_lazy = () -> CopyDuplicateCode.mmObject();
 			}
 		});

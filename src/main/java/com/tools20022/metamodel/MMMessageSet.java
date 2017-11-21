@@ -18,9 +18,14 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
-import com.tools20022.metamodel.constraints.DeriveMMMessageSet_generatedSyntax;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.GeneratedSyntaxDerivation;
+import com.tools20022.metamodel.derived.DeriveMMMessageSet_generatedSyntax;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +38,25 @@ import java.util.Optional;
  */
 public class MMMessageSet implements MMTopLevelCatalogueEntry {
 
+	/**
+	 * identification of the syntax for a specific EncodingScheme
+	 */
+	public final static MetamodelAttribute<MMMessageSet, List<MMSyntax>> generatedSyntaxAttribute = newAttribute();
+	/**
+	 * the set of encodings considered ISO 20022 valid for this MessageSet
+	 */
+	public final static MetamodelAttribute<MMMessageSet, List<MMEncoding>> validEncodingAttribute = newAttribute();
+	/**
+	 * the MessageDefinition that belongs to the MessageSet
+	 */
+	public final static MetamodelAttribute<MMMessageSet, List<MMMessageDefinition>> messageDefinitionAttribute = newAttribute();
+	/**
+	 * the generated syntax is derived from the syntax for a validEncoding
+	 * generatedSyntax-&gt;asBag() = validEncoding.syntax
+	 */
+	public final static MetamodelConstraint<MMMessageSet> checkGeneratedSyntaxDerivation = newConstraint(b -> {
+		new GeneratedSyntaxDerivation().accept(b);
+	});
 	protected Supplier<List<MMEncoding>> validEncoding_lazy;
 	protected Supplier<List<MMMessageDefinition>> messageDefinition_lazy;
 	protected Supplier<MMBusinessProcessCatalogue> businessProcessCatalogue_lazy;

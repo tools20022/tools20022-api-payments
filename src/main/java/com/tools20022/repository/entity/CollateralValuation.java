@@ -17,15 +17,17 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.BaseOneRate;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CashCollateral5;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Provides details about the valuation of each piece of collateral that is
@@ -41,44 +43,44 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#Collateral
- * CollateralValuation.Collateral}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmCollateral
+ * CollateralValuation.mmCollateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#CollateralValuationDate
- * CollateralValuation.CollateralValuationDate}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmCollateralValuationDate
+ * CollateralValuation.mmCollateralValuationDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#RelatedManagementProcess
- * CollateralValuation.RelatedManagementProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmRelatedManagementProcess
+ * CollateralValuation.mmRelatedManagementProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#ReportedCurrencyAndAmount
- * CollateralValuation.ReportedCurrencyAndAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmReportedCurrencyAndAmount
+ * CollateralValuation.mmReportedCurrencyAndAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#MarketValueAmount
- * CollateralValuation.MarketValueAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmMarketValueAmount
+ * CollateralValuation.mmMarketValueAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#AdjustedRate
- * CollateralValuation.AdjustedRate}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmAdjustedRate
+ * CollateralValuation.mmAdjustedRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralValuation#CollateralValuationCurrency
- * CollateralValuation.CollateralValuationCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralValuation#mmCollateralValuationCurrency
+ * CollateralValuation.mmCollateralValuationCurrency}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Collateral#Valuation
- * Collateral.Valuation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Collateral#mmValuation
+ * Collateral.mmValuation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralManagement#CollateralValuation
- * CollateralManagement.CollateralValuation}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmCollateralValuation
+ * CollateralManagement.mmCollateralValuation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CollateralValuation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Collateral> collateral;
 	/**
 	 * Collateral which is the subject of the valuation.
 	 * <p>
@@ -102,8 +105,8 @@ public class CollateralValuation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Collateral#Valuation
-	 * Collateral.Valuation}</li>
+	 * {@linkplain com.tools20022.repository.entity.Collateral#mmValuation
+	 * Collateral.mmValuation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -127,19 +130,20 @@ public class CollateralValuation {
 	 * definition} = "Collateral which is the subject of the valuation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Collateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Collateral";
 			definition = "Collateral which is the subject of the valuation.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmValuation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.Valuation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime collateralValuationDate;
 	/**
 	 * Valuation date of the collateral.
 	 * <p>
@@ -152,8 +156,9 @@ public class CollateralValuation {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashCollateral5#ValueDate
-	 * CashCollateral5.ValueDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#mmValueDate
+	 * CashCollateral5.mmValueDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -172,19 +177,28 @@ public class CollateralValuation {
 	 * definition} = "Valuation date of the collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CollateralValuationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCollateralValuationDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashCollateral5.ValueDate);
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashCollateral5.mmValueDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralValuationDate";
 			definition = "Valuation date of the collateral.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralValuation.class.getMethod("getCollateralValuationDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CollateralManagement relatedManagementProcess;
 	/**
 	 * Process which groups the activities related to collateral.
 	 * <p>
@@ -193,8 +207,8 @@ public class CollateralValuation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralManagement#CollateralValuation
-	 * CollateralManagement.CollateralValuation}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralManagement#mmCollateralValuation
+	 * CollateralManagement.mmCollateralValuation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -220,20 +234,21 @@ public class CollateralValuation {
 	 * "Process which groups the activities related to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedManagementProcess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedManagementProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedManagementProcess";
 			definition = "Process which groups the activities related to collateral.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CollateralManagement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.CollateralValuation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmCollateralValuation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 		}
 	};
+	protected ActiveCurrencyAndAmount reportedCurrencyAndAmount;
 	/**
 	 * Specifies the total amount of the collateral in the reporting currency.
 	 * <p>
@@ -262,18 +277,27 @@ public class CollateralValuation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReportedCurrencyAndAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReportedCurrencyAndAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReportedCurrencyAndAmount";
 			definition = "Specifies the total amount of the collateral in the reporting currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralValuation.class.getMethod("getReportedCurrencyAndAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount marketValueAmount;
 	/**
 	 * Specifies the total market to market value of the collateral in the
 	 * reporting currency. It is the dirty price, that is, the accrued interest
@@ -304,18 +328,27 @@ public class CollateralValuation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MarketValueAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMarketValueAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketValueAmount";
 			definition = "Specifies the total market to market value of the collateral in the reporting currency. It is the dirty price, that is, the accrued interest is included if any.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralValuation.class.getMethod("getMarketValueAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BaseOneRate adjustedRate;
 	/**
 	 * Percentage by which the collateral amount needs to be adjusted.
 	 * <p>
@@ -342,18 +375,27 @@ public class CollateralValuation {
 	 * "Percentage by which the collateral amount needs to be adjusted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AdjustedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAdjustedRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdjustedRate";
 			definition = "Percentage by which the collateral amount needs to be adjusted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralValuation.class.getMethod("getAdjustedRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode collateralValuationCurrency;
 	/**
 	 * Currency used for the valuation.
 	 * <p>
@@ -379,33 +421,102 @@ public class CollateralValuation {
 	 * definition} = "Currency used for the valuation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CollateralValuationCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCollateralValuationCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralValuation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralValuation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralValuationCurrency";
 			definition = "Currency used for the valuation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralValuation.class.getMethod("getCollateralValuationCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralValuation";
 				definition = "Provides details about the valuation of each piece of collateral that is posted.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.Valuation, com.tools20022.repository.entity.CollateralManagement.CollateralValuation);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralValuation.Collateral, com.tools20022.repository.entity.CollateralValuation.CollateralValuationDate,
-						com.tools20022.repository.entity.CollateralValuation.RelatedManagementProcess, com.tools20022.repository.entity.CollateralValuation.ReportedCurrencyAndAmount,
-						com.tools20022.repository.entity.CollateralValuation.MarketValueAmount, com.tools20022.repository.entity.CollateralValuation.AdjustedRate,
-						com.tools20022.repository.entity.CollateralValuation.CollateralValuationCurrency);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.mmValuation, com.tools20022.repository.entity.CollateralManagement.mmCollateralValuation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralValuation.mmCollateral, com.tools20022.repository.entity.CollateralValuation.mmCollateralValuationDate,
+						com.tools20022.repository.entity.CollateralValuation.mmRelatedManagementProcess, com.tools20022.repository.entity.CollateralValuation.mmReportedCurrencyAndAmount,
+						com.tools20022.repository.entity.CollateralValuation.mmMarketValueAmount, com.tools20022.repository.entity.CollateralValuation.mmAdjustedRate,
+						com.tools20022.repository.entity.CollateralValuation.mmCollateralValuationCurrency);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CollateralValuation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Collateral> getCollateral() {
+		return collateral;
+	}
+
+	public void setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
+		this.collateral = collateral;
+	}
+
+	public ISODateTime getCollateralValuationDate() {
+		return collateralValuationDate;
+	}
+
+	public void setCollateralValuationDate(ISODateTime collateralValuationDate) {
+		this.collateralValuationDate = collateralValuationDate;
+	}
+
+	public CollateralManagement getRelatedManagementProcess() {
+		return relatedManagementProcess;
+	}
+
+	public void setRelatedManagementProcess(com.tools20022.repository.entity.CollateralManagement relatedManagementProcess) {
+		this.relatedManagementProcess = relatedManagementProcess;
+	}
+
+	public ActiveCurrencyAndAmount getReportedCurrencyAndAmount() {
+		return reportedCurrencyAndAmount;
+	}
+
+	public void setReportedCurrencyAndAmount(ActiveCurrencyAndAmount reportedCurrencyAndAmount) {
+		this.reportedCurrencyAndAmount = reportedCurrencyAndAmount;
+	}
+
+	public ActiveCurrencyAndAmount getMarketValueAmount() {
+		return marketValueAmount;
+	}
+
+	public void setMarketValueAmount(ActiveCurrencyAndAmount marketValueAmount) {
+		this.marketValueAmount = marketValueAmount;
+	}
+
+	public BaseOneRate getAdjustedRate() {
+		return adjustedRate;
+	}
+
+	public void setAdjustedRate(BaseOneRate adjustedRate) {
+		this.adjustedRate = adjustedRate;
+	}
+
+	public CurrencyCode getCollateralValuationCurrency() {
+		return collateralValuationCurrency;
+	}
+
+	public void setCollateralValuationCurrency(CurrencyCode collateralValuationCurrency) {
+		this.collateralValuationCurrency = collateralValuationCurrency;
 	}
 }

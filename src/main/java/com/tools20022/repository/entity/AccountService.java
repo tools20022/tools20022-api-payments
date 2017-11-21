@@ -17,10 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.BillingServiceParameters2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Services linked to an account which are available to the account owner or to
@@ -36,30 +41,32 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountService#AccountContract
- * AccountService.AccountContract}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountService#Reservation
- * AccountService.Reservation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountService#Account
- * AccountService.Account}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountService#mmAccountContract
+ * AccountService.mmAccountContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountService#AccountAdministrationCharge
- * AccountService.AccountAdministrationCharge}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountService#mmReservation
+ * AccountService.mmReservation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountService#mmAccount
+ * AccountService.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AccountService#mmAccountAdministrationCharge
+ * AccountService.mmAccountAdministrationCharge}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Account#AccountService
- * Account.AccountService}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmAccountService
+ * Account.mmAccountService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AccountContract#AccountService
- * AccountContract.AccountService}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Reservation#AccountService
- * Reservation.AccountService}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Charges#Services
- * Charges.Services}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountContract#mmAccountService
+ * AccountContract.mmAccountService}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Reservation#mmAccountService
+ * Reservation.mmAccountService}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Charges#mmServices
+ * Charges.mmServices}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -76,8 +83,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,6 +100,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AccountService {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.AccountContract> accountContract;
 	/**
 	 * Account contract which specifies the services linked to an account.
 	 * <p>
@@ -101,8 +109,8 @@ public class AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountContract#AccountService
-	 * AccountContract.AccountService}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountContract#mmAccountService
+	 * AccountContract.mmAccountService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -127,19 +135,20 @@ public class AccountService {
 	 * "Account contract which specifies the services linked to an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccountContract";
 			definition = "Account contract which specifies the services linked to an account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountContract.mmAccountService;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountContract.AccountService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Reservation reservation;
 	/**
 	 * Reservation information included in the services related to an account.
 	 * <p>
@@ -148,8 +157,8 @@ public class AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Reservation#AccountService
-	 * Reservation.AccountService}</li>
+	 * {@linkplain com.tools20022.repository.entity.Reservation#mmAccountService
+	 * Reservation.mmAccountService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -175,20 +184,21 @@ public class AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Reservation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReservation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reservation";
 			definition = "Reservation information included in the services related to an account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Reservation.mmAccountService;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Reservation.AccountService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Account account;
 	/**
 	 * Account for which services are specified.
 	 * <p>
@@ -197,8 +207,8 @@ public class AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#AccountService
-	 * Account.AccountService}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmAccountService
+	 * Account.mmAccountService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -221,20 +231,21 @@ public class AccountService {
 	 * definition} = "Account for which services are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Account for which services are specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmAccountService;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.AccountService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Charges accountAdministrationCharge;
 	/**
 	 * Charge applied for the administration of an account.
 	 * <p>
@@ -243,8 +254,8 @@ public class AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Charges#Services
-	 * Charges.Services}</li>
+	 * {@linkplain com.tools20022.repository.entity.Charges#mmServices
+	 * Charges.mmServices}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -255,8 +266,8 @@ public class AccountService {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#ServiceChargeAmount
-	 * BillingServiceParameters2.ServiceChargeAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.BillingServiceParameters2#mmServiceChargeAmount
+	 * BillingServiceParameters2.mmServiceChargeAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -275,36 +286,73 @@ public class AccountService {
 	 * definition} = "Charge applied for the administration of an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountAdministrationCharge = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountAdministrationCharge = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingServiceParameters2.ServiceChargeAmount);
-			elementContext_lazy = () -> AccountService.mmObject();
+			derivation_lazy = () -> Arrays.asList(BillingServiceParameters2.mmServiceChargeAmount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountAdministrationCharge";
 			definition = "Charge applied for the administration of an account.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Charges.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Charges.Services;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Charges.mmServices;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountService";
 				definition = "Services linked to an account which are available to the account owner or to the holder of a mandate.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.AccountService, com.tools20022.repository.entity.AccountContract.AccountService,
-						com.tools20022.repository.entity.Reservation.AccountService, com.tools20022.repository.entity.Charges.Services);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmAccountService, com.tools20022.repository.entity.AccountContract.mmAccountService,
+						com.tools20022.repository.entity.Reservation.mmAccountService, com.tools20022.repository.entity.Charges.mmServices);
 				subType_lazy = () -> Arrays.asList(ReportingService.mmObject(), CashAccountService.mmObject(), InvestmentAccountService.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountService.AccountContract, com.tools20022.repository.entity.AccountService.Reservation, com.tools20022.repository.entity.AccountService.Account,
-						com.tools20022.repository.entity.AccountService.AccountAdministrationCharge);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountService.mmAccountContract, com.tools20022.repository.entity.AccountService.mmReservation, com.tools20022.repository.entity.AccountService.mmAccount,
+						com.tools20022.repository.entity.AccountService.mmAccountAdministrationCharge);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AccountService.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<AccountContract> getAccountContract() {
+		return accountContract;
+	}
+
+	public void setAccountContract(List<com.tools20022.repository.entity.AccountContract> accountContract) {
+		this.accountContract = accountContract;
+	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(com.tools20022.repository.entity.Reservation reservation) {
+		this.reservation = reservation;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = account;
+	}
+
+	public Charges getAccountAdministrationCharge() {
+		return accountAdministrationCharge;
+	}
+
+	public void setAccountAdministrationCharge(com.tools20022.repository.entity.Charges accountAdministrationCharge) {
+		this.accountAdministrationCharge = accountAdministrationCharge;
 	}
 }

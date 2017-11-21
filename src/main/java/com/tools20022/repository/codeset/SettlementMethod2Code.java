@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.SettlementMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,21 +36,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#InstructedAgent
- * SettlementMethod2Code.InstructedAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#mmInstructedAgent
+ * SettlementMethod2Code.mmInstructedAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#InstructingAgent
- * SettlementMethod2Code.InstructingAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#mmInstructingAgent
+ * SettlementMethod2Code.mmInstructingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#ClearingSystem
- * SettlementMethod2Code.ClearingSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethod2Code#mmClearingSystem
+ * SettlementMethod2Code.mmClearingSystem}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	 * name} = "InstructedAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode InstructedAgent = new MMCode() {
+	public static final MMCode mmInstructedAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructedAgent";
 			owner_lazy = () -> SettlementMethod2Code.mmObject();
 		}
@@ -108,9 +110,9 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	 * name} = "InstructingAgent"</li>
 	 * </ul>
 	 */
-	public static final MMCode InstructingAgent = new MMCode() {
+	public static final MMCode mmInstructingAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InstructingAgent";
 			owner_lazy = () -> SettlementMethod2Code.mmObject();
 		}
@@ -131,9 +133,9 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	 * name} = "ClearingSystem"</li>
 	 * </ul>
 	 */
-	public static final MMCode ClearingSystem = new MMCode() {
+	public static final MMCode mmClearingSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClearingSystem";
 			owner_lazy = () -> SettlementMethod2Code.mmObject();
 		}
@@ -142,13 +144,12 @@ public class SettlementMethod2Code extends SettlementMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("INDA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementMethod2Code";
 				definition = "Specifies the method used to settle the credit transfer instruction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementMethod2Code.InstructedAgent, com.tools20022.repository.codeset.SettlementMethod2Code.InstructingAgent,
-						com.tools20022.repository.codeset.SettlementMethod2Code.ClearingSystem);
+				code_lazy = () -> Arrays.asList(SettlementMethod2Code.mmInstructedAgent, SettlementMethod2Code.mmInstructingAgent, SettlementMethod2Code.mmClearingSystem);
 				trace_lazy = () -> SettlementMethodCode.mmObject();
 			}
 		});

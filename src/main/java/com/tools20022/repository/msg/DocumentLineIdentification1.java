@@ -20,11 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Identifies the documents referred to in the remittance information.
@@ -36,14 +42,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#Type
- * DocumentLineIdentification1.Type}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#mmType
+ * DocumentLineIdentification1.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#Number
- * DocumentLineIdentification1.Number}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#mmNumber
+ * DocumentLineIdentification1.mmNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#RelatedDate
- * DocumentLineIdentification1.RelatedDate}</li>
+ * {@linkplain com.tools20022.repository.msg.DocumentLineIdentification1#mmRelatedDate
+ * DocumentLineIdentification1.mmRelatedDate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -51,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,9 +70,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Identifies the documents referred to in the remittance information."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DocumentLineIdentification1", propOrder = {"type", "number", "relatedDate"})
 public class DocumentLineIdentification1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected DocumentLineType1 type;
 	/**
 	 * Specifies the type of referred document line identification.
 	 * <p>
@@ -78,8 +87,8 @@ public class DocumentLineIdentification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Type Document.Type}
-	 * </li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmType
+	 * Document.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -99,21 +108,22 @@ public class DocumentLineIdentification1 {
 	 * "Specifies the type of referred document line identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Type = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> DocumentLineIdentification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.Type;
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of referred document line identification.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> DocumentLineType1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.DocumentLineType1.mmObject();
 		}
 	};
+	protected Max35Text number;
 	/**
 	 * Identification of the type specified for the referred document line.
 	 * <p>
@@ -142,19 +152,20 @@ public class DocumentLineIdentification1 {
 	 * "Identification of the type specified for the referred document line. "</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Number = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DocumentLineIdentification1.mmObject();
 			isDerived = false;
 			xmlTag = "Nb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Number";
 			definition = "Identification of the type specified for the referred document line. ";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ISODate relatedDate;
 	/**
 	 * Date associated with the referred document line.
 	 * <p>
@@ -167,8 +178,8 @@ public class DocumentLineIdentification1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#IssueDate
-	 * Document.IssueDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmIssueDate
+	 * Document.mmIssueDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -187,17 +198,17 @@ public class DocumentLineIdentification1 {
 	 * definition} = "Date associated with the referred document line."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute RelatedDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmRelatedDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmIssueDate;
 			componentContext_lazy = () -> DocumentLineIdentification1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.IssueDate;
 			isDerived = false;
 			xmlTag = "RltdDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedDate";
 			definition = "Date associated with the referred document line.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
@@ -205,15 +216,41 @@ public class DocumentLineIdentification1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentLineIdentification1.Type, com.tools20022.repository.msg.DocumentLineIdentification1.Number,
-						com.tools20022.repository.msg.DocumentLineIdentification1.RelatedDate);
+				messageElement_lazy = () -> Arrays.asList(DocumentLineIdentification1.mmType, DocumentLineIdentification1.mmNumber, DocumentLineIdentification1.mmRelatedDate);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentLineIdentification1";
 				definition = "Identifies the documents referred to in the remittance information.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Tp")
+	public DocumentLineType1 getType() {
+		return type;
+	}
+
+	public void setType(com.tools20022.repository.msg.DocumentLineType1 type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Nb")
+	public Max35Text getNumber() {
+		return number;
+	}
+
+	public void setNumber(Max35Text number) {
+		this.number = number;
+	}
+
+	@XmlElement(name = "RltdDt")
+	public ISODate getRelatedDate() {
+		return relatedDate;
+	}
+
+	public void setRelatedDate(ISODate relatedDate) {
+		this.relatedDate = relatedDate;
 	}
 }

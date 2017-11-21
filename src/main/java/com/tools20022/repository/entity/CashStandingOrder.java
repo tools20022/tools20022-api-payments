@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.StandingOrder;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,23 +44,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#ZeroSweepIndicator
- * CashStandingOrder.ZeroSweepIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmZeroSweepIndicator
+ * CashStandingOrder.mmZeroSweepIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#RelatedCashServices
- * CashStandingOrder.RelatedCashServices}</li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmRelatedCashServices
+ * CashStandingOrder.mmRelatedCashServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#CreditDebitIndicator
- * CashStandingOrder.CreditDebitIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmCreditDebitIndicator
+ * CashStandingOrder.mmCreditDebitIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#CreditTransfer
- * CashStandingOrder.CreditTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmCreditTransfer
+ * CashStandingOrder.mmCreditTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#FloorAmount
- * CashStandingOrder.FloorAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmFloorAmount
+ * CashStandingOrder.mmFloorAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashStandingOrder#CashAccount
- * CashStandingOrder.CashAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.CashStandingOrder#mmCashAccount
+ * CashStandingOrder.mmCashAccount}</li>
  * </ul>
  * </li>
  * <li>
@@ -68,14 +68,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashAccount#CashStandingOrder
- * CashAccount.CashStandingOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashStandingOrder
+ * CashAccount.mmCashStandingOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CashManagementService#StandingOrder
- * CashManagementService.StandingOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.CashManagementService#mmStandingOrder
+ * CashManagementService.mmStandingOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CreditTransfer#RelatedStandingOrder
- * CreditTransfer.RelatedStandingOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.CreditTransfer#mmRelatedStandingOrder
+ * CreditTransfer.mmRelatedStandingOrder}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -84,8 +84,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -101,6 +101,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CashStandingOrder extends StandingOrder {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected TrueFalseIndicator zeroSweepIndicator;
 	/**
 	 * Indicates whether the liquidity transfer standing order is defined as a
 	 * zero sweeping order. When true, the liquidity transfer standing order
@@ -132,18 +133,27 @@ public class CashStandingOrder extends StandingOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ZeroSweepIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmZeroSweepIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashStandingOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ZeroSweepIndicator";
 			definition = "Indicates whether the liquidity transfer standing order is defined as a zero sweeping order. When true, the liquidity transfer standing order will transfer all amount of money out of the account so the resulting balance is  zero.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashStandingOrder.class.getMethod("getZeroSweepIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CashManagementService relatedCashServices;
 	/**
 	 * Cash management services which provide standing order facilities.
 	 * <p>
@@ -152,8 +162,8 @@ public class CashStandingOrder extends StandingOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashManagementService#StandingOrder
-	 * CashManagementService.StandingOrder}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashManagementService#mmStandingOrder
+	 * CashManagementService.mmStandingOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -179,20 +189,21 @@ public class CashStandingOrder extends StandingOrder {
 	 * "Cash management services which provide standing order facilities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCashServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCashServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashStandingOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCashServices";
 			definition = "Cash management services which provide standing order facilities.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CashManagementService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashManagementService.StandingOrder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmStandingOrder;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashManagementService.mmObject();
 		}
 	};
+	protected DebitCreditCode creditDebitIndicator;
 	/**
 	 * Specifies if the account is debited or credited by the standing order.
 	 * <p>
@@ -220,18 +231,27 @@ public class CashStandingOrder extends StandingOrder {
 	 * "Specifies if the account is debited or credited by the standing order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashStandingOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditDebitIndicator";
 			definition = "Specifies if the account is debited or credited by the standing order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashStandingOrder.class.getMethod("getCreditDebitIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CreditTransfer creditTransfer;
 	/**
 	 * Standing order causes a payment instruction at regular intervals, eg, as
 	 * specified by its frequency.
@@ -241,8 +261,8 @@ public class CashStandingOrder extends StandingOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CreditTransfer#RelatedStandingOrder
-	 * CreditTransfer.RelatedStandingOrder}</li>
+	 * {@linkplain com.tools20022.repository.entity.CreditTransfer#mmRelatedStandingOrder
+	 * CreditTransfer.mmRelatedStandingOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -268,20 +288,21 @@ public class CashStandingOrder extends StandingOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CreditTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCreditTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashStandingOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditTransfer";
 			definition = "Standing order causes a payment instruction at regular intervals, eg, as specified by its frequency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmRelatedStandingOrder;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CreditTransfer.RelatedStandingOrder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount floorAmount;
 	/**
 	 * Minimum amount of money that should remain on the debtor's account, for
 	 * cash management purposes.
@@ -311,18 +332,27 @@ public class CashStandingOrder extends StandingOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FloorAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFloorAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CashStandingOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FloorAmount";
 			definition = "Minimum amount of money that should remain on the debtor's account, for cash management purposes.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CashStandingOrder.class.getMethod("getFloorAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CashAccount cashAccount;
 	/**
 	 * Cash account for which a standing order applies.
 	 * <p>
@@ -331,8 +361,8 @@ public class CashStandingOrder extends StandingOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#CashStandingOrder
-	 * CashAccount.CashStandingOrder}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashStandingOrder
+	 * CashAccount.mmCashStandingOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -356,36 +386,89 @@ public class CashStandingOrder extends StandingOrder {
 	 * definition} = "Cash account for which a standing order applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CashStandingOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Cash account for which a standing order applies.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmCashStandingOrder;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.CashStandingOrder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashStandingOrder";
 				definition = "Instruction given by a party that has explicit authority to instruct a debit on the account, ie, either the debit account owner or originating party, to a first agent, to process cash transfers at specified intervals during an implicit or explicit period of time. A standing order is given once and is valid for an open or closed period of time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.CashStandingOrder, com.tools20022.repository.entity.CashManagementService.StandingOrder,
-						com.tools20022.repository.entity.CreditTransfer.RelatedStandingOrder);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmCashStandingOrder, com.tools20022.repository.entity.CashManagementService.mmStandingOrder,
+						com.tools20022.repository.entity.CreditTransfer.mmRelatedStandingOrder);
 				superType_lazy = () -> StandingOrder.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashStandingOrder.ZeroSweepIndicator, com.tools20022.repository.entity.CashStandingOrder.RelatedCashServices,
-						com.tools20022.repository.entity.CashStandingOrder.CreditDebitIndicator, com.tools20022.repository.entity.CashStandingOrder.CreditTransfer, com.tools20022.repository.entity.CashStandingOrder.FloorAmount,
-						com.tools20022.repository.entity.CashStandingOrder.CashAccount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashStandingOrder.mmZeroSweepIndicator, com.tools20022.repository.entity.CashStandingOrder.mmRelatedCashServices,
+						com.tools20022.repository.entity.CashStandingOrder.mmCreditDebitIndicator, com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer, com.tools20022.repository.entity.CashStandingOrder.mmFloorAmount,
+						com.tools20022.repository.entity.CashStandingOrder.mmCashAccount);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CashStandingOrder.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public TrueFalseIndicator getZeroSweepIndicator() {
+		return zeroSweepIndicator;
+	}
+
+	public void setZeroSweepIndicator(TrueFalseIndicator zeroSweepIndicator) {
+		this.zeroSweepIndicator = zeroSweepIndicator;
+	}
+
+	public CashManagementService getRelatedCashServices() {
+		return relatedCashServices;
+	}
+
+	public void setRelatedCashServices(com.tools20022.repository.entity.CashManagementService relatedCashServices) {
+		this.relatedCashServices = relatedCashServices;
+	}
+
+	public DebitCreditCode getCreditDebitIndicator() {
+		return creditDebitIndicator;
+	}
+
+	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = creditDebitIndicator;
+	}
+
+	public CreditTransfer getCreditTransfer() {
+		return creditTransfer;
+	}
+
+	public void setCreditTransfer(com.tools20022.repository.entity.CreditTransfer creditTransfer) {
+		this.creditTransfer = creditTransfer;
+	}
+
+	public CurrencyAndAmount getFloorAmount() {
+		return floorAmount;
+	}
+
+	public void setFloorAmount(CurrencyAndAmount floorAmount) {
+		this.floorAmount = floorAmount;
+	}
+
+	public CashAccount getCashAccount() {
+		return cashAccount;
+	}
+
+	public void setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
+		this.cashAccount = cashAccount;
 	}
 }

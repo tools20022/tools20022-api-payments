@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RenounceableStatusCode#NonRenounceable
- * RenounceableStatusCode.NonRenounceable}</li>
+ * {@linkplain com.tools20022.repository.codeset.RenounceableStatusCode#mmNonRenounceable
+ * RenounceableStatusCode.mmNonRenounceable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RenounceableStatusCode#Renounceable
- * RenounceableStatusCode.Renounceable}</li>
+ * {@linkplain com.tools20022.repository.codeset.RenounceableStatusCode#mmRenounceable
+ * RenounceableStatusCode.mmRenounceable}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -82,9 +84,9 @@ public class RenounceableStatusCode {
 	 * definition} = "Intermediate securities cannot be sold."</li>
 	 * </ul>
 	 */
-	public static final MMCode NonRenounceable = new MMCode() {
+	public static final MMCode mmNonRenounceable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonRenounceable";
 			definition = "Intermediate securities cannot be sold.";
 			owner_lazy = () -> RenounceableStatusCode.mmObject();
@@ -112,9 +114,9 @@ public class RenounceableStatusCode {
 	 * definition} = "Intermediate securities can be sold."</li>
 	 * </ul>
 	 */
-	public static final MMCode Renounceable = new MMCode() {
+	public static final MMCode mmRenounceable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Renounceable";
 			definition = "Intermediate securities can be sold.";
 			owner_lazy = () -> RenounceableStatusCode.mmObject();
@@ -125,12 +127,12 @@ public class RenounceableStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NREN");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RenounceableStatusCode";
 				definition = "Specifies the renounceable status.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RenounceableStatusCode.NonRenounceable, com.tools20022.repository.codeset.RenounceableStatusCode.Renounceable);
+				code_lazy = () -> Arrays.asList(RenounceableStatusCode.mmNonRenounceable, RenounceableStatusCode.mmRenounceable);
 			}
 		});
 		return mmObject_lazy.get();

@@ -19,9 +19,15 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.AmountRange;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Range of amount values.
@@ -32,10 +38,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.FromToAmountRange#FromAmount
- * FromToAmountRange.FromAmount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.FromToAmountRange#ToAmount
- * FromToAmountRange.ToAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.FromToAmountRange#mmFromAmount
+ * FromToAmountRange.mmFromAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.FromToAmountRange#mmToAmount
+ * FromToAmountRange.mmToAmount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -44,8 +50,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -56,9 +62,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Range of amount values."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "FromToAmountRange", propOrder = {"fromAmount", "toAmount"})
 public class FromToAmountRange {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected AmountRangeBoundary1 fromAmount;
 	/**
 	 * Lower boundary of a range of amount values.
 	 * <p>
@@ -72,8 +81,8 @@ public class FromToAmountRange {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.AmountRange#FromAmount
-	 * AmountRange.FromAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.AmountRange#mmFromAmount
+	 * AmountRange.mmFromAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -92,20 +101,21 @@ public class FromToAmountRange {
 	 * definition} = "Lower boundary of a range of amount values."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute FromAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmFromAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> AmountRange.mmFromAmount;
 			componentContext_lazy = () -> FromToAmountRange.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.AmountRange.FromAmount;
 			isDerived = false;
 			xmlTag = "FrAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FromAmount";
 			definition = "Lower boundary of a range of amount values.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> AmountRangeBoundary1.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
 		}
 	};
+	protected AmountRangeBoundary1 toAmount;
 	/**
 	 * Upper boundary of a range of amount values.
 	 * <p>
@@ -119,8 +129,8 @@ public class FromToAmountRange {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.AmountRange#ToAmount
-	 * AmountRange.ToAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.AmountRange#mmToAmount
+	 * AmountRange.mmToAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -139,32 +149,50 @@ public class FromToAmountRange {
 	 * definition} = "Upper boundary of a range of amount values."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ToAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmToAmount = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> AmountRange.mmToAmount;
 			componentContext_lazy = () -> FromToAmountRange.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.AmountRange.ToAmount;
 			isDerived = false;
 			xmlTag = "ToAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ToAmount";
 			definition = "Upper boundary of a range of amount values.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> AmountRangeBoundary1.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.msg.AmountRangeBoundary1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.FromToAmountRange.FromAmount, com.tools20022.repository.msg.FromToAmountRange.ToAmount);
+				messageElement_lazy = () -> Arrays.asList(FromToAmountRange.mmFromAmount, FromToAmountRange.mmToAmount);
 				trace_lazy = () -> AmountRange.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FromToAmountRange";
 				definition = "Range of amount values.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "FrAmt", required = true)
+	public AmountRangeBoundary1 getFromAmount() {
+		return fromAmount;
+	}
+
+	public void setFromAmount(com.tools20022.repository.msg.AmountRangeBoundary1 fromAmount) {
+		this.fromAmount = fromAmount;
+	}
+
+	@XmlElement(name = "ToAmt", required = true)
+	public AmountRangeBoundary1 getToAmount() {
+		return toAmount;
+	}
+
+	public void setToAmount(com.tools20022.repository.msg.AmountRangeBoundary1 toAmount) {
+		this.toAmount = toAmount;
 	}
 }

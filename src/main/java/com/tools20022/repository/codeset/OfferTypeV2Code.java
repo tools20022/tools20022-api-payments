@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,32 +32,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#DissenterRights
- * OfferTypeV2Code.DissenterRights}</li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmDissenterRights
+ * OfferTypeV2Code.mmDissenterRights}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#RestrictionExchange
- * OfferTypeV2Code.RestrictionExchange}</li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmRestrictionExchange
+ * OfferTypeV2Code.mmRestrictionExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#FirstComeFirstServed
- * OfferTypeV2Code.FirstComeFirstServed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#FinalOffer
- * OfferTypeV2Code.FinalOffer}</li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmFirstComeFirstServed
+ * OfferTypeV2Code.mmFirstComeFirstServed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#MiniOddLotOffer
- * OfferTypeV2Code.MiniOddLotOffer}</li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmFinalOffer
+ * OfferTypeV2Code.mmFinalOffer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#PartialOffer
- * OfferTypeV2Code.PartialOffer}</li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmMiniOddLotOffer
+ * OfferTypeV2Code.mmMiniOddLotOffer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#SqueezeOutBid
- * OfferTypeV2Code.SqueezeOutBid}</li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmPartialOffer
+ * OfferTypeV2Code.mmPartialOffer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.OfferTypeV2Code#mmSqueezeOutBid
+ * OfferTypeV2Code.mmSqueezeOutBid}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -100,9 +103,9 @@ public class OfferTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode DissenterRights = new MMCode() {
+	public static final MMCode mmDissenterRights = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DissenterRights";
 			definition = "Securities holder has the right to disagree with a mandatory event. This right is not inherent in all offers and therefore must be noted in announcements only when applicable.";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -130,9 +133,9 @@ public class OfferTypeV2Code {
 	 * definition} = "Exchange of Restricted to Unrestricted (or vice versa)."</li>
 	 * </ul>
 	 */
-	public static final MMCode RestrictionExchange = new MMCode() {
+	public static final MMCode mmRestrictionExchange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RestrictionExchange";
 			definition = "Exchange of Restricted to Unrestricted (or vice versa).";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -163,9 +166,9 @@ public class OfferTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FirstComeFirstServed = new MMCode() {
+	public static final MMCode mmFirstComeFirstServed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FirstComeFirstServed";
 			definition = "Securities will be accepted in the order they have been submitted until the target number of quantity sought is reached.";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -196,9 +199,9 @@ public class OfferTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FinalOffer = new MMCode() {
+	public static final MMCode mmFinalOffer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinalOffer";
 			definition = "Final or last offer to holders subject to offer conditions being reached, for example, 50 percent accepted on a tender.";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -229,9 +232,9 @@ public class OfferTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MiniOddLotOffer = new MMCode() {
+	public static final MMCode mmMiniOddLotOffer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MiniOddLotOffer";
 			definition = "Sale or purchase of odd lots to/from a third party other than the issuing company.";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -262,9 +265,9 @@ public class OfferTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PartialOffer = new MMCode() {
+	public static final MMCode mmPartialOffer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PartialOffer";
 			definition = "Offer made by the offeror for a portion of the outstanding shares not already owned by the offeror.";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -296,9 +299,9 @@ public class OfferTypeV2Code {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SqueezeOutBid = new MMCode() {
+	public static final MMCode mmSqueezeOutBid = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SqueezeOutBid";
 			definition = "Offer launched by a company, in possession of a large number of the shares (90% - 95%) of a company (generally as a result of a tender offer), in order to acquire the remaining shares of that company.";
 			owner_lazy = () -> OfferTypeV2Code.mmObject();
@@ -309,14 +312,13 @@ public class OfferTypeV2Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DISS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OfferTypeV2Code";
 				definition = "Specifies the conditions that apply to the offer.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.OfferTypeV2Code.DissenterRights, com.tools20022.repository.codeset.OfferTypeV2Code.RestrictionExchange,
-						com.tools20022.repository.codeset.OfferTypeV2Code.FirstComeFirstServed, com.tools20022.repository.codeset.OfferTypeV2Code.FinalOffer, com.tools20022.repository.codeset.OfferTypeV2Code.MiniOddLotOffer,
-						com.tools20022.repository.codeset.OfferTypeV2Code.PartialOffer, com.tools20022.repository.codeset.OfferTypeV2Code.SqueezeOutBid);
+				code_lazy = () -> Arrays.asList(OfferTypeV2Code.mmDissenterRights, OfferTypeV2Code.mmRestrictionExchange, OfferTypeV2Code.mmFirstComeFirstServed, OfferTypeV2Code.mmFinalOffer, OfferTypeV2Code.mmMiniOddLotOffer,
+						OfferTypeV2Code.mmPartialOffer, OfferTypeV2Code.mmSqueezeOutBid);
 			}
 		});
 		return mmObject_lazy.get();

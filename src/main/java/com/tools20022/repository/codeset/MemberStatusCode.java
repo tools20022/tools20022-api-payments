@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,21 +31,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#Enabled
- * MemberStatusCode.Enabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#Disabled
- * MemberStatusCode.Disabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#Deleted
- * MemberStatusCode.Deleted}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#Joining
- * MemberStatusCode.Joining}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#mmEnabled
+ * MemberStatusCode.mmEnabled}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MemberStatusCode#mmDisabled
+ * MemberStatusCode.mmDisabled}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#mmDeleted
+ * MemberStatusCode.mmDeleted}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.MemberStatusCode#mmJoining
+ * MemberStatusCode.mmJoining}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +87,9 @@ public class MemberStatusCode {
 	 * definition} = "Member is live on the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Enabled = new MMCode() {
+	public static final MMCode mmEnabled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enabled";
 			definition = "Member is live on the system.";
 			owner_lazy = () -> MemberStatusCode.mmObject();
@@ -114,9 +117,9 @@ public class MemberStatusCode {
 	 * definition} = "Member is temporarily not live on the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Disabled = new MMCode() {
+	public static final MMCode mmDisabled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disabled";
 			definition = "Member is temporarily not live on the system.";
 			owner_lazy = () -> MemberStatusCode.mmObject();
@@ -144,9 +147,9 @@ public class MemberStatusCode {
 	 * definition} = "Member is no longer live on the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Deleted = new MMCode() {
+	public static final MMCode mmDeleted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deleted";
 			definition = "Member is no longer live on the system.";
 			owner_lazy = () -> MemberStatusCode.mmObject();
@@ -175,9 +178,9 @@ public class MemberStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Joining = new MMCode() {
+	public static final MMCode mmJoining = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Joining";
 			definition = "Member is joining and will soon be enabled on the system.";
 			owner_lazy = () -> MemberStatusCode.mmObject();
@@ -188,13 +191,12 @@ public class MemberStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ENBL");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MemberStatusCode";
 				definition = "Specifies the live status of a member of a system.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MemberStatusCode.Enabled, com.tools20022.repository.codeset.MemberStatusCode.Disabled, com.tools20022.repository.codeset.MemberStatusCode.Deleted,
-						com.tools20022.repository.codeset.MemberStatusCode.Joining);
+				code_lazy = () -> Arrays.asList(MemberStatusCode.mmEnabled, MemberStatusCode.mmDisabled, MemberStatusCode.mmDeleted, MemberStatusCode.mmJoining);
 			}
 		});
 		return mmObject_lazy.get();

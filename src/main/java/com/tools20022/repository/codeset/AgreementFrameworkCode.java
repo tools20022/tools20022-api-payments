@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,27 +32,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#FBAAgreement
- * AgreementFrameworkCode.FBAAgreement}</li>
+ * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#mmFBAAgreement
+ * AgreementFrameworkCode.mmFBAAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#BBAAgreement
- * AgreementFrameworkCode.BBAAgreement}</li>
+ * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#mmBBAAgreement
+ * AgreementFrameworkCode.mmBBAAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#GermanRahmenvertragAgreement
- * AgreementFrameworkCode.GermanRahmenvertragAgreement}</li>
+ * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#mmGermanRahmenvertragAgreement
+ * AgreementFrameworkCode.mmGermanRahmenvertragAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#ISDAAgreement
- * AgreementFrameworkCode.ISDAAgreement}</li>
+ * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#mmISDAAgreement
+ * AgreementFrameworkCode.mmISDAAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#NoReference
- * AgreementFrameworkCode.NoReference}</li>
+ * {@linkplain com.tools20022.repository.codeset.AgreementFrameworkCode#mmNoReference
+ * AgreementFrameworkCode.mmNoReference}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -91,9 +93,9 @@ public class AgreementFrameworkCode {
 	 * definition} = "French Banker's Association Agreement."</li>
 	 * </ul>
 	 */
-	public static final MMCode FBAAgreement = new MMCode() {
+	public static final MMCode mmFBAAgreement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FBAAgreement";
 			definition = "French Banker's Association Agreement.";
 			owner_lazy = () -> AgreementFrameworkCode.mmObject();
@@ -121,9 +123,9 @@ public class AgreementFrameworkCode {
 	 * definition} = "British Banker's Association Agreement."</li>
 	 * </ul>
 	 */
-	public static final MMCode BBAAgreement = new MMCode() {
+	public static final MMCode mmBBAAgreement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BBAAgreement";
 			definition = "British Banker's Association Agreement.";
 			owner_lazy = () -> AgreementFrameworkCode.mmObject();
@@ -151,9 +153,9 @@ public class AgreementFrameworkCode {
 	 * definition} = "German Rahmenvertrag Agreement."</li>
 	 * </ul>
 	 */
-	public static final MMCode GermanRahmenvertragAgreement = new MMCode() {
+	public static final MMCode mmGermanRahmenvertragAgreement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GermanRahmenvertragAgreement";
 			definition = "German Rahmenvertrag Agreement.";
 			owner_lazy = () -> AgreementFrameworkCode.mmObject();
@@ -182,9 +184,9 @@ public class AgreementFrameworkCode {
 	 * "International Swaps and Derivatives Association Agreement."</li>
 	 * </ul>
 	 */
-	public static final MMCode ISDAAgreement = new MMCode() {
+	public static final MMCode mmISDAAgreement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ISDAAgreement";
 			definition = "International Swaps and Derivatives Association Agreement.";
 			owner_lazy = () -> AgreementFrameworkCode.mmObject();
@@ -212,9 +214,9 @@ public class AgreementFrameworkCode {
 	 * definition} = "No information about the master agreement is available."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoReference = new MMCode() {
+	public static final MMCode mmNoReference = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NoReference";
 			definition = "No information about the master agreement is available.";
 			owner_lazy = () -> AgreementFrameworkCode.mmObject();
@@ -225,14 +227,13 @@ public class AgreementFrameworkCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("FBAA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AgreementFrameworkCode";
 				definition = "Specifies the agreement type details for the margin call.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AgreementFrameworkCode.FBAAgreement, com.tools20022.repository.codeset.AgreementFrameworkCode.BBAAgreement,
-						com.tools20022.repository.codeset.AgreementFrameworkCode.GermanRahmenvertragAgreement, com.tools20022.repository.codeset.AgreementFrameworkCode.ISDAAgreement,
-						com.tools20022.repository.codeset.AgreementFrameworkCode.NoReference);
+				code_lazy = () -> Arrays.asList(AgreementFrameworkCode.mmFBAAgreement, AgreementFrameworkCode.mmBBAAgreement, AgreementFrameworkCode.mmGermanRahmenvertragAgreement, AgreementFrameworkCode.mmISDAAgreement,
+						AgreementFrameworkCode.mmNoReference);
 			}
 		});
 		return mmObject_lazy.get();

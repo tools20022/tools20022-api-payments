@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,35 +38,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralStatus#ResponseStatus
- * CollateralStatus.ResponseStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmResponseStatus
+ * CollateralStatus.mmResponseStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralStatus#CollateralManagementCancellationReason
- * CollateralStatus.CollateralManagementCancellationReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmCollateralManagementCancellationReason
+ * CollateralStatus.mmCollateralManagementCancellationReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralStatus#SubstitutionStatus
- * CollateralStatus.SubstitutionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmSubstitutionStatus
+ * CollateralStatus.mmSubstitutionStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralStatus#InterestRejectionReason
- * CollateralStatus.InterestRejectionReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmInterestRejectionReason
+ * CollateralStatus.mmInterestRejectionReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralStatus#MarginCallResponse
- * CollateralStatus.MarginCallResponse}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CollateralStatus#Settlement
- * CollateralStatus.Settlement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmMarginCallResponse
+ * CollateralStatus.mmMarginCallResponse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralStatus#CancellationReason
- * CollateralStatus.CancellationReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CollateralStatus#Collateral
- * CollateralStatus.Collateral}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmSettlement
+ * CollateralStatus.mmSettlement}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmCancellationReason
+ * CollateralStatus.mmCancellationReason}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CollateralStatus#mmCollateral
+ * CollateralStatus.mmCollateral}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Collateral#Status
- * Collateral.Status}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Collateral#mmStatus
+ * Collateral.mmStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -74,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,6 +93,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CollateralStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ResponseStatusCode responseStatus;
 	/**
 	 * Specifies the status of the response to a collateral claim, proposal or
 	 * substitution proposal.
@@ -120,18 +123,27 @@ public class CollateralStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResponseStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResponseStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResponseStatus";
 			definition = "Specifies the status of the response to a collateral claim, proposal or substitution proposal.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ResponseStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getResponseStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CollateralManagementCancellationReasonCode collateralManagementCancellationReason;
 	/**
 	 * Specifies the reason for the cancellation of a message.
 	 * <p>
@@ -158,18 +170,27 @@ public class CollateralStatus extends Status {
 	 * definition} = "Specifies the reason for the cancellation of a message."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CollateralManagementCancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCollateralManagementCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralManagementCancellationReason";
 			definition = "Specifies the reason for the cancellation of a message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CollateralManagementCancellationReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getCollateralManagementCancellationReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CollateralSubstitutionConfirmationCode substitutionStatus;
 	/**
 	 * Provides details about the status of the collateral substitution, either
 	 * released or returned.
@@ -199,18 +220,27 @@ public class CollateralStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SubstitutionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSubstitutionStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubstitutionStatus";
 			definition = "Provides details about the status of the collateral substitution, either released or returned.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CollateralSubstitutionConfirmationCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getSubstitutionStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InterestRejectionReasonCode interestRejectionReason;
 	/**
 	 * Provides the interest rejection reason using an ISO 20022 code.
 	 * <p>
@@ -238,18 +268,27 @@ public class CollateralStatus extends Status {
 	 * "Provides the interest rejection reason using an ISO 20022 code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InterestRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInterestRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestRejectionReason";
 			definition = "Provides the interest rejection reason using an ISO 20022 code.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> InterestRejectionReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getInterestRejectionReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected MarginCallResponseCode marginCallResponse;
 	/**
 	 * Specifies whether the margin call request was sent on a non valuation day
 	 * or was received after notification time.
@@ -279,18 +318,27 @@ public class CollateralStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MarginCallResponse = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMarginCallResponse = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarginCallResponse";
 			definition = "Specifies whether the margin call request was sent on a non valuation day or was received after notification time.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> MarginCallResponseCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getMarginCallResponse", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SettlementStatusCode settlement;
 	/**
 	 * Provides the settlement status of the collateral.
 	 * <p>
@@ -317,18 +365,27 @@ public class CollateralStatus extends Status {
 	 * definition} = "Provides the settlement status of the collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Settlement = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSettlement = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Settlement";
 			definition = "Provides the settlement status of the collateral.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SettlementStatusCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getSettlement", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CancellationReasonCode cancellationReason;
 	/**
 	 * Provides details about the status of the collateral cancellation.
 	 * <p>
@@ -356,18 +413,27 @@ public class CollateralStatus extends Status {
 	 * "Provides details about the status of the collateral cancellation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationReason";
 			definition = "Provides details about the status of the collateral cancellation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CancellationReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralStatus.class.getMethod("getCancellationReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Collateral collateral;
 	/**
 	 * Collateral for which a status is provided.
 	 * <p>
@@ -376,8 +442,8 @@ public class CollateralStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Collateral#Status
-	 * Collateral.Status}</li>
+	 * {@linkplain com.tools20022.repository.entity.Collateral#mmStatus
+	 * Collateral.mmStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -401,35 +467,105 @@ public class CollateralStatus extends Status {
 	 * definition} = "Collateral for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Collateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Collateral";
 			definition = "Collateral for which a status is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.Status;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralStatus";
 				definition = "Specifies the status of the collateral or of an event related to collateral.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.Status);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.mmStatus);
 				superType_lazy = () -> Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralStatus.ResponseStatus, com.tools20022.repository.entity.CollateralStatus.CollateralManagementCancellationReason,
-						com.tools20022.repository.entity.CollateralStatus.SubstitutionStatus, com.tools20022.repository.entity.CollateralStatus.InterestRejectionReason, com.tools20022.repository.entity.CollateralStatus.MarginCallResponse,
-						com.tools20022.repository.entity.CollateralStatus.Settlement, com.tools20022.repository.entity.CollateralStatus.CancellationReason, com.tools20022.repository.entity.CollateralStatus.Collateral);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralStatus.mmResponseStatus, com.tools20022.repository.entity.CollateralStatus.mmCollateralManagementCancellationReason,
+						com.tools20022.repository.entity.CollateralStatus.mmSubstitutionStatus, com.tools20022.repository.entity.CollateralStatus.mmInterestRejectionReason,
+						com.tools20022.repository.entity.CollateralStatus.mmMarginCallResponse, com.tools20022.repository.entity.CollateralStatus.mmSettlement, com.tools20022.repository.entity.CollateralStatus.mmCancellationReason,
+						com.tools20022.repository.entity.CollateralStatus.mmCollateral);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CollateralStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ResponseStatusCode getResponseStatus() {
+		return responseStatus;
+	}
+
+	public void setResponseStatus(ResponseStatusCode responseStatus) {
+		this.responseStatus = responseStatus;
+	}
+
+	public CollateralManagementCancellationReasonCode getCollateralManagementCancellationReason() {
+		return collateralManagementCancellationReason;
+	}
+
+	public void setCollateralManagementCancellationReason(CollateralManagementCancellationReasonCode collateralManagementCancellationReason) {
+		this.collateralManagementCancellationReason = collateralManagementCancellationReason;
+	}
+
+	public CollateralSubstitutionConfirmationCode getSubstitutionStatus() {
+		return substitutionStatus;
+	}
+
+	public void setSubstitutionStatus(CollateralSubstitutionConfirmationCode substitutionStatus) {
+		this.substitutionStatus = substitutionStatus;
+	}
+
+	public InterestRejectionReasonCode getInterestRejectionReason() {
+		return interestRejectionReason;
+	}
+
+	public void setInterestRejectionReason(InterestRejectionReasonCode interestRejectionReason) {
+		this.interestRejectionReason = interestRejectionReason;
+	}
+
+	public MarginCallResponseCode getMarginCallResponse() {
+		return marginCallResponse;
+	}
+
+	public void setMarginCallResponse(MarginCallResponseCode marginCallResponse) {
+		this.marginCallResponse = marginCallResponse;
+	}
+
+	public SettlementStatusCode getSettlement() {
+		return settlement;
+	}
+
+	public void setSettlement(SettlementStatusCode settlement) {
+		this.settlement = settlement;
+	}
+
+	public CancellationReasonCode getCancellationReason() {
+		return cancellationReason;
+	}
+
+	public void setCancellationReason(CancellationReasonCode cancellationReason) {
+		this.cancellationReason = cancellationReason;
+	}
+
+	public Collateral getCollateral() {
+		return collateral;
+	}
+
+	public void setCollateral(com.tools20022.repository.entity.Collateral collateral) {
+		this.collateral = collateral;
 	}
 }

@@ -20,11 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.pain.MandateAcceptanceReportV05;
 import com.tools20022.repository.choice.OriginalMandate5Choice;
 import com.tools20022.repository.entity.DirectDebitMandate;
+import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.entity.PaymentInstruction;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Identifies the mandate, which is being accepted.
@@ -36,17 +45,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#OriginalMessageInformation
- * MandateAcceptance5.OriginalMessageInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#mmOriginalMessageInformation
+ * MandateAcceptance5.mmOriginalMessageInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#AcceptanceResult
- * MandateAcceptance5.AcceptanceResult}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#mmAcceptanceResult
+ * MandateAcceptance5.mmAcceptanceResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#OriginalMandate
- * MandateAcceptance5.OriginalMandate}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#mmOriginalMandate
+ * MandateAcceptance5.mmOriginalMandate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#SupplementaryData
- * MandateAcceptance5.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.msg.MandateAcceptance5#mmSupplementaryData
+ * MandateAcceptance5.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -57,15 +66,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateAcceptanceReportV05#UnderlyingAcceptanceDetails
- * MandateAcceptanceReportV05.UnderlyingAcceptanceDetails}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateAcceptanceReportV05#mmUnderlyingAcceptanceDetails
+ * MandateAcceptanceReportV05.mmUnderlyingAcceptanceDetails}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,9 +85,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Identifies the mandate, which is being accepted."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "MandateAcceptance5", propOrder = {"originalMessageInformation", "acceptanceResult", "originalMandate", "supplementaryData"})
 public class MandateAcceptance5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected OriginalMessageInformation1 originalMessageInformation;
 	/**
 	 * Provides information on the original message.
 	 * <p>
@@ -111,21 +123,22 @@ public class MandateAcceptance5 {
 	 * definition} = "Provides information on the original message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalMessageInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalMessageInformation = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> MandateAcceptance5.mmObject();
 			businessComponentTrace_lazy = () -> PaymentInstruction.mmObject();
+			componentContext_lazy = () -> MandateAcceptance5.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMessageInformation";
 			definition = "Provides information on the original message.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> OriginalMessageInformation1.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.OriginalMessageInformation1.mmObject();
 		}
 	};
+	protected AcceptanceResult6 acceptanceResult;
 	/**
 	 * Provides detailed information on the acceptance result.
 	 * <p>
@@ -137,8 +150,8 @@ public class MandateAcceptance5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Mandate#MandateStatus
-	 * Mandate.MandateStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.Mandate#mmMandateStatus
+	 * Mandate.mmMandateStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -157,21 +170,22 @@ public class MandateAcceptance5 {
 	 * definition} = "Provides detailed information on the acceptance result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd AcceptanceResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAcceptanceResult = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Mandate.mmMandateStatus;
 			componentContext_lazy = () -> MandateAcceptance5.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Mandate.MandateStatus;
 			isDerived = false;
 			xmlTag = "AccptncRslt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptanceResult";
 			definition = "Provides detailed information on the acceptance result.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AcceptanceResult6.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.AcceptanceResult6.mmObject();
 		}
 	};
+	protected OriginalMandate5Choice originalMandate;
 	/**
 	 * Provides the original mandate data.
 	 * <p>
@@ -184,8 +198,8 @@ public class MandateAcceptance5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Mandate#OriginalMandate
-	 * Mandate.OriginalMandate}</li>
+	 * {@linkplain com.tools20022.repository.entity.Mandate#mmOriginalMandate
+	 * Mandate.mmOriginalMandate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -204,21 +218,22 @@ public class MandateAcceptance5 {
 	 * definition} = "Provides the original mandate data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd OriginalMandate = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginalMandate = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Mandate.mmOriginalMandate;
 			componentContext_lazy = () -> MandateAcceptance5.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Mandate.OriginalMandate;
 			isDerived = false;
 			xmlTag = "OrgnlMndt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMandate";
 			definition = "Provides the original mandate data.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> OriginalMandate5Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> OriginalMandate5Choice.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -250,32 +265,67 @@ public class MandateAcceptance5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute SupplementaryData = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmSupplementaryData = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> MandateAcceptance5.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
-			complexType_lazy = () -> SupplementaryData1.mmObject();
+			complexType_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MandateAcceptance5.OriginalMessageInformation, com.tools20022.repository.msg.MandateAcceptance5.AcceptanceResult,
-						com.tools20022.repository.msg.MandateAcceptance5.OriginalMandate, com.tools20022.repository.msg.MandateAcceptance5.SupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(MandateAcceptance5.mmOriginalMessageInformation, MandateAcceptance5.mmAcceptanceResult, MandateAcceptance5.mmOriginalMandate, MandateAcceptance5.mmSupplementaryData);
+				messageBuildingBlock_lazy = () -> Arrays.asList(MandateAcceptanceReportV05.mmUnderlyingAcceptanceDetails);
 				trace_lazy = () -> DirectDebitMandate.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.pain.MandateAcceptanceReportV05.UnderlyingAcceptanceDetails);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateAcceptance5";
 				definition = "Identifies the mandate, which is being accepted.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlMsgInf")
+	public OriginalMessageInformation1 getOriginalMessageInformation() {
+		return originalMessageInformation;
+	}
+
+	public void setOriginalMessageInformation(com.tools20022.repository.msg.OriginalMessageInformation1 originalMessageInformation) {
+		this.originalMessageInformation = originalMessageInformation;
+	}
+
+	@XmlElement(name = "AccptncRslt", required = true)
+	public AcceptanceResult6 getAcceptanceResult() {
+		return acceptanceResult;
+	}
+
+	public void setAcceptanceResult(com.tools20022.repository.msg.AcceptanceResult6 acceptanceResult) {
+		this.acceptanceResult = acceptanceResult;
+	}
+
+	@XmlElement(name = "OrgnlMndt")
+	public OriginalMandate5Choice getOriginalMandate() {
+		return originalMandate;
+	}
+
+	public void setOriginalMandate(OriginalMandate5Choice originalMandate) {
+		this.originalMandate = originalMandate;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
 	}
 }

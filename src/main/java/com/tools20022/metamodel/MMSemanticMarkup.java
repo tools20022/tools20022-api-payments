@@ -18,7 +18,9 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMRepositoryConcept;
 import com.tools20022.metamodel.MMSemanticMarkupElement;
@@ -34,6 +36,14 @@ import java.util.Optional;
  */
 public class MMSemanticMarkup implements MMModelEntity {
 
+	/**
+	 * The type of semantic mark-up e.g. "synonym".
+	 */
+	public final static MetamodelAttribute<MMSemanticMarkup, Optional<String>> typeAttribute = newAttribute();
+	/**
+	 * The elements of semantic markup.
+	 */
+	public final static MetamodelAttribute<MMSemanticMarkup, List<MMSemanticMarkupElement>> elementsAttribute = newAttribute();
 	protected MMRepositoryConcept container;
 	protected String type;
 	protected Supplier<List<MMSemanticMarkupElement>> elements_lazy;

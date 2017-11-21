@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMMessageTransmission;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMParticipant;
@@ -34,6 +36,14 @@ import java.util.Optional;
  */
 public class MMSend implements MMModelEntity {
 
+	/**
+	 * The object passing a stimulus to a receiver object
+	 */
+	public final static MetamodelAttribute<MMSend, MMParticipant> senderAttribute = newAttribute();
+	/**
+	 * the stimulus handled as part of the Send
+	 */
+	public final static MetamodelAttribute<MMSend, MMMessageTransmission> messageTransmissionAttribute = newAttribute();
 	protected Supplier<MMParticipant> sender_lazy;
 	protected Supplier<MMMessageTransmission> messageTransmission_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;

@@ -19,9 +19,18 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02;
+import com.tools20022.repository.area.acmt.AccountOpeningRequestV02;
 import com.tools20022.repository.datatype.Max4AlphaNumericText;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Group of parties with their related security certificate.
@@ -32,9 +41,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Group1#GroupIdentification
- * Group1.GroupIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Group1#Party Group1.Party}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Group1#mmGroupIdentification
+ * Group1.mmGroupIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Group1#mmParty Group1.mmParty}</li>
  * </ul>
  * </li>
  * <li>
@@ -42,18 +51,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#Group
- * AccountOpeningAmendmentRequestV02.Group}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#mmGroup
+ * AccountOpeningAmendmentRequestV02.mmGroup}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#Group
- * AccountOpeningRequestV02.Group}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#mmGroup
+ * AccountOpeningRequestV02.mmGroup}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,9 +79,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Group1", propOrder = {"groupIdentification", "party"})
 public class Group1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max4AlphaNumericText groupIdentification;
 	/**
 	 * Specifies the identification of the group.
 	 * <p>
@@ -100,19 +112,20 @@ public class Group1 {
 	 * definition} = "Specifies the identification of the group."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute GroupIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmGroupIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> Group1.mmObject();
 			isDerived = false;
 			xmlTag = "GrpId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupIdentification";
 			definition = "Specifies the identification of the group.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.PartyAndCertificate2> party;
 	/**
 	 * Specifies a party and related certificate.
 	 * <p>
@@ -140,31 +153,49 @@ public class Group1 {
 	 * definition} = "Specifies a party and related certificate."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Party = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmParty = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> Group1.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Party";
 			definition = "Specifies a party and related certificate.";
 			minOccurs = 1;
-			complexType_lazy = () -> PartyAndCertificate2.mmObject();
+			complexType_lazy = () -> com.tools20022.repository.msg.PartyAndCertificate2.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Group1.GroupIdentification, com.tools20022.repository.msg.Group1.Party);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02.Group, com.tools20022.repository.area.acmt.AccountOpeningRequestV02.Group);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(Group1.mmGroupIdentification, Group1.mmParty);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountOpeningAmendmentRequestV02.mmGroup, AccountOpeningRequestV02.mmGroup);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Group1";
 				definition = "Group of parties with their related security certificate.";
 				nextVersions_lazy = () -> Arrays.asList(Group2.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "GrpId", required = true)
+	public Max4AlphaNumericText getGroupIdentification() {
+		return groupIdentification;
+	}
+
+	public void setGroupIdentification(Max4AlphaNumericText groupIdentification) {
+		this.groupIdentification = groupIdentification;
+	}
+
+	@XmlElement(name = "Pty", required = true)
+	public List<PartyAndCertificate2> getParty() {
+		return party;
+	}
+
+	public void setParty(List<com.tools20022.repository.msg.PartyAndCertificate2> party) {
+		this.party = party;
 	}
 }

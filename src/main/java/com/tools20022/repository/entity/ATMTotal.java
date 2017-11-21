@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Current totals of the ATM.
@@ -38,33 +39,34 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#ATMBalance
- * ATMTotal.ATMBalance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#Currency
- * ATMTotal.Currency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#ATMCurrentNumber
- * ATMTotal.ATMCurrentNumber}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#ATMBalanceNumber
- * ATMTotal.ATMBalanceNumber}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#ATMCurrent
- * ATMTotal.ATMCurrent}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#RelatedCardPayment
- * ATMTotal.RelatedCardPayment}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#mmATMBalance
+ * ATMTotal.mmATMBalance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#mmCurrency
+ * ATMTotal.mmCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#mmATMCurrentNumber
+ * ATMTotal.mmATMCurrentNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#mmATMBalanceNumber
+ * ATMTotal.mmATMBalanceNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ATMTotal#mmATMCurrent
+ * ATMTotal.mmATMCurrent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ATMTotal#mmRelatedCardPayment
+ * ATMTotal.mmRelatedCardPayment}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.CardPayment#ATMTotal
- * CardPayment.ATMTotal}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CardPayment#mmATMTotal
+ * CardPayment.mmATMTotal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,6 +80,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ATMTotal {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ImpliedCurrencyAndAmount aTMBalance;
 	/**
 	 * Total balance of the ATM including reject cassette, but excluding the
 	 * retract cassette.
@@ -106,18 +109,27 @@ public class ATMTotal {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ATMBalance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmATMBalance = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ATMTotal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMBalance";
 			definition = "Total balance of the ATM including reject cassette, but excluding the retract cassette.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ATMTotal.class.getMethod("getATMBalance", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode currency;
 	/**
 	 * Currency of the totals.
 	 * <p>
@@ -142,18 +154,27 @@ public class ATMTotal {
 	 * definition} = "Currency of the totals."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Currency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ATMTotal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency of the totals.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ATMTotal.class.getMethod("getCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number aTMCurrentNumber;
 	/**
 	 * Total number of units for non-valued media, excluding reject cassette.
 	 * <p>
@@ -179,18 +200,27 @@ public class ATMTotal {
 	 * "Total number of units for non-valued media, excluding reject cassette."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ATMCurrentNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmATMCurrentNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ATMTotal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMCurrentNumber";
 			definition = "Total number of units for non-valued media, excluding reject cassette.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ATMTotal.class.getMethod("getATMCurrentNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number aTMBalanceNumber;
 	/**
 	 * Total number of units for non-valued media, including reject cassette.
 	 * <p>
@@ -216,18 +246,27 @@ public class ATMTotal {
 	 * "Total number of units for non-valued media, including reject cassette."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ATMBalanceNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmATMBalanceNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ATMTotal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMBalanceNumber";
 			definition = "Total number of units for non-valued media, including reject cassette.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ATMTotal.class.getMethod("getATMBalanceNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ImpliedCurrencyAndAmount aTMCurrent;
 	/**
 	 * Available amount for dispense in the ATM.
 	 * <p>
@@ -253,18 +292,27 @@ public class ATMTotal {
 	 * definition} = "Available amount for dispense in the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ATMCurrent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmATMCurrent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> ATMTotal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ATMCurrent";
 			definition = "Available amount for dispense in the ATM.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ATMTotal.class.getMethod("getATMCurrent", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.CardPayment> relatedCardPayment;
 	/**
 	 * Related payments representing the current totals of the ATM.
 	 * <p>
@@ -273,8 +321,8 @@ public class ATMTotal {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPayment#ATMTotal
-	 * CardPayment.ATMTotal}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPayment#mmATMTotal
+	 * CardPayment.mmATMTotal}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -298,32 +346,85 @@ public class ATMTotal {
 	 * "Related payments representing the current totals of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCardPayment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ATMTotal.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ATMTotal.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPayment";
 			definition = "Related payments representing the current totals of the ATM.";
 			minOccurs = 0;
-			type_lazy = () -> CardPayment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.ATMTotal;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPayment.mmATMTotal;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTotal";
 				definition = "Current totals of the ATM.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPayment.ATMTotal);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ATMTotal.ATMBalance, com.tools20022.repository.entity.ATMTotal.Currency, com.tools20022.repository.entity.ATMTotal.ATMCurrentNumber,
-						com.tools20022.repository.entity.ATMTotal.ATMBalanceNumber, com.tools20022.repository.entity.ATMTotal.ATMCurrent, com.tools20022.repository.entity.ATMTotal.RelatedCardPayment);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPayment.mmATMTotal);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ATMTotal.mmATMBalance, com.tools20022.repository.entity.ATMTotal.mmCurrency, com.tools20022.repository.entity.ATMTotal.mmATMCurrentNumber,
+						com.tools20022.repository.entity.ATMTotal.mmATMBalanceNumber, com.tools20022.repository.entity.ATMTotal.mmATMCurrent, com.tools20022.repository.entity.ATMTotal.mmRelatedCardPayment);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ATMTotal.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ImpliedCurrencyAndAmount getATMBalance() {
+		return aTMBalance;
+	}
+
+	public void setATMBalance(ImpliedCurrencyAndAmount aTMBalance) {
+		this.aTMBalance = aTMBalance;
+	}
+
+	public CurrencyCode getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(CurrencyCode currency) {
+		this.currency = currency;
+	}
+
+	public Number getATMCurrentNumber() {
+		return aTMCurrentNumber;
+	}
+
+	public void setATMCurrentNumber(Number aTMCurrentNumber) {
+		this.aTMCurrentNumber = aTMCurrentNumber;
+	}
+
+	public Number getATMBalanceNumber() {
+		return aTMBalanceNumber;
+	}
+
+	public void setATMBalanceNumber(Number aTMBalanceNumber) {
+		this.aTMBalanceNumber = aTMBalanceNumber;
+	}
+
+	public ImpliedCurrencyAndAmount getATMCurrent() {
+		return aTMCurrent;
+	}
+
+	public void setATMCurrent(ImpliedCurrencyAndAmount aTMCurrent) {
+		this.aTMCurrent = aTMCurrent;
+	}
+
+	public List<CardPayment> getRelatedCardPayment() {
+		return relatedCardPayment;
+	}
+
+	public void setRelatedCardPayment(List<com.tools20022.repository.entity.CardPayment> relatedCardPayment) {
+		this.relatedCardPayment = relatedCardPayment;
 	}
 }

@@ -20,12 +20,19 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.StatusReason6Choice;
 import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.entity.StatusOriginator;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provide information on the status reason of the record.
@@ -37,16 +44,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#Originator
- * ValidationStatusReason1.Originator}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ValidationStatusReason1#Reason
- * ValidationStatusReason1.Reason}</li>
+ * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmOriginator
+ * ValidationStatusReason1.mmOriginator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#ValidationRule
- * ValidationStatusReason1.ValidationRule}</li>
+ * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmReason
+ * ValidationStatusReason1.mmReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#AdditionalInformation
- * ValidationStatusReason1.AdditionalInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmValidationRule
+ * ValidationStatusReason1.mmValidationRule}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ValidationStatusReason1#mmAdditionalInformation
+ * ValidationStatusReason1.mmAdditionalInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -54,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,9 +78,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * StatusReasonInformation9}</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ValidationStatusReason1", propOrder = {"originator", "reason", "validationRule", "additionalInformation"})
 public class ValidationStatusReason1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected PartyIdentification77 originator;
 	/**
 	 * Party that issues the status.
 	 * <p>
@@ -105,26 +116,27 @@ public class ValidationStatusReason1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#Originator
-	 * StatusReasonInformation9.Originator}</li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#mmOriginator
+	 * StatusReasonInformation9.mmOriginator}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Originator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmOriginator = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> ValidationStatusReason1.mmObject();
 			businessComponentTrace_lazy = () -> StatusOriginator.mmObject();
+			componentContext_lazy = () -> ValidationStatusReason1.mmObject();
 			isDerived = false;
 			xmlTag = "Orgtr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Originator";
 			definition = "Party that issues the status.";
-			previousVersion_lazy = () -> com.tools20022.repository.msg.StatusReasonInformation9.Originator;
-			minOccurs = 0;
+			previousVersion_lazy = () -> StatusReasonInformation9.mmOriginator;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification77.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification77.mmObject();
 		}
 	};
+	protected StatusReason6Choice reason;
 	/**
 	 * Specifies the reason for the status.
 	 * <p>
@@ -136,8 +148,8 @@ public class ValidationStatusReason1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusReason
-	 * Status.StatusReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusReason
+	 * Status.mmStatusReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -157,26 +169,27 @@ public class ValidationStatusReason1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#Reason
-	 * StatusReasonInformation9.Reason}</li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#mmReason
+	 * StatusReasonInformation9.mmReason}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Reason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmReason = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Status.mmStatusReason;
 			componentContext_lazy = () -> ValidationStatusReason1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.StatusReason;
 			isDerived = false;
 			xmlTag = "Rsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reason";
 			definition = "Specifies the reason for the status.";
-			previousVersion_lazy = () -> com.tools20022.repository.msg.StatusReasonInformation9.Reason;
-			minOccurs = 0;
+			previousVersion_lazy = () -> StatusReasonInformation9.mmReason;
 			maxOccurs = 1;
-			type_lazy = () -> StatusReason6Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> StatusReason6Choice.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.GenericValidationRuleIdentification1> validationRule;
 	/**
 	 * Provides details about the rule which could not be validated.
 	 * <p>
@@ -189,8 +202,8 @@ public class ValidationStatusReason1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusDescription
-	 * Status.StatusDescription}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusDescription
+	 * Status.mmStatusDescription}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -210,20 +223,21 @@ public class ValidationStatusReason1 {
 	 * "Provides details about the rule which could not be validated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ValidationRule = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmValidationRule = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> ValidationStatusReason1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.StatusDescription;
 			isDerived = false;
 			xmlTag = "VldtnRule";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValidationRule";
 			definition = "Provides details about the rule which could not be validated.";
 			minOccurs = 0;
-			type_lazy = () -> GenericValidationRuleIdentification1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.GenericValidationRuleIdentification1.mmObject();
 		}
 	};
+	protected List<Max105Text> additionalInformation;
 	/**
 	 * Further details on the status reason.
 	 * 
@@ -239,8 +253,8 @@ public class ValidationStatusReason1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusDescription
-	 * Status.StatusDescription}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusDescription
+	 * Status.mmStatusDescription}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -262,20 +276,20 @@ public class ValidationStatusReason1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#AdditionalInformation
-	 * StatusReasonInformation9.AdditionalInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReasonInformation9#mmAdditionalInformation
+	 * StatusReasonInformation9.mmAdditionalInformation}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Status.mmStatusDescription;
 			componentContext_lazy = () -> ValidationStatusReason1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.StatusDescription;
 			isDerived = false;
 			xmlTag = "AddtlInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInformation";
 			definition = "Further details on the status reason.\n\nUsage: Additional information can be used for several purposes such as the reporting of repaired information.";
-			previousVersion_lazy = () -> com.tools20022.repository.msg.StatusReasonInformation9.AdditionalInformation;
+			previousVersion_lazy = () -> StatusReasonInformation9.mmAdditionalInformation;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
@@ -284,16 +298,51 @@ public class ValidationStatusReason1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ValidationStatusReason1.Originator, com.tools20022.repository.msg.ValidationStatusReason1.Reason,
-						com.tools20022.repository.msg.ValidationStatusReason1.ValidationRule, com.tools20022.repository.msg.ValidationStatusReason1.AdditionalInformation);
+				messageElement_lazy = () -> Arrays.asList(ValidationStatusReason1.mmOriginator, ValidationStatusReason1.mmReason, ValidationStatusReason1.mmValidationRule, ValidationStatusReason1.mmAdditionalInformation);
 				trace_lazy = () -> Status.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ValidationStatusReason1";
 				definition = "Provide information on the status reason of the record.";
 				previousVersion_lazy = () -> StatusReasonInformation9.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Orgtr")
+	public PartyIdentification77 getOriginator() {
+		return originator;
+	}
+
+	public void setOriginator(com.tools20022.repository.msg.PartyIdentification77 originator) {
+		this.originator = originator;
+	}
+
+	@XmlElement(name = "Rsn")
+	public StatusReason6Choice getReason() {
+		return reason;
+	}
+
+	public void setReason(StatusReason6Choice reason) {
+		this.reason = reason;
+	}
+
+	@XmlElement(name = "VldtnRule")
+	public List<GenericValidationRuleIdentification1> getValidationRule() {
+		return validationRule;
+	}
+
+	public void setValidationRule(List<com.tools20022.repository.msg.GenericValidationRuleIdentification1> validationRule) {
+		this.validationRule = validationRule;
+	}
+
+	@XmlElement(name = "AddtlInf")
+	public List<Max105Text> getAdditionalInformation() {
+		return additionalInformation;
+	}
+
+	public void setAdditionalInformation(List<Max105Text> additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

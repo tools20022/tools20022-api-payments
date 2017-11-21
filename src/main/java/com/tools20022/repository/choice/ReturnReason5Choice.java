@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalReturnReason1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.StatusReason;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the reason for the return of the transaction.
@@ -34,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ReturnReason5Choice#Code
- * ReturnReason5Choice.Code}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.ReturnReason5Choice#mmCode
+ * ReturnReason5Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ReturnReason5Choice#Proprietary
- * ReturnReason5Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.ReturnReason5Choice#mmProprietary
+ * ReturnReason5Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the reason for the return of the transaction."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ReturnReason5Choice", propOrder = {"code", "proprietary"})
 public class ReturnReason5Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalReturnReason1Code code;
 	/**
 	 * Reason for the return, as published in an external reason code list.
 	 * <p>
@@ -95,20 +104,21 @@ public class ReturnReason5Choice {
 	 * "Reason for the return, as published in an external reason code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ReturnReason5Choice.mmObject();
 			businessComponentTrace_lazy = () -> StatusReason.mmObject();
+			componentContext_lazy = () -> ReturnReason5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Reason for the return, as published in an external reason code list.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalReturnReason1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Reason for the return, in a proprietary form.
 	 * <p>
@@ -140,17 +150,17 @@ public class ReturnReason5Choice {
 	 * definition} = "Reason for the return, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ReturnReason5Choice.mmObject();
 			businessComponentTrace_lazy = () -> StatusReason.mmObject();
+			componentContext_lazy = () -> ReturnReason5Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Reason for the return, in a proprietary form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -158,14 +168,32 @@ public class ReturnReason5Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ReturnReason5Choice.Code, com.tools20022.repository.choice.ReturnReason5Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(ReturnReason5Choice.mmCode, ReturnReason5Choice.mmProprietary);
 				trace_lazy = () -> StatusReason.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReturnReason5Choice";
 				definition = "Specifies the reason for the return of the transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalReturnReason1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalReturnReason1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DividendPolicyCode#DailyAccruingDividend
- * DividendPolicyCode.DailyAccruingDividend}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#Cash
- * DividendPolicyCode.Cash}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#Units
- * DividendPolicyCode.Units}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#Both
- * DividendPolicyCode.Both}</li>
+ * {@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmDailyAccruingDividend
+ * DividendPolicyCode.mmDailyAccruingDividend}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmCash
+ * DividendPolicyCode.mmCash}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmUnits
+ * DividendPolicyCode.mmUnits}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DividendPolicyCode#mmBoth
+ * DividendPolicyCode.mmBoth}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid daily and can be accrued."</li>
 	 * </ul>
 	 */
-	public static final MMCode DailyAccruingDividend = new MMCode() {
+	public static final MMCode mmDailyAccruingDividend = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DailyAccruingDividend";
 			definition = "Dividend is paid daily and can be accrued.";
 			owner_lazy = () -> DividendPolicyCode.mmObject();
@@ -115,9 +117,9 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid in cash."</li>
 	 * </ul>
 	 */
-	public static final MMCode Cash = new MMCode() {
+	public static final MMCode mmCash = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Cash";
 			definition = "Dividend is paid in cash.";
 			owner_lazy = () -> DividendPolicyCode.mmObject();
@@ -145,9 +147,9 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid in units."</li>
 	 * </ul>
 	 */
-	public static final MMCode Units = new MMCode() {
+	public static final MMCode mmUnits = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Units";
 			definition = "Dividend is paid in units.";
 			owner_lazy = () -> DividendPolicyCode.mmObject();
@@ -175,9 +177,9 @@ public class DividendPolicyCode {
 	 * definition} = "Dividend is paid in both Cash and Units."</li>
 	 * </ul>
 	 */
-	public static final MMCode Both = new MMCode() {
+	public static final MMCode mmBoth = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Both";
 			definition = "Dividend is paid in both Cash and Units.";
 			owner_lazy = () -> DividendPolicyCode.mmObject();
@@ -188,13 +190,12 @@ public class DividendPolicyCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DACR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DividendPolicyCode";
 				definition = "Specifies the dividend policy of the financial instrument.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DividendPolicyCode.DailyAccruingDividend, com.tools20022.repository.codeset.DividendPolicyCode.Cash,
-						com.tools20022.repository.codeset.DividendPolicyCode.Units, com.tools20022.repository.codeset.DividendPolicyCode.Both);
+				code_lazy = () -> Arrays.asList(DividendPolicyCode.mmDailyAccruingDividend, DividendPolicyCode.mmCash, DividendPolicyCode.mmUnits, DividendPolicyCode.mmBoth);
 			}
 		});
 		return mmObject_lazy.get();

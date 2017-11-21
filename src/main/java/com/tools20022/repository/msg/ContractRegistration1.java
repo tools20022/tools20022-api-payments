@@ -20,10 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.ContractRegistrationRequestV01;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.RegisteredContract;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Currency control contract registration details.
@@ -35,20 +43,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistration1#ContractRegistrationIdentification
- * ContractRegistration1.ContractRegistrationIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmContractRegistrationIdentification
+ * ContractRegistration1.mmContractRegistrationIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistration1#ReportingParty
- * ContractRegistration1.ReportingParty}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmReportingParty
+ * ContractRegistration1.mmReportingParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistration1#RegistrationAgent
- * ContractRegistration1.RegistrationAgent}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmRegistrationAgent
+ * ContractRegistration1.mmRegistrationAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistration1#ContractRegistrationOpening
- * ContractRegistration1.ContractRegistrationOpening}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmContractRegistrationOpening
+ * ContractRegistration1.mmContractRegistrationOpening}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ContractRegistration1#SupplementaryData
- * ContractRegistration1.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.msg.ContractRegistration1#mmSupplementaryData
+ * ContractRegistration1.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -59,15 +67,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationRequestV01#ContractRegistration
- * ContractRegistrationRequestV01.ContractRegistration}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationRequestV01#mmContractRegistration
+ * ContractRegistrationRequestV01.mmContractRegistration}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,9 +86,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Currency control contract registration details."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ContractRegistration1", propOrder = {"contractRegistrationIdentification", "reportingParty", "registrationAgent", "contractRegistrationOpening", "supplementaryData"})
 public class ContractRegistration1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text contractRegistrationIdentification;
 	/**
 	 * Unique and unambiguous identification of the contract registration.
 	 * <p>
@@ -93,8 +104,8 @@ public class ContractRegistration1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
-	 * RegisteredContract.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+	 * RegisteredContract.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -114,20 +125,21 @@ public class ContractRegistration1 {
 	 * "Unique and unambiguous identification of the contract registration."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ContractRegistrationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmContractRegistrationIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> ContractRegistration1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Identification;
 			isDerived = false;
 			xmlTag = "CtrctRegnId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContractRegistrationIdentification";
 			definition = "Unique and unambiguous identification of the contract registration.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected TradeParty2 reportingParty;
 	/**
 	 * Party registering the currency control contract.
 	 * <p>
@@ -139,8 +151,8 @@ public class ContractRegistration1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#ReportingParty
-	 * RegisteredContract.ReportingParty}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmReportingParty
+	 * RegisteredContract.mmReportingParty}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -159,21 +171,22 @@ public class ContractRegistration1 {
 	 * definition} = "Party registering the currency control contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ReportingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmReportingParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmReportingParty;
 			componentContext_lazy = () -> ContractRegistration1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.ReportingParty;
 			isDerived = false;
 			xmlTag = "RptgPty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReportingParty";
 			definition = "Party registering the currency control contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> TradeParty2.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.TradeParty2.mmObject();
 		}
 	};
+	protected BranchAndFinancialInstitutionIdentification5 registrationAgent;
 	/**
 	 * Agent which registers the currency control contract.
 	 * <p>
@@ -186,8 +199,8 @@ public class ContractRegistration1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#RegistrationAgent
-	 * RegisteredContract.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmRegistrationAgent
+	 * RegisteredContract.mmRegistrationAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -206,21 +219,22 @@ public class ContractRegistration1 {
 	 * definition} = "Agent which registers the currency control contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd RegistrationAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRegistrationAgent = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			componentContext_lazy = () -> ContractRegistration1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.RegistrationAgent;
 			isDerived = false;
 			xmlTag = "RegnAgt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegistrationAgent";
 			definition = "Agent which registers the currency control contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.ContractRegistration2> contractRegistrationOpening;
 	/**
 	 * Details about the opening of the contract registration.
 	 * <p>
@@ -252,20 +266,21 @@ public class ContractRegistration1 {
 	 * definition} = "Details about the opening of the contract registration."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ContractRegistrationOpening = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmContractRegistrationOpening = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> ContractRegistration1.mmObject();
 			businessComponentTrace_lazy = () -> RegisteredContract.mmObject();
+			componentContext_lazy = () -> ContractRegistration1.mmObject();
 			isDerived = false;
 			xmlTag = "CtrctRegnOpng";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContractRegistrationOpening";
 			definition = "Details about the opening of the contract registration.";
 			minOccurs = 1;
-			type_lazy = () -> ContractRegistration2.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ContractRegistration2.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -295,34 +310,78 @@ public class ContractRegistration1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd SupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> ContractRegistration1.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
-			type_lazy = () -> SupplementaryData1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContractRegistration1.ContractRegistrationIdentification, com.tools20022.repository.msg.ContractRegistration1.ReportingParty,
-						com.tools20022.repository.msg.ContractRegistration1.RegistrationAgent, com.tools20022.repository.msg.ContractRegistration1.ContractRegistrationOpening,
-						com.tools20022.repository.msg.ContractRegistration1.SupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(ContractRegistration1.mmContractRegistrationIdentification, ContractRegistration1.mmReportingParty, ContractRegistration1.mmRegistrationAgent,
+						ContractRegistration1.mmContractRegistrationOpening, ContractRegistration1.mmSupplementaryData);
+				messageBuildingBlock_lazy = () -> Arrays.asList(ContractRegistrationRequestV01.mmContractRegistration);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.ContractRegistrationRequestV01.ContractRegistration);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractRegistration1";
 				definition = "Currency control contract registration details.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "CtrctRegnId", required = true)
+	public Max35Text getContractRegistrationIdentification() {
+		return contractRegistrationIdentification;
+	}
+
+	public void setContractRegistrationIdentification(Max35Text contractRegistrationIdentification) {
+		this.contractRegistrationIdentification = contractRegistrationIdentification;
+	}
+
+	@XmlElement(name = "RptgPty", required = true)
+	public TradeParty2 getReportingParty() {
+		return reportingParty;
+	}
+
+	public void setReportingParty(com.tools20022.repository.msg.TradeParty2 reportingParty) {
+		this.reportingParty = reportingParty;
+	}
+
+	@XmlElement(name = "RegnAgt", required = true)
+	public BranchAndFinancialInstitutionIdentification5 getRegistrationAgent() {
+		return registrationAgent;
+	}
+
+	public void setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
+		this.registrationAgent = registrationAgent;
+	}
+
+	@XmlElement(name = "CtrctRegnOpng", required = true)
+	public List<ContractRegistration2> getContractRegistrationOpening() {
+		return contractRegistrationOpening;
+	}
+
+	public void setContractRegistrationOpening(List<com.tools20022.repository.msg.ContractRegistration2> contractRegistrationOpening) {
+		this.contractRegistrationOpening = contractRegistrationOpening;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
 	}
 }

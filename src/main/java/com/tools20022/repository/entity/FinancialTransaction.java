@@ -17,10 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Process which includes the order, the execution, the settlement of trades in
@@ -36,52 +41,54 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialTransaction#CorporateActionDistribution
- * FinancialTransaction.CorporateActionDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmCorporateActionDistribution
+ * FinancialTransaction.mmCorporateActionDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialTransaction#InterestManagement
- * FinancialTransaction.InterestManagement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.FinancialTransaction#Trade
- * FinancialTransaction.Trade}</li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmInterestManagement
+ * FinancialTransaction.mmInterestManagement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialTransaction#CollateralMovement
- * FinancialTransaction.CollateralMovement}</li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmTrade
+ * FinancialTransaction.mmTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialTransaction#BankingTransaction
- * FinancialTransaction.BankingTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmCollateralMovement
+ * FinancialTransaction.mmCollateralMovement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialTransaction#RegulatoryReport
- * FinancialTransaction.RegulatoryReport}</li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmBankingTransaction
+ * FinancialTransaction.mmBankingTransaction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.FinancialTransaction#mmRegulatoryReport
+ * FinancialTransaction.mmRegulatoryReport}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Trade#FinancialTransaction
- * Trade.FinancialTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#FinancialTransaction
- * CorporateActionDistribution.FinancialTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.Trade#mmFinancialTransaction
+ * Trade.mmFinancialTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RegulatoryReport#ReportedTransaction
- * RegulatoryReport.ReportedTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#mmFinancialTransaction
+ * CorporateActionDistribution.mmFinancialTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralMovement#FinancialTransaction
- * CollateralMovement.FinancialTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmReportedTransaction
+ * RegulatoryReport.mmReportedTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BankingTransaction#FinancialTransaction
- * BankingTransaction.FinancialTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmFinancialTransaction
+ * CollateralMovement.mmFinancialTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InterestManagement#FinancialTransaction
- * InterestManagement.FinancialTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.BankingTransaction#mmFinancialTransaction
+ * BankingTransaction.mmFinancialTransaction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InterestManagement#mmFinancialTransaction
+ * InterestManagement.mmFinancialTransaction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,6 +104,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class FinancialTransaction {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionDistribution corporateActionDistribution;
 	/**
 	 * Distribution of the proceeds of a CA event.
 	 * <p>
@@ -105,8 +113,8 @@ public class FinancialTransaction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#FinancialTransaction
-	 * CorporateActionDistribution.FinancialTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionDistribution#mmFinancialTransaction
+	 * CorporateActionDistribution.mmFinancialTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -131,20 +139,21 @@ public class FinancialTransaction {
 	 * definition} = "Distribution of the proceeds of a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FinancialTransaction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionDistribution";
 			definition = "Distribution of the proceeds of a CA event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmFinancialTransaction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.FinancialTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected InterestManagement interestManagement;
 	/**
 	 * Management of interest which consists into calculating the interest,
 	 * requesting its payment or distributing the interest proceeds.
@@ -154,8 +163,8 @@ public class FinancialTransaction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InterestManagement#FinancialTransaction
-	 * InterestManagement.FinancialTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestManagement#mmFinancialTransaction
+	 * InterestManagement.mmFinancialTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -181,20 +190,21 @@ public class FinancialTransaction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FinancialTransaction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestManagement";
 			definition = "Management of interest which consists into calculating the interest, requesting its payment or distributing the interest proceeds.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmFinancialTransaction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestManagement.FinancialTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Trade trade;
 	/**
 	 * Agreement between two parties to buy and sell assets.
 	 * <p>
@@ -203,8 +213,8 @@ public class FinancialTransaction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Trade#FinancialTransaction
-	 * Trade.FinancialTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.Trade#mmFinancialTransaction
+	 * Trade.mmFinancialTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -227,20 +237,21 @@ public class FinancialTransaction {
 	 * definition} = "Agreement between two parties to buy and sell assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Trade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FinancialTransaction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Agreement between two parties to buy and sell assets.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmFinancialTransaction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.FinancialTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CollateralMovement collateralMovement;
 	/**
 	 * Collateral in or out as a result of collateral management.
 	 * <p>
@@ -249,8 +260,8 @@ public class FinancialTransaction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralMovement#FinancialTransaction
-	 * CollateralMovement.FinancialTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralMovement#mmFinancialTransaction
+	 * CollateralMovement.mmFinancialTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -275,20 +286,21 @@ public class FinancialTransaction {
 	 * "Collateral in or out as a result of collateral management."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateralMovement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FinancialTransaction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralMovement";
 			definition = "Collateral in or out as a result of collateral management.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmFinancialTransaction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralMovement.FinancialTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected BankingTransaction bankingTransaction;
 	/**
 	 * Transaction executed by the client of a financial institution from/to the
 	 * account serviced by the financial institution, such as mortgage payment.
@@ -298,8 +310,8 @@ public class FinancialTransaction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BankingTransaction#FinancialTransaction
-	 * BankingTransaction.FinancialTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.BankingTransaction#mmFinancialTransaction
+	 * BankingTransaction.mmFinancialTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -325,20 +337,21 @@ public class FinancialTransaction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BankingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBankingTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FinancialTransaction.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BankingTransaction";
 			definition = "Transaction executed by the client of a financial institution from/to the account serviced by the financial institution, such as mortgage payment.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmFinancialTransaction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.FinancialTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport;
 	/**
 	 * Information related to a trade and that has to be reported to a
 	 * regulatory authority.
@@ -348,8 +361,8 @@ public class FinancialTransaction {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#ReportedTransaction
-	 * RegulatoryReport.ReportedTransaction}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegulatoryReport#mmReportedTransaction
+	 * RegulatoryReport.mmReportedTransaction}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -361,20 +374,20 @@ public class FinancialTransaction {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#RegulatoryReporting
-	 * CreditTransferTransaction25.RegulatoryReporting}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction25#mmRegulatoryReporting
+	 * CreditTransferTransaction25.mmRegulatoryReporting}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26#RegulatoryReporting
-	 * CreditTransferTransaction26.RegulatoryReporting}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction26#mmRegulatoryReporting
+	 * CreditTransferTransaction26.mmRegulatoryReporting}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction22#RegulatoryReporting
-	 * CreditTransferTransaction22.RegulatoryReporting}</li>
+	 * {@linkplain com.tools20022.repository.msg.CreditTransferTransaction22#mmRegulatoryReporting
+	 * CreditTransferTransaction22.mmRegulatoryReporting}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21#RegulatoryReporting
-	 * DirectDebitTransactionInformation21.RegulatoryReporting}</li>
+	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation21#mmRegulatoryReporting
+	 * DirectDebitTransactionInformation21.mmRegulatoryReporting}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation22#RegulatoryReporting
-	 * DirectDebitTransactionInformation22.RegulatoryReporting}</li>
+	 * {@linkplain com.tools20022.repository.msg.DirectDebitTransactionInformation22#mmRegulatoryReporting
+	 * DirectDebitTransactionInformation22.mmRegulatoryReporting}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -395,38 +408,90 @@ public class FinancialTransaction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RegulatoryReport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRegulatoryReport = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CreditTransferTransaction25.RegulatoryReporting, com.tools20022.repository.msg.CreditTransferTransaction26.RegulatoryReporting,
-					com.tools20022.repository.msg.CreditTransferTransaction22.RegulatoryReporting, com.tools20022.repository.msg.DirectDebitTransactionInformation21.RegulatoryReporting,
-					com.tools20022.repository.msg.DirectDebitTransactionInformation22.RegulatoryReporting);
-			elementContext_lazy = () -> FinancialTransaction.mmObject();
+			derivation_lazy = () -> Arrays.asList(CreditTransferTransaction25.mmRegulatoryReporting, CreditTransferTransaction26.mmRegulatoryReporting, CreditTransferTransaction22.mmRegulatoryReporting,
+					DirectDebitTransactionInformation21.mmRegulatoryReporting, DirectDebitTransactionInformation22.mmRegulatoryReporting);
+			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegulatoryReport";
 			definition = "Information related to a trade and that has to be reported to a regulatory authority.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmReportedTransaction;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.ReportedTransaction;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialTransaction";
 				definition = "Process which includes the order, the execution, the settlement of trades in the financial domain.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.FinancialTransaction, com.tools20022.repository.entity.CorporateActionDistribution.FinancialTransaction,
-						com.tools20022.repository.entity.RegulatoryReport.ReportedTransaction, com.tools20022.repository.entity.CollateralMovement.FinancialTransaction,
-						com.tools20022.repository.entity.BankingTransaction.FinancialTransaction, com.tools20022.repository.entity.InterestManagement.FinancialTransaction);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FinancialTransaction.CorporateActionDistribution, com.tools20022.repository.entity.FinancialTransaction.InterestManagement,
-						com.tools20022.repository.entity.FinancialTransaction.Trade, com.tools20022.repository.entity.FinancialTransaction.CollateralMovement, com.tools20022.repository.entity.FinancialTransaction.BankingTransaction,
-						com.tools20022.repository.entity.FinancialTransaction.RegulatoryReport);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmFinancialTransaction, com.tools20022.repository.entity.CorporateActionDistribution.mmFinancialTransaction,
+						com.tools20022.repository.entity.RegulatoryReport.mmReportedTransaction, com.tools20022.repository.entity.CollateralMovement.mmFinancialTransaction,
+						com.tools20022.repository.entity.BankingTransaction.mmFinancialTransaction, com.tools20022.repository.entity.InterestManagement.mmFinancialTransaction);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FinancialTransaction.mmCorporateActionDistribution, com.tools20022.repository.entity.FinancialTransaction.mmInterestManagement,
+						com.tools20022.repository.entity.FinancialTransaction.mmTrade, com.tools20022.repository.entity.FinancialTransaction.mmCollateralMovement, com.tools20022.repository.entity.FinancialTransaction.mmBankingTransaction,
+						com.tools20022.repository.entity.FinancialTransaction.mmRegulatoryReport);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return FinancialTransaction.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionDistribution getCorporateActionDistribution() {
+		return corporateActionDistribution;
+	}
+
+	public void setCorporateActionDistribution(com.tools20022.repository.entity.CorporateActionDistribution corporateActionDistribution) {
+		this.corporateActionDistribution = corporateActionDistribution;
+	}
+
+	public InterestManagement getInterestManagement() {
+		return interestManagement;
+	}
+
+	public void setInterestManagement(com.tools20022.repository.entity.InterestManagement interestManagement) {
+		this.interestManagement = interestManagement;
+	}
+
+	public Trade getTrade() {
+		return trade;
+	}
+
+	public void setTrade(com.tools20022.repository.entity.Trade trade) {
+		this.trade = trade;
+	}
+
+	public CollateralMovement getCollateralMovement() {
+		return collateralMovement;
+	}
+
+	public void setCollateralMovement(com.tools20022.repository.entity.CollateralMovement collateralMovement) {
+		this.collateralMovement = collateralMovement;
+	}
+
+	public BankingTransaction getBankingTransaction() {
+		return bankingTransaction;
+	}
+
+	public void setBankingTransaction(com.tools20022.repository.entity.BankingTransaction bankingTransaction) {
+		this.bankingTransaction = bankingTransaction;
+	}
+
+	public List<RegulatoryReport> getRegulatoryReport() {
+		return regulatoryReport;
+	}
+
+	public void setRegulatoryReport(List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport) {
+		this.regulatoryReport = regulatoryReport;
 	}
 }

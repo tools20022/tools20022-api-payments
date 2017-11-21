@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,12 +39,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AmountAndQuantity#SecuritiesPricing
- * AmountAndQuantity.SecuritiesPricing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AmountAndQuantity#Amount
- * AmountAndQuantity.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AmountAndQuantity#Quantity
- * AmountAndQuantity.Quantity}</li>
+ * {@linkplain com.tools20022.repository.entity.AmountAndQuantity#mmSecuritiesPricing
+ * AmountAndQuantity.mmSecuritiesPricing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AmountAndQuantity#mmAmount
+ * AmountAndQuantity.mmAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AmountAndQuantity#mmQuantity
+ * AmountAndQuantity.mmQuantity}</li>
  * </ul>
  * </li>
  * <li>
@@ -52,15 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#AmountPricePerFinancialInstrumentQuantity
- * SecuritiesPricing.AmountPricePerFinancialInstrumentQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmAmountPricePerFinancialInstrumentQuantity
+ * SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,6 +77,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AmountAndQuantity {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesPricing securitiesPricing;
 	/**
 	 * Pricing which uses the amount and quantity as format.
 	 * <p>
@@ -84,8 +86,8 @@ public class AmountAndQuantity {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#AmountPricePerFinancialInstrumentQuantity
-	 * SecuritiesPricing.AmountPricePerFinancialInstrumentQuantity}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmAmountPricePerFinancialInstrumentQuantity
+	 * SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -109,20 +111,21 @@ public class AmountAndQuantity {
 	 * definition} = "Pricing which uses the amount and quantity as format."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AmountAndQuantity.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndQuantity.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing which uses the amount and quantity as format.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.AmountPricePerFinancialInstrumentQuantity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount amount;
 	/**
 	 * A number of monetary units specified in a currency.
 	 * <p>
@@ -149,18 +152,27 @@ public class AmountAndQuantity {
 	 * definition} = "A number of monetary units specified in a currency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AmountAndQuantity.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndQuantity.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "A number of monetary units specified in a currency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AmountAndQuantity.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DecimalNumber quantity;
 	/**
 	 * A number of non-monetary units.
 	 * <p>
@@ -187,31 +199,68 @@ public class AmountAndQuantity {
 	 * definition} = "A number of non-monetary units."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Quantity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmQuantity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AmountAndQuantity.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountAndQuantity.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quantity";
 			definition = "A number of non-monetary units.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return AmountAndQuantity.class.getMethod("getQuantity", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountAndQuantity";
 				definition = "Value expressed as an amount or a quantity. For example, the value of a financial instrument.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.AmountPricePerFinancialInstrumentQuantity);
-				element_lazy = () -> Arrays
-						.asList(com.tools20022.repository.entity.AmountAndQuantity.SecuritiesPricing, com.tools20022.repository.entity.AmountAndQuantity.Amount, com.tools20022.repository.entity.AmountAndQuantity.Quantity);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerFinancialInstrumentQuantity);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountAndQuantity.mmSecuritiesPricing, com.tools20022.repository.entity.AmountAndQuantity.mmAmount,
+						com.tools20022.repository.entity.AmountAndQuantity.mmQuantity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AmountAndQuantity.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesPricing getSecuritiesPricing() {
+		return securitiesPricing;
+	}
+
+	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = securitiesPricing;
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public DecimalNumber getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(DecimalNumber quantity) {
+		this.quantity = quantity;
 	}
 }

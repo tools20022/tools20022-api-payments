@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.AccountContract;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Contract defining the related investment account.
@@ -39,20 +40,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#LetterIntentReference
- * InvestmentAccountContract.LetterIntentReference}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmLetterIntentReference
+ * InvestmentAccountContract.mmLetterIntentReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#AccumulationRightReference
- * InvestmentAccountContract.AccumulationRightReference}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmAccumulationRightReference
+ * InvestmentAccountContract.mmAccumulationRightReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#InvestmentAccount
- * InvestmentAccountContract.InvestmentAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmInvestmentAccount
+ * InvestmentAccountContract.mmInvestmentAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#Services
- * InvestmentAccountContract.Services}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmServices
+ * InvestmentAccountContract.mmServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#ModeledAccount
- * InvestmentAccountContract.ModeledAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmModeledAccount
+ * InvestmentAccountContract.mmModeledAccount}</li>
  * </ul>
  * </li>
  * <li>
@@ -60,14 +61,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccount#InvestmentAccountContract
- * InvestmentAccount.InvestmentAccountContract}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmInvestmentAccountContract
+ * InvestmentAccount.mmInvestmentAccountContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#InvestmentAccountContract
- * InvestmentAccountService.InvestmentAccountContract}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmInvestmentAccountContract
+ * InvestmentAccountService.mmInvestmentAccountContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#InvestmentAccountContract
- * ManagedAccountProduct.InvestmentAccountContract}</li>
+ * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#mmInvestmentAccountContract
+ * ManagedAccountProduct.mmInvestmentAccountContract}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -76,8 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,6 +92,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentAccountContract extends AccountContract {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text letterIntentReference;
 	/**
 	 * Reference of a letter of intent program, in which sales commissions are
 	 * reduced based on the aggregate of a customer's actual purchase and
@@ -121,18 +123,27 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LetterIntentReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLetterIntentReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LetterIntentReference";
 			definition = "Reference of a letter of intent program, in which sales commissions are reduced based on the aggregate of a customer's actual purchase and anticipated purchases, over a specific period of time, and as agreed by the customer. A letter of intent program is mainly used in the US market.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountContract.class.getMethod("getLetterIntentReference", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text accumulationRightReference;
 	/**
 	 * Reference of an accumulation rights program, in which sales commissions
 	 * are based on a customer's present purchases of shares and the aggregate
@@ -163,18 +174,27 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AccumulationRightReference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAccumulationRightReference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccumulationRightReference";
 			definition = "Reference of an accumulation rights program, in which sales commissions are based on a customer's present purchases of shares and the aggregate quantity previously purchased by the customer. An accumulation rights program is mainly used in the US market.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountContract.class.getMethod("getAccumulationRightReference", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount;
 	/**
 	 * Specifies the account for which the service is offered.
 	 * <p>
@@ -183,8 +203,8 @@ public class InvestmentAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#InvestmentAccountContract
-	 * InvestmentAccount.InvestmentAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccount#mmInvestmentAccountContract
+	 * InvestmentAccount.mmInvestmentAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -208,19 +228,20 @@ public class InvestmentAccountContract extends AccountContract {
 	 * definition} = "Specifies the account for which the service is offered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccount";
 			definition = "Specifies the account for which the service is offered.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountContract;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.InvestmentAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentAccountService> services;
 	/**
 	 * Services linked to an account which are available to the account owner or
 	 * to the holder of a mandate. The exercise of these services may be
@@ -231,8 +252,8 @@ public class InvestmentAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#InvestmentAccountContract
-	 * InvestmentAccountService.InvestmentAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmInvestmentAccountContract
+	 * InvestmentAccountService.mmInvestmentAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -259,19 +280,20 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Services = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Services";
 			definition = "Services linked to an account which are available to the account owner or to the holder of a mandate. The exercise of these services may be submitted to a limit.";
 			minOccurs = 0;
-			type_lazy = () -> InvestmentAccountService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.InvestmentAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmInvestmentAccountContract;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 		}
 	};
+	protected ManagedAccountProduct modeledAccount;
 	/**
 	 * Product which provides guidance to investors to manage their portfolios.
 	 * <p>
@@ -280,8 +302,8 @@ public class InvestmentAccountContract extends AccountContract {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#InvestmentAccountContract
-	 * ManagedAccountProduct.InvestmentAccountContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#mmInvestmentAccountContract
+	 * ManagedAccountProduct.mmInvestmentAccountContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -308,36 +330,81 @@ public class InvestmentAccountContract extends AccountContract {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ModeledAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmModeledAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountContract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ModeledAccount";
 			definition = "Product which provides guidance to investors to manage their portfolios.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> ManagedAccountProduct.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.InvestmentAccountContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmInvestmentAccountContract;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountContract";
 				definition = "Contract defining the related investment account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.InvestmentAccountContract, com.tools20022.repository.entity.InvestmentAccountService.InvestmentAccountContract,
-						com.tools20022.repository.entity.ManagedAccountProduct.InvestmentAccountContract);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmInvestmentAccountContract, com.tools20022.repository.entity.InvestmentAccountService.mmInvestmentAccountContract,
+						com.tools20022.repository.entity.ManagedAccountProduct.mmInvestmentAccountContract);
 				superType_lazy = () -> AccountContract.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountContract.LetterIntentReference, com.tools20022.repository.entity.InvestmentAccountContract.AccumulationRightReference,
-						com.tools20022.repository.entity.InvestmentAccountContract.InvestmentAccount, com.tools20022.repository.entity.InvestmentAccountContract.Services,
-						com.tools20022.repository.entity.InvestmentAccountContract.ModeledAccount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountContract.mmLetterIntentReference, com.tools20022.repository.entity.InvestmentAccountContract.mmAccumulationRightReference,
+						com.tools20022.repository.entity.InvestmentAccountContract.mmInvestmentAccount, com.tools20022.repository.entity.InvestmentAccountContract.mmServices,
+						com.tools20022.repository.entity.InvestmentAccountContract.mmModeledAccount);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentAccountContract.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getLetterIntentReference() {
+		return letterIntentReference;
+	}
+
+	public void setLetterIntentReference(Max35Text letterIntentReference) {
+		this.letterIntentReference = letterIntentReference;
+	}
+
+	public Max35Text getAccumulationRightReference() {
+		return accumulationRightReference;
+	}
+
+	public void setAccumulationRightReference(Max35Text accumulationRightReference) {
+		this.accumulationRightReference = accumulationRightReference;
+	}
+
+	public List<InvestmentAccount> getInvestmentAccount() {
+		return investmentAccount;
+	}
+
+	public void setInvestmentAccount(List<com.tools20022.repository.entity.InvestmentAccount> investmentAccount) {
+		this.investmentAccount = investmentAccount;
+	}
+
+	public List<InvestmentAccountService> getServices() {
+		return services;
+	}
+
+	public void setServices(List<com.tools20022.repository.entity.InvestmentAccountService> services) {
+		this.services = services;
+	}
+
+	public ManagedAccountProduct getModeledAccount() {
+		return modeledAccount;
+	}
+
+	public void setModeledAccount(com.tools20022.repository.entity.ManagedAccountProduct modeledAccount) {
+		this.modeledAccount = modeledAccount;
 	}
 }

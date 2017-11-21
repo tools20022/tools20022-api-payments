@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentStatusCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,36 +36,36 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedTechnicalValidation
- * TransactionIndividualStatus1Code.AcceptedTechnicalValidation}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedTechnicalValidation
+ * TransactionIndividualStatus1Code.mmAcceptedTechnicalValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#Rejected
- * TransactionIndividualStatus1Code.Rejected}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmRejected
+ * TransactionIndividualStatus1Code.mmRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#Pending
- * TransactionIndividualStatus1Code.Pending}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmPending
+ * TransactionIndividualStatus1Code.mmPending}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedCustomerProfile
- * TransactionIndividualStatus1Code.AcceptedCustomerProfile}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedCustomerProfile
+ * TransactionIndividualStatus1Code.mmAcceptedCustomerProfile}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedSettlementInProcess
- * TransactionIndividualStatus1Code.AcceptedSettlementInProcess}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedSettlementInProcess
+ * TransactionIndividualStatus1Code.mmAcceptedSettlementInProcess}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedSettlementCompleted
- * TransactionIndividualStatus1Code.AcceptedSettlementCompleted}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedSettlementCompleted
+ * TransactionIndividualStatus1Code.mmAcceptedSettlementCompleted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedCancellationRequest
- * TransactionIndividualStatus1Code.AcceptedCancellationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedCancellationRequest
+ * TransactionIndividualStatus1Code.mmAcceptedCancellationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#AcceptedWithChange
- * TransactionIndividualStatus1Code.AcceptedWithChange}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionIndividualStatus1Code#mmAcceptedWithChange
+ * TransactionIndividualStatus1Code.mmAcceptedWithChange}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -99,9 +101,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedTechnicalValidation"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedTechnicalValidation = new MMCode() {
+	public static final MMCode mmAcceptedTechnicalValidation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedTechnicalValidation";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -122,9 +124,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "Rejected"</li>
 	 * </ul>
 	 */
-	public static final MMCode Rejected = new MMCode() {
+	public static final MMCode mmRejected = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rejected";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -145,9 +147,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "Pending"</li>
 	 * </ul>
 	 */
-	public static final MMCode Pending = new MMCode() {
+	public static final MMCode mmPending = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Pending";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -168,9 +170,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedCustomerProfile"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedCustomerProfile = new MMCode() {
+	public static final MMCode mmAcceptedCustomerProfile = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedCustomerProfile";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -191,9 +193,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedSettlementInProcess"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedSettlementInProcess = new MMCode() {
+	public static final MMCode mmAcceptedSettlementInProcess = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedSettlementInProcess";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -214,9 +216,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedSettlementCompleted"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedSettlementCompleted = new MMCode() {
+	public static final MMCode mmAcceptedSettlementCompleted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedSettlementCompleted";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -237,9 +239,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedCancellationRequest"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedCancellationRequest = new MMCode() {
+	public static final MMCode mmAcceptedCancellationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedCancellationRequest";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -260,9 +262,9 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	 * name} = "AcceptedWithChange"</li>
 	 * </ul>
 	 */
-	public static final MMCode AcceptedWithChange = new MMCode() {
+	public static final MMCode mmAcceptedWithChange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcceptedWithChange";
 			owner_lazy = () -> TransactionIndividualStatus1Code.mmObject();
 		}
@@ -271,15 +273,14 @@ public class TransactionIndividualStatus1Code extends PaymentStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ACTC");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionIndividualStatus1Code";
 				definition = "Specifies the status of a single payment transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedTechnicalValidation, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.Rejected,
-						com.tools20022.repository.codeset.TransactionIndividualStatus1Code.Pending, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedCustomerProfile,
-						com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedSettlementInProcess, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedSettlementCompleted,
-						com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedCancellationRequest, com.tools20022.repository.codeset.TransactionIndividualStatus1Code.AcceptedWithChange);
+				code_lazy = () -> Arrays.asList(TransactionIndividualStatus1Code.mmAcceptedTechnicalValidation, TransactionIndividualStatus1Code.mmRejected, TransactionIndividualStatus1Code.mmPending,
+						TransactionIndividualStatus1Code.mmAcceptedCustomerProfile, TransactionIndividualStatus1Code.mmAcceptedSettlementInProcess, TransactionIndividualStatus1Code.mmAcceptedSettlementCompleted,
+						TransactionIndividualStatus1Code.mmAcceptedCancellationRequest, TransactionIndividualStatus1Code.mmAcceptedWithChange);
 				trace_lazy = () -> PaymentStatusCode.mmObject();
 			}
 		});

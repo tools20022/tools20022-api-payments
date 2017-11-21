@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarginCallResponseCode#NonValuationDay
- * MarginCallResponseCode.NonValuationDay}</li>
+ * {@linkplain com.tools20022.repository.codeset.MarginCallResponseCode#mmNonValuationDay
+ * MarginCallResponseCode.mmNonValuationDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MarginCallResponseCode#ReceivedAfterNotificationTime
- * MarginCallResponseCode.ReceivedAfterNotificationTime}</li>
+ * {@linkplain com.tools20022.repository.codeset.MarginCallResponseCode#mmReceivedAfterNotificationTime
+ * MarginCallResponseCode.mmReceivedAfterNotificationTime}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -87,9 +89,9 @@ public class MarginCallResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NonValuationDay = new MMCode() {
+	public static final MMCode mmNonValuationDay = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NonValuationDay";
 			definition = "Indicates that the margin call request was sent on a non valuation day.";
 			owner_lazy = () -> MarginCallResponseCode.mmObject();
@@ -120,9 +122,9 @@ public class MarginCallResponseCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ReceivedAfterNotificationTime = new MMCode() {
+	public static final MMCode mmReceivedAfterNotificationTime = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ReceivedAfterNotificationTime";
 			definition = "Indicates that the margin call request was sent after the notification time.";
 			owner_lazy = () -> MarginCallResponseCode.mmObject();
@@ -133,12 +135,12 @@ public class MarginCallResponseCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NVDA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarginCallResponseCode";
 				definition = "Specifies whether the margin call request was sent on a non valuation day or was received after notification time.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MarginCallResponseCode.NonValuationDay, com.tools20022.repository.codeset.MarginCallResponseCode.ReceivedAfterNotificationTime);
+				code_lazy = () -> Arrays.asList(MarginCallResponseCode.mmNonValuationDay, MarginCallResponseCode.mmReceivedAfterNotificationTime);
 			}
 		});
 		return mmObject_lazy.get();

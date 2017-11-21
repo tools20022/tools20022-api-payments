@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,27 +37,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Trigger#AutomaticVariation
- * Trigger.AutomaticVariation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Trigger#TriggerDate
- * Trigger.TriggerDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Trigger#TriggerEvent
- * Trigger.TriggerEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Trigger#mmAutomaticVariation
+ * Trigger.mmAutomaticVariation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Trigger#mmTriggerDate
+ * Trigger.mmTriggerDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Trigger#mmTriggerEvent
+ * Trigger.mmTriggerEvent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.AutomaticVariation#Trigger
- * AutomaticVariation.Trigger}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AutomaticVariation#mmTrigger
+ * AutomaticVariation.mmTrigger}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,6 +73,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Trigger {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected AutomaticVariation automaticVariation;
 	/**
 	 * Variation which was triggered by the event.
 	 * <p>
@@ -79,8 +82,8 @@ public class Trigger {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AutomaticVariation#Trigger
-	 * AutomaticVariation.Trigger}</li>
+	 * {@linkplain com.tools20022.repository.entity.AutomaticVariation#mmTrigger
+	 * AutomaticVariation.mmTrigger}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -103,20 +106,21 @@ public class Trigger {
 	 * definition} = "Variation which was triggered by the event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AutomaticVariation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAutomaticVariation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Trigger.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AutomaticVariation";
 			definition = "Variation which was triggered by the event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmTrigger;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AutomaticVariation.Trigger;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODate triggerDate;
 	/**
 	 * Date on which the variation comes into effect.
 	 * <p>
@@ -141,18 +145,27 @@ public class Trigger {
 	 * definition} = "Date on which the variation comes into effect."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TriggerDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTriggerDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Trigger.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TriggerDate";
 			definition = "Date on which the variation comes into effect.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Trigger.class.getMethod("getTriggerDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text triggerEvent;
 	/**
 	 * Event that causes the variation to come into effect.
 	 * <p>
@@ -177,30 +190,67 @@ public class Trigger {
 	 * definition} = "Event that causes the variation to come into effect."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TriggerEvent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTriggerEvent = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Trigger.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Trigger.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TriggerEvent";
 			definition = "Event that causes the variation to come into effect.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Trigger.class.getMethod("getTriggerEvent", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Trigger";
 				definition = "Trigger that causes the variation to come into effect.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AutomaticVariation.Trigger);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trigger.AutomaticVariation, com.tools20022.repository.entity.Trigger.TriggerDate, com.tools20022.repository.entity.Trigger.TriggerEvent);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AutomaticVariation.mmTrigger);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trigger.mmAutomaticVariation, com.tools20022.repository.entity.Trigger.mmTriggerDate, com.tools20022.repository.entity.Trigger.mmTriggerEvent);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Trigger.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public AutomaticVariation getAutomaticVariation() {
+		return automaticVariation;
+	}
+
+	public void setAutomaticVariation(com.tools20022.repository.entity.AutomaticVariation automaticVariation) {
+		this.automaticVariation = automaticVariation;
+	}
+
+	public ISODate getTriggerDate() {
+		return triggerDate;
+	}
+
+	public void setTriggerDate(ISODate triggerDate) {
+		this.triggerDate = triggerDate;
+	}
+
+	public Max35Text getTriggerEvent() {
+		return triggerEvent;
+	}
+
+	public void setTriggerEvent(Max35Text triggerEvent) {
+		this.triggerEvent = triggerEvent;
 	}
 }

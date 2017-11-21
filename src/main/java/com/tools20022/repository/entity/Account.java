@@ -17,19 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CollateralAccountTypeCode;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max140Text;
-import com.tools20022.repository.msg.IdentificationInformation2;
-import com.tools20022.repository.msg.IdentificationModification2;
-import com.tools20022.repository.msg.IdentificationVerification2;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Record of transactions in specific types of assets, maintained by a servicing
@@ -45,177 +44,85 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Account#BaseCurrency
- * Account.BaseCurrency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Identification
- * Account.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#ParentAccount
- * Account.ParentAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#SubAccount
- * Account.SubAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmBaseCurrency
+ * Account.mmBaseCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmIdentification
+ * Account.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmParentAccount
+ * Account.mmParentAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmSubAccount
+ * Account.mmSubAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#RelatedFundProcessingCharacteristics
- * Account.RelatedFundProcessingCharacteristics}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Status
- * Account.Status}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Language
- * Account.Language}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#PartyRole
- * Account.PartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#TradePartyRole
- * Account.TradePartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#ReportingCurrency
- * Account.ReportingCurrency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#AccountRestriction
- * Account.AccountRestriction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#SettlementPartyRole
- * Account.SettlementPartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Purpose
- * Account.Purpose}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#ClosingDate
- * Account.ClosingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#LiveDate
- * Account.LiveDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#ReportedPeriod
- * Account.ReportedPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmRelatedFundProcessingCharacteristics
+ * Account.mmRelatedFundProcessingCharacteristics}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmStatus
+ * Account.mmStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmLanguage
+ * Account.mmLanguage}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmPartyRole
+ * Account.mmPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmTradePartyRole
+ * Account.mmTradePartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmReportingCurrency
+ * Account.mmReportingCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#InvestmentFundPartyRole
- * Account.InvestmentFundPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmAccountRestriction
+ * Account.mmAccountRestriction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#RelatedCollateralProcess
- * Account.RelatedCollateralProcess}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Type Account.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmSettlementPartyRole
+ * Account.mmSettlementPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmPurpose
+ * Account.mmPurpose}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmClosingDate
+ * Account.mmClosingDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmLiveDate
+ * Account.mmLiveDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmReportedPeriod
+ * Account.mmReportedPeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#RelatedProceedsDelivery
- * Account.RelatedProceedsDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmInvestmentFundPartyRole
+ * Account.mmInvestmentFundPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#RelatedCorporateActionPartyRole
- * Account.RelatedCorporateActionPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmRelatedCollateralProcess
+ * Account.mmRelatedCollateralProcess}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmType
+ * Account.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#DefaultFundAccountOwner
- * Account.DefaultFundAccountOwner}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#System
- * Account.System}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Balance
- * Account.Balance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Entry Account.Entry}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#AccountContract
- * Account.AccountContract}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#OpeningDate
- * Account.OpeningDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#CurrencyExchange
- * Account.CurrencyExchange}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmRelatedProceedsDelivery
+ * Account.mmRelatedProceedsDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#DefaultFundContribution
- * Account.DefaultFundContribution}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#SystemMember
- * Account.SystemMember}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmRelatedCorporateActionPartyRole
+ * Account.mmRelatedCorporateActionPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#CollateralAccountType
- * Account.CollateralAccountType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#AccountService
- * Account.AccountService}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#Reconciliation
- * Account.Reconciliation}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmDefaultFundAccountOwner
+ * Account.mmDefaultFundAccountOwner}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmSystem
+ * Account.mmSystem}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmBalance
+ * Account.mmBalance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmEntry
+ * Account.mmEntry}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmAccountContract
+ * Account.mmAccountContract}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmOpeningDate
+ * Account.mmOpeningDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmCurrencyExchange
+ * Account.mmCurrencyExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#ManagedAccountProduct
- * Account.ManagedAccountProduct}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmDefaultFundContribution
+ * Account.mmDefaultFundContribution}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmSystemMember
+ * Account.mmSystemMember}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
+ * {@linkplain com.tools20022.repository.entity.Account#mmCollateralAccountType
+ * Account.mmCollateralAccountType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmAccountService
+ * Account.mmAccountService}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmReconciliation
+ * Account.mmReconciliation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#Account
- * GenericIdentification.Account}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#SettlementAccount
- * InvestmentFundClassProcessingCharacteristics.SettlementAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#ParentAccount
- * Account.ParentAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#SubAccount
- * Account.SubAccount}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.AccountIdentification#Account
- * AccountIdentification.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Account
- * DateTimePeriod.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountPartyRole#Account
- * AccountPartyRole.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountService#Account
- * AccountService.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountStatus#Account
- * AccountStatus.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountContract#Account
- * AccountContract.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Entry#Account Entry.Account}
- * </li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#Account
- * InvestmentFundPartyRole.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradePartyRole#Account
- * TradePartyRole.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.System#Account
- * System.Account}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SystemMemberRole#Account
- * SystemMemberRole.Account}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ClearingMemberRole#DefaultFundAccount
- * ClearingMemberRole.DefaultFundAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Balance#Account
- * Balance.Account}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SettlementPartyRole#SettlementAccount
- * SettlementPartyRole.SettlementAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountRestriction#Account
- * AccountRestriction.Account}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CurrencyExchange#ReportedAccount
- * CurrencyExchange.ReportedAccount}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Collateral#CollateralAccount
- * Collateral.CollateralAccount}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#SettlementAccount
- * CorporateActionProceedsDeliveryInstruction.SettlementAccount}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#Account
- * CorporateActionPartyRole.Account}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DefaultFundContribution#ContributionAccount
- * DefaultFundContribution.ContributionAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Reconciliation#Account
- * Reconciliation.Account}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#Account
- * ManagedAccountProduct.Account}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationModification2#OriginalPartyAndAccountIdentification
- * IdentificationModification2.OriginalPartyAndAccountIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationModification2#UpdatedPartyAndAccountIdentification
- * IdentificationModification2.UpdatedPartyAndAccountIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.IdentificationVerification2#PartyAndAccountIdentification
- * IdentificationVerification2.PartyAndAccountIdentification}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.CashAccount CashAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesAccount
- * SecuritiesAccount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.InvestmentAccount
- * InvestmentAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmManagedAccountProduct
+ * Account.mmManagedAccountProduct}</li>
  * </ul>
  * </li>
  * <li>
@@ -231,10 +138,106 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmAccount
+ * GenericIdentification.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#mmSettlementAccount
+ * InvestmentFundClassProcessingCharacteristics.mmSettlementAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmParentAccount
+ * Account.mmParentAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmSubAccount
+ * Account.mmSubAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmAccount
+ * AccountIdentification.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAccount
+ * DateTimePeriod.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountPartyRole#mmAccount
+ * AccountPartyRole.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountService#mmAccount
+ * AccountService.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountStatus#mmAccount
+ * AccountStatus.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountContract#mmAccount
+ * AccountContract.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Entry#mmAccount
+ * Entry.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#mmAccount
+ * InvestmentFundPartyRole.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradePartyRole#mmAccount
+ * TradePartyRole.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.System#mmAccount
+ * System.mmAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SystemMemberRole#mmAccount
+ * SystemMemberRole.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ClearingMemberRole#mmDefaultFundAccount
+ * ClearingMemberRole.mmDefaultFundAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Balance#mmAccount
+ * Balance.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SettlementPartyRole#mmSettlementAccount
+ * SettlementPartyRole.mmSettlementAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AccountRestriction#mmAccount
+ * AccountRestriction.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmReportedAccount
+ * CurrencyExchange.mmReportedAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralAccount
+ * Collateral.mmCollateralAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmSettlementAccount
+ * CorporateActionProceedsDeliveryInstruction.mmSettlementAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#mmAccount
+ * CorporateActionPartyRole.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DefaultFundContribution#mmContributionAccount
+ * DefaultFundContribution.mmContributionAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Reconciliation#mmAccount
+ * Reconciliation.mmAccount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#mmAccount
+ * ManagedAccountProduct.mmAccount}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationModification2#mmOriginalPartyAndAccountIdentification
+ * IdentificationModification2.mmOriginalPartyAndAccountIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationModification2#mmUpdatedPartyAndAccountIdentification
+ * IdentificationModification2.mmUpdatedPartyAndAccountIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.IdentificationVerification2#mmPartyAndAccountIdentification
+ * IdentificationVerification2.mmPartyAndAccountIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.CashAccount CashAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesAccount
+ * SecuritiesAccount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.InvestmentAccount
+ * InvestmentAccount}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -250,6 +253,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Account {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyCode baseCurrency;
 	/**
 	 * Base currency of the account.
 	 * <p>
@@ -262,21 +266,25 @@ public class Account {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#Currency
-	 * CashAccount24.Currency}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount25#Currency
-	 * CashAccount25.Currency}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountForAction1#Currency
-	 * AccountForAction1.Currency}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.AccountForAction2#Currency
-	 * AccountForAction2.Currency}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount5#Currency
-	 * CustomerAccount5.Currency}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CustomerAccount4#Currency
-	 * CustomerAccount4.Currency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#mmCurrency
+	 * CashAccount24.mmCurrency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CashAccount25#mmCurrency
+	 * CashAccount25.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TradeContract1#SettlementCurrency
-	 * TradeContract1.SettlementCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountForAction1#mmCurrency
+	 * AccountForAction1.mmCurrency}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AccountForAction2#mmCurrency
+	 * AccountForAction2.mmCurrency}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#mmCurrency
+	 * CustomerAccount5.mmCurrency}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#mmCurrency
+	 * CustomerAccount4.mmCurrency}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TradeContract1#mmSettlementCurrency
+	 * TradeContract1.mmSettlementCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -294,21 +302,29 @@ public class Account {
 	 * definition} = "Base currency of the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BaseCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBaseCurrency = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccount24.Currency, com.tools20022.repository.msg.CashAccount25.Currency, com.tools20022.repository.msg.AccountForAction1.Currency,
-					com.tools20022.repository.msg.AccountForAction2.Currency, com.tools20022.repository.msg.CustomerAccount5.Currency, com.tools20022.repository.msg.CustomerAccount4.Currency,
-					com.tools20022.repository.msg.TradeContract1.SettlementCurrency);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashAccount24.mmCurrency, CashAccount25.mmCurrency, AccountForAction1.mmCurrency, AccountForAction2.mmCurrency, CustomerAccount5.mmCurrency, CustomerAccount4.mmCurrency,
+					TradeContract1.mmSettlementCurrency);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BaseCurrency";
 			definition = "Base currency of the account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getBaseCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AccountIdentification identification;
 	/**
 	 * Unique and unambiguous identification for the account between the account
 	 * owner and the account servicer.
@@ -318,8 +334,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountIdentification#Account
-	 * AccountIdentification.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmAccount
+	 * AccountIdentification.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -332,38 +348,38 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashAccount24#Identification
-	 * CashAccount24.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashAccount24#mmIdentification
+	 * CashAccount24.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashAccount25#Identification
-	 * CashAccount25.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashAccount25#mmIdentification
+	 * CashAccount25.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountForAction1#Identification
-	 * AccountForAction1.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountForAction1#mmIdentification
+	 * AccountForAction1.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountForAction2#Identification
-	 * AccountForAction2.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountForAction2#mmIdentification
+	 * AccountForAction2.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#Identification
-	 * CustomerAccount5.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#mmIdentification
+	 * CustomerAccount5.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#Identification
-	 * CustomerAccountModification1.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#mmIdentification
+	 * CustomerAccountModification1.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#Identification
-	 * CustomerAccount4.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#mmIdentification
+	 * CustomerAccount4.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#Account
-	 * IdentificationInformation2.Account}</li>
+	 * {@linkplain com.tools20022.repository.msg.IdentificationInformation2#mmAccount
+	 * IdentificationInformation2.mmAccount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.SecuritiesAccount19#Identification
-	 * SecuritiesAccount19.Identification}</li>
+	 * {@linkplain com.tools20022.repository.msg.SecuritiesAccount19#mmIdentification
+	 * SecuritiesAccount19.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#CashAccountIdentification
-	 * CashCollateral5.CashAccountIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashCollateral5#mmCashAccountIdentification
+	 * CashCollateral5.mmCashAccountIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#DebitAccount
-	 * CashAccountCharacteristics2.DebitAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#mmDebitAccount
+	 * CashAccountCharacteristics2.mmDebitAccount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -383,24 +399,24 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Identification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccount24.Identification, com.tools20022.repository.msg.CashAccount25.Identification, com.tools20022.repository.msg.AccountForAction1.Identification,
-					com.tools20022.repository.msg.AccountForAction2.Identification, com.tools20022.repository.msg.CustomerAccount5.Identification, com.tools20022.repository.msg.CustomerAccountModification1.Identification,
-					com.tools20022.repository.msg.CustomerAccount4.Identification, com.tools20022.repository.msg.IdentificationInformation2.Account, com.tools20022.repository.msg.SecuritiesAccount19.Identification,
-					com.tools20022.repository.msg.CashCollateral5.CashAccountIdentification, com.tools20022.repository.msg.CashAccountCharacteristics2.DebitAccount);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashAccount24.mmIdentification, CashAccount25.mmIdentification, AccountForAction1.mmIdentification, AccountForAction2.mmIdentification, CustomerAccount5.mmIdentification,
+					CustomerAccountModification1.mmIdentification, CustomerAccount4.mmIdentification, IdentificationInformation2.mmAccount, SecuritiesAccount19.mmIdentification, CashCollateral5.mmCashAccountIdentification,
+					CashAccountCharacteristics2.mmDebitAccount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification for the account between the account owner and the account servicer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AccountIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountIdentification.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 		}
 	};
+	protected Account parentAccount;
 	/**
 	 * Account for which one or more sub-accounts are specified.
 	 * <p>
@@ -409,8 +425,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#SubAccount
-	 * Account.SubAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmSubAccount
+	 * Account.mmSubAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -421,8 +437,8 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#ParentAccount
-	 * CashAccountCharacteristics2.ParentAccount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#mmParentAccount
+	 * CashAccountCharacteristics2.mmParentAccount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -441,21 +457,22 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ParentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmParentAccount = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccountCharacteristics2.ParentAccount);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CashAccountCharacteristics2.mmParentAccount);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParentAccount";
 			definition = "Account for which one or more sub-accounts are specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.SubAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmSubAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Account> subAccount;
 	/**
 	 * Subdivision of an account used to segregate specific holdings.
 	 * <p>
@@ -464,8 +481,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#ParentAccount
-	 * Account.ParentAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmParentAccount
+	 * Account.mmParentAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -488,19 +505,20 @@ public class Account {
 	 * "Subdivision of an account used to segregate specific holdings."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SubAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSubAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SubAccount";
 			definition = "Subdivision of an account used to segregate specific holdings.";
 			minOccurs = 0;
-			type_lazy = () -> Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.ParentAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmParentAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 		}
 	};
+	protected InvestmentFundClassProcessingCharacteristics relatedFundProcessingCharacteristics;
 	/**
 	 * Fund processing characteristics for which a settlement account is
 	 * specified.
@@ -510,8 +528,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#SettlementAccount
-	 * InvestmentFundClassProcessingCharacteristics.SettlementAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics#mmSettlementAccount
+	 * InvestmentFundClassProcessingCharacteristics.mmSettlementAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -537,20 +555,21 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedFundProcessingCharacteristics = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedFundProcessingCharacteristics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedFundProcessingCharacteristics";
 			definition = "Fund processing characteristics for which a settlement account is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.SettlementAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmSettlementAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
 		}
 	};
+	protected AccountStatus status;
 	/**
 	 * Specifies the current state of an account, eg, enabled or deleted.
 	 * <p>
@@ -559,8 +578,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountStatus#Account
-	 * AccountStatus.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountStatus#mmAccount
+	 * AccountStatus.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -584,20 +603,21 @@ public class Account {
 	 * "Specifies the current state of an account, eg, enabled or deleted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Status = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Specifies the current state of an account, eg, enabled or deleted.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AccountStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountStatus.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AccountStatus.mmObject();
 		}
 	};
+	protected LanguageCode language;
 	/**
 	 * Language for all communication concerning the account.
 	 * <p>
@@ -622,18 +642,27 @@ public class Account {
 	 * definition} = "Language for all communication concerning the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Language = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language for all communication concerning the account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getLanguage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.AccountPartyRole> partyRole;
 	/**
 	 * Specifies each role linked to an account and played by a party in that
 	 * context.
@@ -643,8 +672,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountPartyRole#Account
-	 * AccountPartyRole.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountPartyRole#mmAccount
+	 * AccountPartyRole.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -669,19 +698,20 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyRole";
 			definition = "Specifies each role linked to an account and played by a party in that context.";
 			minOccurs = 0;
-			type_lazy = () -> AccountPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountPartyRole.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountPartyRole.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AccountPartyRole.mmObject();
 		}
 	};
+	protected TradePartyRole tradePartyRole;
 	/**
 	 * Party for which an account is specified in the context of a trade.
 	 * <p>
@@ -690,8 +720,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradePartyRole#Account
-	 * TradePartyRole.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradePartyRole#mmAccount
+	 * TradePartyRole.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -715,20 +745,21 @@ public class Account {
 	 * "Party for which an account is specified in the context of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradePartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradePartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradePartyRole";
 			definition = "Party for which an account is specified in the context of a trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradePartyRole.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradePartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradePartyRole.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyCode reportingCurrency;
 	/**
 	 * Currency used to calculate and report the balance and related entries of
 	 * an account.
@@ -743,11 +774,11 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#Currency
-	 * CustomerAccountModification1.Currency}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#mmCurrency
+	 * CustomerAccountModification1.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#AccountBalanceCurrencyCode
-	 * CashAccountCharacteristics2.AccountBalanceCurrencyCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.CashAccountCharacteristics2#mmAccountBalanceCurrencyCode
+	 * CashAccountCharacteristics2.mmAccountBalanceCurrencyCode}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -767,19 +798,28 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReportingCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReportingCurrency = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CustomerAccountModification1.Currency, com.tools20022.repository.msg.CashAccountCharacteristics2.AccountBalanceCurrencyCode);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CustomerAccountModification1.mmCurrency, CashAccountCharacteristics2.mmAccountBalanceCurrencyCode);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingCurrency";
 			definition = "Currency used to calculate and report the balance and related entries of an account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getReportingCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.AccountRestriction> accountRestriction;
 	/**
 	 * Restriction on capability or operations allowed.
 	 * <p>
@@ -788,8 +828,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountRestriction#Account
-	 * AccountRestriction.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountRestriction#mmAccount
+	 * AccountRestriction.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -801,14 +841,14 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#Restriction
-	 * CustomerAccount5.Restriction}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#mmRestriction
+	 * CustomerAccount5.mmRestriction}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#Restriction
-	 * CustomerAccountModification1.Restriction}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#mmRestriction
+	 * CustomerAccountModification1.mmRestriction}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#Restriction
-	 * CustomerAccount4.Restriction}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#mmRestriction
+	 * CustomerAccount4.mmRestriction}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -826,21 +866,21 @@ public class Account {
 	 * definition} = "Restriction on capability or operations allowed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountRestriction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountRestriction = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CustomerAccount5.Restriction, com.tools20022.repository.msg.CustomerAccountModification1.Restriction,
-					com.tools20022.repository.msg.CustomerAccount4.Restriction);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmRestriction, CustomerAccountModification1.mmRestriction, CustomerAccount4.mmRestriction);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountRestriction";
 			definition = "Restriction on capability or operations allowed.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountRestriction.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SettlementPartyRole settlementPartyRole;
 	/**
 	 * Specifies the role of the party which uses the account for settlement.
 	 * <p>
@@ -849,8 +889,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SettlementPartyRole#SettlementAccount
-	 * SettlementPartyRole.SettlementAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.SettlementPartyRole#mmSettlementAccount
+	 * SettlementPartyRole.mmSettlementAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -874,20 +914,21 @@ public class Account {
 	 * "Specifies the role of the party which uses the account for settlement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SettlementPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSettlementPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementPartyRole";
 			definition = "Specifies the role of the party which uses the account for settlement.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SettlementPartyRole.mmSettlementAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SettlementPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SettlementPartyRole.SettlementAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max140Text purpose;
 	/**
 	 * Specifies the purpose of the account.
 	 * <p>
@@ -901,17 +942,17 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#AccountPurpose
-	 * CustomerAccount5.AccountPurpose}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#mmAccountPurpose
+	 * CustomerAccount5.mmAccountPurpose}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PurposeModification1#Purpose
-	 * PurposeModification1.Purpose}</li>
+	 * {@linkplain com.tools20022.repository.msg.PurposeModification1#mmPurpose
+	 * PurposeModification1.mmPurpose}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#AccountPurpose
-	 * CustomerAccountModification1.AccountPurpose}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#mmAccountPurpose
+	 * CustomerAccountModification1.mmAccountPurpose}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#AccountPurpose
-	 * CustomerAccount4.AccountPurpose}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#mmAccountPurpose
+	 * CustomerAccount4.mmAccountPurpose}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -929,20 +970,28 @@ public class Account {
 	 * definition} = "Specifies the purpose of the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Purpose = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CustomerAccount5.AccountPurpose, com.tools20022.repository.msg.PurposeModification1.Purpose,
-					com.tools20022.repository.msg.CustomerAccountModification1.AccountPurpose, com.tools20022.repository.msg.CustomerAccount4.AccountPurpose);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmAccountPurpose, PurposeModification1.mmPurpose, CustomerAccountModification1.mmAccountPurpose, CustomerAccount4.mmAccountPurpose);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Specifies the purpose of the account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getPurpose", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime closingDate;
 	/**
 	 * Date on which the account and related services cease effectively to be
 	 * operational for the account owner.
@@ -957,17 +1006,17 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#ClosingDate
-	 * CustomerAccount5.ClosingDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount5#mmClosingDate
+	 * CustomerAccount5.mmClosingDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#ClosingDate
-	 * CustomerAccountModification1.ClosingDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccountModification1#mmClosingDate
+	 * CustomerAccountModification1.mmClosingDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#ClosingDate
-	 * CustomerAccount4.ClosingDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CustomerAccount4#mmClosingDate
+	 * CustomerAccount4.mmClosingDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountContract3#ClosingDate
-	 * AccountContract3.ClosingDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountContract3#mmClosingDate
+	 * AccountContract3.mmClosingDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -987,20 +1036,28 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClosingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClosingDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CustomerAccount5.ClosingDate, com.tools20022.repository.msg.CustomerAccountModification1.ClosingDate,
-					com.tools20022.repository.msg.CustomerAccount4.ClosingDate, com.tools20022.repository.msg.AccountContract3.ClosingDate);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(CustomerAccount5.mmClosingDate, CustomerAccountModification1.mmClosingDate, CustomerAccount4.mmClosingDate, AccountContract3.mmClosingDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingDate";
 			definition = "Date on which the account and related services cease effectively to be operational for the account owner.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getClosingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime liveDate;
 	/**
 	 * Date of the first movement on the account.
 	 * <p>
@@ -1014,8 +1071,8 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountContract3#GoLiveDate
-	 * AccountContract3.GoLiveDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountContract3#mmGoLiveDate
+	 * AccountContract3.mmGoLiveDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1033,19 +1090,28 @@ public class Account {
 	 * definition} = "Date of the first movement on the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLiveDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountContract3.GoLiveDate);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(AccountContract3.mmGoLiveDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LiveDate";
 			definition = "Date of the first movement on the account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getLiveDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod reportedPeriod;
 	/**
 	 * Specifies the period for which the movements in the account are reported.
 	 * <p>
@@ -1054,8 +1120,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#Account
-	 * DateTimePeriod.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAccount
+	 * DateTimePeriod.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1067,8 +1133,8 @@ public class Account {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AccountNotification12#FromToDate
-	 * AccountNotification12.FromToDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.AccountNotification12#mmFromToDate
+	 * AccountNotification12.mmFromToDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1088,21 +1154,22 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ReportedPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReportedPeriod = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AccountNotification12.FromToDate);
-			elementContext_lazy = () -> Account.mmObject();
+			derivation_lazy = () -> Arrays.asList(AccountNotification12.mmFromToDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportedPeriod";
 			definition = "Specifies the period for which the movements in the account are reported.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected InvestmentFundPartyRole investmentFundPartyRole;
 	/**
 	 * Party role for which an account is specified.
 	 * <p>
@@ -1111,8 +1178,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#Account
-	 * InvestmentFundPartyRole.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#mmAccount
+	 * InvestmentFundPartyRole.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1136,20 +1203,21 @@ public class Account {
 	 * definition} = "Party role for which an account is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentFundPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentFundPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundPartyRole";
 			definition = "Party role for which an account is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Collateral relatedCollateralProcess;
 	/**
 	 * Collateral data for which a collateral account is specified.
 	 * <p>
@@ -1158,8 +1226,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Collateral#CollateralAccount
-	 * Collateral.CollateralAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralAccount
+	 * Collateral.mmCollateralAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1183,20 +1251,21 @@ public class Account {
 	 * "Collateral data for which a collateral account is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCollateralProcess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCollateralProcess = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCollateralProcess";
 			definition = "Collateral data for which a collateral account is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Collateral.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.CollateralAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmCollateralAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 		}
 	};
+	protected GenericIdentification type;
 	/**
 	 * Specifies the type of account.
 	 * <p>
@@ -1205,8 +1274,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Account
-	 * GenericIdentification.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmAccount
+	 * GenericIdentification.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1230,20 +1299,21 @@ public class Account {
 	 * definition} = "Specifies the type of account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Type = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmType = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Specifies the type of account.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected CorporateActionProceedsDeliveryInstruction relatedProceedsDelivery;
 	/**
 	 * Proceeds delivery instruction which contain account identification.
 	 * <p>
@@ -1252,8 +1322,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#SettlementAccount
-	 * CorporateActionProceedsDeliveryInstruction.SettlementAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction#mmSettlementAccount
+	 * CorporateActionProceedsDeliveryInstruction.mmSettlementAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1278,20 +1348,21 @@ public class Account {
 	 * "Proceeds delivery instruction which contain account identification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedProceedsDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedProceedsDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedProceedsDelivery";
 			definition = "Proceeds delivery instruction which contain account identification.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.SettlementAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmSettlementAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
 		}
 	};
+	protected CorporateActionPartyRole relatedCorporateActionPartyRole;
 	/**
 	 * Party for which an account is specified in the context of a corporate
 	 * action.
@@ -1301,8 +1372,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#Account
-	 * CorporateActionPartyRole.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionPartyRole#mmAccount
+	 * CorporateActionPartyRole.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1328,20 +1399,21 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCorporateActionPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCorporateActionPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateActionPartyRole";
 			definition = "Party for which an account is specified in the context of a corporate action.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionPartyRole.mmObject();
 		}
 	};
+	protected ClearingMemberRole defaultFundAccountOwner;
 	/**
 	 * Clearing member which holds a default fund account at an ICSD or at the
 	 * central bank.
@@ -1351,8 +1423,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ClearingMemberRole#DefaultFundAccount
-	 * ClearingMemberRole.DefaultFundAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.ClearingMemberRole#mmDefaultFundAccount
+	 * ClearingMemberRole.mmDefaultFundAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1377,20 +1449,21 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DefaultFundAccountOwner = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDefaultFundAccountOwner = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefaultFundAccountOwner";
 			definition = "Clearing member which holds a default fund account at an ICSD or at the central bank.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ClearingMemberRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.DefaultFundAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmDefaultFundAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ClearingMemberRole.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.System> system;
 	/**
 	 * System where the account is held.
 	 * <p>
@@ -1398,8 +1471,9 @@ public class Account {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.System#Account
-	 * System.Account}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.System#mmAccount
+	 * System.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1421,19 +1495,20 @@ public class Account {
 	 * definition} = "System where the account is held."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd System = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System where the account is held.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.System.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.System.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Balance> balance;
 	/**
 	 * Overall position representing the net debits and credits in an account at
 	 * a specific point in time.
@@ -1442,8 +1517,9 @@ public class Account {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Balance#Account
-	 * Balance.Account}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Balance#mmAccount
+	 * Balance.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1467,19 +1543,20 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Balance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Balance";
 			definition = "Overall position representing the net debits and credits in an account at a specific point in time.";
 			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Balance.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Balance.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.Entry> entry;
 	/**
 	 * Record of the movements into or out of an account.
 	 * <p>
@@ -1487,8 +1564,8 @@ public class Account {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Entry#Account
-	 * Entry.Account}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Entry#mmAccount
+	 * Entry.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1510,19 +1587,20 @@ public class Account {
 	 * definition} = "Record of the movements into or out of an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Entry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Entry";
 			definition = "Record of the movements into or out of an account.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Entry.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Entry.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.AccountContract> accountContract;
 	/**
 	 * Agreement which provides information on the account and on the services
 	 * linked to it.
@@ -1532,8 +1610,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountContract#Account
-	 * AccountContract.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountContract#mmAccount
+	 * AccountContract.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1558,19 +1636,20 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountContract";
 			definition = "Agreement which provides information on the account and on the services linked to it.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountContract.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountContract.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ISODateTime openingDate;
 	/**
 	 * Date on which the account and related basic services are effectively
 	 * operational for the account owner.
@@ -1598,18 +1677,27 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OpeningDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOpeningDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OpeningDate";
 			definition = "Date on which the account and related basic services are effectively operational for the account owner.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getOpeningDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange;
 	/**
 	 * Rate used to calculate the difference between amounts based on the base
 	 * currency and the reporting currency.
@@ -1619,8 +1707,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#ReportedAccount
-	 * CurrencyExchange.ReportedAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.CurrencyExchange#mmReportedAccount
+	 * CurrencyExchange.mmReportedAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1645,19 +1733,20 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CurrencyExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CurrencyExchange";
 			definition = "Rate used to calculate the difference between amounts based on the base currency and the reporting currency.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmReportedAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.ReportedAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected DefaultFundContribution defaultFundContribution;
 	/**
 	 * Default fund contribution parameters associated with a contribution
 	 * account.
@@ -1667,8 +1756,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DefaultFundContribution#ContributionAccount
-	 * DefaultFundContribution.ContributionAccount}</li>
+	 * {@linkplain com.tools20022.repository.entity.DefaultFundContribution#mmContributionAccount
+	 * DefaultFundContribution.mmContributionAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1694,20 +1783,21 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DefaultFundContribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDefaultFundContribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DefaultFundContribution";
 			definition = "Default fund contribution parameters associated with a contribution account.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmContributionAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DefaultFundContribution.ContributionAccount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SystemMemberRole systemMember;
 	/**
 	 * Member of a system which is the owner of an account with the system.
 	 * <p>
@@ -1716,8 +1806,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SystemMemberRole#Account
-	 * SystemMemberRole.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.SystemMemberRole#mmAccount
+	 * SystemMemberRole.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1741,20 +1831,21 @@ public class Account {
 	 * "Member of a system which is the owner of an account with the system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SystemMember = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystemMember = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SystemMember";
 			definition = "Member of a system which is the owner of an account with the system.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SystemMemberRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmAccount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
 		}
 	};
+	protected CollateralAccountTypeCode collateralAccountType;
 	/**
 	 * Specifies the collateral account type.
 	 * <p>
@@ -1780,18 +1871,27 @@ public class Account {
 	 * definition} = "Specifies the collateral account type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CollateralAccountType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCollateralAccountType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CollateralAccountType";
 			definition = "Specifies the collateral account type.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CollateralAccountTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Account.class.getMethod("getCollateralAccountType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AccountService accountService;
 	/**
 	 * Services linked to the account and specified in the account contract.
 	 * <p>
@@ -1800,8 +1900,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountService#Account
-	 * AccountService.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountService#mmAccount
+	 * AccountService.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1825,20 +1925,21 @@ public class Account {
 	 * "Services linked to the account and specified in the account contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountService";
 			definition = "Services linked to the account and specified in the account contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountService.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountService.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Reconciliation reconciliation;
 	/**
 	 * Process which compares and matches trade information with entries in an
 	 * account.
@@ -1848,8 +1949,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Reconciliation#Account
-	 * Reconciliation.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.Reconciliation#mmAccount
+	 * Reconciliation.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1874,20 +1975,21 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Reconciliation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReconciliation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reconciliation";
 			definition = "Process which compares and matches trade information with entries in an account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Reconciliation.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ManagedAccountProduct managedAccountProduct;
 	/**
 	 * Product which provides guidance to investors to manage their portfolios.
 	 * <p>
@@ -1896,8 +1998,8 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#Account
-	 * ManagedAccountProduct.Account}</li>
+	 * {@linkplain com.tools20022.repository.entity.ManagedAccountProduct#mmAccount
+	 * ManagedAccountProduct.mmAccount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1923,55 +2025,333 @@ public class Account {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ManagedAccountProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmManagedAccountProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Account.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ManagedAccountProduct";
 			definition = "Product which provides guidance to investors to manage their portfolios.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmAccount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ManagedAccountProduct.Account;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Account";
 				definition = "Record of transactions in specific types of assets, maintained by a servicing party on behalf of one or more owning parties. Business relationship between an account servicer and one or more account owners.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.Account, com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.SettlementAccount,
-						com.tools20022.repository.entity.Account.ParentAccount, com.tools20022.repository.entity.Account.SubAccount, com.tools20022.repository.entity.AccountIdentification.Account,
-						com.tools20022.repository.entity.DateTimePeriod.Account, com.tools20022.repository.entity.AccountPartyRole.Account, com.tools20022.repository.entity.AccountService.Account,
-						com.tools20022.repository.entity.AccountStatus.Account, com.tools20022.repository.entity.AccountContract.Account, com.tools20022.repository.entity.Entry.Account,
-						com.tools20022.repository.entity.InvestmentFundPartyRole.Account, com.tools20022.repository.entity.TradePartyRole.Account, com.tools20022.repository.entity.System.Account,
-						com.tools20022.repository.entity.SystemMemberRole.Account, com.tools20022.repository.entity.ClearingMemberRole.DefaultFundAccount, com.tools20022.repository.entity.Balance.Account,
-						com.tools20022.repository.entity.SettlementPartyRole.SettlementAccount, com.tools20022.repository.entity.AccountRestriction.Account, com.tools20022.repository.entity.CurrencyExchange.ReportedAccount,
-						com.tools20022.repository.entity.Collateral.CollateralAccount, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.SettlementAccount,
-						com.tools20022.repository.entity.CorporateActionPartyRole.Account, com.tools20022.repository.entity.DefaultFundContribution.ContributionAccount, com.tools20022.repository.entity.Reconciliation.Account,
-						com.tools20022.repository.entity.ManagedAccountProduct.Account);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.IdentificationModification2.OriginalPartyAndAccountIdentification,
-						com.tools20022.repository.msg.IdentificationModification2.UpdatedPartyAndAccountIdentification, com.tools20022.repository.msg.IdentificationVerification2.PartyAndAccountIdentification);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmAccount, com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmSettlementAccount,
+						com.tools20022.repository.entity.Account.mmParentAccount, com.tools20022.repository.entity.Account.mmSubAccount, com.tools20022.repository.entity.AccountIdentification.mmAccount,
+						com.tools20022.repository.entity.DateTimePeriod.mmAccount, com.tools20022.repository.entity.AccountPartyRole.mmAccount, com.tools20022.repository.entity.AccountService.mmAccount,
+						com.tools20022.repository.entity.AccountStatus.mmAccount, com.tools20022.repository.entity.AccountContract.mmAccount, com.tools20022.repository.entity.Entry.mmAccount,
+						com.tools20022.repository.entity.InvestmentFundPartyRole.mmAccount, com.tools20022.repository.entity.TradePartyRole.mmAccount, com.tools20022.repository.entity.System.mmAccount,
+						com.tools20022.repository.entity.SystemMemberRole.mmAccount, com.tools20022.repository.entity.ClearingMemberRole.mmDefaultFundAccount, com.tools20022.repository.entity.Balance.mmAccount,
+						com.tools20022.repository.entity.SettlementPartyRole.mmSettlementAccount, com.tools20022.repository.entity.AccountRestriction.mmAccount, com.tools20022.repository.entity.CurrencyExchange.mmReportedAccount,
+						com.tools20022.repository.entity.Collateral.mmCollateralAccount, com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmSettlementAccount,
+						com.tools20022.repository.entity.CorporateActionPartyRole.mmAccount, com.tools20022.repository.entity.DefaultFundContribution.mmContributionAccount, com.tools20022.repository.entity.Reconciliation.mmAccount,
+						com.tools20022.repository.entity.ManagedAccountProduct.mmAccount);
+				derivationElement_lazy = () -> Arrays.asList(IdentificationModification2.mmOriginalPartyAndAccountIdentification, IdentificationModification2.mmUpdatedPartyAndAccountIdentification,
+						IdentificationVerification2.mmPartyAndAccountIdentification);
 				subType_lazy = () -> Arrays.asList(CashAccount.mmObject(), SecuritiesAccount.mmObject(), InvestmentAccount.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.BaseCurrency, com.tools20022.repository.entity.Account.Identification, com.tools20022.repository.entity.Account.ParentAccount,
-						com.tools20022.repository.entity.Account.SubAccount, com.tools20022.repository.entity.Account.RelatedFundProcessingCharacteristics, com.tools20022.repository.entity.Account.Status,
-						com.tools20022.repository.entity.Account.Language, com.tools20022.repository.entity.Account.PartyRole, com.tools20022.repository.entity.Account.TradePartyRole,
-						com.tools20022.repository.entity.Account.ReportingCurrency, com.tools20022.repository.entity.Account.AccountRestriction, com.tools20022.repository.entity.Account.SettlementPartyRole,
-						com.tools20022.repository.entity.Account.Purpose, com.tools20022.repository.entity.Account.ClosingDate, com.tools20022.repository.entity.Account.LiveDate, com.tools20022.repository.entity.Account.ReportedPeriod,
-						com.tools20022.repository.entity.Account.InvestmentFundPartyRole, com.tools20022.repository.entity.Account.RelatedCollateralProcess, com.tools20022.repository.entity.Account.Type,
-						com.tools20022.repository.entity.Account.RelatedProceedsDelivery, com.tools20022.repository.entity.Account.RelatedCorporateActionPartyRole, com.tools20022.repository.entity.Account.DefaultFundAccountOwner,
-						com.tools20022.repository.entity.Account.System, com.tools20022.repository.entity.Account.Balance, com.tools20022.repository.entity.Account.Entry, com.tools20022.repository.entity.Account.AccountContract,
-						com.tools20022.repository.entity.Account.OpeningDate, com.tools20022.repository.entity.Account.CurrencyExchange, com.tools20022.repository.entity.Account.DefaultFundContribution,
-						com.tools20022.repository.entity.Account.SystemMember, com.tools20022.repository.entity.Account.CollateralAccountType, com.tools20022.repository.entity.Account.AccountService,
-						com.tools20022.repository.entity.Account.Reconciliation, com.tools20022.repository.entity.Account.ManagedAccountProduct);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmBaseCurrency, com.tools20022.repository.entity.Account.mmIdentification, com.tools20022.repository.entity.Account.mmParentAccount,
+						com.tools20022.repository.entity.Account.mmSubAccount, com.tools20022.repository.entity.Account.mmRelatedFundProcessingCharacteristics, com.tools20022.repository.entity.Account.mmStatus,
+						com.tools20022.repository.entity.Account.mmLanguage, com.tools20022.repository.entity.Account.mmPartyRole, com.tools20022.repository.entity.Account.mmTradePartyRole,
+						com.tools20022.repository.entity.Account.mmReportingCurrency, com.tools20022.repository.entity.Account.mmAccountRestriction, com.tools20022.repository.entity.Account.mmSettlementPartyRole,
+						com.tools20022.repository.entity.Account.mmPurpose, com.tools20022.repository.entity.Account.mmClosingDate, com.tools20022.repository.entity.Account.mmLiveDate,
+						com.tools20022.repository.entity.Account.mmReportedPeriod, com.tools20022.repository.entity.Account.mmInvestmentFundPartyRole, com.tools20022.repository.entity.Account.mmRelatedCollateralProcess,
+						com.tools20022.repository.entity.Account.mmType, com.tools20022.repository.entity.Account.mmRelatedProceedsDelivery, com.tools20022.repository.entity.Account.mmRelatedCorporateActionPartyRole,
+						com.tools20022.repository.entity.Account.mmDefaultFundAccountOwner, com.tools20022.repository.entity.Account.mmSystem, com.tools20022.repository.entity.Account.mmBalance,
+						com.tools20022.repository.entity.Account.mmEntry, com.tools20022.repository.entity.Account.mmAccountContract, com.tools20022.repository.entity.Account.mmOpeningDate,
+						com.tools20022.repository.entity.Account.mmCurrencyExchange, com.tools20022.repository.entity.Account.mmDefaultFundContribution, com.tools20022.repository.entity.Account.mmSystemMember,
+						com.tools20022.repository.entity.Account.mmCollateralAccountType, com.tools20022.repository.entity.Account.mmAccountService, com.tools20022.repository.entity.Account.mmReconciliation,
+						com.tools20022.repository.entity.Account.mmManagedAccountProduct);
 				derivationComponent_lazy = () -> Arrays.asList(IdentificationInformation2.mmObject(), IdentificationModification2.mmObject(), IdentificationVerification2.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Account.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyCode getBaseCurrency() {
+		return baseCurrency;
+	}
+
+	public void setBaseCurrency(CurrencyCode baseCurrency) {
+		this.baseCurrency = baseCurrency;
+	}
+
+	public AccountIdentification getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(com.tools20022.repository.entity.AccountIdentification identification) {
+		this.identification = identification;
+	}
+
+	public Account getParentAccount() {
+		return parentAccount;
+	}
+
+	public void setParentAccount(com.tools20022.repository.entity.Account parentAccount) {
+		this.parentAccount = parentAccount;
+	}
+
+	public List<Account> getSubAccount() {
+		return subAccount;
+	}
+
+	public void setSubAccount(List<com.tools20022.repository.entity.Account> subAccount) {
+		this.subAccount = subAccount;
+	}
+
+	public InvestmentFundClassProcessingCharacteristics getRelatedFundProcessingCharacteristics() {
+		return relatedFundProcessingCharacteristics;
+	}
+
+	public void setRelatedFundProcessingCharacteristics(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics relatedFundProcessingCharacteristics) {
+		this.relatedFundProcessingCharacteristics = relatedFundProcessingCharacteristics;
+	}
+
+	public AccountStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(com.tools20022.repository.entity.AccountStatus status) {
+		this.status = status;
+	}
+
+	public LanguageCode getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(LanguageCode language) {
+		this.language = language;
+	}
+
+	public List<AccountPartyRole> getPartyRole() {
+		return partyRole;
+	}
+
+	public void setPartyRole(List<com.tools20022.repository.entity.AccountPartyRole> partyRole) {
+		this.partyRole = partyRole;
+	}
+
+	public TradePartyRole getTradePartyRole() {
+		return tradePartyRole;
+	}
+
+	public void setTradePartyRole(com.tools20022.repository.entity.TradePartyRole tradePartyRole) {
+		this.tradePartyRole = tradePartyRole;
+	}
+
+	public CurrencyCode getReportingCurrency() {
+		return reportingCurrency;
+	}
+
+	public void setReportingCurrency(CurrencyCode reportingCurrency) {
+		this.reportingCurrency = reportingCurrency;
+	}
+
+	public List<AccountRestriction> getAccountRestriction() {
+		return accountRestriction;
+	}
+
+	public void setAccountRestriction(List<com.tools20022.repository.entity.AccountRestriction> accountRestriction) {
+		this.accountRestriction = accountRestriction;
+	}
+
+	public SettlementPartyRole getSettlementPartyRole() {
+		return settlementPartyRole;
+	}
+
+	public void setSettlementPartyRole(com.tools20022.repository.entity.SettlementPartyRole settlementPartyRole) {
+		this.settlementPartyRole = settlementPartyRole;
+	}
+
+	public Max140Text getPurpose() {
+		return purpose;
+	}
+
+	public void setPurpose(Max140Text purpose) {
+		this.purpose = purpose;
+	}
+
+	public ISODateTime getClosingDate() {
+		return closingDate;
+	}
+
+	public void setClosingDate(ISODateTime closingDate) {
+		this.closingDate = closingDate;
+	}
+
+	public ISODateTime getLiveDate() {
+		return liveDate;
+	}
+
+	public void setLiveDate(ISODateTime liveDate) {
+		this.liveDate = liveDate;
+	}
+
+	public DateTimePeriod getReportedPeriod() {
+		return reportedPeriod;
+	}
+
+	public void setReportedPeriod(com.tools20022.repository.entity.DateTimePeriod reportedPeriod) {
+		this.reportedPeriod = reportedPeriod;
+	}
+
+	public InvestmentFundPartyRole getInvestmentFundPartyRole() {
+		return investmentFundPartyRole;
+	}
+
+	public void setInvestmentFundPartyRole(com.tools20022.repository.entity.InvestmentFundPartyRole investmentFundPartyRole) {
+		this.investmentFundPartyRole = investmentFundPartyRole;
+	}
+
+	public Collateral getRelatedCollateralProcess() {
+		return relatedCollateralProcess;
+	}
+
+	public void setRelatedCollateralProcess(com.tools20022.repository.entity.Collateral relatedCollateralProcess) {
+		this.relatedCollateralProcess = relatedCollateralProcess;
+	}
+
+	public GenericIdentification getType() {
+		return type;
+	}
+
+	public void setType(com.tools20022.repository.entity.GenericIdentification type) {
+		this.type = type;
+	}
+
+	public CorporateActionProceedsDeliveryInstruction getRelatedProceedsDelivery() {
+		return relatedProceedsDelivery;
+	}
+
+	public void setRelatedProceedsDelivery(com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction relatedProceedsDelivery) {
+		this.relatedProceedsDelivery = relatedProceedsDelivery;
+	}
+
+	public CorporateActionPartyRole getRelatedCorporateActionPartyRole() {
+		return relatedCorporateActionPartyRole;
+	}
+
+	public void setRelatedCorporateActionPartyRole(com.tools20022.repository.entity.CorporateActionPartyRole relatedCorporateActionPartyRole) {
+		this.relatedCorporateActionPartyRole = relatedCorporateActionPartyRole;
+	}
+
+	public ClearingMemberRole getDefaultFundAccountOwner() {
+		return defaultFundAccountOwner;
+	}
+
+	public void setDefaultFundAccountOwner(com.tools20022.repository.entity.ClearingMemberRole defaultFundAccountOwner) {
+		this.defaultFundAccountOwner = defaultFundAccountOwner;
+	}
+
+	public List<System> getSystem() {
+		return system;
+	}
+
+	public void setSystem(List<com.tools20022.repository.entity.System> system) {
+		this.system = system;
+	}
+
+	public List<Balance> getBalance() {
+		return balance;
+	}
+
+	public void setBalance(List<com.tools20022.repository.entity.Balance> balance) {
+		this.balance = balance;
+	}
+
+	public List<Entry> getEntry() {
+		return entry;
+	}
+
+	public void setEntry(List<com.tools20022.repository.entity.Entry> entry) {
+		this.entry = entry;
+	}
+
+	public List<AccountContract> getAccountContract() {
+		return accountContract;
+	}
+
+	public void setAccountContract(List<com.tools20022.repository.entity.AccountContract> accountContract) {
+		this.accountContract = accountContract;
+	}
+
+	public ISODateTime getOpeningDate() {
+		return openingDate;
+	}
+
+	public void setOpeningDate(ISODateTime openingDate) {
+		this.openingDate = openingDate;
+	}
+
+	public List<CurrencyExchange> getCurrencyExchange() {
+		return currencyExchange;
+	}
+
+	public void setCurrencyExchange(List<com.tools20022.repository.entity.CurrencyExchange> currencyExchange) {
+		this.currencyExchange = currencyExchange;
+	}
+
+	public DefaultFundContribution getDefaultFundContribution() {
+		return defaultFundContribution;
+	}
+
+	public void setDefaultFundContribution(com.tools20022.repository.entity.DefaultFundContribution defaultFundContribution) {
+		this.defaultFundContribution = defaultFundContribution;
+	}
+
+	public SystemMemberRole getSystemMember() {
+		return systemMember;
+	}
+
+	public void setSystemMember(com.tools20022.repository.entity.SystemMemberRole systemMember) {
+		this.systemMember = systemMember;
+	}
+
+	public CollateralAccountTypeCode getCollateralAccountType() {
+		return collateralAccountType;
+	}
+
+	public void setCollateralAccountType(CollateralAccountTypeCode collateralAccountType) {
+		this.collateralAccountType = collateralAccountType;
+	}
+
+	public AccountService getAccountService() {
+		return accountService;
+	}
+
+	public void setAccountService(com.tools20022.repository.entity.AccountService accountService) {
+		this.accountService = accountService;
+	}
+
+	public Reconciliation getReconciliation() {
+		return reconciliation;
+	}
+
+	public void setReconciliation(com.tools20022.repository.entity.Reconciliation reconciliation) {
+		this.reconciliation = reconciliation;
+	}
+
+	public ManagedAccountProduct getManagedAccountProduct() {
+		return managedAccountProduct;
+	}
+
+	public void setManagedAccountProduct(com.tools20022.repository.entity.ManagedAccountProduct managedAccountProduct) {
+		this.managedAccountProduct = managedAccountProduct;
 	}
 }

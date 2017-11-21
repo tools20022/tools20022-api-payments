@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundStructureCode#MultiClassFund
- * FundStructureCode.MultiClassFund}</li>
+ * {@linkplain com.tools20022.repository.codeset.FundStructureCode#mmMultiClassFund
+ * FundStructureCode.mmMultiClassFund}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundStructureCode#SingleClassFund
- * FundStructureCode.SingleClassFund}</li>
+ * {@linkplain com.tools20022.repository.codeset.FundStructureCode#mmSingleClassFund
+ * FundStructureCode.mmSingleClassFund}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class FundStructureCode {
 	 * "Investment fund that contains more than one investment fund class."</li>
 	 * </ul>
 	 */
-	public static final MMCode MultiClassFund = new MMCode() {
+	public static final MMCode mmMultiClassFund = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MultiClassFund";
 			definition = "Investment fund that contains more than one investment fund class.";
 			owner_lazy = () -> FundStructureCode.mmObject();
@@ -114,9 +116,9 @@ public class FundStructureCode {
 	 * "Investment fund that contains only one investment fund class."</li>
 	 * </ul>
 	 */
-	public static final MMCode SingleClassFund = new MMCode() {
+	public static final MMCode mmSingleClassFund = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SingleClassFund";
 			definition = "Investment fund that contains only one investment fund class.";
 			owner_lazy = () -> FundStructureCode.mmObject();
@@ -127,12 +129,12 @@ public class FundStructureCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("MFUN");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundStructureCode";
 				definition = "Specifies the structure of the fund.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FundStructureCode.MultiClassFund, com.tools20022.repository.codeset.FundStructureCode.SingleClassFund);
+				code_lazy = () -> Arrays.asList(FundStructureCode.mmMultiClassFund, FundStructureCode.mmSingleClassFund);
 			}
 		});
 		return mmObject_lazy.get();

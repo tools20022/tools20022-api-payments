@@ -17,14 +17,15 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Number of securities purchased or sold in one transaction. In terms of
@@ -40,25 +41,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#LotUnit
- * LotBreakdown.LotUnit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#mmLotUnit
+ * LotBreakdown.mmLotUnit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LotBreakdown#SecuritiesQuantity
- * LotBreakdown.SecuritiesQuantity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#LotNumber
- * LotBreakdown.LotNumber}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#LotDateTime
- * LotBreakdown.LotDateTime}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#LotPrice
- * LotBreakdown.LotPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#LotIdentifier
- * LotBreakdown.LotIdentifier}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#TradeLotMarket
- * LotBreakdown.TradeLotMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#QuoteLotMarket
- * LotBreakdown.QuoteLotMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#RoundLotMarket
- * LotBreakdown.RoundLotMarket}</li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmSecuritiesQuantity
+ * LotBreakdown.mmSecuritiesQuantity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#mmLotNumber
+ * LotBreakdown.mmLotNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#mmLotDateTime
+ * LotBreakdown.mmLotDateTime}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#mmLotPrice
+ * LotBreakdown.mmLotPrice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmLotIdentifier
+ * LotBreakdown.mmLotIdentifier}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmTradeLotMarket
+ * LotBreakdown.mmTradeLotMarket}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmQuoteLotMarket
+ * LotBreakdown.mmQuoteLotMarket}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmRoundLotMarket
+ * LotBreakdown.mmRoundLotMarket}</li>
  * </ul>
  * </li>
  * <li>
@@ -66,27 +71,28 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForLot
- * GenericIdentification.IdentificationForLot}</li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForLot
+ * GenericIdentification.mmIdentificationForLot}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#LotBreakdown
- * SecuritiesPricing.LotBreakdown}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#TradeLotSize
- * TradingMarket.TradeLotSize}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#QuoteLot
- * TradingMarket.QuoteLot}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#RoundLot
- * TradingMarket.RoundLot}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmLotBreakdown
+ * SecuritiesPricing.mmLotBreakdown}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#LotBreakdown
- * SecuritiesQuantity.LotBreakdown}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradeLotSize
+ * TradingMarket.mmTradeLotSize}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmQuoteLot
+ * TradingMarket.mmQuoteLot}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmRoundLot
+ * TradingMarket.mmRoundLot}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmLotBreakdown
+ * SecuritiesQuantity.mmLotBreakdown}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,6 +108,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class LotBreakdown {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DecimalNumber lotUnit;
 	/**
 	 * Quantity of securities included in the lot.
 	 * <p>
@@ -127,18 +134,27 @@ public class LotBreakdown {
 	 * definition} = "Quantity of securities included in the lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LotUnit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLotUnit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotUnit";
 			definition = "Quantity of securities included in the lot.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LotBreakdown.class.getMethod("getLotUnit", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity securitiesQuantity;
 	/**
 	 * Number of securities included in a lot.
 	 * <p>
@@ -147,8 +163,8 @@ public class LotBreakdown {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#LotBreakdown
-	 * SecuritiesQuantity.LotBreakdown}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmLotBreakdown
+	 * SecuritiesQuantity.mmLotBreakdown}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -171,20 +187,21 @@ public class LotBreakdown {
 	 * definition} = "Number of securities included in a lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantity";
 			definition = "Number of securities included in a lot.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmLotBreakdown;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.LotBreakdown;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.GenericIdentification> lotNumber;
 	/**
 	 * Specifies the number of the lot.
 	 * <p>
@@ -193,8 +210,8 @@ public class LotBreakdown {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#IdentificationForLot
-	 * GenericIdentification.IdentificationForLot}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentificationForLot
+	 * GenericIdentification.mmIdentificationForLot}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -218,19 +235,20 @@ public class LotBreakdown {
 	 * definition} = "Specifies the number of the lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd LotNumber = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLotNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotNumber";
 			definition = "Specifies the number of the lot.";
 			minOccurs = 0;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.IdentificationForLot;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmIdentificationForLot;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected ISODateTime lotDateTime;
 	/**
 	 * Date and time at which the lot was purchased.
 	 * <p>
@@ -255,18 +273,27 @@ public class LotBreakdown {
 	 * definition} = "Date and time at which the lot was purchased."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LotDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLotDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotDateTime";
 			definition = "Date and time at which the lot was purchased.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LotBreakdown.class.getMethod("getLotDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice;
 	/**
 	 * Specifies the price of the lot.
 	 * <p>
@@ -275,8 +302,8 @@ public class LotBreakdown {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#LotBreakdown
-	 * SecuritiesPricing.LotBreakdown}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmLotBreakdown
+	 * SecuritiesPricing.mmLotBreakdown}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -299,19 +326,20 @@ public class LotBreakdown {
 	 * definition} = "Specifies the price of the lot."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd LotPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLotPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotPrice";
 			definition = "Specifies the price of the lot.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.LotBreakdown;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmLotBreakdown;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected Max35Text lotIdentifier;
 	/**
 	 * Identifies the lot constituting an asset backed or mortgage backed
 	 * security issue.
@@ -339,18 +367,27 @@ public class LotBreakdown {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LotIdentifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLotIdentifier = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LotIdentifier";
 			definition = "Identifies the lot constituting an asset backed or mortgage backed security issue.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LotBreakdown.class.getMethod("getLotIdentifier", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TradingMarket tradeLotMarket;
 	/**
 	 * Market for which a trade lot is specified.
 	 * <p>
@@ -359,8 +396,8 @@ public class LotBreakdown {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingMarket#TradeLotSize
-	 * TradingMarket.TradeLotSize}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradeLotSize
+	 * TradingMarket.mmTradeLotSize}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -383,20 +420,21 @@ public class LotBreakdown {
 	 * definition} = "Market for which a trade lot is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeLotMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeLotMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeLotMarket";
 			definition = "Market for which a trade lot is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> TradingMarket.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.TradeLotSize;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmTradeLotSize;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 		}
 	};
+	protected TradingMarket quoteLotMarket;
 	/**
 	 * Market for which a quote lot is specified.
 	 * <p>
@@ -405,8 +443,8 @@ public class LotBreakdown {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingMarket#QuoteLot
-	 * TradingMarket.QuoteLot}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingMarket#mmQuoteLot
+	 * TradingMarket.mmQuoteLot}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -429,20 +467,21 @@ public class LotBreakdown {
 	 * definition} = "Market for which a quote lot is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd QuoteLotMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmQuoteLotMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteLotMarket";
 			definition = "Market for which a quote lot is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> TradingMarket.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.QuoteLot;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmQuoteLot;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 		}
 	};
+	protected TradingMarket roundLotMarket;
 	/**
 	 * Market for which a round lot size is specified.
 	 * <p>
@@ -451,8 +490,8 @@ public class LotBreakdown {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingMarket#RoundLot
-	 * TradingMarket.RoundLot}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingMarket#mmRoundLot
+	 * TradingMarket.mmRoundLot}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -475,36 +514,113 @@ public class LotBreakdown {
 	 * definition} = "Market for which a round lot size is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RoundLotMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRoundLotMarket = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LotBreakdown.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundLotMarket";
 			definition = "Market for which a round lot size is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> TradingMarket.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.RoundLot;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmRoundLot;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LotBreakdown";
 				definition = "Number of securities purchased or sold in one transaction. In terms of options, a lot represents the number of contracts contained in one derivative security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.IdentificationForLot, com.tools20022.repository.entity.SecuritiesPricing.LotBreakdown,
-						com.tools20022.repository.entity.TradingMarket.TradeLotSize, com.tools20022.repository.entity.TradingMarket.QuoteLot, com.tools20022.repository.entity.TradingMarket.RoundLot,
-						com.tools20022.repository.entity.SecuritiesQuantity.LotBreakdown);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LotBreakdown.LotUnit, com.tools20022.repository.entity.LotBreakdown.SecuritiesQuantity, com.tools20022.repository.entity.LotBreakdown.LotNumber,
-						com.tools20022.repository.entity.LotBreakdown.LotDateTime, com.tools20022.repository.entity.LotBreakdown.LotPrice, com.tools20022.repository.entity.LotBreakdown.LotIdentifier,
-						com.tools20022.repository.entity.LotBreakdown.TradeLotMarket, com.tools20022.repository.entity.LotBreakdown.QuoteLotMarket, com.tools20022.repository.entity.LotBreakdown.RoundLotMarket);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmIdentificationForLot, com.tools20022.repository.entity.SecuritiesPricing.mmLotBreakdown,
+						com.tools20022.repository.entity.TradingMarket.mmTradeLotSize, com.tools20022.repository.entity.TradingMarket.mmQuoteLot, com.tools20022.repository.entity.TradingMarket.mmRoundLot,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmLotBreakdown);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LotBreakdown.mmLotUnit, com.tools20022.repository.entity.LotBreakdown.mmSecuritiesQuantity, com.tools20022.repository.entity.LotBreakdown.mmLotNumber,
+						com.tools20022.repository.entity.LotBreakdown.mmLotDateTime, com.tools20022.repository.entity.LotBreakdown.mmLotPrice, com.tools20022.repository.entity.LotBreakdown.mmLotIdentifier,
+						com.tools20022.repository.entity.LotBreakdown.mmTradeLotMarket, com.tools20022.repository.entity.LotBreakdown.mmQuoteLotMarket, com.tools20022.repository.entity.LotBreakdown.mmRoundLotMarket);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return LotBreakdown.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DecimalNumber getLotUnit() {
+		return lotUnit;
+	}
+
+	public void setLotUnit(DecimalNumber lotUnit) {
+		this.lotUnit = lotUnit;
+	}
+
+	public SecuritiesQuantity getSecuritiesQuantity() {
+		return securitiesQuantity;
+	}
+
+	public void setSecuritiesQuantity(com.tools20022.repository.entity.SecuritiesQuantity securitiesQuantity) {
+		this.securitiesQuantity = securitiesQuantity;
+	}
+
+	public List<GenericIdentification> getLotNumber() {
+		return lotNumber;
+	}
+
+	public void setLotNumber(List<com.tools20022.repository.entity.GenericIdentification> lotNumber) {
+		this.lotNumber = lotNumber;
+	}
+
+	public ISODateTime getLotDateTime() {
+		return lotDateTime;
+	}
+
+	public void setLotDateTime(ISODateTime lotDateTime) {
+		this.lotDateTime = lotDateTime;
+	}
+
+	public List<SecuritiesPricing> getLotPrice() {
+		return lotPrice;
+	}
+
+	public void setLotPrice(List<com.tools20022.repository.entity.SecuritiesPricing> lotPrice) {
+		this.lotPrice = lotPrice;
+	}
+
+	public Max35Text getLotIdentifier() {
+		return lotIdentifier;
+	}
+
+	public void setLotIdentifier(Max35Text lotIdentifier) {
+		this.lotIdentifier = lotIdentifier;
+	}
+
+	public TradingMarket getTradeLotMarket() {
+		return tradeLotMarket;
+	}
+
+	public void setTradeLotMarket(com.tools20022.repository.entity.TradingMarket tradeLotMarket) {
+		this.tradeLotMarket = tradeLotMarket;
+	}
+
+	public TradingMarket getQuoteLotMarket() {
+		return quoteLotMarket;
+	}
+
+	public void setQuoteLotMarket(com.tools20022.repository.entity.TradingMarket quoteLotMarket) {
+		this.quoteLotMarket = quoteLotMarket;
+	}
+
+	public TradingMarket getRoundLotMarket() {
+		return roundLotMarket;
+	}
+
+	public void setRoundLotMarket(com.tools20022.repository.entity.TradingMarket roundLotMarket) {
+		this.roundLotMarket = roundLotMarket;
 	}
 }

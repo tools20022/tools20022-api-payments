@@ -17,18 +17,21 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.Party10Choice;
+import com.tools20022.repository.choice.Party11Choice;
 import com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ContactDetails2;
 import com.tools20022.repository.msg.ContactDetails3;
 import com.tools20022.repository.msg.GenericPersonIdentification1;
 import com.tools20022.repository.msg.PersonIdentification5;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Unique and unambiguous way to identify a person.
@@ -43,53 +46,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#SocialSecurityNumber
- * PersonIdentification.SocialSecurityNumber}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PersonIdentification#Person
- * PersonIdentification.Person}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmSocialSecurityNumber
+ * PersonIdentification.mmSocialSecurityNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#PersonName
- * PersonIdentification.PersonName}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmPerson
+ * PersonIdentification.mmPerson}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#DriversLicenseNumber
- * PersonIdentification.DriversLicenseNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmPersonName
+ * PersonIdentification.mmPersonName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#AlienRegistrationNumber
- * PersonIdentification.AlienRegistrationNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmDriversLicenseNumber
+ * PersonIdentification.mmDriversLicenseNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#PassportNumber
- * PersonIdentification.PassportNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmAlienRegistrationNumber
+ * PersonIdentification.mmAlienRegistrationNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#IdentityCardNumber
- * PersonIdentification.IdentityCardNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmPassportNumber
+ * PersonIdentification.mmPassportNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PersonIdentification#EmployerIdentificationNumber
- * PersonIdentification.EmployerIdentificationNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmIdentityCardNumber
+ * PersonIdentification.mmIdentityCardNumber}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PersonIdentification#mmEmployerIdentificationNumber
+ * PersonIdentification.mmEmployerIdentificationNumber}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.PersonName#Identification
- * PersonName.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Person#PersonIdentification
- * Person.PersonIdentification}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.choice.Party11Choice#PrivateIdentification
- * Party11Choice.PrivateIdentification}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation
- * PartyIdentificationInformation}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -108,10 +89,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.PersonName#mmIdentification
+ * PersonName.mmIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Person#mmPersonIdentification
+ * Person.mmPersonIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Party11Choice#mmPrivateIdentification
+ * Party11Choice.mmPrivateIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Party10Choice#mmPrivateIdentification
+ * Party10Choice.mmPrivateIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation
+ * PartyIdentificationInformation}</li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,6 +133,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PersonIdentification extends PartyIdentificationInformation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text socialSecurityNumber;
 	/**
 	 * Number assigned by a social security agency.
 	 * <p>
@@ -150,18 +159,27 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * definition} = "Number assigned by a social security agency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SocialSecurityNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSocialSecurityNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SocialSecurityNumber";
 			definition = "Number assigned by a social security agency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PersonIdentification.class.getMethod("getSocialSecurityNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Person person;
 	/**
 	 * Person for which an identification is provided.
 	 * <p>
@@ -170,8 +188,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Person#PersonIdentification
-	 * Person.PersonIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Person#mmPersonIdentification
+	 * Person.mmPersonIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -182,8 +200,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification5#DateAndPlaceOfBirth
-	 * PersonIdentification5.DateAndPlaceOfBirth}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification5#mmDateAndPlaceOfBirth
+	 * PersonIdentification5.mmDateAndPlaceOfBirth}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -202,21 +220,22 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * definition} = "Person for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Person = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PersonIdentification5.DateAndPlaceOfBirth);
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmDateAndPlaceOfBirth);
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Person";
 			definition = "Person for which an identification is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmPersonIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Person.PersonIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.PersonName> personName;
 	/**
 	 * Name by which a person is known and which is usually used to identify
 	 * that person. It is derived from PartyName (association between
@@ -227,8 +246,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PersonName#Identification
-	 * PersonName.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PersonName#mmIdentification
+	 * PersonName.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -254,19 +273,20 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PersonName = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPersonName = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PersonName";
 			definition = "Name by which a person is known and which is usually used to identify that person. It is derived from PartyName (association between PartyIdentificationInformation and PartyName).";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PersonName.mmIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PersonName.Identification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text driversLicenseNumber;
 	/**
 	 * Number assigned by a license authority to a driver's license.
 	 * <p>
@@ -293,18 +313,27 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned by a license authority to a driver's license."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DriversLicenseNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDriversLicenseNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DriversLicenseNumber";
 			definition = "Number assigned by a license authority to a driver's license.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PersonIdentification.class.getMethod("getDriversLicenseNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text alienRegistrationNumber;
 	/**
 	 * Number assigned by a government agency to identify foreign nationals.
 	 * <p>
@@ -331,18 +360,27 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned by a government agency to identify foreign nationals."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AlienRegistrationNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAlienRegistrationNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AlienRegistrationNumber";
 			definition = "Number assigned by a government agency to identify foreign nationals.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PersonIdentification.class.getMethod("getAlienRegistrationNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text passportNumber;
 	/**
 	 * Number assigned by a passport authority to a passport.
 	 * <p>
@@ -368,18 +406,27 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * definition} = "Number assigned by a passport authority to a passport."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PassportNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPassportNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PassportNumber";
 			definition = "Number assigned by a passport authority to a passport.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PersonIdentification.class.getMethod("getPassportNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text identityCardNumber;
 	/**
 	 * Number assigned by a national authority to an identity card.
 	 * <p>
@@ -406,18 +453,27 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned by a national authority to an identity card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IdentityCardNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIdentityCardNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentityCardNumber";
 			definition = "Number assigned by a national authority to an identity card.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PersonIdentification.class.getMethod("getIdentityCardNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text employerIdentificationNumber;
 	/**
 	 * Number assigned to an employer by a registration authority.
 	 * <p>
@@ -444,37 +500,114 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned to an employer by a registration authority."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EmployerIdentificationNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEmployerIdentificationNumber = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PersonIdentification.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployerIdentificationNumber";
 			definition = "Number assigned to an employer by a registration authority.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return PersonIdentification.class.getMethod("getEmployerIdentificationNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentification";
 				definition = "Unique and unambiguous way to identify a person.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonName.Identification, com.tools20022.repository.entity.Person.PersonIdentification);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Party11Choice.PrivateIdentification);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonName.mmIdentification, com.tools20022.repository.entity.Person.mmPersonIdentification);
+				derivationElement_lazy = () -> Arrays.asList(Party11Choice.mmPrivateIdentification, Party10Choice.mmPrivateIdentification);
 				superType_lazy = () -> PartyIdentificationInformation.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonIdentification.SocialSecurityNumber, com.tools20022.repository.entity.PersonIdentification.Person,
-						com.tools20022.repository.entity.PersonIdentification.PersonName, com.tools20022.repository.entity.PersonIdentification.DriversLicenseNumber,
-						com.tools20022.repository.entity.PersonIdentification.AlienRegistrationNumber, com.tools20022.repository.entity.PersonIdentification.PassportNumber,
-						com.tools20022.repository.entity.PersonIdentification.IdentityCardNumber, com.tools20022.repository.entity.PersonIdentification.EmployerIdentificationNumber);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonIdentification.mmSocialSecurityNumber, com.tools20022.repository.entity.PersonIdentification.mmPerson,
+						com.tools20022.repository.entity.PersonIdentification.mmPersonName, com.tools20022.repository.entity.PersonIdentification.mmDriversLicenseNumber,
+						com.tools20022.repository.entity.PersonIdentification.mmAlienRegistrationNumber, com.tools20022.repository.entity.PersonIdentification.mmPassportNumber,
+						com.tools20022.repository.entity.PersonIdentification.mmIdentityCardNumber, com.tools20022.repository.entity.PersonIdentification.mmEmployerIdentificationNumber);
 				derivationComponent_lazy = () -> Arrays.asList(PersonIdentificationSchemeName1Choice.mmObject(), GenericPersonIdentification1.mmObject(), PersonIdentification5.mmObject(), ContactDetails2.mmObject(),
 						ContactDetails3.mmObject());
 			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PersonIdentification.class;
+			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getSocialSecurityNumber() {
+		return socialSecurityNumber;
+	}
+
+	public void setSocialSecurityNumber(Max35Text socialSecurityNumber) {
+		this.socialSecurityNumber = socialSecurityNumber;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(com.tools20022.repository.entity.Person person) {
+		this.person = person;
+	}
+
+	public List<PersonName> getPersonName() {
+		return personName;
+	}
+
+	public void setPersonName(List<com.tools20022.repository.entity.PersonName> personName) {
+		this.personName = personName;
+	}
+
+	public Max35Text getDriversLicenseNumber() {
+		return driversLicenseNumber;
+	}
+
+	public void setDriversLicenseNumber(Max35Text driversLicenseNumber) {
+		this.driversLicenseNumber = driversLicenseNumber;
+	}
+
+	public Max35Text getAlienRegistrationNumber() {
+		return alienRegistrationNumber;
+	}
+
+	public void setAlienRegistrationNumber(Max35Text alienRegistrationNumber) {
+		this.alienRegistrationNumber = alienRegistrationNumber;
+	}
+
+	public Max35Text getPassportNumber() {
+		return passportNumber;
+	}
+
+	public void setPassportNumber(Max35Text passportNumber) {
+		this.passportNumber = passportNumber;
+	}
+
+	public Max35Text getIdentityCardNumber() {
+		return identityCardNumber;
+	}
+
+	public void setIdentityCardNumber(Max35Text identityCardNumber) {
+		this.identityCardNumber = identityCardNumber;
+	}
+
+	public Max35Text getEmployerIdentificationNumber() {
+		return employerIdentificationNumber;
+	}
+
+	public void setEmployerIdentificationNumber(Max35Text employerIdentificationNumber) {
+		this.employerIdentificationNumber = employerIdentificationNumber;
 	}
 }

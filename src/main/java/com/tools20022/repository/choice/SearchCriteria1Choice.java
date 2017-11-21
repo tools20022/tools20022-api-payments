@@ -19,12 +19,21 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.InformationRequestOpeningV01;
+import com.tools20022.repository.area.auth.InformationRequestResponseV01;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AccountAndParties1;
 import com.tools20022.repository.msg.CustomerIdentification1;
 import com.tools20022.repository.msg.PaymentInstrumentType1;
 import com.tools20022.repository.msg.RequestType1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Choice of search criteria for the financial investigation.
@@ -36,17 +45,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#Account
- * SearchCriteria1Choice.Account}</li>
+ * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#mmAccount
+ * SearchCriteria1Choice.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#CustomerIdentification
- * SearchCriteria1Choice.CustomerIdentification}</li>
+ * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#mmCustomerIdentification
+ * SearchCriteria1Choice.mmCustomerIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#PaymentInstrument
- * SearchCriteria1Choice.PaymentInstrument}</li>
+ * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#mmPaymentInstrument
+ * SearchCriteria1Choice.mmPaymentInstrument}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#OriginalTransactionNumber
- * SearchCriteria1Choice.OriginalTransactionNumber}</li>
+ * {@linkplain com.tools20022.repository.choice.SearchCriteria1Choice#mmOriginalTransactionNumber
+ * SearchCriteria1Choice.mmOriginalTransactionNumber}</li>
  * </ul>
  * </li>
  * <li>
@@ -54,18 +63,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestOpeningV01#SearchCriteria
- * InformationRequestOpeningV01.SearchCriteria}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestOpeningV01#mmSearchCriteria
+ * InformationRequestOpeningV01.mmSearchCriteria}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#SearchCriteria
- * InformationRequestResponseV01.SearchCriteria}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmSearchCriteria
+ * InformationRequestResponseV01.mmSearchCriteria}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,9 +85,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Choice of search criteria for the financial investigation."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "SearchCriteria1Choice", propOrder = {"account", "customerIdentification", "paymentInstrument", "originalTransactionNumber"})
 public class SearchCriteria1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected AccountAndParties1 account;
 	/**
 	 * Identifies the account as the search criteria for the financial
 	 * institution to do the investigation.
@@ -110,19 +122,20 @@ public class SearchCriteria1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Account = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAccount = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Acct";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Account";
 			definition = "Identifies the account as the search criteria for the financial institution to do the investigation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> AccountAndParties1.mmObject();
 		}
 	};
+	protected CustomerIdentification1 customerIdentification;
 	/**
 	 * Identifies a customer identification as the search criteria for the
 	 * financial institution to do the investigation.
@@ -154,19 +167,20 @@ public class SearchCriteria1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CustomerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCustomerIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "CstmrId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CustomerIdentification";
 			definition = "Identifies a customer identification as the search criteria for the financial institution to do the investigation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> CustomerIdentification1.mmObject();
 		}
 	};
+	protected PaymentInstrumentType1 paymentInstrument;
 	/**
 	 * Identifies a payment instrument as the search criteria for the financial
 	 * institution to do the investigation.
@@ -198,19 +212,20 @@ public class SearchCriteria1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PaymentInstrument = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPaymentInstrument = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "PmtInstrm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentInstrument";
 			definition = "Identifies a payment instrument as the search criteria for the financial institution to do the investigation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> PaymentInstrumentType1.mmObject();
 		}
 	};
+	protected List<RequestType1> originalTransactionNumber;
 	/**
 	 * Specifies the original transaction number.
 	 * <p>
@@ -238,12 +253,12 @@ public class SearchCriteria1Choice {
 	 * definition} = "Specifies the original transaction number."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalTransactionNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalTransactionNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> SearchCriteria1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlTxNb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalTransactionNumber";
 			definition = "Specifies the original transaction number.";
 			minOccurs = 1;
@@ -254,15 +269,50 @@ public class SearchCriteria1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.SearchCriteria1Choice.Account, com.tools20022.repository.choice.SearchCriteria1Choice.CustomerIdentification,
-						com.tools20022.repository.choice.SearchCriteria1Choice.PaymentInstrument, com.tools20022.repository.choice.SearchCriteria1Choice.OriginalTransactionNumber);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.InformationRequestOpeningV01.SearchCriteria, com.tools20022.repository.area.auth.InformationRequestResponseV01.SearchCriteria);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(SearchCriteria1Choice.mmAccount, SearchCriteria1Choice.mmCustomerIdentification, SearchCriteria1Choice.mmPaymentInstrument, SearchCriteria1Choice.mmOriginalTransactionNumber);
+				messageBuildingBlock_lazy = () -> Arrays.asList(InformationRequestOpeningV01.mmSearchCriteria, InformationRequestResponseV01.mmSearchCriteria);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SearchCriteria1Choice";
 				definition = "Choice of search criteria for the financial investigation.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Acct", required = true)
+	public AccountAndParties1 getAccount() {
+		return account;
+	}
+
+	public void setAccount(AccountAndParties1 account) {
+		this.account = account;
+	}
+
+	@XmlElement(name = "CstmrId", required = true)
+	public CustomerIdentification1 getCustomerIdentification() {
+		return customerIdentification;
+	}
+
+	public void setCustomerIdentification(CustomerIdentification1 customerIdentification) {
+		this.customerIdentification = customerIdentification;
+	}
+
+	@XmlElement(name = "PmtInstrm", required = true)
+	public PaymentInstrumentType1 getPaymentInstrument() {
+		return paymentInstrument;
+	}
+
+	public void setPaymentInstrument(PaymentInstrumentType1 paymentInstrument) {
+		this.paymentInstrument = paymentInstrument;
+	}
+
+	@XmlElement(name = "OrgnlTxNb", required = true)
+	public List<RequestType1> getOriginalTransactionNumber() {
+		return originalTransactionNumber;
+	}
+
+	public void setOriginalTransactionNumber(List<RequestType1> originalTransactionNumber) {
+		this.originalTransactionNumber = originalTransactionNumber;
 	}
 }

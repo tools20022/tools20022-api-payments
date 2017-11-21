@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,16 +37,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Order#Trade Order.Trade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Order#MasterIdentification
- * Order.MasterIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Order#mmTrade Order.mmTrade}
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Order#mmMasterIdentification
+ * Order.mmMasterIdentification}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Trade#Order Trade.Order}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Trade#mmOrder Trade.mmOrder}
+ * </li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -61,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,6 +81,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Order {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Trade trade;
 	/**
 	 * Agreement between two parties to buy and sell assets.
 	 * <p>
@@ -85,8 +89,8 @@ public class Order {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Trade#Order
-	 * Trade.Order}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Trade#mmOrder
+	 * Trade.mmOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -108,20 +112,21 @@ public class Order {
 	 * definition} = "Agreement between two parties to buy and sell assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Trade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Order.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trade";
 			definition = "Agreement between two parties to buy and sell assets.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmOrder;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.Order;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text masterIdentification;
 	/**
 	 * Unique and unambiguous identifier for a group of individual orders, as
 	 * assigned by the instructing party. This identifier links the individual
@@ -150,31 +155,60 @@ public class Order {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MasterIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMasterIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Order.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Order.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MasterIdentification";
 			definition = "Unique and unambiguous identifier for a group of individual orders, as assigned by the instructing party. This identifier links the individual orders together.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Order.class.getMethod("getMasterIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Order";
 				definition = "Order placed by an investor to buy or sell an asset at a price specified or not.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.Order);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmOrder);
 				subType_lazy = () -> Arrays.asList(SecuritiesOrder.mmObject(), PurchaseOrder.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Order.Trade, com.tools20022.repository.entity.Order.MasterIdentification);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Order.mmTrade, com.tools20022.repository.entity.Order.mmMasterIdentification);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Order.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Trade getTrade() {
+		return trade;
+	}
+
+	public void setTrade(com.tools20022.repository.entity.Trade trade) {
+		this.trade = trade;
+	}
+
+	public Max35Text getMasterIdentification() {
+		return masterIdentification;
+	}
+
+	public void setMasterIdentification(Max35Text masterIdentification) {
+		this.masterIdentification = masterIdentification;
 	}
 }

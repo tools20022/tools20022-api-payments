@@ -19,12 +19,18 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.FinancialInstitution;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5;
 import com.tools20022.repository.msg.PartyIdentification77;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Identification of a person, an organisation or a financial institution.
@@ -35,10 +41,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#Party
- * Party28Choice.Party}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#Agent
- * Party28Choice.Agent}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmParty
+ * Party28Choice.mmParty}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmAgent
+ * Party28Choice.mmAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,9 +70,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.choice.Party12Choice Party12Choice}</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Party28Choice", propOrder = {"party", "agent"})
 public class Party28Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected PartyIdentification77 party;
 	/**
 	 * Identification of a person or an organisation.
 	 * <p>
@@ -99,26 +108,27 @@ public class Party28Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.choice.Party12Choice#Party
-	 * Party12Choice.Party}</li>
+	 * {@linkplain com.tools20022.repository.choice.Party12Choice#mmParty
+	 * Party12Choice.mmParty}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Party = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmParty = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> Party28Choice.mmObject();
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
+			componentContext_lazy = () -> Party28Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Pty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Party";
 			definition = "Identification of a person or an organisation.";
-			previousVersion_lazy = () -> com.tools20022.repository.choice.Party12Choice.Party;
-			minOccurs = 1;
+			previousVersion_lazy = () -> Party12Choice.mmParty;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification77.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> PartyIdentification77.mmObject();
 		}
 	};
+	protected BranchAndFinancialInstitutionIdentification5 agent;
 	/**
 	 * Identification of a financial institution.
 	 * <p>
@@ -152,39 +162,57 @@ public class Party28Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.choice.Party12Choice#Agent
-	 * Party12Choice.Agent}</li>
+	 * {@linkplain com.tools20022.repository.choice.Party12Choice#mmAgent
+	 * Party12Choice.mmAgent}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Agent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmAgent = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> Party28Choice.mmObject();
 			businessComponentTrace_lazy = () -> FinancialInstitution.mmObject();
+			componentContext_lazy = () -> Party28Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Agt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Agent";
 			definition = "Identification of a financial institution.";
-			previousVersion_lazy = () -> com.tools20022.repository.choice.Party12Choice.Agent;
-			minOccurs = 1;
+			previousVersion_lazy = () -> Party12Choice.mmAgent;
 			maxOccurs = 1;
-			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Party28Choice.Party, com.tools20022.repository.choice.Party28Choice.Agent);
+				messageElement_lazy = () -> Arrays.asList(Party28Choice.mmParty, Party28Choice.mmAgent);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Party28Choice";
 				definition = "Identification of a person, an organisation or a financial institution.";
 				previousVersion_lazy = () -> Party12Choice.mmObject();
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Pty", required = true)
+	public PartyIdentification77 getParty() {
+		return party;
+	}
+
+	public void setParty(PartyIdentification77 party) {
+		this.party = party;
+	}
+
+	@XmlElement(name = "Agt", required = true)
+	public BranchAndFinancialInstitutionIdentification5 getAgent() {
+		return agent;
+	}
+
+	public void setAgent(BranchAndFinancialInstitutionIdentification5 agent) {
+		this.agent = agent;
 	}
 }

@@ -18,7 +18,9 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMMultiplicityEntity;
 import com.tools20022.metamodel.MMRepositoryConcept;
 import com.tools20022.metamodel.MMRepositoryType;
@@ -29,6 +31,11 @@ import java.util.function.Supplier;
  * MessageElement or a MessageBuildingBlock.
  */
 public interface MMConstruct extends MMRepositoryConcept, MMMultiplicityEntity {
+
+	/**
+	 * The type of this Member
+	 */
+	public final static MetamodelAttribute<MMConstruct, MMRepositoryType> memberTypeAttribute = newAttribute();
 
 	public static MetamodelType<MMConstruct> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMConstruct.class);

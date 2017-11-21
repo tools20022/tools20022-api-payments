@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.entity.IdentificationIssuerRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements to fully identify a proprietary bank transaction code.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1#Code
- * ProprietaryBankTransactionCodeStructure1.Code}</li>
+ * {@linkplain com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1#mmCode
+ * ProprietaryBankTransactionCodeStructure1.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1#Issuer
- * ProprietaryBankTransactionCodeStructure1.Issuer}</li>
+ * {@linkplain com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1#mmIssuer
+ * ProprietaryBankTransactionCodeStructure1.mmIssuer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Set of elements to fully identify a proprietary bank transaction code."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ProprietaryBankTransactionCodeStructure1", propOrder = {"code", "issuer"})
 public class ProprietaryBankTransactionCodeStructure1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text code;
 	/**
 	 * Proprietary bank transaction code to identify the underlying transaction.
 	 * <p>
@@ -76,8 +85,8 @@ public class ProprietaryBankTransactionCodeStructure1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Identification
-	 * GenericIdentification.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmIdentification
+	 * GenericIdentification.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -98,20 +107,21 @@ public class ProprietaryBankTransactionCodeStructure1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
 			componentContext_lazy = () -> ProprietaryBankTransactionCodeStructure1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Identification;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Proprietary bank transaction code to identify the underlying transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text issuer;
 	/**
 	 * Identification of the issuer of the proprietary bank transaction code.
 	 * <p>
@@ -145,17 +155,17 @@ public class ProprietaryBankTransactionCodeStructure1 {
 	 * "Identification of the issuer of the proprietary bank transaction code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Issuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> ProprietaryBankTransactionCodeStructure1.mmObject();
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
+			componentContext_lazy = () -> ProprietaryBankTransactionCodeStructure1.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Identification of the issuer of the proprietary bank transaction code.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -163,14 +173,32 @@ public class ProprietaryBankTransactionCodeStructure1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1.Code, com.tools20022.repository.msg.ProprietaryBankTransactionCodeStructure1.Issuer);
+				messageElement_lazy = () -> Arrays.asList(ProprietaryBankTransactionCodeStructure1.mmCode, ProprietaryBankTransactionCodeStructure1.mmIssuer);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProprietaryBankTransactionCodeStructure1";
 				definition = "Set of elements to fully identify a proprietary bank transaction code.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public Max35Text getCode() {
+		return code;
+	}
+
+	public void setCode(Max35Text code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Issr")
+	public Max35Text getIssuer() {
+		return issuer;
+	}
+
+	public void setIssuer(Max35Text issuer) {
+		this.issuer = issuer;
 	}
 }

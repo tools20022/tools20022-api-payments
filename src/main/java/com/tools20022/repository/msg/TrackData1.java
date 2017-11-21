@@ -19,11 +19,17 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Exact1NumericText;
 import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.PaymentCard;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Magnetic track or equivalent payment card data.
@@ -34,10 +40,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TrackData1#TrackNumber
- * TrackData1.TrackNumber}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TrackData1#TrackValue
- * TrackData1.TrackValue}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TrackData1#mmTrackNumber
+ * TrackData1.mmTrackNumber}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TrackData1#mmTrackValue
+ * TrackData1.mmTrackValue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -46,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -58,9 +64,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Magnetic track or equivalent payment card data."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TrackData1", propOrder = {"trackNumber", "trackValue"})
 public class TrackData1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Exact1NumericText trackNumber;
 	/**
 	 * Track number of the card.
 	 * <p>
@@ -88,19 +97,20 @@ public class TrackData1 {
 	 * definition} = "Track number of the card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TrackNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTrackNumber = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> TrackData1.mmObject();
 			isDerived = false;
 			xmlTag = "TrckNb";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TrackNumber";
 			definition = "Track number of the card.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
 		}
 	};
+	protected Max140Text trackValue;
 	/**
 	 * Card track content or equivalent.
 	 * <p>
@@ -113,8 +123,8 @@ public class TrackData1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentCard#TrackValue
-	 * PaymentCard.TrackValue}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentCard#mmTrackValue
+	 * PaymentCard.mmTrackValue}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} = {@linkplain com.tools20022.repository.msg.TrackData1
@@ -132,17 +142,17 @@ public class TrackData1 {
 	 * definition} = "Card track content or equivalent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TrackValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTrackValue = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentCard.mmTrackValue;
 			componentContext_lazy = () -> TrackData1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentCard.TrackValue;
 			isDerived = false;
 			xmlTag = "TrckVal";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TrackValue";
 			definition = "Card track content or equivalent.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
@@ -150,14 +160,32 @@ public class TrackData1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TrackData1.TrackNumber, com.tools20022.repository.msg.TrackData1.TrackValue);
+				messageElement_lazy = () -> Arrays.asList(TrackData1.mmTrackNumber, TrackData1.mmTrackValue);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TrackData1";
 				definition = "Magnetic track or equivalent payment card data.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "TrckNb")
+	public Exact1NumericText getTrackNumber() {
+		return trackNumber;
+	}
+
+	public void setTrackNumber(Exact1NumericText trackNumber) {
+		this.trackNumber = trackNumber;
+	}
+
+	@XmlElement(name = "TrckVal", required = true)
+	public Max140Text getTrackValue() {
+		return trackValue;
+	}
+
+	public void setTrackValue(Max140Text trackValue) {
+		this.trackValue = trackValue;
 	}
 }

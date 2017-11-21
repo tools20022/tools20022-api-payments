@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdjustmentDirectionCode#Added
- * AdjustmentDirectionCode.Added}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdjustmentDirectionCode#mmAdded
+ * AdjustmentDirectionCode.mmAdded}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AdjustmentDirectionCode#Substracted
- * AdjustmentDirectionCode.Substracted}</li>
+ * {@linkplain com.tools20022.repository.codeset.AdjustmentDirectionCode#mmSubstracted
+ * AdjustmentDirectionCode.mmSubstracted}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class AdjustmentDirectionCode {
 	 * definition} = "Adjustment amount must be added to the total amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode Added = new MMCode() {
+	public static final MMCode mmAdded = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Added";
 			definition = "Adjustment amount must be added to the total amount.";
 			owner_lazy = () -> AdjustmentDirectionCode.mmObject();
@@ -115,9 +117,9 @@ public class AdjustmentDirectionCode {
 	 * "Adjustment amount must be substracted from the total amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode Substracted = new MMCode() {
+	public static final MMCode mmSubstracted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Substracted";
 			definition = "Adjustment amount must be substracted from the total amount.";
 			owner_lazy = () -> AdjustmentDirectionCode.mmObject();
@@ -128,12 +130,12 @@ public class AdjustmentDirectionCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ADDD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdjustmentDirectionCode";
 				definition = "Specifies whether the adjustment is added or substracted to the total amount.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AdjustmentDirectionCode.Added, com.tools20022.repository.codeset.AdjustmentDirectionCode.Substracted);
+				code_lazy = () -> Arrays.asList(AdjustmentDirectionCode.mmAdded, AdjustmentDirectionCode.mmSubstracted);
 			}
 		});
 		return mmObject_lazy.get();

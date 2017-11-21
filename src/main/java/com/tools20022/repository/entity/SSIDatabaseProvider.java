@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SettlementPartyRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Provider of a standing settlement instruction (SSI) database.
@@ -36,8 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SSIDatabaseProvider#StandingSettlementDatabase
- * SSIDatabaseProvider.StandingSettlementDatabase}</li>
+ * {@linkplain com.tools20022.repository.entity.SSIDatabaseProvider#mmStandingSettlementDatabase
+ * SSIDatabaseProvider.mmStandingSettlementDatabase}</li>
  * </ul>
  * </li>
  * <li>
@@ -45,8 +49,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#SSIDatabaseProvider
- * StandingSettlementInstruction.SSIDatabaseProvider}</li>
+ * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#mmSSIDatabaseProvider
+ * StandingSettlementInstruction.mmSSIDatabaseProvider}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -56,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,6 +76,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class SSIDatabaseProvider extends SettlementPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase;
 	/**
 	 * Settlement instruction database information which is provided.
 	 * <p>
@@ -80,8 +85,8 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#SSIDatabaseProvider
-	 * StandingSettlementInstruction.SSIDatabaseProvider}</li>
+	 * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#mmSSIDatabaseProvider
+	 * StandingSettlementInstruction.mmSSIDatabaseProvider}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -107,32 +112,45 @@ public class SSIDatabaseProvider extends SettlementPartyRole {
 	 * "Settlement instruction database information which is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd StandingSettlementDatabase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStandingSettlementDatabase = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> SSIDatabaseProvider.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.SSIDatabaseProvider.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingSettlementDatabase";
 			definition = "Settlement instruction database information which is provided.";
 			minOccurs = 0;
-			type_lazy = () -> StandingSettlementInstruction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.SSIDatabaseProvider;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmSSIDatabaseProvider;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SSIDatabaseProvider";
 				definition = "Provider of a standing settlement instruction (SSI) database.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StandingSettlementInstruction.SSIDatabaseProvider);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StandingSettlementInstruction.mmSSIDatabaseProvider);
 				superType_lazy = () -> SettlementPartyRole.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SSIDatabaseProvider.StandingSettlementDatabase);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SSIDatabaseProvider.mmStandingSettlementDatabase);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return SSIDatabaseProvider.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<StandingSettlementInstruction> getStandingSettlementDatabase() {
+		return standingSettlementDatabase;
+	}
+
+	public void setStandingSettlementDatabase(List<com.tools20022.repository.entity.StandingSettlementInstruction> standingSettlementDatabase) {
+		this.standingSettlementDatabase = standingSettlementDatabase;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,36 +32,36 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#TripartiteCentralMatching
- * BusinessProcessTypeCode.TripartiteCentralMatching}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmTripartiteCentralMatching
+ * BusinessProcessTypeCode.mmTripartiteCentralMatching}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#NotCoveredByInvestmentInstructions
- * BusinessProcessTypeCode.NotCoveredByInvestmentInstructions}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmNotCoveredByInvestmentInstructions
+ * BusinessProcessTypeCode.mmNotCoveredByInvestmentInstructions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#PreAccepted
- * BusinessProcessTypeCode.PreAccepted}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmPreAccepted
+ * BusinessProcessTypeCode.mmPreAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#Reversal
- * BusinessProcessTypeCode.Reversal}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmReversal
+ * BusinessProcessTypeCode.mmReversal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#OwnAccountTradeType
- * BusinessProcessTypeCode.OwnAccountTradeType}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmOwnAccountTradeType
+ * BusinessProcessTypeCode.mmOwnAccountTradeType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#ThroughType
- * BusinessProcessTypeCode.ThroughType}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmThroughType
+ * BusinessProcessTypeCode.mmThroughType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#BillateralCentralMatching
- * BusinessProcessTypeCode.BillateralCentralMatching}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmBillateralCentralMatching
+ * BusinessProcessTypeCode.mmBillateralCentralMatching}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#DuplexType
- * BusinessProcessTypeCode.DuplexType}</li>
+ * {@linkplain com.tools20022.repository.codeset.BusinessProcessTypeCode#mmDuplexType
+ * BusinessProcessTypeCode.mmDuplexType}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -104,9 +106,9 @@ public class BusinessProcessTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TripartiteCentralMatching = new MMCode() {
+	public static final MMCode mmTripartiteCentralMatching = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TripartiteCentralMatching";
 			definition = "Specifies the processing of a transaction in a  central matching utility model.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -135,9 +137,9 @@ public class BusinessProcessTypeCode {
 	 * "Specifies the processing of a transaction in a local matching model."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotCoveredByInvestmentInstructions = new MMCode() {
+	public static final MMCode mmNotCoveredByInvestmentInstructions = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NotCoveredByInvestmentInstructions";
 			definition = "Specifies the processing of a transaction in a local matching model.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -169,9 +171,9 @@ public class BusinessProcessTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PreAccepted = new MMCode() {
+	public static final MMCode mmPreAccepted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PreAccepted";
 			definition = "Transaction notice results from an agreement made out of a trading platform between two members (broker and intermediary) of an authorised entity.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -209,9 +211,9 @@ public class BusinessProcessTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Reversal = new MMCode() {
+	public static final MMCode mmReversal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reversal";
 			definition = "Transaction notice reverses a previously sent and agreed transaction notice. If the reversal transaction notice is stated to serve as invoice:\r\no Fees and taxes contained in the transaction notice are considered as being in debit of the broker’s account and in credit of the intermediary’s account: it is a ‘credit invoice’;\r\no The broker will have to specify the original transaction notice reference;\r\no The reversal transaction notice will have the same direction (buy, sell) as the original transaction notice.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -242,9 +244,9 @@ public class BusinessProcessTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode OwnAccountTradeType = new MMCode() {
+	public static final MMCode mmOwnAccountTradeType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OwnAccountTradeType";
 			definition = "Specifies the processing of a transaction in a own account trade type model.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -273,9 +275,9 @@ public class BusinessProcessTypeCode {
 	 * "Specifies the processing of a transaction in a through type model."</li>
 	 * </ul>
 	 */
-	public static final MMCode ThroughType = new MMCode() {
+	public static final MMCode mmThroughType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ThroughType";
 			definition = "Specifies the processing of a transaction in a through type model.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -306,9 +308,9 @@ public class BusinessProcessTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode BillateralCentralMatching = new MMCode() {
+	public static final MMCode mmBillateralCentralMatching = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BillateralCentralMatching";
 			definition = "Specifies the processing of a transaction in a billateral central matching model.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -337,9 +339,9 @@ public class BusinessProcessTypeCode {
 	 * "Specifies the processing of a transaction in a duplex type model."</li>
 	 * </ul>
 	 */
-	public static final MMCode DuplexType = new MMCode() {
+	public static final MMCode mmDuplexType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DuplexType";
 			definition = "Specifies the processing of a transaction in a duplex type model.";
 			owner_lazy = () -> BusinessProcessTypeCode.mmObject();
@@ -350,15 +352,13 @@ public class BusinessProcessTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ISUP");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessProcessTypeCode";
 				definition = "Type of business process model used to carry out the transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BusinessProcessTypeCode.TripartiteCentralMatching, com.tools20022.repository.codeset.BusinessProcessTypeCode.NotCoveredByInvestmentInstructions,
-						com.tools20022.repository.codeset.BusinessProcessTypeCode.PreAccepted, com.tools20022.repository.codeset.BusinessProcessTypeCode.Reversal,
-						com.tools20022.repository.codeset.BusinessProcessTypeCode.OwnAccountTradeType, com.tools20022.repository.codeset.BusinessProcessTypeCode.ThroughType,
-						com.tools20022.repository.codeset.BusinessProcessTypeCode.BillateralCentralMatching, com.tools20022.repository.codeset.BusinessProcessTypeCode.DuplexType);
+				code_lazy = () -> Arrays.asList(BusinessProcessTypeCode.mmTripartiteCentralMatching, BusinessProcessTypeCode.mmNotCoveredByInvestmentInstructions, BusinessProcessTypeCode.mmPreAccepted, BusinessProcessTypeCode.mmReversal,
+						BusinessProcessTypeCode.mmOwnAccountTradeType, BusinessProcessTypeCode.mmThroughType, BusinessProcessTypeCode.mmBillateralCentralMatching, BusinessProcessTypeCode.mmDuplexType);
 			}
 		});
 		return mmObject_lazy.get();

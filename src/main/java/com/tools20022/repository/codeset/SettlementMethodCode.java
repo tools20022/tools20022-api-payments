@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,17 +32,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#InstructedAgent
- * SettlementMethodCode.InstructedAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#mmInstructedAgent
+ * SettlementMethodCode.mmInstructedAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#InstructingAgent
- * SettlementMethodCode.InstructingAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#mmInstructingAgent
+ * SettlementMethodCode.mmInstructingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#CoverMethod
- * SettlementMethodCode.CoverMethod}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#mmCoverMethod
+ * SettlementMethodCode.mmCoverMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#ClearingSystem
- * SettlementMethodCode.ClearingSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlementMethodCode#mmClearingSystem
+ * SettlementMethodCode.mmClearingSystem}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -55,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -100,9 +102,9 @@ public class SettlementMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InstructedAgent = new MMCode() {
+	public static final MMCode mmInstructedAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructedAgent";
 			definition = "Settlement is done by the agent instructed to execute a payment instruction.";
 			owner_lazy = () -> SettlementMethodCode.mmObject();
@@ -133,9 +135,9 @@ public class SettlementMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InstructingAgent = new MMCode() {
+	public static final MMCode mmInstructingAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructingAgent";
 			definition = "Settlement is done by the agent instructing and forwarding the payment to the next party in the payment chain.";
 			owner_lazy = () -> SettlementMethodCode.mmObject();
@@ -163,9 +165,9 @@ public class SettlementMethodCode {
 	 * definition} = "Settlement is done through a cover payment."</li>
 	 * </ul>
 	 */
-	public static final MMCode CoverMethod = new MMCode() {
+	public static final MMCode mmCoverMethod = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoverMethod";
 			definition = "Settlement is done through a cover payment.";
 			owner_lazy = () -> SettlementMethodCode.mmObject();
@@ -193,9 +195,9 @@ public class SettlementMethodCode {
 	 * definition} = "Settlement is done through a payment clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMCode ClearingSystem = new MMCode() {
+	public static final MMCode mmClearingSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystem";
 			definition = "Settlement is done through a payment clearing system.";
 			owner_lazy = () -> SettlementMethodCode.mmObject();
@@ -206,13 +208,12 @@ public class SettlementMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("INDA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementMethodCode";
 				definition = "Specifies the method used to settle the payment instruction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlementMethodCode.InstructedAgent, com.tools20022.repository.codeset.SettlementMethodCode.InstructingAgent,
-						com.tools20022.repository.codeset.SettlementMethodCode.CoverMethod, com.tools20022.repository.codeset.SettlementMethodCode.ClearingSystem);
+				code_lazy = () -> Arrays.asList(SettlementMethodCode.mmInstructedAgent, SettlementMethodCode.mmInstructingAgent, SettlementMethodCode.mmCoverMethod, SettlementMethodCode.mmClearingSystem);
 				derivation_lazy = () -> Arrays.asList(SettlementMethod1Code.mmObject(), SettlementMethod2Code.mmObject());
 			}
 		});

@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -32,6 +34,23 @@ import java.util.Optional;
  */
 public class MMParticipant implements MMRepositoryConcept, MMMultiplicityEntity {
 
+	/**
+	 * the BusinessTransaction in which the Participant plays a role
+	 */
+	public final static MetamodelAttribute<MMParticipant, MMBusinessTransaction> businessTransactionAttribute = newAttribute();
+	/**
+	 * The handling of a stimulus passed from a sending participant
+	 */
+	public final static MetamodelAttribute<MMParticipant, List<MMReceive>> receivesAttribute = newAttribute();
+	/**
+	 * The passing of information from a sending Participant to a receiving
+	 * Participant
+	 */
+	public final static MetamodelAttribute<MMParticipant, List<MMSend>> sendsAttribute = newAttribute();
+	/**
+	 * the BusinessRoleTrace that traces the Participant to its BusinessRole
+	 */
+	public final static MetamodelAttribute<MMParticipant, MMBusinessRole> businessRoleTraceAttribute = newAttribute();
 	protected Supplier<MMBusinessTransaction> businessTransaction_lazy;
 	protected Supplier<List<MMReceive>> receives_lazy;
 	protected Supplier<List<MMSend>> sends_lazy;

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigatedParties1Code#AllParties
- * InvestigatedParties1Code.AllParties}</li>
+ * {@linkplain com.tools20022.repository.codeset.InvestigatedParties1Code#mmAllParties
+ * InvestigatedParties1Code.mmAllParties}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestigatedParties1Code#Owner
- * InvestigatedParties1Code.Owner}</li>
+ * {@linkplain com.tools20022.repository.codeset.InvestigatedParties1Code#mmOwner
+ * InvestigatedParties1Code.mmOwner}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -77,9 +79,9 @@ public class InvestigatedParties1Code {
 	 * name} = "AllParties"</li>
 	 * </ul>
 	 */
-	public static final MMCode AllParties = new MMCode() {
+	public static final MMCode mmAllParties = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AllParties";
 			owner_lazy = () -> InvestigatedParties1Code.mmObject();
 		}
@@ -100,9 +102,9 @@ public class InvestigatedParties1Code {
 	 * name} = "Owner"</li>
 	 * </ul>
 	 */
-	public static final MMCode Owner = new MMCode() {
+	public static final MMCode mmOwner = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Owner";
 			owner_lazy = () -> InvestigatedParties1Code.mmObject();
 		}
@@ -111,12 +113,12 @@ public class InvestigatedParties1Code {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ALLP");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigatedParties1Code";
 				definition = "Specifies the investigated parties.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestigatedParties1Code.AllParties, com.tools20022.repository.codeset.InvestigatedParties1Code.Owner);
+				code_lazy = () -> Arrays.asList(InvestigatedParties1Code.mmAllParties, InvestigatedParties1Code.mmOwner);
 			}
 		});
 		return mmObject_lazy.get();

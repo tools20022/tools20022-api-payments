@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max350Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,17 +38,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#Strategy
- * PortfolioStrategyDefinition.Strategy}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#mmStrategy
+ * PortfolioStrategyDefinition.mmStrategy}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#Name
- * PortfolioStrategyDefinition.Name}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#mmName
+ * PortfolioStrategyDefinition.mmName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#Description
- * PortfolioStrategyDefinition.Description}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#mmDescription
+ * PortfolioStrategyDefinition.mmDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#EffectivePeriod
- * PortfolioStrategyDefinition.EffectivePeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioStrategyDefinition#mmEffectivePeriod
+ * PortfolioStrategyDefinition.mmEffectivePeriod}</li>
  * </ul>
  * </li>
  * <li>
@@ -56,15 +56,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioStrategy#Definition
- * PortfolioStrategy.Definition}</li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioStrategy#mmDefinition
+ * PortfolioStrategy.mmDefinition}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,6 +78,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class PortfolioStrategyDefinition {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected PortfolioStrategy strategy;
 	/**
 	 * Stategy attached to the portfolio.
 	 * <p>
@@ -86,8 +87,8 @@ public class PortfolioStrategyDefinition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PortfolioStrategy#Definition
-	 * PortfolioStrategy.Definition}</li>
+	 * {@linkplain com.tools20022.repository.entity.PortfolioStrategy#mmDefinition
+	 * PortfolioStrategy.mmDefinition}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -111,20 +112,21 @@ public class PortfolioStrategyDefinition {
 	 * definition} = "Stategy attached to the portfolio."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Strategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> PortfolioStrategyDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategyDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Stategy attached to the portfolio.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PortfolioStrategy.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.Definition;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmDefinition;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
 		}
 	};
+	protected Max350Text name;
 	/**
 	 * Name of the defined strategy.
 	 * <p>
@@ -150,18 +152,27 @@ public class PortfolioStrategyDefinition {
 	 * definition} = "Name of the defined strategy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Name = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioStrategyDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategyDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the defined strategy.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioStrategyDefinition.class.getMethod("getName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text description;
 	/**
 	 * Free text description of the strategy definition.
 	 * <p>
@@ -187,18 +198,27 @@ public class PortfolioStrategyDefinition {
 	 * definition} = "Free text description of the strategy definition."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Description = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioStrategyDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategyDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Free text description of the strategy definition.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioStrategyDefinition.class.getMethod("getDescription", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod effectivePeriod;
 	/**
 	 * Period during which the defined strategy is valid.
 	 * <p>
@@ -225,31 +245,76 @@ public class PortfolioStrategyDefinition {
 	 * definition} = "Period during which the defined strategy is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute EffectivePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> PortfolioStrategyDefinition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategyDefinition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the defined strategy is valid.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			complexType_lazy = () -> DateTimePeriod.mmObject();
+			minOccurs = 1;
+			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return PortfolioStrategyDefinition.class.getMethod("getEffectivePeriod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioStrategyDefinition";
 				definition = "Additional information on the definition of the strategy.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioStrategy.Definition);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioStrategyDefinition.Strategy, com.tools20022.repository.entity.PortfolioStrategyDefinition.Name,
-						com.tools20022.repository.entity.PortfolioStrategyDefinition.Description, com.tools20022.repository.entity.PortfolioStrategyDefinition.EffectivePeriod);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioStrategy.mmDefinition);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioStrategyDefinition.mmStrategy, com.tools20022.repository.entity.PortfolioStrategyDefinition.mmName,
+						com.tools20022.repository.entity.PortfolioStrategyDefinition.mmDescription, com.tools20022.repository.entity.PortfolioStrategyDefinition.mmEffectivePeriod);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return PortfolioStrategyDefinition.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public PortfolioStrategy getStrategy() {
+		return strategy;
+	}
+
+	public void setStrategy(com.tools20022.repository.entity.PortfolioStrategy strategy) {
+		this.strategy = strategy;
+	}
+
+	public Max350Text getName() {
+		return name;
+	}
+
+	public void setName(Max350Text name) {
+		this.name = name;
+	}
+
+	public Max350Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max350Text description) {
+		this.description = description;
+	}
+
+	public DateTimePeriod getEffectivePeriod() {
+		return effectivePeriod;
+	}
+
+	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = effectivePeriod;
 	}
 }

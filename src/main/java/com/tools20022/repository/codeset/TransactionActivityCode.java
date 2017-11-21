@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,27 +32,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#BorrowingLendingActivity
- * TransactionActivityCode.BorrowingLendingActivity}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmBorrowingLendingActivity
+ * TransactionActivityCode.mmBorrowingLendingActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#MarketClaim
- * TransactionActivityCode.MarketClaim}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmMarketClaim
+ * TransactionActivityCode.mmMarketClaim}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#CollateralActivity
- * TransactionActivityCode.CollateralActivity}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmCollateralActivity
+ * TransactionActivityCode.mmCollateralActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#CorporateActionActivity
- * TransactionActivityCode.CorporateActionActivity}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmCorporateActionActivity
+ * TransactionActivityCode.mmCorporateActionActivity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#SettlementandClearingActivity
- * TransactionActivityCode.SettlementandClearingActivity}</li>
+ * {@linkplain com.tools20022.repository.codeset.TransactionActivityCode#mmSettlementandClearingActivity
+ * TransactionActivityCode.mmSettlementandClearingActivity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,9 +94,9 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to lending/borrowing."</li>
 	 * </ul>
 	 */
-	public static final MMCode BorrowingLendingActivity = new MMCode() {
+	public static final MMCode mmBorrowingLendingActivity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BorrowingLendingActivity";
 			definition = "Transaction relates to lending/borrowing.";
 			owner_lazy = () -> TransactionActivityCode.mmObject();
@@ -123,9 +125,9 @@ public class TransactionActivityCode {
 	 * "Transaction relates to a market claim following a corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMCode MarketClaim = new MMCode() {
+	public static final MMCode mmMarketClaim = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketClaim";
 			definition = "Transaction relates to a market claim following a corporate action.";
 			owner_lazy = () -> TransactionActivityCode.mmObject();
@@ -153,9 +155,9 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMCode CollateralActivity = new MMCode() {
+	public static final MMCode mmCollateralActivity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralActivity";
 			definition = "Transaction relates to collateral.";
 			owner_lazy = () -> TransactionActivityCode.mmObject();
@@ -183,9 +185,9 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMCode CorporateActionActivity = new MMCode() {
+	public static final MMCode mmCorporateActionActivity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CorporateActionActivity";
 			definition = "Transaction relates to corporate action.";
 			owner_lazy = () -> TransactionActivityCode.mmObject();
@@ -213,9 +215,9 @@ public class TransactionActivityCode {
 	 * definition} = "Transaction relates to settlement and clearing."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementandClearingActivity = new MMCode() {
+	public static final MMCode mmSettlementandClearingActivity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlementandClearingActivity";
 			definition = "Transaction relates to settlement and clearing.";
 			owner_lazy = () -> TransactionActivityCode.mmObject();
@@ -226,14 +228,13 @@ public class TransactionActivityCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("BOLE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionActivityCode";
 				definition = "Specifies the type of activity to which this transaction relates.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionActivityCode.BorrowingLendingActivity, com.tools20022.repository.codeset.TransactionActivityCode.MarketClaim,
-						com.tools20022.repository.codeset.TransactionActivityCode.CollateralActivity, com.tools20022.repository.codeset.TransactionActivityCode.CorporateActionActivity,
-						com.tools20022.repository.codeset.TransactionActivityCode.SettlementandClearingActivity);
+				code_lazy = () -> Arrays.asList(TransactionActivityCode.mmBorrowingLendingActivity, TransactionActivityCode.mmMarketClaim, TransactionActivityCode.mmCollateralActivity, TransactionActivityCode.mmCorporateActionActivity,
+						TransactionActivityCode.mmSettlementandClearingActivity);
 			}
 		});
 		return mmObject_lazy.get();

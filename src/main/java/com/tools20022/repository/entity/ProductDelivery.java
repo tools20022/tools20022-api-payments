@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Arrangements for delivery of invoiced products and/or services.
@@ -36,23 +40,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductDelivery#DeliveryPeriod
- * ProductDelivery.DeliveryPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#Routing
- * ProductDelivery.Routing}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmDeliveryPeriod
+ * ProductDelivery.mmDeliveryPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#mmRouting
+ * ProductDelivery.mmRouting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductDelivery#TradeSettlement
- * ProductDelivery.TradeSettlement}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#Obligation
- * ProductDelivery.Obligation}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmTradeSettlement
+ * ProductDelivery.mmTradeSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductDelivery#TradeCertificate
- * ProductDelivery.TradeCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmObligation
+ * ProductDelivery.mmObligation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductDelivery#InsuranceCertificate
- * ProductDelivery.InsuranceCertificate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#Product
- * ProductDelivery.Product}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmTradeCertificate
+ * ProductDelivery.mmTradeCertificate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmInsuranceCertificate
+ * ProductDelivery.mmInsuranceCertificate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ProductDelivery#mmProduct
+ * ProductDelivery.mmProduct}</li>
  * </ul>
  * </li>
  * <li>
@@ -60,24 +65,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedProductDelivery
- * DateTimePeriod.RelatedProductDelivery}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#Delivery
- * Product.Delivery}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedProductDelivery
+ * DateTimePeriod.mmRelatedProductDelivery}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmDelivery
+ * Product.mmDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#ProductDelivery
- * InsuranceCertificate.ProductDelivery}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Transport#ProductDelivery
- * Transport.ProductDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#mmProductDelivery
+ * InsuranceCertificate.mmProductDelivery}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Transport#mmProductDelivery
+ * Transport.mmProductDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#ProductDelivery
- * CommercialTradeSettlement.ProductDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#mmProductDelivery
+ * CommercialTradeSettlement.mmProductDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradeCertificate#ProductDelivery
- * TradeCertificate.ProductDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.TradeCertificate#mmProductDelivery
+ * TradeCertificate.mmProductDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ProductDeliveryObligation#ProductDeliveryOffset
- * ProductDeliveryObligation.ProductDeliveryOffset}</li>
+ * {@linkplain com.tools20022.repository.entity.ProductDeliveryObligation#mmProductDeliveryOffset
+ * ProductDeliveryObligation.mmProductDeliveryOffset}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -87,8 +92,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,6 +108,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ProductDelivery extends ObligationFulfilment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DateTimePeriod deliveryPeriod;
 	/**
 	 * Actual delivery period of the products and/or services.
 	 * <p>
@@ -111,8 +117,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedProductDelivery
-	 * DateTimePeriod.RelatedProductDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedProductDelivery
+	 * DateTimePeriod.mmRelatedProductDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -136,20 +142,21 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * definition} = "Actual delivery period of the products and/or services."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DeliveryPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDeliveryPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveryPeriod";
 			definition = "Actual delivery period of the products and/or services.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RelatedProductDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedProductDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Transport> routing;
 	/**
 	 * Information related to the conveyance of goods.
 	 * <p>
@@ -158,8 +165,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Transport#ProductDelivery
-	 * Transport.ProductDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.Transport#mmProductDelivery
+	 * Transport.mmProductDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -183,19 +190,20 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * definition} = "Information related to the conveyance of goods."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Routing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRouting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Routing";
 			definition = "Information related to the conveyance of goods.";
 			minOccurs = 0;
-			type_lazy = () -> Transport.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.ProductDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmProductDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
 		}
 	};
+	protected CommercialTradeSettlement tradeSettlement;
 	/**
 	 * Specifies the settlement operation which originates the delivery of a
 	 * product.
@@ -205,8 +213,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#ProductDelivery
-	 * CommercialTradeSettlement.ProductDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#mmProductDelivery
+	 * CommercialTradeSettlement.mmProductDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -233,20 +241,21 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeSettlement";
 			definition = "Specifies the settlement operation which originates the delivery of a product.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CommercialTradeSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.ProductDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmProductDelivery;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 		}
 	};
+	protected ProductDeliveryObligation obligation;
 	/**
 	 * Specifies the obligation which is offset by the delivery of a product.
 	 * <p>
@@ -255,8 +264,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductDeliveryObligation#ProductDeliveryOffset
-	 * ProductDeliveryObligation.ProductDeliveryOffset}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductDeliveryObligation#mmProductDeliveryOffset
+	 * ProductDeliveryObligation.mmProductDeliveryOffset}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -282,20 +291,21 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * "Specifies the obligation which is offset by the delivery of a product."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Obligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Obligation";
 			definition = "Specifies the obligation which is offset by the delivery of a product.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ProductDeliveryObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductDeliveryObligation.ProductDeliveryOffset;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductDeliveryObligation.mmProductDeliveryOffset;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ProductDeliveryObligation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate;
 	/**
 	 * Formal document used to record a fact and used as proof of the fact, in
 	 * the context of a commercial trade transaction.
@@ -305,8 +315,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradeCertificate#ProductDelivery
-	 * TradeCertificate.ProductDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradeCertificate#mmProductDelivery
+	 * TradeCertificate.mmProductDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -332,19 +342,20 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCertificate";
 			definition = "Formal document used to record a fact and used as proof of the fact, in the context of a commercial trade transaction.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmProductDelivery;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.ProductDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate;
 	/**
 	 * Formal document used to record a fact and used as proof of the fact that
 	 * goods have been insured under an insurance policy.
@@ -354,8 +365,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#ProductDelivery
-	 * InsuranceCertificate.ProductDelivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.InsuranceCertificate#mmProductDelivery
+	 * InsuranceCertificate.mmProductDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -382,19 +393,20 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InsuranceCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsuranceCertificate";
 			definition = "Formal document used to record a fact and used as proof of the fact that goods have been insured under an insurance policy.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmProductDelivery;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.ProductDelivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Product product;
 	/**
 	 * Specifies the type of goods and services linked to the quantity.
 	 * <p>
@@ -403,8 +415,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Product#Delivery
-	 * Product.Delivery}</li>
+	 * {@linkplain com.tools20022.repository.entity.Product#mmDelivery
+	 * Product.mmDelivery}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -428,37 +440,98 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * "Specifies the type of goods and services linked to the quantity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Product = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ProductDelivery.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Product";
 			definition = "Specifies the type of goods and services linked to the quantity.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmDelivery;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.Delivery;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductDelivery";
 				definition = "Arrangements for delivery of invoiced products and/or services.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.RelatedProductDelivery, com.tools20022.repository.entity.Product.Delivery,
-						com.tools20022.repository.entity.InsuranceCertificate.ProductDelivery, com.tools20022.repository.entity.Transport.ProductDelivery, com.tools20022.repository.entity.CommercialTradeSettlement.ProductDelivery,
-						com.tools20022.repository.entity.TradeCertificate.ProductDelivery, com.tools20022.repository.entity.ProductDeliveryObligation.ProductDeliveryOffset);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmRelatedProductDelivery, com.tools20022.repository.entity.Product.mmDelivery,
+						com.tools20022.repository.entity.InsuranceCertificate.mmProductDelivery, com.tools20022.repository.entity.Transport.mmProductDelivery, com.tools20022.repository.entity.CommercialTradeSettlement.mmProductDelivery,
+						com.tools20022.repository.entity.TradeCertificate.mmProductDelivery, com.tools20022.repository.entity.ProductDeliveryObligation.mmProductDeliveryOffset);
 				superType_lazy = () -> ObligationFulfilment.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductDelivery.DeliveryPeriod, com.tools20022.repository.entity.ProductDelivery.Routing, com.tools20022.repository.entity.ProductDelivery.TradeSettlement,
-						com.tools20022.repository.entity.ProductDelivery.Obligation, com.tools20022.repository.entity.ProductDelivery.TradeCertificate, com.tools20022.repository.entity.ProductDelivery.InsuranceCertificate,
-						com.tools20022.repository.entity.ProductDelivery.Product);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductDelivery.mmDeliveryPeriod, com.tools20022.repository.entity.ProductDelivery.mmRouting,
+						com.tools20022.repository.entity.ProductDelivery.mmTradeSettlement, com.tools20022.repository.entity.ProductDelivery.mmObligation, com.tools20022.repository.entity.ProductDelivery.mmTradeCertificate,
+						com.tools20022.repository.entity.ProductDelivery.mmInsuranceCertificate, com.tools20022.repository.entity.ProductDelivery.mmProduct);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ProductDelivery.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DateTimePeriod getDeliveryPeriod() {
+		return deliveryPeriod;
+	}
+
+	public void setDeliveryPeriod(com.tools20022.repository.entity.DateTimePeriod deliveryPeriod) {
+		this.deliveryPeriod = deliveryPeriod;
+	}
+
+	public List<Transport> getRouting() {
+		return routing;
+	}
+
+	public void setRouting(List<com.tools20022.repository.entity.Transport> routing) {
+		this.routing = routing;
+	}
+
+	public CommercialTradeSettlement getTradeSettlement() {
+		return tradeSettlement;
+	}
+
+	public void setTradeSettlement(com.tools20022.repository.entity.CommercialTradeSettlement tradeSettlement) {
+		this.tradeSettlement = tradeSettlement;
+	}
+
+	public ProductDeliveryObligation getObligation() {
+		return obligation;
+	}
+
+	public void setObligation(com.tools20022.repository.entity.ProductDeliveryObligation obligation) {
+		this.obligation = obligation;
+	}
+
+	public List<TradeCertificate> getTradeCertificate() {
+		return tradeCertificate;
+	}
+
+	public void setTradeCertificate(List<com.tools20022.repository.entity.TradeCertificate> tradeCertificate) {
+		this.tradeCertificate = tradeCertificate;
+	}
+
+	public List<InsuranceCertificate> getInsuranceCertificate() {
+		return insuranceCertificate;
+	}
+
+	public void setInsuranceCertificate(List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate) {
+		this.insuranceCertificate = insuranceCertificate;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(com.tools20022.repository.entity.Product product) {
+		this.product = product;
 	}
 }

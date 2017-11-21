@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,519 +33,520 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ClosingTransactionAmount
- * RejectionReasonCode.ClosingTransactionAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmClosingTransactionAmount
+ * RejectionReasonCode.mmClosingTransactionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TradedQuantityHigherThanOriginalOrderQuantity
- * RejectionReasonCode.TradedQuantityHigherThanOriginalOrderQuantity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTradedQuantityHigherThanOriginalOrderQuantity
+ * RejectionReasonCode.mmTradedQuantityHigherThanOriginalOrderQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TransactionNoticeIDUnknown
- * RejectionReasonCode.TransactionNoticeIDUnknown}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTransactionNoticeIDUnknown
+ * RejectionReasonCode.mmTransactionNoticeIDUnknown}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TransactionNoticeAlreadyAcceptedOrRejected
- * RejectionReasonCode.TransactionNoticeAlreadyAcceptedOrRejected}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTransactionNoticeAlreadyAcceptedOrRejected
+ * RejectionReasonCode.mmTransactionNoticeAlreadyAcceptedOrRejected}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#OrderDateNotProvided
- * RejectionReasonCode.OrderDateNotProvided}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmOrderDateNotProvided
+ * RejectionReasonCode.mmOrderDateNotProvided}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidRequest
- * RejectionReasonCode.InvalidRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidRequest
+ * RejectionReasonCode.mmInvalidRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#IncorrectCertification
- * RejectionReasonCode.IncorrectCertification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmIncorrectCertification
+ * RejectionReasonCode.mmIncorrectCertification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidReference
- * RejectionReasonCode.InvalidReference}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidReference
+ * RejectionReasonCode.mmInvalidReference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SafekeepingAccountRejection
- * RejectionReasonCode.SafekeepingAccountRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSafekeepingAccountRejection
+ * RejectionReasonCode.mmSafekeepingAccountRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InsufficientTresholdPosition
- * RejectionReasonCode.InsufficientTresholdPosition}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInsufficientTresholdPosition
+ * RejectionReasonCode.mmInsufficientTresholdPosition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#QuantityRejection
- * RejectionReasonCode.QuantityRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmQuantityRejection
+ * RejectionReasonCode.mmQuantityRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#AccountServicerDeadlineMissed
- * RejectionReasonCode.AccountServicerDeadlineMissed}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmAccountServicerDeadlineMissed
+ * RejectionReasonCode.mmAccountServicerDeadlineMissed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SplitVoteNotAllowed
- * RejectionReasonCode.SplitVoteNotAllowed}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSplitVoteNotAllowed
+ * RejectionReasonCode.mmSplitVoteNotAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PartialVoteNotAllowed
- * RejectionReasonCode.PartialVoteNotAllowed}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPartialVoteNotAllowed
+ * RejectionReasonCode.mmPartialVoteNotAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingOrInvalidPOA
- * RejectionReasonCode.MissingOrInvalidPOA}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingOrInvalidPOA
+ * RejectionReasonCode.mmMissingOrInvalidPOA}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ProxyCardDiscrepancy
- * RejectionReasonCode.ProxyCardDiscrepancy}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmProxyCardDiscrepancy
+ * RejectionReasonCode.mmProxyCardDiscrepancy}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RegistrationDiscrepancy
- * RejectionReasonCode.RegistrationDiscrepancy}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRegistrationDiscrepancy
+ * RejectionReasonCode.mmRegistrationDiscrepancy}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RejectedByIssuerOrRegistrar
- * RejectionReasonCode.RejectedByIssuerOrRegistrar}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRejectedByIssuerOrRegistrar
+ * RejectionReasonCode.mmRejectedByIssuerOrRegistrar}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidSecurity
- * RejectionReasonCode.InvalidSecurity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidSecurity
+ * RejectionReasonCode.mmInvalidSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InstructionIrrevocable
- * RejectionReasonCode.InstructionIrrevocable}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInstructionIrrevocable
+ * RejectionReasonCode.mmInstructionIrrevocable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#OptionCancelled
- * RejectionReasonCode.OptionCancelled}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmOptionCancelled
+ * RejectionReasonCode.mmOptionCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#OptionInactive
- * RejectionReasonCode.OptionInactive}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmOptionInactive
+ * RejectionReasonCode.mmOptionInactive}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidForTaxAuthorities
- * RejectionReasonCode.InvalidForTaxAuthorities}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidForTaxAuthorities
+ * RejectionReasonCode.mmInvalidForTaxAuthorities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RefusedByTaxAuthorities
- * RejectionReasonCode.RefusedByTaxAuthorities}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRefusedByTaxAuthorities
+ * RejectionReasonCode.mmRefusedByTaxAuthorities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#LackofSecurities
- * RejectionReasonCode.LackofSecurities}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmLackofSecurities
+ * RejectionReasonCode.mmLackofSecurities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MarketDeadlineMissed
- * RejectionReasonCode.MarketDeadlineMissed}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMarketDeadlineMissed
+ * RejectionReasonCode.mmMarketDeadlineMissed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#Mismatch
- * RejectionReasonCode.Mismatch}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMismatch
+ * RejectionReasonCode.mmMismatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#OptionNumberRejection
- * RejectionReasonCode.OptionNumberRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmOptionNumberRejection
+ * RejectionReasonCode.mmOptionNumberRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidOptionType
- * RejectionReasonCode.InvalidOptionType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidOptionType
+ * RejectionReasonCode.mmInvalidOptionType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RejectedSinceAlreadyCancelled
- * RejectionReasonCode.RejectedSinceAlreadyCancelled}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRejectedSinceAlreadyCancelled
+ * RejectionReasonCode.mmRejectedSinceAlreadyCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RejectedSinceInProgress
- * RejectionReasonCode.RejectedSinceInProgress}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRejectedSinceInProgress
+ * RejectionReasonCode.mmRejectedSinceInProgress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#UnrecognizedIdentification
- * RejectionReasonCode.UnrecognizedIdentification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmUnrecognizedIdentification
+ * RejectionReasonCode.mmUnrecognizedIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#UnknownSymbol
- * RejectionReasonCode.UnknownSymbol}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmUnknownSymbol
+ * RejectionReasonCode.mmUnknownSymbol}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ClosedExchange
- * RejectionReasonCode.ClosedExchange}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmClosedExchange
+ * RejectionReasonCode.mmClosedExchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ExceedsLimit
- * RejectionReasonCode.ExceedsLimit}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmExceedsLimit
+ * RejectionReasonCode.mmExceedsLimit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TooLate
- * RejectionReasonCode.TooLate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTooLate
+ * RejectionReasonCode.mmTooLate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidPrice
- * RejectionReasonCode.InvalidPrice}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidPrice
+ * RejectionReasonCode.mmInvalidPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotAuthorised
- * RejectionReasonCode.NotAuthorised}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotAuthorised
+ * RejectionReasonCode.mmNotAuthorised}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoMatchInquiry
- * RejectionReasonCode.NoMatchInquiry}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoMatchInquiry
+ * RejectionReasonCode.mmNoMatchInquiry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoInstrumentMarket
- * RejectionReasonCode.NoInstrumentMarket}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoInstrumentMarket
+ * RejectionReasonCode.mmNoInstrumentMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoInventory
- * RejectionReasonCode.NoInventory}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonCode#Pass
- * RejectionReasonCode.Pass}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoInventory
+ * RejectionReasonCode.mmNoInventory}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPass
+ * RejectionReasonCode.mmPass}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PriceExceeds
- * RejectionReasonCode.PriceExceeds}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPriceExceeds
+ * RejectionReasonCode.mmPriceExceeds}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#QuantityExceeds
- * RejectionReasonCode.QuantityExceeds}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmQuantityExceeds
+ * RejectionReasonCode.mmQuantityExceeds}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#WrongSide
- * RejectionReasonCode.WrongSide}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmWrongSide
+ * RejectionReasonCode.mmWrongSide}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#CalculationDifference
- * RejectionReasonCode.CalculationDifference}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmCalculationDifference
+ * RejectionReasonCode.mmCalculationDifference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InsufficientCredit
- * RejectionReasonCode.InsufficientCredit}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInsufficientCredit
+ * RejectionReasonCode.mmInsufficientCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#AgreementStartDate
- * RejectionReasonCode.AgreementStartDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmAgreementStartDate
+ * RejectionReasonCode.mmAgreementStartDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TransactionCallDelay
- * RejectionReasonCode.TransactionCallDelay}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTransactionCallDelay
+ * RejectionReasonCode.mmTransactionCallDelay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#CashAccount
- * RejectionReasonCode.CashAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmCashAccount
+ * RejectionReasonCode.mmCashAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#DealPrice
- * RejectionReasonCode.DealPrice}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmDealPrice
+ * RejectionReasonCode.mmDealPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ForfeitAmount
- * RejectionReasonCode.ForfeitAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmForfeitAmount
+ * RejectionReasonCode.mmForfeitAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#DeliveringCustodian
- * RejectionReasonCode.DeliveringCustodian}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmDeliveringCustodian
+ * RejectionReasonCode.mmDeliveringCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ReceivingCustodian
- * RejectionReasonCode.ReceivingCustodian}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmReceivingCustodian
+ * RejectionReasonCode.mmReceivingCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotFoundRejection
- * RejectionReasonCode.NotFoundRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotFoundRejection
+ * RejectionReasonCode.mmNotFoundRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#QuantityUnitType
- * RejectionReasonCode.QuantityUnitType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmQuantityUnitType
+ * RejectionReasonCode.mmQuantityUnitType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TerminationTransactionAmount
- * RejectionReasonCode.TerminationTransactionAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTerminationTransactionAmount
+ * RejectionReasonCode.mmTerminationTransactionAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RepurchaseRate
- * RejectionReasonCode.RepurchaseRate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRepurchaseRate
+ * RejectionReasonCode.mmRepurchaseRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PremiumAmount
- * RejectionReasonCode.PremiumAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPremiumAmount
+ * RejectionReasonCode.mmPremiumAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RepurchaseRateType
- * RejectionReasonCode.RepurchaseRateType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRepurchaseRateType
+ * RejectionReasonCode.mmRepurchaseRateType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SpreadRate
- * RejectionReasonCode.SpreadRate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSpreadRate
+ * RejectionReasonCode.mmSpreadRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TradedSecuritiesQuantity
- * RejectionReasonCode.TradedSecuritiesQuantity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTradedSecuritiesQuantity
+ * RejectionReasonCode.mmTradedSecuritiesQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TradeDate
- * RejectionReasonCode.TradeDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTradeDate
+ * RejectionReasonCode.mmTradeDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ReceivingAgent
- * RejectionReasonCode.ReceivingAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmReceivingAgent
+ * RejectionReasonCode.mmReceivingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#Intermediary
- * RejectionReasonCode.Intermediary}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmIntermediary
+ * RejectionReasonCode.mmIntermediary}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#DeliveringAgent
- * RejectionReasonCode.DeliveringAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmDeliveringAgent
+ * RejectionReasonCode.mmDeliveringAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PlaceOfTrade
- * RejectionReasonCode.PlaceOfTrade}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPlaceOfTrade
+ * RejectionReasonCode.mmPlaceOfTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvestorNameAddressUnknown
- * RejectionReasonCode.InvestorNameAddressUnknown}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvestorNameAddressUnknown
+ * RejectionReasonCode.mmInvestorNameAddressUnknown}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ImpossibleToUseTheRTGSSystemInstructed
- * RejectionReasonCode.ImpossibleToUseTheRTGSSystemInstructed}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmImpossibleToUseTheRTGSSystemInstructed
+ * RejectionReasonCode.mmImpossibleToUseTheRTGSSystemInstructed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SettlementAmountCurrencyRejection
- * RejectionReasonCode.SettlementAmountCurrencyRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSettlementAmountCurrencyRejection
+ * RejectionReasonCode.mmSettlementAmountCurrencyRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#LetterOfGuaranteeIndicatorRejection
- * RejectionReasonCode.LetterOfGuaranteeIndicatorRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmLetterOfGuaranteeIndicatorRejection
+ * RejectionReasonCode.mmLetterOfGuaranteeIndicatorRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingCreditAuthorisation
- * RejectionReasonCode.MissingCreditAuthorisation}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingCreditAuthorisation
+ * RejectionReasonCode.mmMissingCreditAuthorisation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#AddressDetailsRejection
- * RejectionReasonCode.AddressDetailsRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmAddressDetailsRejection
+ * RejectionReasonCode.mmAddressDetailsRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ReceivingOrDeliveringCustodianRejection
- * RejectionReasonCode.ReceivingOrDeliveringCustodianRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmReceivingOrDeliveringCustodianRejection
+ * RejectionReasonCode.mmReceivingOrDeliveringCustodianRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ReceivingDeliveringParty3
- * RejectionReasonCode.ReceivingDeliveringParty3}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmReceivingDeliveringParty3
+ * RejectionReasonCode.mmReceivingDeliveringParty3}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PhysicalSettlementImpossible
- * RejectionReasonCode.PhysicalSettlementImpossible}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPhysicalSettlementImpossible
+ * RejectionReasonCode.mmPhysicalSettlementImpossible}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ReferenceRejection
- * RejectionReasonCode.ReferenceRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmReferenceRejection
+ * RejectionReasonCode.mmReferenceRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SettlementAmountRejection
- * RejectionReasonCode.SettlementAmountRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSettlementAmountRejection
+ * RejectionReasonCode.mmSettlementAmountRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingStatutes
- * RejectionReasonCode.MissingStatutes}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingStatutes
+ * RejectionReasonCode.mmMissingStatutes}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotStampedOrSigned
- * RejectionReasonCode.NotStampedOrSigned}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotStampedOrSigned
+ * RejectionReasonCode.mmNotStampedOrSigned}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidSignature
- * RejectionReasonCode.InvalidSignature}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidSignature
+ * RejectionReasonCode.mmInvalidSignature}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ShareholderNumberRejection
- * RejectionReasonCode.ShareholderNumberRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmShareholderNumberRejection
+ * RejectionReasonCode.mmShareholderNumberRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MinimumSettlementQuantity
- * RejectionReasonCode.MinimumSettlementQuantity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMinimumSettlementQuantity
+ * RejectionReasonCode.mmMinimumSettlementQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoMatch
- * RejectionReasonCode.NoMatch}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoMatch
+ * RejectionReasonCode.mmNoMatch}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingLegalPower
- * RejectionReasonCode.MissingLegalPower}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingLegalPower
+ * RejectionReasonCode.mmMissingLegalPower}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ProcessingBatchRejection
- * RejectionReasonCode.ProcessingBatchRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmProcessingBatchRejection
+ * RejectionReasonCode.mmProcessingBatchRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TypeOfOwnershipRejection
- * RejectionReasonCode.TypeOfOwnershipRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTypeOfOwnershipRejection
+ * RejectionReasonCode.mmTypeOfOwnershipRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MultipleSettlementQuantity
- * RejectionReasonCode.MultipleSettlementQuantity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMultipleSettlementQuantity
+ * RejectionReasonCode.mmMultipleSettlementQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#WrongRegistrationRequest
- * RejectionReasonCode.WrongRegistrationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmWrongRegistrationRequest
+ * RejectionReasonCode.mmWrongRegistrationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TaxStatusRejection
- * RejectionReasonCode.TaxStatusRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTaxStatusRejection
+ * RejectionReasonCode.mmTaxStatusRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#DisagreementInRegistrationReason
- * RejectionReasonCode.DisagreementInRegistrationReason}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmDisagreementInRegistrationReason
+ * RejectionReasonCode.mmDisagreementInRegistrationReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingRegistrationRequest
- * RejectionReasonCode.MissingRegistrationRequest}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingRegistrationRequest
+ * RejectionReasonCode.mmMissingRegistrationRequest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SettlementSystemMethodRejection
- * RejectionReasonCode.SettlementSystemMethodRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSettlementSystemMethodRejection
+ * RejectionReasonCode.mmSettlementSystemMethodRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#CommonReferenceRejection
- * RejectionReasonCode.CommonReferenceRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmCommonReferenceRejection
+ * RejectionReasonCode.mmCommonReferenceRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NarrativeInformationRejection
- * RejectionReasonCode.NarrativeInformationRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNarrativeInformationRejection
+ * RejectionReasonCode.mmNarrativeInformationRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#IncorrectProgramConversion
- * RejectionReasonCode.IncorrectProgramConversion}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmIncorrectProgramConversion
+ * RejectionReasonCode.mmIncorrectProgramConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InsufficientCollateral
- * RejectionReasonCode.InsufficientCollateral}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInsufficientCollateral
+ * RejectionReasonCode.mmInsufficientCollateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#BusinessPartnerNumberRejection
- * RejectionReasonCode.BusinessPartnerNumberRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmBusinessPartnerNumberRejection
+ * RejectionReasonCode.mmBusinessPartnerNumberRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#BankReferenceNumberRejection
- * RejectionReasonCode.BankReferenceNumberRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmBankReferenceNumberRejection
+ * RejectionReasonCode.mmBankReferenceNumberRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#TypeOfOrderRejection
- * RejectionReasonCode.TypeOfOrderRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmTypeOfOrderRejection
+ * RejectionReasonCode.mmTypeOfOrderRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#CorporateActionRejection
- * RejectionReasonCode.CorporateActionRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmCorporateActionRejection
+ * RejectionReasonCode.mmCorporateActionRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ImpossibleCashSettlementSystem
- * RejectionReasonCode.ImpossibleCashSettlementSystem}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmImpossibleCashSettlementSystem
+ * RejectionReasonCode.mmImpossibleCashSettlementSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#CommercializationContractRejection
- * RejectionReasonCode.CommercializationContractRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmCommercializationContractRejection
+ * RejectionReasonCode.mmCommercializationContractRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ConcentrationLimitExceeded
- * RejectionReasonCode.ConcentrationLimitExceeded}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmConcentrationLimitExceeded
+ * RejectionReasonCode.mmConcentrationLimitExceeded}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#UnknownDealExposure
- * RejectionReasonCode.UnknownDealExposure}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmUnknownDealExposure
+ * RejectionReasonCode.mmUnknownDealExposure}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SettlementDateRejection
- * RejectionReasonCode.SettlementDateRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSettlementDateRejection
+ * RejectionReasonCode.mmSettlementDateRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PlaceOfSettlementRejection
- * RejectionReasonCode.PlaceOfSettlementRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPlaceOfSettlementRejection
+ * RejectionReasonCode.mmPlaceOfSettlementRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#DisagreeWithCallAmount
- * RejectionReasonCode.DisagreeWithCallAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmDisagreeWithCallAmount
+ * RejectionReasonCode.mmDisagreeWithCallAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#DisagreeWithExposureAmount
- * RejectionReasonCode.DisagreeWithExposureAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmDisagreeWithExposureAmount
+ * RejectionReasonCode.mmDisagreeWithExposureAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RegistrationRequestDataAndOrderRejection
- * RejectionReasonCode.RegistrationRequestDataAndOrderRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRegistrationRequestDataAndOrderRejection
+ * RejectionReasonCode.mmRegistrationRequestDataAndOrderRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#FeeCommissionRejection
- * RejectionReasonCode.FeeCommissionRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmFeeCommissionRejection
+ * RejectionReasonCode.mmFeeCommissionRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#IncorrectActivityType
- * RejectionReasonCode.IncorrectActivityType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmIncorrectActivityType
+ * RejectionReasonCode.mmIncorrectActivityType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SettlementTransactionRejection
- * RejectionReasonCode.SettlementTransactionRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSettlementTransactionRejection
+ * RejectionReasonCode.mmSettlementTransactionRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ClosingDateTimeRejection
- * RejectionReasonCode.ClosingDateTimeRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmClosingDateTimeRejection
+ * RejectionReasonCode.mmClosingDateTimeRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#VariableRateSupportRejection
- * RejectionReasonCode.VariableRateSupportRejection}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmVariableRateSupportRejection
+ * RejectionReasonCode.mmVariableRateSupportRejection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingOption
- * RejectionReasonCode.MissingOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingOption
+ * RejectionReasonCode.mmMissingOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotDefinedAgent
- * RejectionReasonCode.NotDefinedAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotDefinedAgent
+ * RejectionReasonCode.mmNotDefinedAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingPeriodEndDate
- * RejectionReasonCode.MissingPeriodEndDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingPeriodEndDate
+ * RejectionReasonCode.mmMissingPeriodEndDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingPeriodStartDate
- * RejectionReasonCode.MissingPeriodStartDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingPeriodStartDate
+ * RejectionReasonCode.mmMissingPeriodStartDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingResultingAmount
- * RejectionReasonCode.MissingResultingAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingResultingAmount
+ * RejectionReasonCode.mmMissingResultingAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#WrongSecurityType
- * RejectionReasonCode.WrongSecurityType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmWrongSecurityType
+ * RejectionReasonCode.mmWrongSecurityType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotEligibleDisperseSecurity
- * RejectionReasonCode.NotEligibleDisperseSecurity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotEligibleDisperseSecurity
+ * RejectionReasonCode.mmNotEligibleDisperseSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NonEligibleSecurity
- * RejectionReasonCode.NonEligibleSecurity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNonEligibleSecurity
+ * RejectionReasonCode.mmNonEligibleSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingExchangeRate
- * RejectionReasonCode.MissingExchangeRate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingExchangeRate
+ * RejectionReasonCode.mmMissingExchangeRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ValueDateBeforePaymentDate
- * RejectionReasonCode.ValueDateBeforePaymentDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmValueDateBeforePaymentDate
+ * RejectionReasonCode.mmValueDateBeforePaymentDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#UnexpectedAccruedInterest
- * RejectionReasonCode.UnexpectedAccruedInterest}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmUnexpectedAccruedInterest
+ * RejectionReasonCode.mmUnexpectedAccruedInterest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoAccessToService
- * RejectionReasonCode.NoAccessToService}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoAccessToService
+ * RejectionReasonCode.mmNoAccessToService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingCertification
- * RejectionReasonCode.MissingCertification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingCertification
+ * RejectionReasonCode.mmMissingCertification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotBusinessDay
- * RejectionReasonCode.NotBusinessDay}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotBusinessDay
+ * RejectionReasonCode.mmNotBusinessDay}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#EffectiveDayAfterPaymentDate
- * RejectionReasonCode.EffectiveDayAfterPaymentDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmEffectiveDayAfterPaymentDate
+ * RejectionReasonCode.mmEffectiveDayAfterPaymentDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#GrossAmountLessThanNetAmount
- * RejectionReasonCode.GrossAmountLessThanNetAmount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmGrossAmountLessThanNetAmount
+ * RejectionReasonCode.mmGrossAmountLessThanNetAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MissingDefaultOption
- * RejectionReasonCode.MissingDefaultOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMissingDefaultOption
+ * RejectionReasonCode.mmMissingDefaultOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NonActiveParty
- * RejectionReasonCode.NonActiveParty}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNonActiveParty
+ * RejectionReasonCode.mmNonActiveParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PeriodEndDateBeforeStartDate
- * RejectionReasonCode.PeriodEndDateBeforeStartDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPeriodEndDateBeforeStartDate
+ * RejectionReasonCode.mmPeriodEndDateBeforeStartDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#RecordDateAfterPaymentDate
- * RejectionReasonCode.RecordDateAfterPaymentDate}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmRecordDateAfterPaymentDate
+ * RejectionReasonCode.mmRecordDateAfterPaymentDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#FailedValidation
- * RejectionReasonCode.FailedValidation}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmFailedValidation
+ * RejectionReasonCode.mmFailedValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#EventAlreadyDeactivated
- * RejectionReasonCode.EventAlreadyDeactivated}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmEventAlreadyDeactivated
+ * RejectionReasonCode.mmEventAlreadyDeactivated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoPendingDeactivationInstruction
- * RejectionReasonCode.NoPendingDeactivationInstruction}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoPendingDeactivationInstruction
+ * RejectionReasonCode.mmNoPendingDeactivationInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#AmendmentNotAllowed
- * RejectionReasonCode.AmendmentNotAllowed}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmAmendmentNotAllowed
+ * RejectionReasonCode.mmAmendmentNotAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#CancellationNotAllowed
- * RejectionReasonCode.CancellationNotAllowed}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonCode#Late
- * RejectionReasonCode.Late}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmCancellationNotAllowed
+ * RejectionReasonCode.mmCancellationNotAllowed}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmLate
+ * RejectionReasonCode.mmLate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ElectionAlreadyCancelled
- * RejectionReasonCode.ElectionAlreadyCancelled}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmElectionAlreadyCancelled
+ * RejectionReasonCode.mmElectionAlreadyCancelled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#ElectionAlreadyAmended
- * RejectionReasonCode.ElectionAlreadyAmended}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmElectionAlreadyAmended
+ * RejectionReasonCode.mmElectionAlreadyAmended}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SameCAIdentification
- * RejectionReasonCode.SameCAIdentification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSameCAIdentification
+ * RejectionReasonCode.mmSameCAIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidCAIdentification
- * RejectionReasonCode.InvalidCAIdentification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidCAIdentification
+ * RejectionReasonCode.mmInvalidCAIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidAgent
- * RejectionReasonCode.InvalidAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidAgent
+ * RejectionReasonCode.mmInvalidAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotMainAgent
- * RejectionReasonCode.NotMainAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotMainAgent
+ * RejectionReasonCode.mmNotMainAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidOption
- * RejectionReasonCode.InvalidOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidOption
+ * RejectionReasonCode.mmInvalidOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#PendingDeactivation
- * RejectionReasonCode.PendingDeactivation}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmPendingDeactivation
+ * RejectionReasonCode.mmPendingDeactivation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotIdentifiedCashAccount
- * RejectionReasonCode.NotIdentifiedCashAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotIdentifiedCashAccount
+ * RejectionReasonCode.mmNotIdentifiedCashAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotIdentifiedCorrespondentBank
- * RejectionReasonCode.NotIdentifiedCorrespondentBank}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotIdentifiedCorrespondentBank
+ * RejectionReasonCode.mmNotIdentifiedCorrespondentBank}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidStandingInstructionType
- * RejectionReasonCode.InvalidStandingInstructionType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidStandingInstructionType
+ * RejectionReasonCode.mmInvalidStandingInstructionType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoHolding
- * RejectionReasonCode.NoHolding}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoHolding
+ * RejectionReasonCode.mmNoHolding}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InsufficientBalance
- * RejectionReasonCode.InsufficientBalance}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInsufficientBalance
+ * RejectionReasonCode.mmInsufficientBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#SameIdentification
- * RejectionReasonCode.SameIdentification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmSameIdentification
+ * RejectionReasonCode.mmSameIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#OptionAlreadyDeactivated
- * RejectionReasonCode.OptionAlreadyDeactivated}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmOptionAlreadyDeactivated
+ * RejectionReasonCode.mmOptionAlreadyDeactivated}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidEventType
- * RejectionReasonCode.InvalidEventType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidEventType
+ * RejectionReasonCode.mmInvalidEventType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidUnderlyingSecurity
- * RejectionReasonCode.InvalidUnderlyingSecurity}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidUnderlyingSecurity
+ * RejectionReasonCode.mmInvalidUnderlyingSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidEventProcessingType
- * RejectionReasonCode.InvalidEventProcessingType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidEventProcessingType
+ * RejectionReasonCode.mmInvalidEventProcessingType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidMandatoryVoluntaryEventType
- * RejectionReasonCode.InvalidMandatoryVoluntaryEventType}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidMandatoryVoluntaryEventType
+ * RejectionReasonCode.mmInvalidMandatoryVoluntaryEventType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidCorporateActionInformation
- * RejectionReasonCode.InvalidCorporateActionInformation}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidCorporateActionInformation
+ * RejectionReasonCode.mmInvalidCorporateActionInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidDetails
- * RejectionReasonCode.InvalidDetails}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidDetails
+ * RejectionReasonCode.mmInvalidDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NoRemainingOption
- * RejectionReasonCode.NoRemainingOption}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNoRemainingOption
+ * RejectionReasonCode.mmNoRemainingOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MismatchedCAIdentification
- * RejectionReasonCode.MismatchedCAIdentification}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMismatchedCAIdentification
+ * RejectionReasonCode.mmMismatchedCAIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NotApplicable
- * RejectionReasonCode.NotApplicable}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNotApplicable
+ * RejectionReasonCode.mmNotApplicable}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidMovementInformation
- * RejectionReasonCode.InvalidMovementInformation}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidMovementInformation
+ * RejectionReasonCode.mmInvalidMovementInformation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#MovementAlreadySettled
- * RejectionReasonCode.MovementAlreadySettled}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmMovementAlreadySettled
+ * RejectionReasonCode.mmMovementAlreadySettled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#NarrativeReason
- * RejectionReasonCode.NarrativeReason}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmNarrativeReason
+ * RejectionReasonCode.mmNarrativeReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#InvalidIdentification
- * RejectionReasonCode.InvalidIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RejectionReasonCode#Other
- * RejectionReasonCode.Other}</li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmInvalidIdentification
+ * RejectionReasonCode.mmInvalidIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.RejectionReasonCode#mmOther
+ * RejectionReasonCode.mmOther}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -586,9 +589,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid closing closing amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode ClosingTransactionAmount = new MMCode() {
+	public static final MMCode mmClosingTransactionAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingTransactionAmount";
 			definition = "Unrecognised or invalid closing closing amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -617,9 +620,9 @@ public class RejectionReasonCode {
 	 * "Market member executed the order exceeding the requested quantity."</li>
 	 * </ul>
 	 */
-	public static final MMCode TradedQuantityHigherThanOriginalOrderQuantity = new MMCode() {
+	public static final MMCode mmTradedQuantityHigherThanOriginalOrderQuantity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradedQuantityHigherThanOriginalOrderQuantity";
 			definition = "Market member executed the order exceeding the requested quantity.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -650,9 +653,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TransactionNoticeIDUnknown = new MMCode() {
+	public static final MMCode mmTransactionNoticeIDUnknown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionNoticeIDUnknown";
 			definition = "The combination of the Transaction Notice Reference, Market Member, and Intermediary is unknown.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -683,9 +686,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TransactionNoticeAlreadyAcceptedOrRejected = new MMCode() {
+	public static final MMCode mmTransactionNoticeAlreadyAcceptedOrRejected = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionNoticeAlreadyAcceptedOrRejected";
 			definition = "A message with the same Transaction Notice Reference, Market Member, and Intermediary has already been processed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -713,9 +716,9 @@ public class RejectionReasonCode {
 	 * definition} = "Order entry date is missing."</li>
 	 * </ul>
 	 */
-	public static final MMCode OrderDateNotProvided = new MMCode() {
+	public static final MMCode mmOrderDateNotProvided = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OrderDateNotProvided";
 			definition = "Order entry date is missing.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -747,9 +750,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidRequest = new MMCode() {
+	public static final MMCode mmInvalidRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidRequest";
 			definition = "Statement/status advice request cannot be executed. The message type requested is not valid for the message reference or statement period concerned.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -780,9 +783,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode IncorrectCertification = new MMCode() {
+	public static final MMCode mmIncorrectCertification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncorrectCertification";
 			definition = "Instruction is rejected since the provided certification is incorrect or incomplete.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -812,9 +815,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidReference = new MMCode() {
+	public static final MMCode mmInvalidReference = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidReference";
 			definition = "Instruction contains an invalid message reference, reference is unknown.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -843,9 +846,9 @@ public class RejectionReasonCode {
 	 * "Instruction contains an invalid or unrecognised safekeeping account."</li>
 	 * </ul>
 	 */
-	public static final MMCode SafekeepingAccountRejection = new MMCode() {
+	public static final MMCode mmSafekeepingAccountRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SafekeepingAccountRejection";
 			definition = "Instruction contains an invalid or unrecognised safekeeping account.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -873,9 +876,9 @@ public class RejectionReasonCode {
 	 * definition} = "Position is less than required threshold."</li>
 	 * </ul>
 	 */
-	public static final MMCode InsufficientTresholdPosition = new MMCode() {
+	public static final MMCode mmInsufficientTresholdPosition = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientTresholdPosition";
 			definition = "Position is less than required threshold.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -903,9 +906,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid instructed quantity."</li>
 	 * </ul>
 	 */
-	public static final MMCode QuantityRejection = new MMCode() {
+	public static final MMCode mmQuantityRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityRejection";
 			definition = "Unrecognised or invalid instructed quantity.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -934,9 +937,9 @@ public class RejectionReasonCode {
 	 * "Instruction received after the account servicers specified deadline."</li>
 	 * </ul>
 	 */
-	public static final MMCode AccountServicerDeadlineMissed = new MMCode() {
+	public static final MMCode mmAccountServicerDeadlineMissed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountServicerDeadlineMissed";
 			definition = "Instruction received after the account servicers specified deadline.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -964,9 +967,9 @@ public class RejectionReasonCode {
 	 * definition} = "Split voting is not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode SplitVoteNotAllowed = new MMCode() {
+	public static final MMCode mmSplitVoteNotAllowed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SplitVoteNotAllowed";
 			definition = "Split voting is not allowed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -994,9 +997,9 @@ public class RejectionReasonCode {
 	 * definition} = "Partial voting is not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode PartialVoteNotAllowed = new MMCode() {
+	public static final MMCode mmPartialVoteNotAllowed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialVoteNotAllowed";
 			definition = "Partial voting is not allowed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1024,9 +1027,9 @@ public class RejectionReasonCode {
 	 * definition} = "Missing or invalid power of attorney."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingOrInvalidPOA = new MMCode() {
+	public static final MMCode mmMissingOrInvalidPOA = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingOrInvalidPOA";
 			definition = "Missing or invalid power of attorney.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1054,9 +1057,9 @@ public class RejectionReasonCode {
 	 * definition} = "Invalid proxy information."</li>
 	 * </ul>
 	 */
-	public static final MMCode ProxyCardDiscrepancy = new MMCode() {
+	public static final MMCode mmProxyCardDiscrepancy = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProxyCardDiscrepancy";
 			definition = "Invalid proxy information.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1084,9 +1087,9 @@ public class RejectionReasonCode {
 	 * definition} = "Invalid registration information."</li>
 	 * </ul>
 	 */
-	public static final MMCode RegistrationDiscrepancy = new MMCode() {
+	public static final MMCode mmRegistrationDiscrepancy = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDiscrepancy";
 			definition = "Invalid registration information.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1114,9 +1117,9 @@ public class RejectionReasonCode {
 	 * definition} = "Issuer or Registrar has rejected the instruction."</li>
 	 * </ul>
 	 */
-	public static final MMCode RejectedByIssuerOrRegistrar = new MMCode() {
+	public static final MMCode mmRejectedByIssuerOrRegistrar = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedByIssuerOrRegistrar";
 			definition = "Issuer or Registrar has rejected the instruction.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1145,9 +1148,9 @@ public class RejectionReasonCode {
 	 * "Unrecognised or invalid financial instrument identification."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidSecurity = new MMCode() {
+	public static final MMCode mmInvalidSecurity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidSecurity";
 			definition = "Unrecognised or invalid financial instrument identification.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1175,9 +1178,9 @@ public class RejectionReasonCode {
 	 * definition} = "The instruction is irrevocable"</li>
 	 * </ul>
 	 */
-	public static final MMCode InstructionIrrevocable = new MMCode() {
+	public static final MMCode mmInstructionIrrevocable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InstructionIrrevocable";
 			definition = "The instruction is irrevocable";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1210,9 +1213,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode OptionCancelled = new MMCode() {
+	public static final MMCode mmOptionCancelled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionCancelled";
 			definition = "Option is not valid; it has been cancelled by the market or service provider, and cannot be responded to. Any responses already processed against this option are considered void and new responses will be required .";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1244,9 +1247,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode OptionInactive = new MMCode() {
+	public static final MMCode mmOptionInactive = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionInactive";
 			definition = "Option is not active and can no longer be responded to. Any responses already processed against this option will remain valid, eg, expired option.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1275,9 +1278,9 @@ public class RejectionReasonCode {
 	 * "For tax reclaim, the reclaim is invalid for the tax authorities."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidForTaxAuthorities = new MMCode() {
+	public static final MMCode mmInvalidForTaxAuthorities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidForTaxAuthorities";
 			definition = "For tax reclaim, the reclaim is invalid for the tax authorities.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1305,9 +1308,9 @@ public class RejectionReasonCode {
 	 * definition} = "Reclaim is refused by the tax authorities."</li>
 	 * </ul>
 	 */
-	public static final MMCode RefusedByTaxAuthorities = new MMCode() {
+	public static final MMCode mmRefusedByTaxAuthorities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RefusedByTaxAuthorities";
 			definition = "Reclaim is refused by the tax authorities.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1335,9 +1338,9 @@ public class RejectionReasonCode {
 	 * definition} = "Instructed position exceeds the eligible balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode LackofSecurities = new MMCode() {
+	public static final MMCode mmLackofSecurities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LackofSecurities";
 			definition = "Instructed position exceeds the eligible balance.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1365,9 +1368,9 @@ public class RejectionReasonCode {
 	 * definition} = "Received after market deadline."</li>
 	 * </ul>
 	 */
-	public static final MMCode MarketDeadlineMissed = new MMCode() {
+	public static final MMCode mmMarketDeadlineMissed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MarketDeadlineMissed";
 			definition = "Received after market deadline.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1395,9 +1398,9 @@ public class RejectionReasonCode {
 	 * definition} = "Mismatch between option number and option type."</li>
 	 * </ul>
 	 */
-	public static final MMCode Mismatch = new MMCode() {
+	public static final MMCode mmMismatch = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mismatch";
 			definition = "Mismatch between option number and option type.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1425,9 +1428,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised option number."</li>
 	 * </ul>
 	 */
-	public static final MMCode OptionNumberRejection = new MMCode() {
+	public static final MMCode mmOptionNumberRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionNumberRejection";
 			definition = "Unrecognised option number.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1455,9 +1458,9 @@ public class RejectionReasonCode {
 	 * definition} = "Invalid option type."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidOptionType = new MMCode() {
+	public static final MMCode mmInvalidOptionType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidOptionType";
 			definition = "Invalid option type.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1488,9 +1491,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RejectedSinceAlreadyCancelled = new MMCode() {
+	public static final MMCode mmRejectedSinceAlreadyCancelled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedSinceAlreadyCancelled";
 			definition = "Cancellation request was rejected since the instruction has already been cancelled.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1521,9 +1524,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RejectedSinceInProgress = new MMCode() {
+	public static final MMCode mmRejectedSinceInProgress = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedSinceInProgress";
 			definition = "Cancellation request has been rejected because the instruction process is in progress or has been processed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1554,9 +1557,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode UnrecognizedIdentification = new MMCode() {
+	public static final MMCode mmUnrecognizedIdentification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnrecognizedIdentification";
 			definition = "Unrecognised event number or identification (eg corporate action event number, a meeting identification)";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1584,9 +1587,9 @@ public class RejectionReasonCode {
 	 * definition} = "Financial instrument's symbol has not been recognized."</li>
 	 * </ul>
 	 */
-	public static final MMCode UnknownSymbol = new MMCode() {
+	public static final MMCode mmUnknownSymbol = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnknownSymbol";
 			definition = "Financial instrument's symbol has not been recognized.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1615,9 +1618,9 @@ public class RejectionReasonCode {
 	 * "Exchange on which the financial instrument is traded is closed."</li>
 	 * </ul>
 	 */
-	public static final MMCode ClosedExchange = new MMCode() {
+	public static final MMCode mmClosedExchange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosedExchange";
 			definition = "Exchange on which the financial instrument is traded is closed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1648,9 +1651,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ExceedsLimit = new MMCode() {
+	public static final MMCode mmExceedsLimit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExceedsLimit";
 			definition = "Countervalue of the order exceeds the allowed trading limit or quote exceeds limit.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1678,9 +1681,9 @@ public class RejectionReasonCode {
 	 * definition} = "Request has exceeded the allowed time frame."</li>
 	 * </ul>
 	 */
-	public static final MMCode TooLate = new MMCode() {
+	public static final MMCode mmTooLate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TooLate";
 			definition = "Request has exceeded the allowed time frame.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1709,9 +1712,9 @@ public class RejectionReasonCode {
 	 * "Price does not comply with the financial instrument's characteristics."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidPrice = new MMCode() {
+	public static final MMCode mmInvalidPrice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidPrice";
 			definition = "Price does not comply with the financial instrument's characteristics.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1739,9 +1742,9 @@ public class RejectionReasonCode {
 	 * definition} = "Permission to be processed is not granted."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotAuthorised = new MMCode() {
+	public static final MMCode mmNotAuthorised = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotAuthorised";
 			definition = "Permission to be processed is not granted.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1769,9 +1772,9 @@ public class RejectionReasonCode {
 	 * definition} = "No counterparty order has been identified."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoMatchInquiry = new MMCode() {
+	public static final MMCode mmNoMatchInquiry = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoMatchInquiry";
 			definition = "No counterparty order has been identified.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1802,9 +1805,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NoInstrumentMarket = new MMCode() {
+	public static final MMCode mmNoInstrumentMarket = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoInstrumentMarket";
 			definition = "Referred instrument does not exist in combination with the mentioned market.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1832,9 +1835,9 @@ public class RejectionReasonCode {
 	 * definition} = "Requested financial instrument is not available."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoInventory = new MMCode() {
+	public static final MMCode mmNoInventory = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoInventory";
 			definition = "Requested financial instrument is not available.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1862,9 +1865,9 @@ public class RejectionReasonCode {
 	 * definition} = "Counterparty is not interested in the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMCode Pass = new MMCode() {
+	public static final MMCode mmPass = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pass";
 			definition = "Counterparty is not interested in the transaction.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1892,9 +1895,9 @@ public class RejectionReasonCode {
 	 * definition} = "Price in the execution exceeds the order price."</li>
 	 * </ul>
 	 */
-	public static final MMCode PriceExceeds = new MMCode() {
+	public static final MMCode mmPriceExceeds = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceExceeds";
 			definition = "Price in the execution exceeds the order price.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1922,9 +1925,9 @@ public class RejectionReasonCode {
 	 * definition} = "Quantity in the execution exceeds the ordered quantity."</li>
 	 * </ul>
 	 */
-	public static final MMCode QuantityExceeds = new MMCode() {
+	public static final MMCode mmQuantityExceeds = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityExceeds";
 			definition = "Quantity in the execution exceeds the ordered quantity.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1952,9 +1955,9 @@ public class RejectionReasonCode {
 	 * definition} = "Order is for the wrong side."</li>
 	 * </ul>
 	 */
-	public static final MMCode WrongSide = new MMCode() {
+	public static final MMCode mmWrongSide = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WrongSide";
 			definition = "Order is for the wrong side.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -1987,9 +1990,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode CalculationDifference = new MMCode() {
+	public static final MMCode mmCalculationDifference = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationDifference";
 			definition = "This is primarily used when the Notice of Execution received by the buy-side contains fees, gross trade amount, net trade amount, etc., values that differ from the buy-side's calculations.  Buy-side may reject the trade if they feel that the difference in calculations is too high.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2017,9 +2020,9 @@ public class RejectionReasonCode {
 	 * definition} = "Requestor has no insufficient credit to make the trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode InsufficientCredit = new MMCode() {
+	public static final MMCode mmInsufficientCredit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientCredit";
 			definition = "Requestor has no insufficient credit to make the trade.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2047,9 +2050,9 @@ public class RejectionReasonCode {
 	 * definition} = "Agreement start date is missing or invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode AgreementStartDate = new MMCode() {
+	public static final MMCode mmAgreementStartDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgreementStartDate";
 			definition = "Agreement start date is missing or invalid.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2077,9 +2080,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid transaction call delay."</li>
 	 * </ul>
 	 */
-	public static final MMCode TransactionCallDelay = new MMCode() {
+	public static final MMCode mmTransactionCallDelay = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TransactionCallDelay";
 			definition = "Unrecognised or invalid transaction call delay.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2107,9 +2110,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid cash account."</li>
 	 * </ul>
 	 */
-	public static final MMCode CashAccount = new MMCode() {
+	public static final MMCode mmCashAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashAccount";
 			definition = "Unrecognised or invalid cash account.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2137,9 +2140,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid deal price."</li>
 	 * </ul>
 	 */
-	public static final MMCode DealPrice = new MMCode() {
+	public static final MMCode mmDealPrice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DealPrice";
 			definition = "Unrecognised or invalid deal price.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2167,9 +2170,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid forfeit amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode ForfeitAmount = new MMCode() {
+	public static final MMCode mmForfeitAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ForfeitAmount";
 			definition = "Unrecognised or invalid forfeit amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2197,9 +2200,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid delivering custodian."</li>
 	 * </ul>
 	 */
-	public static final MMCode DeliveringCustodian = new MMCode() {
+	public static final MMCode mmDeliveringCustodian = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveringCustodian";
 			definition = "Unrecognised or invalid delivering custodian.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2227,9 +2230,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid receiving agent."</li>
 	 * </ul>
 	 */
-	public static final MMCode ReceivingCustodian = new MMCode() {
+	public static final MMCode mmReceivingCustodian = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingCustodian";
 			definition = "Unrecognised or invalid receiving agent.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2260,9 +2263,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NotFoundRejection = new MMCode() {
+	public static final MMCode mmNotFoundRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotFoundRejection";
 			definition = "Cancellation request has been rejected since the instruction could not be found.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2290,9 +2293,9 @@ public class RejectionReasonCode {
 	 * definition} = "Quantity unit type is not provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode QuantityUnitType = new MMCode() {
+	public static final MMCode mmQuantityUnitType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuantityUnitType";
 			definition = "Quantity unit type is not provided.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2320,9 +2323,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid termination transaction amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode TerminationTransactionAmount = new MMCode() {
+	public static final MMCode mmTerminationTransactionAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TerminationTransactionAmount";
 			definition = "Unrecognised or invalid termination transaction amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2350,9 +2353,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid repurchase rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode RepurchaseRate = new MMCode() {
+	public static final MMCode mmRepurchaseRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseRate";
 			definition = "Unrecognised or invalid repurchase rate.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2380,9 +2383,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid premium amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode PremiumAmount = new MMCode() {
+	public static final MMCode mmPremiumAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PremiumAmount";
 			definition = "Unrecognised or invalid premium amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2410,9 +2413,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid repurchase rate type."</li>
 	 * </ul>
 	 */
-	public static final MMCode RepurchaseRateType = new MMCode() {
+	public static final MMCode mmRepurchaseRateType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepurchaseRateType";
 			definition = "Unrecognised or invalid repurchase rate type.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2440,9 +2443,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid spread rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode SpreadRate = new MMCode() {
+	public static final MMCode mmSpreadRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SpreadRate";
 			definition = "Unrecognised or invalid spread rate.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2470,9 +2473,9 @@ public class RejectionReasonCode {
 	 * definition} = "Traded securities quantity not provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode TradedSecuritiesQuantity = new MMCode() {
+	public static final MMCode mmTradedSecuritiesQuantity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradedSecuritiesQuantity";
 			definition = "Traded securities quantity not provided.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2503,9 +2506,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TradeDate = new MMCode() {
+	public static final MMCode mmTradeDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeDate";
 			definition = "Unrecognised or invalid trade date or requested trade date or future trade date.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2533,9 +2536,9 @@ public class RejectionReasonCode {
 	 * definition} = "Receiving agent is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode ReceivingAgent = new MMCode() {
+	public static final MMCode mmReceivingAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingAgent";
 			definition = "Receiving agent is not recognised or is invalid.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2563,9 +2566,9 @@ public class RejectionReasonCode {
 	 * definition} = "Intermediary is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode Intermediary = new MMCode() {
+	public static final MMCode mmIntermediary = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Intermediary";
 			definition = "Intermediary is not recognised or is invalid.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2593,9 +2596,9 @@ public class RejectionReasonCode {
 	 * definition} = "Delivering agent is not recognised or is invalid."</li>
 	 * </ul>
 	 */
-	public static final MMCode DeliveringAgent = new MMCode() {
+	public static final MMCode mmDeliveringAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DeliveringAgent";
 			definition = "Delivering agent is not recognised or is invalid.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2623,9 +2626,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid place of trade."</li>
 	 * </ul>
 	 */
-	public static final MMCode PlaceOfTrade = new MMCode() {
+	public static final MMCode mmPlaceOfTrade = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfTrade";
 			definition = "Unrecognised or invalid place of trade.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2653,9 +2656,9 @@ public class RejectionReasonCode {
 	 * definition} = "Investor name and address is not recognised."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvestorNameAddressUnknown = new MMCode() {
+	public static final MMCode mmInvestorNameAddressUnknown = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestorNameAddressUnknown";
 			definition = "Investor name and address is not recognised.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2684,9 +2687,9 @@ public class RejectionReasonCode {
 	 * "It is not possible to use the RTGS system instructed (NRTG or YRTG)."</li>
 	 * </ul>
 	 */
-	public static final MMCode ImpossibleToUseTheRTGSSystemInstructed = new MMCode() {
+	public static final MMCode mmImpossibleToUseTheRTGSSystemInstructed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ImpossibleToUseTheRTGSSystemInstructed";
 			definition = "It is not possible to use the RTGS system instructed (NRTG or YRTG).";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2714,9 +2717,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid settlement amount currency."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementAmountCurrencyRejection = new MMCode() {
+	public static final MMCode mmSettlementAmountCurrencyRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAmountCurrencyRejection";
 			definition = "Unrecognised or invalid settlement amount currency.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2745,9 +2748,9 @@ public class RejectionReasonCode {
 	 * "Unrecognised or invalid letter of guarantee indicator instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode LetterOfGuaranteeIndicatorRejection = new MMCode() {
+	public static final MMCode mmLetterOfGuaranteeIndicatorRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LetterOfGuaranteeIndicatorRejection";
 			definition = "Unrecognised or invalid letter of guarantee indicator instructed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2776,9 +2779,9 @@ public class RejectionReasonCode {
 	 * "Missing credit authorisation (for pre-release transactions)."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingCreditAuthorisation = new MMCode() {
+	public static final MMCode mmMissingCreditAuthorisation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingCreditAuthorisation";
 			definition = "Missing credit authorisation (for pre-release transactions).";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2806,9 +2809,9 @@ public class RejectionReasonCode {
 	 * definition} = "Address details are incorrect or cannot be recognised."</li>
 	 * </ul>
 	 */
-	public static final MMCode AddressDetailsRejection = new MMCode() {
+	public static final MMCode mmAddressDetailsRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AddressDetailsRejection";
 			definition = "Address details are incorrect or cannot be recognised.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2837,9 +2840,9 @@ public class RejectionReasonCode {
 	 * "Unrecognised or invalid receiving or delivering custodian."</li>
 	 * </ul>
 	 */
-	public static final MMCode ReceivingOrDeliveringCustodianRejection = new MMCode() {
+	public static final MMCode mmReceivingOrDeliveringCustodianRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingOrDeliveringCustodianRejection";
 			definition = "Unrecognised or invalid receiving or delivering custodian.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2867,9 +2870,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid buyer or seller."</li>
 	 * </ul>
 	 */
-	public static final MMCode ReceivingDeliveringParty3 = new MMCode() {
+	public static final MMCode mmReceivingDeliveringParty3 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReceivingDeliveringParty3";
 			definition = "Unrecognised or invalid buyer or seller.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2900,9 +2903,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PhysicalSettlementImpossible = new MMCode() {
+	public static final MMCode mmPhysicalSettlementImpossible = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PhysicalSettlementImpossible";
 			definition = "Physical settlement is impossible for the instructed financial instrument.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2933,9 +2936,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ReferenceRejection = new MMCode() {
+	public static final MMCode mmReferenceRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReferenceRejection";
 			definition = "Instruction has a reference identical to another previously received instruction.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2963,9 +2966,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid settlement amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementAmountRejection = new MMCode() {
+	public static final MMCode mmSettlementAmountRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementAmountRejection";
 			definition = "Unrecognised or invalid settlement amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -2994,9 +2997,9 @@ public class RejectionReasonCode {
 	 * "Missing statutes or commercial register or other legal documents."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingStatutes = new MMCode() {
+	public static final MMCode mmMissingStatutes = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingStatutes";
 			definition = "Missing statutes or commercial register or other legal documents.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3025,9 +3028,9 @@ public class RejectionReasonCode {
 	 * "Financial instrument has not been stamped and/or duly signed."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotStampedOrSigned = new MMCode() {
+	public static final MMCode mmNotStampedOrSigned = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotStampedOrSigned";
 			definition = "Financial instrument has not been stamped and/or duly signed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3058,9 +3061,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidSignature = new MMCode() {
+	public static final MMCode mmInvalidSignature = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidSignature";
 			definition = "Registration request does not have a valid signature of the owner of the financial instrument.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3088,9 +3091,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid shareholder number."</li>
 	 * </ul>
 	 */
-	public static final MMCode ShareholderNumberRejection = new MMCode() {
+	public static final MMCode mmShareholderNumberRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShareholderNumberRejection";
 			definition = "Unrecognised or invalid shareholder number.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3121,9 +3124,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MinimumSettlementQuantity = new MMCode() {
+	public static final MMCode mmMinimumSettlementQuantity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumSettlementQuantity";
 			definition = "Quantity instructed is lower than the minimum existing settlement quantity for the financial instrument.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3154,9 +3157,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NoMatch = new MMCode() {
+	public static final MMCode mmNoMatch = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoMatch";
 			definition = "Cancellation request has been rejected since more than one instruction match to the cancellation criteria.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3184,9 +3187,9 @@ public class RejectionReasonCode {
 	 * definition} = "Missing legal power for transfer."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingLegalPower = new MMCode() {
+	public static final MMCode mmMissingLegalPower = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingLegalPower";
 			definition = "Missing legal power for transfer.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3217,9 +3220,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ProcessingBatchRejection = new MMCode() {
+	public static final MMCode mmProcessingBatchRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ProcessingBatchRejection";
 			definition = "Unrecognised or invalid processing batch, that is, daytime/real-time while only possible to settle in overnight batch.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3247,9 +3250,9 @@ public class RejectionReasonCode {
 	 * definition} = "Type of ownership indicated is not correct."</li>
 	 * </ul>
 	 */
-	public static final MMCode TypeOfOwnershipRejection = new MMCode() {
+	public static final MMCode mmTypeOfOwnershipRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfOwnershipRejection";
 			definition = "Type of ownership indicated is not correct.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3280,9 +3283,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MultipleSettlementQuantity = new MMCode() {
+	public static final MMCode mmMultipleSettlementQuantity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MultipleSettlementQuantity";
 			definition = "Quantity instructed is not a multiple of an existing settlement quantity lot for the financial instrument.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3314,9 +3317,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode WrongRegistrationRequest = new MMCode() {
+	public static final MMCode mmWrongRegistrationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WrongRegistrationRequest";
 			definition = "Registration request to be completed by the buyer and to be forwarded to the issuer is wrong. You have used the registration request of a different issuer/registrar.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3345,9 +3348,9 @@ public class RejectionReasonCode {
 	 * "Unrecognised or invalid tax status of the securities instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode TaxStatusRejection = new MMCode() {
+	public static final MMCode mmTaxStatusRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxStatusRejection";
 			definition = "Unrecognised or invalid tax status of the securities instructed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3375,9 +3378,9 @@ public class RejectionReasonCode {
 	 * definition} = "Registration reason indicated is not correct."</li>
 	 * </ul>
 	 */
-	public static final MMCode DisagreementInRegistrationReason = new MMCode() {
+	public static final MMCode mmDisagreementInRegistrationReason = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisagreementInRegistrationReason";
 			definition = "Registration reason indicated is not correct.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3408,9 +3411,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MissingRegistrationRequest = new MMCode() {
+	public static final MMCode mmMissingRegistrationRequest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingRegistrationRequest";
 			definition = "Registration request to be completed by the buyer and to be forwarded to the issuer is missing.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3439,9 +3442,9 @@ public class RejectionReasonCode {
 	 * "Unrecognised or invalid settlement system/method instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementSystemMethodRejection = new MMCode() {
+	public static final MMCode mmSettlementSystemMethodRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementSystemMethodRejection";
 			definition = "Unrecognised or invalid settlement system/method instructed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3469,9 +3472,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised, invalid or missing common reference."</li>
 	 * </ul>
 	 */
-	public static final MMCode CommonReferenceRejection = new MMCode() {
+	public static final MMCode mmCommonReferenceRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommonReferenceRejection";
 			definition = "Unrecognised, invalid or missing common reference.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3502,9 +3505,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NarrativeInformationRejection = new MMCode() {
+	public static final MMCode mmNarrativeInformationRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NarrativeInformationRejection";
 			definition = "Unrecognised or invalid service level agreement preagreed narrative information.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3532,9 +3535,9 @@ public class RejectionReasonCode {
 	 * definition} = "Invalid or incorrect program conversion specified."</li>
 	 * </ul>
 	 */
-	public static final MMCode IncorrectProgramConversion = new MMCode() {
+	public static final MMCode mmIncorrectProgramConversion = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncorrectProgramConversion";
 			definition = "Invalid or incorrect program conversion specified.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3562,9 +3565,9 @@ public class RejectionReasonCode {
 	 * definition} = "Insufficient collateral proposed."</li>
 	 * </ul>
 	 */
-	public static final MMCode InsufficientCollateral = new MMCode() {
+	public static final MMCode mmInsufficientCollateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientCollateral";
 			definition = "Insufficient collateral proposed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3592,9 +3595,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid business partner number."</li>
 	 * </ul>
 	 */
-	public static final MMCode BusinessPartnerNumberRejection = new MMCode() {
+	public static final MMCode mmBusinessPartnerNumberRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessPartnerNumberRejection";
 			definition = "Unrecognised or invalid business partner number.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3622,9 +3625,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid bank reference number."</li>
 	 * </ul>
 	 */
-	public static final MMCode BankReferenceNumberRejection = new MMCode() {
+	public static final MMCode mmBankReferenceNumberRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankReferenceNumberRejection";
 			definition = "Unrecognised or invalid bank reference number.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3652,9 +3655,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid type of order."</li>
 	 * </ul>
 	 */
-	public static final MMCode TypeOfOrderRejection = new MMCode() {
+	public static final MMCode mmTypeOfOrderRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TypeOfOrderRejection";
 			definition = "Unrecognised or invalid type of order.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3683,9 +3686,9 @@ public class RejectionReasonCode {
 	 * "Corporate action pending on the financial instrument instructed."</li>
 	 * </ul>
 	 */
-	public static final MMCode CorporateActionRejection = new MMCode() {
+	public static final MMCode mmCorporateActionRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionRejection";
 			definition = "Corporate action pending on the financial instrument instructed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3716,9 +3719,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ImpossibleCashSettlementSystem = new MMCode() {
+	public static final MMCode mmImpossibleCashSettlementSystem = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ImpossibleCashSettlementSystem";
 			definition = "Impossible standing arrangements override instruction for the cash settlement system.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3746,9 +3749,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognized or invalid commercialization contract."</li>
 	 * </ul>
 	 */
-	public static final MMCode CommercializationContractRejection = new MMCode() {
+	public static final MMCode mmCommercializationContractRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercializationContractRejection";
 			definition = "Unrecognized or invalid commercialization contract.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3776,9 +3779,9 @@ public class RejectionReasonCode {
 	 * definition} = "Concentration limit was exceeded."</li>
 	 * </ul>
 	 */
-	public static final MMCode ConcentrationLimitExceeded = new MMCode() {
+	public static final MMCode mmConcentrationLimitExceeded = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConcentrationLimitExceeded";
 			definition = "Concentration limit was exceeded.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3806,9 +3809,9 @@ public class RejectionReasonCode {
 	 * definition} = "Deal or exposure is unknown."</li>
 	 * </ul>
 	 */
-	public static final MMCode UnknownDealExposure = new MMCode() {
+	public static final MMCode mmUnknownDealExposure = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnknownDealExposure";
 			definition = "Deal or exposure is unknown.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3836,9 +3839,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid settlement date."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementDateRejection = new MMCode() {
+	public static final MMCode mmSettlementDateRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementDateRejection";
 			definition = "Unrecognised or invalid settlement date.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3866,9 +3869,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid place of settlement."</li>
 	 * </ul>
 	 */
-	public static final MMCode PlaceOfSettlementRejection = new MMCode() {
+	public static final MMCode mmPlaceOfSettlementRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfSettlementRejection";
 			definition = "Unrecognised or invalid place of settlement.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3896,9 +3899,9 @@ public class RejectionReasonCode {
 	 * definition} = "Party A does not agree with the call amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode DisagreeWithCallAmount = new MMCode() {
+	public static final MMCode mmDisagreeWithCallAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisagreeWithCallAmount";
 			definition = "Party A does not agree with the call amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3926,9 +3929,9 @@ public class RejectionReasonCode {
 	 * definition} = "Party A does not agree with the exposure amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode DisagreeWithExposureAmount = new MMCode() {
+	public static final MMCode mmDisagreeWithExposureAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisagreeWithExposureAmount";
 			definition = "Party A does not agree with the exposure amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3958,9 +3961,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RegistrationRequestDataAndOrderRejection = new MMCode() {
+	public static final MMCode mmRegistrationRequestDataAndOrderRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationRequestDataAndOrderRejection";
 			definition = "Disagreement between the data on the registration request and the order.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -3988,9 +3991,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognized or invalid fee or commission."</li>
 	 * </ul>
 	 */
-	public static final MMCode FeeCommissionRejection = new MMCode() {
+	public static final MMCode mmFeeCommissionRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FeeCommissionRejection";
 			definition = "Unrecognized or invalid fee or commission.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4020,9 +4023,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode IncorrectActivityType = new MMCode() {
+	public static final MMCode mmIncorrectActivityType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncorrectActivityType";
 			definition = "Incorrect activity type specified, for example, pre-release conversion.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4050,9 +4053,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid settlement transaction type."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlementTransactionRejection = new MMCode() {
+	public static final MMCode mmSettlementTransactionRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementTransactionRejection";
 			definition = "Unrecognised or invalid settlement transaction type.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4080,9 +4083,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unrecognised or invalid closing date/time."</li>
 	 * </ul>
 	 */
-	public static final MMCode ClosingDateTimeRejection = new MMCode() {
+	public static final MMCode mmClosingDateTimeRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClosingDateTimeRejection";
 			definition = "Unrecognised or invalid closing date/time.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4111,9 +4114,9 @@ public class RejectionReasonCode {
 	 * "Unrecognised or invalid variable rate support (repurchase agreement)."</li>
 	 * </ul>
 	 */
-	public static final MMCode VariableRateSupportRejection = new MMCode() {
+	public static final MMCode mmVariableRateSupportRejection = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VariableRateSupportRejection";
 			definition = "Unrecognised or invalid variable rate support (repurchase agreement).";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4141,9 +4144,9 @@ public class RejectionReasonCode {
 	 * definition} = "A second option is mandatory."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingOption = new MMCode() {
+	public static final MMCode mmMissingOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingOption";
 			definition = "A second option is mandatory.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4171,9 +4174,9 @@ public class RejectionReasonCode {
 	 * definition} = "Party is not defined as an agent"</li>
 	 * </ul>
 	 */
-	public static final MMCode NotDefinedAgent = new MMCode() {
+	public static final MMCode mmNotDefinedAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotDefinedAgent";
 			definition = "Party is not defined as an agent";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4201,9 +4204,9 @@ public class RejectionReasonCode {
 	 * definition} = "Period Ending Date or Code is missing."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingPeriodEndDate = new MMCode() {
+	public static final MMCode mmMissingPeriodEndDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingPeriodEndDate";
 			definition = "Period Ending Date or Code is missing.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4231,9 +4234,9 @@ public class RejectionReasonCode {
 	 * definition} = "Period Starting Date or Code is missing"</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingPeriodStartDate = new MMCode() {
+	public static final MMCode mmMissingPeriodStartDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingPeriodStartDate";
 			definition = "Period Starting Date or Code is missing";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4262,9 +4265,9 @@ public class RejectionReasonCode {
 	 * "Resulting amount must be filled in as Exchange rate is present."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingResultingAmount = new MMCode() {
+	public static final MMCode mmMissingResultingAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingResultingAmount";
 			definition = "Resulting amount must be filled in as Exchange rate is present.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4293,9 +4296,9 @@ public class RejectionReasonCode {
 	 * "Security type does not match with the type of corporate action."</li>
 	 * </ul>
 	 */
-	public static final MMCode WrongSecurityType = new MMCode() {
+	public static final MMCode mmWrongSecurityType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WrongSecurityType";
 			definition = "Security type does not match with the type of corporate action.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4326,9 +4329,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NotEligibleDisperseSecurity = new MMCode() {
+	public static final MMCode mmNotEligibleDisperseSecurity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotEligibleDisperseSecurity";
 			definition = "The disperse security is not eligible in the I(CSD) Service Provider Owner.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4356,9 +4359,9 @@ public class RejectionReasonCode {
 	 * definition} = "The security is not eligible."</li>
 	 * </ul>
 	 */
-	public static final MMCode NonEligibleSecurity = new MMCode() {
+	public static final MMCode mmNonEligibleSecurity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonEligibleSecurity";
 			definition = "The security is not eligible.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4387,9 +4390,9 @@ public class RejectionReasonCode {
 	 * "There cannot be a resulting amount without an exchange rate."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingExchangeRate = new MMCode() {
+	public static final MMCode mmMissingExchangeRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingExchangeRate";
 			definition = "There cannot be a resulting amount without an exchange rate.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4417,9 +4420,9 @@ public class RejectionReasonCode {
 	 * definition} = "Value date is before payment date."</li>
 	 * </ul>
 	 */
-	public static final MMCode ValueDateBeforePaymentDate = new MMCode() {
+	public static final MMCode mmValueDateBeforePaymentDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDateBeforePaymentDate";
 			definition = "Value date is before payment date.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4448,9 +4451,9 @@ public class RejectionReasonCode {
 	 * "Accrued interest is not applicable for this type of security."</li>
 	 * </ul>
 	 */
-	public static final MMCode UnexpectedAccruedInterest = new MMCode() {
+	public static final MMCode mmUnexpectedAccruedInterest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnexpectedAccruedInterest";
 			definition = "Accrued interest is not applicable for this type of security.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4478,9 +4481,9 @@ public class RejectionReasonCode {
 	 * definition} = "Agent has no access to the service."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoAccessToService = new MMCode() {
+	public static final MMCode mmNoAccessToService = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoAccessToService";
 			definition = "Agent has no access to the service.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4508,9 +4511,9 @@ public class RejectionReasonCode {
 	 * definition} = "Certification Indicator is not filled in."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingCertification = new MMCode() {
+	public static final MMCode mmMissingCertification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingCertification";
 			definition = "Certification Indicator is not filled in.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4538,9 +4541,9 @@ public class RejectionReasonCode {
 	 * definition} = "Date is not a business day for the security market"</li>
 	 * </ul>
 	 */
-	public static final MMCode NotBusinessDay = new MMCode() {
+	public static final MMCode mmNotBusinessDay = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotBusinessDay";
 			definition = "Date is not a business day for the security market";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4568,9 +4571,9 @@ public class RejectionReasonCode {
 	 * definition} = "Effective date is after the payment date."</li>
 	 * </ul>
 	 */
-	public static final MMCode EffectiveDayAfterPaymentDate = new MMCode() {
+	public static final MMCode mmEffectiveDayAfterPaymentDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectiveDayAfterPaymentDate";
 			definition = "Effective date is after the payment date.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4598,9 +4601,9 @@ public class RejectionReasonCode {
 	 * definition} = "Gross amount is less than net amount."</li>
 	 * </ul>
 	 */
-	public static final MMCode GrossAmountLessThanNetAmount = new MMCode() {
+	public static final MMCode mmGrossAmountLessThanNetAmount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmountLessThanNetAmount";
 			definition = "Gross amount is less than net amount.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4628,9 +4631,9 @@ public class RejectionReasonCode {
 	 * definition} = "One option must be marked as the default."</li>
 	 * </ul>
 	 */
-	public static final MMCode MissingDefaultOption = new MMCode() {
+	public static final MMCode mmMissingDefaultOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MissingDefaultOption";
 			definition = "One option must be marked as the default.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4658,9 +4661,9 @@ public class RejectionReasonCode {
 	 * definition} = "Party is not active."</li>
 	 * </ul>
 	 */
-	public static final MMCode NonActiveParty = new MMCode() {
+	public static final MMCode mmNonActiveParty = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonActiveParty";
 			definition = "Party is not active.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4688,9 +4691,9 @@ public class RejectionReasonCode {
 	 * definition} = "Period Ending date is before Period Starting date."</li>
 	 * </ul>
 	 */
-	public static final MMCode PeriodEndDateBeforeStartDate = new MMCode() {
+	public static final MMCode mmPeriodEndDateBeforeStartDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PeriodEndDateBeforeStartDate";
 			definition = "Period Ending date is before Period Starting date.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4718,9 +4721,9 @@ public class RejectionReasonCode {
 	 * definition} = "Record date is after payment date."</li>
 	 * </ul>
 	 */
-	public static final MMCode RecordDateAfterPaymentDate = new MMCode() {
+	public static final MMCode mmRecordDateAfterPaymentDate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RecordDateAfterPaymentDate";
 			definition = "Record date is after payment date.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4748,9 +4751,9 @@ public class RejectionReasonCode {
 	 * definition} = "The validation of the advice/instruction/request failed."</li>
 	 * </ul>
 	 */
-	public static final MMCode FailedValidation = new MMCode() {
+	public static final MMCode mmFailedValidation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailedValidation";
 			definition = "The validation of the advice/instruction/request failed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4779,9 +4782,9 @@ public class RejectionReasonCode {
 	 * "Rejected as the deactivation of the event is already completed."</li>
 	 * </ul>
 	 */
-	public static final MMCode EventAlreadyDeactivated = new MMCode() {
+	public static final MMCode mmEventAlreadyDeactivated = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EventAlreadyDeactivated";
 			definition = "Rejected as the deactivation of the event is already completed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4812,9 +4815,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NoPendingDeactivationInstruction = new MMCode() {
+	public static final MMCode mmNoPendingDeactivationInstruction = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoPendingDeactivationInstruction";
 			definition = "The cancellation request is rejected as there is no pending deactivation instruction.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4842,9 +4845,9 @@ public class RejectionReasonCode {
 	 * definition} = "Amendment is not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode AmendmentNotAllowed = new MMCode() {
+	public static final MMCode mmAmendmentNotAllowed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmendmentNotAllowed";
 			definition = "Amendment is not allowed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4872,9 +4875,9 @@ public class RejectionReasonCode {
 	 * definition} = "Cancellation is not allowed."</li>
 	 * </ul>
 	 */
-	public static final MMCode CancellationNotAllowed = new MMCode() {
+	public static final MMCode mmCancellationNotAllowed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationNotAllowed";
 			definition = "Cancellation is not allowed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4902,9 +4905,9 @@ public class RejectionReasonCode {
 	 * definition} = "Instruction/Request arrives too late."</li>
 	 * </ul>
 	 */
-	public static final MMCode Late = new MMCode() {
+	public static final MMCode mmLate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Late";
 			definition = "Instruction/Request arrives too late.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4932,9 +4935,9 @@ public class RejectionReasonCode {
 	 * definition} = "The election advice is already cancelled."</li>
 	 * </ul>
 	 */
-	public static final MMCode ElectionAlreadyCancelled = new MMCode() {
+	public static final MMCode mmElectionAlreadyCancelled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectionAlreadyCancelled";
 			definition = "The election advice is already cancelled.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4962,9 +4965,9 @@ public class RejectionReasonCode {
 	 * definition} = "The election advice is already amended."</li>
 	 * </ul>
 	 */
-	public static final MMCode ElectionAlreadyAmended = new MMCode() {
+	public static final MMCode mmElectionAlreadyAmended = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectionAlreadyAmended";
 			definition = "The election advice is already amended.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -4995,9 +4998,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SameCAIdentification = new MMCode() {
+	public static final MMCode mmSameCAIdentification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SameCAIdentification";
 			definition = "An Agent Corporate Action Deactivation Instruction with the same identification already exists.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5025,9 +5028,9 @@ public class RejectionReasonCode {
 	 * definition} = "Invalid corporate action identification supplied."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidCAIdentification = new MMCode() {
+	public static final MMCode mmInvalidCAIdentification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidCAIdentification";
 			definition = "Invalid corporate action identification supplied.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5055,9 +5058,9 @@ public class RejectionReasonCode {
 	 * definition} = "Invalid agent identification supplied."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidAgent = new MMCode() {
+	public static final MMCode mmInvalidAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidAgent";
 			definition = "Invalid agent identification supplied.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5088,9 +5091,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NotMainAgent = new MMCode() {
+	public static final MMCode mmNotMainAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotMainAgent";
 			definition = "Agent Identification specified does not correspond to the main Agent of the relating event.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5119,9 +5122,9 @@ public class RejectionReasonCode {
 	 * "Invalid combination of CA option code and CA option number."</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidOption = new MMCode() {
+	public static final MMCode mmInvalidOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidOption";
 			definition = "Invalid combination of CA option code and CA option number.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5152,9 +5155,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PendingDeactivation = new MMCode() {
+	public static final MMCode mmPendingDeactivation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingDeactivation";
 			definition = "The specified Corporate Action option already has a pending deactivation instruction";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5182,9 +5185,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unable to identify cash account."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotIdentifiedCashAccount = new MMCode() {
+	public static final MMCode mmNotIdentifiedCashAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotIdentifiedCashAccount";
 			definition = "Unable to identify cash account.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5212,9 +5215,9 @@ public class RejectionReasonCode {
 	 * definition} = "Unable to identify correspondent bank."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotIdentifiedCorrespondentBank = new MMCode() {
+	public static final MMCode mmNotIdentifiedCorrespondentBank = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotIdentifiedCorrespondentBank";
 			definition = "Unable to identify correspondent bank.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5244,9 +5247,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidStandingInstructionType = new MMCode() {
+	public static final MMCode mmInvalidStandingInstructionType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidStandingInstructionType";
 			definition = "Invalid standing instruction type for the specified underlying security.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5274,9 +5277,9 @@ public class RejectionReasonCode {
 	 * definition} = "No holding for the specified underlying security."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoHolding = new MMCode() {
+	public static final MMCode mmNoHolding = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoHolding";
 			definition = "No holding for the specified underlying security.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5304,9 +5307,9 @@ public class RejectionReasonCode {
 	 * definition} = "Insufficient balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode InsufficientBalance = new MMCode() {
+	public static final MMCode mmInsufficientBalance = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InsufficientBalance";
 			definition = "Insufficient balance.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5334,9 +5337,9 @@ public class RejectionReasonCode {
 	 * definition} = "Several message with the same identification."</li>
 	 * </ul>
 	 */
-	public static final MMCode SameIdentification = new MMCode() {
+	public static final MMCode mmSameIdentification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SameIdentification";
 			definition = "Several message with the same identification.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5365,9 +5368,9 @@ public class RejectionReasonCode {
 	 * "Rejected as the deactivation of the option is already completed."</li>
 	 * </ul>
 	 */
-	public static final MMCode OptionAlreadyDeactivated = new MMCode() {
+	public static final MMCode mmOptionAlreadyDeactivated = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OptionAlreadyDeactivated";
 			definition = "Rejected as the deactivation of the option is already completed.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5396,9 +5399,9 @@ public class RejectionReasonCode {
 	 * "CA Event Type does not correspond with the relating Corporate Action"</li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidEventType = new MMCode() {
+	public static final MMCode mmInvalidEventType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidEventType";
 			definition = "CA Event Type does not correspond with the relating Corporate Action";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5429,9 +5432,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidUnderlyingSecurity = new MMCode() {
+	public static final MMCode mmInvalidUnderlyingSecurity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidUnderlyingSecurity";
 			definition = "Underlying Security Identification does not correspond with the Corporate Action Reference supplied.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5462,9 +5465,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidEventProcessingType = new MMCode() {
+	public static final MMCode mmInvalidEventProcessingType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidEventProcessingType";
 			definition = "Event Processing Type does not correspond with the relating Corporate Action.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5495,9 +5498,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidMandatoryVoluntaryEventType = new MMCode() {
+	public static final MMCode mmInvalidMandatoryVoluntaryEventType = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidMandatoryVoluntaryEventType";
 			definition = "Mandatory/Voluntary Event Type does not correspond with the relating Corporate Action.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5529,9 +5532,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidCorporateActionInformation = new MMCode() {
+	public static final MMCode mmInvalidCorporateActionInformation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidCorporateActionInformation";
 			definition = "Details specified in the Corporate Action General Information block are inconsistent with those that were specified in the relating original message.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5562,9 +5565,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidDetails = new MMCode() {
+	public static final MMCode mmInvalidDetails = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidDetails";
 			definition = "Message details specified in the instruction/request are inconsistent with those that were specified in the relating original message.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5593,9 +5596,9 @@ public class RejectionReasonCode {
 	 * "Specified Corporate Action has no remaining options to disable."</li>
 	 * </ul>
 	 */
-	public static final MMCode NoRemainingOption = new MMCode() {
+	public static final MMCode mmNoRemainingOption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoRemainingOption";
 			definition = "Specified Corporate Action has no remaining options to disable.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5626,9 +5629,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MismatchedCAIdentification = new MMCode() {
+	public static final MMCode mmMismatchedCAIdentification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MismatchedCAIdentification";
 			definition = "Issuer CA Identification does not correspond with the Corporate Action Identification supplied.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5657,9 +5660,9 @@ public class RejectionReasonCode {
 	 * "This instruction type is not applicable for mandatory events."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotApplicable = new MMCode() {
+	public static final MMCode mmNotApplicable = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotApplicable";
 			definition = "This instruction type is not applicable for mandatory events.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5691,9 +5694,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidMovementInformation = new MMCode() {
+	public static final MMCode mmInvalidMovementInformation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidMovementInformation";
 			definition = "Details specified in the MOVEMENT GENERAL INFORMATION block are inconsistent with those that were specified in the relating original message.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5722,9 +5725,9 @@ public class RejectionReasonCode {
 	 * "One or more of the underlying movements have already settled."</li>
 	 * </ul>
 	 */
-	public static final MMCode MovementAlreadySettled = new MMCode() {
+	public static final MMCode mmMovementAlreadySettled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementAlreadySettled";
 			definition = "One or more of the underlying movements have already settled.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5752,9 +5755,9 @@ public class RejectionReasonCode {
 	 * definition} = "A narrative reason is provided."</li>
 	 * </ul>
 	 */
-	public static final MMCode NarrativeReason = new MMCode() {
+	public static final MMCode mmNarrativeReason = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NarrativeReason";
 			definition = "A narrative reason is provided.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5785,9 +5788,9 @@ public class RejectionReasonCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode InvalidIdentification = new MMCode() {
+	public static final MMCode mmInvalidIdentification = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvalidIdentification";
 			definition = "Instruction contains an invalid message identification, identification is unknown.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5815,9 +5818,9 @@ public class RejectionReasonCode {
 	 * definition} = "Other reason."</li>
 	 * </ul>
 	 */
-	public static final MMCode Other = new MMCode() {
+	public static final MMCode mmOther = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Other reason.";
 			owner_lazy = () -> RejectionReasonCode.mmObject();
@@ -5828,89 +5831,51 @@ public class RejectionReasonCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CTRA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectionReasonCode";
 				definition = "Specifies the reason why the instruction/cancellation request has a rejected status.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RejectionReasonCode.ClosingTransactionAmount, com.tools20022.repository.codeset.RejectionReasonCode.TradedQuantityHigherThanOriginalOrderQuantity,
-						com.tools20022.repository.codeset.RejectionReasonCode.TransactionNoticeIDUnknown, com.tools20022.repository.codeset.RejectionReasonCode.TransactionNoticeAlreadyAcceptedOrRejected,
-						com.tools20022.repository.codeset.RejectionReasonCode.OrderDateNotProvided, com.tools20022.repository.codeset.RejectionReasonCode.InvalidRequest,
-						com.tools20022.repository.codeset.RejectionReasonCode.IncorrectCertification, com.tools20022.repository.codeset.RejectionReasonCode.InvalidReference,
-						com.tools20022.repository.codeset.RejectionReasonCode.SafekeepingAccountRejection, com.tools20022.repository.codeset.RejectionReasonCode.InsufficientTresholdPosition,
-						com.tools20022.repository.codeset.RejectionReasonCode.QuantityRejection, com.tools20022.repository.codeset.RejectionReasonCode.AccountServicerDeadlineMissed,
-						com.tools20022.repository.codeset.RejectionReasonCode.SplitVoteNotAllowed, com.tools20022.repository.codeset.RejectionReasonCode.PartialVoteNotAllowed,
-						com.tools20022.repository.codeset.RejectionReasonCode.MissingOrInvalidPOA, com.tools20022.repository.codeset.RejectionReasonCode.ProxyCardDiscrepancy,
-						com.tools20022.repository.codeset.RejectionReasonCode.RegistrationDiscrepancy, com.tools20022.repository.codeset.RejectionReasonCode.RejectedByIssuerOrRegistrar,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidSecurity, com.tools20022.repository.codeset.RejectionReasonCode.InstructionIrrevocable,
-						com.tools20022.repository.codeset.RejectionReasonCode.OptionCancelled, com.tools20022.repository.codeset.RejectionReasonCode.OptionInactive,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidForTaxAuthorities, com.tools20022.repository.codeset.RejectionReasonCode.RefusedByTaxAuthorities,
-						com.tools20022.repository.codeset.RejectionReasonCode.LackofSecurities, com.tools20022.repository.codeset.RejectionReasonCode.MarketDeadlineMissed, com.tools20022.repository.codeset.RejectionReasonCode.Mismatch,
-						com.tools20022.repository.codeset.RejectionReasonCode.OptionNumberRejection, com.tools20022.repository.codeset.RejectionReasonCode.InvalidOptionType,
-						com.tools20022.repository.codeset.RejectionReasonCode.RejectedSinceAlreadyCancelled, com.tools20022.repository.codeset.RejectionReasonCode.RejectedSinceInProgress,
-						com.tools20022.repository.codeset.RejectionReasonCode.UnrecognizedIdentification, com.tools20022.repository.codeset.RejectionReasonCode.UnknownSymbol,
-						com.tools20022.repository.codeset.RejectionReasonCode.ClosedExchange, com.tools20022.repository.codeset.RejectionReasonCode.ExceedsLimit, com.tools20022.repository.codeset.RejectionReasonCode.TooLate,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidPrice, com.tools20022.repository.codeset.RejectionReasonCode.NotAuthorised, com.tools20022.repository.codeset.RejectionReasonCode.NoMatchInquiry,
-						com.tools20022.repository.codeset.RejectionReasonCode.NoInstrumentMarket, com.tools20022.repository.codeset.RejectionReasonCode.NoInventory, com.tools20022.repository.codeset.RejectionReasonCode.Pass,
-						com.tools20022.repository.codeset.RejectionReasonCode.PriceExceeds, com.tools20022.repository.codeset.RejectionReasonCode.QuantityExceeds, com.tools20022.repository.codeset.RejectionReasonCode.WrongSide,
-						com.tools20022.repository.codeset.RejectionReasonCode.CalculationDifference, com.tools20022.repository.codeset.RejectionReasonCode.InsufficientCredit,
-						com.tools20022.repository.codeset.RejectionReasonCode.AgreementStartDate, com.tools20022.repository.codeset.RejectionReasonCode.TransactionCallDelay,
-						com.tools20022.repository.codeset.RejectionReasonCode.CashAccount, com.tools20022.repository.codeset.RejectionReasonCode.DealPrice, com.tools20022.repository.codeset.RejectionReasonCode.ForfeitAmount,
-						com.tools20022.repository.codeset.RejectionReasonCode.DeliveringCustodian, com.tools20022.repository.codeset.RejectionReasonCode.ReceivingCustodian,
-						com.tools20022.repository.codeset.RejectionReasonCode.NotFoundRejection, com.tools20022.repository.codeset.RejectionReasonCode.QuantityUnitType,
-						com.tools20022.repository.codeset.RejectionReasonCode.TerminationTransactionAmount, com.tools20022.repository.codeset.RejectionReasonCode.RepurchaseRate,
-						com.tools20022.repository.codeset.RejectionReasonCode.PremiumAmount, com.tools20022.repository.codeset.RejectionReasonCode.RepurchaseRateType, com.tools20022.repository.codeset.RejectionReasonCode.SpreadRate,
-						com.tools20022.repository.codeset.RejectionReasonCode.TradedSecuritiesQuantity, com.tools20022.repository.codeset.RejectionReasonCode.TradeDate, com.tools20022.repository.codeset.RejectionReasonCode.ReceivingAgent,
-						com.tools20022.repository.codeset.RejectionReasonCode.Intermediary, com.tools20022.repository.codeset.RejectionReasonCode.DeliveringAgent, com.tools20022.repository.codeset.RejectionReasonCode.PlaceOfTrade,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvestorNameAddressUnknown, com.tools20022.repository.codeset.RejectionReasonCode.ImpossibleToUseTheRTGSSystemInstructed,
-						com.tools20022.repository.codeset.RejectionReasonCode.SettlementAmountCurrencyRejection, com.tools20022.repository.codeset.RejectionReasonCode.LetterOfGuaranteeIndicatorRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.MissingCreditAuthorisation, com.tools20022.repository.codeset.RejectionReasonCode.AddressDetailsRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.ReceivingOrDeliveringCustodianRejection, com.tools20022.repository.codeset.RejectionReasonCode.ReceivingDeliveringParty3,
-						com.tools20022.repository.codeset.RejectionReasonCode.PhysicalSettlementImpossible, com.tools20022.repository.codeset.RejectionReasonCode.ReferenceRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.SettlementAmountRejection, com.tools20022.repository.codeset.RejectionReasonCode.MissingStatutes,
-						com.tools20022.repository.codeset.RejectionReasonCode.NotStampedOrSigned, com.tools20022.repository.codeset.RejectionReasonCode.InvalidSignature,
-						com.tools20022.repository.codeset.RejectionReasonCode.ShareholderNumberRejection, com.tools20022.repository.codeset.RejectionReasonCode.MinimumSettlementQuantity,
-						com.tools20022.repository.codeset.RejectionReasonCode.NoMatch, com.tools20022.repository.codeset.RejectionReasonCode.MissingLegalPower, com.tools20022.repository.codeset.RejectionReasonCode.ProcessingBatchRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.TypeOfOwnershipRejection, com.tools20022.repository.codeset.RejectionReasonCode.MultipleSettlementQuantity,
-						com.tools20022.repository.codeset.RejectionReasonCode.WrongRegistrationRequest, com.tools20022.repository.codeset.RejectionReasonCode.TaxStatusRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.DisagreementInRegistrationReason, com.tools20022.repository.codeset.RejectionReasonCode.MissingRegistrationRequest,
-						com.tools20022.repository.codeset.RejectionReasonCode.SettlementSystemMethodRejection, com.tools20022.repository.codeset.RejectionReasonCode.CommonReferenceRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.NarrativeInformationRejection, com.tools20022.repository.codeset.RejectionReasonCode.IncorrectProgramConversion,
-						com.tools20022.repository.codeset.RejectionReasonCode.InsufficientCollateral, com.tools20022.repository.codeset.RejectionReasonCode.BusinessPartnerNumberRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.BankReferenceNumberRejection, com.tools20022.repository.codeset.RejectionReasonCode.TypeOfOrderRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.CorporateActionRejection, com.tools20022.repository.codeset.RejectionReasonCode.ImpossibleCashSettlementSystem,
-						com.tools20022.repository.codeset.RejectionReasonCode.CommercializationContractRejection, com.tools20022.repository.codeset.RejectionReasonCode.ConcentrationLimitExceeded,
-						com.tools20022.repository.codeset.RejectionReasonCode.UnknownDealExposure, com.tools20022.repository.codeset.RejectionReasonCode.SettlementDateRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.PlaceOfSettlementRejection, com.tools20022.repository.codeset.RejectionReasonCode.DisagreeWithCallAmount,
-						com.tools20022.repository.codeset.RejectionReasonCode.DisagreeWithExposureAmount, com.tools20022.repository.codeset.RejectionReasonCode.RegistrationRequestDataAndOrderRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.FeeCommissionRejection, com.tools20022.repository.codeset.RejectionReasonCode.IncorrectActivityType,
-						com.tools20022.repository.codeset.RejectionReasonCode.SettlementTransactionRejection, com.tools20022.repository.codeset.RejectionReasonCode.ClosingDateTimeRejection,
-						com.tools20022.repository.codeset.RejectionReasonCode.VariableRateSupportRejection, com.tools20022.repository.codeset.RejectionReasonCode.MissingOption,
-						com.tools20022.repository.codeset.RejectionReasonCode.NotDefinedAgent, com.tools20022.repository.codeset.RejectionReasonCode.MissingPeriodEndDate,
-						com.tools20022.repository.codeset.RejectionReasonCode.MissingPeriodStartDate, com.tools20022.repository.codeset.RejectionReasonCode.MissingResultingAmount,
-						com.tools20022.repository.codeset.RejectionReasonCode.WrongSecurityType, com.tools20022.repository.codeset.RejectionReasonCode.NotEligibleDisperseSecurity,
-						com.tools20022.repository.codeset.RejectionReasonCode.NonEligibleSecurity, com.tools20022.repository.codeset.RejectionReasonCode.MissingExchangeRate,
-						com.tools20022.repository.codeset.RejectionReasonCode.ValueDateBeforePaymentDate, com.tools20022.repository.codeset.RejectionReasonCode.UnexpectedAccruedInterest,
-						com.tools20022.repository.codeset.RejectionReasonCode.NoAccessToService, com.tools20022.repository.codeset.RejectionReasonCode.MissingCertification,
-						com.tools20022.repository.codeset.RejectionReasonCode.NotBusinessDay, com.tools20022.repository.codeset.RejectionReasonCode.EffectiveDayAfterPaymentDate,
-						com.tools20022.repository.codeset.RejectionReasonCode.GrossAmountLessThanNetAmount, com.tools20022.repository.codeset.RejectionReasonCode.MissingDefaultOption,
-						com.tools20022.repository.codeset.RejectionReasonCode.NonActiveParty, com.tools20022.repository.codeset.RejectionReasonCode.PeriodEndDateBeforeStartDate,
-						com.tools20022.repository.codeset.RejectionReasonCode.RecordDateAfterPaymentDate, com.tools20022.repository.codeset.RejectionReasonCode.FailedValidation,
-						com.tools20022.repository.codeset.RejectionReasonCode.EventAlreadyDeactivated, com.tools20022.repository.codeset.RejectionReasonCode.NoPendingDeactivationInstruction,
-						com.tools20022.repository.codeset.RejectionReasonCode.AmendmentNotAllowed, com.tools20022.repository.codeset.RejectionReasonCode.CancellationNotAllowed, com.tools20022.repository.codeset.RejectionReasonCode.Late,
-						com.tools20022.repository.codeset.RejectionReasonCode.ElectionAlreadyCancelled, com.tools20022.repository.codeset.RejectionReasonCode.ElectionAlreadyAmended,
-						com.tools20022.repository.codeset.RejectionReasonCode.SameCAIdentification, com.tools20022.repository.codeset.RejectionReasonCode.InvalidCAIdentification,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidAgent, com.tools20022.repository.codeset.RejectionReasonCode.NotMainAgent, com.tools20022.repository.codeset.RejectionReasonCode.InvalidOption,
-						com.tools20022.repository.codeset.RejectionReasonCode.PendingDeactivation, com.tools20022.repository.codeset.RejectionReasonCode.NotIdentifiedCashAccount,
-						com.tools20022.repository.codeset.RejectionReasonCode.NotIdentifiedCorrespondentBank, com.tools20022.repository.codeset.RejectionReasonCode.InvalidStandingInstructionType,
-						com.tools20022.repository.codeset.RejectionReasonCode.NoHolding, com.tools20022.repository.codeset.RejectionReasonCode.InsufficientBalance, com.tools20022.repository.codeset.RejectionReasonCode.SameIdentification,
-						com.tools20022.repository.codeset.RejectionReasonCode.OptionAlreadyDeactivated, com.tools20022.repository.codeset.RejectionReasonCode.InvalidEventType,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidUnderlyingSecurity, com.tools20022.repository.codeset.RejectionReasonCode.InvalidEventProcessingType,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidMandatoryVoluntaryEventType, com.tools20022.repository.codeset.RejectionReasonCode.InvalidCorporateActionInformation,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidDetails, com.tools20022.repository.codeset.RejectionReasonCode.NoRemainingOption,
-						com.tools20022.repository.codeset.RejectionReasonCode.MismatchedCAIdentification, com.tools20022.repository.codeset.RejectionReasonCode.NotApplicable,
-						com.tools20022.repository.codeset.RejectionReasonCode.InvalidMovementInformation, com.tools20022.repository.codeset.RejectionReasonCode.MovementAlreadySettled,
-						com.tools20022.repository.codeset.RejectionReasonCode.NarrativeReason, com.tools20022.repository.codeset.RejectionReasonCode.InvalidIdentification, com.tools20022.repository.codeset.RejectionReasonCode.Other);
+				code_lazy = () -> Arrays.asList(RejectionReasonCode.mmClosingTransactionAmount, RejectionReasonCode.mmTradedQuantityHigherThanOriginalOrderQuantity, RejectionReasonCode.mmTransactionNoticeIDUnknown,
+						RejectionReasonCode.mmTransactionNoticeAlreadyAcceptedOrRejected, RejectionReasonCode.mmOrderDateNotProvided, RejectionReasonCode.mmInvalidRequest, RejectionReasonCode.mmIncorrectCertification,
+						RejectionReasonCode.mmInvalidReference, RejectionReasonCode.mmSafekeepingAccountRejection, RejectionReasonCode.mmInsufficientTresholdPosition, RejectionReasonCode.mmQuantityRejection,
+						RejectionReasonCode.mmAccountServicerDeadlineMissed, RejectionReasonCode.mmSplitVoteNotAllowed, RejectionReasonCode.mmPartialVoteNotAllowed, RejectionReasonCode.mmMissingOrInvalidPOA,
+						RejectionReasonCode.mmProxyCardDiscrepancy, RejectionReasonCode.mmRegistrationDiscrepancy, RejectionReasonCode.mmRejectedByIssuerOrRegistrar, RejectionReasonCode.mmInvalidSecurity,
+						RejectionReasonCode.mmInstructionIrrevocable, RejectionReasonCode.mmOptionCancelled, RejectionReasonCode.mmOptionInactive, RejectionReasonCode.mmInvalidForTaxAuthorities,
+						RejectionReasonCode.mmRefusedByTaxAuthorities, RejectionReasonCode.mmLackofSecurities, RejectionReasonCode.mmMarketDeadlineMissed, RejectionReasonCode.mmMismatch, RejectionReasonCode.mmOptionNumberRejection,
+						RejectionReasonCode.mmInvalidOptionType, RejectionReasonCode.mmRejectedSinceAlreadyCancelled, RejectionReasonCode.mmRejectedSinceInProgress, RejectionReasonCode.mmUnrecognizedIdentification,
+						RejectionReasonCode.mmUnknownSymbol, RejectionReasonCode.mmClosedExchange, RejectionReasonCode.mmExceedsLimit, RejectionReasonCode.mmTooLate, RejectionReasonCode.mmInvalidPrice, RejectionReasonCode.mmNotAuthorised,
+						RejectionReasonCode.mmNoMatchInquiry, RejectionReasonCode.mmNoInstrumentMarket, RejectionReasonCode.mmNoInventory, RejectionReasonCode.mmPass, RejectionReasonCode.mmPriceExceeds,
+						RejectionReasonCode.mmQuantityExceeds, RejectionReasonCode.mmWrongSide, RejectionReasonCode.mmCalculationDifference, RejectionReasonCode.mmInsufficientCredit, RejectionReasonCode.mmAgreementStartDate,
+						RejectionReasonCode.mmTransactionCallDelay, RejectionReasonCode.mmCashAccount, RejectionReasonCode.mmDealPrice, RejectionReasonCode.mmForfeitAmount, RejectionReasonCode.mmDeliveringCustodian,
+						RejectionReasonCode.mmReceivingCustodian, RejectionReasonCode.mmNotFoundRejection, RejectionReasonCode.mmQuantityUnitType, RejectionReasonCode.mmTerminationTransactionAmount, RejectionReasonCode.mmRepurchaseRate,
+						RejectionReasonCode.mmPremiumAmount, RejectionReasonCode.mmRepurchaseRateType, RejectionReasonCode.mmSpreadRate, RejectionReasonCode.mmTradedSecuritiesQuantity, RejectionReasonCode.mmTradeDate,
+						RejectionReasonCode.mmReceivingAgent, RejectionReasonCode.mmIntermediary, RejectionReasonCode.mmDeliveringAgent, RejectionReasonCode.mmPlaceOfTrade, RejectionReasonCode.mmInvestorNameAddressUnknown,
+						RejectionReasonCode.mmImpossibleToUseTheRTGSSystemInstructed, RejectionReasonCode.mmSettlementAmountCurrencyRejection, RejectionReasonCode.mmLetterOfGuaranteeIndicatorRejection,
+						RejectionReasonCode.mmMissingCreditAuthorisation, RejectionReasonCode.mmAddressDetailsRejection, RejectionReasonCode.mmReceivingOrDeliveringCustodianRejection, RejectionReasonCode.mmReceivingDeliveringParty3,
+						RejectionReasonCode.mmPhysicalSettlementImpossible, RejectionReasonCode.mmReferenceRejection, RejectionReasonCode.mmSettlementAmountRejection, RejectionReasonCode.mmMissingStatutes,
+						RejectionReasonCode.mmNotStampedOrSigned, RejectionReasonCode.mmInvalidSignature, RejectionReasonCode.mmShareholderNumberRejection, RejectionReasonCode.mmMinimumSettlementQuantity, RejectionReasonCode.mmNoMatch,
+						RejectionReasonCode.mmMissingLegalPower, RejectionReasonCode.mmProcessingBatchRejection, RejectionReasonCode.mmTypeOfOwnershipRejection, RejectionReasonCode.mmMultipleSettlementQuantity,
+						RejectionReasonCode.mmWrongRegistrationRequest, RejectionReasonCode.mmTaxStatusRejection, RejectionReasonCode.mmDisagreementInRegistrationReason, RejectionReasonCode.mmMissingRegistrationRequest,
+						RejectionReasonCode.mmSettlementSystemMethodRejection, RejectionReasonCode.mmCommonReferenceRejection, RejectionReasonCode.mmNarrativeInformationRejection, RejectionReasonCode.mmIncorrectProgramConversion,
+						RejectionReasonCode.mmInsufficientCollateral, RejectionReasonCode.mmBusinessPartnerNumberRejection, RejectionReasonCode.mmBankReferenceNumberRejection, RejectionReasonCode.mmTypeOfOrderRejection,
+						RejectionReasonCode.mmCorporateActionRejection, RejectionReasonCode.mmImpossibleCashSettlementSystem, RejectionReasonCode.mmCommercializationContractRejection, RejectionReasonCode.mmConcentrationLimitExceeded,
+						RejectionReasonCode.mmUnknownDealExposure, RejectionReasonCode.mmSettlementDateRejection, RejectionReasonCode.mmPlaceOfSettlementRejection, RejectionReasonCode.mmDisagreeWithCallAmount,
+						RejectionReasonCode.mmDisagreeWithExposureAmount, RejectionReasonCode.mmRegistrationRequestDataAndOrderRejection, RejectionReasonCode.mmFeeCommissionRejection, RejectionReasonCode.mmIncorrectActivityType,
+						RejectionReasonCode.mmSettlementTransactionRejection, RejectionReasonCode.mmClosingDateTimeRejection, RejectionReasonCode.mmVariableRateSupportRejection, RejectionReasonCode.mmMissingOption,
+						RejectionReasonCode.mmNotDefinedAgent, RejectionReasonCode.mmMissingPeriodEndDate, RejectionReasonCode.mmMissingPeriodStartDate, RejectionReasonCode.mmMissingResultingAmount, RejectionReasonCode.mmWrongSecurityType,
+						RejectionReasonCode.mmNotEligibleDisperseSecurity, RejectionReasonCode.mmNonEligibleSecurity, RejectionReasonCode.mmMissingExchangeRate, RejectionReasonCode.mmValueDateBeforePaymentDate,
+						RejectionReasonCode.mmUnexpectedAccruedInterest, RejectionReasonCode.mmNoAccessToService, RejectionReasonCode.mmMissingCertification, RejectionReasonCode.mmNotBusinessDay,
+						RejectionReasonCode.mmEffectiveDayAfterPaymentDate, RejectionReasonCode.mmGrossAmountLessThanNetAmount, RejectionReasonCode.mmMissingDefaultOption, RejectionReasonCode.mmNonActiveParty,
+						RejectionReasonCode.mmPeriodEndDateBeforeStartDate, RejectionReasonCode.mmRecordDateAfterPaymentDate, RejectionReasonCode.mmFailedValidation, RejectionReasonCode.mmEventAlreadyDeactivated,
+						RejectionReasonCode.mmNoPendingDeactivationInstruction, RejectionReasonCode.mmAmendmentNotAllowed, RejectionReasonCode.mmCancellationNotAllowed, RejectionReasonCode.mmLate,
+						RejectionReasonCode.mmElectionAlreadyCancelled, RejectionReasonCode.mmElectionAlreadyAmended, RejectionReasonCode.mmSameCAIdentification, RejectionReasonCode.mmInvalidCAIdentification,
+						RejectionReasonCode.mmInvalidAgent, RejectionReasonCode.mmNotMainAgent, RejectionReasonCode.mmInvalidOption, RejectionReasonCode.mmPendingDeactivation, RejectionReasonCode.mmNotIdentifiedCashAccount,
+						RejectionReasonCode.mmNotIdentifiedCorrespondentBank, RejectionReasonCode.mmInvalidStandingInstructionType, RejectionReasonCode.mmNoHolding, RejectionReasonCode.mmInsufficientBalance,
+						RejectionReasonCode.mmSameIdentification, RejectionReasonCode.mmOptionAlreadyDeactivated, RejectionReasonCode.mmInvalidEventType, RejectionReasonCode.mmInvalidUnderlyingSecurity,
+						RejectionReasonCode.mmInvalidEventProcessingType, RejectionReasonCode.mmInvalidMandatoryVoluntaryEventType, RejectionReasonCode.mmInvalidCorporateActionInformation, RejectionReasonCode.mmInvalidDetails,
+						RejectionReasonCode.mmNoRemainingOption, RejectionReasonCode.mmMismatchedCAIdentification, RejectionReasonCode.mmNotApplicable, RejectionReasonCode.mmInvalidMovementInformation,
+						RejectionReasonCode.mmMovementAlreadySettled, RejectionReasonCode.mmNarrativeReason, RejectionReasonCode.mmInvalidIdentification, RejectionReasonCode.mmOther);
 			}
 		});
 		return mmObject_lazy.get();

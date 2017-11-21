@@ -17,17 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * An investor's instruction to either subscribe or redeem an amount of money or
@@ -43,68 +44,68 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#GrossAmountIndicator
- * InvestmentFundOrder.GrossAmountIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmGrossAmountIndicator
+ * InvestmentFundOrder.mmGrossAmountIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#RelatedTransaction
- * InvestmentFundOrder.RelatedTransaction}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmRelatedTransaction
+ * InvestmentFundOrder.mmRelatedTransaction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#OrderType
- * InvestmentFundOrder.OrderType}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmOrderType
+ * InvestmentFundOrder.mmOrderType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#GrossAmount
- * InvestmentFundOrder.GrossAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmGrossAmount
+ * InvestmentFundOrder.mmGrossAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#UnitsNumber
- * InvestmentFundOrder.UnitsNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmUnitsNumber
+ * InvestmentFundOrder.mmUnitsNumber}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#InvestmentFundOrderExecution
- * InvestmentFundOrder.InvestmentFundOrderExecution}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmInvestmentFundOrderExecution
+ * InvestmentFundOrder.mmInvestmentFundOrderExecution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#NetAmount
- * InvestmentFundOrder.NetAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmNetAmount
+ * InvestmentFundOrder.mmNetAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#OrderDateTime
- * InvestmentFundOrder.OrderDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmOrderDateTime
+ * InvestmentFundOrder.mmOrderDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#ExpiryDateTime
- * InvestmentFundOrder.ExpiryDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmExpiryDateTime
+ * InvestmentFundOrder.mmExpiryDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#CancellationRight
- * InvestmentFundOrder.CancellationRight}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmCancellationRight
+ * InvestmentFundOrder.mmCancellationRight}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#RequestedSettlementCurrency
- * InvestmentFundOrder.RequestedSettlementCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmRequestedSettlementCurrency
+ * InvestmentFundOrder.mmRequestedSettlementCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#RequestedExecutionDateTime
- * InvestmentFundOrder.RequestedExecutionDateTime}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmRequestedExecutionDateTime
+ * InvestmentFundOrder.mmRequestedExecutionDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#FinancialAdvice
- * InvestmentFundOrder.FinancialAdvice}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmFinancialAdvice
+ * InvestmentFundOrder.mmFinancialAdvice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#NegotiatedTrade
- * InvestmentFundOrder.NegotiatedTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmNegotiatedTrade
+ * InvestmentFundOrder.mmNegotiatedTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#HoldingsRate
- * InvestmentFundOrder.HoldingsRate}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmHoldingsRate
+ * InvestmentFundOrder.mmHoldingsRate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#OrderWaiverReason
- * InvestmentFundOrder.OrderWaiverReason}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmOrderWaiverReason
+ * InvestmentFundOrder.mmOrderWaiverReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#InitialOrderIndicator
- * InvestmentFundOrder.InitialOrderIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmInitialOrderIndicator
+ * InvestmentFundOrder.mmInitialOrderIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#OrderBookingDate
- * InvestmentFundOrder.OrderBookingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmOrderBookingDate
+ * InvestmentFundOrder.mmOrderBookingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#InvestmentPlan
- * InvestmentFundOrder.InvestmentPlan}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmInvestmentPlan
+ * InvestmentFundOrder.mmInvestmentPlan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#OrderStatus
- * InvestmentFundOrder.OrderStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmOrderStatus
+ * InvestmentFundOrder.mmOrderStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#TotalAmount
- * InvestmentFundOrder.TotalAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrder#mmTotalAmount
+ * InvestmentFundOrder.mmTotalAmount}</li>
  * </ul>
  * </li>
  * <li>
@@ -112,19 +113,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentPlan#StandingOrder
- * InvestmentPlan.StandingOrder}</li>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Order
- * SecuritiesQuantity.Order}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmStandingOrder
+ * InvestmentPlan.mmStandingOrder}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmOrder
+ * SecuritiesQuantity.mmOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#InvestmentFundOrder
- * InvestmentFundTransaction.InvestmentFundOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#mmInvestmentFundOrder
+ * InvestmentFundTransaction.mmInvestmentFundOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#Order
- * InvestmentFundOrderExecution.Order}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#mmOrder
+ * InvestmentFundOrderExecution.mmOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrderStatus#InvestmentFundOrder
- * SecuritiesOrderStatus.InvestmentFundOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrderStatus#mmInvestmentFundOrder
+ * SecuritiesOrderStatus.mmInvestmentFundOrder}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -133,8 +134,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -150,6 +151,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentFundOrder extends SecuritiesOrder {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator grossAmountIndicator;
 	/**
 	 * Indicates whether an ordered amount is a gross amount (including all
 	 * charges, commissions, tax). If it is not a gross amount, the ordered
@@ -181,18 +183,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GrossAmountIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGrossAmountIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmountIndicator";
 			definition = "Indicates whether an ordered amount is a gross amount (including all charges, commissions, tax). If it is not a gross amount, the ordered amount is a net amount (amount to be invested or redeemed from the fund to which other elements will be added).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getGrossAmountIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentFundTransaction relatedTransaction;
 	/**
 	 * Transaction which is the source of the order.
 	 * <p>
@@ -201,8 +212,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#InvestmentFundOrder
-	 * InvestmentFundTransaction.InvestmentFundOrder}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundTransaction#mmInvestmentFundOrder
+	 * InvestmentFundTransaction.mmInvestmentFundOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -227,20 +238,21 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Transaction which is the source of the order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedTransaction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedTransaction";
 			definition = "Transaction which is the source of the order.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundTransaction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.InvestmentFundOrder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmInvestmentFundOrder;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundTransaction.mmObject();
 		}
 	};
+	protected FundOrderTypeCode orderType;
 	/**
 	 * Specifies the category of the investment fund order.
 	 * <p>
@@ -267,18 +279,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Specifies the category of the investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OrderType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOrderType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderType";
 			definition = "Specifies the category of the investment fund order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FundOrderTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getOrderType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount grossAmount;
 	/**
 	 * Amount of money used to derive the quantity of investment fund units sold
 	 * or subscribed, before deduction of charges, commissions, and taxes,
@@ -310,18 +331,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GrossAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossAmount";
 			definition = "Amount of money used to derive the quantity of investment fund units sold or subscribed, before deduction of charges, commissions, and taxes, expressed in the currency requested by the investor.\r\n[Quantity * Price] + (Charges + Commissions +Taxes)]";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getGrossAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity unitsNumber;
 	/**
 	 * Quantity of investment fund units to be subscribed or redeemed.
 	 * <p>
@@ -330,8 +360,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#Order
-	 * SecuritiesQuantity.Order}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmOrder
+	 * SecuritiesQuantity.mmOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -356,20 +386,21 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Quantity of investment fund units to be subscribed or redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd UnitsNumber = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUnitsNumber = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitsNumber";
 			definition = "Quantity of investment fund units to be subscribed or redeemed.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.Order;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmOrder;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected InvestmentFundOrderExecution investmentFundOrderExecution;
 	/**
 	 * Execution of an investment fund order.
 	 * <p>
@@ -378,8 +409,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#Order
-	 * InvestmentFundOrderExecution.Order}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#mmOrder
+	 * InvestmentFundOrderExecution.mmOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -404,20 +435,21 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Execution of an investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentFundOrderExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentFundOrderExecution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFundOrderExecution";
 			definition = "Execution of an investment fund order.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.mmOrder;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.Order;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount netAmount;
 	/**
 	 * Amount of money used to determine the quantity of investment fund units
 	 * to be subscribed or to be sold.
@@ -447,18 +479,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NetAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAmount";
 			definition = "Amount of money used to determine the quantity of investment fund units to be subscribed or to be sold.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getNetAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime orderDateTime;
 	/**
 	 * Date and time at which the order was placed by the investor.
 	 * <p>
@@ -485,18 +526,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Date and time at which the order was placed by the investor."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OrderDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOrderDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderDateTime";
 			definition = "Date and time at which the order was placed by the investor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getOrderDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime expiryDateTime;
 	/**
 	 * Date on which the order expires.
 	 * <p>
@@ -522,18 +572,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Date on which the order expires."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExpiryDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExpiryDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExpiryDateTime";
 			definition = "Date on which the order expires.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getExpiryDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CancellationRightCode cancellationRight;
 	/**
 	 * Cancellation right of an investor with respect to an investment fund
 	 * order.
@@ -563,18 +622,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancellationRight = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancellationRight = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationRight";
 			definition = "Cancellation right of an investor with respect to an investment fund order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CancellationRightCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getCancellationRight", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyCode requestedSettlementCurrency;
 	/**
 	 * Currency requested for settlement of cash proceeds.
 	 * <p>
@@ -600,18 +668,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Currency requested for settlement of cash proceeds."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RequestedSettlementCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRequestedSettlementCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementCurrency";
 			definition = "Currency requested for settlement of cash proceeds.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getRequestedSettlementCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime requestedExecutionDateTime;
 	/**
 	 * Date and time at which the investor requests the order to be executed.
 	 * <p>
@@ -638,18 +715,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Date and time at which the investor requests the order to be executed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RequestedExecutionDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRequestedExecutionDateTime = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedExecutionDateTime";
 			definition = "Date and time at which the investor requests the order to be executed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getRequestedExecutionDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FinancialAdviceCode financialAdvice;
 	/**
 	 * Specifies if advice has been received from an independent financial
 	 * advisor.
@@ -679,18 +765,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FinancialAdvice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFinancialAdvice = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialAdvice";
 			definition = "Specifies if advice has been received from an independent financial advisor.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FinancialAdviceCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getFinancialAdvice", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected NegotiatedTradeCode negotiatedTrade;
 	/**
 	 * Specifies whether the trade is negotiated.
 	 * <p>
@@ -717,18 +812,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Specifies whether the trade is negotiated."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NegotiatedTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNegotiatedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NegotiatedTrade";
 			definition = "Specifies whether the trade is negotiated.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> NegotiatedTradeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getNegotiatedTrade", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate holdingsRate;
 	/**
 	 * Percentage of the financial quantity to be invested or redeemed.
 	 * <p>
@@ -756,18 +860,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Percentage of the financial quantity to be invested or redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute HoldingsRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmHoldingsRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HoldingsRate";
 			definition = "Percentage of the financial quantity to be invested or redeemed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getHoldingsRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OrderWaiverReasonCode orderWaiverReason;
 	/**
 	 * Reason why an order has to be handled differently, probably in a manual
 	 * fashion, because for example, the investment manager has agreed a waiver
@@ -798,18 +911,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OrderWaiverReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOrderWaiverReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderWaiverReason";
 			definition = "Reason why an order has to be handled differently, probably in a manual fashion, because for example, the investment manager has agreed a waiver to the extended terms.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> OrderWaiverReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getOrderWaiverReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator initialOrderIndicator;
 	/**
 	 * Indicates whether the subscription order is an initial order.
 	 * <p>
@@ -837,18 +959,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * "Indicates whether the subscription order is an initial order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InitialOrderIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInitialOrderIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InitialOrderIndicator";
 			definition = "Indicates whether the subscription order is an initial order.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getInitialOrderIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime orderBookingDate;
 	/**
 	 * Date and time an investment fund order is registered on the books of
 	 * either the fund or its designated agent, eg, transfer agent.
@@ -877,18 +1008,27 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute OrderBookingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmOrderBookingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderBookingDate";
 			definition = "Date and time an investment fund order is registered on the books of either the fund or its designated agent, eg, transfer agent.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getOrderBookingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentPlan investmentPlan;
 	/**
 	 * Investment plan which triggers the standing orders.
 	 * <p>
@@ -897,8 +1037,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#StandingOrder
-	 * InvestmentPlan.StandingOrder}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmStandingOrder
+	 * InvestmentPlan.mmStandingOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -922,20 +1062,21 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Investment plan which triggers the standing orders."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentPlan";
 			definition = "Investment plan which triggers the standing orders.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmStandingOrder;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.StandingOrder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus;
 	/**
 	 * Status of an investment fund order.
 	 * <p>
@@ -944,8 +1085,8 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrderStatus#InvestmentFundOrder
-	 * SecuritiesOrderStatus.InvestmentFundOrder}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrderStatus#mmInvestmentFundOrder
+	 * SecuritiesOrderStatus.mmInvestmentFundOrder}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -970,19 +1111,20 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Status of an investment fund order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OrderStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOrderStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrderStatus";
 			definition = "Status of an investment fund order.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesOrderStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.InvestmentFundOrder;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmInvestmentFundOrder;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
 		}
 	};
+	protected CurrencyAndAmount totalAmount;
 	/**
 	 * Total amount subscribed in the current tax year.
 	 * <p>
@@ -1009,41 +1151,222 @@ public class InvestmentFundOrder extends SecuritiesOrder {
 	 * definition} = "Total amount subscribed in the current tax year."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TotalAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTotalAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentFundOrder.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TotalAmount";
 			definition = "Total amount subscribed in the current tax year.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentFundOrder.class.getMethod("getTotalAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundOrder";
 				definition = "An investor's instruction to either subscribe or redeem an amount of money or its equivalent, for example other assets, into or out of an investment fund.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.StandingOrder, com.tools20022.repository.entity.SecuritiesQuantity.Order,
-						com.tools20022.repository.entity.InvestmentFundTransaction.InvestmentFundOrder, com.tools20022.repository.entity.InvestmentFundOrderExecution.Order,
-						com.tools20022.repository.entity.SecuritiesOrderStatus.InvestmentFundOrder);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.mmStandingOrder, com.tools20022.repository.entity.SecuritiesQuantity.mmOrder,
+						com.tools20022.repository.entity.InvestmentFundTransaction.mmInvestmentFundOrder, com.tools20022.repository.entity.InvestmentFundOrderExecution.mmOrder,
+						com.tools20022.repository.entity.SecuritiesOrderStatus.mmInvestmentFundOrder);
 				superType_lazy = () -> SecuritiesOrder.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundOrder.GrossAmountIndicator, com.tools20022.repository.entity.InvestmentFundOrder.RelatedTransaction,
-						com.tools20022.repository.entity.InvestmentFundOrder.OrderType, com.tools20022.repository.entity.InvestmentFundOrder.GrossAmount, com.tools20022.repository.entity.InvestmentFundOrder.UnitsNumber,
-						com.tools20022.repository.entity.InvestmentFundOrder.InvestmentFundOrderExecution, com.tools20022.repository.entity.InvestmentFundOrder.NetAmount, com.tools20022.repository.entity.InvestmentFundOrder.OrderDateTime,
-						com.tools20022.repository.entity.InvestmentFundOrder.ExpiryDateTime, com.tools20022.repository.entity.InvestmentFundOrder.CancellationRight,
-						com.tools20022.repository.entity.InvestmentFundOrder.RequestedSettlementCurrency, com.tools20022.repository.entity.InvestmentFundOrder.RequestedExecutionDateTime,
-						com.tools20022.repository.entity.InvestmentFundOrder.FinancialAdvice, com.tools20022.repository.entity.InvestmentFundOrder.NegotiatedTrade, com.tools20022.repository.entity.InvestmentFundOrder.HoldingsRate,
-						com.tools20022.repository.entity.InvestmentFundOrder.OrderWaiverReason, com.tools20022.repository.entity.InvestmentFundOrder.InitialOrderIndicator,
-						com.tools20022.repository.entity.InvestmentFundOrder.OrderBookingDate, com.tools20022.repository.entity.InvestmentFundOrder.InvestmentPlan, com.tools20022.repository.entity.InvestmentFundOrder.OrderStatus,
-						com.tools20022.repository.entity.InvestmentFundOrder.TotalAmount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundOrder.mmGrossAmountIndicator, com.tools20022.repository.entity.InvestmentFundOrder.mmRelatedTransaction,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmOrderType, com.tools20022.repository.entity.InvestmentFundOrder.mmGrossAmount, com.tools20022.repository.entity.InvestmentFundOrder.mmUnitsNumber,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmInvestmentFundOrderExecution, com.tools20022.repository.entity.InvestmentFundOrder.mmNetAmount,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmOrderDateTime, com.tools20022.repository.entity.InvestmentFundOrder.mmExpiryDateTime, com.tools20022.repository.entity.InvestmentFundOrder.mmCancellationRight,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmRequestedSettlementCurrency, com.tools20022.repository.entity.InvestmentFundOrder.mmRequestedExecutionDateTime,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmFinancialAdvice, com.tools20022.repository.entity.InvestmentFundOrder.mmNegotiatedTrade, com.tools20022.repository.entity.InvestmentFundOrder.mmHoldingsRate,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmOrderWaiverReason, com.tools20022.repository.entity.InvestmentFundOrder.mmInitialOrderIndicator,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmOrderBookingDate, com.tools20022.repository.entity.InvestmentFundOrder.mmInvestmentPlan, com.tools20022.repository.entity.InvestmentFundOrder.mmOrderStatus,
+						com.tools20022.repository.entity.InvestmentFundOrder.mmTotalAmount);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentFundOrder.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator getGrossAmountIndicator() {
+		return grossAmountIndicator;
+	}
+
+	public void setGrossAmountIndicator(YesNoIndicator grossAmountIndicator) {
+		this.grossAmountIndicator = grossAmountIndicator;
+	}
+
+	public InvestmentFundTransaction getRelatedTransaction() {
+		return relatedTransaction;
+	}
+
+	public void setRelatedTransaction(com.tools20022.repository.entity.InvestmentFundTransaction relatedTransaction) {
+		this.relatedTransaction = relatedTransaction;
+	}
+
+	public FundOrderTypeCode getOrderType() {
+		return orderType;
+	}
+
+	public void setOrderType(FundOrderTypeCode orderType) {
+		this.orderType = orderType;
+	}
+
+	public CurrencyAndAmount getGrossAmount() {
+		return grossAmount;
+	}
+
+	public void setGrossAmount(CurrencyAndAmount grossAmount) {
+		this.grossAmount = grossAmount;
+	}
+
+	public SecuritiesQuantity getUnitsNumber() {
+		return unitsNumber;
+	}
+
+	public void setUnitsNumber(com.tools20022.repository.entity.SecuritiesQuantity unitsNumber) {
+		this.unitsNumber = unitsNumber;
+	}
+
+	public InvestmentFundOrderExecution getInvestmentFundOrderExecution() {
+		return investmentFundOrderExecution;
+	}
+
+	public void setInvestmentFundOrderExecution(com.tools20022.repository.entity.InvestmentFundOrderExecution investmentFundOrderExecution) {
+		this.investmentFundOrderExecution = investmentFundOrderExecution;
+	}
+
+	public CurrencyAndAmount getNetAmount() {
+		return netAmount;
+	}
+
+	public void setNetAmount(CurrencyAndAmount netAmount) {
+		this.netAmount = netAmount;
+	}
+
+	public ISODateTime getOrderDateTime() {
+		return orderDateTime;
+	}
+
+	public void setOrderDateTime(ISODateTime orderDateTime) {
+		this.orderDateTime = orderDateTime;
+	}
+
+	public ISODateTime getExpiryDateTime() {
+		return expiryDateTime;
+	}
+
+	public void setExpiryDateTime(ISODateTime expiryDateTime) {
+		this.expiryDateTime = expiryDateTime;
+	}
+
+	public CancellationRightCode getCancellationRight() {
+		return cancellationRight;
+	}
+
+	public void setCancellationRight(CancellationRightCode cancellationRight) {
+		this.cancellationRight = cancellationRight;
+	}
+
+	public CurrencyCode getRequestedSettlementCurrency() {
+		return requestedSettlementCurrency;
+	}
+
+	public void setRequestedSettlementCurrency(CurrencyCode requestedSettlementCurrency) {
+		this.requestedSettlementCurrency = requestedSettlementCurrency;
+	}
+
+	public ISODateTime getRequestedExecutionDateTime() {
+		return requestedExecutionDateTime;
+	}
+
+	public void setRequestedExecutionDateTime(ISODateTime requestedExecutionDateTime) {
+		this.requestedExecutionDateTime = requestedExecutionDateTime;
+	}
+
+	public FinancialAdviceCode getFinancialAdvice() {
+		return financialAdvice;
+	}
+
+	public void setFinancialAdvice(FinancialAdviceCode financialAdvice) {
+		this.financialAdvice = financialAdvice;
+	}
+
+	public NegotiatedTradeCode getNegotiatedTrade() {
+		return negotiatedTrade;
+	}
+
+	public void setNegotiatedTrade(NegotiatedTradeCode negotiatedTrade) {
+		this.negotiatedTrade = negotiatedTrade;
+	}
+
+	public PercentageRate getHoldingsRate() {
+		return holdingsRate;
+	}
+
+	public void setHoldingsRate(PercentageRate holdingsRate) {
+		this.holdingsRate = holdingsRate;
+	}
+
+	public OrderWaiverReasonCode getOrderWaiverReason() {
+		return orderWaiverReason;
+	}
+
+	public void setOrderWaiverReason(OrderWaiverReasonCode orderWaiverReason) {
+		this.orderWaiverReason = orderWaiverReason;
+	}
+
+	public YesNoIndicator getInitialOrderIndicator() {
+		return initialOrderIndicator;
+	}
+
+	public void setInitialOrderIndicator(YesNoIndicator initialOrderIndicator) {
+		this.initialOrderIndicator = initialOrderIndicator;
+	}
+
+	public ISODateTime getOrderBookingDate() {
+		return orderBookingDate;
+	}
+
+	public void setOrderBookingDate(ISODateTime orderBookingDate) {
+		this.orderBookingDate = orderBookingDate;
+	}
+
+	public InvestmentPlan getInvestmentPlan() {
+		return investmentPlan;
+	}
+
+	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+		this.investmentPlan = investmentPlan;
+	}
+
+	public List<SecuritiesOrderStatus> getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(List<com.tools20022.repository.entity.SecuritiesOrderStatus> orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public CurrencyAndAmount getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(CurrencyAndAmount totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 }

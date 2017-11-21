@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,17 +31,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#Credit
- * DebitCreditCode.Credit}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#Debit
- * DebitCreditCode.Debit}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#mmCredit
+ * DebitCreditCode.mmCredit}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DebitCreditCode#mmDebit
+ * DebitCreditCode.mmDebit}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,9 +82,9 @@ public class DebitCreditCode {
 	 * definition} = "Operation is an increase."</li>
 	 * </ul>
 	 */
-	public static final MMCode Credit = new MMCode() {
+	public static final MMCode mmCredit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Credit";
 			definition = "Operation is an increase.";
 			owner_lazy = () -> DebitCreditCode.mmObject();
@@ -110,9 +112,9 @@ public class DebitCreditCode {
 	 * definition} = "Operation is a decrease."</li>
 	 * </ul>
 	 */
-	public static final MMCode Debit = new MMCode() {
+	public static final MMCode mmDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Debit";
 			definition = "Operation is a decrease.";
 			owner_lazy = () -> DebitCreditCode.mmObject();
@@ -123,12 +125,12 @@ public class DebitCreditCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CRDT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DebitCreditCode";
 				definition = "Specifies if an operation is an increase or a decrease.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DebitCreditCode.Credit, com.tools20022.repository.codeset.DebitCreditCode.Debit);
+				code_lazy = () -> Arrays.asList(DebitCreditCode.mmCredit, DebitCreditCode.mmDebit);
 			}
 		});
 		return mmObject_lazy.get();

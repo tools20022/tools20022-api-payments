@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,53 +31,56 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#Multilateral
- * LimitTypeCode.Multilateral}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#Bilateral
- * LimitTypeCode.Bilateral}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#NetBilateral
- * LimitTypeCode.NetBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#IndirectBilateral
- * LimitTypeCode.IndirectBilateral}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#Global
- * LimitTypeCode.Global}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmMultilateral
+ * LimitTypeCode.mmMultilateral}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmBilateral
+ * LimitTypeCode.mmBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#MandatoryBilateral
- * LimitTypeCode.MandatoryBilateral}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmNetBilateral
+ * LimitTypeCode.mmNetBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#DiscretionaryBilateral
- * LimitTypeCode.DiscretionaryBilateral}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#DirectDebit
- * LimitTypeCode.DirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmIndirectBilateral
+ * LimitTypeCode.mmIndirectBilateral}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmGlobal
+ * LimitTypeCode.mmGlobal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#SingleCustomerDirectDebit
- * LimitTypeCode.SingleCustomerDirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmMandatoryBilateral
+ * LimitTypeCode.mmMandatoryBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#SingleFinancialInstitutionDirectDebit
- * LimitTypeCode.SingleFinancialInstitutionDirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmDiscretionaryBilateral
+ * LimitTypeCode.mmDiscretionaryBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#TotalDailyCustomerDirectDebit
- * LimitTypeCode.TotalDailyCustomerDirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmDirectDebit
+ * LimitTypeCode.mmDirectDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#TotalDailyFinancialInstitutionDirectDebit
- * LimitTypeCode.TotalDailyFinancialInstitutionDirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmSingleCustomerDirectDebit
+ * LimitTypeCode.mmSingleCustomerDirectDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#AutoCollateralisation
- * LimitTypeCode.AutoCollateralisation}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmSingleFinancialInstitutionDirectDebit
+ * LimitTypeCode.mmSingleFinancialInstitutionDirectDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#UnsecuredCredit
- * LimitTypeCode.UnsecuredCredit}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmTotalDailyCustomerDirectDebit
+ * LimitTypeCode.mmTotalDailyCustomerDirectDebit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#ExternalGuarantee
- * LimitTypeCode.ExternalGuarantee}</li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmTotalDailyFinancialInstitutionDirectDebit
+ * LimitTypeCode.mmTotalDailyFinancialInstitutionDirectDebit}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmAutoCollateralisation
+ * LimitTypeCode.mmAutoCollateralisation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmUnsecuredCredit
+ * LimitTypeCode.mmUnsecuredCredit}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.LimitTypeCode#mmExternalGuarantee
+ * LimitTypeCode.mmExternalGuarantee}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -123,9 +128,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Multilateral = new MMCode() {
+	public static final MMCode mmMultilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Multilateral";
 			definition = "Limit is a maximum amount value applied to, or by, a participant to a set of counterparties. The multilateral limit is taken into account by the transaction administrator to contain the risk in the system. With the help of the multilateral limit, the direct participant restricts the use of liquidity when clearing payments with all other direct participants for which no bilateral limit is set.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -159,9 +164,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Bilateral = new MMCode() {
+	public static final MMCode mmBilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Bilateral";
 			definition = "Limit is applied by one party to a specific counterparty, and corresponds to the maximum amount of traffic party setting the limit can send to that counterparty. The limit can be expressed as a debit or a credit limit. With the help of a bilateral limit, the direct participant restricts the use of liquidity when clearing payments with another direct participant.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -195,9 +200,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NetBilateral = new MMCode() {
+	public static final MMCode mmNetBilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NetBilateral";
 			definition = "Limit is applied by one party to a specific counterparty, and corresponds to the maximum net balance acceptable by the party that is setting the limit. The limit is calculated as an arithmetic sum in value of the bilateral flows exchanged between the two parties. The net bilateral limit can be expressed as a debit or a credit balance.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -229,9 +234,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode IndirectBilateral = new MMCode() {
+	public static final MMCode mmIndirectBilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IndirectBilateral";
 			definition = "Limit is a maximum value set by a direct participant with respect to its indirect participant. The limit represents the maximum amount the indirect participant can use to settle its operations.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -266,9 +271,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Global = new MMCode() {
+	public static final MMCode mmGlobal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Global";
 			definition = "Maximum value set by either the transaction administrator or by a member for the participation of a member in the system. The global limit may be expressed as a credit or debit maximum value and is taken into account by the transaction administrator when processing transaction inside the system. With the help of the global limit, the direct participant may limit the use of liquidity when clearing specific type of payments.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -303,9 +308,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MandatoryBilateral = new MMCode() {
+	public static final MMCode mmMandatoryBilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MandatoryBilateral";
 			definition = "Mandatory part of the bilateral limit applied by one party to a specific counterparty, and corresponds to the maximum amount of traffic party setting the limit can send to that counterparty. The limit can be expressed as a debit or a credit limit. With the help of a bilateral limit, the direct participant restricts the use of liquidity when clearing payments with another direct participant.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -340,9 +345,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode DiscretionaryBilateral = new MMCode() {
+	public static final MMCode mmDiscretionaryBilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DiscretionaryBilateral";
 			definition = "Discretionary part of the bilateral limit applied by one party to a specific counterparty, and corresponds to the maximum amount of traffic party setting the limit can send to that counterparty. The limit can be expressed as a debit or a credit limit. With the help of a bilateral limit, the direct participant restricts the use of liquidity when clearing payments with another direct participant.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -370,9 +375,9 @@ public class LimitTypeCode {
 	 * definition} = "Limit not to be exceeded for direct debit operations."</li>
 	 * </ul>
 	 */
-	public static final MMCode DirectDebit = new MMCode() {
+	public static final MMCode mmDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DirectDebit";
 			definition = "Limit not to be exceeded for direct debit operations.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -403,9 +408,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SingleCustomerDirectDebit = new MMCode() {
+	public static final MMCode mmSingleCustomerDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SingleCustomerDirectDebit";
 			definition = "Single direct debit payment limit not to be exceeded by any single direct debit transaction by a customer.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -436,9 +441,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SingleFinancialInstitutionDirectDebit = new MMCode() {
+	public static final MMCode mmSingleFinancialInstitutionDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SingleFinancialInstitutionDirectDebit";
 			definition = "Single direct debit payment limit not to be exceeded by any single direct debit transaction initiated by a financial institution.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -469,9 +474,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TotalDailyCustomerDirectDebit = new MMCode() {
+	public static final MMCode mmTotalDailyCustomerDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalDailyCustomerDirectDebit";
 			definition = "Total daily payments limit for customer direct debits not to be exceeded by the total of all direct debit transactions initiated by customers.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -503,9 +508,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode TotalDailyFinancialInstitutionDirectDebit = new MMCode() {
+	public static final MMCode mmTotalDailyFinancialInstitutionDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalDailyFinancialInstitutionDirectDebit";
 			definition = "Total daily payments limit for financial institutions direct debits not to be exceeded by the total of all direct debit transactions initiated by financial institutions.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -540,9 +545,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AutoCollateralisation = new MMCode() {
+	public static final MMCode mmAutoCollateralisation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AutoCollateralisation";
 			definition = "Limit is related to a credit operation that is or can be triggered when a buyer does not have a sufficient amount of money to settle a securities transaction in order to improve its cash position for the next settlement cycle. The credit provided can be secured using securities already held by the buyer (“collateral stocks”) or the securities that are being purchased (“collateral flows”).";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -574,9 +579,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode UnsecuredCredit = new MMCode() {
+	public static final MMCode mmUnsecuredCredit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UnsecuredCredit";
 			definition = "Limit is related to a cap amount granted by a national central bank or a settlement bank, but generally unsecured outside of the market infrastructure.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -607,9 +612,9 @@ public class LimitTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ExternalGuarantee = new MMCode() {
+	public static final MMCode mmExternalGuarantee = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExternalGuarantee";
 			definition = "Limit is related to a cap amount granted by a national central bank or a settlement bank.";
 			owner_lazy = () -> LimitTypeCode.mmObject();
@@ -620,17 +625,14 @@ public class LimitTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("MULT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitTypeCode";
 				definition = "Specifies the type of risk management limit.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LimitTypeCode.Multilateral, com.tools20022.repository.codeset.LimitTypeCode.Bilateral, com.tools20022.repository.codeset.LimitTypeCode.NetBilateral,
-						com.tools20022.repository.codeset.LimitTypeCode.IndirectBilateral, com.tools20022.repository.codeset.LimitTypeCode.Global, com.tools20022.repository.codeset.LimitTypeCode.MandatoryBilateral,
-						com.tools20022.repository.codeset.LimitTypeCode.DiscretionaryBilateral, com.tools20022.repository.codeset.LimitTypeCode.DirectDebit, com.tools20022.repository.codeset.LimitTypeCode.SingleCustomerDirectDebit,
-						com.tools20022.repository.codeset.LimitTypeCode.SingleFinancialInstitutionDirectDebit, com.tools20022.repository.codeset.LimitTypeCode.TotalDailyCustomerDirectDebit,
-						com.tools20022.repository.codeset.LimitTypeCode.TotalDailyFinancialInstitutionDirectDebit, com.tools20022.repository.codeset.LimitTypeCode.AutoCollateralisation,
-						com.tools20022.repository.codeset.LimitTypeCode.UnsecuredCredit, com.tools20022.repository.codeset.LimitTypeCode.ExternalGuarantee);
+				code_lazy = () -> Arrays.asList(LimitTypeCode.mmMultilateral, LimitTypeCode.mmBilateral, LimitTypeCode.mmNetBilateral, LimitTypeCode.mmIndirectBilateral, LimitTypeCode.mmGlobal, LimitTypeCode.mmMandatoryBilateral,
+						LimitTypeCode.mmDiscretionaryBilateral, LimitTypeCode.mmDirectDebit, LimitTypeCode.mmSingleCustomerDirectDebit, LimitTypeCode.mmSingleFinancialInstitutionDirectDebit, LimitTypeCode.mmTotalDailyCustomerDirectDebit,
+						LimitTypeCode.mmTotalDailyFinancialInstitutionDirectDebit, LimitTypeCode.mmAutoCollateralisation, LimitTypeCode.mmUnsecuredCredit, LimitTypeCode.mmExternalGuarantee);
 			}
 		});
 		return mmObject_lazy.get();

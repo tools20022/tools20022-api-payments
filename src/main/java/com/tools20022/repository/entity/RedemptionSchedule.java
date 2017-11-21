@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Describes the reason and terms for early partial or total redemption,
@@ -39,66 +40,68 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#BusinessDayConvention
- * RedemptionSchedule.BusinessDayConvention}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmBusinessDayConvention
+ * RedemptionSchedule.mmBusinessDayConvention}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#EffectivePeriod
- * RedemptionSchedule.EffectivePeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmEffectivePeriod
+ * RedemptionSchedule.mmEffectivePeriod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#PriceChange
- * RedemptionSchedule.PriceChange}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RedemptionSchedule#Price
- * RedemptionSchedule.Price}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmPriceChange
+ * RedemptionSchedule.mmPriceChange}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmPrice
+ * RedemptionSchedule.mmPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#PartyType
- * RedemptionSchedule.PartyType}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmPartyType
+ * RedemptionSchedule.mmPartyType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#AmountFulfilType
- * RedemptionSchedule.AmountFulfilType}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmAmountFulfilType
+ * RedemptionSchedule.mmAmountFulfilType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#MinimumNoticeDays
- * RedemptionSchedule.MinimumNoticeDays}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmMinimumNoticeDays
+ * RedemptionSchedule.mmMinimumNoticeDays}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#MaximumNoticeDays
- * RedemptionSchedule.MaximumNoticeDays}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmMaximumNoticeDays
+ * RedemptionSchedule.mmMaximumNoticeDays}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#FinancialCenter
- * RedemptionSchedule.FinancialCenter}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmFinancialCenter
+ * RedemptionSchedule.mmFinancialCenter}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#NoticePeriodType
- * RedemptionSchedule.NoticePeriodType}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmNoticePeriodType
+ * RedemptionSchedule.mmNoticePeriodType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#PriceChangeFrequency
- * RedemptionSchedule.PriceChangeFrequency}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmPriceChangeFrequency
+ * RedemptionSchedule.mmPriceChangeFrequency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#PriceFrequency
- * RedemptionSchedule.PriceFrequency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RedemptionSchedule#Security
- * RedemptionSchedule.Security}</li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmPriceFrequency
+ * RedemptionSchedule.mmPriceFrequency}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmSecurity
+ * RedemptionSchedule.mmSecurity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#RedemptionSchedule
- * Security.RedemptionSchedule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceChangeRedemptionSchedule
- * SecuritiesPricing.PriceChangeRedemptionSchedule}</li>
+ * {@linkplain com.tools20022.repository.entity.Security#mmRedemptionSchedule
+ * Security.mmRedemptionSchedule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedRedemptionSchedule
- * SecuritiesPricing.RelatedRedemptionSchedule}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceChangeRedemptionSchedule
+ * SecuritiesPricing.mmPriceChangeRedemptionSchedule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RedemptionSchedule
- * DateTimePeriod.RedemptionSchedule}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedRedemptionSchedule
+ * SecuritiesPricing.mmRelatedRedemptionSchedule}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRedemptionSchedule
+ * DateTimePeriod.mmRedemptionSchedule}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -114,6 +117,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class RedemptionSchedule {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected BusinessDayConventionCode businessDayConvention;
 	/**
 	 * Convention used for adjusting a date when it is not a business day.
 	 * <p>
@@ -141,18 +145,27 @@ public class RedemptionSchedule {
 	 * "Convention used for adjusting a date when it is not a business day."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BusinessDayConvention = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBusinessDayConvention = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BusinessDayConvention";
 			definition = "Convention used for adjusting a date when it is not a business day.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BusinessDayConventionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getBusinessDayConvention", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.DateTimePeriod> effectivePeriod;
 	/**
 	 * Period during which the issuer or holder may give notice.
 	 * <p>
@@ -161,8 +174,8 @@ public class RedemptionSchedule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RedemptionSchedule
-	 * DateTimePeriod.RedemptionSchedule}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRedemptionSchedule
+	 * DateTimePeriod.mmRedemptionSchedule}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -187,19 +200,20 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd EffectivePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EffectivePeriod";
 			definition = "Period during which the issuer or holder may give notice.";
 			minOccurs = 0;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.RedemptionSchedule;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRedemptionSchedule;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPricing> priceChange;
 	/**
 	 * Redemption or amortisation price change.
 	 * <p>
@@ -208,8 +222,8 @@ public class RedemptionSchedule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceChangeRedemptionSchedule
-	 * SecuritiesPricing.PriceChangeRedemptionSchedule}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceChangeRedemptionSchedule
+	 * SecuritiesPricing.mmPriceChangeRedemptionSchedule}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -233,19 +247,20 @@ public class RedemptionSchedule {
 	 * definition} = "Redemption or amortisation price change."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PriceChange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPriceChange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChange";
 			definition = "Redemption or amortisation price change.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.PriceChangeRedemptionSchedule;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceChangeRedemptionSchedule;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.SecuritiesPricing> price;
 	/**
 	 * Redemption or amortisation price.
 	 * <p>
@@ -254,8 +269,8 @@ public class RedemptionSchedule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedRedemptionSchedule
-	 * SecuritiesPricing.RelatedRedemptionSchedule}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedRedemptionSchedule
+	 * SecuritiesPricing.mmRelatedRedemptionSchedule}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -279,19 +294,20 @@ public class RedemptionSchedule {
 	 * definition} = "Redemption or amortisation price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Price = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Price";
 			definition = "Redemption or amortisation price.";
 			minOccurs = 0;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.RelatedRedemptionSchedule;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedRedemptionSchedule;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected PartyTypeCode partyType;
 	/**
 	 * Party type entitled to ask for the redemption.
 	 * <p>
@@ -318,18 +334,27 @@ public class RedemptionSchedule {
 	 * definition} = "Party type entitled to ask for the redemption."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartyType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartyType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyType";
 			definition = "Party type entitled to ask for the redemption.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PartyTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getPartyType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AmountFullfilTypeCode amountFulfilType;
 	/**
 	 * Specifies if the full amount or only part of it is redeemed.
 	 * <p>
@@ -357,18 +382,27 @@ public class RedemptionSchedule {
 	 * "Specifies if the full amount or only part of it is redeemed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AmountFulfilType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmountFulfilType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmountFulfilType";
 			definition = "Specifies if the full amount or only part of it is redeemed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AmountFullfilTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getAmountFulfilType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number minimumNoticeDays;
 	/**
 	 * Minimum number of notice in days that must be given by either the issuer
 	 * or the holder before redemption can take place.
@@ -397,18 +431,27 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MinimumNoticeDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMinimumNoticeDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumNoticeDays";
 			definition = "Minimum number of notice in days that must be given by either the issuer or the holder before redemption can take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getMinimumNoticeDays", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number maximumNoticeDays;
 	/**
 	 * Maximum number of notice in days that must be given by either the issuer
 	 * or the holder before redemption can take place.
@@ -437,18 +480,27 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MaximumNoticeDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMaximumNoticeDays = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumNoticeDays";
 			definition = "Maximum number of notice in days that must be given by either the issuer or the holder before redemption can take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getMaximumNoticeDays", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FinancialCenterCode financialCenter;
 	/**
 	 * Financial place taken into account to adjust the date and time, as
 	 * defined within the business day convention.
@@ -478,18 +530,27 @@ public class RedemptionSchedule {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FinancialCenter = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFinancialCenter = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialCenter";
 			definition = "Financial place  taken into account to adjust the date and time, as defined within the business day convention.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FinancialCenterCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getFinancialCenter", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected NoticePeriodTypeCode noticePeriodType;
 	/**
 	 * Specifies the type of notice period.
 	 * <p>
@@ -516,18 +577,27 @@ public class RedemptionSchedule {
 	 * definition} = "Specifies the type of notice period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NoticePeriodType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNoticePeriodType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoticePeriodType";
 			definition = "Specifies the type of notice period.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> NoticePeriodTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getNoticePeriodType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FrequencyCode priceChangeFrequency;
 	/**
 	 * Redemption or amortisation price change frequency.
 	 * <p>
@@ -554,18 +624,27 @@ public class RedemptionSchedule {
 	 * definition} = "Redemption or amortisation price change frequency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PriceChangeFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPriceChangeFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceChangeFrequency";
 			definition = "Redemption or amortisation price change frequency.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getPriceChangeFrequency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FrequencyCode priceFrequency;
 	/**
 	 * Specifies the frequency of the redemption.
 	 * <p>
@@ -592,18 +671,27 @@ public class RedemptionSchedule {
 	 * definition} = "Specifies the frequency of the redemption."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PriceFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPriceFrequency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceFrequency";
 			definition = "Specifies the frequency of the redemption.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return RedemptionSchedule.class.getMethod("getPriceFrequency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Security security;
 	/**
 	 * Security for which a redemption schedule is specified.
 	 * <p>
@@ -612,8 +700,8 @@ public class RedemptionSchedule {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#RedemptionSchedule
-	 * Security.RedemptionSchedule}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmRedemptionSchedule
+	 * Security.mmRedemptionSchedule}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -636,37 +724,146 @@ public class RedemptionSchedule {
 	 * definition} = "Security for which a redemption schedule is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Security = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> RedemptionSchedule.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Security";
 			definition = "Security for which a redemption schedule is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRedemptionSchedule;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.RedemptionSchedule;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RedemptionSchedule";
 				definition = "Describes the reason and terms for early partial or total redemption, amortisation or extension of an issue.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.RedemptionSchedule, com.tools20022.repository.entity.SecuritiesPricing.PriceChangeRedemptionSchedule,
-						com.tools20022.repository.entity.SecuritiesPricing.RelatedRedemptionSchedule, com.tools20022.repository.entity.DateTimePeriod.RedemptionSchedule);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RedemptionSchedule.BusinessDayConvention, com.tools20022.repository.entity.RedemptionSchedule.EffectivePeriod,
-						com.tools20022.repository.entity.RedemptionSchedule.PriceChange, com.tools20022.repository.entity.RedemptionSchedule.Price, com.tools20022.repository.entity.RedemptionSchedule.PartyType,
-						com.tools20022.repository.entity.RedemptionSchedule.AmountFulfilType, com.tools20022.repository.entity.RedemptionSchedule.MinimumNoticeDays, com.tools20022.repository.entity.RedemptionSchedule.MaximumNoticeDays,
-						com.tools20022.repository.entity.RedemptionSchedule.FinancialCenter, com.tools20022.repository.entity.RedemptionSchedule.NoticePeriodType, com.tools20022.repository.entity.RedemptionSchedule.PriceChangeFrequency,
-						com.tools20022.repository.entity.RedemptionSchedule.PriceFrequency, com.tools20022.repository.entity.RedemptionSchedule.Security);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRedemptionSchedule, com.tools20022.repository.entity.SecuritiesPricing.mmPriceChangeRedemptionSchedule,
+						com.tools20022.repository.entity.SecuritiesPricing.mmRelatedRedemptionSchedule, com.tools20022.repository.entity.DateTimePeriod.mmRedemptionSchedule);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RedemptionSchedule.mmBusinessDayConvention, com.tools20022.repository.entity.RedemptionSchedule.mmEffectivePeriod,
+						com.tools20022.repository.entity.RedemptionSchedule.mmPriceChange, com.tools20022.repository.entity.RedemptionSchedule.mmPrice, com.tools20022.repository.entity.RedemptionSchedule.mmPartyType,
+						com.tools20022.repository.entity.RedemptionSchedule.mmAmountFulfilType, com.tools20022.repository.entity.RedemptionSchedule.mmMinimumNoticeDays,
+						com.tools20022.repository.entity.RedemptionSchedule.mmMaximumNoticeDays, com.tools20022.repository.entity.RedemptionSchedule.mmFinancialCenter, com.tools20022.repository.entity.RedemptionSchedule.mmNoticePeriodType,
+						com.tools20022.repository.entity.RedemptionSchedule.mmPriceChangeFrequency, com.tools20022.repository.entity.RedemptionSchedule.mmPriceFrequency, com.tools20022.repository.entity.RedemptionSchedule.mmSecurity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return RedemptionSchedule.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public BusinessDayConventionCode getBusinessDayConvention() {
+		return businessDayConvention;
+	}
+
+	public void setBusinessDayConvention(BusinessDayConventionCode businessDayConvention) {
+		this.businessDayConvention = businessDayConvention;
+	}
+
+	public List<DateTimePeriod> getEffectivePeriod() {
+		return effectivePeriod;
+	}
+
+	public void setEffectivePeriod(List<com.tools20022.repository.entity.DateTimePeriod> effectivePeriod) {
+		this.effectivePeriod = effectivePeriod;
+	}
+
+	public List<SecuritiesPricing> getPriceChange() {
+		return priceChange;
+	}
+
+	public void setPriceChange(List<com.tools20022.repository.entity.SecuritiesPricing> priceChange) {
+		this.priceChange = priceChange;
+	}
+
+	public List<SecuritiesPricing> getPrice() {
+		return price;
+	}
+
+	public void setPrice(List<com.tools20022.repository.entity.SecuritiesPricing> price) {
+		this.price = price;
+	}
+
+	public PartyTypeCode getPartyType() {
+		return partyType;
+	}
+
+	public void setPartyType(PartyTypeCode partyType) {
+		this.partyType = partyType;
+	}
+
+	public AmountFullfilTypeCode getAmountFulfilType() {
+		return amountFulfilType;
+	}
+
+	public void setAmountFulfilType(AmountFullfilTypeCode amountFulfilType) {
+		this.amountFulfilType = amountFulfilType;
+	}
+
+	public Number getMinimumNoticeDays() {
+		return minimumNoticeDays;
+	}
+
+	public void setMinimumNoticeDays(Number minimumNoticeDays) {
+		this.minimumNoticeDays = minimumNoticeDays;
+	}
+
+	public Number getMaximumNoticeDays() {
+		return maximumNoticeDays;
+	}
+
+	public void setMaximumNoticeDays(Number maximumNoticeDays) {
+		this.maximumNoticeDays = maximumNoticeDays;
+	}
+
+	public FinancialCenterCode getFinancialCenter() {
+		return financialCenter;
+	}
+
+	public void setFinancialCenter(FinancialCenterCode financialCenter) {
+		this.financialCenter = financialCenter;
+	}
+
+	public NoticePeriodTypeCode getNoticePeriodType() {
+		return noticePeriodType;
+	}
+
+	public void setNoticePeriodType(NoticePeriodTypeCode noticePeriodType) {
+		this.noticePeriodType = noticePeriodType;
+	}
+
+	public FrequencyCode getPriceChangeFrequency() {
+		return priceChangeFrequency;
+	}
+
+	public void setPriceChangeFrequency(FrequencyCode priceChangeFrequency) {
+		this.priceChangeFrequency = priceChangeFrequency;
+	}
+
+	public FrequencyCode getPriceFrequency() {
+		return priceFrequency;
+	}
+
+	public void setPriceFrequency(FrequencyCode priceFrequency) {
+		this.priceFrequency = priceFrequency;
+	}
+
+	public Security getSecurity() {
+		return security;
+	}
+
+	public void setSecurity(com.tools20022.repository.entity.Security security) {
+		this.security = security;
 	}
 }

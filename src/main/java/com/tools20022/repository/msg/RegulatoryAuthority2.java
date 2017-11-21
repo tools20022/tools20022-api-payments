@@ -19,11 +19,19 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.datatype.Max140Text;
+import com.tools20022.repository.entity.Country;
+import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.entity.RegulatoryAuthorityRole;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Entity requiring the regulatory reporting information.
@@ -34,10 +42,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.RegulatoryAuthority2#Name
- * RegulatoryAuthority2.Name}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegulatoryAuthority2#Country
- * RegulatoryAuthority2.Country}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegulatoryAuthority2#mmName
+ * RegulatoryAuthority2.mmName}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegulatoryAuthority2#mmCountry
+ * RegulatoryAuthority2.mmCountry}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +67,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Entity requiring the regulatory reporting information."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RegulatoryAuthority2", propOrder = {"name", "country"})
 public class RegulatoryAuthority2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max140Text name;
 	/**
 	 * Name of the entity requiring the regulatory reporting information.
 	 * <p>
@@ -74,8 +85,8 @@ public class RegulatoryAuthority2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PartyName#Name
-	 * PartyName.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyName#mmName
+	 * PartyName.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -95,20 +106,21 @@ public class RegulatoryAuthority2 {
 	 * "Name of the entity requiring the regulatory reporting information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> RegulatoryAuthority2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PartyName.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name of the entity requiring the regulatory reporting information.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected CountryCode country;
 	/**
 	 * Country of the entity that requires the regulatory reporting information.
 	 * <p>
@@ -121,7 +133,8 @@ public class RegulatoryAuthority2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Country#Code Country.Code}</li>
+	 * {@linkplain com.tools20022.repository.entity.Country#mmCode
+	 * Country.mmCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -142,17 +155,17 @@ public class RegulatoryAuthority2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Country = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> RegulatoryAuthority2.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Country.Code;
 			isDerived = false;
 			xmlTag = "Ctry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Country";
 			definition = "Country of the entity that requires the regulatory reporting information.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 	};
@@ -160,14 +173,32 @@ public class RegulatoryAuthority2 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegulatoryAuthority2.Name, com.tools20022.repository.msg.RegulatoryAuthority2.Country);
+				messageElement_lazy = () -> Arrays.asList(RegulatoryAuthority2.mmName, RegulatoryAuthority2.mmCountry);
 				trace_lazy = () -> RegulatoryAuthorityRole.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryAuthority2";
 				definition = "Entity requiring the regulatory reporting information.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Nm")
+	public Max140Text getName() {
+		return name;
+	}
+
+	public void setName(Max140Text name) {
+		this.name = name;
+	}
+
+	@XmlElement(name = "Ctry")
+	public CountryCode getCountry() {
+		return country;
+	}
+
+	public void setCountry(CountryCode country) {
+		this.country = country;
 	}
 }

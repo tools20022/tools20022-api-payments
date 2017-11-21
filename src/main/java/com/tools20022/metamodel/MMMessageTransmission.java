@@ -19,8 +19,10 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -34,6 +36,29 @@ import java.util.Optional;
  */
 public class MMMessageTransmission implements MMRepositoryConcept {
 
+	/**
+	 * the BusinessTransaction to which the MessageTransmission belongs
+	 */
+	public final static MetamodelAttribute<MMMessageTransmission, MMBusinessTransaction> businessTransactionAttribute = newAttribute();
+	/**
+	 * all of the MessagetypeTraces that derive MessageDefinitions from one
+	 * MessageTransmission
+	 */
+	public final static MetamodelAttribute<MMMessageTransmission, List<MMMessageDefinition>> derivationAttribute = newAttribute();
+	/**
+	 * Describes the purpose and scope of the MessageTransmission in the
+	 * BusinessTransaction
+	 */
+	public final static MetamodelAttribute<MMMessageTransmission, String> messageTypeDescriptionAttribute = newAttribute();
+	/**
+	 * the passing of a MessagTransmission from a sender instance to a receiver
+	 * instance
+	 */
+	public final static MetamodelAttribute<MMMessageTransmission, MMSend> sendAttribute = newAttribute();
+	/**
+	 * the handling of a MessageTransmission passed from a sender instance
+	 */
+	public final static MetamodelAttribute<MMMessageTransmission, List<MMReceive>> receiveAttribute = newAttribute();
 	protected Supplier<MMBusinessTransaction> businessTransaction_lazy;
 	protected Supplier<List<MMMessageDefinition>> derivation_lazy;
 	protected String messageTypeDescription;

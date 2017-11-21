@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SettlementDateCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.ListTrading;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -43,17 +43,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#DisclosedListTradingAccount
- * DisclosedListTrading.DisclosedListTradingAccount}</li>
+ * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#mmDisclosedListTradingAccount
+ * DisclosedListTrading.mmDisclosedListTradingAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#BuyAmount
- * DisclosedListTrading.BuyAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#mmBuyAmount
+ * DisclosedListTrading.mmBuyAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#SellAmount
- * DisclosedListTrading.SellAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#mmSellAmount
+ * DisclosedListTrading.mmSellAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#RequestedSettlementDateCode
- * DisclosedListTrading.RequestedSettlementDateCode}</li>
+ * {@linkplain com.tools20022.repository.entity.DisclosedListTrading#mmRequestedSettlementDateCode
+ * DisclosedListTrading.mmRequestedSettlementDateCode}</li>
  * </ul>
  * </li>
  * <li>
@@ -61,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#DisclosedListTrading
- * SecuritiesAccount.DisclosedListTrading}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmDisclosedListTrading
+ * SecuritiesAccount.mmDisclosedListTrading}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -71,8 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,6 +88,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class DisclosedListTrading extends ListTrading {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesAccount disclosedListTradingAccount;
 	/**
 	 * Securities account used for the trade of a disclosed list of securities,
 	 * eg, in basket or program trading.
@@ -97,8 +98,8 @@ public class DisclosedListTrading extends ListTrading {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#DisclosedListTrading
-	 * SecuritiesAccount.DisclosedListTrading}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesAccount#mmDisclosedListTrading
+	 * SecuritiesAccount.mmDisclosedListTrading}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -124,20 +125,21 @@ public class DisclosedListTrading extends ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DisclosedListTradingAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDisclosedListTradingAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DisclosedListTrading.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DisclosedListTradingAccount";
 			definition = "Securities account used for the trade of a disclosed list of securities, eg, in basket or program trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesAccount.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.DisclosedListTrading;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmDisclosedListTrading;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 		}
 	};
+	protected CurrencyAndAmount buyAmount;
 	/**
 	 * Total trade value for which a party is willing to purchase financial
 	 * instruments.
@@ -167,18 +169,27 @@ public class DisclosedListTrading extends ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BuyAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBuyAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DisclosedListTrading.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuyAmount";
 			definition = "Total trade value for which a party is willing to purchase financial instruments.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DisclosedListTrading.class.getMethod("getBuyAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount sellAmount;
 	/**
 	 * Total trade value for which a party is willing to sell financial
 	 * instruments.
@@ -208,18 +219,27 @@ public class DisclosedListTrading extends ListTrading {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SellAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSellAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DisclosedListTrading.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellAmount";
 			definition = "Total trade value for which a party is willing to sell financial instruments.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DisclosedListTrading.class.getMethod("getSellAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SettlementDateCode requestedSettlementDateCode;
 	/**
 	 * Requested date of trade settlement in coded form (eg, trade date +1).
 	 * <p>
@@ -247,32 +267,77 @@ public class DisclosedListTrading extends ListTrading {
 	 * "Requested date of trade settlement in coded form (eg, trade date +1)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RequestedSettlementDateCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRequestedSettlementDateCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> DisclosedListTrading.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DisclosedListTrading.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RequestedSettlementDateCode";
 			definition = "Requested date of trade settlement in coded form (eg, trade date +1).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> SettlementDateCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return DisclosedListTrading.class.getMethod("getRequestedSettlementDateCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DisclosedListTrading";
 				definition = "List trading by which the buy-side details the exact stocks and sizes to be traded and the sell-side offers the buy-side a two-way price, to buy or to sell the indicated stocks. All sell-side firms see all of the stocks and quantities in the portfolio during the bidding phase regardless of whether or not they win the business.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.DisclosedListTrading);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesAccount.mmDisclosedListTrading);
 				superType_lazy = () -> ListTrading.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DisclosedListTrading.DisclosedListTradingAccount, com.tools20022.repository.entity.DisclosedListTrading.BuyAmount,
-						com.tools20022.repository.entity.DisclosedListTrading.SellAmount, com.tools20022.repository.entity.DisclosedListTrading.RequestedSettlementDateCode);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DisclosedListTrading.mmDisclosedListTradingAccount, com.tools20022.repository.entity.DisclosedListTrading.mmBuyAmount,
+						com.tools20022.repository.entity.DisclosedListTrading.mmSellAmount, com.tools20022.repository.entity.DisclosedListTrading.mmRequestedSettlementDateCode);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return DisclosedListTrading.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesAccount getDisclosedListTradingAccount() {
+		return disclosedListTradingAccount;
+	}
+
+	public void setDisclosedListTradingAccount(com.tools20022.repository.entity.SecuritiesAccount disclosedListTradingAccount) {
+		this.disclosedListTradingAccount = disclosedListTradingAccount;
+	}
+
+	public CurrencyAndAmount getBuyAmount() {
+		return buyAmount;
+	}
+
+	public void setBuyAmount(CurrencyAndAmount buyAmount) {
+		this.buyAmount = buyAmount;
+	}
+
+	public CurrencyAndAmount getSellAmount() {
+		return sellAmount;
+	}
+
+	public void setSellAmount(CurrencyAndAmount sellAmount) {
+		this.sellAmount = sellAmount;
+	}
+
+	public SettlementDateCode getRequestedSettlementDateCode() {
+		return requestedSettlementDateCode;
+	}
+
+	public void setRequestedSettlementDateCode(SettlementDateCode requestedSettlementDateCode) {
+		this.requestedSettlementDateCode = requestedSettlementDateCode;
 	}
 }

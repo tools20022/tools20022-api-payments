@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#CashDistribution
- * StandingInstructionTypeCode.CashDistribution}</li>
+ * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#mmCashDistribution
+ * StandingInstructionTypeCode.mmCashDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#GrossNet
- * StandingInstructionTypeCode.GrossNet}</li>
+ * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#mmGrossNet
+ * StandingInstructionTypeCode.mmGrossNet}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#SecuritiesDistribution
- * StandingInstructionTypeCode.SecuritiesDistribution}</li>
+ * {@linkplain com.tools20022.repository.codeset.StandingInstructionTypeCode#mmSecuritiesDistribution
+ * StandingInstructionTypeCode.mmSecuritiesDistribution}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class StandingInstructionTypeCode {
 	 * definition} = "Standing instruction for a cash distribution."</li>
 	 * </ul>
 	 */
-	public static final MMCode CashDistribution = new MMCode() {
+	public static final MMCode mmCashDistribution = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDistribution";
 			definition = "Standing instruction for a cash distribution.";
 			owner_lazy = () -> StandingInstructionTypeCode.mmObject();
@@ -116,9 +118,9 @@ public class StandingInstructionTypeCode {
 	 * "Standing instruction for the payment modality, gross or net."</li>
 	 * </ul>
 	 */
-	public static final MMCode GrossNet = new MMCode() {
+	public static final MMCode mmGrossNet = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossNet";
 			definition = "Standing instruction for the payment modality, gross or net.";
 			owner_lazy = () -> StandingInstructionTypeCode.mmObject();
@@ -146,9 +148,9 @@ public class StandingInstructionTypeCode {
 	 * definition} = "Standing instruction for a securities distribution."</li>
 	 * </ul>
 	 */
-	public static final MMCode SecuritiesDistribution = new MMCode() {
+	public static final MMCode mmSecuritiesDistribution = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesDistribution";
 			definition = "Standing instruction for a securities distribution.";
 			owner_lazy = () -> StandingInstructionTypeCode.mmObject();
@@ -159,13 +161,12 @@ public class StandingInstructionTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CASH");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StandingInstructionTypeCode";
 				definition = "Specifies the type of standing instruction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.StandingInstructionTypeCode.CashDistribution, com.tools20022.repository.codeset.StandingInstructionTypeCode.GrossNet,
-						com.tools20022.repository.codeset.StandingInstructionTypeCode.SecuritiesDistribution);
+				code_lazy = () -> Arrays.asList(StandingInstructionTypeCode.mmCashDistribution, StandingInstructionTypeCode.mmGrossNet, StandingInstructionTypeCode.mmSecuritiesDistribution);
 			}
 		});
 		return mmObject_lazy.get();

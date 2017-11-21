@@ -20,13 +20,17 @@ package com.tools20022.repository.area.pain;
 import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.PaymentsInitiationLatestVersion;
 import com.tools20022.repository.msg.GroupHeader52;
 import com.tools20022.repository.msg.OriginalGroupHeader7;
 import com.tools20022.repository.msg.OriginalPaymentInstruction23;
 import com.tools20022.repository.msg.SupplementaryData1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.*;
 
 /**
  * <b>Scope</b><br>
@@ -69,24 +73,22 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#GroupHeader
- * CustomerPaymentStatusReportV08.GroupHeader}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#mmGroupHeader
+ * CustomerPaymentStatusReportV08.mmGroupHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#OriginalGroupInformationAndStatus
- * CustomerPaymentStatusReportV08.OriginalGroupInformationAndStatus}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#mmOriginalGroupInformationAndStatus
+ * CustomerPaymentStatusReportV08.mmOriginalGroupInformationAndStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#OriginalPaymentInformationAndStatus
- * CustomerPaymentStatusReportV08.OriginalPaymentInformationAndStatus}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#mmOriginalPaymentInformationAndStatus
+ * CustomerPaymentStatusReportV08.mmOriginalPaymentInformationAndStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#SupplementaryData
- * CustomerPaymentStatusReportV08.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#mmSupplementaryData
+ * CustomerPaymentStatusReportV08.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
- * messageDefinitionIdentifier} =
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#identifier
- * CustomerPaymentStatusReportV08.identifier}</li>
+ * messageDefinitionIdentifier} = {@code pain.002.001.08}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,9 +101,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CustomerPaymentStatusReportV08", propOrder = {"groupHeader", "originalGroupInformationAndStatus", "originalPaymentInformationAndStatus", "supplementaryData"})
 public class CustomerPaymentStatusReportV08 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	protected GroupHeader52 groupHeader;
 	/**
 	 * Set of characteristics shared by all individual transactions included in
 	 * the status report message.
@@ -127,17 +132,26 @@ public class CustomerPaymentStatusReportV08 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock GroupHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmGroupHeader = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "GrpHdr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GroupHeader";
 			definition = "Set of characteristics shared by all individual transactions included in the status report message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> GroupHeader52.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CustomerPaymentStatusReportV08.class.getMethod("getGroupHeader", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected OriginalGroupHeader7 originalGroupInformationAndStatus;
 	/**
 	 * Original group information concerning the group of transactions, to which
 	 * the status report message refers to.
@@ -164,17 +178,26 @@ public class CustomerPaymentStatusReportV08 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock OriginalGroupInformationAndStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmOriginalGroupInformationAndStatus = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "OrgnlGrpInfAndSts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalGroupInformationAndStatus";
 			definition = "Original group information concerning the group of transactions, to which the status report message refers to.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> OriginalGroupHeader7.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CustomerPaymentStatusReportV08.class.getMethod("getOriginalGroupInformationAndStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<OriginalPaymentInstruction23> originalPaymentInformationAndStatus;
 	/**
 	 * Information concerning the original payment information, to which the
 	 * status report message refers.
@@ -201,16 +224,25 @@ public class CustomerPaymentStatusReportV08 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock OriginalPaymentInformationAndStatus = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmOriginalPaymentInformationAndStatus = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "OrgnlPmtInfAndSts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalPaymentInformationAndStatus";
 			definition = "Information concerning the original payment information, to which the status report message refers.";
 			minOccurs = 0;
 			complexType_lazy = () -> OriginalPaymentInstruction23.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CustomerPaymentStatusReportV08.class.getMethod("getOriginalPaymentInformationAndStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<SupplementaryData1> supplementaryData;
 	/**
 	 * Additional information that cannot be captured in the structured elements
 	 * and/or any other specific block.
@@ -237,59 +269,94 @@ public class CustomerPaymentStatusReportV08 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock SupplementaryData = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock mmSupplementaryData = new MMMessageBuildingBlock() {
 		{
 			xmlTag = "SplmtryData";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SupplementaryData";
 			definition = "Additional information that cannot be captured in the structured elements and/or any other specific block.";
 			minOccurs = 0;
 			complexType_lazy = () -> SupplementaryData1.mmObject();
 		}
-	};
-	/**
-	 * An instance of MessageDefinitionIdentifier.
-	 * <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getVersion
-	 * version} = "08"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getBusinessArea
-	 * businessArea} = "pain"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getMessageFunctionality
-	 * messageFunctionality} = "002"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMMessageDefinitionIdentifier#getFlavour
-	 * flavour} = "001"</li>
-	 * </ul>
-	 */
-	public static final MMMessageDefinitionIdentifier identifier = new MMMessageDefinitionIdentifier() {
-		{
-			businessArea = "pain";
-			messageFunctionality = "002";
-			version = "08";
-			flavour = "001";
+
+		public Method getGetterMethod() {
+			try {
+				return CustomerPaymentStatusReportV08.class.getMethod("getSupplementaryData", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	final static public MMMessageDefinition mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageDefinition() {
 			{
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustomerPaymentStatusReportV08";
 				definition = "Scope\r\nThe CustomerPaymentStatusReport message is sent by an instructed agent to the previous party in the payment chain. It is used to inform this party about the positive or negative status of an instruction (either single or file). It is also used to report on a pending instruction.\r\nUsage\r\nThe CustomerPaymentStatusReport message is exchanged between an agent and a non-financial institution customer to provide status information on instructions previously sent. Its usage will always be governed by a bilateral agreement between the agent and the non-financial institution customer.\r\nThe CustomerPaymentStatusReport message can be used to provide information about the status (e.g. rejection, acceptance) of the initiation of a credit transfer, a direct debit, as well as on the initiation of other customer instructions.\r\nThe CustomerPaymentStatusReport message refers to the original instruction(s) by means of references only or by means of references and a set of elements from the original instruction.\r\nThe CustomerPaymentStatusReport message can be used in domestic and cross-border scenarios.\r\nThe CustomerPaymentStatusReport may also be sent to the receiver of the payment in a real time payment scenario, as both sides of the transactions must be informed of the status of the transaction (e.g. either the beneficiary is credited, or the transaction is rejected). ";
 				rootElement = "Document";
 				xmlTag = "CstmrPmtStsRpt";
 				businessArea_lazy = () -> PaymentsInitiationLatestVersion.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.GroupHeader,
-						com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.OriginalGroupInformationAndStatus, com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.OriginalPaymentInformationAndStatus,
-						com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.SupplementaryData);
-				messageDefinitionIdentifier_lazy = () -> com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.identifier;
+				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.mmGroupHeader,
+						com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.mmOriginalGroupInformationAndStatus, com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.mmOriginalPaymentInformationAndStatus,
+						com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.mmSupplementaryData);
+				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
+					{
+						businessArea = "pain";
+						messageFunctionality = "002";
+						version = "08";
+						flavour = "001";
+					}
+				};
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CustomerPaymentStatusReportV08.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "GrpHdr", required = true)
+	public GroupHeader52 getGroupHeader() {
+		return groupHeader;
+	}
+
+	public void setGroupHeader(GroupHeader52 groupHeader) {
+		this.groupHeader = groupHeader;
+	}
+
+	@XmlElement(name = "OrgnlGrpInfAndSts", required = true)
+	public OriginalGroupHeader7 getOriginalGroupInformationAndStatus() {
+		return originalGroupInformationAndStatus;
+	}
+
+	public void setOriginalGroupInformationAndStatus(OriginalGroupHeader7 originalGroupInformationAndStatus) {
+		this.originalGroupInformationAndStatus = originalGroupInformationAndStatus;
+	}
+
+	@XmlElement(name = "OrgnlPmtInfAndSts")
+	public List<OriginalPaymentInstruction23> getOriginalPaymentInformationAndStatus() {
+		return originalPaymentInformationAndStatus;
+	}
+
+	public void setOriginalPaymentInformationAndStatus(List<OriginalPaymentInstruction23> originalPaymentInformationAndStatus) {
+		this.originalPaymentInformationAndStatus = originalPaymentInformationAndStatus;
+	}
+
+	@XmlElement(name = "SplmtryData")
+	public List<SupplementaryData1> getSupplementaryData() {
+		return supplementaryData;
+	}
+
+	public void setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = supplementaryData;
+	}
+
+	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:pain.002.08.08")
+	static public class Document {
+		@XmlElement(name = "CstmrPmtStsRpt", required = true)
+		public CustomerPaymentStatusReportV08 messageBody;
 	}
 }

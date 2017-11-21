@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMRepositoryConcept;
 import com.tools20022.metamodel.StandardMetamodel2013;
@@ -32,6 +34,16 @@ import java.util.Optional;
  */
 public class MMDoclet implements MMModelEntity {
 
+	/**
+	 * The type of doclet. The definition of the doclet type is left open so
+	 * that new doclet types can be easily added without the need for a change
+	 * to the meta-model.
+	 */
+	public final static MetamodelAttribute<MMDoclet, Optional<String>> typeAttribute = newAttribute();
+	/**
+	 * The content for the documentation.
+	 */
+	public final static MetamodelAttribute<MMDoclet, Optional<String>> contentAttribute = newAttribute();
 	protected MMRepositoryConcept container;
 	protected String type;
 	protected String content;

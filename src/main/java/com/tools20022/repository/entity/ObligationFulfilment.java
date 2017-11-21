@@ -17,12 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODate;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CertificateReference1;
+import com.tools20022.repository.msg.MandateAuthentication1;
+import com.tools20022.repository.msg.TransactionCertificate2;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Processes by which an obligation is extinguished fully or partially.
@@ -36,25 +40,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.ObligationFulfilment#Date
- * ObligationFulfilment.Date}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ObligationFulfilment#mmDate
+ * ObligationFulfilment.mmDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment#ObligationOffset
- * ObligationFulfilment.ObligationOffset}</li>
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment#mmObligationOffset
+ * ObligationFulfilment.mmObligationOffset}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment#ResultingObligation
- * ObligationFulfilment.ResultingObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment#mmResultingObligation
+ * ObligationFulfilment.mmResultingObligation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Obligation#Offset
- * Obligation.Offset}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Obligation#mmOffset
+ * Obligation.mmOffset}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Obligation#OriginalObligationProcess
- * Obligation.OriginalObligationProcess}</li>
+ * {@linkplain com.tools20022.repository.entity.Obligation#mmOriginalObligationProcess
+ * Obligation.mmOriginalObligationProcess}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -76,8 +80,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class ObligationFulfilment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate date;
 	/**
 	 * Date and time on which assets become available.
 	 * <p>
@@ -105,13 +110,14 @@ public class ObligationFulfilment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TransactionCertificate2#TransactionDate
-	 * TransactionCertificate2.TransactionDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CertificateReference1#Date
-	 * CertificateReference1.Date}</li>
+	 * {@linkplain com.tools20022.repository.msg.TransactionCertificate2#mmTransactionDate
+	 * TransactionCertificate2.mmTransactionDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.MandateAuthentication1#Date
-	 * MandateAuthentication1.Date}</li>
+	 * {@linkplain com.tools20022.repository.msg.CertificateReference1#mmDate
+	 * CertificateReference1.mmDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.MandateAuthentication1#mmDate
+	 * MandateAuthentication1.mmDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -130,19 +136,28 @@ public class ObligationFulfilment {
 	 * definition} = "Date and time on which assets become available."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Date = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionCertificate2.TransactionDate, com.tools20022.repository.msg.CertificateReference1.Date, com.tools20022.repository.msg.MandateAuthentication1.Date);
-			elementContext_lazy = () -> ObligationFulfilment.mmObject();
+			derivation_lazy = () -> Arrays.asList(TransactionCertificate2.mmTransactionDate, CertificateReference1.mmDate, MandateAuthentication1.mmDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Date";
 			definition = "Date and time on which assets become available.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return ObligationFulfilment.class.getMethod("getDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Obligation> obligationOffset;
 	/**
 	 * Specifies the obligation which has been offset for instance a payment
 	 * obligation or a securities delivery.
@@ -152,8 +167,8 @@ public class ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Obligation#Offset
-	 * Obligation.Offset}</li>
+	 * {@linkplain com.tools20022.repository.entity.Obligation#mmOffset
+	 * Obligation.mmOffset}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -179,19 +194,20 @@ public class ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ObligationOffset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmObligationOffset = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ObligationFulfilment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ObligationOffset";
 			definition = "Specifies the obligation which has been offset for instance a payment obligation or a securities delivery.";
 			minOccurs = 0;
-			type_lazy = () -> Obligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Obligation.Offset;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Obligation.mmOffset;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Obligation> resultingObligation;
 	/**
 	 * Specifies the obligation which result from a settlement process, for
 	 * instance the remaining obligation when the obligations are netted.
@@ -201,8 +217,8 @@ public class ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Obligation#OriginalObligationProcess
-	 * Obligation.OriginalObligationProcess}</li>
+	 * {@linkplain com.tools20022.repository.entity.Obligation#mmOriginalObligationProcess
+	 * Obligation.mmOriginalObligationProcess}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -228,34 +244,63 @@ public class ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ResultingObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmResultingObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> ObligationFulfilment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResultingObligation";
 			definition = "Specifies the obligation which result from a settlement process, for instance the remaining obligation when the obligations are netted.";
 			minOccurs = 0;
-			type_lazy = () -> Obligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Obligation.OriginalObligationProcess;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Obligation.mmOriginalObligationProcess;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Obligation.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ObligationFulfilment";
 				definition = "Processes by which an obligation is extinguished fully or partially.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Obligation.Offset, com.tools20022.repository.entity.Obligation.OriginalObligationProcess);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Obligation.mmOffset, com.tools20022.repository.entity.Obligation.mmOriginalObligationProcess);
 				subType_lazy = () -> Arrays.asList(Payment.mmObject(), SecuritiesTransfer.mmObject(), Clearing.mmObject(), ProductDelivery.mmObject(), BuyIn.mmObject(), PairOff.mmObject(), Netting.mmObject(), Rollover.mmObject(),
 						Novation.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ObligationFulfilment.Date, com.tools20022.repository.entity.ObligationFulfilment.ObligationOffset,
-						com.tools20022.repository.entity.ObligationFulfilment.ResultingObligation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ObligationFulfilment.mmDate, com.tools20022.repository.entity.ObligationFulfilment.mmObligationOffset,
+						com.tools20022.repository.entity.ObligationFulfilment.mmResultingObligation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return ObligationFulfilment.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
+	}
+
+	public List<Obligation> getObligationOffset() {
+		return obligationOffset;
+	}
+
+	public void setObligationOffset(List<com.tools20022.repository.entity.Obligation> obligationOffset) {
+		this.obligationOffset = obligationOffset;
+	}
+
+	public List<Obligation> getResultingObligation() {
+		return resultingObligation;
+	}
+
+	public void setResultingObligation(List<com.tools20022.repository.entity.Obligation> resultingObligation) {
+		this.resultingObligation = resultingObligation;
 	}
 }

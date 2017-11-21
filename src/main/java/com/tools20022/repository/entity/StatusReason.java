@@ -17,19 +17,17 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.ReturnReason5Choice;
 import com.tools20022.repository.choice.StatusReason6Choice;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.msg.MandateAmendmentReason1;
-import com.tools20022.repository.msg.PaymentReturnReason1;
-import com.tools20022.repository.msg.PaymentReturnReason2;
-import com.tools20022.repository.msg.PaymentReversalReason7;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies the underlying reason for the status of an object.
@@ -43,77 +41,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.StatusReason#Status
- * StatusReason.Status}</li>
- * <li>{@linkplain com.tools20022.repository.entity.StatusReason#Reason
- * StatusReason.Reason}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.StatusReason#mmStatus
+ * StatusReason.mmStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.StatusReason#mmReason
+ * StatusReason.mmReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#NoSpecifiedReason
- * StatusReason.NoSpecifiedReason}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmNoSpecifiedReason
+ * StatusReason.mmNoSpecifiedReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#DataSourceScheme
- * StatusReason.DataSourceScheme}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmDataSourceScheme
+ * StatusReason.mmDataSourceScheme}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#RejectedStatusReason
- * StatusReason.RejectedStatusReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.StatusReason#FailingReason
- * StatusReason.FailingReason}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmRejectedStatusReason
+ * StatusReason.mmRejectedStatusReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#CancellationReason
- * StatusReason.CancellationReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.StatusReason#PendingReason
- * StatusReason.PendingReason}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmFailingReason
+ * StatusReason.mmFailingReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#RejectionReason
- * StatusReason.RejectionReason}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmCancellationReason
+ * StatusReason.mmCancellationReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#AcknowledgedAcceptedReason
- * StatusReason.AcknowledgedAcceptedReason}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmPendingReason
+ * StatusReason.mmPendingReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.StatusReason#RelatedClosureReason
- * StatusReason.RelatedClosureReason}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmRejectionReason
+ * StatusReason.mmRejectionReason}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmAcknowledgedAcceptedReason
+ * StatusReason.mmAcknowledgedAcceptedReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#RelatedStatusReason
- * GenericIdentification.RelatedStatusReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Status#StatusReason
- * Status.StatusReason}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RegisteredContract#ClosureReason
- * RegisteredContract.ClosureReason}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.ReturnReason5Choice#Code
- * ReturnReason5Choice.Code}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.ReturnReason5Choice#Proprietary
- * ReturnReason5Choice.Proprietary}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentReversalReason7#Reason
- * PaymentReversalReason7.Reason}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PaymentReturnReason1#Reason
- * PaymentReturnReason1.Reason}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTradeStatusReason
- * SecuritiesTradeStatusReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CorporateActionStatusReason
- * CorporateActionStatusReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.UndertakingStatusReason
- * UndertakingStatusReason}</li>
- * <li>{@linkplain com.tools20022.repository.entity.MeetingStatusReason
- * MeetingStatusReason}</li>
+ * {@linkplain com.tools20022.repository.entity.StatusReason#mmRelatedClosureReason
+ * StatusReason.mmRelatedClosureReason}</li>
  * </ul>
  * </li>
  * <li>
@@ -135,10 +93,53 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmRelatedStatusReason
+ * GenericIdentification.mmRelatedStatusReason}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Status#mmStatusReason
+ * Status.mmStatusReason}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmClosureReason
+ * RegisteredContract.mmClosureReason}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.ReturnReason5Choice#mmCode
+ * ReturnReason5Choice.mmCode}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.ReturnReason5Choice#mmProprietary
+ * ReturnReason5Choice.mmProprietary}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PaymentReversalReason7#mmReason
+ * PaymentReversalReason7.mmReason}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PaymentReturnReason1#mmReason
+ * PaymentReturnReason1.mmReason}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesTradeStatusReason
+ * SecuritiesTradeStatusReason}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CorporateActionStatusReason
+ * CorporateActionStatusReason}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.UndertakingStatusReason
+ * UndertakingStatusReason}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.MeetingStatusReason
+ * MeetingStatusReason}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -152,6 +153,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class StatusReason {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Status status;
 	/**
 	 * Status for which a reason is provided.
 	 * <p>
@@ -160,8 +162,8 @@ public class StatusReason {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusReason
-	 * Status.StatusReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusReason
+	 * Status.mmStatusReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -183,20 +185,21 @@ public class StatusReason {
 	 * definition} = "Status for which a reason is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Status = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status for which a reason is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Status.mmStatusReason;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Status.StatusReason;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text reason;
 	/**
 	 * Reason provided for the status.
 	 * <p>
@@ -210,31 +213,31 @@ public class StatusReason {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentReturnReason2#Reason
-	 * PaymentReturnReason2.Reason}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentReturnReason2#mmReason
+	 * PaymentReturnReason2.mmReason}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PaymentReversalReason7#AdditionalInformation
-	 * PaymentReversalReason7.AdditionalInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.PaymentReversalReason7#mmAdditionalInformation
+	 * PaymentReversalReason7.mmAdditionalInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.StatusReason6Choice#Code
-	 * StatusReason6Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.StatusReason6Choice#mmCode
+	 * StatusReason6Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.StatusReason6Choice#Proprietary
-	 * StatusReason6Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.StatusReason6Choice#mmProprietary
+	 * StatusReason6Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptanceResult6#AdditionalRejectReasonInformation
-	 * AcceptanceResult6.AdditionalRejectReasonInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptanceResult6#mmAdditionalRejectReasonInformation
+	 * AcceptanceResult6.mmAdditionalRejectReasonInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.MandateAmendmentReason1#Reason
-	 * MandateAmendmentReason1.Reason}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CaseStatus2#Reason
-	 * CaseStatus2.Reason}</li>
+	 * {@linkplain com.tools20022.repository.msg.MandateAmendmentReason1#mmReason
+	 * MandateAmendmentReason1.mmReason}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CaseStatus2#mmReason
+	 * CaseStatus2.mmReason}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CancellationStatusReason2#AdditionalInformation
-	 * CancellationStatusReason2.AdditionalInformation}</li>
+	 * {@linkplain com.tools20022.repository.msg.CancellationStatusReason2#mmAdditionalInformation
+	 * CancellationStatusReason2.mmAdditionalInformation}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#AmendmentReason
-	 * RegisteredContractAmendment1.AmendmentReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.RegisteredContractAmendment1#mmAmendmentReason
+	 * RegisteredContractAmendment1.mmAmendmentReason}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -252,22 +255,29 @@ public class StatusReason {
 	 * definition} = "Reason provided for the status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Reason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReason = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentReturnReason2.Reason, com.tools20022.repository.msg.PaymentReversalReason7.AdditionalInformation,
-					com.tools20022.repository.choice.StatusReason6Choice.Code, com.tools20022.repository.choice.StatusReason6Choice.Proprietary, com.tools20022.repository.msg.AcceptanceResult6.AdditionalRejectReasonInformation,
-					com.tools20022.repository.msg.MandateAmendmentReason1.Reason, com.tools20022.repository.msg.CaseStatus2.Reason, com.tools20022.repository.msg.CancellationStatusReason2.AdditionalInformation,
-					com.tools20022.repository.msg.RegisteredContractAmendment1.AmendmentReason);
-			elementContext_lazy = () -> StatusReason.mmObject();
+			derivation_lazy = () -> Arrays.asList(PaymentReturnReason2.mmReason, PaymentReversalReason7.mmAdditionalInformation, StatusReason6Choice.mmCode, StatusReason6Choice.mmProprietary,
+					AcceptanceResult6.mmAdditionalRejectReasonInformation, MandateAmendmentReason1.mmReason, CaseStatus2.mmReason, CancellationStatusReason2.mmAdditionalInformation, RegisteredContractAmendment1.mmAmendmentReason);
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reason";
 			definition = "Reason provided for the status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected NoReasonCode noSpecifiedReason;
 	/**
 	 * Indicates that there is no reason available or to report.
 	 * <p>
@@ -293,18 +303,27 @@ public class StatusReason {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NoSpecifiedReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNoSpecifiedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoSpecifiedReason";
 			definition = "Indicates that there is no reason available or to report.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> NoReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getNoSpecifiedReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.GenericIdentification> dataSourceScheme;
 	/**
 	 * Proprietary identification of the reason for the status.
 	 * <p>
@@ -313,8 +332,8 @@ public class StatusReason {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#RelatedStatusReason
-	 * GenericIdentification.RelatedStatusReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmRelatedStatusReason
+	 * GenericIdentification.mmRelatedStatusReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -338,19 +357,20 @@ public class StatusReason {
 	 * definition} = "Proprietary identification of the reason for the status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DataSourceScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDataSourceScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DataSourceScheme";
 			definition = "Proprietary identification of the reason for the status.";
 			minOccurs = 0;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.RelatedStatusReason;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedStatusReason;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected RejectedStatusReasonCode rejectedStatusReason;
 	/**
 	 * Reason for the rejected status.
 	 * <p>
@@ -376,18 +396,27 @@ public class StatusReason {
 	 * definition} = "Reason for the rejected status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RejectedStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRejectedStatusReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectedStatusReason";
 			definition = "Reason for the rejected status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RejectedStatusReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getRejectedStatusReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PendingFailingReasonCode failingReason;
 	/**
 	 * Reason why a transaction has a failing status.
 	 * <p>
@@ -413,18 +442,27 @@ public class StatusReason {
 	 * definition} = "Reason why a transaction has a failing status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FailingReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFailingReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FailingReason";
 			definition = "Reason why a transaction has a failing status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PendingFailingReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getFailingReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CancelledStatusReasonV2Code cancellationReason;
 	/**
 	 * Specifies the reason why the related instruction is cancelled, or the
 	 * related cancellation request is executed.
@@ -453,18 +491,27 @@ public class StatusReason {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CancellationReason";
 			definition = "Specifies the reason why the related instruction is cancelled, or the related cancellation request is executed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CancelledStatusReasonV2Code.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getCancellationReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PendingFailingReasonCode pendingReason;
 	/**
 	 * Specifies the reason why the instruction processing is pending.
 	 * <p>
@@ -491,18 +538,27 @@ public class StatusReason {
 	 * "Specifies the reason why the instruction processing is pending."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PendingReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPendingReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PendingReason";
 			definition = "Specifies the reason why the instruction processing is pending.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PendingFailingReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getPendingReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RejectionReasonV2Code rejectionReason;
 	/**
 	 * Specifies the reason why the instruction/request has a repair or
 	 * rejection status.
@@ -531,18 +587,27 @@ public class StatusReason {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute RejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RejectionReason";
 			definition = "Specifies the reason why the instruction/request has a repair or rejection status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RejectionReasonV2Code.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getRejectionReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected AcknowledgementReasonCode acknowledgedAcceptedReason;
 	/**
 	 * Specifies additional information about the processed instruction.
 	 * <p>
@@ -569,18 +634,27 @@ public class StatusReason {
 	 * "Specifies additional information about the processed instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AcknowledgedAcceptedReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAcknowledgedAcceptedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcknowledgedAcceptedReason";
 			definition = "Specifies additional information about the processed instruction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AcknowledgementReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return StatusReason.class.getMethod("getAcknowledgedAcceptedReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RegisteredContract relatedClosureReason;
 	/**
 	 * Related reason of closure of the contract.
 	 * <p>
@@ -589,8 +663,8 @@ public class StatusReason {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#ClosureReason
-	 * RegisteredContract.ClosureReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmClosureReason
+	 * RegisteredContract.mmClosureReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -613,41 +687,133 @@ public class StatusReason {
 	 * definition} = "Related reason of closure of the contract. "</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedClosureReason = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedClosureReason = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> StatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.StatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedClosureReason";
 			definition = "Related reason of closure of the contract. ";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RegisteredContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.ClosureReason;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmClosureReason;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "StatusReason";
 				definition = "Specifies the underlying reason for the status of an object.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.RelatedStatusReason, com.tools20022.repository.entity.Status.StatusReason,
-						com.tools20022.repository.entity.RegisteredContract.ClosureReason);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ReturnReason5Choice.Code, com.tools20022.repository.choice.ReturnReason5Choice.Proprietary,
-						com.tools20022.repository.msg.PaymentReversalReason7.Reason, com.tools20022.repository.msg.PaymentReturnReason1.Reason);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GenericIdentification.mmRelatedStatusReason, com.tools20022.repository.entity.Status.mmStatusReason,
+						com.tools20022.repository.entity.RegisteredContract.mmClosureReason);
+				derivationElement_lazy = () -> Arrays.asList(ReturnReason5Choice.mmCode, ReturnReason5Choice.mmProprietary, PaymentReversalReason7.mmReason, PaymentReturnReason1.mmReason);
 				subType_lazy = () -> Arrays.asList(SecuritiesTradeStatusReason.mmObject(), CorporateActionStatusReason.mmObject(), UndertakingStatusReason.mmObject(), MeetingStatusReason.mmObject());
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StatusReason.Status, com.tools20022.repository.entity.StatusReason.Reason, com.tools20022.repository.entity.StatusReason.NoSpecifiedReason,
-						com.tools20022.repository.entity.StatusReason.DataSourceScheme, com.tools20022.repository.entity.StatusReason.RejectedStatusReason, com.tools20022.repository.entity.StatusReason.FailingReason,
-						com.tools20022.repository.entity.StatusReason.CancellationReason, com.tools20022.repository.entity.StatusReason.PendingReason, com.tools20022.repository.entity.StatusReason.RejectionReason,
-						com.tools20022.repository.entity.StatusReason.AcknowledgedAcceptedReason, com.tools20022.repository.entity.StatusReason.RelatedClosureReason);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.StatusReason.mmStatus, com.tools20022.repository.entity.StatusReason.mmReason, com.tools20022.repository.entity.StatusReason.mmNoSpecifiedReason,
+						com.tools20022.repository.entity.StatusReason.mmDataSourceScheme, com.tools20022.repository.entity.StatusReason.mmRejectedStatusReason, com.tools20022.repository.entity.StatusReason.mmFailingReason,
+						com.tools20022.repository.entity.StatusReason.mmCancellationReason, com.tools20022.repository.entity.StatusReason.mmPendingReason, com.tools20022.repository.entity.StatusReason.mmRejectionReason,
+						com.tools20022.repository.entity.StatusReason.mmAcknowledgedAcceptedReason, com.tools20022.repository.entity.StatusReason.mmRelatedClosureReason);
 				derivationComponent_lazy = () -> Arrays.asList(ReturnReason5Choice.mmObject(), PaymentReturnReason2.mmObject(), PaymentReversalReason7.mmObject(), StatusReason6Choice.mmObject(), MandateAmendmentReason1.mmObject(),
 						PaymentReturnReason1.mmObject());
 			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return StatusReason.class;
+			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(com.tools20022.repository.entity.Status status) {
+		this.status = status;
+	}
+
+	public Max35Text getReason() {
+		return reason;
+	}
+
+	public void setReason(Max35Text reason) {
+		this.reason = reason;
+	}
+
+	public NoReasonCode getNoSpecifiedReason() {
+		return noSpecifiedReason;
+	}
+
+	public void setNoSpecifiedReason(NoReasonCode noSpecifiedReason) {
+		this.noSpecifiedReason = noSpecifiedReason;
+	}
+
+	public List<GenericIdentification> getDataSourceScheme() {
+		return dataSourceScheme;
+	}
+
+	public void setDataSourceScheme(List<com.tools20022.repository.entity.GenericIdentification> dataSourceScheme) {
+		this.dataSourceScheme = dataSourceScheme;
+	}
+
+	public RejectedStatusReasonCode getRejectedStatusReason() {
+		return rejectedStatusReason;
+	}
+
+	public void setRejectedStatusReason(RejectedStatusReasonCode rejectedStatusReason) {
+		this.rejectedStatusReason = rejectedStatusReason;
+	}
+
+	public PendingFailingReasonCode getFailingReason() {
+		return failingReason;
+	}
+
+	public void setFailingReason(PendingFailingReasonCode failingReason) {
+		this.failingReason = failingReason;
+	}
+
+	public CancelledStatusReasonV2Code getCancellationReason() {
+		return cancellationReason;
+	}
+
+	public void setCancellationReason(CancelledStatusReasonV2Code cancellationReason) {
+		this.cancellationReason = cancellationReason;
+	}
+
+	public PendingFailingReasonCode getPendingReason() {
+		return pendingReason;
+	}
+
+	public void setPendingReason(PendingFailingReasonCode pendingReason) {
+		this.pendingReason = pendingReason;
+	}
+
+	public RejectionReasonV2Code getRejectionReason() {
+		return rejectionReason;
+	}
+
+	public void setRejectionReason(RejectionReasonV2Code rejectionReason) {
+		this.rejectionReason = rejectionReason;
+	}
+
+	public AcknowledgementReasonCode getAcknowledgedAcceptedReason() {
+		return acknowledgedAcceptedReason;
+	}
+
+	public void setAcknowledgedAcceptedReason(AcknowledgementReasonCode acknowledgedAcceptedReason) {
+		this.acknowledgedAcceptedReason = acknowledgedAcceptedReason;
+	}
+
+	public RegisteredContract getRelatedClosureReason() {
+		return relatedClosureReason;
+	}
+
+	public void setRelatedClosureReason(com.tools20022.repository.entity.RegisteredContract relatedClosureReason) {
+		this.relatedClosureReason = relatedClosureReason;
 	}
 }

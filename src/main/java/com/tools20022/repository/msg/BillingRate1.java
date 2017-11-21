@@ -20,11 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.BillingRateIdentification1Choice;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the billing rate.
@@ -35,21 +41,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#Identification
- * BillingRate1.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#Value
- * BillingRate1.Value}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#DaysInPeriod
- * BillingRate1.DaysInPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#DaysInYear
- * BillingRate1.DaysInYear}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#mmIdentification
+ * BillingRate1.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#mmValue
+ * BillingRate1.mmValue}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#mmDaysInPeriod
+ * BillingRate1.mmDaysInPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingRate1#mmDaysInYear
+ * BillingRate1.mmDaysInYear}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the billing rate."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "BillingRate1", propOrder = {"identification", "value", "daysInPeriod", "daysInYear"})
 public class BillingRate1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected BillingRateIdentification1Choice identification;
 	/**
 	 * Defines the type of rate or factor.
 	 * <p>
@@ -89,20 +98,21 @@ public class BillingRate1 {
 	 * definition} = "Defines the type of rate or factor."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Identification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Defines the type of rate or factor.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BillingRateIdentification1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> BillingRateIdentification1Choice.mmObject();
 		}
 	};
+	protected PercentageRate value;
 	/**
 	 * Value of the rate or factor identified in the rate identification.
 	 * <p>
@@ -131,19 +141,20 @@ public class BillingRate1 {
 	 * "Value of the rate or factor identified in the rate identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Value = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Value";
 			definition = "Value of the rate or factor identified in the rate identification.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 	};
+	protected Number daysInPeriod;
 	/**
 	 * Number of days in the statement period.
 	 * 
@@ -175,19 +186,20 @@ public class BillingRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DaysInPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDaysInPeriod = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "DaysInPrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DaysInPeriod";
 			definition = "Number of days in the statement period. \n\nUsage: Used along with DaysInYear for time dependent per annum rate value.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
+	protected Number daysInYear;
 	/**
 	 * Number of days in the year.
 	 * 
@@ -219,16 +231,16 @@ public class BillingRate1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DaysInYear = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDaysInYear = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> BillingRate1.mmObject();
 			isDerived = false;
 			xmlTag = "DaysInYr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DaysInYear";
 			definition = "Number of days in the year.\n\nUsage: Used along with DaysInPeriod for time dependent per annum rate value.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
 	};
@@ -236,14 +248,49 @@ public class BillingRate1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingRate1.Identification, com.tools20022.repository.msg.BillingRate1.Value, com.tools20022.repository.msg.BillingRate1.DaysInPeriod,
-						com.tools20022.repository.msg.BillingRate1.DaysInYear);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(BillingRate1.mmIdentification, BillingRate1.mmValue, BillingRate1.mmDaysInPeriod, BillingRate1.mmDaysInYear);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BillingRate1";
 				definition = "Specifies the billing rate.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public BillingRateIdentification1Choice getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(BillingRateIdentification1Choice identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Val", required = true)
+	public PercentageRate getValue() {
+		return value;
+	}
+
+	public void setValue(PercentageRate value) {
+		this.value = value;
+	}
+
+	@XmlElement(name = "DaysInPrd")
+	public Number getDaysInPeriod() {
+		return daysInPeriod;
+	}
+
+	public void setDaysInPeriod(Number daysInPeriod) {
+		this.daysInPeriod = daysInPeriod;
+	}
+
+	@XmlElement(name = "DaysInYr")
+	public Number getDaysInYear() {
+		return daysInYear;
+	}
+
+	public void setDaysInYear(Number daysInYear) {
+		this.daysInYear = daysInYear;
 	}
 }

@@ -19,8 +19,14 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import com.tools20022.core.metamodel.RuntimeInstanceAware;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.BusinessAreaNameMatch;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,8 +37,66 @@ import java.util.Optional;
 /**
  * Formal description of the structure of a MessageInstance
  */
-public class MMMessageDefinition implements MMRepositoryType {
+public class MMMessageDefinition implements RuntimeInstanceAware, MMRepositoryType {
 
+	/**
+	 * the MessageSet to which the MessageDefinition belongs
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, List<MMMessageSet>> messageSetAttribute = newAttribute();
+	/**
+	 * Name used in an XML schema for the ComplexType that defines the Message
+	 * Definition.
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, Optional<String>> xmlNameAttribute = newAttribute();
+	/**
+	 * Name used in an XML schema for the first element under the root element
+	 * of a Message Definition.
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, Optional<String>> xmlTagAttribute = newAttribute();
+	/**
+	 * The BusinessArea to which this MessageDefinition belongs
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, MMBusinessArea> businessAreaAttribute = newAttribute();
+	/**
+	 * XORs applied to a selection of the elements of the Message Definition.
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, List<MMXor>> xorsAttribute = newAttribute();
+	/**
+	 * a property of MessageDefinition that specifies the top level element of
+	 * the MessageDefinition
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, String> rootElementAttribute = newAttribute();
+	/**
+	 * a MessageBuildingBlock belonging to this MessageDefinition
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, List<MMMessageBuildingBlock>> messageBuildingBlockAttribute = newAttribute();
+	/**
+	 * the MessageChoreography to which the MessageDefinition belongs
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, List<MMMessageChoreography>> choreographyAttribute = newAttribute();
+	/**
+	 * all of the MessageTypeTraces from one MessageDefinition that are traced
+	 * to different MessageTransmissions
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, List<MMMessageTransmission>> traceAttribute = newAttribute();
+	/**
+	 * The MessageDefinitionIdentifier for this MessageDefinition
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, MMMessageDefinitionIdentifier> messageDefinitionIdentifierAttribute = newAttribute();
+	/**
+	 * All of the SyntaxMessageSchemes that are derived from from one
+	 * MessageDefinition
+	 */
+	public final static MetamodelAttribute<MMMessageDefinition, List<MMSyntaxMessageScheme>> derivationAttribute = newAttribute();
+	/**
+	 * The businessArea of the messageDefinitionIdentifier of this
+	 * MessageDefinition is equal to the code of the BusinessArea that contains
+	 * this MessageDefinition businessArea.code =
+	 * messageDefinitionIdentifier.businessArea
+	 */
+	public final static MetamodelConstraint<MMMessageDefinition> checkBusinessAreaNameMatch = newConstraint(b -> {
+		new BusinessAreaNameMatch().accept(b);
+	});
 	protected Supplier<List<MMMessageSet>> messageSet_lazy;
 	protected String xmlName;
 	protected String xmlTag;

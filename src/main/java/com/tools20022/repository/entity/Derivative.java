@@ -17,17 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies the parameters of a derivative instrument based on a specific
@@ -42,56 +43,58 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Derivative#UnderlyingAsset
- * Derivative.UnderlyingAsset}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Derivative#NotionalCurrencyAndAmount
- * Derivative.NotionalCurrencyAndAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.Derivative#mmUnderlyingAsset
+ * Derivative.mmUnderlyingAsset}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Derivative#DerivativeCovered
- * Derivative.DerivativeCovered}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Derivative#ExerciseDate
- * Derivative.ExerciseDate}</li>
+ * {@linkplain com.tools20022.repository.entity.Derivative#mmNotionalCurrencyAndAmount
+ * Derivative.mmNotionalCurrencyAndAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Derivative#InterestIncludedInPrice
- * Derivative.InterestIncludedInPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Derivative#Tick
- * Derivative.Tick}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Derivative#ExercisePrice
- * Derivative.ExercisePrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Derivative#NotionalCurrency
- * Derivative.NotionalCurrency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Derivative#VersionNumber
- * Derivative.VersionNumber}</li>
+ * {@linkplain com.tools20022.repository.entity.Derivative#mmDerivativeCovered
+ * Derivative.mmDerivativeCovered}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Derivative#mmExerciseDate
+ * Derivative.mmExerciseDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Derivative#mmInterestIncludedInPrice
+ * Derivative.mmInterestIncludedInPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Derivative#mmTick
+ * Derivative.mmTick}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Derivative#mmExercisePrice
+ * Derivative.mmExercisePrice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Derivative#mmNotionalCurrency
+ * Derivative.mmNotionalCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Derivative#mmVersionNumber
+ * Derivative.mmVersionNumber}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Asset#Derivative
- * Asset.Derivative}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Asset#mmDerivative
+ * Asset.mmDerivative}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Derivative
- * SecuritiesPricing.Derivative}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmDerivative
+ * SecuritiesPricing.mmDerivative}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedFuture
- * SecuritiesPricing.RelatedFuture}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedFuture
+ * SecuritiesPricing.mmRelatedFuture}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Option Option}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Asset Asset}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,6 +110,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Derivative extends Asset {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<Asset> underlyingAsset;
 	/**
 	 * Specifies the underlying asset of the derivative.
 	 * <p>
@@ -115,8 +119,8 @@ public class Derivative extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Asset#Derivative
-	 * Asset.Derivative}</li>
+	 * {@linkplain com.tools20022.repository.entity.Asset#mmDerivative
+	 * Asset.mmDerivative}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -138,19 +142,20 @@ public class Derivative extends Asset {
 	 * definition} = "Specifies the underlying asset of the derivative."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd UnderlyingAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUnderlyingAsset = new MMBusinessAssociationEnd() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnderlyingAsset";
 			definition = "Specifies the underlying asset of the derivative.";
 			minOccurs = 0;
+			opposite_lazy = () -> Asset.mmDerivative;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> Asset.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.Derivative;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CurrencyAndAmount notionalCurrencyAndAmount;
 	/**
 	 * Amount underlying a financial derivatives contract necessary for
 	 * calculating payments or receipts.
@@ -179,18 +184,27 @@ public class Derivative extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NotionalCurrencyAndAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNotionalCurrencyAndAmount = new MMBusinessAttribute() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotionalCurrencyAndAmount";
 			definition = "Amount underlying a financial derivatives contract necessary for calculating payments or receipts.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Derivative.class.getMethod("getNotionalCurrencyAndAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator derivativeCovered;
 	/**
 	 * Indicates whether the derivative product is covered or not by an
 	 * underlying financial instrument position.
@@ -219,18 +233,27 @@ public class Derivative extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DerivativeCovered = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDerivativeCovered = new MMBusinessAttribute() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DerivativeCovered";
 			definition = "Indicates whether the derivative product is covered or not by an underlying financial instrument position.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Derivative.class.getMethod("getDerivativeCovered", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime exerciseDate;
 	/**
 	 * Date on which the derivative is exercised.
 	 * <p>
@@ -255,18 +278,27 @@ public class Derivative extends Asset {
 	 * definition} = "Date on which the derivative is exercised."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExerciseDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExerciseDate = new MMBusinessAttribute() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExerciseDate";
 			definition = "Date on which the derivative is exercised.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Derivative.class.getMethod("getExerciseDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator interestIncludedInPrice;
 	/**
 	 * Indicates whether the given derivative price includes a prorated accrued
 	 * interest component.
@@ -295,18 +327,27 @@ public class Derivative extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InterestIncludedInPrice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInterestIncludedInPrice = new MMBusinessAttribute() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InterestIncludedInPrice";
 			definition = "Indicates whether the given derivative price includes a prorated accrued interest component.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Derivative.class.getMethod("getInterestIncludedInPrice", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesPricing tick;
 	/**
 	 * Minimum price increment with which the contract may be traded.
 	 * <p>
@@ -315,8 +356,8 @@ public class Derivative extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#RelatedFuture
-	 * SecuritiesPricing.RelatedFuture}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedFuture
+	 * SecuritiesPricing.mmRelatedFuture}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -340,20 +381,21 @@ public class Derivative extends Asset {
 	 * "Minimum price increment with which the contract may be traded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Tick = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTick = new MMBusinessAssociationEnd() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tick";
 			definition = "Minimum price increment with which the contract may be traded.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.RelatedFuture;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedFuture;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected SecuritiesPricing exercisePrice;
 	/**
 	 * Predetermined price at which the holder of a derivative will have to buy
 	 * or sell the underlying instrument.
@@ -363,8 +405,8 @@ public class Derivative extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Derivative
-	 * SecuritiesPricing.Derivative}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmDerivative
+	 * SecuritiesPricing.mmDerivative}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -389,20 +431,21 @@ public class Derivative extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ExercisePrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmExercisePrice = new MMBusinessAssociationEnd() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisePrice";
 			definition = "Predetermined price at which the holder of a derivative will have to buy or sell the underlying instrument.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Derivative;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmDerivative;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected CurrencyCode notionalCurrency;
 	/**
 	 * Currency of the underlying a financial derivatives contract necessary for
 	 * calculating payments or receipts.
@@ -430,18 +473,27 @@ public class Derivative extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NotionalCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNotionalCurrency = new MMBusinessAttribute() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotionalCurrency";
 			definition = "Currency of the underlying a financial derivatives contract necessary for calculating payments or receipts.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Derivative.class.getMethod("getNotionalCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Number versionNumber;
 	/**
 	 * Number allocated by options exchanges to record that an option has
 	 * undergone a change in its contract specifications (particularly
@@ -470,36 +522,120 @@ public class Derivative extends Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VersionNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVersionNumber = new MMBusinessAttribute() {
 		{
 			elementContext_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VersionNumber";
 			definition = "Number allocated by options exchanges to record that an option has undergone a change in its contract specifications (particularly adjustment of the strike price)";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Derivative.class.getMethod("getVersionNumber", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Derivative";
 				definition = "Specifies the parameters of a derivative instrument based on a specific asset.";
-				associationDomain_lazy = () -> Arrays
-						.asList(com.tools20022.repository.entity.Asset.Derivative, com.tools20022.repository.entity.SecuritiesPricing.Derivative, com.tools20022.repository.entity.SecuritiesPricing.RelatedFuture);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmDerivative, com.tools20022.repository.entity.SecuritiesPricing.mmDerivative, com.tools20022.repository.entity.SecuritiesPricing.mmRelatedFuture);
 				subType_lazy = () -> Arrays.asList(Option.mmObject());
 				superType_lazy = () -> Asset.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Derivative.UnderlyingAsset, com.tools20022.repository.entity.Derivative.NotionalCurrencyAndAmount,
-						com.tools20022.repository.entity.Derivative.DerivativeCovered, com.tools20022.repository.entity.Derivative.ExerciseDate, com.tools20022.repository.entity.Derivative.InterestIncludedInPrice,
-						com.tools20022.repository.entity.Derivative.Tick, com.tools20022.repository.entity.Derivative.ExercisePrice, com.tools20022.repository.entity.Derivative.NotionalCurrency,
-						com.tools20022.repository.entity.Derivative.VersionNumber);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Derivative.mmUnderlyingAsset, com.tools20022.repository.entity.Derivative.mmNotionalCurrencyAndAmount,
+						com.tools20022.repository.entity.Derivative.mmDerivativeCovered, com.tools20022.repository.entity.Derivative.mmExerciseDate, com.tools20022.repository.entity.Derivative.mmInterestIncludedInPrice,
+						com.tools20022.repository.entity.Derivative.mmTick, com.tools20022.repository.entity.Derivative.mmExercisePrice, com.tools20022.repository.entity.Derivative.mmNotionalCurrency,
+						com.tools20022.repository.entity.Derivative.mmVersionNumber);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Derivative.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Asset> getUnderlyingAsset() {
+		return underlyingAsset;
+	}
+
+	public void setUnderlyingAsset(List<Asset> underlyingAsset) {
+		this.underlyingAsset = underlyingAsset;
+	}
+
+	public CurrencyAndAmount getNotionalCurrencyAndAmount() {
+		return notionalCurrencyAndAmount;
+	}
+
+	public void setNotionalCurrencyAndAmount(CurrencyAndAmount notionalCurrencyAndAmount) {
+		this.notionalCurrencyAndAmount = notionalCurrencyAndAmount;
+	}
+
+	public YesNoIndicator getDerivativeCovered() {
+		return derivativeCovered;
+	}
+
+	public void setDerivativeCovered(YesNoIndicator derivativeCovered) {
+		this.derivativeCovered = derivativeCovered;
+	}
+
+	public ISODateTime getExerciseDate() {
+		return exerciseDate;
+	}
+
+	public void setExerciseDate(ISODateTime exerciseDate) {
+		this.exerciseDate = exerciseDate;
+	}
+
+	public YesNoIndicator getInterestIncludedInPrice() {
+		return interestIncludedInPrice;
+	}
+
+	public void setInterestIncludedInPrice(YesNoIndicator interestIncludedInPrice) {
+		this.interestIncludedInPrice = interestIncludedInPrice;
+	}
+
+	public SecuritiesPricing getTick() {
+		return tick;
+	}
+
+	public void setTick(com.tools20022.repository.entity.SecuritiesPricing tick) {
+		this.tick = tick;
+	}
+
+	public SecuritiesPricing getExercisePrice() {
+		return exercisePrice;
+	}
+
+	public void setExercisePrice(com.tools20022.repository.entity.SecuritiesPricing exercisePrice) {
+		this.exercisePrice = exercisePrice;
+	}
+
+	public CurrencyCode getNotionalCurrency() {
+		return notionalCurrency;
+	}
+
+	public void setNotionalCurrency(CurrencyCode notionalCurrency) {
+		this.notionalCurrency = notionalCurrency;
+	}
+
+	public Number getVersionNumber() {
+		return versionNumber;
+	}
+
+	public void setVersionNumber(Number versionNumber) {
+		this.versionNumber = versionNumber;
 	}
 }

@@ -17,14 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BeneficiaryCertificationCompletionCode;
 import com.tools20022.repository.codeset.IncomePreferenceCode;
 import com.tools20022.repository.codeset.TaxWithholdingMethodCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.AccountService;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,32 +44,32 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#IncomePreference
- * InvestmentAccountService.IncomePreference}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmIncomePreference
+ * InvestmentAccountService.mmIncomePreference}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#TaxWithholdingMethod
- * InvestmentAccountService.TaxWithholdingMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmTaxWithholdingMethod
+ * InvestmentAccountService.mmTaxWithholdingMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#RoundingMethod
- * InvestmentAccountService.RoundingMethod}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmRoundingMethod
+ * InvestmentAccountService.mmRoundingMethod}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#BeneficiaryCertificationIndicator
- * InvestmentAccountService.BeneficiaryCertificationIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmBeneficiaryCertificationIndicator
+ * InvestmentAccountService.mmBeneficiaryCertificationIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#BeneficiaryCertificationCompletion
- * InvestmentAccountService.BeneficiaryCertificationCompletion}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmBeneficiaryCertificationCompletion
+ * InvestmentAccountService.mmBeneficiaryCertificationCompletion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#SystematicInvestmentPlan
- * InvestmentAccountService.SystematicInvestmentPlan}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmSystematicInvestmentPlan
+ * InvestmentAccountService.mmSystematicInvestmentPlan}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#InvestmentAccountContract
- * InvestmentAccountService.InvestmentAccountContract}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmInvestmentAccountContract
+ * InvestmentAccountService.mmInvestmentAccountContract}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#ReportingService
- * InvestmentAccountService.ReportingService}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmReportingService
+ * InvestmentAccountService.mmReportingService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#Reinvestment
- * InvestmentAccountService.Reinvestment}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountService#mmReinvestment
+ * InvestmentAccountService.mmReinvestment}</li>
  * </ul>
  * </li>
  * <li>
@@ -77,20 +77,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ReportingService#RelatedInvestmentAccountService
- * ReportingService.RelatedInvestmentAccountService}</li>
+ * {@linkplain com.tools20022.repository.entity.ReportingService#mmRelatedInvestmentAccountService
+ * ReportingService.mmRelatedInvestmentAccountService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#Services
- * InvestmentAccountContract.Services}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmServices
+ * InvestmentAccountContract.mmServices}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.RoundingParameters#InvestmentAccountService
- * RoundingParameters.InvestmentAccountService}</li>
+ * {@linkplain com.tools20022.repository.entity.RoundingParameters#mmInvestmentAccountService
+ * RoundingParameters.mmInvestmentAccountService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentPlan#RelatedService
- * InvestmentPlan.RelatedService}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmRelatedService
+ * InvestmentPlan.mmRelatedService}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Reinvestment#RelatedinvestmentAccountService
- * Reinvestment.RelatedinvestmentAccountService}</li>
+ * {@linkplain com.tools20022.repository.entity.Reinvestment#mmRelatedinvestmentAccountService
+ * Reinvestment.mmRelatedinvestmentAccountService}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -99,8 +99,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,6 +116,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentAccountService extends AccountService {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected IncomePreferenceCode incomePreference;
 	/**
 	 * Dividend option chosen by the account owner based on the options offered
 	 * in the prospectus.
@@ -145,18 +146,27 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IncomePreference = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIncomePreference = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncomePreference";
 			definition = "Dividend option chosen by the account owner based on the options offered in the prospectus.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> IncomePreferenceCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountService.class.getMethod("getIncomePreference", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TaxWithholdingMethodCode taxWithholdingMethod;
 	/**
 	 * Method by which the tax (withholding tax) is to be processed i.e. either
 	 * withheld at source or tax information reported to tax authorities or tax
@@ -187,18 +197,27 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TaxWithholdingMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTaxWithholdingMethod = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxWithholdingMethod";
 			definition = "Method by which the tax (withholding tax) is to be processed i.e. either withheld at source or tax information reported to tax authorities or tax information is reported due to the provision of a tax certificate.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TaxWithholdingMethodCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountService.class.getMethod("getTaxWithholdingMethod", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RoundingParameters roundingMethod;
 	/**
 	 * Rounding method used to determine the quantity of investment fund units.
 	 * <p>
@@ -207,8 +226,8 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RoundingParameters#InvestmentAccountService
-	 * RoundingParameters.InvestmentAccountService}</li>
+	 * {@linkplain com.tools20022.repository.entity.RoundingParameters#mmInvestmentAccountService
+	 * RoundingParameters.mmInvestmentAccountService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -234,20 +253,21 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RoundingMethod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRoundingMethod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundingMethod";
 			definition = "Rounding method used to determine the quantity of investment fund units.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> RoundingParameters.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RoundingParameters.InvestmentAccountService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmInvestmentAccountService;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RoundingParameters.mmObject();
 		}
 	};
+	protected YesNoIndicator beneficiaryCertificationIndicator;
 	/**
 	 * Indicates whether the beneficial ownership certification has been sent,
 	 * certifying that the beneficial owner is eligible to own a specific
@@ -278,18 +298,27 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BeneficiaryCertificationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBeneficiaryCertificationIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficiaryCertificationIndicator";
 			definition = "Indicates whether the beneficial ownership certification has been sent, certifying that the beneficial owner is eligible to own a specific investment fund or investment fund class.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountService.class.getMethod("getBeneficiaryCertificationIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BeneficiaryCertificationCompletionCode beneficiaryCertificationCompletion;
 	/**
 	 * Beneficial owner or its designated agent certifies that it complies with
 	 * any holding or investment restrictions or requirements of the fund.
@@ -319,18 +348,27 @@ public class InvestmentAccountService extends AccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BeneficiaryCertificationCompletion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBeneficiaryCertificationCompletion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficiaryCertificationCompletion";
 			definition = "Beneficial owner or its designated agent certifies that it complies with any holding or investment restrictions or requirements of the fund.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> BeneficiaryCertificationCompletionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return InvestmentAccountService.class.getMethod("getBeneficiaryCertificationCompletion", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected InvestmentPlan systematicInvestmentPlan;
 	/**
 	 * Investment plan associated with an investment account.
 	 * <p>
@@ -339,8 +377,8 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#RelatedService
-	 * InvestmentPlan.RelatedService}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmRelatedService
+	 * InvestmentPlan.mmRelatedService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -364,20 +402,21 @@ public class InvestmentAccountService extends AccountService {
 	 * definition} = "Investment plan associated with an investment account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SystematicInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystematicInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SystematicInvestmentPlan";
 			definition = "Investment plan associated with an investment account.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentPlan.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.RelatedService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmRelatedService;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 		}
 	};
+	protected InvestmentAccountContract investmentAccountContract;
 	/**
 	 * Contract which specifies the services related to an account.
 	 * <p>
@@ -386,8 +425,8 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#Services
-	 * InvestmentAccountContract.Services}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentAccountContract#mmServices
+	 * InvestmentAccountContract.mmServices}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -413,20 +452,21 @@ public class InvestmentAccountService extends AccountService {
 	 * "Contract which specifies the services related to an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentAccountContract = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentAccountContract";
 			definition = "Contract which specifies the services related to an account.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmServices;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccountContract.Services;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ReportingService reportingService;
 	/**
 	 * Reporting services parameters for an investment account.
 	 * <p>
@@ -435,8 +475,8 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ReportingService#RelatedInvestmentAccountService
-	 * ReportingService.RelatedInvestmentAccountService}</li>
+	 * {@linkplain com.tools20022.repository.entity.ReportingService#mmRelatedInvestmentAccountService
+	 * ReportingService.mmRelatedInvestmentAccountService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -460,20 +500,21 @@ public class InvestmentAccountService extends AccountService {
 	 * definition} = "Reporting services parameters for an investment account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ReportingService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReportingService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReportingService";
 			definition = "Reporting services parameters for an investment account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ReportingService.mmRelatedInvestmentAccountService;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ReportingService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ReportingService.RelatedInvestmentAccountService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Reinvestment reinvestment;
 	/**
 	 * Reinvestment information included in the investment account contract.
 	 * <p>
@@ -482,8 +523,8 @@ public class InvestmentAccountService extends AccountService {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Reinvestment#RelatedinvestmentAccountService
-	 * Reinvestment.RelatedinvestmentAccountService}</li>
+	 * {@linkplain com.tools20022.repository.entity.Reinvestment#mmRelatedinvestmentAccountService
+	 * Reinvestment.mmRelatedinvestmentAccountService}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -508,39 +549,116 @@ public class InvestmentAccountService extends AccountService {
 	 * "Reinvestment information included in the investment account contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Reinvestment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmReinvestment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentAccountService.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentAccountService.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Reinvestment";
 			definition = "Reinvestment information included in the investment account contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmRelatedinvestmentAccountService;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Reinvestment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Reinvestment.RelatedinvestmentAccountService;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountService";
 				definition = "Services linked to an account which are available to the account owner or to the holder of a mandate. The exercise of these services may be submitted to a limit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReportingService.RelatedInvestmentAccountService, com.tools20022.repository.entity.InvestmentAccountContract.Services,
-						com.tools20022.repository.entity.RoundingParameters.InvestmentAccountService, com.tools20022.repository.entity.InvestmentPlan.RelatedService,
-						com.tools20022.repository.entity.Reinvestment.RelatedinvestmentAccountService);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ReportingService.mmRelatedInvestmentAccountService, com.tools20022.repository.entity.InvestmentAccountContract.mmServices,
+						com.tools20022.repository.entity.RoundingParameters.mmInvestmentAccountService, com.tools20022.repository.entity.InvestmentPlan.mmRelatedService,
+						com.tools20022.repository.entity.Reinvestment.mmRelatedinvestmentAccountService);
 				superType_lazy = () -> AccountService.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountService.IncomePreference, com.tools20022.repository.entity.InvestmentAccountService.TaxWithholdingMethod,
-						com.tools20022.repository.entity.InvestmentAccountService.RoundingMethod, com.tools20022.repository.entity.InvestmentAccountService.BeneficiaryCertificationIndicator,
-						com.tools20022.repository.entity.InvestmentAccountService.BeneficiaryCertificationCompletion, com.tools20022.repository.entity.InvestmentAccountService.SystematicInvestmentPlan,
-						com.tools20022.repository.entity.InvestmentAccountService.InvestmentAccountContract, com.tools20022.repository.entity.InvestmentAccountService.ReportingService,
-						com.tools20022.repository.entity.InvestmentAccountService.Reinvestment);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccountService.mmIncomePreference, com.tools20022.repository.entity.InvestmentAccountService.mmTaxWithholdingMethod,
+						com.tools20022.repository.entity.InvestmentAccountService.mmRoundingMethod, com.tools20022.repository.entity.InvestmentAccountService.mmBeneficiaryCertificationIndicator,
+						com.tools20022.repository.entity.InvestmentAccountService.mmBeneficiaryCertificationCompletion, com.tools20022.repository.entity.InvestmentAccountService.mmSystematicInvestmentPlan,
+						com.tools20022.repository.entity.InvestmentAccountService.mmInvestmentAccountContract, com.tools20022.repository.entity.InvestmentAccountService.mmReportingService,
+						com.tools20022.repository.entity.InvestmentAccountService.mmReinvestment);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentAccountService.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public IncomePreferenceCode getIncomePreference() {
+		return incomePreference;
+	}
+
+	public void setIncomePreference(IncomePreferenceCode incomePreference) {
+		this.incomePreference = incomePreference;
+	}
+
+	public TaxWithholdingMethodCode getTaxWithholdingMethod() {
+		return taxWithholdingMethod;
+	}
+
+	public void setTaxWithholdingMethod(TaxWithholdingMethodCode taxWithholdingMethod) {
+		this.taxWithholdingMethod = taxWithholdingMethod;
+	}
+
+	public RoundingParameters getRoundingMethod() {
+		return roundingMethod;
+	}
+
+	public void setRoundingMethod(com.tools20022.repository.entity.RoundingParameters roundingMethod) {
+		this.roundingMethod = roundingMethod;
+	}
+
+	public YesNoIndicator getBeneficiaryCertificationIndicator() {
+		return beneficiaryCertificationIndicator;
+	}
+
+	public void setBeneficiaryCertificationIndicator(YesNoIndicator beneficiaryCertificationIndicator) {
+		this.beneficiaryCertificationIndicator = beneficiaryCertificationIndicator;
+	}
+
+	public BeneficiaryCertificationCompletionCode getBeneficiaryCertificationCompletion() {
+		return beneficiaryCertificationCompletion;
+	}
+
+	public void setBeneficiaryCertificationCompletion(BeneficiaryCertificationCompletionCode beneficiaryCertificationCompletion) {
+		this.beneficiaryCertificationCompletion = beneficiaryCertificationCompletion;
+	}
+
+	public InvestmentPlan getSystematicInvestmentPlan() {
+		return systematicInvestmentPlan;
+	}
+
+	public void setSystematicInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan systematicInvestmentPlan) {
+		this.systematicInvestmentPlan = systematicInvestmentPlan;
+	}
+
+	public InvestmentAccountContract getInvestmentAccountContract() {
+		return investmentAccountContract;
+	}
+
+	public void setInvestmentAccountContract(com.tools20022.repository.entity.InvestmentAccountContract investmentAccountContract) {
+		this.investmentAccountContract = investmentAccountContract;
+	}
+
+	public ReportingService getReportingService() {
+		return reportingService;
+	}
+
+	public void setReportingService(com.tools20022.repository.entity.ReportingService reportingService) {
+		this.reportingService = reportingService;
+	}
+
+	public Reinvestment getReinvestment() {
+		return reinvestment;
+	}
+
+	public void setReinvestment(com.tools20022.repository.entity.Reinvestment reinvestment) {
+		this.reinvestment = reinvestment;
 	}
 }

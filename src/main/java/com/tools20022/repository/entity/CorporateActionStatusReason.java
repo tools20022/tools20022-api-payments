@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.entity.StatusReason;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,23 +39,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#CorporateActionCancellationReason
- * CorporateActionStatusReason.CorporateActionCancellationReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmCorporateActionCancellationReason
+ * CorporateActionStatusReason.mmCorporateActionCancellationReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#CorporateActionStatus
- * CorporateActionStatusReason.CorporateActionStatus}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmCorporateActionStatus
+ * CorporateActionStatusReason.mmCorporateActionStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#AcceptedReason
- * CorporateActionStatusReason.AcceptedReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmAcceptedReason
+ * CorporateActionStatusReason.mmAcceptedReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#ReversalReason
- * CorporateActionStatusReason.ReversalReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmReversalReason
+ * CorporateActionStatusReason.mmReversalReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#MovementFailureReason
- * CorporateActionStatusReason.MovementFailureReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmMovementFailureReason
+ * CorporateActionStatusReason.mmMovementFailureReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#MovementRejectionReason
- * CorporateActionStatusReason.MovementRejectionReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatusReason#mmMovementRejectionReason
+ * CorporateActionStatusReason.mmMovementRejectionReason}</li>
  * </ul>
  * </li>
  * <li>
@@ -63,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionStatusReason
- * CorporateActionStatus.CorporateActionStatusReason}</li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionStatusReason
+ * CorporateActionStatus.mmCorporateActionStatusReason}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -73,8 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,6 +89,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CorporateActionStatusReason extends StatusReason {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CorporateActionCancellationReasonCode corporateActionCancellationReason;
 	/**
 	 * Specifies reasons for cancellation of a corporate action event.
 	 * <p>
@@ -116,18 +117,27 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * "Specifies reasons for cancellation of a corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CorporateActionCancellationReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCorporateActionCancellationReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionCancellationReason";
 			definition = "Specifies reasons for cancellation of a corporate action event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionCancellationReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatusReason.class.getMethod("getCorporateActionCancellationReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionStatus corporateActionStatus;
 	/**
 	 * Corporate actions status for which a reason is provided.
 	 * <p>
@@ -136,8 +146,8 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#CorporateActionStatusReason
-	 * CorporateActionStatus.CorporateActionStatusReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionStatus#mmCorporateActionStatusReason
+	 * CorporateActionStatus.mmCorporateActionStatusReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -162,20 +172,21 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * definition} = "Corporate actions status for which a reason is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CorporateActionStatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionStatus";
 			definition = "Corporate actions status for which a reason is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionStatusReason;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionStatus.CorporateActionStatusReason;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected AcknowledgementReasonCode acceptedReason;
 	/**
 	 * Specifies additional information about the processed instruction.
 	 * <p>
@@ -203,18 +214,27 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * "Specifies additional information about the processed instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute AcceptedReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAcceptedReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AcceptedReason";
 			definition = "Specifies additional information about the processed instruction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> AcknowledgementReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatusReason.class.getMethod("getAcceptedReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CorporateActionReversalReasonCode reversalReason;
 	/**
 	 * Reason for the reversal.
 	 * <p>
@@ -241,18 +261,27 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * definition} = "Reason for the reversal."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReversalReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReversalReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReversalReason";
 			definition = "Reason for the reversal.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CorporateActionReversalReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatusReason.class.getMethod("getReversalReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FailedSettlementReasonCode movementFailureReason;
 	/**
 	 * The reason for the failure.
 	 * <p>
@@ -279,18 +308,27 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * definition} = "The reason for the failure."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MovementFailureReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMovementFailureReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementFailureReason";
 			definition = "The reason for the failure.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FailedSettlementReasonCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatusReason.class.getMethod("getMovementFailureReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected RejectionReasonCode movementRejectionReason;
 	/**
 	 * Provides information about the rejection status.
 	 * <p>
@@ -317,33 +355,94 @@ public class CorporateActionStatusReason extends StatusReason {
 	 * definition} = "Provides information about the rejection status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute MovementRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmMovementRejectionReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CorporateActionStatusReason.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionStatusReason.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MovementRejectionReason";
 			definition = "Provides information about the rejection status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> RejectionReasonCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CorporateActionStatusReason.class.getMethod("getMovementRejectionReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionStatusReason";
 				definition = "Specifies the underlying reason for a status of a corporate action.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatus.CorporateActionStatusReason);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatus.mmCorporateActionStatusReason);
 				superType_lazy = () -> StatusReason.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatusReason.CorporateActionCancellationReason, com.tools20022.repository.entity.CorporateActionStatusReason.CorporateActionStatus,
-						com.tools20022.repository.entity.CorporateActionStatusReason.AcceptedReason, com.tools20022.repository.entity.CorporateActionStatusReason.ReversalReason,
-						com.tools20022.repository.entity.CorporateActionStatusReason.MovementFailureReason, com.tools20022.repository.entity.CorporateActionStatusReason.MovementRejectionReason);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionStatusReason.mmCorporateActionCancellationReason, com.tools20022.repository.entity.CorporateActionStatusReason.mmCorporateActionStatus,
+						com.tools20022.repository.entity.CorporateActionStatusReason.mmAcceptedReason, com.tools20022.repository.entity.CorporateActionStatusReason.mmReversalReason,
+						com.tools20022.repository.entity.CorporateActionStatusReason.mmMovementFailureReason, com.tools20022.repository.entity.CorporateActionStatusReason.mmMovementRejectionReason);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CorporateActionStatusReason.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CorporateActionCancellationReasonCode getCorporateActionCancellationReason() {
+		return corporateActionCancellationReason;
+	}
+
+	public void setCorporateActionCancellationReason(CorporateActionCancellationReasonCode corporateActionCancellationReason) {
+		this.corporateActionCancellationReason = corporateActionCancellationReason;
+	}
+
+	public CorporateActionStatus getCorporateActionStatus() {
+		return corporateActionStatus;
+	}
+
+	public void setCorporateActionStatus(com.tools20022.repository.entity.CorporateActionStatus corporateActionStatus) {
+		this.corporateActionStatus = corporateActionStatus;
+	}
+
+	public AcknowledgementReasonCode getAcceptedReason() {
+		return acceptedReason;
+	}
+
+	public void setAcceptedReason(AcknowledgementReasonCode acceptedReason) {
+		this.acceptedReason = acceptedReason;
+	}
+
+	public CorporateActionReversalReasonCode getReversalReason() {
+		return reversalReason;
+	}
+
+	public void setReversalReason(CorporateActionReversalReasonCode reversalReason) {
+		this.reversalReason = reversalReason;
+	}
+
+	public FailedSettlementReasonCode getMovementFailureReason() {
+		return movementFailureReason;
+	}
+
+	public void setMovementFailureReason(FailedSettlementReasonCode movementFailureReason) {
+		this.movementFailureReason = movementFailureReason;
+	}
+
+	public RejectionReasonCode getMovementRejectionReason() {
+		return movementRejectionReason;
+	}
+
+	public void setMovementRejectionReason(RejectionReasonCode movementRejectionReason) {
+		this.movementRejectionReason = movementRejectionReason;
 	}
 }

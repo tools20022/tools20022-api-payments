@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.Period4Choice;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Time span defined by a start date and time, and an end date and time.
@@ -39,400 +40,207 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#FromDateTime
- * DateTimePeriod.FromDateTime}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#ToDateTime
- * DateTimePeriod.ToDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedStandingOrder
- * DateTimePeriod.RelatedStandingOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmFromDateTime
+ * DateTimePeriod.mmFromDateTime}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmToDateTime
+ * DateTimePeriod.mmToDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#PaymentInstruction
- * DateTimePeriod.PaymentInstruction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#NumberOfDays
- * DateTimePeriod.NumberOfDays}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedStandingOrder
+ * DateTimePeriod.mmRelatedStandingOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ValuationStatistics
- * DateTimePeriod.ValuationStatistics}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPaymentInstruction
+ * DateTimePeriod.mmPaymentInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#PerformanceFactors
- * DateTimePeriod.PerformanceFactors}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Status
- * DateTimePeriod.Status}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmNumberOfDays
+ * DateTimePeriod.mmNumberOfDays}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#PriceCalculationRelatedPricing
- * DateTimePeriod.PriceCalculationRelatedPricing}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmValuationStatistics
+ * DateTimePeriod.mmValuationStatistics}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#CorporateActionOption
- * DateTimePeriod.CorporateActionOption}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPerformanceFactors
+ * DateTimePeriod.mmPerformanceFactors}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmStatus
+ * DateTimePeriod.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ParallelTradingProceedsDefinition
- * DateTimePeriod.ParallelTradingProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPriceCalculationRelatedPricing
+ * DateTimePeriod.mmPriceCalculationRelatedPricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#PrivilegeSuspensionCorporateAction
- * DateTimePeriod.PrivilegeSuspensionCorporateAction}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmCorporateActionOption
+ * DateTimePeriod.mmCorporateActionOption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#WithdrawalSuspensionRelatedEvent
- * DateTimePeriod.WithdrawalSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmParallelTradingProceedsDefinition
+ * DateTimePeriod.mmParallelTradingProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedInterestCalculation
- * DateTimePeriod.RelatedInterestCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPrivilegeSuspensionCorporateAction
+ * DateTimePeriod.mmPrivilegeSuspensionCorporateAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BiddingConditions
- * DateTimePeriod.BiddingConditions}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#ClassAction
- * DateTimePeriod.ClassAction}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmWithdrawalSuspensionRelatedEvent
+ * DateTimePeriod.mmWithdrawalSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BookEntryTransferSuspensionRelatedEvent
- * DateTimePeriod.BookEntryTransferSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedInterestCalculation
+ * DateTimePeriod.mmRelatedInterestCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#DepositAtAgentSuspensionRelatedEvent
- * DateTimePeriod.DepositAtAgentSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBiddingConditions
+ * DateTimePeriod.mmBiddingConditions}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#DepositSuspensionRelatedEvent
- * DateTimePeriod.DepositSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmClassAction
+ * DateTimePeriod.mmClassAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#PledgeSuspensionRelatedEvent
- * DateTimePeriod.PledgeSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBookEntryTransferSuspensionRelatedEvent
+ * DateTimePeriod.mmBookEntryTransferSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#SegregationPeriodRelatedEvent
- * DateTimePeriod.SegregationPeriodRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmDepositAtAgentSuspensionRelatedEvent
+ * DateTimePeriod.mmDepositAtAgentSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#WithdrawalAtAgentSuspensionRelatedEvent
- * DateTimePeriod.WithdrawalAtAgentSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmDepositSuspensionRelatedEvent
+ * DateTimePeriod.mmDepositSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#WithdrawalInNomineeNameSuspensionRelatedEvent
- * DateTimePeriod.WithdrawalInNomineeNameSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPledgeSuspensionRelatedEvent
+ * DateTimePeriod.mmPledgeSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#WithdrawalInStreetNameSuspensionRelatedEvent
- * DateTimePeriod.WithdrawalInStreetNameSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmSegregationPeriodRelatedEvent
+ * DateTimePeriod.mmSegregationPeriodRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BookClosureCorporateAction
- * DateTimePeriod.BookClosureCorporateAction}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmWithdrawalAtAgentSuspensionRelatedEvent
+ * DateTimePeriod.mmWithdrawalAtAgentSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#CoDepositoriesSuspensionRelatedEvent
- * DateTimePeriod.CoDepositoriesSuspensionRelatedEvent}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmWithdrawalInNomineeNameSuspensionRelatedEvent
+ * DateTimePeriod.mmWithdrawalInNomineeNameSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ExtendiblePeriodDebt
- * DateTimePeriod.ExtendiblePeriodDebt}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmWithdrawalInStreetNameSuspensionRelatedEvent
+ * DateTimePeriod.mmWithdrawalInStreetNameSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#SecuritiesConversion
- * DateTimePeriod.SecuritiesConversion}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBookClosureCorporateAction
+ * DateTimePeriod.mmBookClosureCorporateAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#YieldCalculation
- * DateTimePeriod.YieldCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmCoDepositoriesSuspensionRelatedEvent
+ * DateTimePeriod.mmCoDepositoriesSuspensionRelatedEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#CustomDateDebt
- * DateTimePeriod.CustomDateDebt}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#TaxPeriod
- * DateTimePeriod.TaxPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Account
- * DateTimePeriod.Account}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmExtendiblePeriodDebt
+ * DateTimePeriod.mmExtendiblePeriodDebt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedAgreement
- * DateTimePeriod.RelatedAgreement}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmSecuritiesConversion
+ * DateTimePeriod.mmSecuritiesConversion}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#AssentedLinePeriodProceedsDefinition
- * DateTimePeriod.AssentedLinePeriodProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmYieldCalculation
+ * DateTimePeriod.mmYieldCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#SellThruIssuerProceedsDefinition
- * DateTimePeriod.SellThruIssuerProceedsDefinition}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmCustomDateDebt
+ * DateTimePeriod.mmCustomDateDebt}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmTaxPeriod
+ * DateTimePeriod.mmTaxPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAccount
+ * DateTimePeriod.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedProductDelivery
- * DateTimePeriod.RelatedProductDelivery}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedAgreement
+ * DateTimePeriod.mmRelatedAgreement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedInvoice
- * DateTimePeriod.RelatedInvoice}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAssentedLinePeriodProceedsDefinition
+ * DateTimePeriod.mmAssentedLinePeriodProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#TradeCertificate
- * DateTimePeriod.TradeCertificate}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmSellThruIssuerProceedsDefinition
+ * DateTimePeriod.mmSellThruIssuerProceedsDefinition}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedPortfolioValuation
- * DateTimePeriod.RelatedPortfolioValuation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#System
- * DateTimePeriod.System}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedProductDelivery
+ * DateTimePeriod.mmRelatedProductDelivery}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#AccountRestriction
- * DateTimePeriod.AccountRestriction}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedInvoice
+ * DateTimePeriod.mmRelatedInvoice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BankOperation
- * DateTimePeriod.BankOperation}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmTradeCertificate
+ * DateTimePeriod.mmTradeCertificate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedCorporateAction
- * DateTimePeriod.RelatedCorporateAction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedLimit
- * DateTimePeriod.RelatedLimit}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedPortfolioValuation
+ * DateTimePeriod.mmRelatedPortfolioValuation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmSystem
+ * DateTimePeriod.mmSystem}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedIdentification
- * DateTimePeriod.RelatedIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAccountRestriction
+ * DateTimePeriod.mmAccountRestriction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#AssessmentValidityScheme
- * DateTimePeriod.AssessmentValidityScheme}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBankOperation
+ * DateTimePeriod.mmBankOperation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ExercisePeriodDistribution
- * DateTimePeriod.ExercisePeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedCorporateAction
+ * DateTimePeriod.mmRelatedCorporateAction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#OfferPeriodDistribution
- * DateTimePeriod.OfferPeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedLimit
+ * DateTimePeriod.mmRelatedLimit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#TradingPeriodDistribution
- * DateTimePeriod.TradingPeriodDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedIdentification
+ * DateTimePeriod.mmRelatedIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#BlockingPeriodDistribution
- * DateTimePeriod.BlockingPeriodDistribution}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Guarantee
- * DateTimePeriod.Guarantee}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAssessmentValidityScheme
+ * DateTimePeriod.mmAssessmentValidityScheme}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#PriceFactRelatedPricing
- * DateTimePeriod.PriceFactRelatedPricing}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmExercisePeriodDistribution
+ * DateTimePeriod.mmExercisePeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#CashDistribution
- * DateTimePeriod.CashDistribution}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmOfferPeriodDistribution
+ * DateTimePeriod.mmOfferPeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#ComponentSecurity
- * DateTimePeriod.ComponentSecurity}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmTradingPeriodDistribution
+ * DateTimePeriod.mmTradingPeriodDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#TradingSession
- * DateTimePeriod.TradingSession}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmBlockingPeriodDistribution
+ * DateTimePeriod.mmBlockingPeriodDistribution}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmGuarantee
+ * DateTimePeriod.mmGuarantee}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#FinancialInstrumentSwap
- * DateTimePeriod.FinancialInstrumentSwap}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPriceFactRelatedPricing
+ * DateTimePeriod.mmPriceFactRelatedPricing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedPostalAddress
- * DateTimePeriod.RelatedPostalAddress}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmCashDistribution
+ * DateTimePeriod.mmCashDistribution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RedemptionSchedule
- * DateTimePeriod.RedemptionSchedule}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmComponentSecurity
+ * DateTimePeriod.mmComponentSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedAccountLink
- * DateTimePeriod.RelatedAccountLink}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmTradingSession
+ * DateTimePeriod.mmTradingSession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedAdjustment
- * DateTimePeriod.RelatedAdjustment}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmFinancialInstrumentSwap
+ * DateTimePeriod.mmFinancialInstrumentSwap}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedSecuritiesIdentification
- * DateTimePeriod.RelatedSecuritiesIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedPostalAddress
+ * DateTimePeriod.mmRelatedPostalAddress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedStandingSettlementInstruction
- * DateTimePeriod.RelatedStandingSettlementInstruction}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRedemptionSchedule
+ * DateTimePeriod.mmRedemptionSchedule}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedSecuritiesRegistration
- * DateTimePeriod.RelatedSecuritiesRegistration}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Amount
- * DateTimePeriod.Amount}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedAccountLink
+ * DateTimePeriod.mmRelatedAccountLink}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedInvestmentPlan
- * DateTimePeriod.RelatedInvestmentPlan}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Issuance
- * DateTimePeriod.Issuance}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedAdjustment
+ * DateTimePeriod.mmRelatedAdjustment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedPaymentTerms
- * DateTimePeriod.RelatedPaymentTerms}</li>
- * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#Percentage
- * DateTimePeriod.Percentage}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedSecuritiesIdentification
+ * DateTimePeriod.mmRelatedSecuritiesIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedRolePlayer
- * DateTimePeriod.RelatedRolePlayer}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedStandingSettlementInstruction
+ * DateTimePeriod.mmRelatedStandingSettlementInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#RelatedSystemAvailability
- * DateTimePeriod.RelatedSystemAvailability}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedSecuritiesRegistration
+ * DateTimePeriod.mmRelatedSecuritiesRegistration}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAmount
+ * DateTimePeriod.mmAmount}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedInvestmentPlan
+ * DateTimePeriod.mmRelatedInvestmentPlan}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmIssuance
+ * DateTimePeriod.mmIssuance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#ValidityPeriod
- * SecuritiesIdentification.ValidityPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedPaymentTerms
+ * DateTimePeriod.mmRelatedPaymentTerms}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.DateTimePeriod#mmPercentage
+ * DateTimePeriod.mmPercentage}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceCalculationPeriod
- * SecuritiesPricing.PriceCalculationPeriod}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedRolePlayer
+ * DateTimePeriod.mmRelatedRolePlayer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceFactPeriod
- * SecuritiesPricing.PriceFactPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#ValidityPeriod
- * RolePlayer.ValidityPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PostalAddress#ValidityPeriod
- * PostalAddress.ValidityPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#ValidityPeriod
- * PartyIdentificationInformation.ValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Account#ReportedPeriod
- * Account.ReportedPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#EffectivePeriod
- * RedemptionSchedule.EffectivePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.Scheme#AssessmentValidityPeriod
- * Scheme.AssessmentValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Status#ValidityTime
- * Status.ValidityTime}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Agreement#ValidityPeriod
- * Agreement.ValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Adjustment#EffectivePeriod
- * Adjustment.EffectivePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentPlan#InvestmentPeriod
- * InvestmentPlan.InvestmentPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentInstruction#ProcessingValidityTime
- * PaymentInstruction.ProcessingValidityTime}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.System#VersionValidityPeriod
- * System.VersionValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Limit#ValidityPeriod
- * Limit.ValidityPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.StandingOrder#ValidityPeriod
- * StandingOrder.ValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ValuationStatistics#Period
- * ValuationStatistics.Period}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PerformanceFactors#AccumulationPeriod
- * PerformanceFactors.AccumulationPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.AccountRestriction#ValidityPeriod
- * AccountRestriction.ValidityPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SystemAvailability#ClosurePeriod
- * SystemAvailability.ClosurePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.InterestCalculation#InterestPeriod
- * InterestCalculation.InterestPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Debt#ExtendiblePeriod
- * Debt.ExtendiblePeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Debt#CustomDate
- * Debt.CustomDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#SubscriptionPeriod
- * Issuance.SubscriptionPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionPeriod
- * SecuritiesConversion.ConversionPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#ValidityPeriod
- * StandingSettlementInstruction.ValidityPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#SplitPeriod
- * BasicSecuritiesRegistration.SplitPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BookClosurePeriod
- * CorporateActionEvent.BookClosurePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#TradingPeriod
- * CorporateActionEvent.TradingPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.ClassAction#ClaimPeriod
- * ClassAction.ClaimPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CorporateActionOption#ActionPeriod
- * CorporateActionOption.ActionPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#ParallelTradingPeriod
- * SecuritiesProceedsDefinition.ParallelTradingPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#AssentedLinePeriod
- * SecuritiesProceedsDefinition.AssentedLinePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#SellThruIssuerPeriod
- * SecuritiesProceedsDefinition.SellThruIssuerPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.BiddingConditions#CompulsoryPurchasePeriod
- * BiddingConditions.CompulsoryPurchasePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#PrivilegeSuspensionPeriod
- * SuspensionPeriod.PrivilegeSuspensionPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawal
- * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawal}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForBookEntryTransfer
- * SuspensionPeriod.DepositorySuspensionPeriodForBookEntryTransfer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForDepositAtAgent
- * SuspensionPeriod.DepositorySuspensionPeriodForDepositAtAgent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForDeposit
- * SuspensionPeriod.DepositorySuspensionPeriodForDeposit}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForPledge
- * SuspensionPeriod.DepositorySuspensionPeriodForPledge}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForSegregation
- * SuspensionPeriod.DepositorySuspensionPeriodForSegregation}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawalAtAgent
- * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalAtAgent}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawalInNomineeName
- * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInNomineeName}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawalInStreetName
- * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInStreetName}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#CoDepositoriesSuspensionPeriod
- * SuspensionPeriod.CoDepositoriesSuspensionPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingSession#TimeBracket
- * TradingSession.TimeBracket}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.YieldCalculation#ValuePeriod
- * YieldCalculation.ValuePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.BankOperation#ApplicablePeriod
- * BankOperation.ApplicablePeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Invoice#PeriodCovered
- * Invoice.PeriodCovered}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TaxPeriod#FromToDate
- * TaxPeriod.FromToDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#ExercisePeriod
- * Distribution.ExercisePeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#OfferPeriod
- * Distribution.OfferPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#TradingPeriod
- * Distribution.TradingPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#BlockingPeriod
- * Distribution.BlockingPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Distribution#InterestPeriod
- * Distribution.InterestPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ProductDelivery#DeliveryPeriod
- * ProductDelivery.DeliveryPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.TradeCertificate#InspectionDate
- * TradeCertificate.InspectionDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Guarantee#EffectivePeriod
- * Guarantee.EffectivePeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.PortfolioValuation#ValuationPeriod
- * PortfolioValuation.ValuationPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AccountLink#ValidityPeriod
- * AccountLink.ValidityPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.ComponentSecurity#SeparationPeriod
- * ComponentSecurity.SeparationPeriod}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.FinancialInstrumentSwap#Maturity
- * FinancialInstrumentSwap.Maturity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AmountAndPeriod#Period
- * AmountAndPeriod.Period}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PaymentTerms#PaymentPeriod
- * PaymentTerms.PaymentPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.PercentageAndPeriod#Period
- * PercentageAndPeriod.Period}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.msg.ReportingRequest3#ReportingPeriod
- * ReportingRequest3.ReportingPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#Date
- * Period4Choice.Date}</li>
- * <li>
- * {@linkplain com.tools20022.repository.choice.Period4Choice#FromDateToDate
- * Period4Choice.FromDateToDate}</li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmRelatedSystemAvailability
+ * DateTimePeriod.mmRelatedSystemAvailability}</li>
  * </ul>
  * </li>
  * <li>
@@ -453,10 +261,218 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmValidityPeriod
+ * SecuritiesIdentification.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceCalculationPeriod
+ * SecuritiesPricing.mmPriceCalculationPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceFactPeriod
+ * SecuritiesPricing.mmPriceFactPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RolePlayer#mmValidityPeriod
+ * RolePlayer.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PostalAddress#mmValidityPeriod
+ * PostalAddress.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmValidityPeriod
+ * PartyIdentificationInformation.mmValidityPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Account#mmReportedPeriod
+ * Account.mmReportedPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmEffectivePeriod
+ * RedemptionSchedule.mmEffectivePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Scheme#mmAssessmentValidityPeriod
+ * Scheme.mmAssessmentValidityPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Status#mmValidityTime
+ * Status.mmValidityTime}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Agreement#mmValidityPeriod
+ * Agreement.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Adjustment#mmEffectivePeriod
+ * Adjustment.mmEffectivePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmInvestmentPeriod
+ * InvestmentPlan.mmInvestmentPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentInstruction#mmProcessingValidityTime
+ * PaymentInstruction.mmProcessingValidityTime}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.System#mmVersionValidityPeriod
+ * System.mmVersionValidityPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Limit#mmValidityPeriod
+ * Limit.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.StandingOrder#mmValidityPeriod
+ * StandingOrder.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ValuationStatistics#mmPeriod
+ * ValuationStatistics.mmPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PerformanceFactors#mmAccumulationPeriod
+ * PerformanceFactors.mmAccumulationPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AccountRestriction#mmValidityPeriod
+ * AccountRestriction.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SystemAvailability#mmClosurePeriod
+ * SystemAvailability.mmClosurePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmInterestPeriod
+ * InterestCalculation.mmInterestPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Debt#mmExtendiblePeriod
+ * Debt.mmExtendiblePeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Debt#mmCustomDate
+ * Debt.mmCustomDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Issuance#mmSubscriptionPeriod
+ * Issuance.mmSubscriptionPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionPeriod
+ * SecuritiesConversion.mmConversionPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#mmValidityPeriod
+ * StandingSettlementInstruction.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSplitPeriod
+ * BasicSecuritiesRegistration.mmSplitPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBookClosurePeriod
+ * CorporateActionEvent.mmBookClosurePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmTradingPeriod
+ * CorporateActionEvent.mmTradingPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ClassAction#mmClaimPeriod
+ * ClassAction.mmClaimPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionOption#mmActionPeriod
+ * CorporateActionOption.mmActionPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmParallelTradingPeriod
+ * SecuritiesProceedsDefinition.mmParallelTradingPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmAssentedLinePeriod
+ * SecuritiesProceedsDefinition.mmAssentedLinePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmSellThruIssuerPeriod
+ * SecuritiesProceedsDefinition.mmSellThruIssuerPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmCompulsoryPurchasePeriod
+ * BiddingConditions.mmCompulsoryPurchasePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmPrivilegeSuspensionPeriod
+ * SuspensionPeriod.mmPrivilegeSuspensionPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawal
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForBookEntryTransfer
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForDepositAtAgent
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForDeposit
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForPledge
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForPledge}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForSegregation
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawalAtAgent
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawalInNomineeName
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawalInStreetName
+ * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmCoDepositoriesSuspensionPeriod
+ * SuspensionPeriod.mmCoDepositoriesSuspensionPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TradingSession#mmTimeBracket
+ * TradingSession.mmTimeBracket}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.YieldCalculation#mmValuePeriod
+ * YieldCalculation.mmValuePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.BankOperation#mmApplicablePeriod
+ * BankOperation.mmApplicablePeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Invoice#mmPeriodCovered
+ * Invoice.mmPeriodCovered}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TaxPeriod#mmFromToDate
+ * TaxPeriod.mmFromToDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmExercisePeriod
+ * Distribution.mmExercisePeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Distribution#mmOfferPeriod
+ * Distribution.mmOfferPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmTradingPeriod
+ * Distribution.mmTradingPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmBlockingPeriod
+ * Distribution.mmBlockingPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Distribution#mmInterestPeriod
+ * Distribution.mmInterestPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmDeliveryPeriod
+ * ProductDelivery.mmDeliveryPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TradeCertificate#mmInspectionDate
+ * TradeCertificate.mmInspectionDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Guarantee#mmEffectivePeriod
+ * Guarantee.mmEffectivePeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PortfolioValuation#mmValuationPeriod
+ * PortfolioValuation.mmValuationPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AccountLink#mmValidityPeriod
+ * AccountLink.mmValidityPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.ComponentSecurity#mmSeparationPeriod
+ * ComponentSecurity.mmSeparationPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.FinancialInstrumentSwap#mmMaturity
+ * FinancialInstrumentSwap.mmMaturity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AmountAndPeriod#mmPeriod
+ * AmountAndPeriod.mmPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PaymentTerms#mmPaymentPeriod
+ * PaymentTerms.mmPaymentPeriod}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PercentageAndPeriod#mmPeriod
+ * PercentageAndPeriod.mmPeriod}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.ReportingRequest3#mmReportingPeriod
+ * ReportingRequest3.mmReportingPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#mmDate
+ * Period4Choice.mmDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Period4Choice#mmFromDateToDate
+ * Period4Choice.mmFromDateToDate}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -471,6 +487,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class DateTimePeriod {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODateTime fromDateTime;
 	/**
 	 * Date and time at which the range starts.
 	 * <p>
@@ -483,34 +500,36 @@ public class DateTimePeriod {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails#FromDate
-	 * DatePeriodDetails.FromDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DateTimePeriodDetails#FromDateTime
-	 * DateTimePeriodDetails.FromDateTime}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Period2#FromDate
-	 * Period2.FromDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.DatePeriodDetails#mmFromDate
+	 * DatePeriodDetails.mmFromDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DatePeriodDetails1#FromDate
-	 * DatePeriodDetails1.FromDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Restriction1#ValidFrom
-	 * Restriction1.ValidFrom}</li>
+	 * {@linkplain com.tools20022.repository.msg.DateTimePeriodDetails#mmFromDateTime
+	 * DateTimePeriodDetails.mmFromDateTime}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Period2#mmFromDate
+	 * Period2.mmFromDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OperationMandate2#StartDate
-	 * OperationMandate2.StartDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.DatePeriodDetails1#mmFromDate
+	 * DatePeriodDetails1.mmFromDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Restriction1#mmValidFrom
+	 * Restriction1.mmValidFrom}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.OperationMandate3#StartDate
-	 * OperationMandate3.StartDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.OperationMandate2#mmStartDate
+	 * OperationMandate2.mmStartDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReportingPeriod1#FromToDate
-	 * ReportingPeriod1.FromToDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.OperationMandate3#mmStartDate
+	 * OperationMandate3.mmStartDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ReportingPeriod1#FromToTime
-	 * ReportingPeriod1.FromToTime}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriod1#FromDate
-	 * DatePeriod1.FromDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#FromDate
-	 * Period4Choice.FromDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingPeriod1#mmFromToDate
+	 * ReportingPeriod1.mmFromToDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ReportingPeriod1#mmFromToTime
+	 * ReportingPeriod1.mmFromToTime}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriod1#mmFromDate
+	 * DatePeriod1.mmFromDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.Period4Choice#mmFromDate
+	 * Period4Choice.mmFromDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -529,22 +548,29 @@ public class DateTimePeriod {
 	 * definition} = "Date and time at which the range starts."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FromDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFromDateTime = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DatePeriodDetails.FromDate, com.tools20022.repository.msg.DateTimePeriodDetails.FromDateTime, com.tools20022.repository.msg.Period2.FromDate,
-					com.tools20022.repository.msg.DatePeriodDetails1.FromDate, com.tools20022.repository.msg.Restriction1.ValidFrom, com.tools20022.repository.msg.OperationMandate2.StartDate,
-					com.tools20022.repository.msg.OperationMandate3.StartDate, com.tools20022.repository.msg.ReportingPeriod1.FromToDate, com.tools20022.repository.msg.ReportingPeriod1.FromToTime,
-					com.tools20022.repository.msg.DatePeriod1.FromDate, com.tools20022.repository.choice.Period4Choice.FromDate);
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			derivation_lazy = () -> Arrays.asList(DatePeriodDetails.mmFromDate, DateTimePeriodDetails.mmFromDateTime, Period2.mmFromDate, DatePeriodDetails1.mmFromDate, Restriction1.mmValidFrom, OperationMandate2.mmStartDate,
+					OperationMandate3.mmStartDate, ReportingPeriod1.mmFromToDate, ReportingPeriod1.mmFromToTime, DatePeriod1.mmFromDate, Period4Choice.mmFromDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FromDateTime";
 			definition = "Date and time at which the range starts.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DateTimePeriod.class.getMethod("getFromDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime toDateTime;
 	/**
 	 * Date and time at which the range ends.
 	 * <p>
@@ -557,25 +583,28 @@ public class DateTimePeriod {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails#ToDate
-	 * DatePeriodDetails.ToDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails#mmToDate
+	 * DatePeriodDetails.mmToDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.DateTimePeriodDetails#ToDateTime
-	 * DateTimePeriodDetails.ToDateTime}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Period2#ToDate
-	 * Period2.ToDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriodDetails1#ToDate
-	 * DatePeriodDetails1.ToDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Restriction1#ValidUntil
-	 * Restriction1.ValidUntil}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.OperationMandate2#EndDate
-	 * OperationMandate2.EndDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.OperationMandate3#EndDate
-	 * OperationMandate3.EndDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriod1#ToDate
-	 * DatePeriod1.ToDate}</li>
-	 * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#ToDate
-	 * Period4Choice.ToDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.DateTimePeriodDetails#mmToDateTime
+	 * DateTimePeriodDetails.mmToDateTime}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Period2#mmToDate
+	 * Period2.mmToDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DatePeriodDetails1#mmToDate
+	 * DatePeriodDetails1.mmToDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Restriction1#mmValidUntil
+	 * Restriction1.mmValidUntil}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OperationMandate2#mmEndDate
+	 * OperationMandate2.mmEndDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OperationMandate3#mmEndDate
+	 * OperationMandate3.mmEndDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.DatePeriod1#mmToDate
+	 * DatePeriod1.mmToDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.choice.Period4Choice#mmToDate
+	 * Period4Choice.mmToDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -594,21 +623,29 @@ public class DateTimePeriod {
 	 * definition} = "Date and time at which the range ends."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ToDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmToDateTime = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DatePeriodDetails.ToDate, com.tools20022.repository.msg.DateTimePeriodDetails.ToDateTime, com.tools20022.repository.msg.Period2.ToDate,
-					com.tools20022.repository.msg.DatePeriodDetails1.ToDate, com.tools20022.repository.msg.Restriction1.ValidUntil, com.tools20022.repository.msg.OperationMandate2.EndDate,
-					com.tools20022.repository.msg.OperationMandate3.EndDate, com.tools20022.repository.msg.DatePeriod1.ToDate, com.tools20022.repository.choice.Period4Choice.ToDate);
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			derivation_lazy = () -> Arrays.asList(DatePeriodDetails.mmToDate, DateTimePeriodDetails.mmToDateTime, Period2.mmToDate, DatePeriodDetails1.mmToDate, Restriction1.mmValidUntil, OperationMandate2.mmEndDate,
+					OperationMandate3.mmEndDate, DatePeriod1.mmToDate, Period4Choice.mmToDate);
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ToDateTime";
 			definition = "Date and time at which the range ends.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DateTimePeriod.class.getMethod("getToDateTime", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected StandingOrder relatedStandingOrder;
 	/**
 	 * Standing order for which a validity period is specified.
 	 * <p>
@@ -617,8 +654,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.StandingOrder#ValidityPeriod
-	 * StandingOrder.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.StandingOrder#mmValidityPeriod
+	 * StandingOrder.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -642,20 +679,21 @@ public class DateTimePeriod {
 	 * definition} = "Standing order for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedStandingOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedStandingOrder";
 			definition = "Standing order for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> StandingOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingOrder.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 		}
 	};
+	protected PaymentInstruction paymentInstruction;
 	/**
 	 * Payment instruction for which a processing validity time is specified.
 	 * <p>
@@ -664,8 +702,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentInstruction#ProcessingValidityTime
-	 * PaymentInstruction.ProcessingValidityTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentInstruction#mmProcessingValidityTime
+	 * PaymentInstruction.mmProcessingValidityTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -690,20 +728,21 @@ public class DateTimePeriod {
 	 * "Payment instruction for which a processing validity time is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentInstruction";
 			definition = "Payment instruction for which a processing validity time is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmProcessingValidityTime;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.ProcessingValidityTime;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Number numberOfDays;
 	/**
 	 * Period specified as a number of days.
 	 * <p>
@@ -716,8 +755,8 @@ public class DateTimePeriod {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.BalanceAdjustment1#Days
-	 * BalanceAdjustment1.Days}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.BalanceAdjustment1#mmDays
+	 * BalanceAdjustment1.mmDays}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -736,19 +775,28 @@ public class DateTimePeriod {
 	 * definition} = "Period specified as a number of days."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NumberOfDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNumberOfDays = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BalanceAdjustment1.Days);
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			derivation_lazy = () -> Arrays.asList(BalanceAdjustment1.mmDays);
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NumberOfDays";
 			definition = "Period specified as a number of days.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return DateTimePeriod.class.getMethod("getNumberOfDays", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ValuationStatistics valuationStatistics;
 	/**
 	 * Valuation statistics for which a reference period is specified.
 	 * <p>
@@ -757,8 +805,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ValuationStatistics#Period
-	 * ValuationStatistics.Period}</li>
+	 * {@linkplain com.tools20022.repository.entity.ValuationStatistics#mmPeriod
+	 * ValuationStatistics.mmPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -783,20 +831,21 @@ public class DateTimePeriod {
 	 * "Valuation statistics for which a reference period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ValuationStatistics = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmValuationStatistics = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValuationStatistics";
 			definition = "Valuation statistics for which a reference period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.Period;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PerformanceFactors performanceFactors;
 	/**
 	 * Performance factors for which an accumulation period is specified.
 	 * <p>
@@ -805,8 +854,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PerformanceFactors#AccumulationPeriod
-	 * PerformanceFactors.AccumulationPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.PerformanceFactors#mmAccumulationPeriod
+	 * PerformanceFactors.mmAccumulationPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -831,20 +880,21 @@ public class DateTimePeriod {
 	 * "Performance factors for which an accumulation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PerformanceFactors = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPerformanceFactors = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PerformanceFactors";
 			definition = "Performance factors for which an accumulation period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmAccumulationPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PerformanceFactors.AccumulationPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Status status;
 	/**
 	 * Status for which a validity time is specified.
 	 * <p>
@@ -853,8 +903,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Status#ValidityTime
-	 * Status.ValidityTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmValidityTime
+	 * Status.mmValidityTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -877,20 +927,21 @@ public class DateTimePeriod {
 	 * definition} = "Status for which a validity time is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Status = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Status for which a validity time is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Status.mmValidityTime;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Status.ValidityTime;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesPricing priceCalculationRelatedPricing;
 	/**
 	 * Securities pricing for which a price calculation period is specified.
 	 * <p>
@@ -899,8 +950,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceCalculationPeriod
-	 * SecuritiesPricing.PriceCalculationPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceCalculationPeriod
+	 * SecuritiesPricing.mmPriceCalculationPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -925,20 +976,21 @@ public class DateTimePeriod {
 	 * "Securities pricing for which a price calculation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PriceCalculationRelatedPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPriceCalculationRelatedPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceCalculationRelatedPricing";
 			definition = "Securities pricing for which a price calculation period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.PriceCalculationPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceCalculationPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected CorporateActionOption corporateActionOption;
 	/**
 	 * Corporate action option for which an action period is defined.
 	 * <p>
@@ -947,8 +999,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionOption#ActionPeriod
-	 * CorporateActionOption.ActionPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionOption#mmActionPeriod
+	 * CorporateActionOption.mmActionPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -974,20 +1026,21 @@ public class DateTimePeriod {
 	 * "Corporate action option for which an action period is defined."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CorporateActionOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCorporateActionOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporateActionOption";
 			definition = "Corporate action option for which an action period is defined.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmActionPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.ActionPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesProceedsDefinition parallelTradingProceedsDefinition;
 	/**
 	 * Securities proceeds for which a parallel trading period is specified.
 	 * <p>
@@ -996,8 +1049,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#ParallelTradingPeriod
-	 * SecuritiesProceedsDefinition.ParallelTradingPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmParallelTradingPeriod
+	 * SecuritiesProceedsDefinition.mmParallelTradingPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1023,20 +1076,21 @@ public class DateTimePeriod {
 	 * "Securities proceeds for which a parallel trading period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ParallelTradingProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmParallelTradingProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ParallelTradingProceedsDefinition";
 			definition = "Securities proceeds for which a parallel trading period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.ParallelTradingPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmParallelTradingPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected SuspensionPeriod privilegeSuspensionCorporateAction;
 	/**
 	 * Corporate event for which a privilege suspension period has been defined.
 	 * <p>
@@ -1045,8 +1099,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#PrivilegeSuspensionPeriod
-	 * SuspensionPeriod.PrivilegeSuspensionPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmPrivilegeSuspensionPeriod
+	 * SuspensionPeriod.mmPrivilegeSuspensionPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1072,20 +1126,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PrivilegeSuspensionCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPrivilegeSuspensionCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrivilegeSuspensionCorporateAction";
 			definition = "Corporate event for which a privilege suspension period has been defined.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.PrivilegeSuspensionPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmPrivilegeSuspensionPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod withdrawalSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for withdrawals is
 	 * specified.
@@ -1095,8 +1150,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawal
-	 * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawal}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawal
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1122,20 +1177,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd WithdrawalSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmWithdrawalSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawal;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected InterestCalculation relatedInterestCalculation;
 	/**
 	 * Interest calculation process for which an interest period is specified.
 	 * <p>
@@ -1144,8 +1200,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#InterestPeriod
-	 * InterestCalculation.InterestPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmInterestPeriod
+	 * InterestCalculation.mmInterestPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1171,20 +1227,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedInterestCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedInterestCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInterestCalculation";
 			definition = "Interest calculation process for which an interest period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InterestCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.InterestPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmInterestPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
 		}
 	};
+	protected BiddingConditions biddingConditions;
 	/**
 	 * Bidding conditions for which a compulsory purchase period is specified.
 	 * <p>
@@ -1193,8 +1250,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BiddingConditions#CompulsoryPurchasePeriod
-	 * BiddingConditions.CompulsoryPurchasePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.BiddingConditions#mmCompulsoryPurchasePeriod
+	 * BiddingConditions.mmCompulsoryPurchasePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1220,20 +1277,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BiddingConditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBiddingConditions = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BiddingConditions";
 			definition = "Bidding conditions for which a compulsory purchase period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmCompulsoryPurchasePeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.BiddingConditions.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BiddingConditions.CompulsoryPurchasePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ClassAction classAction;
 	/**
 	 * Class action for which a claim period is specified.
 	 * <p>
@@ -1242,8 +1300,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ClassAction#ClaimPeriod
-	 * ClassAction.ClaimPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.ClassAction#mmClaimPeriod
+	 * ClassAction.mmClaimPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1267,20 +1325,21 @@ public class DateTimePeriod {
 	 * definition} = "Class action for which a claim period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClassAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClassAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClassAction";
 			definition = "Class action for which a claim period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ClassAction.mmClaimPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ClassAction.ClaimPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SuspensionPeriod bookEntryTransferSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for book entry transfers is
 	 * specified.
@@ -1290,8 +1349,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForBookEntryTransfer
-	 * SuspensionPeriod.DepositorySuspensionPeriodForBookEntryTransfer}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForBookEntryTransfer
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1317,20 +1376,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BookEntryTransferSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBookEntryTransferSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookEntryTransferSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for book entry transfers is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForBookEntryTransfer;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod depositAtAgentSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for deposits at agent is
 	 * specified.
@@ -1340,8 +1400,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForDepositAtAgent
-	 * SuspensionPeriod.DepositorySuspensionPeriodForDepositAtAgent}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForDepositAtAgent
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1367,20 +1427,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DepositAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDepositAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositAtAgentSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for deposits at agent is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForDepositAtAgent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod depositSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for deposits is specified.
 	 * <p>
@@ -1389,8 +1450,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForDeposit
-	 * SuspensionPeriod.DepositorySuspensionPeriodForDeposit}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForDeposit
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1416,20 +1477,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd DepositSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDepositSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DepositSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for deposits is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForDeposit;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod pledgeSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for pledges is specified.
 	 * <p>
@@ -1438,8 +1500,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForPledge
-	 * SuspensionPeriod.DepositorySuspensionPeriodForPledge}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForPledge
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForPledge}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1465,20 +1527,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PledgeSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPledgeSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PledgeSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for pledges is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForPledge;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForPledge;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod segregationPeriodRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for segregation is
 	 * specified.
@@ -1488,8 +1551,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForSegregation
-	 * SuspensionPeriod.DepositorySuspensionPeriodForSegregation}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForSegregation
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1515,20 +1578,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SegregationPeriodRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSegregationPeriodRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SegregationPeriodRelatedEvent";
 			definition = "Corporate event for which a suspension period for segregation is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForSegregation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for withdrawals at agent is
 	 * specified.
@@ -1538,8 +1602,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawalAtAgent
-	 * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalAtAgent}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawalAtAgent
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1565,20 +1629,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd WithdrawalAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmWithdrawalAtAgentSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalAtAgentSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals at agent is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalAtAgent;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for withdrawals in nominee
 	 * name is specified.
@@ -1588,8 +1653,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawalInNomineeName
-	 * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInNomineeName}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawalInNomineeName
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1615,20 +1680,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd WithdrawalInNomineeNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmWithdrawalInNomineeNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalInNomineeNameSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals in nominee name is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInNomineeName;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for withdrawals in street
 	 * name is specified.
@@ -1638,8 +1704,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#DepositorySuspensionPeriodForWithdrawalInStreetName
-	 * SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInStreetName}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmDepositorySuspensionPeriodForWithdrawalInStreetName
+	 * SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1665,20 +1731,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd WithdrawalInStreetNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmWithdrawalInStreetNameSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WithdrawalInStreetNameSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for withdrawals in street name is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInStreetName;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected CorporateActionEvent bookClosureCorporateAction;
 	/**
 	 * Corporate action for which a book closure period has been specified.
 	 * <p>
@@ -1687,8 +1754,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#BookClosurePeriod
-	 * CorporateActionEvent.BookClosurePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmBookClosurePeriod
+	 * CorporateActionEvent.mmBookClosurePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1714,20 +1781,21 @@ public class DateTimePeriod {
 	 * "Corporate action for which a book closure period has been specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BookClosureCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBookClosureCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookClosureCorporateAction";
 			definition = "Corporate action for which a book closure period has been specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.BookClosurePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmBookClosurePeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
+	protected SuspensionPeriod coDepositoriesSuspensionRelatedEvent;
 	/**
 	 * Corporate event for which a suspension period for co-depositories is
 	 * specified.
@@ -1737,8 +1805,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#CoDepositoriesSuspensionPeriod
-	 * SuspensionPeriod.CoDepositoriesSuspensionPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SuspensionPeriod#mmCoDepositoriesSuspensionPeriod
+	 * SuspensionPeriod.mmCoDepositoriesSuspensionPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1764,20 +1832,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CoDepositoriesSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCoDepositoriesSuspensionRelatedEvent = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoDepositoriesSuspensionRelatedEvent";
 			definition = "Corporate event for which a suspension period for co-depositories is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SuspensionPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.CoDepositoriesSuspensionPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmCoDepositoriesSuspensionPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SuspensionPeriod.mmObject();
 		}
 	};
+	protected Debt extendiblePeriodDebt;
 	/**
 	 * Debt for which an extendible period is specified.
 	 * <p>
@@ -1786,8 +1855,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Debt#ExtendiblePeriod
-	 * Debt.ExtendiblePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Debt#mmExtendiblePeriod
+	 * Debt.mmExtendiblePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1810,20 +1879,21 @@ public class DateTimePeriod {
 	 * definition} = "Debt for which an extendible period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ExtendiblePeriodDebt = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmExtendiblePeriodDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExtendiblePeriodDebt";
 			definition = "Debt for which an extendible period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Debt.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Debt.ExtendiblePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Debt.mmExtendiblePeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Debt.mmObject();
 		}
 	};
+	protected SecuritiesConversion securitiesConversion;
 	/**
 	 * Securities conversion process for which a conversion period is specified.
 	 * <p>
@@ -1832,8 +1902,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#ConversionPeriod
-	 * SecuritiesConversion.ConversionPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesConversion#mmConversionPeriod
+	 * SecuritiesConversion.mmConversionPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1860,20 +1930,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesConversion = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesConversion = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesConversion";
 			definition = "Securities conversion process for which a conversion period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmConversionPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.ConversionPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YieldCalculation yieldCalculation;
 	/**
 	 * Yield calculation for which a value period is specified.
 	 * <p>
@@ -1882,8 +1953,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.YieldCalculation#ValuePeriod
-	 * YieldCalculation.ValuePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.YieldCalculation#mmValuePeriod
+	 * YieldCalculation.mmValuePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1907,20 +1978,21 @@ public class DateTimePeriod {
 	 * definition} = "Yield calculation for which a value period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd YieldCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "YieldCalculation";
 			definition = "Yield calculation for which a value period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmValuePeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.YieldCalculation.ValuePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Debt customDateDebt;
 	/**
 	 * Debt for which a custom date is specified.
 	 * <p>
@@ -1928,8 +2000,9 @@ public class DateTimePeriod {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Debt#CustomDate
-	 * Debt.CustomDate}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Debt#mmCustomDate
+	 * Debt.mmCustomDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1952,20 +2025,21 @@ public class DateTimePeriod {
 	 * definition} = "Debt for which a custom date is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CustomDateDebt = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCustomDateDebt = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustomDateDebt";
 			definition = "Debt for which a custom date is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Debt.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Debt.CustomDate;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Debt.mmCustomDate;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Debt.mmObject();
 		}
 	};
+	protected TaxPeriod taxPeriod;
 	/**
 	 * Tax period for which a from/to date is specified.
 	 * <p>
@@ -1974,8 +2048,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TaxPeriod#FromToDate
-	 * TaxPeriod.FromToDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.TaxPeriod#mmFromToDate
+	 * TaxPeriod.mmFromToDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1999,20 +2073,21 @@ public class DateTimePeriod {
 	 * definition} = "Tax period for which a from/to date is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TaxPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTaxPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxPeriod";
 			definition = "Tax period for which a from/to date is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmFromToDate;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TaxPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TaxPeriod.FromToDate;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Account account;
 	/**
 	 * Account for which a reported period is specified.
 	 * <p>
@@ -2021,8 +2096,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#ReportedPeriod
-	 * Account.ReportedPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmReportedPeriod
+	 * Account.mmReportedPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2045,20 +2120,21 @@ public class DateTimePeriod {
 	 * definition} = "Account for which a reported period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Account for which a reported period is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmReportedPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.ReportedPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Agreement relatedAgreement;
 	/**
 	 * Agreement for which a validity period is specified.
 	 * <p>
@@ -2067,8 +2143,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Agreement#ValidityPeriod
-	 * Agreement.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Agreement#mmValidityPeriod
+	 * Agreement.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2092,20 +2168,21 @@ public class DateTimePeriod {
 	 * definition} = "Agreement for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAgreement";
 			definition = "Agreement for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Agreement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Agreement.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Agreement.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 		}
 	};
+	protected SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition;
 	/**
 	 * Securities proceeds for which an assented line period is specified.
 	 * <p>
@@ -2114,8 +2191,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#AssentedLinePeriod
-	 * SecuritiesProceedsDefinition.AssentedLinePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmAssentedLinePeriod
+	 * SecuritiesProceedsDefinition.mmAssentedLinePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2141,20 +2218,21 @@ public class DateTimePeriod {
 	 * "Securities proceeds for which an assented line period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssentedLinePeriodProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssentedLinePeriodProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssentedLinePeriodProceedsDefinition";
 			definition = "Securities proceeds for which an assented line period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.AssentedLinePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAssentedLinePeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition;
 	/**
 	 * Securities proceeds for which a sell thru issuer period is specified.
 	 * <p>
@@ -2163,8 +2241,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#SellThruIssuerPeriod
-	 * SecuritiesProceedsDefinition.SellThruIssuerPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesProceedsDefinition#mmSellThruIssuerPeriod
+	 * SecuritiesProceedsDefinition.mmSellThruIssuerPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2190,20 +2268,21 @@ public class DateTimePeriod {
 	 * "Securities proceeds for which a sell thru issuer period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SellThruIssuerProceedsDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSellThruIssuerProceedsDefinition = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellThruIssuerProceedsDefinition";
 			definition = "Securities proceeds for which a sell thru issuer period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesProceedsDefinition.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.SellThruIssuerPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmSellThruIssuerPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmObject();
 		}
 	};
+	protected ProductDelivery relatedProductDelivery;
 	/**
 	 * Trade delivery process for which a delivery period is specified.
 	 * <p>
@@ -2212,8 +2291,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ProductDelivery#DeliveryPeriod
-	 * ProductDelivery.DeliveryPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.ProductDelivery#mmDeliveryPeriod
+	 * ProductDelivery.mmDeliveryPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2238,20 +2317,21 @@ public class DateTimePeriod {
 	 * "Trade delivery process for which a delivery period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedProductDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedProductDelivery = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedProductDelivery";
 			definition = "Trade delivery process for which a delivery period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> ProductDelivery.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.DeliveryPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmDeliveryPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 		}
 	};
+	protected Invoice relatedInvoice;
 	/**
 	 * Invoice for which a period is specified.
 	 * <p>
@@ -2260,8 +2340,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Invoice#PeriodCovered
-	 * Invoice.PeriodCovered}</li>
+	 * {@linkplain com.tools20022.repository.entity.Invoice#mmPeriodCovered
+	 * Invoice.mmPeriodCovered}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2284,20 +2364,21 @@ public class DateTimePeriod {
 	 * definition} = "Invoice for which a period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedInvoice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvoice";
 			definition = "Invoice for which a period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Invoice.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Invoice.PeriodCovered;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Invoice.mmPeriodCovered;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 		}
 	};
+	protected TradeCertificate tradeCertificate;
 	/**
 	 * Trade certificate for which an inspection date is specified.
 	 * <p>
@@ -2306,8 +2387,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradeCertificate#InspectionDate
-	 * TradeCertificate.InspectionDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradeCertificate#mmInspectionDate
+	 * TradeCertificate.mmInspectionDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2332,20 +2413,21 @@ public class DateTimePeriod {
 	 * "Trade certificate for which an inspection date is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeCertificate = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeCertificate";
 			definition = "Trade certificate for which an inspection date is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmInspectionDate;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradeCertificate.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradeCertificate.InspectionDate;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PortfolioValuation relatedPortfolioValuation;
 	/**
 	 * Portfolio valuation process for which a valuation period is specified.
 	 * <p>
@@ -2354,8 +2436,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PortfolioValuation#ValuationPeriod
-	 * PortfolioValuation.ValuationPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.PortfolioValuation#mmValuationPeriod
+	 * PortfolioValuation.mmValuationPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2380,20 +2462,21 @@ public class DateTimePeriod {
 	 * "Portfolio valuation process for which a valuation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedPortfolioValuation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedPortfolioValuation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPortfolioValuation";
 			definition = "Portfolio valuation process for which a valuation period is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PortfolioValuation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.ValuationPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmValuationPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PortfolioValuation.mmObject();
 		}
 	};
+	protected System system;
 	/**
 	 * System for which a validity period is specified.
 	 * <p>
@@ -2402,8 +2485,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.System#VersionValidityPeriod
-	 * System.VersionValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.System#mmVersionValidityPeriod
+	 * System.mmVersionValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2426,20 +2509,21 @@ public class DateTimePeriod {
 	 * definition} = "System for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd System = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "System";
 			definition = "System for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.System.mmVersionValidityPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.System.VersionValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected AccountRestriction accountRestriction;
 	/**
 	 * Account restriction for which a validity period is specified.
 	 * <p>
@@ -2448,8 +2532,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountRestriction#ValidityPeriod
-	 * AccountRestriction.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountRestriction#mmValidityPeriod
+	 * AccountRestriction.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2474,20 +2558,21 @@ public class DateTimePeriod {
 	 * "Account restriction for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountRestriction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountRestriction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountRestriction";
 			definition = "Account restriction for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountRestriction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountRestriction.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected BankOperation bankOperation;
 	/**
 	 * Bank operation for which an applicable period is specified.
 	 * <p>
@@ -2496,8 +2581,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BankOperation#ApplicablePeriod
-	 * BankOperation.ApplicablePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.BankOperation#mmApplicablePeriod
+	 * BankOperation.mmApplicablePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2522,20 +2607,21 @@ public class DateTimePeriod {
 	 * "Bank operation for which an applicable period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BankOperation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBankOperation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BankOperation";
 			definition = "Bank operation for which an applicable period is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.BankOperation.mmApplicablePeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BankOperation.ApplicablePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CorporateActionEvent relatedCorporateAction;
 	/**
 	 * Corporate action event for which a trading period is specified.
 	 * <p>
@@ -2544,8 +2630,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#TradingPeriod
-	 * CorporateActionEvent.TradingPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmTradingPeriod
+	 * CorporateActionEvent.mmTradingPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2571,20 +2657,21 @@ public class DateTimePeriod {
 	 * "Corporate action event for which a trading period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCorporateAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCorporateAction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCorporateAction";
 			definition = "Corporate action event for which a trading period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CorporateActionEvent.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.TradingPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmTradingPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Limit> relatedLimit;
 	/**
 	 * Limit for which a validity period is specified.
 	 * <p>
@@ -2593,8 +2680,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Limit#ValidityPeriod
-	 * Limit.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Limit#mmValidityPeriod
+	 * Limit.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2617,19 +2704,20 @@ public class DateTimePeriod {
 	 * definition} = "Limit for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedLimit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedLimit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedLimit";
 			definition = "Limit for which a validity period is specified.";
 			minOccurs = 0;
-			type_lazy = () -> Limit.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Limit.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Limit.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification;
 	/**
 	 * Party identification for which a validity period is specified.
 	 * <p>
@@ -2638,8 +2726,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#ValidityPeriod
-	 * PartyIdentificationInformation.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyIdentificationInformation#mmValidityPeriod
+	 * PartyIdentificationInformation.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2665,19 +2753,20 @@ public class DateTimePeriod {
 	 * "Party identification for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIdentification";
 			definition = "Party identification for which a validity period is specified.";
 			minOccurs = 0;
-			type_lazy = () -> PartyIdentificationInformation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 		}
 	};
+	protected Scheme assessmentValidityScheme;
 	/**
 	 * Scheme for which a validity period is specified.
 	 * <p>
@@ -2686,8 +2775,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Scheme#AssessmentValidityPeriod
-	 * Scheme.AssessmentValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Scheme#mmAssessmentValidityPeriod
+	 * Scheme.mmAssessmentValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2710,20 +2799,21 @@ public class DateTimePeriod {
 	 * definition} = "Scheme for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssessmentValidityScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssessmentValidityScheme = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssessmentValidityScheme";
 			definition = "Scheme for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Scheme.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.AssessmentValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmAssessmentValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 		}
 	};
+	protected Distribution exercisePeriodDistribution;
 	/**
 	 * Cash and securities distribution information for which an exercise period
 	 * is specified.
@@ -2733,8 +2823,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Distribution#ExercisePeriod
-	 * Distribution.ExercisePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Distribution#mmExercisePeriod
+	 * Distribution.mmExercisePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2760,20 +2850,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ExercisePeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmExercisePeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExercisePeriodDistribution";
 			definition = "Cash and securities distribution information for which an exercise period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Distribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.ExercisePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmExercisePeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 		}
 	};
+	protected Distribution offerPeriodDistribution;
 	/**
 	 * Cash and securities distribution information for which an offer period is
 	 * specified.
@@ -2783,8 +2874,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Distribution#OfferPeriod
-	 * Distribution.OfferPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Distribution#mmOfferPeriod
+	 * Distribution.mmOfferPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2810,20 +2901,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd OfferPeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOfferPeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OfferPeriodDistribution";
 			definition = "Cash and securities distribution information for which an offer period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Distribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.OfferPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmOfferPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 		}
 	};
+	protected Distribution tradingPeriodDistribution;
 	/**
 	 * Cash and securities distribution information for which a trading period
 	 * is specified.
@@ -2833,8 +2925,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Distribution#TradingPeriod
-	 * Distribution.TradingPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Distribution#mmTradingPeriod
+	 * Distribution.mmTradingPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2860,20 +2952,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingPeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingPeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingPeriodDistribution";
 			definition = "Cash and securities distribution information for which a trading period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Distribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.TradingPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmTradingPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 		}
 	};
+	protected Distribution blockingPeriodDistribution;
 	/**
 	 * Cash and securities distribution information for which a blocking period
 	 * is specified.
@@ -2883,8 +2976,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Distribution#BlockingPeriod
-	 * Distribution.BlockingPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Distribution#mmBlockingPeriod
+	 * Distribution.mmBlockingPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2910,20 +3003,21 @@ public class DateTimePeriod {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BlockingPeriodDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBlockingPeriodDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BlockingPeriodDistribution";
 			definition = "Cash and securities distribution information for which a blocking period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Distribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.BlockingPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmBlockingPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 		}
 	};
+	protected Guarantee guarantee;
 	/**
 	 * Guarantee for which an effective period is specified.
 	 * <p>
@@ -2932,8 +3026,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Guarantee#EffectivePeriod
-	 * Guarantee.EffectivePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Guarantee#mmEffectivePeriod
+	 * Guarantee.mmEffectivePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -2957,20 +3051,21 @@ public class DateTimePeriod {
 	 * definition} = "Guarantee for which an effective period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Guarantee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Guarantee";
 			definition = "Guarantee for which an effective period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Guarantee.mmEffectivePeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Guarantee.EffectivePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesPricing priceFactRelatedPricing;
 	/**
 	 * Securities pricing for which a price fact period is specified.
 	 * <p>
@@ -2979,8 +3074,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#PriceFactPeriod
-	 * SecuritiesPricing.PriceFactPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPriceFactPeriod
+	 * SecuritiesPricing.mmPriceFactPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3005,20 +3100,21 @@ public class DateTimePeriod {
 	 * "Securities pricing for which a price fact period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PriceFactRelatedPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPriceFactRelatedPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceFactRelatedPricing";
 			definition = "Securities pricing for which a price fact period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.PriceFactPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceFactPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
 		}
 	};
+	protected Distribution cashDistribution;
 	/**
 	 * Cash distribution for which an interest period is specified.
 	 * <p>
@@ -3027,8 +3123,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Distribution#InterestPeriod
-	 * Distribution.InterestPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Distribution#mmInterestPeriod
+	 * Distribution.mmInterestPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3053,20 +3149,21 @@ public class DateTimePeriod {
 	 * "Cash distribution for which an interest period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashDistribution = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashDistribution";
 			definition = "Cash distribution for which an interest period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Distribution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.InterestPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Distribution.mmInterestPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Distribution.mmObject();
 		}
 	};
+	protected ComponentSecurity componentSecurity;
 	/**
 	 * Security component for which a separation period is specified.
 	 * <p>
@@ -3075,8 +3172,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ComponentSecurity#SeparationPeriod
-	 * ComponentSecurity.SeparationPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.ComponentSecurity#mmSeparationPeriod
+	 * ComponentSecurity.mmSeparationPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3101,20 +3198,21 @@ public class DateTimePeriod {
 	 * "Security component for which a separation period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ComponentSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmComponentSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ComponentSecurity";
 			definition = "Security component for which a separation period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmSeparationPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ComponentSecurity.SeparationPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected TradingSession tradingSession;
 	/**
 	 * Trading session for which a time bracket is specified.
 	 * <p>
@@ -3123,8 +3221,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingSession#TimeBracket
-	 * TradingSession.TimeBracket}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingSession#mmTimeBracket
+	 * TradingSession.mmTimeBracket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3148,20 +3246,21 @@ public class DateTimePeriod {
 	 * definition} = "Trading session for which a time bracket is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSession";
 			definition = "Trading session for which a time bracket is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.mmTimeBracket;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.TimeBracket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected FinancialInstrumentSwap financialInstrumentSwap;
 	/**
 	 * Swap for which a maturity period is specified.
 	 * <p>
@@ -3170,8 +3269,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.FinancialInstrumentSwap#Maturity
-	 * FinancialInstrumentSwap.Maturity}</li>
+	 * {@linkplain com.tools20022.repository.entity.FinancialInstrumentSwap#mmMaturity
+	 * FinancialInstrumentSwap.mmMaturity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3196,20 +3295,21 @@ public class DateTimePeriod {
 	 * definition} = "Swap for which a maturity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FinancialInstrumentSwap = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFinancialInstrumentSwap = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancialInstrumentSwap";
 			definition = "Swap for which a maturity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmMaturity;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.FinancialInstrumentSwap.Maturity;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PostalAddress relatedPostalAddress;
 	/**
 	 * Postal address for which a validity period is specified.
 	 * <p>
@@ -3218,8 +3318,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PostalAddress#ValidityPeriod
-	 * PostalAddress.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.PostalAddress#mmValidityPeriod
+	 * PostalAddress.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3243,20 +3343,21 @@ public class DateTimePeriod {
 	 * definition} = "Postal address for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedPostalAddress = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedPostalAddress = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPostalAddress";
 			definition = "Postal address for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PostalAddress.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 		}
 	};
+	protected RedemptionSchedule redemptionSchedule;
 	/**
 	 * Redemption schedule for which a notice period is provided.
 	 * <p>
@@ -3265,8 +3366,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#EffectivePeriod
-	 * RedemptionSchedule.EffectivePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.RedemptionSchedule#mmEffectivePeriod
+	 * RedemptionSchedule.mmEffectivePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3291,20 +3392,21 @@ public class DateTimePeriod {
 	 * "Redemption schedule for which a notice period is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RedemptionSchedule = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRedemptionSchedule = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RedemptionSchedule";
 			definition = "Redemption schedule for which a notice period is provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmEffectivePeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RedemptionSchedule.EffectivePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected AccountLink relatedAccountLink;
 	/**
 	 * Link between two accounts for which a validity period is specified.
 	 * <p>
@@ -3313,8 +3415,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountLink#ValidityPeriod
-	 * AccountLink.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountLink#mmValidityPeriod
+	 * AccountLink.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3339,20 +3441,21 @@ public class DateTimePeriod {
 	 * "Link between two accounts for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedAccountLink = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedAccountLink = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAccountLink";
 			definition = "Link between two accounts for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AccountLink.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountLink.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountLink.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AccountLink.mmObject();
 		}
 	};
+	protected Adjustment relatedAdjustment;
 	/**
 	 * Adjustment for which a validity period is provided.
 	 * <p>
@@ -3361,8 +3464,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#EffectivePeriod
-	 * Adjustment.EffectivePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmEffectivePeriod
+	 * Adjustment.mmEffectivePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3386,20 +3489,21 @@ public class DateTimePeriod {
 	 * definition} = "Adjustment for which a validity period is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedAdjustment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedAdjustment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedAdjustment";
 			definition = "Adjustment for which a validity period is provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Adjustment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.EffectivePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmEffectivePeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 		}
 	};
+	protected SecuritiesIdentification relatedSecuritiesIdentification;
 	/**
 	 * Securities identification for which a validity period is specified.
 	 * <p>
@@ -3408,8 +3512,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#ValidityPeriod
-	 * SecuritiesIdentification.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmValidityPeriod
+	 * SecuritiesIdentification.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3435,20 +3539,21 @@ public class DateTimePeriod {
 	 * "Securities identification for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSecuritiesIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSecuritiesIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesIdentification";
 			definition = "Securities identification for which a validity period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction;
 	/**
 	 * SSI for which a validity period is specified.
 	 * <p>
@@ -3457,8 +3562,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#ValidityPeriod
-	 * StandingSettlementInstruction.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.StandingSettlementInstruction#mmValidityPeriod
+	 * StandingSettlementInstruction.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3483,19 +3588,20 @@ public class DateTimePeriod {
 	 * definition} = "SSI for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedStandingSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedStandingSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedStandingSettlementInstruction";
 			definition = "SSI for which a validity period is specified.";
 			minOccurs = 0;
-			type_lazy = () -> StandingSettlementInstruction.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
 		}
 	};
+	protected BasicSecuritiesRegistration relatedSecuritiesRegistration;
 	/**
 	 * Securities registration process for which a split period is specified.
 	 * <p>
@@ -3504,8 +3610,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#SplitPeriod
-	 * BasicSecuritiesRegistration.SplitPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.BasicSecuritiesRegistration#mmSplitPeriod
+	 * BasicSecuritiesRegistration.mmSplitPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3531,20 +3637,21 @@ public class DateTimePeriod {
 	 * "Securities registration process for which a split period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSecuritiesRegistration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSecuritiesRegistration = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecuritiesRegistration";
 			definition = "Securities registration process for which a split period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BasicSecuritiesRegistration.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.SplitPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSplitPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.BasicSecuritiesRegistration.mmObject();
 		}
 	};
+	protected AmountAndPeriod amount;
 	/**
 	 * Relationship with an amount.
 	 * <p>
@@ -3553,8 +3660,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AmountAndPeriod#Period
-	 * AmountAndPeriod.Period}</li>
+	 * {@linkplain com.tools20022.repository.entity.AmountAndPeriod#mmPeriod
+	 * AmountAndPeriod.mmPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3578,20 +3685,21 @@ public class DateTimePeriod {
 	 * definition} = "Relationship with an amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Amount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAmount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Amount";
 			definition = "Relationship with an amount.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AmountAndPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.Period;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.AmountAndPeriod.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan;
 	/**
 	 * InvestmentPlan for which an investment period is specified.
 	 * <p>
@@ -3600,8 +3708,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#InvestmentPeriod
-	 * InvestmentPlan.InvestmentPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentPlan#mmInvestmentPeriod
+	 * InvestmentPlan.mmInvestmentPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3626,19 +3734,20 @@ public class DateTimePeriod {
 	 * "InvestmentPlan for which an investment period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedInvestmentPlan = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedInvestmentPlan";
 			definition = "InvestmentPlan for which an investment period is specified.";
 			minOccurs = 0;
-			type_lazy = () -> InvestmentPlan.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.InvestmentPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmInvestmentPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
 		}
 	};
+	protected Issuance issuance;
 	/**
 	 * Issuance for which subscription information is provided.
 	 * <p>
@@ -3647,8 +3756,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Issuance#SubscriptionPeriod
-	 * Issuance.SubscriptionPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.Issuance#mmSubscriptionPeriod
+	 * Issuance.mmSubscriptionPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3671,20 +3780,21 @@ public class DateTimePeriod {
 	 * definition} = "Issuance for which subscription information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Issuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Issuance for which subscription information is provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.mmSubscriptionPeriod;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.SubscriptionPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PaymentTerms relatedPaymentTerms;
 	/**
 	 * Payment terms for which a period is specified.
 	 * <p>
@@ -3693,8 +3803,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentTerms#PaymentPeriod
-	 * PaymentTerms.PaymentPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentTerms#mmPaymentPeriod
+	 * PaymentTerms.mmPaymentPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3718,20 +3828,21 @@ public class DateTimePeriod {
 	 * definition} = "Payment terms for which a period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedPaymentTerms = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedPaymentTerms = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPaymentTerms";
 			definition = "Payment terms for which a period is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PaymentTerms.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.PaymentPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmPaymentPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PaymentTerms.mmObject();
 		}
 	};
+	protected PercentageAndPeriod percentage;
 	/**
 	 * Relationship with a percentage.
 	 * <p>
@@ -3740,8 +3851,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PercentageAndPeriod#Period
-	 * PercentageAndPeriod.Period}</li>
+	 * {@linkplain com.tools20022.repository.entity.PercentageAndPeriod#mmPeriod
+	 * PercentageAndPeriod.mmPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3765,20 +3876,21 @@ public class DateTimePeriod {
 	 * definition} = "Relationship with a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Percentage = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPercentage = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Percentage";
 			definition = "Relationship with a percentage.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PercentageAndPeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.Period;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer;
 	/**
 	 * Role player for which a validity period is specified.
 	 * <p>
@@ -3787,8 +3899,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.RolePlayer#ValidityPeriod
-	 * RolePlayer.ValidityPeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.RolePlayer#mmValidityPeriod
+	 * RolePlayer.mmValidityPeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3812,19 +3924,20 @@ public class DateTimePeriod {
 	 * definition} = "Role player for which a validity period is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedRolePlayer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedRolePlayer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedRolePlayer";
 			definition = "Role player for which a validity period is specified.";
 			minOccurs = 0;
-			type_lazy = () -> RolePlayer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.RolePlayer.ValidityPeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmValidityPeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.RolePlayer.mmObject();
 		}
 	};
+	protected SystemAvailability relatedSystemAvailability;
 	/**
 	 * System availability for which the closure period is provided.
 	 * <p>
@@ -3833,8 +3946,8 @@ public class DateTimePeriod {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SystemAvailability#ClosurePeriod
-	 * SystemAvailability.ClosurePeriod}</li>
+	 * {@linkplain com.tools20022.repository.entity.SystemAvailability#mmClosurePeriod
+	 * SystemAvailability.mmClosurePeriod}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -3859,88 +3972,652 @@ public class DateTimePeriod {
 	 * "System availability for which the closure period is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSystemAvailability = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSystemAvailability = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> DateTimePeriod.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedSystemAvailability";
 			definition = "System availability for which the closure period is provided.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SystemAvailability.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemAvailability.ClosurePeriod;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmClosurePeriod;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SystemAvailability.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DateTimePeriod";
 				definition = "Time span defined by a start date and time, and an end date and time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.ValidityPeriod, com.tools20022.repository.entity.SecuritiesPricing.PriceCalculationPeriod,
-						com.tools20022.repository.entity.SecuritiesPricing.PriceFactPeriod, com.tools20022.repository.entity.RolePlayer.ValidityPeriod, com.tools20022.repository.entity.PostalAddress.ValidityPeriod,
-						com.tools20022.repository.entity.PartyIdentificationInformation.ValidityPeriod, com.tools20022.repository.entity.Account.ReportedPeriod, com.tools20022.repository.entity.RedemptionSchedule.EffectivePeriod,
-						com.tools20022.repository.entity.Scheme.AssessmentValidityPeriod, com.tools20022.repository.entity.Status.ValidityTime, com.tools20022.repository.entity.Agreement.ValidityPeriod,
-						com.tools20022.repository.entity.Adjustment.EffectivePeriod, com.tools20022.repository.entity.InvestmentPlan.InvestmentPeriod, com.tools20022.repository.entity.PaymentInstruction.ProcessingValidityTime,
-						com.tools20022.repository.entity.System.VersionValidityPeriod, com.tools20022.repository.entity.Limit.ValidityPeriod, com.tools20022.repository.entity.StandingOrder.ValidityPeriod,
-						com.tools20022.repository.entity.ValuationStatistics.Period, com.tools20022.repository.entity.PerformanceFactors.AccumulationPeriod, com.tools20022.repository.entity.AccountRestriction.ValidityPeriod,
-						com.tools20022.repository.entity.SystemAvailability.ClosurePeriod, com.tools20022.repository.entity.InterestCalculation.InterestPeriod, com.tools20022.repository.entity.Debt.ExtendiblePeriod,
-						com.tools20022.repository.entity.Debt.CustomDate, com.tools20022.repository.entity.Issuance.SubscriptionPeriod, com.tools20022.repository.entity.SecuritiesConversion.ConversionPeriod,
-						com.tools20022.repository.entity.StandingSettlementInstruction.ValidityPeriod, com.tools20022.repository.entity.BasicSecuritiesRegistration.SplitPeriod,
-						com.tools20022.repository.entity.CorporateActionEvent.BookClosurePeriod, com.tools20022.repository.entity.CorporateActionEvent.TradingPeriod, com.tools20022.repository.entity.ClassAction.ClaimPeriod,
-						com.tools20022.repository.entity.CorporateActionOption.ActionPeriod, com.tools20022.repository.entity.SecuritiesProceedsDefinition.ParallelTradingPeriod,
-						com.tools20022.repository.entity.SecuritiesProceedsDefinition.AssentedLinePeriod, com.tools20022.repository.entity.SecuritiesProceedsDefinition.SellThruIssuerPeriod,
-						com.tools20022.repository.entity.BiddingConditions.CompulsoryPurchasePeriod, com.tools20022.repository.entity.SuspensionPeriod.PrivilegeSuspensionPeriod,
-						com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawal, com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForBookEntryTransfer,
-						com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForDepositAtAgent, com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForDeposit,
-						com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForPledge, com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForSegregation,
-						com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalAtAgent, com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInNomineeName,
-						com.tools20022.repository.entity.SuspensionPeriod.DepositorySuspensionPeriodForWithdrawalInStreetName, com.tools20022.repository.entity.SuspensionPeriod.CoDepositoriesSuspensionPeriod,
-						com.tools20022.repository.entity.TradingSession.TimeBracket, com.tools20022.repository.entity.YieldCalculation.ValuePeriod, com.tools20022.repository.entity.BankOperation.ApplicablePeriod,
-						com.tools20022.repository.entity.Invoice.PeriodCovered, com.tools20022.repository.entity.TaxPeriod.FromToDate, com.tools20022.repository.entity.Distribution.ExercisePeriod,
-						com.tools20022.repository.entity.Distribution.OfferPeriod, com.tools20022.repository.entity.Distribution.TradingPeriod, com.tools20022.repository.entity.Distribution.BlockingPeriod,
-						com.tools20022.repository.entity.Distribution.InterestPeriod, com.tools20022.repository.entity.ProductDelivery.DeliveryPeriod, com.tools20022.repository.entity.TradeCertificate.InspectionDate,
-						com.tools20022.repository.entity.Guarantee.EffectivePeriod, com.tools20022.repository.entity.PortfolioValuation.ValuationPeriod, com.tools20022.repository.entity.AccountLink.ValidityPeriod,
-						com.tools20022.repository.entity.ComponentSecurity.SeparationPeriod, com.tools20022.repository.entity.FinancialInstrumentSwap.Maturity, com.tools20022.repository.entity.AmountAndPeriod.Period,
-						com.tools20022.repository.entity.PaymentTerms.PaymentPeriod, com.tools20022.repository.entity.PercentageAndPeriod.Period);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ReportingRequest3.ReportingPeriod, com.tools20022.repository.choice.Period4Choice.Date,
-						com.tools20022.repository.choice.Period4Choice.FromDateToDate);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.FromDateTime, com.tools20022.repository.entity.DateTimePeriod.ToDateTime,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedStandingOrder, com.tools20022.repository.entity.DateTimePeriod.PaymentInstruction, com.tools20022.repository.entity.DateTimePeriod.NumberOfDays,
-						com.tools20022.repository.entity.DateTimePeriod.ValuationStatistics, com.tools20022.repository.entity.DateTimePeriod.PerformanceFactors, com.tools20022.repository.entity.DateTimePeriod.Status,
-						com.tools20022.repository.entity.DateTimePeriod.PriceCalculationRelatedPricing, com.tools20022.repository.entity.DateTimePeriod.CorporateActionOption,
-						com.tools20022.repository.entity.DateTimePeriod.ParallelTradingProceedsDefinition, com.tools20022.repository.entity.DateTimePeriod.PrivilegeSuspensionCorporateAction,
-						com.tools20022.repository.entity.DateTimePeriod.WithdrawalSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.RelatedInterestCalculation,
-						com.tools20022.repository.entity.DateTimePeriod.BiddingConditions, com.tools20022.repository.entity.DateTimePeriod.ClassAction,
-						com.tools20022.repository.entity.DateTimePeriod.BookEntryTransferSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.DepositAtAgentSuspensionRelatedEvent,
-						com.tools20022.repository.entity.DateTimePeriod.DepositSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.PledgeSuspensionRelatedEvent,
-						com.tools20022.repository.entity.DateTimePeriod.SegregationPeriodRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.WithdrawalAtAgentSuspensionRelatedEvent,
-						com.tools20022.repository.entity.DateTimePeriod.WithdrawalInNomineeNameSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.WithdrawalInStreetNameSuspensionRelatedEvent,
-						com.tools20022.repository.entity.DateTimePeriod.BookClosureCorporateAction, com.tools20022.repository.entity.DateTimePeriod.CoDepositoriesSuspensionRelatedEvent,
-						com.tools20022.repository.entity.DateTimePeriod.ExtendiblePeriodDebt, com.tools20022.repository.entity.DateTimePeriod.SecuritiesConversion, com.tools20022.repository.entity.DateTimePeriod.YieldCalculation,
-						com.tools20022.repository.entity.DateTimePeriod.CustomDateDebt, com.tools20022.repository.entity.DateTimePeriod.TaxPeriod, com.tools20022.repository.entity.DateTimePeriod.Account,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedAgreement, com.tools20022.repository.entity.DateTimePeriod.AssentedLinePeriodProceedsDefinition,
-						com.tools20022.repository.entity.DateTimePeriod.SellThruIssuerProceedsDefinition, com.tools20022.repository.entity.DateTimePeriod.RelatedProductDelivery,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedInvoice, com.tools20022.repository.entity.DateTimePeriod.TradeCertificate, com.tools20022.repository.entity.DateTimePeriod.RelatedPortfolioValuation,
-						com.tools20022.repository.entity.DateTimePeriod.System, com.tools20022.repository.entity.DateTimePeriod.AccountRestriction, com.tools20022.repository.entity.DateTimePeriod.BankOperation,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedCorporateAction, com.tools20022.repository.entity.DateTimePeriod.RelatedLimit, com.tools20022.repository.entity.DateTimePeriod.RelatedIdentification,
-						com.tools20022.repository.entity.DateTimePeriod.AssessmentValidityScheme, com.tools20022.repository.entity.DateTimePeriod.ExercisePeriodDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.OfferPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.TradingPeriodDistribution,
-						com.tools20022.repository.entity.DateTimePeriod.BlockingPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.Guarantee, com.tools20022.repository.entity.DateTimePeriod.PriceFactRelatedPricing,
-						com.tools20022.repository.entity.DateTimePeriod.CashDistribution, com.tools20022.repository.entity.DateTimePeriod.ComponentSecurity, com.tools20022.repository.entity.DateTimePeriod.TradingSession,
-						com.tools20022.repository.entity.DateTimePeriod.FinancialInstrumentSwap, com.tools20022.repository.entity.DateTimePeriod.RelatedPostalAddress, com.tools20022.repository.entity.DateTimePeriod.RedemptionSchedule,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedAccountLink, com.tools20022.repository.entity.DateTimePeriod.RelatedAdjustment, com.tools20022.repository.entity.DateTimePeriod.RelatedSecuritiesIdentification,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedStandingSettlementInstruction, com.tools20022.repository.entity.DateTimePeriod.RelatedSecuritiesRegistration,
-						com.tools20022.repository.entity.DateTimePeriod.Amount, com.tools20022.repository.entity.DateTimePeriod.RelatedInvestmentPlan, com.tools20022.repository.entity.DateTimePeriod.Issuance,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedPaymentTerms, com.tools20022.repository.entity.DateTimePeriod.Percentage, com.tools20022.repository.entity.DateTimePeriod.RelatedRolePlayer,
-						com.tools20022.repository.entity.DateTimePeriod.RelatedSystemAvailability);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.mmValidityPeriod, com.tools20022.repository.entity.SecuritiesPricing.mmPriceCalculationPeriod,
+						com.tools20022.repository.entity.SecuritiesPricing.mmPriceFactPeriod, com.tools20022.repository.entity.RolePlayer.mmValidityPeriod, com.tools20022.repository.entity.PostalAddress.mmValidityPeriod,
+						com.tools20022.repository.entity.PartyIdentificationInformation.mmValidityPeriod, com.tools20022.repository.entity.Account.mmReportedPeriod, com.tools20022.repository.entity.RedemptionSchedule.mmEffectivePeriod,
+						com.tools20022.repository.entity.Scheme.mmAssessmentValidityPeriod, com.tools20022.repository.entity.Status.mmValidityTime, com.tools20022.repository.entity.Agreement.mmValidityPeriod,
+						com.tools20022.repository.entity.Adjustment.mmEffectivePeriod, com.tools20022.repository.entity.InvestmentPlan.mmInvestmentPeriod, com.tools20022.repository.entity.PaymentInstruction.mmProcessingValidityTime,
+						com.tools20022.repository.entity.System.mmVersionValidityPeriod, com.tools20022.repository.entity.Limit.mmValidityPeriod, com.tools20022.repository.entity.StandingOrder.mmValidityPeriod,
+						com.tools20022.repository.entity.ValuationStatistics.mmPeriod, com.tools20022.repository.entity.PerformanceFactors.mmAccumulationPeriod, com.tools20022.repository.entity.AccountRestriction.mmValidityPeriod,
+						com.tools20022.repository.entity.SystemAvailability.mmClosurePeriod, com.tools20022.repository.entity.InterestCalculation.mmInterestPeriod, com.tools20022.repository.entity.Debt.mmExtendiblePeriod,
+						com.tools20022.repository.entity.Debt.mmCustomDate, com.tools20022.repository.entity.Issuance.mmSubscriptionPeriod, com.tools20022.repository.entity.SecuritiesConversion.mmConversionPeriod,
+						com.tools20022.repository.entity.StandingSettlementInstruction.mmValidityPeriod, com.tools20022.repository.entity.BasicSecuritiesRegistration.mmSplitPeriod,
+						com.tools20022.repository.entity.CorporateActionEvent.mmBookClosurePeriod, com.tools20022.repository.entity.CorporateActionEvent.mmTradingPeriod, com.tools20022.repository.entity.ClassAction.mmClaimPeriod,
+						com.tools20022.repository.entity.CorporateActionOption.mmActionPeriod, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmParallelTradingPeriod,
+						com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmAssentedLinePeriod, com.tools20022.repository.entity.SecuritiesProceedsDefinition.mmSellThruIssuerPeriod,
+						com.tools20022.repository.entity.BiddingConditions.mmCompulsoryPurchasePeriod, com.tools20022.repository.entity.SuspensionPeriod.mmPrivilegeSuspensionPeriod,
+						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawal, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForBookEntryTransfer,
+						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDepositAtAgent, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForDeposit,
+						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForPledge, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForSegregation,
+						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalAtAgent, com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInNomineeName,
+						com.tools20022.repository.entity.SuspensionPeriod.mmDepositorySuspensionPeriodForWithdrawalInStreetName, com.tools20022.repository.entity.SuspensionPeriod.mmCoDepositoriesSuspensionPeriod,
+						com.tools20022.repository.entity.TradingSession.mmTimeBracket, com.tools20022.repository.entity.YieldCalculation.mmValuePeriod, com.tools20022.repository.entity.BankOperation.mmApplicablePeriod,
+						com.tools20022.repository.entity.Invoice.mmPeriodCovered, com.tools20022.repository.entity.TaxPeriod.mmFromToDate, com.tools20022.repository.entity.Distribution.mmExercisePeriod,
+						com.tools20022.repository.entity.Distribution.mmOfferPeriod, com.tools20022.repository.entity.Distribution.mmTradingPeriod, com.tools20022.repository.entity.Distribution.mmBlockingPeriod,
+						com.tools20022.repository.entity.Distribution.mmInterestPeriod, com.tools20022.repository.entity.ProductDelivery.mmDeliveryPeriod, com.tools20022.repository.entity.TradeCertificate.mmInspectionDate,
+						com.tools20022.repository.entity.Guarantee.mmEffectivePeriod, com.tools20022.repository.entity.PortfolioValuation.mmValuationPeriod, com.tools20022.repository.entity.AccountLink.mmValidityPeriod,
+						com.tools20022.repository.entity.ComponentSecurity.mmSeparationPeriod, com.tools20022.repository.entity.FinancialInstrumentSwap.mmMaturity, com.tools20022.repository.entity.AmountAndPeriod.mmPeriod,
+						com.tools20022.repository.entity.PaymentTerms.mmPaymentPeriod, com.tools20022.repository.entity.PercentageAndPeriod.mmPeriod);
+				derivationElement_lazy = () -> Arrays.asList(ReportingRequest3.mmReportingPeriod, Period4Choice.mmDate, Period4Choice.mmFromDateToDate);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmFromDateTime, com.tools20022.repository.entity.DateTimePeriod.mmToDateTime,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedStandingOrder, com.tools20022.repository.entity.DateTimePeriod.mmPaymentInstruction, com.tools20022.repository.entity.DateTimePeriod.mmNumberOfDays,
+						com.tools20022.repository.entity.DateTimePeriod.mmValuationStatistics, com.tools20022.repository.entity.DateTimePeriod.mmPerformanceFactors, com.tools20022.repository.entity.DateTimePeriod.mmStatus,
+						com.tools20022.repository.entity.DateTimePeriod.mmPriceCalculationRelatedPricing, com.tools20022.repository.entity.DateTimePeriod.mmCorporateActionOption,
+						com.tools20022.repository.entity.DateTimePeriod.mmParallelTradingProceedsDefinition, com.tools20022.repository.entity.DateTimePeriod.mmPrivilegeSuspensionCorporateAction,
+						com.tools20022.repository.entity.DateTimePeriod.mmWithdrawalSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.mmRelatedInterestCalculation,
+						com.tools20022.repository.entity.DateTimePeriod.mmBiddingConditions, com.tools20022.repository.entity.DateTimePeriod.mmClassAction,
+						com.tools20022.repository.entity.DateTimePeriod.mmBookEntryTransferSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.mmDepositAtAgentSuspensionRelatedEvent,
+						com.tools20022.repository.entity.DateTimePeriod.mmDepositSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.mmPledgeSuspensionRelatedEvent,
+						com.tools20022.repository.entity.DateTimePeriod.mmSegregationPeriodRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.mmWithdrawalAtAgentSuspensionRelatedEvent,
+						com.tools20022.repository.entity.DateTimePeriod.mmWithdrawalInNomineeNameSuspensionRelatedEvent, com.tools20022.repository.entity.DateTimePeriod.mmWithdrawalInStreetNameSuspensionRelatedEvent,
+						com.tools20022.repository.entity.DateTimePeriod.mmBookClosureCorporateAction, com.tools20022.repository.entity.DateTimePeriod.mmCoDepositoriesSuspensionRelatedEvent,
+						com.tools20022.repository.entity.DateTimePeriod.mmExtendiblePeriodDebt, com.tools20022.repository.entity.DateTimePeriod.mmSecuritiesConversion, com.tools20022.repository.entity.DateTimePeriod.mmYieldCalculation,
+						com.tools20022.repository.entity.DateTimePeriod.mmCustomDateDebt, com.tools20022.repository.entity.DateTimePeriod.mmTaxPeriod, com.tools20022.repository.entity.DateTimePeriod.mmAccount,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedAgreement, com.tools20022.repository.entity.DateTimePeriod.mmAssentedLinePeriodProceedsDefinition,
+						com.tools20022.repository.entity.DateTimePeriod.mmSellThruIssuerProceedsDefinition, com.tools20022.repository.entity.DateTimePeriod.mmRelatedProductDelivery,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedInvoice, com.tools20022.repository.entity.DateTimePeriod.mmTradeCertificate, com.tools20022.repository.entity.DateTimePeriod.mmRelatedPortfolioValuation,
+						com.tools20022.repository.entity.DateTimePeriod.mmSystem, com.tools20022.repository.entity.DateTimePeriod.mmAccountRestriction, com.tools20022.repository.entity.DateTimePeriod.mmBankOperation,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedCorporateAction, com.tools20022.repository.entity.DateTimePeriod.mmRelatedLimit, com.tools20022.repository.entity.DateTimePeriod.mmRelatedIdentification,
+						com.tools20022.repository.entity.DateTimePeriod.mmAssessmentValidityScheme, com.tools20022.repository.entity.DateTimePeriod.mmExercisePeriodDistribution,
+						com.tools20022.repository.entity.DateTimePeriod.mmOfferPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.mmTradingPeriodDistribution,
+						com.tools20022.repository.entity.DateTimePeriod.mmBlockingPeriodDistribution, com.tools20022.repository.entity.DateTimePeriod.mmGuarantee, com.tools20022.repository.entity.DateTimePeriod.mmPriceFactRelatedPricing,
+						com.tools20022.repository.entity.DateTimePeriod.mmCashDistribution, com.tools20022.repository.entity.DateTimePeriod.mmComponentSecurity, com.tools20022.repository.entity.DateTimePeriod.mmTradingSession,
+						com.tools20022.repository.entity.DateTimePeriod.mmFinancialInstrumentSwap, com.tools20022.repository.entity.DateTimePeriod.mmRelatedPostalAddress,
+						com.tools20022.repository.entity.DateTimePeriod.mmRedemptionSchedule, com.tools20022.repository.entity.DateTimePeriod.mmRelatedAccountLink, com.tools20022.repository.entity.DateTimePeriod.mmRelatedAdjustment,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesIdentification, com.tools20022.repository.entity.DateTimePeriod.mmRelatedStandingSettlementInstruction,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesRegistration, com.tools20022.repository.entity.DateTimePeriod.mmAmount, com.tools20022.repository.entity.DateTimePeriod.mmRelatedInvestmentPlan,
+						com.tools20022.repository.entity.DateTimePeriod.mmIssuance, com.tools20022.repository.entity.DateTimePeriod.mmRelatedPaymentTerms, com.tools20022.repository.entity.DateTimePeriod.mmPercentage,
+						com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer, com.tools20022.repository.entity.DateTimePeriod.mmRelatedSystemAvailability);
 				derivationComponent_lazy = () -> Arrays.asList(DatePeriodDetails.mmObject(), DateTimePeriodDetails.mmObject(), Period2.mmObject(), DatePeriodDetails1.mmObject(), ReportingPeriod1.mmObject(), Period4Choice.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return DateTimePeriod.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISODateTime getFromDateTime() {
+		return fromDateTime;
+	}
+
+	public void setFromDateTime(ISODateTime fromDateTime) {
+		this.fromDateTime = fromDateTime;
+	}
+
+	public ISODateTime getToDateTime() {
+		return toDateTime;
+	}
+
+	public void setToDateTime(ISODateTime toDateTime) {
+		this.toDateTime = toDateTime;
+	}
+
+	public StandingOrder getRelatedStandingOrder() {
+		return relatedStandingOrder;
+	}
+
+	public void setRelatedStandingOrder(com.tools20022.repository.entity.StandingOrder relatedStandingOrder) {
+		this.relatedStandingOrder = relatedStandingOrder;
+	}
+
+	public PaymentInstruction getPaymentInstruction() {
+		return paymentInstruction;
+	}
+
+	public void setPaymentInstruction(com.tools20022.repository.entity.PaymentInstruction paymentInstruction) {
+		this.paymentInstruction = paymentInstruction;
+	}
+
+	public Number getNumberOfDays() {
+		return numberOfDays;
+	}
+
+	public void setNumberOfDays(Number numberOfDays) {
+		this.numberOfDays = numberOfDays;
+	}
+
+	public ValuationStatistics getValuationStatistics() {
+		return valuationStatistics;
+	}
+
+	public void setValuationStatistics(com.tools20022.repository.entity.ValuationStatistics valuationStatistics) {
+		this.valuationStatistics = valuationStatistics;
+	}
+
+	public PerformanceFactors getPerformanceFactors() {
+		return performanceFactors;
+	}
+
+	public void setPerformanceFactors(com.tools20022.repository.entity.PerformanceFactors performanceFactors) {
+		this.performanceFactors = performanceFactors;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(com.tools20022.repository.entity.Status status) {
+		this.status = status;
+	}
+
+	public SecuritiesPricing getPriceCalculationRelatedPricing() {
+		return priceCalculationRelatedPricing;
+	}
+
+	public void setPriceCalculationRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceCalculationRelatedPricing) {
+		this.priceCalculationRelatedPricing = priceCalculationRelatedPricing;
+	}
+
+	public CorporateActionOption getCorporateActionOption() {
+		return corporateActionOption;
+	}
+
+	public void setCorporateActionOption(com.tools20022.repository.entity.CorporateActionOption corporateActionOption) {
+		this.corporateActionOption = corporateActionOption;
+	}
+
+	public SecuritiesProceedsDefinition getParallelTradingProceedsDefinition() {
+		return parallelTradingProceedsDefinition;
+	}
+
+	public void setParallelTradingProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition parallelTradingProceedsDefinition) {
+		this.parallelTradingProceedsDefinition = parallelTradingProceedsDefinition;
+	}
+
+	public SuspensionPeriod getPrivilegeSuspensionCorporateAction() {
+		return privilegeSuspensionCorporateAction;
+	}
+
+	public void setPrivilegeSuspensionCorporateAction(com.tools20022.repository.entity.SuspensionPeriod privilegeSuspensionCorporateAction) {
+		this.privilegeSuspensionCorporateAction = privilegeSuspensionCorporateAction;
+	}
+
+	public SuspensionPeriod getWithdrawalSuspensionRelatedEvent() {
+		return withdrawalSuspensionRelatedEvent;
+	}
+
+	public void setWithdrawalSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalSuspensionRelatedEvent) {
+		this.withdrawalSuspensionRelatedEvent = withdrawalSuspensionRelatedEvent;
+	}
+
+	public InterestCalculation getRelatedInterestCalculation() {
+		return relatedInterestCalculation;
+	}
+
+	public void setRelatedInterestCalculation(com.tools20022.repository.entity.InterestCalculation relatedInterestCalculation) {
+		this.relatedInterestCalculation = relatedInterestCalculation;
+	}
+
+	public BiddingConditions getBiddingConditions() {
+		return biddingConditions;
+	}
+
+	public void setBiddingConditions(com.tools20022.repository.entity.BiddingConditions biddingConditions) {
+		this.biddingConditions = biddingConditions;
+	}
+
+	public ClassAction getClassAction() {
+		return classAction;
+	}
+
+	public void setClassAction(com.tools20022.repository.entity.ClassAction classAction) {
+		this.classAction = classAction;
+	}
+
+	public SuspensionPeriod getBookEntryTransferSuspensionRelatedEvent() {
+		return bookEntryTransferSuspensionRelatedEvent;
+	}
+
+	public void setBookEntryTransferSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod bookEntryTransferSuspensionRelatedEvent) {
+		this.bookEntryTransferSuspensionRelatedEvent = bookEntryTransferSuspensionRelatedEvent;
+	}
+
+	public SuspensionPeriod getDepositAtAgentSuspensionRelatedEvent() {
+		return depositAtAgentSuspensionRelatedEvent;
+	}
+
+	public void setDepositAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositAtAgentSuspensionRelatedEvent) {
+		this.depositAtAgentSuspensionRelatedEvent = depositAtAgentSuspensionRelatedEvent;
+	}
+
+	public SuspensionPeriod getDepositSuspensionRelatedEvent() {
+		return depositSuspensionRelatedEvent;
+	}
+
+	public void setDepositSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod depositSuspensionRelatedEvent) {
+		this.depositSuspensionRelatedEvent = depositSuspensionRelatedEvent;
+	}
+
+	public SuspensionPeriod getPledgeSuspensionRelatedEvent() {
+		return pledgeSuspensionRelatedEvent;
+	}
+
+	public void setPledgeSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod pledgeSuspensionRelatedEvent) {
+		this.pledgeSuspensionRelatedEvent = pledgeSuspensionRelatedEvent;
+	}
+
+	public SuspensionPeriod getSegregationPeriodRelatedEvent() {
+		return segregationPeriodRelatedEvent;
+	}
+
+	public void setSegregationPeriodRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod segregationPeriodRelatedEvent) {
+		this.segregationPeriodRelatedEvent = segregationPeriodRelatedEvent;
+	}
+
+	public SuspensionPeriod getWithdrawalAtAgentSuspensionRelatedEvent() {
+		return withdrawalAtAgentSuspensionRelatedEvent;
+	}
+
+	public void setWithdrawalAtAgentSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalAtAgentSuspensionRelatedEvent) {
+		this.withdrawalAtAgentSuspensionRelatedEvent = withdrawalAtAgentSuspensionRelatedEvent;
+	}
+
+	public SuspensionPeriod getWithdrawalInNomineeNameSuspensionRelatedEvent() {
+		return withdrawalInNomineeNameSuspensionRelatedEvent;
+	}
+
+	public void setWithdrawalInNomineeNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInNomineeNameSuspensionRelatedEvent) {
+		this.withdrawalInNomineeNameSuspensionRelatedEvent = withdrawalInNomineeNameSuspensionRelatedEvent;
+	}
+
+	public SuspensionPeriod getWithdrawalInStreetNameSuspensionRelatedEvent() {
+		return withdrawalInStreetNameSuspensionRelatedEvent;
+	}
+
+	public void setWithdrawalInStreetNameSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod withdrawalInStreetNameSuspensionRelatedEvent) {
+		this.withdrawalInStreetNameSuspensionRelatedEvent = withdrawalInStreetNameSuspensionRelatedEvent;
+	}
+
+	public CorporateActionEvent getBookClosureCorporateAction() {
+		return bookClosureCorporateAction;
+	}
+
+	public void setBookClosureCorporateAction(com.tools20022.repository.entity.CorporateActionEvent bookClosureCorporateAction) {
+		this.bookClosureCorporateAction = bookClosureCorporateAction;
+	}
+
+	public SuspensionPeriod getCoDepositoriesSuspensionRelatedEvent() {
+		return coDepositoriesSuspensionRelatedEvent;
+	}
+
+	public void setCoDepositoriesSuspensionRelatedEvent(com.tools20022.repository.entity.SuspensionPeriod coDepositoriesSuspensionRelatedEvent) {
+		this.coDepositoriesSuspensionRelatedEvent = coDepositoriesSuspensionRelatedEvent;
+	}
+
+	public Debt getExtendiblePeriodDebt() {
+		return extendiblePeriodDebt;
+	}
+
+	public void setExtendiblePeriodDebt(com.tools20022.repository.entity.Debt extendiblePeriodDebt) {
+		this.extendiblePeriodDebt = extendiblePeriodDebt;
+	}
+
+	public SecuritiesConversion getSecuritiesConversion() {
+		return securitiesConversion;
+	}
+
+	public void setSecuritiesConversion(com.tools20022.repository.entity.SecuritiesConversion securitiesConversion) {
+		this.securitiesConversion = securitiesConversion;
+	}
+
+	public YieldCalculation getYieldCalculation() {
+		return yieldCalculation;
+	}
+
+	public void setYieldCalculation(com.tools20022.repository.entity.YieldCalculation yieldCalculation) {
+		this.yieldCalculation = yieldCalculation;
+	}
+
+	public Debt getCustomDateDebt() {
+		return customDateDebt;
+	}
+
+	public void setCustomDateDebt(com.tools20022.repository.entity.Debt customDateDebt) {
+		this.customDateDebt = customDateDebt;
+	}
+
+	public TaxPeriod getTaxPeriod() {
+		return taxPeriod;
+	}
+
+	public void setTaxPeriod(com.tools20022.repository.entity.TaxPeriod taxPeriod) {
+		this.taxPeriod = taxPeriod;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = account;
+	}
+
+	public Agreement getRelatedAgreement() {
+		return relatedAgreement;
+	}
+
+	public void setRelatedAgreement(com.tools20022.repository.entity.Agreement relatedAgreement) {
+		this.relatedAgreement = relatedAgreement;
+	}
+
+	public SecuritiesProceedsDefinition getAssentedLinePeriodProceedsDefinition() {
+		return assentedLinePeriodProceedsDefinition;
+	}
+
+	public void setAssentedLinePeriodProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition assentedLinePeriodProceedsDefinition) {
+		this.assentedLinePeriodProceedsDefinition = assentedLinePeriodProceedsDefinition;
+	}
+
+	public SecuritiesProceedsDefinition getSellThruIssuerProceedsDefinition() {
+		return sellThruIssuerProceedsDefinition;
+	}
+
+	public void setSellThruIssuerProceedsDefinition(com.tools20022.repository.entity.SecuritiesProceedsDefinition sellThruIssuerProceedsDefinition) {
+		this.sellThruIssuerProceedsDefinition = sellThruIssuerProceedsDefinition;
+	}
+
+	public ProductDelivery getRelatedProductDelivery() {
+		return relatedProductDelivery;
+	}
+
+	public void setRelatedProductDelivery(com.tools20022.repository.entity.ProductDelivery relatedProductDelivery) {
+		this.relatedProductDelivery = relatedProductDelivery;
+	}
+
+	public Invoice getRelatedInvoice() {
+		return relatedInvoice;
+	}
+
+	public void setRelatedInvoice(com.tools20022.repository.entity.Invoice relatedInvoice) {
+		this.relatedInvoice = relatedInvoice;
+	}
+
+	public TradeCertificate getTradeCertificate() {
+		return tradeCertificate;
+	}
+
+	public void setTradeCertificate(com.tools20022.repository.entity.TradeCertificate tradeCertificate) {
+		this.tradeCertificate = tradeCertificate;
+	}
+
+	public PortfolioValuation getRelatedPortfolioValuation() {
+		return relatedPortfolioValuation;
+	}
+
+	public void setRelatedPortfolioValuation(com.tools20022.repository.entity.PortfolioValuation relatedPortfolioValuation) {
+		this.relatedPortfolioValuation = relatedPortfolioValuation;
+	}
+
+	public System getSystem() {
+		return system;
+	}
+
+	public void setSystem(com.tools20022.repository.entity.System system) {
+		this.system = system;
+	}
+
+	public AccountRestriction getAccountRestriction() {
+		return accountRestriction;
+	}
+
+	public void setAccountRestriction(com.tools20022.repository.entity.AccountRestriction accountRestriction) {
+		this.accountRestriction = accountRestriction;
+	}
+
+	public BankOperation getBankOperation() {
+		return bankOperation;
+	}
+
+	public void setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
+		this.bankOperation = bankOperation;
+	}
+
+	public CorporateActionEvent getRelatedCorporateAction() {
+		return relatedCorporateAction;
+	}
+
+	public void setRelatedCorporateAction(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateAction) {
+		this.relatedCorporateAction = relatedCorporateAction;
+	}
+
+	public List<Limit> getRelatedLimit() {
+		return relatedLimit;
+	}
+
+	public void setRelatedLimit(List<com.tools20022.repository.entity.Limit> relatedLimit) {
+		this.relatedLimit = relatedLimit;
+	}
+
+	public List<PartyIdentificationInformation> getRelatedIdentification() {
+		return relatedIdentification;
+	}
+
+	public void setRelatedIdentification(List<com.tools20022.repository.entity.PartyIdentificationInformation> relatedIdentification) {
+		this.relatedIdentification = relatedIdentification;
+	}
+
+	public Scheme getAssessmentValidityScheme() {
+		return assessmentValidityScheme;
+	}
+
+	public void setAssessmentValidityScheme(com.tools20022.repository.entity.Scheme assessmentValidityScheme) {
+		this.assessmentValidityScheme = assessmentValidityScheme;
+	}
+
+	public Distribution getExercisePeriodDistribution() {
+		return exercisePeriodDistribution;
+	}
+
+	public void setExercisePeriodDistribution(com.tools20022.repository.entity.Distribution exercisePeriodDistribution) {
+		this.exercisePeriodDistribution = exercisePeriodDistribution;
+	}
+
+	public Distribution getOfferPeriodDistribution() {
+		return offerPeriodDistribution;
+	}
+
+	public void setOfferPeriodDistribution(com.tools20022.repository.entity.Distribution offerPeriodDistribution) {
+		this.offerPeriodDistribution = offerPeriodDistribution;
+	}
+
+	public Distribution getTradingPeriodDistribution() {
+		return tradingPeriodDistribution;
+	}
+
+	public void setTradingPeriodDistribution(com.tools20022.repository.entity.Distribution tradingPeriodDistribution) {
+		this.tradingPeriodDistribution = tradingPeriodDistribution;
+	}
+
+	public Distribution getBlockingPeriodDistribution() {
+		return blockingPeriodDistribution;
+	}
+
+	public void setBlockingPeriodDistribution(com.tools20022.repository.entity.Distribution blockingPeriodDistribution) {
+		this.blockingPeriodDistribution = blockingPeriodDistribution;
+	}
+
+	public Guarantee getGuarantee() {
+		return guarantee;
+	}
+
+	public void setGuarantee(com.tools20022.repository.entity.Guarantee guarantee) {
+		this.guarantee = guarantee;
+	}
+
+	public SecuritiesPricing getPriceFactRelatedPricing() {
+		return priceFactRelatedPricing;
+	}
+
+	public void setPriceFactRelatedPricing(com.tools20022.repository.entity.SecuritiesPricing priceFactRelatedPricing) {
+		this.priceFactRelatedPricing = priceFactRelatedPricing;
+	}
+
+	public Distribution getCashDistribution() {
+		return cashDistribution;
+	}
+
+	public void setCashDistribution(com.tools20022.repository.entity.Distribution cashDistribution) {
+		this.cashDistribution = cashDistribution;
+	}
+
+	public ComponentSecurity getComponentSecurity() {
+		return componentSecurity;
+	}
+
+	public void setComponentSecurity(com.tools20022.repository.entity.ComponentSecurity componentSecurity) {
+		this.componentSecurity = componentSecurity;
+	}
+
+	public TradingSession getTradingSession() {
+		return tradingSession;
+	}
+
+	public void setTradingSession(com.tools20022.repository.entity.TradingSession tradingSession) {
+		this.tradingSession = tradingSession;
+	}
+
+	public FinancialInstrumentSwap getFinancialInstrumentSwap() {
+		return financialInstrumentSwap;
+	}
+
+	public void setFinancialInstrumentSwap(com.tools20022.repository.entity.FinancialInstrumentSwap financialInstrumentSwap) {
+		this.financialInstrumentSwap = financialInstrumentSwap;
+	}
+
+	public PostalAddress getRelatedPostalAddress() {
+		return relatedPostalAddress;
+	}
+
+	public void setRelatedPostalAddress(com.tools20022.repository.entity.PostalAddress relatedPostalAddress) {
+		this.relatedPostalAddress = relatedPostalAddress;
+	}
+
+	public RedemptionSchedule getRedemptionSchedule() {
+		return redemptionSchedule;
+	}
+
+	public void setRedemptionSchedule(com.tools20022.repository.entity.RedemptionSchedule redemptionSchedule) {
+		this.redemptionSchedule = redemptionSchedule;
+	}
+
+	public AccountLink getRelatedAccountLink() {
+		return relatedAccountLink;
+	}
+
+	public void setRelatedAccountLink(com.tools20022.repository.entity.AccountLink relatedAccountLink) {
+		this.relatedAccountLink = relatedAccountLink;
+	}
+
+	public Adjustment getRelatedAdjustment() {
+		return relatedAdjustment;
+	}
+
+	public void setRelatedAdjustment(com.tools20022.repository.entity.Adjustment relatedAdjustment) {
+		this.relatedAdjustment = relatedAdjustment;
+	}
+
+	public SecuritiesIdentification getRelatedSecuritiesIdentification() {
+		return relatedSecuritiesIdentification;
+	}
+
+	public void setRelatedSecuritiesIdentification(com.tools20022.repository.entity.SecuritiesIdentification relatedSecuritiesIdentification) {
+		this.relatedSecuritiesIdentification = relatedSecuritiesIdentification;
+	}
+
+	public List<StandingSettlementInstruction> getRelatedStandingSettlementInstruction() {
+		return relatedStandingSettlementInstruction;
+	}
+
+	public void setRelatedStandingSettlementInstruction(List<com.tools20022.repository.entity.StandingSettlementInstruction> relatedStandingSettlementInstruction) {
+		this.relatedStandingSettlementInstruction = relatedStandingSettlementInstruction;
+	}
+
+	public BasicSecuritiesRegistration getRelatedSecuritiesRegistration() {
+		return relatedSecuritiesRegistration;
+	}
+
+	public void setRelatedSecuritiesRegistration(com.tools20022.repository.entity.BasicSecuritiesRegistration relatedSecuritiesRegistration) {
+		this.relatedSecuritiesRegistration = relatedSecuritiesRegistration;
+	}
+
+	public AmountAndPeriod getAmount() {
+		return amount;
+	}
+
+	public void setAmount(com.tools20022.repository.entity.AmountAndPeriod amount) {
+		this.amount = amount;
+	}
+
+	public List<InvestmentPlan> getRelatedInvestmentPlan() {
+		return relatedInvestmentPlan;
+	}
+
+	public void setRelatedInvestmentPlan(List<com.tools20022.repository.entity.InvestmentPlan> relatedInvestmentPlan) {
+		this.relatedInvestmentPlan = relatedInvestmentPlan;
+	}
+
+	public Issuance getIssuance() {
+		return issuance;
+	}
+
+	public void setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+		this.issuance = issuance;
+	}
+
+	public PaymentTerms getRelatedPaymentTerms() {
+		return relatedPaymentTerms;
+	}
+
+	public void setRelatedPaymentTerms(com.tools20022.repository.entity.PaymentTerms relatedPaymentTerms) {
+		this.relatedPaymentTerms = relatedPaymentTerms;
+	}
+
+	public PercentageAndPeriod getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(com.tools20022.repository.entity.PercentageAndPeriod percentage) {
+		this.percentage = percentage;
+	}
+
+	public List<RolePlayer> getRelatedRolePlayer() {
+		return relatedRolePlayer;
+	}
+
+	public void setRelatedRolePlayer(List<com.tools20022.repository.entity.RolePlayer> relatedRolePlayer) {
+		this.relatedRolePlayer = relatedRolePlayer;
+	}
+
+	public SystemAvailability getRelatedSystemAvailability() {
+		return relatedSystemAvailability;
+	}
+
+	public void setRelatedSystemAvailability(com.tools20022.repository.entity.SystemAvailability relatedSystemAvailability) {
+		this.relatedSystemAvailability = relatedSystemAvailability;
 	}
 }

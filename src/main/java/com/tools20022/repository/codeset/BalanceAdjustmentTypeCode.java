@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,14 +32,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#Ledger
- * BalanceAdjustmentTypeCode.Ledger}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#mmLedger
+ * BalanceAdjustmentTypeCode.mmLedger}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#Float
- * BalanceAdjustmentTypeCode.Float}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#mmFloat
+ * BalanceAdjustmentTypeCode.mmFloat}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#Collected
- * BalanceAdjustmentTypeCode.Collected}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceAdjustmentTypeCode#mmCollected
+ * BalanceAdjustmentTypeCode.mmCollected}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -50,8 +52,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,9 +94,9 @@ public class BalanceAdjustmentTypeCode {
 	 * definition} = "Adjustment applies to the average ledger (book) balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode Ledger = new MMCode() {
+	public static final MMCode mmLedger = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Ledger";
 			definition = "Adjustment applies to the average ledger (book) balance.";
 			owner_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
@@ -123,9 +125,9 @@ public class BalanceAdjustmentTypeCode {
 	 * "Adjustment applies to the average float (unavailable) balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode Float = new MMCode() {
+	public static final MMCode mmFloat = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Float";
 			definition = "Adjustment applies to the average float (unavailable) balance.";
 			owner_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
@@ -154,9 +156,9 @@ public class BalanceAdjustmentTypeCode {
 	 * "Adjustment applies to the average collected (book less float) balance."</li>
 	 * </ul>
 	 */
-	public static final MMCode Collected = new MMCode() {
+	public static final MMCode mmCollected = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Collected";
 			definition = "Adjustment applies to the average collected (book less float) balance.";
 			owner_lazy = () -> BalanceAdjustmentTypeCode.mmObject();
@@ -167,13 +169,12 @@ public class BalanceAdjustmentTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("LDGR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceAdjustmentTypeCode";
 				definition = "Defines the type of allowed balance adjustment.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.Ledger, com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.Float,
-						com.tools20022.repository.codeset.BalanceAdjustmentTypeCode.Collected);
+				code_lazy = () -> Arrays.asList(BalanceAdjustmentTypeCode.mmLedger, BalanceAdjustmentTypeCode.mmFloat, BalanceAdjustmentTypeCode.mmCollected);
 				derivation_lazy = () -> Arrays.asList(BalanceAdjustmentType1Code.mmObject());
 			}
 		});

@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -30,6 +32,10 @@ import java.util.Optional;
  */
 public class MMQuantity extends MMDecimal {
 
+	/**
+	 * qualifies the value of a Quantity
+	 */
+	public final static MetamodelAttribute<MMQuantity, Optional<String>> unitCodeAttribute = newAttribute();
 	protected String unitCode;
 	protected String minInclusive;
 	protected String minExclusive;

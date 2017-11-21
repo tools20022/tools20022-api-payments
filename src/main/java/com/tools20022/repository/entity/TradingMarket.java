@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.MarketTypeCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.entity.Market;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Context or geographic environment in which trading parties may meet in order
@@ -42,96 +43,103 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#TradedSecurity
- * TradingMarket.TradedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#Type
- * TradingMarket.Type}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradedSecurity
+ * TradingMarket.mmTradedSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmType
+ * TradingMarket.mmType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#ListedSecurity
- * TradingMarket.ListedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#SourceOfPrice
- * TradingMarket.SourceOfPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#TradeLotSize
- * TradingMarket.TradeLotSize}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmListedSecurity
+ * TradingMarket.mmListedSecurity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#MinimumTradedNominalQuantity
- * TradingMarket.MinimumTradedNominalQuantity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#ListingDate
- * TradingMarket.ListingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#RelatedOrder
- * TradingMarket.RelatedOrder}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmSourceOfPrice
+ * TradingMarket.mmSourceOfPrice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#TradingCurrency
- * TradingMarket.TradingCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradeLotSize
+ * TradingMarket.mmTradeLotSize}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#MaximumTradedNominalQuantity
- * TradingMarket.MaximumTradedNominalQuantity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#StockExchange
- * TradingMarket.StockExchange}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#QuoteLot
- * TradingMarket.QuoteLot}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#RoundLot
- * TradingMarket.RoundLot}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmMinimumTradedNominalQuantity
+ * TradingMarket.mmMinimumTradedNominalQuantity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmListingDate
+ * TradingMarket.mmListingDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#TradingSession
- * TradingMarket.TradingSession}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmRelatedOrder
+ * TradingMarket.mmRelatedOrder}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#ListedSecurityTradingIdentification
- * TradingMarket.ListedSecurityTradingIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradingCurrency
+ * TradingMarket.mmTradingCurrency}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#DefaultCurrency
- * TradingMarket.DefaultCurrency}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmMaximumTradedNominalQuantity
+ * TradingMarket.mmMaximumTradedNominalQuantity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#FirstTradingDate
- * TradingMarket.FirstTradingDate}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmStockExchange
+ * TradingMarket.mmStockExchange}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmQuoteLot
+ * TradingMarket.mmQuoteLot}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmRoundLot
+ * TradingMarket.mmRoundLot}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#LastTradingDate
- * TradingMarket.LastTradingDate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#Issuance
- * TradingMarket.Issuance}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmTradingSession
+ * TradingMarket.mmTradingSession}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.TradingMarket#RelatedPlaceOfSettlement
- * TradingMarket.RelatedPlaceOfSettlement}</li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmListedSecurityTradingIdentification
+ * TradingMarket.mmListedSecurityTradingIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmDefaultCurrency
+ * TradingMarket.mmDefaultCurrency}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmFirstTradingDate
+ * TradingMarket.mmFirstTradingDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmLastTradingDate
+ * TradingMarket.mmLastTradingDate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingMarket#mmIssuance
+ * TradingMarket.mmIssuance}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.TradingMarket#mmRelatedPlaceOfSettlement
+ * TradingMarket.mmRelatedPlaceOfSettlement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Security#TradingMarket
- * Security.TradingMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Security#PlaceOfListing
- * Security.PlaceOfListing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmTradingMarket
+ * Security.mmTradingMarket}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Security#mmPlaceOfListing
+ * Security.mmPlaceOfListing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#ApplicableTradingMarket
- * SecuritiesIdentification.ApplicableTradingMarket}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmApplicableTradingMarket
+ * SecuritiesIdentification.mmApplicableTradingMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumTradedQuantityMarket
- * SecuritiesQuantity.MinimumTradedQuantityMarket}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumTradedQuantityMarket
+ * SecuritiesQuantity.mmMinimumTradedQuantityMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumTradedQuantityMarket
- * SecuritiesQuantity.MaximumTradedQuantityMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#TradeLotMarket
- * LotBreakdown.TradeLotMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#QuoteLotMarket
- * LotBreakdown.QuoteLotMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LotBreakdown#RoundLotMarket
- * LotBreakdown.RoundLotMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Issuance#IssuePlace
- * Issuance.IssuePlace}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumTradedQuantityMarket
+ * SecuritiesQuantity.mmMaximumTradedQuantityMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SourceOfPrice#MarketIdentification
- * SourceOfPrice.MarketIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmTradeLotMarket
+ * LotBreakdown.mmTradeLotMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#PlaceOfTrade
- * SecuritiesOrder.PlaceOfTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.TradingSession#Market
- * TradingSession.Market}</li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmQuoteLotMarket
+ * LotBreakdown.mmQuoteLotMarket}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PlaceOfSettlement#SettlementMarket
- * PlaceOfSettlement.SettlementMarket}</li>
- * <li>{@linkplain com.tools20022.repository.entity.StockExchange#Market
- * StockExchange.Market}</li>
+ * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmRoundLotMarket
+ * LotBreakdown.mmRoundLotMarket}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Issuance#mmIssuePlace
+ * Issuance.mmIssuePlace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SourceOfPrice#mmMarketIdentification
+ * SourceOfPrice.mmMarketIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmPlaceOfTrade
+ * SecuritiesOrder.mmPlaceOfTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.TradingSession#mmMarket
+ * TradingSession.mmMarket}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.PlaceOfSettlement#mmSettlementMarket
+ * PlaceOfSettlement.mmSettlementMarket}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.StockExchange#mmMarket
+ * StockExchange.mmMarket}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -139,8 +147,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -156,6 +164,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TradingMarket extends Market {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Security> tradedSecurity;
 	/**
 	 * Security which is traded on a specific market.
 	 * <p>
@@ -164,8 +173,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#TradingMarket
-	 * Security.TradingMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmTradingMarket
+	 * Security.mmTradingMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -188,19 +197,20 @@ public class TradingMarket extends Market {
 	 * definition} = "Security which is traded on a specific market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradedSecurity";
 			definition = "Security which is traded on a specific market.";
 			minOccurs = 0;
-			type_lazy = () -> Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.TradingMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmTradingMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
 	};
+	protected MarketTypeCode type;
 	/**
 	 * Nature of a market in which transactions take place.
 	 * <p>
@@ -227,18 +237,27 @@ public class TradingMarket extends Market {
 	 * definition} = "Nature of a market in which transactions take place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Type = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Nature of a market in which transactions take place.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> MarketTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradingMarket.class.getMethod("getType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Security> listedSecurity;
 	/**
 	 * Security whch is listed on a specific market.
 	 * <p>
@@ -247,8 +266,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Security#PlaceOfListing
-	 * Security.PlaceOfListing}</li>
+	 * {@linkplain com.tools20022.repository.entity.Security#mmPlaceOfListing
+	 * Security.mmPlaceOfListing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -271,19 +290,20 @@ public class TradingMarket extends Market {
 	 * definition} = "Security whch is listed on a specific market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ListedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmListedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListedSecurity";
 			definition = "Security whch is listed on a specific market.";
 			minOccurs = 0;
-			type_lazy = () -> Security.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.PlaceOfListing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmPlaceOfListing;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
 		}
 	};
+	protected SourceOfPrice sourceOfPrice;
 	/**
 	 * Party which provides a price on a market.
 	 * <p>
@@ -292,8 +312,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SourceOfPrice#MarketIdentification
-	 * SourceOfPrice.MarketIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.SourceOfPrice#mmMarketIdentification
+	 * SourceOfPrice.mmMarketIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -317,20 +337,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Party which provides a price on a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SourceOfPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSourceOfPrice = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SourceOfPrice";
 			definition = "Party which provides a price on a market.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmMarketIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SourceOfPrice.MarketIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LotBreakdown tradeLotSize;
 	/**
 	 * Specifies the number of securities that have to be traded in one lot .
 	 * <p>
@@ -339,8 +360,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.LotBreakdown#TradeLotMarket
-	 * LotBreakdown.TradeLotMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmTradeLotMarket
+	 * LotBreakdown.mmTradeLotMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -365,20 +386,21 @@ public class TradingMarket extends Market {
 	 * "Specifies the number of securities that have to be traded in one lot ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradeLotSize = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradeLotSize = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradeLotSize";
 			definition = "Specifies the number of securities that have to be traded in one lot .";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> LotBreakdown.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.TradeLotMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmTradeLotMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 		}
 	};
+	protected SecuritiesQuantity minimumTradedNominalQuantity;
 	/**
 	 * Minimum number of securities that can be traded.
 	 * <p>
@@ -387,8 +409,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MinimumTradedQuantityMarket
-	 * SecuritiesQuantity.MinimumTradedQuantityMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMinimumTradedQuantityMarket
+	 * SecuritiesQuantity.mmMinimumTradedQuantityMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -412,20 +434,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Minimum number of securities that can be traded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MinimumTradedNominalQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMinimumTradedNominalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MinimumTradedNominalQuantity";
 			definition = "Minimum number of securities that can be traded.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MinimumTradedQuantityMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumTradedQuantityMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected ISODateTime listingDate;
 	/**
 	 * Date/time at which the security is listed at the specific exchange.
 	 * <p>
@@ -452,18 +475,27 @@ public class TradingMarket extends Market {
 	 * "Date/time at which the security is listed at the specific exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ListingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmListingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListingDate";
 			definition = "Date/time at which the security is listed at the specific exchange.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradingMarket.class.getMethod("getListingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesOrder relatedOrder;
 	/**
 	 * Order for which a place of trade is requested.
 	 * <p>
@@ -472,8 +504,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#PlaceOfTrade
-	 * SecuritiesOrder.PlaceOfTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmPlaceOfTrade
+	 * SecuritiesOrder.mmPlaceOfTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -497,20 +529,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Order for which a place of trade is requested."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Order for which a place of trade is requested.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.PlaceOfTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmPlaceOfTrade;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 		}
 	};
+	protected CurrencyCode tradingCurrency;
 	/**
 	 * Currency of the trading.
 	 * <p>
@@ -536,18 +569,27 @@ public class TradingMarket extends Market {
 	 * definition} = "Currency of the trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradingCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradingCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingCurrency";
 			definition = "Currency of the trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradingMarket.class.getMethod("getTradingCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesQuantity maximumTradedNominalQuantity;
 	/**
 	 * Miaximum number of securities that can be traded.
 	 * <p>
@@ -556,8 +598,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#MaximumTradedQuantityMarket
-	 * SecuritiesQuantity.MaximumTradedQuantityMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmMaximumTradedQuantityMarket
+	 * SecuritiesQuantity.mmMaximumTradedQuantityMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -581,20 +623,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Miaximum number of securities that can be traded."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MaximumTradedNominalQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMaximumTradedNominalQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MaximumTradedNominalQuantity";
 			definition = "Miaximum number of securities that can be traded.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.MaximumTradedQuantityMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumTradedQuantityMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
+	protected StockExchange stockExchange;
 	/**
 	 * Stock exchange which operates on a specific market.
 	 * <p>
@@ -603,8 +646,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.StockExchange#Market
-	 * StockExchange.Market}</li>
+	 * {@linkplain com.tools20022.repository.entity.StockExchange#mmMarket
+	 * StockExchange.mmMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -628,20 +671,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Stock exchange which operates on a specific market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd StockExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmStockExchange = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StockExchange";
 			definition = "Stock exchange which operates on a specific market.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.StockExchange.mmMarket;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.StockExchange.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.StockExchange.Market;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LotBreakdown quoteLot;
 	/**
 	 * Lot size associated with the price. Most exchanges require that pricing
 	 * be quoted in round lot size. However, some exchanges have pricing quoted
@@ -653,8 +697,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.LotBreakdown#QuoteLotMarket
-	 * LotBreakdown.QuoteLotMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmQuoteLotMarket
+	 * LotBreakdown.mmQuoteLotMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -680,20 +724,21 @@ public class TradingMarket extends Market {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd QuoteLot = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmQuoteLot = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QuoteLot";
 			definition = "Lot size associated with the price. Most exchanges require that pricing be quoted in round lot size. However, some exchanges have pricing quoted in many different lot sizes, for example, Latin America, some Asian markets, Turkey.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> LotBreakdown.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.QuoteLotMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmQuoteLotMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 		}
 	};
+	protected LotBreakdown roundLot;
 	/**
 	 * Minimum quantity of securities that can be purchased without incurring a
 	 * larger fee. For example, if the round lot size is 100 and the trade is
@@ -705,8 +750,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.LotBreakdown#RoundLotMarket
-	 * LotBreakdown.RoundLotMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.LotBreakdown#mmRoundLotMarket
+	 * LotBreakdown.mmRoundLotMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -732,20 +777,21 @@ public class TradingMarket extends Market {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RoundLot = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRoundLot = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RoundLot";
 			definition = "Minimum quantity of securities that can be purchased without incurring a larger fee. For example, if the round lot size is 100 and the trade is for 125  shares, then 100 will be processed without a fee and the remaining 25 will incur a service fee for being an odd lot size.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> LotBreakdown.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.RoundLotMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmRoundLotMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.LotBreakdown.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.TradingSession> tradingSession;
 	/**
 	 * Trading session associated with a market.
 	 * <p>
@@ -754,8 +800,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.TradingSession#Market
-	 * TradingSession.Market}</li>
+	 * {@linkplain com.tools20022.repository.entity.TradingSession#mmMarket
+	 * TradingSession.mmMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -779,19 +825,20 @@ public class TradingMarket extends Market {
 	 * definition} = "Trading session associated with a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd TradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmTradingSession = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingSession";
 			definition = "Trading session associated with a market.";
 			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.mmMarket;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.Market;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesIdentification listedSecurityTradingIdentification;
 	/**
 	 * Trading identification used on this trading market.
 	 * <p>
@@ -800,8 +847,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#ApplicableTradingMarket
-	 * SecuritiesIdentification.ApplicableTradingMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmApplicableTradingMarket
+	 * SecuritiesIdentification.mmApplicableTradingMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -826,20 +873,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Trading identification used on this trading market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ListedSecurityTradingIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmListedSecurityTradingIdentification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ListedSecurityTradingIdentification";
 			definition = "Trading identification used on this trading market.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.ApplicableTradingMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmApplicableTradingMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 		}
 	};
+	protected CurrencyCode defaultCurrency;
 	/**
 	 * Default currency for the securities trading on this market.
 	 * <p>
@@ -866,18 +914,27 @@ public class TradingMarket extends Market {
 	 * "Default currency for the securities trading on this market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DefaultCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDefaultCurrency = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DefaultCurrency";
 			definition = "Default currency for the securities trading on this market.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradingMarket.class.getMethod("getDefaultCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime firstTradingDate;
 	/**
 	 * First date/time at which the security is eligible for trading.
 	 * <p>
@@ -904,18 +961,27 @@ public class TradingMarket extends Market {
 	 * "First date/time at which the security is eligible for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FirstTradingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFirstTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FirstTradingDate";
 			definition = "First date/time at which the security is eligible for trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradingMarket.class.getMethod("getFirstTradingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ISODateTime lastTradingDate;
 	/**
 	 * Last date/time at which the security is eligible for trading.
 	 * <p>
@@ -942,18 +1008,27 @@ public class TradingMarket extends Market {
 	 * "Last date/time at which the security is eligible for trading."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute LastTradingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLastTradingDate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LastTradingDate";
 			definition = "Last date/time at which the security is eligible for trading.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return TradingMarket.class.getMethod("getLastTradingDate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Issuance issuance;
 	/**
 	 * Issuance for which the place has been defined.
 	 * <p>
@@ -962,8 +1037,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Issuance#IssuePlace
-	 * Issuance.IssuePlace}</li>
+	 * {@linkplain com.tools20022.repository.entity.Issuance#mmIssuePlace
+	 * Issuance.mmIssuePlace}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -986,20 +1061,21 @@ public class TradingMarket extends Market {
 	 * definition} = "Issuance for which the place has been defined."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Issuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Issuance";
 			definition = "Issuance for which the place has been defined.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.mmIssuePlace;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.IssuePlace;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected PlaceOfSettlement relatedPlaceOfSettlement;
 	/**
 	 * Place of settlement for which a settlement market is specified.
 	 * <p>
@@ -1008,8 +1084,8 @@ public class TradingMarket extends Market {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PlaceOfSettlement#SettlementMarket
-	 * PlaceOfSettlement.SettlementMarket}</li>
+	 * {@linkplain com.tools20022.repository.entity.PlaceOfSettlement#mmSettlementMarket
+	 * PlaceOfSettlement.mmSettlementMarket}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -1034,44 +1110,209 @@ public class TradingMarket extends Market {
 	 * "Place of settlement for which a settlement market is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedPlaceOfSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedPlaceOfSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> TradingMarket.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPlaceOfSettlement";
 			definition = "Place of settlement for which a settlement market is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PlaceOfSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PlaceOfSettlement.SettlementMarket;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PlaceOfSettlement.mmSettlementMarket;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.PlaceOfSettlement.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingMarket";
 				definition = "Context or geographic environment in which trading parties may meet in order to negotiate and execute trades among themselves. It also identifies the primary market where an asset is issued.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.TradingMarket, com.tools20022.repository.entity.Security.PlaceOfListing,
-						com.tools20022.repository.entity.SecuritiesIdentification.ApplicableTradingMarket, com.tools20022.repository.entity.SecuritiesQuantity.MinimumTradedQuantityMarket,
-						com.tools20022.repository.entity.SecuritiesQuantity.MaximumTradedQuantityMarket, com.tools20022.repository.entity.LotBreakdown.TradeLotMarket, com.tools20022.repository.entity.LotBreakdown.QuoteLotMarket,
-						com.tools20022.repository.entity.LotBreakdown.RoundLotMarket, com.tools20022.repository.entity.Issuance.IssuePlace, com.tools20022.repository.entity.SourceOfPrice.MarketIdentification,
-						com.tools20022.repository.entity.SecuritiesOrder.PlaceOfTrade, com.tools20022.repository.entity.TradingSession.Market, com.tools20022.repository.entity.PlaceOfSettlement.SettlementMarket,
-						com.tools20022.repository.entity.StockExchange.Market);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmTradingMarket, com.tools20022.repository.entity.Security.mmPlaceOfListing,
+						com.tools20022.repository.entity.SecuritiesIdentification.mmApplicableTradingMarket, com.tools20022.repository.entity.SecuritiesQuantity.mmMinimumTradedQuantityMarket,
+						com.tools20022.repository.entity.SecuritiesQuantity.mmMaximumTradedQuantityMarket, com.tools20022.repository.entity.LotBreakdown.mmTradeLotMarket, com.tools20022.repository.entity.LotBreakdown.mmQuoteLotMarket,
+						com.tools20022.repository.entity.LotBreakdown.mmRoundLotMarket, com.tools20022.repository.entity.Issuance.mmIssuePlace, com.tools20022.repository.entity.SourceOfPrice.mmMarketIdentification,
+						com.tools20022.repository.entity.SecuritiesOrder.mmPlaceOfTrade, com.tools20022.repository.entity.TradingSession.mmMarket, com.tools20022.repository.entity.PlaceOfSettlement.mmSettlementMarket,
+						com.tools20022.repository.entity.StockExchange.mmMarket);
 				superType_lazy = () -> Market.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradingMarket.TradedSecurity, com.tools20022.repository.entity.TradingMarket.Type, com.tools20022.repository.entity.TradingMarket.ListedSecurity,
-						com.tools20022.repository.entity.TradingMarket.SourceOfPrice, com.tools20022.repository.entity.TradingMarket.TradeLotSize, com.tools20022.repository.entity.TradingMarket.MinimumTradedNominalQuantity,
-						com.tools20022.repository.entity.TradingMarket.ListingDate, com.tools20022.repository.entity.TradingMarket.RelatedOrder, com.tools20022.repository.entity.TradingMarket.TradingCurrency,
-						com.tools20022.repository.entity.TradingMarket.MaximumTradedNominalQuantity, com.tools20022.repository.entity.TradingMarket.StockExchange, com.tools20022.repository.entity.TradingMarket.QuoteLot,
-						com.tools20022.repository.entity.TradingMarket.RoundLot, com.tools20022.repository.entity.TradingMarket.TradingSession, com.tools20022.repository.entity.TradingMarket.ListedSecurityTradingIdentification,
-						com.tools20022.repository.entity.TradingMarket.DefaultCurrency, com.tools20022.repository.entity.TradingMarket.FirstTradingDate, com.tools20022.repository.entity.TradingMarket.LastTradingDate,
-						com.tools20022.repository.entity.TradingMarket.Issuance, com.tools20022.repository.entity.TradingMarket.RelatedPlaceOfSettlement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TradingMarket.mmTradedSecurity, com.tools20022.repository.entity.TradingMarket.mmType, com.tools20022.repository.entity.TradingMarket.mmListedSecurity,
+						com.tools20022.repository.entity.TradingMarket.mmSourceOfPrice, com.tools20022.repository.entity.TradingMarket.mmTradeLotSize, com.tools20022.repository.entity.TradingMarket.mmMinimumTradedNominalQuantity,
+						com.tools20022.repository.entity.TradingMarket.mmListingDate, com.tools20022.repository.entity.TradingMarket.mmRelatedOrder, com.tools20022.repository.entity.TradingMarket.mmTradingCurrency,
+						com.tools20022.repository.entity.TradingMarket.mmMaximumTradedNominalQuantity, com.tools20022.repository.entity.TradingMarket.mmStockExchange, com.tools20022.repository.entity.TradingMarket.mmQuoteLot,
+						com.tools20022.repository.entity.TradingMarket.mmRoundLot, com.tools20022.repository.entity.TradingMarket.mmTradingSession, com.tools20022.repository.entity.TradingMarket.mmListedSecurityTradingIdentification,
+						com.tools20022.repository.entity.TradingMarket.mmDefaultCurrency, com.tools20022.repository.entity.TradingMarket.mmFirstTradingDate, com.tools20022.repository.entity.TradingMarket.mmLastTradingDate,
+						com.tools20022.repository.entity.TradingMarket.mmIssuance, com.tools20022.repository.entity.TradingMarket.mmRelatedPlaceOfSettlement);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TradingMarket.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Security> getTradedSecurity() {
+		return tradedSecurity;
+	}
+
+	public void setTradedSecurity(List<com.tools20022.repository.entity.Security> tradedSecurity) {
+		this.tradedSecurity = tradedSecurity;
+	}
+
+	public MarketTypeCode getType() {
+		return type;
+	}
+
+	public void setType(MarketTypeCode type) {
+		this.type = type;
+	}
+
+	public List<Security> getListedSecurity() {
+		return listedSecurity;
+	}
+
+	public void setListedSecurity(List<com.tools20022.repository.entity.Security> listedSecurity) {
+		this.listedSecurity = listedSecurity;
+	}
+
+	public SourceOfPrice getSourceOfPrice() {
+		return sourceOfPrice;
+	}
+
+	public void setSourceOfPrice(com.tools20022.repository.entity.SourceOfPrice sourceOfPrice) {
+		this.sourceOfPrice = sourceOfPrice;
+	}
+
+	public LotBreakdown getTradeLotSize() {
+		return tradeLotSize;
+	}
+
+	public void setTradeLotSize(com.tools20022.repository.entity.LotBreakdown tradeLotSize) {
+		this.tradeLotSize = tradeLotSize;
+	}
+
+	public SecuritiesQuantity getMinimumTradedNominalQuantity() {
+		return minimumTradedNominalQuantity;
+	}
+
+	public void setMinimumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity minimumTradedNominalQuantity) {
+		this.minimumTradedNominalQuantity = minimumTradedNominalQuantity;
+	}
+
+	public ISODateTime getListingDate() {
+		return listingDate;
+	}
+
+	public void setListingDate(ISODateTime listingDate) {
+		this.listingDate = listingDate;
+	}
+
+	public SecuritiesOrder getRelatedOrder() {
+		return relatedOrder;
+	}
+
+	public void setRelatedOrder(com.tools20022.repository.entity.SecuritiesOrder relatedOrder) {
+		this.relatedOrder = relatedOrder;
+	}
+
+	public CurrencyCode getTradingCurrency() {
+		return tradingCurrency;
+	}
+
+	public void setTradingCurrency(CurrencyCode tradingCurrency) {
+		this.tradingCurrency = tradingCurrency;
+	}
+
+	public SecuritiesQuantity getMaximumTradedNominalQuantity() {
+		return maximumTradedNominalQuantity;
+	}
+
+	public void setMaximumTradedNominalQuantity(com.tools20022.repository.entity.SecuritiesQuantity maximumTradedNominalQuantity) {
+		this.maximumTradedNominalQuantity = maximumTradedNominalQuantity;
+	}
+
+	public StockExchange getStockExchange() {
+		return stockExchange;
+	}
+
+	public void setStockExchange(com.tools20022.repository.entity.StockExchange stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+
+	public LotBreakdown getQuoteLot() {
+		return quoteLot;
+	}
+
+	public void setQuoteLot(com.tools20022.repository.entity.LotBreakdown quoteLot) {
+		this.quoteLot = quoteLot;
+	}
+
+	public LotBreakdown getRoundLot() {
+		return roundLot;
+	}
+
+	public void setRoundLot(com.tools20022.repository.entity.LotBreakdown roundLot) {
+		this.roundLot = roundLot;
+	}
+
+	public List<TradingSession> getTradingSession() {
+		return tradingSession;
+	}
+
+	public void setTradingSession(List<com.tools20022.repository.entity.TradingSession> tradingSession) {
+		this.tradingSession = tradingSession;
+	}
+
+	public SecuritiesIdentification getListedSecurityTradingIdentification() {
+		return listedSecurityTradingIdentification;
+	}
+
+	public void setListedSecurityTradingIdentification(com.tools20022.repository.entity.SecuritiesIdentification listedSecurityTradingIdentification) {
+		this.listedSecurityTradingIdentification = listedSecurityTradingIdentification;
+	}
+
+	public CurrencyCode getDefaultCurrency() {
+		return defaultCurrency;
+	}
+
+	public void setDefaultCurrency(CurrencyCode defaultCurrency) {
+		this.defaultCurrency = defaultCurrency;
+	}
+
+	public ISODateTime getFirstTradingDate() {
+		return firstTradingDate;
+	}
+
+	public void setFirstTradingDate(ISODateTime firstTradingDate) {
+		this.firstTradingDate = firstTradingDate;
+	}
+
+	public ISODateTime getLastTradingDate() {
+		return lastTradingDate;
+	}
+
+	public void setLastTradingDate(ISODateTime lastTradingDate) {
+		this.lastTradingDate = lastTradingDate;
+	}
+
+	public Issuance getIssuance() {
+		return issuance;
+	}
+
+	public void setIssuance(com.tools20022.repository.entity.Issuance issuance) {
+		this.issuance = issuance;
+	}
+
+	public PlaceOfSettlement getRelatedPlaceOfSettlement() {
+		return relatedPlaceOfSettlement;
+	}
+
+	public void setRelatedPlaceOfSettlement(com.tools20022.repository.entity.PlaceOfSettlement relatedPlaceOfSettlement) {
+		this.relatedPlaceOfSettlement = relatedPlaceOfSettlement;
 	}
 }

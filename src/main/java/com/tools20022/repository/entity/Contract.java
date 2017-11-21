@@ -17,15 +17,18 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.ContractClosureReason1Choice;
 import com.tools20022.repository.choice.UnderlyingContract1Choice;
 import com.tools20022.repository.entity.Agreement;
-import com.tools20022.repository.msg.TradeContract1;
-import com.tools20022.repository.msg.TransactionCertificateContract1;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.*;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Document that contains the information of the contract agreed between both
@@ -40,47 +43,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Contract#MasterAgreement
- * Contract.MasterAgreement}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Contract#mmMasterAgreement
+ * Contract.mmMasterAgreement}</li>
  * </ul>
  * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>
- * {@linkplain com.tools20022.repository.entity.MasterAgreement#GovernedContract
- * MasterAgreement.GovernedContract}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract4#Contract
- * RegisteredContract4.Contract}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionCertificateRecord1#Contract
- * TransactionCertificateRecord1.Contract}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract5#Contract
- * RegisteredContract5.Contract}</li>
- * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#Contract
- * RegisteredContract3.Contract}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
- * subType} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.AccountContract
- * AccountContract}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.RegisteredContract
- * RegisteredContract}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Agreement
- * Agreement}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
@@ -97,10 +63,47 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.MasterAgreement#mmGovernedContract
+ * MasterAgreement.mmGovernedContract}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract4#mmContract
+ * RegisteredContract4.mmContract}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.TransactionCertificateRecord1#mmContract
+ * TransactionCertificateRecord1.mmContract}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract5#mmContract
+ * RegisteredContract5.mmContract}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.RegisteredContract3#mmContract
+ * RegisteredContract3.mmContract}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Agreement
+ * Agreement}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
+ * subType} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.AccountContract
+ * AccountContract}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Mandate Mandate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.RegisteredContract
+ * RegisteredContract}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,6 +119,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Contract extends Agreement {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.MasterAgreement> masterAgreement;
 	/**
 	 * Agreement that governs a contract agreed between parties.
 	 * <p>
@@ -124,8 +128,8 @@ public class Contract extends Agreement {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MasterAgreement#GovernedContract
-	 * MasterAgreement.GovernedContract}</li>
+	 * {@linkplain com.tools20022.repository.entity.MasterAgreement#mmGovernedContract
+	 * MasterAgreement.mmGovernedContract}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -149,36 +153,48 @@ public class Contract extends Agreement {
 	 * "Agreement that governs a contract agreed between  parties."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd MasterAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMasterAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Contract.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Contract.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MasterAgreement";
 			definition = "Agreement that governs a contract agreed between  parties.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmGovernedContract;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MasterAgreement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MasterAgreement.GovernedContract;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Contract";
 				definition = "Document that contains the information of the contract agreed between both parties.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MasterAgreement.GovernedContract);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContract4.Contract, com.tools20022.repository.msg.TransactionCertificateRecord1.Contract,
-						com.tools20022.repository.msg.RegisteredContract5.Contract, com.tools20022.repository.msg.RegisteredContract3.Contract);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MasterAgreement.mmGovernedContract);
+				derivationElement_lazy = () -> Arrays.asList(RegisteredContract4.mmContract, TransactionCertificateRecord1.mmContract, RegisteredContract5.mmContract, RegisteredContract3.mmContract);
 				subType_lazy = () -> Arrays.asList(AccountContract.mmObject(), Mandate.mmObject(), RegisteredContract.mmObject());
 				superType_lazy = () -> Agreement.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Contract.MasterAgreement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Contract.mmMasterAgreement);
 				derivationComponent_lazy = () -> Arrays.asList(UnderlyingContract1Choice.mmObject(), TransactionCertificateContract1.mmObject(), TradeContract1.mmObject(), ContractClosureReason1Choice.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Contract.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<MasterAgreement> getMasterAgreement() {
+		return masterAgreement;
+	}
+
+	public void setMasterAgreement(List<com.tools20022.repository.entity.MasterAgreement> masterAgreement) {
+		this.masterAgreement = masterAgreement;
 	}
 }

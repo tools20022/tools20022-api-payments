@@ -20,12 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.GarnishmentType1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.DocumentIssuer;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of garnishment.
@@ -37,10 +43,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.GarnishmentType1#CodeOrProprietary
- * GarnishmentType1.CodeOrProprietary}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GarnishmentType1#Issuer
- * GarnishmentType1.Issuer}</li>
+ * {@linkplain com.tools20022.repository.msg.GarnishmentType1#mmCodeOrProprietary
+ * GarnishmentType1.mmCodeOrProprietary}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GarnishmentType1#mmIssuer
+ * GarnishmentType1.mmIssuer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the type of garnishment."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "GarnishmentType1", propOrder = {"codeOrProprietary", "issuer"})
 public class GarnishmentType1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected GarnishmentType1Choice codeOrProprietary;
 	/**
 	 * Provides the type details of the garnishment.
 	 * <p>
@@ -94,21 +103,22 @@ public class GarnishmentType1 {
 	 * definition} = "Provides the type details of the garnishment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd CodeOrProprietary = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmCodeOrProprietary = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> GarnishmentType1.mmObject();
 			businessComponentTrace_lazy = () -> Document.mmObject();
+			componentContext_lazy = () -> GarnishmentType1.mmObject();
 			isDerived = false;
 			xmlTag = "CdOrPrtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CodeOrProprietary";
 			definition = "Provides the type details of the garnishment.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> GarnishmentType1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> GarnishmentType1Choice.mmObject();
 		}
 	};
+	protected Max35Text issuer;
 	/**
 	 * Identification of the issuer of the garnishment type.
 	 * <p>
@@ -141,17 +151,17 @@ public class GarnishmentType1 {
 	 * definition} = "Identification of the issuer of the garnishment type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Issuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
 		{
-			componentContext_lazy = () -> GarnishmentType1.mmObject();
 			businessComponentTrace_lazy = () -> DocumentIssuer.mmObject();
+			componentContext_lazy = () -> GarnishmentType1.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
 			definition = "Identification of the issuer of the garnishment type.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -159,14 +169,32 @@ public class GarnishmentType1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GarnishmentType1.CodeOrProprietary, com.tools20022.repository.msg.GarnishmentType1.Issuer);
+				messageElement_lazy = () -> Arrays.asList(GarnishmentType1.mmCodeOrProprietary, GarnishmentType1.mmIssuer);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GarnishmentType1";
 				definition = "Specifies the type of garnishment.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "CdOrPrtry", required = true)
+	public GarnishmentType1Choice getCodeOrProprietary() {
+		return codeOrProprietary;
+	}
+
+	public void setCodeOrProprietary(GarnishmentType1Choice codeOrProprietary) {
+		this.codeOrProprietary = codeOrProprietary;
+	}
+
+	@XmlElement(name = "Issr")
+	public Max35Text getIssuer() {
+		return issuer;
+	}
+
+	public void setIssuer(Max35Text issuer) {
+		this.issuer = issuer;
 	}
 }

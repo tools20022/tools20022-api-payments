@@ -19,8 +19,13 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.BusinessProcessCatalogueEntriesHaveUniqueName;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMRepository;
 import com.tools20022.metamodel.MMTopLevelCatalogueEntry;
@@ -36,6 +41,22 @@ import java.util.Optional;
  */
 public class MMBusinessProcessCatalogue implements MMModelEntity {
 
+	/**
+	 * The Repository that owns the BusinessProcessCatalogue.
+	 */
+	public final static MetamodelAttribute<MMBusinessProcessCatalogue, MMRepository> repositoryAttribute = newAttribute();
+	/**
+	 * a TopLevelCatalogueEntry in the BusinessProcessCatalague
+	 */
+	public final static MetamodelAttribute<MMBusinessProcessCatalogue, List<MMTopLevelCatalogueEntry>> topLevelCatalogueEntryAttribute = newAttribute();
+	/**
+	 * All TopLevelCatalogueEntries of a BusinessProcessCatalogue must have
+	 * different names topLevelCatalogueEntry-&gt;forAll(entry1,entry2 | entry1
+	 * &lt;&gt; entry2 implies entry1.name &lt;&gt; entry2.name)
+	 */
+	public final static MetamodelConstraint<MMBusinessProcessCatalogue> checkEntriesHaveUniqueName = newConstraint(b -> {
+		new BusinessProcessCatalogueEntriesHaveUniqueName().accept(b);
+	});
 	protected Supplier<MMRepository> repository_lazy;
 	protected Supplier<List<MMTopLevelCatalogueEntry>> topLevelCatalogueEntry_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;

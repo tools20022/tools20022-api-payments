@@ -17,12 +17,12 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -38,14 +38,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.LocalName#FullName
- * LocalName.FullName}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LocalName#RelatedSecurity
- * LocalName.RelatedSecurity}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LocalName#ShortName
- * LocalName.ShortName}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LocalName#Language
- * LocalName.Language}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LocalName#mmFullName
+ * LocalName.mmFullName}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LocalName#mmRelatedSecurity
+ * LocalName.mmRelatedSecurity}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LocalName#mmShortName
+ * LocalName.mmShortName}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LocalName#mmLanguage
+ * LocalName.mmLanguage}</li>
  * </ul>
  * </li>
  * <li>
@@ -53,15 +53,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#Name
- * SecuritiesIdentification.Name}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmName
+ * SecuritiesIdentification.mmName}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,6 +75,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class LocalName {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max350Text fullName;
 	/**
 	 * Name of the security.
 	 * <p>
@@ -99,18 +100,27 @@ public class LocalName {
 	 * definition} = "Name of the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FullName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFullName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LocalName.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FullName";
 			definition = "Name of the security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LocalName.class.getMethod("getFullName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected SecuritiesIdentification relatedSecurity;
 	/**
 	 * Identification which contains a name.
 	 * <p>
@@ -119,8 +129,8 @@ public class LocalName {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#Name
-	 * SecuritiesIdentification.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification#mmName
+	 * SecuritiesIdentification.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -144,20 +154,21 @@ public class LocalName {
 	 * definition} = "Identification which contains a name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedSecurity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LocalName.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedSecurity";
 			definition = "Identification which contains a name.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.Name;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmName;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
 		}
 	};
+	protected Max35Text shortName;
 	/**
 	 * Short name of the security
 	 * <p>
@@ -182,18 +193,27 @@ public class LocalName {
 	 * definition} = "Short name of the security"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ShortName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmShortName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LocalName.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortName";
 			definition = "Short name of the security";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LocalName.class.getMethod("getShortName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected LanguageCode language;
 	/**
 	 * Language in which the security name is expressed.
 	 * <p>
@@ -218,31 +238,76 @@ public class LocalName {
 	 * definition} = "Language in which the security name is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Language = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmLanguage = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LocalName.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Language";
 			definition = "Language in which the security name is expressed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LanguageCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return LocalName.class.getMethod("getLanguage", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocalName";
 				definition = "Name of the security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.Name);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LocalName.FullName, com.tools20022.repository.entity.LocalName.RelatedSecurity, com.tools20022.repository.entity.LocalName.ShortName,
-						com.tools20022.repository.entity.LocalName.Language);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.mmName);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LocalName.mmFullName, com.tools20022.repository.entity.LocalName.mmRelatedSecurity, com.tools20022.repository.entity.LocalName.mmShortName,
+						com.tools20022.repository.entity.LocalName.mmLanguage);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return LocalName.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max350Text getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(Max350Text fullName) {
+		this.fullName = fullName;
+	}
+
+	public SecuritiesIdentification getRelatedSecurity() {
+		return relatedSecurity;
+	}
+
+	public void setRelatedSecurity(com.tools20022.repository.entity.SecuritiesIdentification relatedSecurity) {
+		this.relatedSecurity = relatedSecurity;
+	}
+
+	public Max35Text getShortName() {
+		return shortName;
+	}
+
+	public void setShortName(Max35Text shortName) {
+		this.shortName = shortName;
+	}
+
+	public LanguageCode getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(LanguageCode language) {
+		this.language = language;
 	}
 }

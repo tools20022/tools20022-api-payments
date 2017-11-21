@@ -17,10 +17,10 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,12 +37,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.AmountRatio#SecuritiesPricing
- * AmountRatio.SecuritiesPricing}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AmountRatio#Amount1
- * AmountRatio.Amount1}</li>
- * <li>{@linkplain com.tools20022.repository.entity.AmountRatio#Amount2
- * AmountRatio.Amount2}</li>
+ * {@linkplain com.tools20022.repository.entity.AmountRatio#mmSecuritiesPricing
+ * AmountRatio.mmSecuritiesPricing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AmountRatio#mmAmount1
+ * AmountRatio.mmAmount1}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.AmountRatio#mmAmount2
+ * AmountRatio.mmAmount2}</li>
  * </ul>
  * </li>
  * <li>
@@ -50,15 +50,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#AmountPricePerAmount
- * SecuritiesPricing.AmountPricePerAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmAmountPricePerAmount
+ * SecuritiesPricing.mmAmountPricePerAmount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,6 +72,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class AmountRatio {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected SecuritiesPricing securitiesPricing;
 	/**
 	 * Pricing which uses the ratio as format.
 	 * <p>
@@ -80,8 +81,8 @@ public class AmountRatio {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#AmountPricePerAmount
-	 * SecuritiesPricing.AmountPricePerAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmAmountPricePerAmount
+	 * SecuritiesPricing.mmAmountPricePerAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -104,20 +105,21 @@ public class AmountRatio {
 	 * definition} = "Pricing which uses the ratio as format."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> AmountRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing which uses the ratio as format.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerAmount;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.AmountPricePerAmount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected ActiveCurrencyAndAmount amount1;
 	/**
 	 * Numerator of the quotient of amounts.
 	 * <p>
@@ -143,18 +145,27 @@ public class AmountRatio {
 	 * definition} = "Numerator of the quotient of amounts."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount1 = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount1 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AmountRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount1";
 			definition = "Numerator of the quotient of amounts.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return AmountRatio.class.getMethod("getAmount1", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount amount2;
 	/**
 	 * Denominator of the quotient of amounts
 	 * <p>
@@ -180,30 +191,67 @@ public class AmountRatio {
 	 * definition} = "Denominator of the quotient of amounts"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount2 = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount2 = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> AmountRatio.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.AmountRatio.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount2";
 			definition = "Denominator of the quotient of amounts";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return AmountRatio.class.getMethod("getAmount2", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AmountRatio";
 				definition = "Ratio expressed as a quotient of amounts.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.AmountPricePerAmount);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountRatio.SecuritiesPricing, com.tools20022.repository.entity.AmountRatio.Amount1, com.tools20022.repository.entity.AmountRatio.Amount2);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmAmountPricePerAmount);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AmountRatio.mmSecuritiesPricing, com.tools20022.repository.entity.AmountRatio.mmAmount1, com.tools20022.repository.entity.AmountRatio.mmAmount2);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return AmountRatio.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public SecuritiesPricing getSecuritiesPricing() {
+		return securitiesPricing;
+	}
+
+	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = securitiesPricing;
+	}
+
+	public ActiveCurrencyAndAmount getAmount1() {
+		return amount1;
+	}
+
+	public void setAmount1(ActiveCurrencyAndAmount amount1) {
+		this.amount1 = amount1;
+	}
+
+	public ActiveCurrencyAndAmount getAmount2() {
+		return amount2;
+	}
+
+	public void setAmount2(ActiveCurrencyAndAmount amount2) {
+		this.amount2 = amount2;
 	}
 }

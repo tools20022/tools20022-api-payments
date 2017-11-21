@@ -18,7 +18,9 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMConstruct;
 import com.tools20022.metamodel.MMLogicalType;
 import java.util.function.Supplier;
@@ -29,6 +31,15 @@ import java.util.Optional;
  * MessageBuildingBlock
  */
 public interface MMMessageConstruct extends MMConstruct {
+
+	/**
+	 * XML schema tag name for the element.
+	 */
+	public final static MetamodelAttribute<MMMessageConstruct, Optional<String>> xmlTagAttribute = newAttribute();
+	/**
+	 * Direct reference to the type of a MessageElement or MessageBuildingBlock
+	 */
+	public final static MetamodelAttribute<MMMessageConstruct, MMLogicalType> xmlMemberTypeAttribute = newAttribute();
 
 	public static MetamodelType<MMMessageConstruct> metaType() {
 		return StandardMetamodel2013.metamodel().getTypeByClass(MMMessageConstruct.class);

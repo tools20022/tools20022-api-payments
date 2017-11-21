@@ -17,13 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.TradePostingCode;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.ObligationFulfilment;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,27 +44,31 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Clearing#ClearingThresholdIndicator
- * Clearing.ClearingThresholdIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.Clearing#mmClearingThresholdIndicator
+ * Clearing.mmClearingThresholdIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Clearing#ClearedIdentification
- * Clearing.ClearedIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Clearing#GuaranteedTrade
- * Clearing.GuaranteedTrade}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Clearing#TradePostingType
- * Clearing.TradePostingType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Clearing#ClearingSystem
- * Clearing.ClearingSystem}</li>
+ * {@linkplain com.tools20022.repository.entity.Clearing#mmClearedIdentification
+ * Clearing.mmClearedIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Clearing#mmGuaranteedTrade
+ * Clearing.mmGuaranteedTrade}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Clearing#mmTradePostingType
+ * Clearing.mmTradePostingType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Clearing#mmClearingSystem
+ * Clearing.mmClearingSystem}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.ClearingSystem#Clearing
- * ClearingSystem.Clearing}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.ClearingSystem#mmClearing
+ * ClearingSystem.mmClearing}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} =
+ * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
+ * ObligationFulfilment}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -72,15 +76,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * SecuritiesClearing}</li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} =
- * {@linkplain com.tools20022.repository.entity.ObligationFulfilment
- * ObligationFulfilment}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,6 +96,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Clearing extends ObligationFulfilment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator clearingThresholdIndicator;
 	/**
 	 * Specifies whether the contract is above or below the clearing threshold.
 	 * Where N indicates the contract is below the clearing threshold and Y
@@ -125,18 +126,27 @@ public class Clearing extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClearingThresholdIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClearingThresholdIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Clearing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingThresholdIndicator";
 			definition = "Specifies whether the contract is above or below the clearing threshold. Where N indicates the contract is below the clearing threshold and Y indicates the contract is above the clearing threshold.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Clearing.class.getMethod("getClearingThresholdIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text clearedIdentification;
 	/**
 	 * Reference number assigned by the Central Counterparty (CCP).
 	 * <p>
@@ -162,18 +172,27 @@ public class Clearing extends ObligationFulfilment {
 	 * "Reference number assigned by the Central Counterparty (CCP)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ClearedIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmClearedIdentification = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Clearing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearedIdentification";
 			definition = "Reference number assigned by the Central Counterparty (CCP).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Clearing.class.getMethod("getClearedIdentification", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator guaranteedTrade;
 	/**
 	 * Indicates if the central counterparty has to novate and guarantee the
 	 * trade or not.
@@ -202,18 +221,27 @@ public class Clearing extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute GuaranteedTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmGuaranteedTrade = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Clearing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GuaranteedTrade";
 			definition = "Indicates if the central counterparty has to novate and guarantee the trade or not.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Clearing.class.getMethod("getGuaranteedTrade", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected TradePostingCode tradePostingType;
 	/**
 	 * Indicates how a trade is maintained in the clearing account.
 	 * <p>
@@ -240,18 +268,27 @@ public class Clearing extends ObligationFulfilment {
 	 * "Indicates how a trade is maintained in the clearing account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute TradePostingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmTradePostingType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Clearing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TradePostingType";
 			definition = "Indicates how a trade is maintained in the clearing account.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> TradePostingCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Clearing.class.getMethod("getTradePostingType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ClearingSystem clearingSystem;
 	/**
 	 * Specifies the system which plays a role in the clearing of securities or
 	 * cash.
@@ -261,8 +298,8 @@ public class Clearing extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ClearingSystem#Clearing
-	 * ClearingSystem.Clearing}</li>
+	 * {@linkplain com.tools20022.repository.entity.ClearingSystem#mmClearing
+	 * ClearingSystem.mmClearing}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -287,35 +324,80 @@ public class Clearing extends ObligationFulfilment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd ClearingSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmClearingSystem = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Clearing.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingSystem";
 			definition = "Specifies the system which plays a role in the clearing of securities or cash.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmClearing;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.Clearing;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Clearing";
 				definition = "Mechanism allowing financial institutions that are members of a clearing house to pay and to receive the amounts linked to the transactions that they have executed on the market. The addition of all the positions per product results in one net position (due or to receive) with the clearing house or the central clearing counterparty.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClearingSystem.Clearing);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClearingSystem.mmClearing);
 				subType_lazy = () -> Arrays.asList(SecuritiesClearing.mmObject());
 				superType_lazy = () -> ObligationFulfilment.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Clearing.ClearingThresholdIndicator, com.tools20022.repository.entity.Clearing.ClearedIdentification,
-						com.tools20022.repository.entity.Clearing.GuaranteedTrade, com.tools20022.repository.entity.Clearing.TradePostingType, com.tools20022.repository.entity.Clearing.ClearingSystem);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Clearing.mmClearingThresholdIndicator, com.tools20022.repository.entity.Clearing.mmClearedIdentification,
+						com.tools20022.repository.entity.Clearing.mmGuaranteedTrade, com.tools20022.repository.entity.Clearing.mmTradePostingType, com.tools20022.repository.entity.Clearing.mmClearingSystem);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Clearing.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator getClearingThresholdIndicator() {
+		return clearingThresholdIndicator;
+	}
+
+	public void setClearingThresholdIndicator(YesNoIndicator clearingThresholdIndicator) {
+		this.clearingThresholdIndicator = clearingThresholdIndicator;
+	}
+
+	public Max35Text getClearedIdentification() {
+		return clearedIdentification;
+	}
+
+	public void setClearedIdentification(Max35Text clearedIdentification) {
+		this.clearedIdentification = clearedIdentification;
+	}
+
+	public YesNoIndicator getGuaranteedTrade() {
+		return guaranteedTrade;
+	}
+
+	public void setGuaranteedTrade(YesNoIndicator guaranteedTrade) {
+		this.guaranteedTrade = guaranteedTrade;
+	}
+
+	public TradePostingCode getTradePostingType() {
+		return tradePostingType;
+	}
+
+	public void setTradePostingType(TradePostingCode tradePostingType) {
+		this.tradePostingType = tradePostingType;
+	}
+
+	public ClearingSystem getClearingSystem() {
+		return clearingSystem;
+	}
+
+	public void setClearingSystem(com.tools20022.repository.entity.ClearingSystem clearingSystem) {
+		this.clearingSystem = clearingSystem;
 	}
 }

@@ -17,16 +17,17 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.VoteInstructionCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies the different voting types, channels and premium.
@@ -41,40 +42,40 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#SecuritiesQuantityRequiredToVote
- * VotingCondition.SecuritiesQuantityRequiredToVote}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmSecuritiesQuantityRequiredToVote
+ * VotingCondition.mmSecuritiesQuantityRequiredToVote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#PartialVoteAllowed
- * VotingCondition.PartialVoteAllowed}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmPartialVoteAllowed
+ * VotingCondition.mmPartialVoteAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#SplitVoteAllowed
- * VotingCondition.SplitVoteAllowed}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmSplitVoteAllowed
+ * VotingCondition.mmSplitVoteAllowed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#VoteLocation
- * VotingCondition.VoteLocation}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmVoteLocation
+ * VotingCondition.mmVoteLocation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#BeneficialOwnerDisclosure
- * VotingCondition.BeneficialOwnerDisclosure}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmBeneficialOwnerDisclosure
+ * VotingCondition.mmBeneficialOwnerDisclosure}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#IncentivePremium
- * VotingCondition.IncentivePremium}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmIncentivePremium
+ * VotingCondition.mmIncentivePremium}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#VoteInstructionType
- * VotingCondition.VoteInstructionType}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmVoteInstructionType
+ * VotingCondition.mmVoteInstructionType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#StandingVotingInstruction
- * VotingCondition.StandingVotingInstruction}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmStandingVotingInstruction
+ * VotingCondition.mmStandingVotingInstruction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#VotingPremiumAmount
- * VotingCondition.VotingPremiumAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmVotingPremiumAmount
+ * VotingCondition.mmVotingPremiumAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#VotingPremiumRate
- * VotingCondition.VotingPremiumRate}</li>
- * <li>{@linkplain com.tools20022.repository.entity.VotingCondition#Meeting
- * VotingCondition.Meeting}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmVotingPremiumRate
+ * VotingCondition.mmVotingPremiumRate}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.VotingCondition#mmMeeting
+ * VotingCondition.mmMeeting}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VotingCondition#PreviousInstructionInvalidity
- * VotingCondition.PreviousInstructionInvalidity}</li>
+ * {@linkplain com.tools20022.repository.entity.VotingCondition#mmPreviousInstructionInvalidity
+ * VotingCondition.mmPreviousInstructionInvalidity}</li>
  * </ul>
  * </li>
  * <li>
@@ -82,17 +83,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ContactPoint#ContactPointForVote
- * ContactPoint.ContactPointForVote}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Meeting#VotingCondition
- * Meeting.VotingCondition}</li>
+ * {@linkplain com.tools20022.repository.entity.ContactPoint#mmContactPointForVote
+ * ContactPoint.mmContactPointForVote}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Meeting#mmVotingCondition
+ * Meeting.mmVotingCondition}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,6 +107,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class VotingCondition {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected DecimalNumber securitiesQuantityRequiredToVote;
 	/**
 	 * Number of holdings required for a vote.
 	 * <p>
@@ -132,18 +134,27 @@ public class VotingCondition {
 	 * definition} = "Number of holdings required for a vote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SecuritiesQuantityRequiredToVote = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSecuritiesQuantityRequiredToVote = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesQuantityRequiredToVote";
 			definition = "Number of holdings required for a vote.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getSecuritiesQuantityRequiredToVote", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator partialVoteAllowed;
 	/**
 	 * Specifies whether it is allowed to only vote on a part of the entire
 	 * entitled holding, leaving part of the position un-voted.
@@ -173,18 +184,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PartialVoteAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPartialVoteAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartialVoteAllowed";
 			definition = "Specifies whether it is allowed to only vote on a part of the entire entitled holding, leaving part of the position un-voted.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getPartialVoteAllowed", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator splitVoteAllowed;
 	/**
 	 * Indicates that the option to give a split instruction, for example, a
 	 * split voting instruction on a meeting, is allowed.
@@ -214,18 +234,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute SplitVoteAllowed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmSplitVoteAllowed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SplitVoteAllowed";
 			definition = "Indicates that the option to give a split instruction, for example, a split voting instruction on a meeting, is allowed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getSplitVoteAllowed", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.ContactPoint> voteLocation;
 	/**
 	 * Electronic address, e-mail or website where a voting ballot can be
 	 * obtained and/or where a security holder can vote.
@@ -235,8 +264,8 @@ public class VotingCondition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ContactPoint#ContactPointForVote
-	 * ContactPoint.ContactPointForVote}</li>
+	 * {@linkplain com.tools20022.repository.entity.ContactPoint#mmContactPointForVote
+	 * ContactPoint.mmContactPointForVote}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -262,19 +291,20 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd VoteLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmVoteLocation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteLocation";
 			definition = "Electronic address, e-mail or website where a voting ballot can be obtained and/or where a security holder can vote.";
 			minOccurs = 1;
-			type_lazy = () -> ContactPoint.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.ContactPointForVote;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmContactPointForVote;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ContactPoint.mmObject();
 		}
 	};
+	protected YesNoIndicator beneficialOwnerDisclosure;
 	/**
 	 * Indicates whether beneficiary details (eg name and address) must be
 	 * supplied in order to take part to a meeting.
@@ -304,18 +334,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute BeneficialOwnerDisclosure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmBeneficialOwnerDisclosure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BeneficialOwnerDisclosure";
 			definition = "Indicates whether beneficiary details (eg name and address) must be supplied in order to take part to a meeting.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getBeneficialOwnerDisclosure", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected IncentivePremium incentivePremium;
 	/**
 	 * Cash premium made available if the securities holder consents or
 	 * participates to an event.
@@ -345,18 +384,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute IncentivePremium = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmIncentivePremium = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IncentivePremium";
 			definition = "Cash premium made available if the securities holder consents or participates to an event.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> com.tools20022.repository.entity.IncentivePremium.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getIncentivePremium", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected VoteInstructionCode voteInstructionType;
 	/**
 	 * Identifies the possible types of voting instructions.
 	 * <p>
@@ -383,18 +431,27 @@ public class VotingCondition {
 	 * definition} = "Identifies the possible types of voting instructions."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VoteInstructionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVoteInstructionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteInstructionType";
 			definition = "Identifies the possible types of voting instructions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> VoteInstructionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getVoteInstructionType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected YesNoIndicator standingVotingInstruction;
 	/**
 	 * Indicates whether standing instructions have been defined or not. In this
 	 * case, the intermediary should cast the votes according to these
@@ -425,18 +482,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute StandingVotingInstruction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStandingVotingInstruction = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StandingVotingInstruction";
 			definition = "Indicates whether standing instructions have been defined or not. In this case, the intermediary should cast the votes according to these instructions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getStandingVotingInstruction", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CurrencyAndAmount votingPremiumAmount;
 	/**
 	 * Amount of additional weight applied to the votes of long term
 	 * shareholders.
@@ -466,18 +532,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VotingPremiumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVotingPremiumAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VotingPremiumAmount";
 			definition = "Amount of additional weight applied to the votes of long term shareholders.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getVotingPremiumAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PercentageRate votingPremiumRate;
 	/**
 	 * Rate of additional weight applied to the votes of long term shareholders.
 	 * <p>
@@ -506,18 +581,27 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute VotingPremiumRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVotingPremiumRate = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VotingPremiumRate";
 			definition = "Rate of additional weight applied to the votes of long term shareholders.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getVotingPremiumRate", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Meeting meeting;
 	/**
 	 * Meeting for which voting conditions are specified.
 	 * <p>
@@ -526,8 +610,8 @@ public class VotingCondition {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Meeting#VotingCondition
-	 * Meeting.VotingCondition}</li>
+	 * {@linkplain com.tools20022.repository.entity.Meeting#mmVotingCondition
+	 * Meeting.mmVotingCondition}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -550,20 +634,21 @@ public class VotingCondition {
 	 * definition} = "Meeting for which voting conditions are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Meeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Meeting";
 			definition = "Meeting for which voting conditions are specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmVotingCondition;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.VotingCondition;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected YesNoIndicator previousInstructionInvalidity;
 	/**
 	 * Indicates whether the previously sent instructions becomes invalid after
 	 * a market deadline extension.
@@ -593,34 +678,143 @@ public class VotingCondition {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PreviousInstructionInvalidity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPreviousInstructionInvalidity = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> VotingCondition.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.VotingCondition.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PreviousInstructionInvalidity";
 			definition = "Indicates whether the previously sent instructions becomes invalid after a market deadline extension.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return VotingCondition.class.getMethod("getPreviousInstructionInvalidity", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VotingCondition";
 				definition = "Specifies the different voting types, channels and premium.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.ContactPointForVote, com.tools20022.repository.entity.Meeting.VotingCondition);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VotingCondition.SecuritiesQuantityRequiredToVote, com.tools20022.repository.entity.VotingCondition.PartialVoteAllowed,
-						com.tools20022.repository.entity.VotingCondition.SplitVoteAllowed, com.tools20022.repository.entity.VotingCondition.VoteLocation, com.tools20022.repository.entity.VotingCondition.BeneficialOwnerDisclosure,
-						com.tools20022.repository.entity.VotingCondition.IncentivePremium, com.tools20022.repository.entity.VotingCondition.VoteInstructionType, com.tools20022.repository.entity.VotingCondition.StandingVotingInstruction,
-						com.tools20022.repository.entity.VotingCondition.VotingPremiumAmount, com.tools20022.repository.entity.VotingCondition.VotingPremiumRate, com.tools20022.repository.entity.VotingCondition.Meeting,
-						com.tools20022.repository.entity.VotingCondition.PreviousInstructionInvalidity);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ContactPoint.mmContactPointForVote, com.tools20022.repository.entity.Meeting.mmVotingCondition);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VotingCondition.mmSecuritiesQuantityRequiredToVote, com.tools20022.repository.entity.VotingCondition.mmPartialVoteAllowed,
+						com.tools20022.repository.entity.VotingCondition.mmSplitVoteAllowed, com.tools20022.repository.entity.VotingCondition.mmVoteLocation, com.tools20022.repository.entity.VotingCondition.mmBeneficialOwnerDisclosure,
+						com.tools20022.repository.entity.VotingCondition.mmIncentivePremium, com.tools20022.repository.entity.VotingCondition.mmVoteInstructionType,
+						com.tools20022.repository.entity.VotingCondition.mmStandingVotingInstruction, com.tools20022.repository.entity.VotingCondition.mmVotingPremiumAmount,
+						com.tools20022.repository.entity.VotingCondition.mmVotingPremiumRate, com.tools20022.repository.entity.VotingCondition.mmMeeting, com.tools20022.repository.entity.VotingCondition.mmPreviousInstructionInvalidity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return VotingCondition.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public DecimalNumber getSecuritiesQuantityRequiredToVote() {
+		return securitiesQuantityRequiredToVote;
+	}
+
+	public void setSecuritiesQuantityRequiredToVote(DecimalNumber securitiesQuantityRequiredToVote) {
+		this.securitiesQuantityRequiredToVote = securitiesQuantityRequiredToVote;
+	}
+
+	public YesNoIndicator getPartialVoteAllowed() {
+		return partialVoteAllowed;
+	}
+
+	public void setPartialVoteAllowed(YesNoIndicator partialVoteAllowed) {
+		this.partialVoteAllowed = partialVoteAllowed;
+	}
+
+	public YesNoIndicator getSplitVoteAllowed() {
+		return splitVoteAllowed;
+	}
+
+	public void setSplitVoteAllowed(YesNoIndicator splitVoteAllowed) {
+		this.splitVoteAllowed = splitVoteAllowed;
+	}
+
+	public List<ContactPoint> getVoteLocation() {
+		return voteLocation;
+	}
+
+	public void setVoteLocation(List<com.tools20022.repository.entity.ContactPoint> voteLocation) {
+		this.voteLocation = voteLocation;
+	}
+
+	public YesNoIndicator getBeneficialOwnerDisclosure() {
+		return beneficialOwnerDisclosure;
+	}
+
+	public void setBeneficialOwnerDisclosure(YesNoIndicator beneficialOwnerDisclosure) {
+		this.beneficialOwnerDisclosure = beneficialOwnerDisclosure;
+	}
+
+	public IncentivePremium getIncentivePremium() {
+		return incentivePremium;
+	}
+
+	public void setIncentivePremium(com.tools20022.repository.entity.IncentivePremium incentivePremium) {
+		this.incentivePremium = incentivePremium;
+	}
+
+	public VoteInstructionCode getVoteInstructionType() {
+		return voteInstructionType;
+	}
+
+	public void setVoteInstructionType(VoteInstructionCode voteInstructionType) {
+		this.voteInstructionType = voteInstructionType;
+	}
+
+	public YesNoIndicator getStandingVotingInstruction() {
+		return standingVotingInstruction;
+	}
+
+	public void setStandingVotingInstruction(YesNoIndicator standingVotingInstruction) {
+		this.standingVotingInstruction = standingVotingInstruction;
+	}
+
+	public CurrencyAndAmount getVotingPremiumAmount() {
+		return votingPremiumAmount;
+	}
+
+	public void setVotingPremiumAmount(CurrencyAndAmount votingPremiumAmount) {
+		this.votingPremiumAmount = votingPremiumAmount;
+	}
+
+	public PercentageRate getVotingPremiumRate() {
+		return votingPremiumRate;
+	}
+
+	public void setVotingPremiumRate(PercentageRate votingPremiumRate) {
+		this.votingPremiumRate = votingPremiumRate;
+	}
+
+	public Meeting getMeeting() {
+		return meeting;
+	}
+
+	public void setMeeting(com.tools20022.repository.entity.Meeting meeting) {
+		this.meeting = meeting;
+	}
+
+	public YesNoIndicator getPreviousInstructionInvalidity() {
+		return previousInstructionInvalidity;
+	}
+
+	public void setPreviousInstructionInvalidity(YesNoIndicator previousInstructionInvalidity) {
+		this.previousInstructionInvalidity = previousInstructionInvalidity;
 	}
 }

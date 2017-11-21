@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,160 +32,181 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Brussels
- * FinancialCenterCode.Brussels}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBrussels
+ * FinancialCenterCode.mmBrussels}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#BuenosAires
- * FinancialCenterCode.BuenosAires}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Vienna
- * FinancialCenterCode.Vienna}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBuenosAires
+ * FinancialCenterCode.mmBuenosAires}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Melbourne
- * FinancialCenterCode.Melbourne}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Sydney
- * FinancialCenterCode.Sydney}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmVienna
+ * FinancialCenterCode.mmVienna}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#SaoPaulo
- * FinancialCenterCode.SaoPaulo}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmMelbourne
+ * FinancialCenterCode.mmMelbourne}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Montreal
- * FinancialCenterCode.Montreal}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmSydney
+ * FinancialCenterCode.mmSydney}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Toronto
- * FinancialCenterCode.Toronto}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Geneva
- * FinancialCenterCode.Geneva}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmSaoPaulo
+ * FinancialCenterCode.mmSaoPaulo}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Bratislava
- * FinancialCenterCode.Bratislava}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmMontreal
+ * FinancialCenterCode.mmMontreal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Santiago
- * FinancialCenterCode.Santiago}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmToronto
+ * FinancialCenterCode.mmToronto}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Beijing
- * FinancialCenterCode.Beijing}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Prague
- * FinancialCenterCode.Prague}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmGeneva
+ * FinancialCenterCode.mmGeneva}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Frankfurt
- * FinancialCenterCode.Frankfurt}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBratislava
+ * FinancialCenterCode.mmBratislava}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Copenhagen
- * FinancialCenterCode.Copenhagen}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmSantiago
+ * FinancialCenterCode.mmSantiago}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Tallinn
- * FinancialCenterCode.Tallinn}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Madrid
- * FinancialCenterCode.Madrid}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBeijing
+ * FinancialCenterCode.mmBeijing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Helsinki
- * FinancialCenterCode.Helsinki}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Paris
- * FinancialCenterCode.Paris}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#London
- * FinancialCenterCode.London}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Athens
- * FinancialCenterCode.Athens}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmPrague
+ * FinancialCenterCode.mmPrague}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#HongKong
- * FinancialCenterCode.HongKong}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmFrankfurt
+ * FinancialCenterCode.mmFrankfurt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Budapest
- * FinancialCenterCode.Budapest}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmCopenhagen
+ * FinancialCenterCode.mmCopenhagen}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Jakarta
- * FinancialCenterCode.Jakarta}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Dublin
- * FinancialCenterCode.Dublin}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmTallinn
+ * FinancialCenterCode.mmTallinn}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#TelAviv
- * FinancialCenterCode.TelAviv}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Milan
- * FinancialCenterCode.Milan}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Rome
- * FinancialCenterCode.Rome}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Tokyo
- * FinancialCenterCode.Tokyo}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Seoul
- * FinancialCenterCode.Seoul}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Beirut
- * FinancialCenterCode.Beirut}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmMadrid
+ * FinancialCenterCode.mmMadrid}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Luxembourg
- * FinancialCenterCode.Luxembourg}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmHelsinki
+ * FinancialCenterCode.mmHelsinki}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#KualaLumpur
- * FinancialCenterCode.KualaLumpur}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmParis
+ * FinancialCenterCode.mmParis}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#MexicoCity
- * FinancialCenterCode.MexicoCity}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmLondon
+ * FinancialCenterCode.mmLondon}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Amsterdam
- * FinancialCenterCode.Amsterdam}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Oslo
- * FinancialCenterCode.Oslo}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmAthens
+ * FinancialCenterCode.mmAthens}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#NewYorkFed
- * FinancialCenterCode.NewYorkFed}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmHongKong
+ * FinancialCenterCode.mmHongKong}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#NewYorkStockExchange
- * FinancialCenterCode.NewYorkStockExchange}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBudapest
+ * FinancialCenterCode.mmBudapest}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Auckland
- * FinancialCenterCode.Auckland}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmJakarta
+ * FinancialCenterCode.mmJakarta}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Wellington
- * FinancialCenterCode.Wellington}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmDublin
+ * FinancialCenterCode.mmDublin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#PanamaCity
- * FinancialCenterCode.PanamaCity}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Manila
- * FinancialCenterCode.Manila}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Warsaw
- * FinancialCenterCode.Warsaw}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Lisbon
- * FinancialCenterCode.Lisbon}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Moscow
- * FinancialCenterCode.Moscow}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Riyadh
- * FinancialCenterCode.Riyadh}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmTelAviv
+ * FinancialCenterCode.mmTelAviv}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Stockholm
- * FinancialCenterCode.Stockholm}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmMilan
+ * FinancialCenterCode.mmMilan}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmRome
+ * FinancialCenterCode.mmRome}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Singapore
- * FinancialCenterCode.Singapore}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmTokyo
+ * FinancialCenterCode.mmTokyo}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Bangkok
- * FinancialCenterCode.Bangkok}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Taipei
- * FinancialCenterCode.Taipei}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Ankara
- * FinancialCenterCode.Ankara}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmSeoul
+ * FinancialCenterCode.mmSeoul}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Chicago
- * FinancialCenterCode.Chicago}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBeirut
+ * FinancialCenterCode.mmBeirut}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#LosAngeles
- * FinancialCenterCode.LosAngeles}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmLuxembourg
+ * FinancialCenterCode.mmLuxembourg}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#USGovernmentSecurities
- * FinancialCenterCode.USGovernmentSecurities}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmKualaLumpur
+ * FinancialCenterCode.mmKualaLumpur}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#NewYork
- * FinancialCenterCode.NewYork}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmMexicoCity
+ * FinancialCenterCode.mmMexicoCity}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Johannesburg
- * FinancialCenterCode.Johannesburg}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#Zurich
- * FinancialCenterCode.Zurich}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmAmsterdam
+ * FinancialCenterCode.mmAmsterdam}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmOslo
+ * FinancialCenterCode.mmOslo}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmNewYorkFed
+ * FinancialCenterCode.mmNewYorkFed}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmNewYorkStockExchange
+ * FinancialCenterCode.mmNewYorkStockExchange}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmAuckland
+ * FinancialCenterCode.mmAuckland}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmWellington
+ * FinancialCenterCode.mmWellington}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmPanamaCity
+ * FinancialCenterCode.mmPanamaCity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmManila
+ * FinancialCenterCode.mmManila}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmWarsaw
+ * FinancialCenterCode.mmWarsaw}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmLisbon
+ * FinancialCenterCode.mmLisbon}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmMoscow
+ * FinancialCenterCode.mmMoscow}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmRiyadh
+ * FinancialCenterCode.mmRiyadh}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmStockholm
+ * FinancialCenterCode.mmStockholm}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmSingapore
+ * FinancialCenterCode.mmSingapore}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmBangkok
+ * FinancialCenterCode.mmBangkok}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmTaipei
+ * FinancialCenterCode.mmTaipei}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmAnkara
+ * FinancialCenterCode.mmAnkara}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmChicago
+ * FinancialCenterCode.mmChicago}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmLosAngeles
+ * FinancialCenterCode.mmLosAngeles}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmUSGovernmentSecurities
+ * FinancialCenterCode.mmUSGovernmentSecurities}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmNewYork
+ * FinancialCenterCode.mmNewYork}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmJohannesburg
+ * FinancialCenterCode.mmJohannesburg}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCenterCode#mmZurich
+ * FinancialCenterCode.mmZurich}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -225,9 +248,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Brussels"</li>
 	 * </ul>
 	 */
-	public static final MMCode Brussels = new MMCode() {
+	public static final MMCode mmBrussels = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Brussels";
 			definition = "Code for Brussels";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -255,9 +278,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Buenos Aires"</li>
 	 * </ul>
 	 */
-	public static final MMCode BuenosAires = new MMCode() {
+	public static final MMCode mmBuenosAires = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuenosAires";
 			definition = "Code for Buenos Aires";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -285,9 +308,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Vienna"</li>
 	 * </ul>
 	 */
-	public static final MMCode Vienna = new MMCode() {
+	public static final MMCode mmVienna = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Vienna";
 			definition = "Code for Vienna";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -315,9 +338,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Melbourne"</li>
 	 * </ul>
 	 */
-	public static final MMCode Melbourne = new MMCode() {
+	public static final MMCode mmMelbourne = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Melbourne";
 			definition = "Code for Melbourne";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -345,9 +368,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Sydney"</li>
 	 * </ul>
 	 */
-	public static final MMCode Sydney = new MMCode() {
+	public static final MMCode mmSydney = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sydney";
 			definition = "Code for Sydney";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -375,9 +398,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Sao Paulo"</li>
 	 * </ul>
 	 */
-	public static final MMCode SaoPaulo = new MMCode() {
+	public static final MMCode mmSaoPaulo = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SaoPaulo";
 			definition = "Code for Sao Paulo";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -405,9 +428,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Montreal"</li>
 	 * </ul>
 	 */
-	public static final MMCode Montreal = new MMCode() {
+	public static final MMCode mmMontreal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Montreal";
 			definition = "Code for Montreal";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -435,9 +458,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Toronto"</li>
 	 * </ul>
 	 */
-	public static final MMCode Toronto = new MMCode() {
+	public static final MMCode mmToronto = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Toronto";
 			definition = "Code for Toronto";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -465,9 +488,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Geneva"</li>
 	 * </ul>
 	 */
-	public static final MMCode Geneva = new MMCode() {
+	public static final MMCode mmGeneva = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Geneva";
 			definition = "Code for Geneva";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -495,9 +518,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Bratislava"</li>
 	 * </ul>
 	 */
-	public static final MMCode Bratislava = new MMCode() {
+	public static final MMCode mmBratislava = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bratislava";
 			definition = "Code for Bratislava";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -525,9 +548,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Santiago"</li>
 	 * </ul>
 	 */
-	public static final MMCode Santiago = new MMCode() {
+	public static final MMCode mmSantiago = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Santiago";
 			definition = "Code for Santiago";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -555,9 +578,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Beijing"</li>
 	 * </ul>
 	 */
-	public static final MMCode Beijing = new MMCode() {
+	public static final MMCode mmBeijing = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Beijing";
 			definition = "Code for Beijing";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -585,9 +608,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Prague"</li>
 	 * </ul>
 	 */
-	public static final MMCode Prague = new MMCode() {
+	public static final MMCode mmPrague = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Prague";
 			definition = "Code for Prague";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -615,9 +638,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Frankfurt"</li>
 	 * </ul>
 	 */
-	public static final MMCode Frankfurt = new MMCode() {
+	public static final MMCode mmFrankfurt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Frankfurt";
 			definition = "Code for Frankfurt";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -645,9 +668,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Copenhagen"</li>
 	 * </ul>
 	 */
-	public static final MMCode Copenhagen = new MMCode() {
+	public static final MMCode mmCopenhagen = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Copenhagen";
 			definition = "Code for Copenhagen";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -675,9 +698,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Tallinn"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tallinn = new MMCode() {
+	public static final MMCode mmTallinn = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tallinn";
 			definition = "Code for Tallinn";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -705,9 +728,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Madrid"</li>
 	 * </ul>
 	 */
-	public static final MMCode Madrid = new MMCode() {
+	public static final MMCode mmMadrid = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Madrid";
 			definition = "Code for Madrid";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -735,9 +758,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Helsinki"</li>
 	 * </ul>
 	 */
-	public static final MMCode Helsinki = new MMCode() {
+	public static final MMCode mmHelsinki = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Helsinki";
 			definition = "Code for Helsinki";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -765,9 +788,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Paris"</li>
 	 * </ul>
 	 */
-	public static final MMCode Paris = new MMCode() {
+	public static final MMCode mmParis = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Paris";
 			definition = "Code for Paris";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -795,9 +818,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for London"</li>
 	 * </ul>
 	 */
-	public static final MMCode London = new MMCode() {
+	public static final MMCode mmLondon = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "London";
 			definition = "Code for London";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -825,9 +848,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Athens"</li>
 	 * </ul>
 	 */
-	public static final MMCode Athens = new MMCode() {
+	public static final MMCode mmAthens = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Athens";
 			definition = "Code for Athens";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -855,9 +878,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Hong Kong"</li>
 	 * </ul>
 	 */
-	public static final MMCode HongKong = new MMCode() {
+	public static final MMCode mmHongKong = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HongKong";
 			definition = "Code for Hong Kong";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -885,9 +908,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Budapest"</li>
 	 * </ul>
 	 */
-	public static final MMCode Budapest = new MMCode() {
+	public static final MMCode mmBudapest = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Budapest";
 			definition = "Code for Budapest";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -915,9 +938,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Jakarta"</li>
 	 * </ul>
 	 */
-	public static final MMCode Jakarta = new MMCode() {
+	public static final MMCode mmJakarta = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Jakarta";
 			definition = "Code for Jakarta";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -945,9 +968,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Dublin"</li>
 	 * </ul>
 	 */
-	public static final MMCode Dublin = new MMCode() {
+	public static final MMCode mmDublin = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dublin";
 			definition = "Code for Dublin";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -975,9 +998,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Tel Aviv"</li>
 	 * </ul>
 	 */
-	public static final MMCode TelAviv = new MMCode() {
+	public static final MMCode mmTelAviv = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TelAviv";
 			definition = "Code for Tel Aviv";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1005,9 +1028,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Milan"</li>
 	 * </ul>
 	 */
-	public static final MMCode Milan = new MMCode() {
+	public static final MMCode mmMilan = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Milan";
 			definition = "Code for Milan";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1035,9 +1058,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Rome"</li>
 	 * </ul>
 	 */
-	public static final MMCode Rome = new MMCode() {
+	public static final MMCode mmRome = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rome";
 			definition = "Code for Rome";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1065,9 +1088,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Tokyo"</li>
 	 * </ul>
 	 */
-	public static final MMCode Tokyo = new MMCode() {
+	public static final MMCode mmTokyo = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Tokyo";
 			definition = "Code for Tokyo";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1095,9 +1118,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Seoul"</li>
 	 * </ul>
 	 */
-	public static final MMCode Seoul = new MMCode() {
+	public static final MMCode mmSeoul = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Seoul";
 			definition = "Code for Seoul";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1125,9 +1148,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Beirut"</li>
 	 * </ul>
 	 */
-	public static final MMCode Beirut = new MMCode() {
+	public static final MMCode mmBeirut = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Beirut";
 			definition = "Code for Beirut";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1155,9 +1178,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Luxembourg"</li>
 	 * </ul>
 	 */
-	public static final MMCode Luxembourg = new MMCode() {
+	public static final MMCode mmLuxembourg = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Luxembourg";
 			definition = "Code for Luxembourg";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1185,9 +1208,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Kuala Lumpur"</li>
 	 * </ul>
 	 */
-	public static final MMCode KualaLumpur = new MMCode() {
+	public static final MMCode mmKualaLumpur = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "KualaLumpur";
 			definition = "Code for Kuala Lumpur";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1215,9 +1238,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Mexico City"</li>
 	 * </ul>
 	 */
-	public static final MMCode MexicoCity = new MMCode() {
+	public static final MMCode mmMexicoCity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MexicoCity";
 			definition = "Code for Mexico City";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1245,9 +1268,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Amsterdam"</li>
 	 * </ul>
 	 */
-	public static final MMCode Amsterdam = new MMCode() {
+	public static final MMCode mmAmsterdam = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amsterdam";
 			definition = "Code for Amsterdam";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1275,9 +1298,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Oslo"</li>
 	 * </ul>
 	 */
-	public static final MMCode Oslo = new MMCode() {
+	public static final MMCode mmOslo = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Oslo";
 			definition = "Code for Oslo";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1305,9 +1328,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for New York Fed"</li>
 	 * </ul>
 	 */
-	public static final MMCode NewYorkFed = new MMCode() {
+	public static final MMCode mmNewYorkFed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewYorkFed";
 			definition = "Code for New York Fed";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1335,9 +1358,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for New York Stock Exchange"</li>
 	 * </ul>
 	 */
-	public static final MMCode NewYorkStockExchange = new MMCode() {
+	public static final MMCode mmNewYorkStockExchange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewYorkStockExchange";
 			definition = "Code for New York Stock Exchange";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1365,9 +1388,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Auckland"</li>
 	 * </ul>
 	 */
-	public static final MMCode Auckland = new MMCode() {
+	public static final MMCode mmAuckland = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Auckland";
 			definition = "Code for Auckland";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1395,9 +1418,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Wellington"</li>
 	 * </ul>
 	 */
-	public static final MMCode Wellington = new MMCode() {
+	public static final MMCode mmWellington = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Wellington";
 			definition = "Code for Wellington";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1425,9 +1448,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Panama City"</li>
 	 * </ul>
 	 */
-	public static final MMCode PanamaCity = new MMCode() {
+	public static final MMCode mmPanamaCity = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PanamaCity";
 			definition = "Code for Panama City";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1455,9 +1478,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Manila"</li>
 	 * </ul>
 	 */
-	public static final MMCode Manila = new MMCode() {
+	public static final MMCode mmManila = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Manila";
 			definition = "Code for Manila";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1485,9 +1508,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Warsaw"</li>
 	 * </ul>
 	 */
-	public static final MMCode Warsaw = new MMCode() {
+	public static final MMCode mmWarsaw = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Warsaw";
 			definition = "Code for Warsaw";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1515,9 +1538,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Lisbon"</li>
 	 * </ul>
 	 */
-	public static final MMCode Lisbon = new MMCode() {
+	public static final MMCode mmLisbon = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lisbon";
 			definition = "Code for Lisbon";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1545,9 +1568,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Moscow"</li>
 	 * </ul>
 	 */
-	public static final MMCode Moscow = new MMCode() {
+	public static final MMCode mmMoscow = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Moscow";
 			definition = "Code for Moscow";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1575,9 +1598,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Riyadh"</li>
 	 * </ul>
 	 */
-	public static final MMCode Riyadh = new MMCode() {
+	public static final MMCode mmRiyadh = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Riyadh";
 			definition = "Code for Riyadh";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1605,9 +1628,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Stockholm"</li>
 	 * </ul>
 	 */
-	public static final MMCode Stockholm = new MMCode() {
+	public static final MMCode mmStockholm = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Stockholm";
 			definition = "Code for Stockholm";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1635,9 +1658,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Singapore"</li>
 	 * </ul>
 	 */
-	public static final MMCode Singapore = new MMCode() {
+	public static final MMCode mmSingapore = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Singapore";
 			definition = "Code for Singapore";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1665,9 +1688,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Bangkok"</li>
 	 * </ul>
 	 */
-	public static final MMCode Bangkok = new MMCode() {
+	public static final MMCode mmBangkok = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bangkok";
 			definition = "Code for Bangkok";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1695,9 +1718,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Taipei"</li>
 	 * </ul>
 	 */
-	public static final MMCode Taipei = new MMCode() {
+	public static final MMCode mmTaipei = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Taipei";
 			definition = "Code for Taipei";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1725,9 +1748,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Ankara"</li>
 	 * </ul>
 	 */
-	public static final MMCode Ankara = new MMCode() {
+	public static final MMCode mmAnkara = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Ankara";
 			definition = "Code for Ankara";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1755,9 +1778,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Chicago"</li>
 	 * </ul>
 	 */
-	public static final MMCode Chicago = new MMCode() {
+	public static final MMCode mmChicago = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Chicago";
 			definition = "Code for Chicago";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1785,9 +1808,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Los Angeles"</li>
 	 * </ul>
 	 */
-	public static final MMCode LosAngeles = new MMCode() {
+	public static final MMCode mmLosAngeles = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LosAngeles";
 			definition = "Code for Los Angeles";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1815,9 +1838,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for U.S. Government Securities"</li>
 	 * </ul>
 	 */
-	public static final MMCode USGovernmentSecurities = new MMCode() {
+	public static final MMCode mmUSGovernmentSecurities = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "U.S.GovernmentSecurities";
 			definition = "Code for U.S. Government Securities";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1845,9 +1868,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for New York"</li>
 	 * </ul>
 	 */
-	public static final MMCode NewYork = new MMCode() {
+	public static final MMCode mmNewYork = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NewYork";
 			definition = "Code for New York";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1875,9 +1898,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Johannesburg"</li>
 	 * </ul>
 	 */
-	public static final MMCode Johannesburg = new MMCode() {
+	public static final MMCode mmJohannesburg = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Johannesburg";
 			definition = "Code for Johannesburg";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1905,9 +1928,9 @@ public class FinancialCenterCode {
 	 * definition} = "Code for Zurich"</li>
 	 * </ul>
 	 */
-	public static final MMCode Zurich = new MMCode() {
+	public static final MMCode mmZurich = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Zurich";
 			definition = "Code for Zurich";
 			owner_lazy = () -> FinancialCenterCode.mmObject();
@@ -1918,31 +1941,21 @@ public class FinancialCenterCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("BEBR");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialCenterCode";
 				definition = "Indicates the financial center taken into account to adjust a date.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FinancialCenterCode.Brussels, com.tools20022.repository.codeset.FinancialCenterCode.BuenosAires,
-						com.tools20022.repository.codeset.FinancialCenterCode.Vienna, com.tools20022.repository.codeset.FinancialCenterCode.Melbourne, com.tools20022.repository.codeset.FinancialCenterCode.Sydney,
-						com.tools20022.repository.codeset.FinancialCenterCode.SaoPaulo, com.tools20022.repository.codeset.FinancialCenterCode.Montreal, com.tools20022.repository.codeset.FinancialCenterCode.Toronto,
-						com.tools20022.repository.codeset.FinancialCenterCode.Geneva, com.tools20022.repository.codeset.FinancialCenterCode.Bratislava, com.tools20022.repository.codeset.FinancialCenterCode.Santiago,
-						com.tools20022.repository.codeset.FinancialCenterCode.Beijing, com.tools20022.repository.codeset.FinancialCenterCode.Prague, com.tools20022.repository.codeset.FinancialCenterCode.Frankfurt,
-						com.tools20022.repository.codeset.FinancialCenterCode.Copenhagen, com.tools20022.repository.codeset.FinancialCenterCode.Tallinn, com.tools20022.repository.codeset.FinancialCenterCode.Madrid,
-						com.tools20022.repository.codeset.FinancialCenterCode.Helsinki, com.tools20022.repository.codeset.FinancialCenterCode.Paris, com.tools20022.repository.codeset.FinancialCenterCode.London,
-						com.tools20022.repository.codeset.FinancialCenterCode.Athens, com.tools20022.repository.codeset.FinancialCenterCode.HongKong, com.tools20022.repository.codeset.FinancialCenterCode.Budapest,
-						com.tools20022.repository.codeset.FinancialCenterCode.Jakarta, com.tools20022.repository.codeset.FinancialCenterCode.Dublin, com.tools20022.repository.codeset.FinancialCenterCode.TelAviv,
-						com.tools20022.repository.codeset.FinancialCenterCode.Milan, com.tools20022.repository.codeset.FinancialCenterCode.Rome, com.tools20022.repository.codeset.FinancialCenterCode.Tokyo,
-						com.tools20022.repository.codeset.FinancialCenterCode.Seoul, com.tools20022.repository.codeset.FinancialCenterCode.Beirut, com.tools20022.repository.codeset.FinancialCenterCode.Luxembourg,
-						com.tools20022.repository.codeset.FinancialCenterCode.KualaLumpur, com.tools20022.repository.codeset.FinancialCenterCode.MexicoCity, com.tools20022.repository.codeset.FinancialCenterCode.Amsterdam,
-						com.tools20022.repository.codeset.FinancialCenterCode.Oslo, com.tools20022.repository.codeset.FinancialCenterCode.NewYorkFed, com.tools20022.repository.codeset.FinancialCenterCode.NewYorkStockExchange,
-						com.tools20022.repository.codeset.FinancialCenterCode.Auckland, com.tools20022.repository.codeset.FinancialCenterCode.Wellington, com.tools20022.repository.codeset.FinancialCenterCode.PanamaCity,
-						com.tools20022.repository.codeset.FinancialCenterCode.Manila, com.tools20022.repository.codeset.FinancialCenterCode.Warsaw, com.tools20022.repository.codeset.FinancialCenterCode.Lisbon,
-						com.tools20022.repository.codeset.FinancialCenterCode.Moscow, com.tools20022.repository.codeset.FinancialCenterCode.Riyadh, com.tools20022.repository.codeset.FinancialCenterCode.Stockholm,
-						com.tools20022.repository.codeset.FinancialCenterCode.Singapore, com.tools20022.repository.codeset.FinancialCenterCode.Bangkok, com.tools20022.repository.codeset.FinancialCenterCode.Taipei,
-						com.tools20022.repository.codeset.FinancialCenterCode.Ankara, com.tools20022.repository.codeset.FinancialCenterCode.Chicago, com.tools20022.repository.codeset.FinancialCenterCode.LosAngeles,
-						com.tools20022.repository.codeset.FinancialCenterCode.USGovernmentSecurities, com.tools20022.repository.codeset.FinancialCenterCode.NewYork, com.tools20022.repository.codeset.FinancialCenterCode.Johannesburg,
-						com.tools20022.repository.codeset.FinancialCenterCode.Zurich);
+				code_lazy = () -> Arrays.asList(FinancialCenterCode.mmBrussels, FinancialCenterCode.mmBuenosAires, FinancialCenterCode.mmVienna, FinancialCenterCode.mmMelbourne, FinancialCenterCode.mmSydney, FinancialCenterCode.mmSaoPaulo,
+						FinancialCenterCode.mmMontreal, FinancialCenterCode.mmToronto, FinancialCenterCode.mmGeneva, FinancialCenterCode.mmBratislava, FinancialCenterCode.mmSantiago, FinancialCenterCode.mmBeijing,
+						FinancialCenterCode.mmPrague, FinancialCenterCode.mmFrankfurt, FinancialCenterCode.mmCopenhagen, FinancialCenterCode.mmTallinn, FinancialCenterCode.mmMadrid, FinancialCenterCode.mmHelsinki,
+						FinancialCenterCode.mmParis, FinancialCenterCode.mmLondon, FinancialCenterCode.mmAthens, FinancialCenterCode.mmHongKong, FinancialCenterCode.mmBudapest, FinancialCenterCode.mmJakarta, FinancialCenterCode.mmDublin,
+						FinancialCenterCode.mmTelAviv, FinancialCenterCode.mmMilan, FinancialCenterCode.mmRome, FinancialCenterCode.mmTokyo, FinancialCenterCode.mmSeoul, FinancialCenterCode.mmBeirut, FinancialCenterCode.mmLuxembourg,
+						FinancialCenterCode.mmKualaLumpur, FinancialCenterCode.mmMexicoCity, FinancialCenterCode.mmAmsterdam, FinancialCenterCode.mmOslo, FinancialCenterCode.mmNewYorkFed, FinancialCenterCode.mmNewYorkStockExchange,
+						FinancialCenterCode.mmAuckland, FinancialCenterCode.mmWellington, FinancialCenterCode.mmPanamaCity, FinancialCenterCode.mmManila, FinancialCenterCode.mmWarsaw, FinancialCenterCode.mmLisbon,
+						FinancialCenterCode.mmMoscow, FinancialCenterCode.mmRiyadh, FinancialCenterCode.mmStockholm, FinancialCenterCode.mmSingapore, FinancialCenterCode.mmBangkok, FinancialCenterCode.mmTaipei,
+						FinancialCenterCode.mmAnkara, FinancialCenterCode.mmChicago, FinancialCenterCode.mmLosAngeles, FinancialCenterCode.mmUSGovernmentSecurities, FinancialCenterCode.mmNewYork, FinancialCenterCode.mmJohannesburg,
+						FinancialCenterCode.mmZurich);
 			}
 		});
 		return mmObject_lazy.get();

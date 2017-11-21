@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,23 +32,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#Fax
- * RemittanceLocationMethodCode.Fax}</li>
+ * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#mmFax
+ * RemittanceLocationMethodCode.mmFax}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#ElectronicDataInterchange
- * RemittanceLocationMethodCode.ElectronicDataInterchange}</li>
+ * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#mmElectronicDataInterchange
+ * RemittanceLocationMethodCode.mmElectronicDataInterchange}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#UniformResourceIdentifier
- * RemittanceLocationMethodCode.UniformResourceIdentifier}</li>
+ * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#mmUniformResourceIdentifier
+ * RemittanceLocationMethodCode.mmUniformResourceIdentifier}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#EMail
- * RemittanceLocationMethodCode.EMail}</li>
+ * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#mmEMail
+ * RemittanceLocationMethodCode.mmEMail}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#Post
- * RemittanceLocationMethodCode.Post}</li>
+ * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#mmPost
+ * RemittanceLocationMethodCode.mmPost}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#SMS
- * RemittanceLocationMethodCode.SMS}</li>
+ * {@linkplain com.tools20022.repository.codeset.RemittanceLocationMethodCode#mmSMS
+ * RemittanceLocationMethodCode.mmSMS}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -60,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -103,9 +105,9 @@ public class RemittanceLocationMethodCode {
 	 * definition} = "Remittance advice information must be faxed."</li>
 	 * </ul>
 	 */
-	public static final MMCode Fax = new MMCode() {
+	public static final MMCode mmFax = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Fax";
 			definition = "Remittance advice information must be faxed.";
 			owner_lazy = () -> RemittanceLocationMethodCode.mmObject();
@@ -136,9 +138,9 @@ public class RemittanceLocationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ElectronicDataInterchange = new MMCode() {
+	public static final MMCode mmElectronicDataInterchange = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ElectronicDataInterchange";
 			definition = "Remittance advice information must be sent through Electronic Data Interchange (EDI).";
 			owner_lazy = () -> RemittanceLocationMethodCode.mmObject();
@@ -172,9 +174,9 @@ public class RemittanceLocationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode UniformResourceIdentifier = new MMCode() {
+	public static final MMCode mmUniformResourceIdentifier = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UniformResourceIdentifier";
 			definition = "Remittance advice  information needs to be sent to a Uniform Resource Identifier (URI). URI  is a compact string of characters that uniquely identify an abstract or physical resource.  URI's are the super-set of identifiers, such as URLs, email addresses, ftp sites, etc, and as such, provide the syntax for all of the identification schemes.";
 			owner_lazy = () -> RemittanceLocationMethodCode.mmObject();
@@ -203,9 +205,9 @@ public class RemittanceLocationMethodCode {
 	 * "Remittance advice  information must be sent through e-mail."</li>
 	 * </ul>
 	 */
-	public static final MMCode EMail = new MMCode() {
+	public static final MMCode mmEMail = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EMail";
 			definition = "Remittance advice  information must be sent through e-mail.";
 			owner_lazy = () -> RemittanceLocationMethodCode.mmObject();
@@ -234,9 +236,9 @@ public class RemittanceLocationMethodCode {
 	 * "Remittance advice information must be sent through postal services."</li>
 	 * </ul>
 	 */
-	public static final MMCode Post = new MMCode() {
+	public static final MMCode mmPost = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Post";
 			definition = "Remittance advice information must be sent through postal services.";
 			owner_lazy = () -> RemittanceLocationMethodCode.mmObject();
@@ -267,9 +269,9 @@ public class RemittanceLocationMethodCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SMS = new MMCode() {
+	public static final MMCode mmSMS = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SMS";
 			definition = "Remittance advice  information must be sent through by phone as a short message service (SMS).";
 			owner_lazy = () -> RemittanceLocationMethodCode.mmObject();
@@ -280,14 +282,13 @@ public class RemittanceLocationMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("FAXI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RemittanceLocationMethodCode";
 				definition = "Specifies the method used to deliver the remittance advice information.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RemittanceLocationMethodCode.Fax, com.tools20022.repository.codeset.RemittanceLocationMethodCode.ElectronicDataInterchange,
-						com.tools20022.repository.codeset.RemittanceLocationMethodCode.UniformResourceIdentifier, com.tools20022.repository.codeset.RemittanceLocationMethodCode.EMail,
-						com.tools20022.repository.codeset.RemittanceLocationMethodCode.Post, com.tools20022.repository.codeset.RemittanceLocationMethodCode.SMS);
+				code_lazy = () -> Arrays.asList(RemittanceLocationMethodCode.mmFax, RemittanceLocationMethodCode.mmElectronicDataInterchange, RemittanceLocationMethodCode.mmUniformResourceIdentifier, RemittanceLocationMethodCode.mmEMail,
+						RemittanceLocationMethodCode.mmPost, RemittanceLocationMethodCode.mmSMS);
 				derivation_lazy = () -> Arrays.asList(RemittanceLocationMethod2Code.mmObject());
 			}
 		});

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,20 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#Authorisation
- * FinancialCaptureCode.Authorisation}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#mmAuthorisation
+ * FinancialCaptureCode.mmAuthorisation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#Completion
- * FinancialCaptureCode.Completion}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#Batch
- * FinancialCaptureCode.Batch}</li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#mmCompletion
+ * FinancialCaptureCode.mmCompletion}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FinancialCaptureCode#mmBatch
+ * FinancialCaptureCode.mmBatch}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +91,9 @@ public class FinancialCaptureCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Authorisation = new MMCode() {
+	public static final MMCode mmAuthorisation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Authorisation";
 			definition = "Financial capture of the transaction is performed by the acquirer during the authorisation exchange.";
 			owner_lazy = () -> FinancialCaptureCode.mmObject();
@@ -121,9 +124,9 @@ public class FinancialCaptureCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Completion = new MMCode() {
+	public static final MMCode mmCompletion = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Completion";
 			definition = "Financial capture of the transaction is performed by the acquirer during the completion exchange.";
 			owner_lazy = () -> FinancialCaptureCode.mmObject();
@@ -154,9 +157,9 @@ public class FinancialCaptureCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Batch = new MMCode() {
+	public static final MMCode mmBatch = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Batch";
 			definition = "Financial capture of the transaction is performed by the acquirer at the reception of a batch transfer.";
 			owner_lazy = () -> FinancialCaptureCode.mmObject();
@@ -167,13 +170,12 @@ public class FinancialCaptureCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("AUTH");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialCaptureCode";
 				definition = "Mode for the financial capture of the transaction by the acquirer.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FinancialCaptureCode.Authorisation, com.tools20022.repository.codeset.FinancialCaptureCode.Completion,
-						com.tools20022.repository.codeset.FinancialCaptureCode.Batch);
+				code_lazy = () -> Arrays.asList(FinancialCaptureCode.mmAuthorisation, FinancialCaptureCode.mmCompletion, FinancialCaptureCode.mmBatch);
 			}
 		});
 		return mmObject_lazy.get();

@@ -18,9 +18,11 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.GeneratedMetamodelBean;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
 import com.tools20022.core.metamodel.OrphanMetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.MMMessageSet;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMSyntax;
@@ -35,6 +37,14 @@ import java.util.Optional;
  */
 public class MMEncoding implements OrphanMetamodelType, MMModelEntity {
 
+	/**
+	 * The MessageSets for which this Encoding is a valid ISO 20022 encoding
+	 */
+	public final static MetamodelAttribute<MMEncoding, List<MMMessageSet>> messageSetAttribute = newAttribute();
+	/**
+	 * The source syntax on which an encoding applies
+	 */
+	public final static MetamodelAttribute<MMEncoding, MMSyntax> syntaxAttribute = newAttribute();
 	protected Supplier<List<MMMessageSet>> messageSet_lazy;
 	protected Supplier<MMSyntax> syntax_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;

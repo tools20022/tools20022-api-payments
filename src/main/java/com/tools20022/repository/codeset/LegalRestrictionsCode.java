@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,27 +32,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#JurisdictionOwnership
- * LegalRestrictionsCode.JurisdictionOwnership}</li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#mmJurisdictionOwnership
+ * LegalRestrictionsCode.mmJurisdictionOwnership}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#PrivatePlacements
- * LegalRestrictionsCode.PrivatePlacements}</li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#mmPrivatePlacements
+ * LegalRestrictionsCode.mmPrivatePlacements}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#AccreditedInvestor
- * LegalRestrictionsCode.AccreditedInvestor}</li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#mmAccreditedInvestor
+ * LegalRestrictionsCode.mmAccreditedInvestor}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#Margin
- * LegalRestrictionsCode.Margin}</li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#mmMargin
+ * LegalRestrictionsCode.mmMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#Privilege
- * LegalRestrictionsCode.Privilege}</li>
+ * {@linkplain com.tools20022.repository.codeset.LegalRestrictionsCode#mmPrivilege
+ * LegalRestrictionsCode.mmPrivilege}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -95,9 +97,9 @@ public class LegalRestrictionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode JurisdictionOwnership = new MMCode() {
+	public static final MMCode mmJurisdictionOwnership = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "JurisdictionOwnership";
 			definition = "Investors outside this jurisdiction can purchase this security, for example, a Reg S security can only be held by an investor outside the US.";
 			owner_lazy = () -> LegalRestrictionsCode.mmObject();
@@ -128,9 +130,9 @@ public class LegalRestrictionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PrivatePlacements = new MMCode() {
+	public static final MMCode mmPrivatePlacements = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrivatePlacements";
 			definition = "Only investors qualified by the issuer in this jurisdiction may purchase this security.";
 			owner_lazy = () -> LegalRestrictionsCode.mmObject();
@@ -161,9 +163,9 @@ public class LegalRestrictionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AccreditedInvestor = new MMCode() {
+	public static final MMCode mmAccreditedInvestor = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccreditedInvestor";
 			definition = "Only investors qualified by the regulator in this jurisdiction may purchase this security.";
 			owner_lazy = () -> LegalRestrictionsCode.mmObject();
@@ -194,9 +196,9 @@ public class LegalRestrictionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Margin = new MMCode() {
+	public static final MMCode mmMargin = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Margin";
 			definition = "Issuer defines whether the security may be purchased with borrowed money (US and Japan).";
 			owner_lazy = () -> LegalRestrictionsCode.mmObject();
@@ -227,9 +229,9 @@ public class LegalRestrictionsCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Privilege = new MMCode() {
+	public static final MMCode mmPrivilege = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Privilege";
 			definition = "Privileges, for example, voting rights, of holding the security may be restricted by the issuer.";
 			owner_lazy = () -> LegalRestrictionsCode.mmObject();
@@ -240,13 +242,13 @@ public class LegalRestrictionsCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("JURO");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LegalRestrictionsCode";
 				definition = "Specifies the regulatory restrictions applicable to a security.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LegalRestrictionsCode.JurisdictionOwnership, com.tools20022.repository.codeset.LegalRestrictionsCode.PrivatePlacements,
-						com.tools20022.repository.codeset.LegalRestrictionsCode.AccreditedInvestor, com.tools20022.repository.codeset.LegalRestrictionsCode.Margin, com.tools20022.repository.codeset.LegalRestrictionsCode.Privilege);
+				code_lazy = () -> Arrays.asList(LegalRestrictionsCode.mmJurisdictionOwnership, LegalRestrictionsCode.mmPrivatePlacements, LegalRestrictionsCode.mmAccreditedInvestor, LegalRestrictionsCode.mmMargin,
+						LegalRestrictionsCode.mmPrivilege);
 			}
 		});
 		return mmObject_lazy.get();

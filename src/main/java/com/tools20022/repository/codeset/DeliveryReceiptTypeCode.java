@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#SeparateSettlement
- * DeliveryReceiptTypeCode.SeparateSettlement}</li>
+ * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#mmSeparateSettlement
+ * DeliveryReceiptTypeCode.mmSeparateSettlement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#AgainstPaymentSettlement
- * DeliveryReceiptTypeCode.AgainstPaymentSettlement}</li>
+ * {@linkplain com.tools20022.repository.codeset.DeliveryReceiptTypeCode#mmAgainstPaymentSettlement
+ * DeliveryReceiptTypeCode.mmAgainstPaymentSettlement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class DeliveryReceiptTypeCode {
 	 * "Settlement of the financial instrument and cash is separate."</li>
 	 * </ul>
 	 */
-	public static final MMCode SeparateSettlement = new MMCode() {
+	public static final MMCode mmSeparateSettlement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SeparateSettlement";
 			definition = "Settlement of the financial instrument and cash is separate.";
 			owner_lazy = () -> DeliveryReceiptTypeCode.mmObject();
@@ -117,9 +119,9 @@ public class DeliveryReceiptTypeCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AgainstPaymentSettlement = new MMCode() {
+	public static final MMCode mmAgainstPaymentSettlement = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AgainstPaymentSettlement";
 			definition = "Settlement of the financial instrument and cash takes place in a delivery versus payment (DVP) environment, ie, through an International Central Securities Depository (ICSD) or Central Securities Depository (CSD).";
 			owner_lazy = () -> DeliveryReceiptTypeCode.mmObject();
@@ -130,12 +132,12 @@ public class DeliveryReceiptTypeCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("FREE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryReceiptTypeCode";
 				definition = "Specifies how the transaction is to be settled.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DeliveryReceiptTypeCode.SeparateSettlement, com.tools20022.repository.codeset.DeliveryReceiptTypeCode.AgainstPaymentSettlement);
+				code_lazy = () -> Arrays.asList(DeliveryReceiptTypeCode.mmSeparateSettlement, DeliveryReceiptTypeCode.mmAgainstPaymentSettlement);
 			}
 		});
 		return mmObject_lazy.get();

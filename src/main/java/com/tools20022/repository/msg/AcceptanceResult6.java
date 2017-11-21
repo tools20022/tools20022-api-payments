@@ -20,12 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.MandateReason1Choice;
 import com.tools20022.repository.datatype.Max105Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.MandateStatus;
+import com.tools20022.repository.entity.StatusReason;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of elements used to provide detailed information on the acceptance
@@ -37,13 +45,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.AcceptanceResult6#Accepted
- * AcceptanceResult6.Accepted}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AcceptanceResult6#RejectReason
- * AcceptanceResult6.RejectReason}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AcceptanceResult6#mmAccepted
+ * AcceptanceResult6.mmAccepted}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AcceptanceResult6#AdditionalRejectReasonInformation
- * AcceptanceResult6.AdditionalRejectReasonInformation}</li>
+ * {@linkplain com.tools20022.repository.msg.AcceptanceResult6#mmRejectReason
+ * AcceptanceResult6.mmRejectReason}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.AcceptanceResult6#mmAdditionalRejectReasonInformation
+ * AcceptanceResult6.mmAdditionalRejectReasonInformation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -52,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,9 +75,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "AcceptanceResult6", propOrder = {"accepted", "rejectReason", "additionalRejectReasonInformation"})
 public class AcceptanceResult6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator accepted;
 	/**
 	 * Indicates whether the mandate request was accepted or rejected.
 	 * <p>
@@ -82,8 +94,8 @@ public class AcceptanceResult6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.MandateStatus#Accepted
-	 * MandateStatus.Accepted}</li>
+	 * {@linkplain com.tools20022.repository.entity.MandateStatus#mmAccepted
+	 * MandateStatus.mmAccepted}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -103,20 +115,21 @@ public class AcceptanceResult6 {
 	 * "Indicates whether the mandate request was accepted or rejected."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Accepted = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAccepted = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> MandateStatus.mmAccepted;
 			componentContext_lazy = () -> AcceptanceResult6.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.MandateStatus.Accepted;
 			isDerived = false;
 			xmlTag = "Accptd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Accepted";
 			definition = "Indicates whether the mandate request was accepted or rejected.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	protected MandateReason1Choice rejectReason;
 	/**
 	 * Specifies the reason for the rejection of a mandate request.
 	 * <p>
@@ -129,8 +142,8 @@ public class AcceptanceResult6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.MandateStatus#RejectReason
-	 * MandateStatus.RejectReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.MandateStatus#mmRejectReason
+	 * MandateStatus.mmRejectReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -150,21 +163,22 @@ public class AcceptanceResult6 {
 	 * "Specifies the reason for the rejection of a mandate request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd RejectReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRejectReason = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> MandateStatus.mmRejectReason;
 			componentContext_lazy = () -> AcceptanceResult6.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.MandateStatus.RejectReason;
 			isDerived = false;
 			xmlTag = "RjctRsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RejectReason";
 			definition = "Specifies the reason for the rejection of a mandate request.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> MandateReason1Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> MandateReason1Choice.mmObject();
 		}
 	};
+	protected List<Max105Text> additionalRejectReasonInformation;
 	/**
 	 * Further details on the reject reason.
 	 * <p>
@@ -177,8 +191,8 @@ public class AcceptanceResult6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.StatusReason#Reason
-	 * StatusReason.Reason}</li>
+	 * {@linkplain com.tools20022.repository.entity.StatusReason#mmReason
+	 * StatusReason.mmReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -197,13 +211,13 @@ public class AcceptanceResult6 {
 	 * definition} = "Further details on the reject reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute AdditionalRejectReasonInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAdditionalRejectReasonInformation = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> StatusReason.mmReason;
 			componentContext_lazy = () -> AcceptanceResult6.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.StatusReason.Reason;
 			isDerived = false;
 			xmlTag = "AddtlRjctRsnInf";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalRejectReasonInformation";
 			definition = "Further details on the reject reason.";
 			minOccurs = 0;
@@ -214,15 +228,41 @@ public class AcceptanceResult6 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcceptanceResult6.Accepted, com.tools20022.repository.msg.AcceptanceResult6.RejectReason,
-						com.tools20022.repository.msg.AcceptanceResult6.AdditionalRejectReasonInformation);
+				messageElement_lazy = () -> Arrays.asList(AcceptanceResult6.mmAccepted, AcceptanceResult6.mmRejectReason, AcceptanceResult6.mmAdditionalRejectReasonInformation);
 				trace_lazy = () -> MandateStatus.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptanceResult6";
 				definition = "Set of elements used to provide detailed information on the acceptance result.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Accptd", required = true)
+	public YesNoIndicator getAccepted() {
+		return accepted;
+	}
+
+	public void setAccepted(YesNoIndicator accepted) {
+		this.accepted = accepted;
+	}
+
+	@XmlElement(name = "RjctRsn")
+	public MandateReason1Choice getRejectReason() {
+		return rejectReason;
+	}
+
+	public void setRejectReason(MandateReason1Choice rejectReason) {
+		this.rejectReason = rejectReason;
+	}
+
+	@XmlElement(name = "AddtlRjctRsnInf")
+	public List<Max105Text> getAdditionalRejectReasonInformation() {
+		return additionalRejectReasonInformation;
+	}
+
+	public void setAdditionalRejectReasonInformation(List<Max105Text> additionalRejectReasonInformation) {
+		this.additionalRejectReasonInformation = additionalRejectReasonInformation;
 	}
 }

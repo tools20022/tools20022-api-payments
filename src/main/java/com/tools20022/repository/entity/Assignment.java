@@ -17,10 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Transfer by one party to a third party of its receivables.
@@ -35,11 +39,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Assignment#PaymentObligation
- * Assignment.PaymentObligation}</li>
+ * {@linkplain com.tools20022.repository.entity.Assignment#mmPaymentObligation
+ * Assignment.mmPaymentObligation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Assignment#FinancingAgreement
- * Assignment.FinancingAgreement}</li>
+ * {@linkplain com.tools20022.repository.entity.Assignment#mmFinancingAgreement
+ * Assignment.mmFinancingAgreement}</li>
  * </ul>
  * </li>
  * <li>
@@ -47,18 +51,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedAssignment
- * PaymentObligation.RelatedAssignment}</li>
+ * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedAssignment
+ * PaymentObligation.mmRelatedAssignment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvoiceFinancingAgreement#Assignment
- * InvoiceFinancingAgreement.Assignment}</li>
+ * {@linkplain com.tools20022.repository.entity.InvoiceFinancingAgreement#mmAssignment
+ * InvoiceFinancingAgreement.mmAssignment}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,6 +76,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Assignment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.PaymentObligation> paymentObligation;
 	/**
 	 * Payment obligations included in an assignment.
 	 * <p>
@@ -80,8 +85,8 @@ public class Assignment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#RelatedAssignment
-	 * PaymentObligation.RelatedAssignment}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmRelatedAssignment
+	 * PaymentObligation.mmRelatedAssignment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -104,19 +109,20 @@ public class Assignment {
 	 * definition} = "Payment obligations included in an assignment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Assignment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PaymentObligation";
 			definition = "Payment obligations included in an assignment.";
 			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmRelatedAssignment;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.RelatedAssignment;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.InvoiceFinancingAgreement> financingAgreement;
 	/**
 	 * Invoice financing agreement which creates a payment obligation.
 	 * <p>
@@ -125,8 +131,8 @@ public class Assignment {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvoiceFinancingAgreement#Assignment
-	 * InvoiceFinancingAgreement.Assignment}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvoiceFinancingAgreement#mmAssignment
+	 * InvoiceFinancingAgreement.mmAssignment}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -151,31 +157,52 @@ public class Assignment {
 	 * "Invoice financing agreement which creates a payment obligation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FinancingAgreement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFinancingAgreement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Assignment.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FinancingAgreement";
 			definition = "Invoice financing agreement which creates a payment obligation.";
 			minOccurs = 0;
-			type_lazy = () -> InvoiceFinancingAgreement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.Assignment;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmAssignment;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Assignment";
 				definition = "Transfer by one party to a third party of its receivables.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.RelatedAssignment, com.tools20022.repository.entity.InvoiceFinancingAgreement.Assignment);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Assignment.PaymentObligation, com.tools20022.repository.entity.Assignment.FinancingAgreement);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.mmRelatedAssignment, com.tools20022.repository.entity.InvoiceFinancingAgreement.mmAssignment);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Assignment.mmPaymentObligation, com.tools20022.repository.entity.Assignment.mmFinancingAgreement);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Assignment.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<PaymentObligation> getPaymentObligation() {
+		return paymentObligation;
+	}
+
+	public void setPaymentObligation(List<com.tools20022.repository.entity.PaymentObligation> paymentObligation) {
+		this.paymentObligation = paymentObligation;
+	}
+
+	public List<InvoiceFinancingAgreement> getFinancingAgreement() {
+		return financingAgreement;
+	}
+
+	public void setFinancingAgreement(List<com.tools20022.repository.entity.InvoiceFinancingAgreement> financingAgreement) {
+		this.financingAgreement = financingAgreement;
 	}
 }

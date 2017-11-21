@@ -85,6 +85,7 @@ class ListBuilderForGeneratedRepository_01 {
 		list.add((T) OriginalBusinessQuery1.mmObject());
 		list.add((T) CashAccount25.mmObject());
 		list.add((T) TaxExemptionReasonFormatChoice.mmObject());
+		list.add((T) OrganisationIdentification7.mmObject());
 		list.add((T) SupplementaryData1.mmObject());
 		list.add((T) OriginalAndCurrentQuantities1.mmObject());
 		list.add((T) IdentificationSource3Choice.mmObject());
@@ -276,6 +277,9 @@ class ListBuilderForGeneratedRepository_01 {
 		list.add((T) PaymentCancellationReason1.mmObject());
 		list.add((T) PaymentReturnReason1.mmObject());
 		list.add((T) OriginalGroupHeader2.mmObject());
+		list.add((T) Party10Choice.mmObject());
+		list.add((T) PartyIdentification42.mmObject());
+		list.add((T) Party9Choice.mmObject());
 		list.add((T) CardholderAuthentication2.mmObject());
 		list.add((T) PaymentContext3.mmObject());
 		list.add((T) GroupHeader46.mmObject());
@@ -380,6 +384,7 @@ class ListBuilderForGeneratedRepository_01 {
 		list.add((T) GroupHeader63.mmObject());
 		list.add((T) DirectDebitTransactionInformation15.mmObject());
 		list.add((T) CreditTransferTransaction9.mmObject());
+		list.add((T) BusinessApplicationHeader1.mmObject());
 		list.add((T) ShipmentSchedule2Choice.mmObject());
 		list.add((T) DocumentLineType1.mmObject());
 		list.add((T) DocumentLineIdentification1.mmObject());
@@ -521,11 +526,6 @@ class ListBuilderForGeneratedRepository_01 {
 		list.add((T) PaymentTransaction81.mmObject());
 		list.add((T) UnderlyingTransaction16.mmObject());
 		list.add((T) PaymentCancellationReason3.mmObject());
-		list.add((T) Mandate10.mmObject());
-		list.add((T) RequestedModification6.mmObject());
-		list.add((T) UnableToApplyJustification3Choice.mmObject());
-		list.add((T) OriginalPaymentInstruction23.mmObject());
-		list.add((T) OriginalPaymentInstruction21.mmObject());
 		ListBuilderForGeneratedRepository_02.addElems(list);
 		return list;
 	}

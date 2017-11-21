@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,24 +36,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * PaymentMethodCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#Cheque
- * PaymentMethod4Code.Cheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#CreditTransfer
- * PaymentMethod4Code.CreditTransfer}</li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#mmCheque
+ * PaymentMethod4Code.mmCheque}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#DirectDebit
- * PaymentMethod4Code.DirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#mmCreditTransfer
+ * PaymentMethod4Code.mmCreditTransfer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#TransferAdvice
- * PaymentMethod4Code.TransferAdvice}</li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#mmDirectDebit
+ * PaymentMethod4Code.mmDirectDebit}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod4Code#mmTransferAdvice
+ * PaymentMethod4Code.mmTransferAdvice}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +92,9 @@ public class PaymentMethod4Code extends PaymentMethodCode {
 	 * name} = "Cheque"</li>
 	 * </ul>
 	 */
-	public static final MMCode Cheque = new MMCode() {
+	public static final MMCode mmCheque = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Cheque";
 			owner_lazy = () -> PaymentMethod4Code.mmObject();
 		}
@@ -112,9 +115,9 @@ public class PaymentMethod4Code extends PaymentMethodCode {
 	 * name} = "CreditTransfer"</li>
 	 * </ul>
 	 */
-	public static final MMCode CreditTransfer = new MMCode() {
+	public static final MMCode mmCreditTransfer = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditTransfer";
 			owner_lazy = () -> PaymentMethod4Code.mmObject();
 		}
@@ -135,9 +138,9 @@ public class PaymentMethod4Code extends PaymentMethodCode {
 	 * name} = "DirectDebit"</li>
 	 * </ul>
 	 */
-	public static final MMCode DirectDebit = new MMCode() {
+	public static final MMCode mmDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DirectDebit";
 			owner_lazy = () -> PaymentMethod4Code.mmObject();
 		}
@@ -158,9 +161,9 @@ public class PaymentMethod4Code extends PaymentMethodCode {
 	 * name} = "TransferAdvice"</li>
 	 * </ul>
 	 */
-	public static final MMCode TransferAdvice = new MMCode() {
+	public static final MMCode mmTransferAdvice = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransferAdvice";
 			owner_lazy = () -> PaymentMethod4Code.mmObject();
 		}
@@ -169,13 +172,12 @@ public class PaymentMethod4Code extends PaymentMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CHK");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod4Code";
 				definition = "Specifies the transfer method that will be used  to transfer an amount of money.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod4Code.Cheque, com.tools20022.repository.codeset.PaymentMethod4Code.CreditTransfer,
-						com.tools20022.repository.codeset.PaymentMethod4Code.DirectDebit, com.tools20022.repository.codeset.PaymentMethod4Code.TransferAdvice);
+				code_lazy = () -> Arrays.asList(PaymentMethod4Code.mmCheque, PaymentMethod4Code.mmCreditTransfer, PaymentMethod4Code.mmDirectDebit, PaymentMethod4Code.mmTransferAdvice);
 				trace_lazy = () -> PaymentMethodCode.mmObject();
 			}
 		});

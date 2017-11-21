@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,14 @@ import java.util.Optional;
  */
 public class MMIndicator extends MMBoolean {
 
+	/**
+	 * Provides the semantic meaning when the Indicator is set to true.
+	 */
+	public final static MetamodelAttribute<MMIndicator, String> meaningWhenTrueAttribute = newAttribute();
+	/**
+	 * Provides the semantic meaning when the Indicator is set to false.
+	 */
+	public final static MetamodelAttribute<MMIndicator, String> meaningWhenFalseAttribute = newAttribute();
 	protected String meaningWhenTrue;
 	protected String meaningWhenFalse;
 	protected String pattern;

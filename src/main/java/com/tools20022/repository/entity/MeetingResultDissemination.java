@@ -17,10 +17,14 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Provides information on the voting results of a shareholders meeting.
@@ -36,11 +40,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#RelatedServicing
- * MeetingResultDissemination.RelatedServicing}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#mmRelatedServicing
+ * MeetingResultDissemination.mmRelatedServicing}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#VoteResult
- * MeetingResultDissemination.VoteResult}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingResultDissemination#mmVoteResult
+ * MeetingResultDissemination.mmVoteResult}</li>
  * </ul>
  * </li>
  * <li>
@@ -48,18 +52,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.VoteResult#VoteDissemination
- * VoteResult.VoteDissemination}</li>
+ * {@linkplain com.tools20022.repository.entity.VoteResult#mmVoteDissemination
+ * VoteResult.mmVoteDissemination}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingResultDissemination
- * MeetingServicing.MeetingResultDissemination}</li>
+ * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingResultDissemination
+ * MeetingServicing.mmMeetingResultDissemination}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +78,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MeetingResultDissemination {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected MeetingServicing relatedServicing;
 	/**
 	 * Meeting servicing process which comprises the dissemination of the
 	 * results.
@@ -83,8 +88,8 @@ public class MeetingResultDissemination {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.MeetingServicing#MeetingResultDissemination
-	 * MeetingServicing.MeetingResultDissemination}</li>
+	 * {@linkplain com.tools20022.repository.entity.MeetingServicing#mmMeetingResultDissemination
+	 * MeetingServicing.mmMeetingResultDissemination}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -110,20 +115,21 @@ public class MeetingResultDissemination {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingResultDissemination.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedServicing";
 			definition = "Meeting servicing process which comprises the dissemination of the results.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> MeetingServicing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.MeetingServicing.MeetingResultDissemination;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmMeetingResultDissemination;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.VoteResult> voteResult;
 	/**
 	 * Specifies whether a resolution is accepted and the number of votes which
 	 * were cast.
@@ -133,8 +139,8 @@ public class MeetingResultDissemination {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.VoteResult#VoteDissemination
-	 * VoteResult.VoteDissemination}</li>
+	 * {@linkplain com.tools20022.repository.entity.VoteResult#mmVoteDissemination
+	 * VoteResult.mmVoteDissemination}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -160,31 +166,52 @@ public class MeetingResultDissemination {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd VoteResult = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmVoteResult = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> MeetingResultDissemination.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "VoteResult";
 			definition = "Specifies whether a resolution is accepted and the number of votes which were cast.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.VoteResult.mmVoteDissemination;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.VoteResult.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.VoteResult.VoteDissemination;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingResultDissemination";
 				definition = "Provides information on the voting results of a shareholders meeting.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VoteResult.VoteDissemination, com.tools20022.repository.entity.MeetingServicing.MeetingResultDissemination);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingResultDissemination.RelatedServicing, com.tools20022.repository.entity.MeetingResultDissemination.VoteResult);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.VoteResult.mmVoteDissemination, com.tools20022.repository.entity.MeetingServicing.mmMeetingResultDissemination);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingResultDissemination.mmRelatedServicing, com.tools20022.repository.entity.MeetingResultDissemination.mmVoteResult);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return MeetingResultDissemination.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public MeetingServicing getRelatedServicing() {
+		return relatedServicing;
+	}
+
+	public void setRelatedServicing(com.tools20022.repository.entity.MeetingServicing relatedServicing) {
+		this.relatedServicing = relatedServicing;
+	}
+
+	public List<VoteResult> getVoteResult() {
+		return voteResult;
+	}
+
+	public void setVoteResult(List<com.tools20022.repository.entity.VoteResult> voteResult) {
+		this.voteResult = voteResult;
 	}
 }

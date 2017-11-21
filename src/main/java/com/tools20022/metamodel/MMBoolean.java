@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,12 @@ import java.util.Optional;
  */
 public class MMBoolean implements MMDataType {
 
+	/**
+	 * A constraint on the value space of a datatype which is achieved by
+	 * constraining the lexical space to literals which match a specific
+	 * pattern.
+	 */
+	public final static MetamodelAttribute<MMBoolean, Optional<String>> patternAttribute = newAttribute();
 	protected String pattern;
 	protected Supplier<MMDataDictionary> dataDictionary_lazy;
 	protected String name;

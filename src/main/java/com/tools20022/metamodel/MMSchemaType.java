@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -30,6 +32,7 @@ import java.util.Optional;
  */
 public class MMSchemaType implements MMDataType {
 
+	public final static MetamodelAttribute<MMSchemaType, MMSchemaTypeKind> kindAttribute = newAttribute();
 	protected MMSchemaTypeKind kind;
 	protected Supplier<MMDataDictionary> dataDictionary_lazy;
 	protected String name;

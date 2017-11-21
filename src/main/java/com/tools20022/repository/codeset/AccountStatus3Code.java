@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.AccountStatusCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -33,23 +35,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * AccountStatusCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Enabled
- * AccountStatus3Code.Enabled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Disabled
- * AccountStatus3Code.Disabled}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.AccountStatus3Code#Deleted
- * AccountStatus3Code.Deleted}</li>
+ * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmEnabled
+ * AccountStatus3Code.mmEnabled}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#ProForma
- * AccountStatus3Code.ProForma}</li>
+ * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmDisabled
+ * AccountStatus3Code.mmDisabled}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmDeleted
+ * AccountStatus3Code.mmDeleted}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.AccountStatus3Code#mmProForma
+ * AccountStatus3Code.mmProForma}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +89,9 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "Enabled"</li>
 	 * </ul>
 	 */
-	public static final MMCode Enabled = new MMCode() {
+	public static final MMCode mmEnabled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Enabled";
 			owner_lazy = () -> AccountStatus3Code.mmObject();
 		}
@@ -108,9 +112,9 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "Disabled"</li>
 	 * </ul>
 	 */
-	public static final MMCode Disabled = new MMCode() {
+	public static final MMCode mmDisabled = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Disabled";
 			owner_lazy = () -> AccountStatus3Code.mmObject();
 		}
@@ -131,9 +135,9 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "Deleted"</li>
 	 * </ul>
 	 */
-	public static final MMCode Deleted = new MMCode() {
+	public static final MMCode mmDeleted = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Deleted";
 			owner_lazy = () -> AccountStatus3Code.mmObject();
 		}
@@ -154,9 +158,9 @@ public class AccountStatus3Code extends AccountStatusCode {
 	 * name} = "ProForma"</li>
 	 * </ul>
 	 */
-	public static final MMCode ProForma = new MMCode() {
+	public static final MMCode mmProForma = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProForma";
 			owner_lazy = () -> AccountStatus3Code.mmObject();
 		}
@@ -165,13 +169,12 @@ public class AccountStatus3Code extends AccountStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("ENAB");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountStatus3Code";
 				definition = "Qualifies further the current state of an account.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountStatus3Code.Enabled, com.tools20022.repository.codeset.AccountStatus3Code.Disabled, com.tools20022.repository.codeset.AccountStatus3Code.Deleted,
-						com.tools20022.repository.codeset.AccountStatus3Code.ProForma);
+				code_lazy = () -> Arrays.asList(AccountStatus3Code.mmEnabled, AccountStatus3Code.mmDisabled, AccountStatus3Code.mmDeleted, AccountStatus3Code.mmProForma);
 				trace_lazy = () -> AccountStatusCode.mmObject();
 			}
 		});

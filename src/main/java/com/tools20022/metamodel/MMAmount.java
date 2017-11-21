@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,10 @@ import java.util.Optional;
  */
 public class MMAmount extends MMDecimal {
 
+	/**
+	 * specifies the allowed currencies that can be used to qualify this amount
+	 */
+	public final static MetamodelAttribute<MMAmount, Optional<MMDataType>> currencyIdentifierSetAttribute = newAttribute();
 	protected Supplier<MMDataType> currencyIdentifierSet_lazy;
 	protected String minInclusive;
 	protected String minExclusive;

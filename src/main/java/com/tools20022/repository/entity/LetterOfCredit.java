@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Instrument issued by a bank substituting its name and credit standing for
@@ -41,24 +42,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.LetterOfCredit#Amount
- * LetterOfCredit.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LetterOfCredit#Document
- * LetterOfCredit.Document}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LetterOfCredit#mmAmount
+ * LetterOfCredit.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LetterOfCredit#mmDocument
+ * LetterOfCredit.mmDocument}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.LetterOfCredit#CommercialTradeSettlement
- * LetterOfCredit.CommercialTradeSettlement}</li>
+ * {@linkplain com.tools20022.repository.entity.LetterOfCredit#mmCommercialTradeSettlement
+ * LetterOfCredit.mmCommercialTradeSettlement}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Document#LetterOfCredit
- * Document.LetterOfCredit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Document#mmLetterOfCredit
+ * Document.mmLetterOfCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#LetterOfCredit
- * CommercialTradeSettlement.LetterOfCredit}</li>
+ * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#mmLetterOfCredit
+ * CommercialTradeSettlement.mmLetterOfCredit}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -66,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,6 +84,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class LetterOfCredit extends Asset {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ActiveCurrencyAndAmount amount;
 	/**
 	 * Amount of the letter/documentary credit.
 	 * <p>
@@ -109,18 +111,27 @@ public class LetterOfCredit extends Asset {
 	 * definition} = "Amount of the letter/documentary credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LetterOfCredit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Amount of the letter/documentary credit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return LetterOfCredit.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.Document> document;
 	/**
 	 * Document which materialises the letter of credit.
 	 * <p>
@@ -129,8 +140,8 @@ public class LetterOfCredit extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Document#LetterOfCredit
-	 * Document.LetterOfCredit}</li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmLetterOfCredit
+	 * Document.mmLetterOfCredit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -153,19 +164,20 @@ public class LetterOfCredit extends Asset {
 	 * definition} = "Document which materialises the letter of credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Document = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LetterOfCredit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Document";
 			definition = "Document which materialises the letter of credit.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmLetterOfCredit;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.LetterOfCredit;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CommercialTradeSettlement commercialTradeSettlement;
 	/**
 	 * Settlement process related to a letter of credit.
 	 * <p>
@@ -174,8 +186,8 @@ public class LetterOfCredit extends Asset {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#LetterOfCredit
-	 * CommercialTradeSettlement.LetterOfCredit}</li>
+	 * {@linkplain com.tools20022.repository.entity.CommercialTradeSettlement#mmLetterOfCredit
+	 * CommercialTradeSettlement.mmLetterOfCredit}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -200,33 +212,63 @@ public class LetterOfCredit extends Asset {
 	 * definition} = "Settlement process related to a letter of credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CommercialTradeSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCommercialTradeSettlement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LetterOfCredit.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LetterOfCredit.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommercialTradeSettlement";
 			definition = "Settlement process related to a letter of credit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmLetterOfCredit;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.LetterOfCredit;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LetterOfCredit";
 				definition = "Instrument issued by a bank substituting its name and credit standing for that of its customer. A letter of credit is a written undertaking of the bank, issued for the account of a customer (the applicant), to honour a demand for payment, upon the beneficiary's compliance with the terms and conditions set forth in the undertaking.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Document.LetterOfCredit, com.tools20022.repository.entity.CommercialTradeSettlement.LetterOfCredit);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Document.mmLetterOfCredit, com.tools20022.repository.entity.CommercialTradeSettlement.mmLetterOfCredit);
 				superType_lazy = () -> Asset.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LetterOfCredit.Amount, com.tools20022.repository.entity.LetterOfCredit.Document, com.tools20022.repository.entity.LetterOfCredit.CommercialTradeSettlement);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LetterOfCredit.mmAmount, com.tools20022.repository.entity.LetterOfCredit.mmDocument,
+						com.tools20022.repository.entity.LetterOfCredit.mmCommercialTradeSettlement);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return LetterOfCredit.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ActiveCurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(ActiveCurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public List<Document> getDocument() {
+		return document;
+	}
+
+	public void setDocument(List<com.tools20022.repository.entity.Document> document) {
+		this.document = document;
+	}
+
+	public CommercialTradeSettlement getCommercialTradeSettlement() {
+		return commercialTradeSettlement;
+	}
+
+	public void setCommercialTradeSettlement(com.tools20022.repository.entity.CommercialTradeSettlement commercialTradeSettlement) {
+		this.commercialTradeSettlement = commercialTradeSettlement;
 	}
 }

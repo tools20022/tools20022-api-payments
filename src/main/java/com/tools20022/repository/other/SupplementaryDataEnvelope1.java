@@ -18,6 +18,9 @@
 package com.tools20022.repository.other;
 
 import com.tools20022.metamodel.MMExternalSchema;
+import com.tools20022.metamodel.MMProcessContent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -32,8 +35,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -53,11 +56,11 @@ public class SupplementaryDataEnvelope1 {
 	final static public MMExternalSchema mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMExternalSchema() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupplementaryDataEnvelope1";
 				definition = "Technical component that contains the validated supplementary data information. This technical envelope allows to segregate the supplementary data information from any other information.";
-				processContent = com.tools20022.metamodel.MMProcessContent.LAX;
+				processContent = MMProcessContent.LAX;
 			}
 		});
 		return mmObject_lazy.get();

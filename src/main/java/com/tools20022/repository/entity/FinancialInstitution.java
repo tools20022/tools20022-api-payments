@@ -18,7 +18,11 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.Party12Choice;
+import com.tools20022.repository.choice.Party28Choice;
 import com.tools20022.repository.entity.Organisation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -35,10 +39,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.Party12Choice#Agent
- * Party12Choice.Agent}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#Agent
- * Party28Choice.Agent}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party12Choice#mmAgent
+ * Party12Choice.mmAgent}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party28Choice#mmAgent
+ * Party28Choice.mmAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -47,8 +51,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,12 +71,17 @@ public class FinancialInstitution extends Organisation {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstitution";
 				definition = "Organisation established primarily to provide financial services.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Party12Choice.Agent, com.tools20022.repository.choice.Party28Choice.Agent);
+				derivationElement_lazy = () -> Arrays.asList(Party12Choice.mmAgent, Party28Choice.mmAgent);
 				superType_lazy = () -> Organisation.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return FinancialInstitution.class;
 			}
 		});
 		return mmObject_lazy.get();

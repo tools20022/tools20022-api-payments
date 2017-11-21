@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -35,6 +37,27 @@ import java.util.Optional;
  */
 public class MMBusinessProcess implements MMTopLevelCatalogueEntry {
 
+	/**
+	 * specifies the BusinessProcess that is extending another BusinessProcess
+	 */
+	public final static MetamodelAttribute<MMBusinessProcess, List<MMBusinessProcess>> extenderAttribute = newAttribute();
+	/**
+	 * specifies the BusinessProcess that is extended by another BusinessProcess
+	 */
+	public final static MetamodelAttribute<MMBusinessProcess, List<MMBusinessProcess>> extendedAttribute = newAttribute();
+	/**
+	 * specifies the BusinessProcess that is included by another BusinessProcess
+	 */
+	public final static MetamodelAttribute<MMBusinessProcess, List<MMBusinessProcess>> includedAttribute = newAttribute();
+	/**
+	 * specifies the BusinessProcess that is incuding another BusinessProcess
+	 */
+	public final static MetamodelAttribute<MMBusinessProcess, List<MMBusinessProcess>> includerAttribute = newAttribute();
+	/**
+	 * the BusinessRole that plays a role in BusinessProcess that owns it.
+	 */
+	public final static MetamodelAttribute<MMBusinessProcess, List<MMBusinessRole>> businessRoleAttribute = newAttribute();
+	public final static MetamodelAttribute<MMBusinessProcess, List<MMBusinessTransaction>> businessProcessTraceAttribute = newAttribute();
 	protected Supplier<List<MMBusinessProcess>> extender_lazy;
 	protected Supplier<List<MMBusinessProcess>> extended_lazy;
 	protected Supplier<List<MMBusinessProcess>> included_lazy;

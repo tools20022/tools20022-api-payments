@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +35,19 @@ import java.util.Optional;
  */
 public class MMConstraint implements MMRepositoryConcept {
 
+	/**
+	 * The description of a Constraint in a specific language, defined in
+	 * expressionLanguage
+	 */
+	public final static MetamodelAttribute<MMConstraint, Optional<String>> expressionAttribute = newAttribute();
+	/**
+	 * The language in which a Constraint in expressed.
+	 */
+	public final static MetamodelAttribute<MMConstraint, Optional<String>> expressionLanguageAttribute = newAttribute();
+	/**
+	 * The owner of the Rule.
+	 */
+	public final static MetamodelAttribute<MMConstraint, MMRepositoryConcept> ownerAttribute = newAttribute();
 	protected String expression;
 	protected String expressionLanguage;
 	protected Supplier<MMRepositoryConcept> owner_lazy;

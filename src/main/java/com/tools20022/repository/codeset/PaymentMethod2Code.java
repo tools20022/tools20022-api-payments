@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PaymentMethodCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -34,15 +36,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.PaymentMethod2Code#DirectDebit
- * PaymentMethod2Code.DirectDebit}</li>
+ * {@linkplain com.tools20022.repository.codeset.PaymentMethod2Code#mmDirectDebit
+ * PaymentMethod2Code.mmDirectDebit}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -79,9 +81,9 @@ public class PaymentMethod2Code extends PaymentMethodCode {
 	 * name} = "DirectDebit"</li>
 	 * </ul>
 	 */
-	public static final MMCode DirectDebit = new MMCode() {
+	public static final MMCode mmDirectDebit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DirectDebit";
 			owner_lazy = () -> PaymentMethod2Code.mmObject();
 		}
@@ -90,12 +92,12 @@ public class PaymentMethod2Code extends PaymentMethodCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DD");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethod2Code";
 				definition = "Specifies the transfer method that will be used  to transfer the cash.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethod2Code.DirectDebit);
+				code_lazy = () -> Arrays.asList(PaymentMethod2Code.mmDirectDebit);
 				trace_lazy = () -> PaymentMethodCode.mmObject();
 			}
 		});

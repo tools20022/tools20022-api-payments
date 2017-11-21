@@ -18,7 +18,12 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.TaxPartyRole;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.TaxParty1;
+import com.tools20022.repository.msg.TaxParty2;
+import com.tools20022.repository.msg.TaxParty3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -36,12 +41,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TaxParty1#TaxType
- * TaxParty1.TaxType}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxParty2#TaxType
- * TaxParty2.TaxType}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TaxParty3#TaxType
- * TaxParty3.TaxType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxParty1#mmTaxType
+ * TaxParty1.mmTaxType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxParty2#mmTaxType
+ * TaxParty2.mmTaxType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TaxParty3#mmTaxType
+ * TaxParty3.mmTaxType}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -50,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,12 +76,17 @@ public class TaxPayer extends TaxPartyRole {
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxPayer";
 				definition = "Party that settles tax amounts. May be different from the tax debtor and tax creditor.";
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TaxParty1.TaxType, com.tools20022.repository.msg.TaxParty2.TaxType, com.tools20022.repository.msg.TaxParty3.TaxType);
+				derivationElement_lazy = () -> Arrays.asList(TaxParty1.mmTaxType, TaxParty2.mmTaxType, TaxParty3.mmTaxType);
 				superType_lazy = () -> TaxPartyRole.mmObject();
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return TaxPayer.class;
 			}
 		});
 		return mmObject_lazy.get();

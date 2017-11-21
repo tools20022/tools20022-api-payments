@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FlowDirectionTypeCode;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -39,26 +39,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FundsCashFlow#ExceptionalCashFlowIndicator
- * FundsCashFlow.ExceptionalCashFlowIndicator}</li>
- * <li>{@linkplain com.tools20022.repository.entity.FundsCashFlow#FlowDirection
- * FundsCashFlow.FlowDirection}</li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmExceptionalCashFlowIndicator
+ * FundsCashFlow.mmExceptionalCashFlowIndicator}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FundsCashFlow#FundSubscriptionAccountEntry
- * FundsCashFlow.FundSubscriptionAccountEntry}</li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmFlowDirection
+ * FundsCashFlow.mmFlowDirection}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FundsCashFlow#FundRedemptionAccountEntry
- * FundsCashFlow.FundRedemptionAccountEntry}</li>
- * <li>{@linkplain com.tools20022.repository.entity.FundsCashFlow#RelatedOrder
- * FundsCashFlow.RelatedOrder}</li>
- * <li>{@linkplain com.tools20022.repository.entity.FundsCashFlow#NetIndicator
- * FundsCashFlow.NetIndicator}</li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmFundSubscriptionAccountEntry
+ * FundsCashFlow.mmFundSubscriptionAccountEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FundsCashFlow#NetAssetValueCalculation
- * FundsCashFlow.NetAssetValueCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmFundRedemptionAccountEntry
+ * FundsCashFlow.mmFundRedemptionAccountEntry}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.FundsCashFlow#CashFlowQuantity
- * FundsCashFlow.CashFlowQuantity}</li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmRelatedOrder
+ * FundsCashFlow.mmRelatedOrder}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmNetIndicator
+ * FundsCashFlow.mmNetIndicator}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmNetAssetValueCalculation
+ * FundsCashFlow.mmNetAssetValueCalculation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.FundsCashFlow#mmCashFlowQuantity
+ * FundsCashFlow.mmCashFlowQuantity}</li>
  * </ul>
  * </li>
  * <li>
@@ -66,27 +69,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#FundsCashFlow
- * NetAssetValueCalculation.FundsCashFlow}</li>
+ * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#mmFundsCashFlow
+ * NetAssetValueCalculation.mmFundsCashFlow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedCashFlow
- * SecuritiesQuantity.RelatedCashFlow}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedCashFlow
+ * SecuritiesQuantity.mmRelatedCashFlow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#CashFlow
- * InvestmentFundOrderExecution.CashFlow}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#mmCashFlow
+ * InvestmentFundOrderExecution.mmCashFlow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BookEntry#FundSubscriptionCashInFlow
- * BookEntry.FundSubscriptionCashInFlow}</li>
+ * {@linkplain com.tools20022.repository.entity.BookEntry#mmFundSubscriptionCashInFlow
+ * BookEntry.mmFundSubscriptionCashInFlow}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.BookEntry#FundRedemptionCashOutFlow
- * BookEntry.FundRedemptionCashOutFlow}</li>
+ * {@linkplain com.tools20022.repository.entity.BookEntry#mmFundRedemptionCashOutFlow
+ * BookEntry.mmFundRedemptionCashOutFlow}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,6 +105,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class FundsCashFlow {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator exceptionalCashFlowIndicator;
 	/**
 	 * Indicates whether the cash flow is exceptional , eg, extraordinary cash
 	 * amounts in or out.
@@ -131,18 +135,27 @@ public class FundsCashFlow {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExceptionalCashFlowIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExceptionalCashFlowIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExceptionalCashFlowIndicator";
 			definition = "Indicates whether the cash flow is exceptional , eg, extraordinary cash amounts in or out.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FundsCashFlow.class.getMethod("getExceptionalCashFlowIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected FlowDirectionTypeCode flowDirection;
 	/**
 	 * Specifies the direction of the cash flow from the perspective of the
 	 * fund.
@@ -172,18 +185,27 @@ public class FundsCashFlow {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute FlowDirection = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFlowDirection = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FlowDirection";
 			definition = "Specifies the direction of the cash flow from the perspective of the fund.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> FlowDirectionTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FundsCashFlow.class.getMethod("getFlowDirection", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected BookEntry fundSubscriptionAccountEntry;
 	/**
 	 * Account entry which is linked to a fund subscription process.
 	 * <p>
@@ -192,8 +214,8 @@ public class FundsCashFlow {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BookEntry#FundSubscriptionCashInFlow
-	 * BookEntry.FundSubscriptionCashInFlow}</li>
+	 * {@linkplain com.tools20022.repository.entity.BookEntry#mmFundSubscriptionCashInFlow
+	 * BookEntry.mmFundSubscriptionCashInFlow}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -218,20 +240,21 @@ public class FundsCashFlow {
 	 * "Account entry which is linked to a fund subscription process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FundSubscriptionAccountEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFundSubscriptionAccountEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundSubscriptionAccountEntry";
 			definition = "Account entry which is linked to a fund subscription process.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> BookEntry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BookEntry.FundSubscriptionCashInFlow;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.BookEntry.mmFundSubscriptionCashInFlow;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 		}
 	};
+	protected BookEntry fundRedemptionAccountEntry;
 	/**
 	 * Account entry which is linked to a fund redemption process.
 	 * <p>
@@ -240,8 +263,8 @@ public class FundsCashFlow {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.BookEntry#FundRedemptionCashOutFlow
-	 * BookEntry.FundRedemptionCashOutFlow}</li>
+	 * {@linkplain com.tools20022.repository.entity.BookEntry#mmFundRedemptionCashOutFlow
+	 * BookEntry.mmFundRedemptionCashOutFlow}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -266,20 +289,21 @@ public class FundsCashFlow {
 	 * "Account entry which is linked to a fund redemption process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd FundRedemptionAccountEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmFundRedemptionAccountEntry = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FundRedemptionAccountEntry";
 			definition = "Account entry which is linked to a fund redemption process.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> BookEntry.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.BookEntry.FundRedemptionCashOutFlow;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.BookEntry.mmFundRedemptionCashOutFlow;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
 		}
 	};
+	protected InvestmentFundOrderExecution relatedOrder;
 	/**
 	 * Trade which is the source for the calculation of the cash flow movements.
 	 * <p>
@@ -288,8 +312,8 @@ public class FundsCashFlow {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#CashFlow
-	 * InvestmentFundOrderExecution.CashFlow}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFundOrderExecution#mmCashFlow
+	 * InvestmentFundOrderExecution.mmCashFlow}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -316,20 +340,21 @@ public class FundsCashFlow {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOrder";
 			definition = "Trade which is the source for the calculation of the cash flow movements.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> InvestmentFundOrderExecution.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.CashFlow;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.mmCashFlow;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrderExecution.mmObject();
 		}
 	};
+	protected YesNoIndicator netIndicator;
 	/**
 	 * Indicates whether the cash flow is the result of netting.
 	 * <p>
@@ -357,18 +382,27 @@ public class FundsCashFlow {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NetIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNetIndicator = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetIndicator";
 			definition = "Indicates whether the cash flow is the result of netting.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return FundsCashFlow.class.getMethod("getNetIndicator", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
 	 * Net asset value incorporating the net cash flow for a valuation date.
 	 * <p>
@@ -377,8 +411,8 @@ public class FundsCashFlow {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#FundsCashFlow
-	 * NetAssetValueCalculation.FundsCashFlow}</li>
+	 * {@linkplain com.tools20022.repository.entity.NetAssetValueCalculation#mmFundsCashFlow
+	 * NetAssetValueCalculation.mmFundsCashFlow}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -404,20 +438,21 @@ public class FundsCashFlow {
 	 * "Net asset value incorporating the net cash flow for a valuation date."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NetAssetValueCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetAssetValueCalculation";
 			definition = "Net asset value incorporating the net cash flow for a valuation date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmFundsCashFlow;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.FundsCashFlow;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesQuantity cashFlowQuantity;
 	/**
 	 * Value and quantity of the cash flow.
 	 * <p>
@@ -426,8 +461,8 @@ public class FundsCashFlow {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#RelatedCashFlow
-	 * SecuritiesQuantity.RelatedCashFlow}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuantity#mmRelatedCashFlow
+	 * SecuritiesQuantity.mmRelatedCashFlow}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -451,35 +486,106 @@ public class FundsCashFlow {
 	 * definition} = "Value and quantity of the cash flow."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CashFlowQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCashFlowQuantity = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> FundsCashFlow.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CashFlowQuantity";
 			definition = "Value and quantity of the cash flow.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SecuritiesQuantity.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.RelatedCashFlow;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedCashFlow;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundsCashFlow";
 				definition = "Cash movements from or to a fund as a result of investment funds transactions, for example, subscriptions or redemptions.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NetAssetValueCalculation.FundsCashFlow, com.tools20022.repository.entity.SecuritiesQuantity.RelatedCashFlow,
-						com.tools20022.repository.entity.InvestmentFundOrderExecution.CashFlow, com.tools20022.repository.entity.BookEntry.FundSubscriptionCashInFlow, com.tools20022.repository.entity.BookEntry.FundRedemptionCashOutFlow);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FundsCashFlow.ExceptionalCashFlowIndicator, com.tools20022.repository.entity.FundsCashFlow.FlowDirection,
-						com.tools20022.repository.entity.FundsCashFlow.FundSubscriptionAccountEntry, com.tools20022.repository.entity.FundsCashFlow.FundRedemptionAccountEntry, com.tools20022.repository.entity.FundsCashFlow.RelatedOrder,
-						com.tools20022.repository.entity.FundsCashFlow.NetIndicator, com.tools20022.repository.entity.FundsCashFlow.NetAssetValueCalculation, com.tools20022.repository.entity.FundsCashFlow.CashFlowQuantity);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NetAssetValueCalculation.mmFundsCashFlow, com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedCashFlow,
+						com.tools20022.repository.entity.InvestmentFundOrderExecution.mmCashFlow, com.tools20022.repository.entity.BookEntry.mmFundSubscriptionCashInFlow,
+						com.tools20022.repository.entity.BookEntry.mmFundRedemptionCashOutFlow);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FundsCashFlow.mmExceptionalCashFlowIndicator, com.tools20022.repository.entity.FundsCashFlow.mmFlowDirection,
+						com.tools20022.repository.entity.FundsCashFlow.mmFundSubscriptionAccountEntry, com.tools20022.repository.entity.FundsCashFlow.mmFundRedemptionAccountEntry,
+						com.tools20022.repository.entity.FundsCashFlow.mmRelatedOrder, com.tools20022.repository.entity.FundsCashFlow.mmNetIndicator, com.tools20022.repository.entity.FundsCashFlow.mmNetAssetValueCalculation,
+						com.tools20022.repository.entity.FundsCashFlow.mmCashFlowQuantity);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return FundsCashFlow.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public YesNoIndicator getExceptionalCashFlowIndicator() {
+		return exceptionalCashFlowIndicator;
+	}
+
+	public void setExceptionalCashFlowIndicator(YesNoIndicator exceptionalCashFlowIndicator) {
+		this.exceptionalCashFlowIndicator = exceptionalCashFlowIndicator;
+	}
+
+	public FlowDirectionTypeCode getFlowDirection() {
+		return flowDirection;
+	}
+
+	public void setFlowDirection(FlowDirectionTypeCode flowDirection) {
+		this.flowDirection = flowDirection;
+	}
+
+	public BookEntry getFundSubscriptionAccountEntry() {
+		return fundSubscriptionAccountEntry;
+	}
+
+	public void setFundSubscriptionAccountEntry(com.tools20022.repository.entity.BookEntry fundSubscriptionAccountEntry) {
+		this.fundSubscriptionAccountEntry = fundSubscriptionAccountEntry;
+	}
+
+	public BookEntry getFundRedemptionAccountEntry() {
+		return fundRedemptionAccountEntry;
+	}
+
+	public void setFundRedemptionAccountEntry(com.tools20022.repository.entity.BookEntry fundRedemptionAccountEntry) {
+		this.fundRedemptionAccountEntry = fundRedemptionAccountEntry;
+	}
+
+	public InvestmentFundOrderExecution getRelatedOrder() {
+		return relatedOrder;
+	}
+
+	public void setRelatedOrder(com.tools20022.repository.entity.InvestmentFundOrderExecution relatedOrder) {
+		this.relatedOrder = relatedOrder;
+	}
+
+	public YesNoIndicator getNetIndicator() {
+		return netIndicator;
+	}
+
+	public void setNetIndicator(YesNoIndicator netIndicator) {
+		this.netIndicator = netIndicator;
+	}
+
+	public NetAssetValueCalculation getNetAssetValueCalculation() {
+		return netAssetValueCalculation;
+	}
+
+	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
+		this.netAssetValueCalculation = netAssetValueCalculation;
+	}
+
+	public SecuritiesQuantity getCashFlowQuantity() {
+		return cashFlowQuantity;
+	}
+
+	public void setCashFlowQuantity(com.tools20022.repository.entity.SecuritiesQuantity cashFlowQuantity) {
+		this.cashFlowQuantity = cashFlowQuantity;
 	}
 }

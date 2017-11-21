@@ -19,10 +19,16 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.InvestigationStatus1Code;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.other.SupplementaryDataEnvelope1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the investigation results.
@@ -34,18 +40,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.InvestigationResult1Choice#Result
- * InvestigationResult1Choice.Result}</li>
+ * {@linkplain com.tools20022.repository.choice.InvestigationResult1Choice#mmResult
+ * InvestigationResult1Choice.mmResult}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.InvestigationResult1Choice#InvestigationStatus
- * InvestigationResult1Choice.InvestigationStatus}</li>
+ * {@linkplain com.tools20022.repository.choice.InvestigationResult1Choice#mmInvestigationStatus
+ * InvestigationResult1Choice.mmInvestigationStatus}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -56,9 +62,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides the investigation results."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "InvestigationResult1Choice", propOrder = {"result", "investigationStatus"})
 public class InvestigationResult1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected SupplementaryDataEnvelope1 result;
 	/**
 	 * Provides the result.
 	 * <p>
@@ -87,19 +96,20 @@ public class InvestigationResult1Choice {
 	 * definition} = "Provides the result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Result = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmResult = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> InvestigationResult1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Rslt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Result";
 			definition = "Provides the result.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			complexType_lazy = () -> SupplementaryDataEnvelope1.mmObject();
 		}
 	};
+	protected InvestigationStatus1Code investigationStatus;
 	/**
 	 * Provides the investigation status.
 	 * <p>
@@ -128,16 +138,16 @@ public class InvestigationResult1Choice {
 	 * definition} = "Provides the investigation status."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute InvestigationStatus = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmInvestigationStatus = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> InvestigationResult1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "InvstgtnSts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InvestigationStatus";
 			definition = "Provides the investigation status.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> InvestigationStatus1Code.mmObject();
 		}
 	};
@@ -145,13 +155,31 @@ public class InvestigationResult1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.InvestigationResult1Choice.Result, com.tools20022.repository.choice.InvestigationResult1Choice.InvestigationStatus);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(InvestigationResult1Choice.mmResult, InvestigationResult1Choice.mmInvestigationStatus);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationResult1Choice";
 				definition = "Provides the investigation results.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Rslt", required = true)
+	public SupplementaryDataEnvelope1 getResult() {
+		return result;
+	}
+
+	public void setResult(SupplementaryDataEnvelope1 result) {
+		this.result = result;
+	}
+
+	@XmlElement(name = "InvstgtnSts", required = true)
+	public InvestigationStatus1Code getInvestigationStatus() {
+		return investigationStatus;
+	}
+
+	public void setInvestigationStatus(InvestigationStatus1Code investigationStatus) {
+		this.investigationStatus = investigationStatus;
 	}
 }

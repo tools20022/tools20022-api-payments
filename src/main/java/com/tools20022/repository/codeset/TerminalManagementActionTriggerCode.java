@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,24 +33,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#DateTime
- * TerminalManagementActionTriggerCode.DateTime}</li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#mmDateTime
+ * TerminalManagementActionTriggerCode.mmDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#HostEvent
- * TerminalManagementActionTriggerCode.HostEvent}</li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#mmHostEvent
+ * TerminalManagementActionTriggerCode.mmHostEvent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#Manual
- * TerminalManagementActionTriggerCode.Manual}</li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#mmManual
+ * TerminalManagementActionTriggerCode.mmManual}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#SaleEvent
- * TerminalManagementActionTriggerCode.SaleEvent}</li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionTriggerCode#mmSaleEvent
+ * TerminalManagementActionTriggerCode.mmSaleEvent}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -91,9 +93,9 @@ public class TerminalManagementActionTriggerCode {
 	 * definition} = "Date and time trigger the terminal management action."</li>
 	 * </ul>
 	 */
-	public static final MMCode DateTime = new MMCode() {
+	public static final MMCode mmDateTime = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DateTime";
 			definition = "Date and time trigger the terminal management action.";
 			owner_lazy = () -> TerminalManagementActionTriggerCode.mmObject();
@@ -121,9 +123,9 @@ public class TerminalManagementActionTriggerCode {
 	 * definition} = "Acquirer triggers the terminal management action."</li>
 	 * </ul>
 	 */
-	public static final MMCode HostEvent = new MMCode() {
+	public static final MMCode mmHostEvent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HostEvent";
 			definition = "Acquirer triggers the terminal management action.";
 			owner_lazy = () -> TerminalManagementActionTriggerCode.mmObject();
@@ -151,9 +153,9 @@ public class TerminalManagementActionTriggerCode {
 	 * definition} = "Acceptor triggers the terminal management action."</li>
 	 * </ul>
 	 */
-	public static final MMCode Manual = new MMCode() {
+	public static final MMCode mmManual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Manual";
 			definition = "Acceptor triggers the terminal management action.";
 			owner_lazy = () -> TerminalManagementActionTriggerCode.mmObject();
@@ -181,9 +183,9 @@ public class TerminalManagementActionTriggerCode {
 	 * definition} = "Sale system triggers the terminal management action."</li>
 	 * </ul>
 	 */
-	public static final MMCode SaleEvent = new MMCode() {
+	public static final MMCode mmSaleEvent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SaleEvent";
 			definition = "Sale system triggers the terminal management action.";
 			owner_lazy = () -> TerminalManagementActionTriggerCode.mmObject();
@@ -194,13 +196,12 @@ public class TerminalManagementActionTriggerCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("DATE");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionTriggerCode";
 				definition = "Event to start a terminal management action by the point of interaction (POI).";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TerminalManagementActionTriggerCode.DateTime, com.tools20022.repository.codeset.TerminalManagementActionTriggerCode.HostEvent,
-						com.tools20022.repository.codeset.TerminalManagementActionTriggerCode.Manual, com.tools20022.repository.codeset.TerminalManagementActionTriggerCode.SaleEvent);
+				code_lazy = () -> Arrays.asList(TerminalManagementActionTriggerCode.mmDateTime, TerminalManagementActionTriggerCode.mmHostEvent, TerminalManagementActionTriggerCode.mmManual, TerminalManagementActionTriggerCode.mmSaleEvent);
 			}
 		});
 		return mmObject_lazy.get();

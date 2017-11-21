@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#NewGlobalNote
- * GlobalNoteCode.NewGlobalNote}</li>
+ * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#mmNewGlobalNote
+ * GlobalNoteCode.mmNewGlobalNote}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#ClassicalGlobalNote
- * GlobalNoteCode.ClassicalGlobalNote}</li>
+ * {@linkplain com.tools20022.repository.codeset.GlobalNoteCode#mmClassicalGlobalNote
+ * GlobalNoteCode.mmClassicalGlobalNote}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -88,9 +90,9 @@ public class GlobalNoteCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NewGlobalNote = new MMCode() {
+	public static final MMCode mmNewGlobalNote = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NewGlobalNote";
 			definition = "Form of global certificate which refers to the books and records of the ICSDs to determine the Issue Outstanding Amount (IOA).";
 			owner_lazy = () -> GlobalNoteCode.mmObject();
@@ -122,9 +124,9 @@ public class GlobalNoteCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ClassicalGlobalNote = new MMCode() {
+	public static final MMCode mmClassicalGlobalNote = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClassicalGlobalNote";
 			definition = "Form of global certificate which requires physical annotation on the attached schedule to reflect changes in the Issue Outstanding Amount (IOA).";
 			owner_lazy = () -> GlobalNoteCode.mmObject();
@@ -135,12 +137,12 @@ public class GlobalNoteCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NGNO");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GlobalNoteCode";
 				definition = "Identifies if the security will be issued in New Global Note (NGN) or Classical Global Note (CGN).";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GlobalNoteCode.NewGlobalNote, com.tools20022.repository.codeset.GlobalNoteCode.ClassicalGlobalNote);
+				code_lazy = () -> Arrays.asList(GlobalNoteCode.mmNewGlobalNote, GlobalNoteCode.mmClassicalGlobalNote);
 			}
 		});
 		return mmObject_lazy.get();

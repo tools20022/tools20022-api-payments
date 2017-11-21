@@ -18,9 +18,16 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.RuntimePropertyAware;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
-import com.tools20022.metamodel.constraints.DeriveMMBusinessAttribute_businessElementType;
-import com.tools20022.metamodel.constraints.DeriveMMBusinessAttribute_memberType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.BusinessAttributeHasExactlyOneType;
+import com.tools20022.metamodel.constraints.NoDerivingCodeSetType;
+import com.tools20022.metamodel.derived.DeriveMMBusinessAttribute_businessElementType;
+import com.tools20022.metamodel.derived.DeriveMMBusinessAttribute_memberType;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -32,8 +39,34 @@ import java.util.Optional;
  * A BusinessElement, typed by a BusinessComponent or a DataType (contrary to a
  * BusinessAssociationEnd, which is always typed by another BusinessComponent)
  */
-public class MMBusinessAttribute implements MMBusinessElement {
+public class MMBusinessAttribute implements RuntimePropertyAware, MMBusinessElement {
 
+	/**
+	 * Expresses that the content model of a BusinessAttribute may be specified
+	 * by a type from the XSD type library or a derived datatype.
+	 */
+	public final static MetamodelAttribute<MMBusinessAttribute, Optional<MMDataType>> simpleTypeAttribute = newAttribute();
+	/**
+	 * The BusinessComponent that describes the complex content model of the
+	 * BusinessAttrribute.
+	 */
+	public final static MetamodelAttribute<MMBusinessAttribute, Optional<MMBusinessComponent>> complexTypeAttribute = newAttribute();
+	/**
+	 * A BusinessAttribute must have exactly one of the following: simpleType
+	 * and complexType. complexType-&gt;size() + simpleType-&gt;size() = 1
+	 */
+	public final static MetamodelConstraint<MMBusinessAttribute> checkBusinessAttributeHasExactlyOneType = newConstraint(b -> {
+		new BusinessAttributeHasExactlyOneType().accept(b);
+	});
+	/**
+	 * Deriving Code Sets may only be used to type MessageAttributes. Therefore,
+	 * a BusinessAttribute may not be typed by a Deriving CodeSet.
+	 * simpleType.oclIsKindOf(CodeSet) implies
+	 * simpleType.oclAsType(CodeSet).trace-&gt;isEmpty()
+	 */
+	public final static MetamodelConstraint<MMBusinessAttribute> checkNoDerivingCodeSetType = newConstraint(b -> {
+		new NoDerivingCodeSetType().accept(b);
+	});
 	protected Supplier<MMDataType> simpleType_lazy;
 	protected Supplier<MMBusinessComponent> complexType_lazy;
 	protected boolean isDerived;

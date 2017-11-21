@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalContractBalanceType1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Balance;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the balance details.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ContractBalanceType1Choice#Code
- * ContractBalanceType1Choice.Code}</li>
+ * {@linkplain com.tools20022.repository.choice.ContractBalanceType1Choice#mmCode
+ * ContractBalanceType1Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ContractBalanceType1Choice#Proprietary
- * ContractBalanceType1Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.ContractBalanceType1Choice#mmProprietary
+ * ContractBalanceType1Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,9 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Specifies the balance details."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ContractBalanceType1Choice", propOrder = {"code", "proprietary"})
 public class ContractBalanceType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalContractBalanceType1Code code;
 	/**
 	 * Specifies the nature of a balance, in a coded form.
 	 * <p>
@@ -75,7 +84,8 @@ public class ContractBalanceType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Balance#Type Balance.Type}</li>
+	 * {@linkplain com.tools20022.repository.entity.Balance#mmType
+	 * Balance.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -94,20 +104,21 @@ public class ContractBalanceType1Choice {
 	 * definition} = "Specifies the nature of a balance, in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Balance.mmType;
 			componentContext_lazy = () -> ContractBalanceType1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Balance.Type;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Specifies the nature of a balance, in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalContractBalanceType1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Specifies the nature of a balance, in a proprietary form.
 	 * <p>
@@ -120,7 +131,8 @@ public class ContractBalanceType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Balance#Type Balance.Type}</li>
+	 * {@linkplain com.tools20022.repository.entity.Balance#mmType
+	 * Balance.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -140,17 +152,17 @@ public class ContractBalanceType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Balance.mmType;
 			componentContext_lazy = () -> ContractBalanceType1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Balance.Type;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Specifies the nature of a balance, in a proprietary form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -158,14 +170,32 @@ public class ContractBalanceType1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ContractBalanceType1Choice.Code, com.tools20022.repository.choice.ContractBalanceType1Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(ContractBalanceType1Choice.mmCode, ContractBalanceType1Choice.mmProprietary);
 				trace_lazy = () -> Balance.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContractBalanceType1Choice";
 				definition = "Specifies the balance details.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalContractBalanceType1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalContractBalanceType1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

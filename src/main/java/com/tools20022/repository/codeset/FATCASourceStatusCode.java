@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FATCASourceStatusCode#Declared
- * FATCASourceStatusCode.Declared}</li>
+ * {@linkplain com.tools20022.repository.codeset.FATCASourceStatusCode#mmDeclared
+ * FATCASourceStatusCode.mmDeclared}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FATCASourceStatusCode#Calculated
- * FATCASourceStatusCode.Calculated}</li>
+ * {@linkplain com.tools20022.repository.codeset.FATCASourceStatusCode#mmCalculated
+ * FATCASourceStatusCode.mmCalculated}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,9 +82,9 @@ public class FATCASourceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Declared = new MMCode() {
+	public static final MMCode mmDeclared = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Declared";
 			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status is as declared by the investor.";
 			owner_lazy = () -> FATCASourceStatusCode.mmObject();
@@ -113,9 +115,9 @@ public class FATCASourceStatusCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Calculated = new MMCode() {
+	public static final MMCode mmCalculated = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Calculated";
 			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated";
 			owner_lazy = () -> FATCASourceStatusCode.mmObject();
@@ -126,11 +128,11 @@ public class FATCASourceStatusCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FATCASourceStatusCode";
 				definition = "Specifies the source of Foreign Account Tax Compliance Act (FATCA) status.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FATCASourceStatusCode.Declared, com.tools20022.repository.codeset.FATCASourceStatusCode.Calculated);
+				code_lazy = () -> Arrays.asList(FATCASourceStatusCode.mmDeclared, FATCASourceStatusCode.mmCalculated);
 			}
 		});
 		return mmObject_lazy.get();

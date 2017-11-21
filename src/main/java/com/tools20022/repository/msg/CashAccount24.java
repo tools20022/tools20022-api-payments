@@ -20,13 +20,23 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02;
+import com.tools20022.repository.area.acmt.AccountOpeningRequestV02;
 import com.tools20022.repository.choice.AccountIdentification4Choice;
 import com.tools20022.repository.choice.CashAccountType2Choice;
 import com.tools20022.repository.codeset.ActiveOrHistoricCurrencyCode;
 import com.tools20022.repository.datatype.Max70Text;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.AccountIdentification;
 import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the details to identify an account.
@@ -37,14 +47,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#Identification
- * CashAccount24.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#Type
- * CashAccount24.Type}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#Currency
- * CashAccount24.Currency}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#Name
- * CashAccount24.Name}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#mmIdentification
+ * CashAccount24.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#mmType
+ * CashAccount24.mmType}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#mmCurrency
+ * CashAccount24.mmCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CashAccount24#mmName
+ * CashAccount24.mmName}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -55,18 +65,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#ReferenceAccount
- * AccountOpeningAmendmentRequestV02.ReferenceAccount}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#mmReferenceAccount
+ * AccountOpeningAmendmentRequestV02.mmReferenceAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#ReferenceAccount
- * AccountOpeningRequestV02.ReferenceAccount}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#mmReferenceAccount
+ * AccountOpeningRequestV02.mmReferenceAccount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,9 +87,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Provides the details to identify an account."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CashAccount24", propOrder = {"identification", "type", "currency", "name"})
 public class CashAccount24 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected AccountIdentification4Choice identification;
 	/**
 	 * Unique and unambiguous identification for the account between the account
 	 * owner and the account servicer.
@@ -93,8 +106,8 @@ public class CashAccount24 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Account#Identification
-	 * Account.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmIdentification
+	 * Account.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -114,21 +127,22 @@ public class CashAccount24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Identification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Account.mmIdentification;
 			componentContext_lazy = () -> CashAccount24.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Account.Identification;
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous identification for the account between the account owner and the account servicer.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> AccountIdentification4Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> AccountIdentification4Choice.mmObject();
 		}
 	};
+	protected CashAccountType2Choice type;
 	/**
 	 * Specifies the nature, or use of the account.
 	 * <p>
@@ -141,8 +155,8 @@ public class CashAccount24 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.CashAccount#CashAccountType
-	 * CashAccount.CashAccountType}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashAccount#mmCashAccountType
+	 * CashAccount.mmCashAccountType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -160,21 +174,22 @@ public class CashAccount24 {
 	 * definition} = "Specifies the nature, or use of the account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Type = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmType = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> CashAccount.mmCashAccountType;
 			componentContext_lazy = () -> CashAccount24.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.CashAccount.CashAccountType;
 			isDerived = false;
 			xmlTag = "Tp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Specifies the nature, or use of the account.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CashAccountType2Choice.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> CashAccountType2Choice.mmObject();
 		}
 	};
+	protected ActiveOrHistoricCurrencyCode currency;
 	/**
 	 * Identification of the currency in which the account is held.
 	 * 
@@ -192,8 +207,8 @@ public class CashAccount24 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Account#BaseCurrency
-	 * Account.BaseCurrency}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmBaseCurrency
+	 * Account.mmBaseCurrency}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -213,20 +228,21 @@ public class CashAccount24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Currency = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Account.mmBaseCurrency;
 			componentContext_lazy = () -> CashAccount24.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Account.BaseCurrency;
 			isDerived = false;
 			xmlTag = "Ccy";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Currency";
 			definition = "Identification of the currency in which the account is held. \n\nUsage: Currency should only be used in case one and the same account number covers several currencies\nand the initiating party needs to identify which currency needs to be used for settlement on the account.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyCode.mmObject();
 		}
 	};
+	protected Max70Text name;
 	/**
 	 * Name of the account, as assigned by the account servicing institution, in
 	 * agreement with the account owner in order to provide an additional means
@@ -246,8 +262,8 @@ public class CashAccount24 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.AccountIdentification#Name
-	 * AccountIdentification.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountIdentification#mmName
+	 * AccountIdentification.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -267,17 +283,17 @@ public class CashAccount24 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> AccountIdentification.mmName;
 			componentContext_lazy = () -> CashAccount24.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.AccountIdentification.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name of the account, as assigned by the account servicing institution, in agreement with the account owner in order to provide an additional means of identification of the account.\n\nUsage: The account name is different from the account owner name. The account name is used in certain user communities to provide a means of identifying the account, in addition to the account owner's identity and the account number.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 	};
@@ -285,16 +301,51 @@ public class CashAccount24 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CashAccount24.Identification, com.tools20022.repository.msg.CashAccount24.Type, com.tools20022.repository.msg.CashAccount24.Currency,
-						com.tools20022.repository.msg.CashAccount24.Name);
+				messageElement_lazy = () -> Arrays.asList(CashAccount24.mmIdentification, CashAccount24.mmType, CashAccount24.mmCurrency, CashAccount24.mmName);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountOpeningAmendmentRequestV02.mmReferenceAccount, AccountOpeningRequestV02.mmReferenceAccount);
 				trace_lazy = () -> CashAccount.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02.ReferenceAccount, com.tools20022.repository.area.acmt.AccountOpeningRequestV02.ReferenceAccount);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccount24";
 				definition = "Provides the details to identify an account.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public AccountIdentification4Choice getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(AccountIdentification4Choice identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "Tp")
+	public CashAccountType2Choice getType() {
+		return type;
+	}
+
+	public void setType(CashAccountType2Choice type) {
+		this.type = type;
+	}
+
+	@XmlElement(name = "Ccy")
+	public ActiveOrHistoricCurrencyCode getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(ActiveOrHistoricCurrencyCode currency) {
+		this.currency = currency;
+	}
+
+	@XmlElement(name = "Nm")
+	public Max70Text getName() {
+		return name;
+	}
+
+	public void setName(Max70Text name) {
+		this.name = name;
 	}
 }

@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,17 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.FreightChargesCode#Collect
- * FreightChargesCode.Collect}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FreightChargesCode#Prepaid
- * FreightChargesCode.Prepaid}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FreightChargesCode#mmCollect
+ * FreightChargesCode.mmCollect}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FreightChargesCode#mmPrepaid
+ * FreightChargesCode.mmPrepaid}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -80,9 +84,9 @@ public class FreightChargesCode {
 	 * definition} = "Freight charges are to collect from consignee."</li>
 	 * </ul>
 	 */
-	public static final MMCode Collect = new MMCode() {
+	public static final MMCode mmCollect = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Collect";
 			definition = "Freight charges are to collect from consignee.";
 			owner_lazy = () -> FreightChargesCode.mmObject();
@@ -110,9 +114,9 @@ public class FreightChargesCode {
 	 * definition} = "Freight charges are paid by shipper."</li>
 	 * </ul>
 	 */
-	public static final MMCode Prepaid = new MMCode() {
+	public static final MMCode mmPrepaid = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Prepaid";
 			definition = "Freight charges are paid by shipper.";
 			owner_lazy = () -> FreightChargesCode.mmObject();
@@ -123,12 +127,12 @@ public class FreightChargesCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CLCT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FreightChargesCode";
 				definition = "Indicates the arrangement as to the freight charges.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FreightChargesCode.Collect, com.tools20022.repository.codeset.FreightChargesCode.Prepaid);
+				code_lazy = () -> Arrays.asList(FreightChargesCode.mmCollect, FreightChargesCode.mmPrepaid);
 			}
 		});
 		return mmObject_lazy.get();

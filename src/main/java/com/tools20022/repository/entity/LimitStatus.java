@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LimitStatusCode;
 import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,18 +37,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.LimitStatus#Limit
- * LimitStatus.Limit}</li>
- * <li>{@linkplain com.tools20022.repository.entity.LimitStatus#Status
- * LimitStatus.Status}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LimitStatus#mmLimit
+ * LimitStatus.mmLimit}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.LimitStatus#mmStatus
+ * LimitStatus.mmStatus}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Limit#LimitStatus
- * Limit.LimitStatus}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Limit#mmLimitStatus
+ * Limit.mmLimitStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -56,8 +56,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,6 +71,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class LimitStatus extends Status {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Limit limit;
 	/**
 	 * Limit for which a status is provided.
 	 * <p>
@@ -79,8 +80,8 @@ public class LimitStatus extends Status {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Limit#LimitStatus
-	 * Limit.LimitStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.Limit#mmLimitStatus
+	 * Limit.mmLimitStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -102,20 +103,21 @@ public class LimitStatus extends Status {
 	 * definition} = "Limit for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Limit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmLimit = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> LimitStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LimitStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Limit";
 			definition = "Limit for which a status is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Limit.mmLimitStatus;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Limit.LimitStatus;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected LimitStatusCode status;
 	/**
 	 * Current status of the limit.
 	 * <p>
@@ -141,31 +143,60 @@ public class LimitStatus extends Status {
 	 * definition} = "Current status of the limit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Status = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> LimitStatus.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.LimitStatus.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Current status of the limit.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> LimitStatusCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return LimitStatus.class.getMethod("getStatus", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitStatus";
 				definition = "Current status of the limit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Limit.LimitStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Limit.mmLimitStatus);
 				superType_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LimitStatus.Limit, com.tools20022.repository.entity.LimitStatus.Status);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.LimitStatus.mmLimit, com.tools20022.repository.entity.LimitStatus.mmStatus);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return LimitStatus.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Limit getLimit() {
+		return limit;
+	}
+
+	public void setLimit(com.tools20022.repository.entity.Limit limit) {
+		this.limit = limit;
+	}
+
+	public LimitStatusCode getStatus() {
+		return status;
+	}
+
+	public void setStatus(LimitStatusCode status) {
+		this.status = status;
 	}
 }

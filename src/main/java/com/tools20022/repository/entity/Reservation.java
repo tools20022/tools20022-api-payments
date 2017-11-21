@@ -17,13 +17,14 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ReservationTypeCode;
 import com.tools20022.repository.entity.Limit;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Liquidity set aside by the payer for specific purposes.
@@ -37,29 +38,33 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Reservation#ReservationType
- * Reservation.ReservationType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Reservation#RelatedIntraPositionTransfer
- * Reservation.RelatedIntraPositionTransfer}</li>
+ * {@linkplain com.tools20022.repository.entity.Reservation#mmReservationType
+ * Reservation.mmReservationType}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Reservation#SettlementInstruction
- * Reservation.SettlementInstruction}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Reservation#AccountService
- * Reservation.AccountService}</li>
+ * {@linkplain com.tools20022.repository.entity.Reservation#mmRelatedIntraPositionTransfer
+ * Reservation.mmRelatedIntraPositionTransfer}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Reservation#mmSettlementInstruction
+ * Reservation.mmSettlementInstruction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.Reservation#mmAccountService
+ * Reservation.mmAccountService}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.AccountService#Reservation
- * AccountService.Reservation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CashSettlement#Reservation
- * CashSettlement.Reservation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#Reservation
- * IntraPositionTransfer.Reservation}</li>
+ * {@linkplain com.tools20022.repository.entity.AccountService#mmReservation
+ * AccountService.mmReservation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CashSettlement#mmReservation
+ * CashSettlement.mmReservation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#mmReservation
+ * IntraPositionTransfer.mmReservation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -67,8 +72,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,6 +87,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Reservation extends Limit {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected ReservationTypeCode reservationType;
 	/**
 	 * Nature of the reservation.
 	 * <p>
@@ -107,18 +113,27 @@ public class Reservation extends Limit {
 	 * definition} = "Nature of the reservation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ReservationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmReservationType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Reservation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReservationType";
 			definition = "Nature of the reservation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ReservationTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Reservation.class.getMethod("getReservationType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.IntraPositionTransfer> relatedIntraPositionTransfer;
 	/**
 	 * Transfer process for which reservation information is provided.
 	 * <p>
@@ -127,8 +142,8 @@ public class Reservation extends Limit {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#Reservation
-	 * IntraPositionTransfer.Reservation}</li>
+	 * {@linkplain com.tools20022.repository.entity.IntraPositionTransfer#mmReservation
+	 * IntraPositionTransfer.mmReservation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -153,19 +168,20 @@ public class Reservation extends Limit {
 	 * "Transfer process for which reservation information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedIntraPositionTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedIntraPositionTransfer = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Reservation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIntraPositionTransfer";
 			definition = "Transfer process for which reservation information is provided.";
 			minOccurs = 0;
-			type_lazy = () -> IntraPositionTransfer.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.Reservation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmReservation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.CashSettlement> settlementInstruction;
 	/**
 	 * Specifies the instruction which originated the reservation.
 	 * <p>
@@ -174,8 +190,8 @@ public class Reservation extends Limit {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CashSettlement#Reservation
-	 * CashSettlement.Reservation}</li>
+	 * {@linkplain com.tools20022.repository.entity.CashSettlement#mmReservation
+	 * CashSettlement.mmReservation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -199,19 +215,20 @@ public class Reservation extends Limit {
 	 * "Specifies the instruction which originated the reservation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Reservation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlementInstruction";
 			definition = "Specifies the instruction which originated the reservation.";
 			minOccurs = 0;
-			type_lazy = () -> CashSettlement.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.Reservation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmReservation;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
 		}
 	};
+	protected AccountService accountService;
 	/**
 	 * Account services for which reservation information is specified.
 	 * <p>
@@ -220,8 +237,8 @@ public class Reservation extends Limit {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AccountService#Reservation
-	 * AccountService.Reservation}</li>
+	 * {@linkplain com.tools20022.repository.entity.AccountService#mmReservation
+	 * AccountService.mmReservation}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -245,35 +262,72 @@ public class Reservation extends Limit {
 	 * "Account services for which reservation information is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AccountService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccountService = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Reservation.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AccountService";
 			definition = "Account services for which reservation information is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AccountService.mmReservation;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AccountService.Reservation;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reservation";
 				definition = "Liquidity set aside by the payer for specific purposes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountService.Reservation, com.tools20022.repository.entity.CashSettlement.Reservation,
-						com.tools20022.repository.entity.IntraPositionTransfer.Reservation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountService.mmReservation, com.tools20022.repository.entity.CashSettlement.mmReservation,
+						com.tools20022.repository.entity.IntraPositionTransfer.mmReservation);
 				superType_lazy = () -> Limit.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reservation.ReservationType, com.tools20022.repository.entity.Reservation.RelatedIntraPositionTransfer,
-						com.tools20022.repository.entity.Reservation.SettlementInstruction, com.tools20022.repository.entity.Reservation.AccountService);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reservation.mmReservationType, com.tools20022.repository.entity.Reservation.mmRelatedIntraPositionTransfer,
+						com.tools20022.repository.entity.Reservation.mmSettlementInstruction, com.tools20022.repository.entity.Reservation.mmAccountService);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Reservation.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ReservationTypeCode getReservationType() {
+		return reservationType;
+	}
+
+	public void setReservationType(ReservationTypeCode reservationType) {
+		this.reservationType = reservationType;
+	}
+
+	public List<IntraPositionTransfer> getRelatedIntraPositionTransfer() {
+		return relatedIntraPositionTransfer;
+	}
+
+	public void setRelatedIntraPositionTransfer(List<com.tools20022.repository.entity.IntraPositionTransfer> relatedIntraPositionTransfer) {
+		this.relatedIntraPositionTransfer = relatedIntraPositionTransfer;
+	}
+
+	public List<CashSettlement> getSettlementInstruction() {
+		return settlementInstruction;
+	}
+
+	public void setSettlementInstruction(List<com.tools20022.repository.entity.CashSettlement> settlementInstruction) {
+		this.settlementInstruction = settlementInstruction;
+	}
+
+	public AccountService getAccountService() {
+		return accountService;
+	}
+
+	public void setAccountService(com.tools20022.repository.entity.AccountService accountService) {
+		this.accountService = accountService;
 	}
 }

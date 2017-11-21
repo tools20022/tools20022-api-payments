@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,36 @@ import java.util.Optional;
  */
 public class MMDecimal implements MMDataType {
 
+	/**
+	 * the lowest value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<String>> minInclusiveAttribute = newAttribute();
+	/**
+	 * the lowest but one value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<String>> minExclusiveAttribute = newAttribute();
+	/**
+	 * the highest value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<String>> maxInclusiveAttribute = newAttribute();
+	/**
+	 * the highest but one value in the allowed set of values
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<String>> maxExclusiveAttribute = newAttribute();
+	/**
+	 * the maximum number of allowed digits in a Decimal number
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<Integer>> totalDigitsAttribute = newAttribute();
+	/**
+	 * the fractional part of a Decimal number
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<Integer>> fractionDigitsAttribute = newAttribute();
+	/**
+	 * A constraint on the value space of a datatype which is achieved by
+	 * constraining the lexical space to literals which match a specific
+	 * pattern.
+	 */
+	public final static MetamodelAttribute<MMDecimal, Optional<String>> patternAttribute = newAttribute();
 	protected String minInclusive;
 	protected String minExclusive;
 	protected String maxInclusive;

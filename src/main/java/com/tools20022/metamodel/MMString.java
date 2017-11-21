@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -31,6 +33,24 @@ import java.util.Optional;
  */
 public class MMString implements MMDataType {
 
+	/**
+	 * The minimum number of units of characters.
+	 */
+	public final static MetamodelAttribute<MMString, Optional<Integer>> minLengthAttribute = newAttribute();
+	/**
+	 * The number of units of characters.
+	 */
+	public final static MetamodelAttribute<MMString, Optional<Integer>> maxLengthAttribute = newAttribute();
+	/**
+	 * The number of units of characters.
+	 */
+	public final static MetamodelAttribute<MMString, Optional<Integer>> lengthAttribute = newAttribute();
+	/**
+	 * A constraint on the value space of a datatype which is achieved by
+	 * constraining the lexical space to literals which match a specific
+	 * pattern.
+	 */
+	public final static MetamodelAttribute<MMString, Optional<String>> patternAttribute = newAttribute();
 	protected Integer minLength;
 	protected Integer maxLength;
 	protected Integer length;

@@ -17,17 +17,20 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
-import com.tools20022.repository.choice.AccountSchemeName1Choice;
-import com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice;
-import com.tools20022.repository.choice.MandateStatus1Choice;
+import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.*;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
+import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification1;
+import com.tools20022.repository.msg.GenericIdentification13;
+import com.tools20022.repository.msg.GenericIdentification30;
+import com.tools20022.repository.msg.OtherIdentification1;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Information regarding an enumerated code list and its owner.
@@ -41,58 +44,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#NameShort
- * Scheme.NameShort}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#Code Scheme.Code}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#Identification
- * Scheme.Identification}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#Rating Scheme.Rating}
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmNameShort
+ * Scheme.mmNameShort}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmCode Scheme.mmCode}
  * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#CreditorRole
- * Scheme.CreditorRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#InformationPartyRole
- * Scheme.InformationPartyRole}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#Version
- * Scheme.Version}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmIdentification
+ * Scheme.mmIdentification}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmRating
+ * Scheme.mmRating}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmCreditorRole
+ * Scheme.mmCreditorRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Scheme#AssessmentValidityPeriod
- * Scheme.AssessmentValidityPeriod}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#NameLong
- * Scheme.NameLong}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#Description
- * Scheme.Description}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#DomainValueCode
- * Scheme.DomainValueCode}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#DomainValueName
- * Scheme.DomainValueName}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#Sector Scheme.Sector}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Scheme#AssetClassification
- * Scheme.AssetClassification}</li>
- * </ul>
- * </li>
+ * {@linkplain com.tools20022.repository.entity.Scheme#mmInformationPartyRole
+ * Scheme.mmInformationPartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmVersion
+ * Scheme.mmVersion}</li>
  * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.InformationPartyRole#Scheme
- * InformationPartyRole.Scheme}</li>
+ * {@linkplain com.tools20022.repository.entity.Scheme#mmAssessmentValidityPeriod
+ * Scheme.mmAssessmentValidityPeriod}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmNameLong
+ * Scheme.mmNameLong}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmDescription
+ * Scheme.mmDescription}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmDomainValueCode
+ * Scheme.mmDomainValueCode}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmDomainValueName
+ * Scheme.mmDomainValueName}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmSector
+ * Scheme.mmSector}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.GenericIdentification#Scheme
- * GenericIdentification.Scheme}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.DateTimePeriod#AssessmentValidityScheme
- * DateTimePeriod.AssessmentValidityScheme}</li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.AssetClassification#AssetClassScheme
- * AssetClassification.AssetClassScheme}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Rating#RatingScheme
- * Rating.RatingScheme}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Sector#Scheme Sector.Scheme}
- * </li>
- * <li>
- * {@linkplain com.tools20022.repository.entity.CreditorRole#SchemeIdentification
- * CreditorRole.SchemeIdentification}</li>
+ * {@linkplain com.tools20022.repository.entity.Scheme#mmAssetClassification
+ * Scheme.mmAssetClassification}</li>
  * </ul>
  * </li>
  * <li>
@@ -109,10 +91,35 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.InformationPartyRole#mmScheme
+ * InformationPartyRole.mmScheme}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmScheme
+ * GenericIdentification.mmScheme}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAssessmentValidityScheme
+ * DateTimePeriod.mmAssessmentValidityScheme}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.AssetClassification#mmAssetClassScheme
+ * AssetClassification.mmAssetClassScheme}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Rating#mmRatingScheme
+ * Rating.mmRatingScheme}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Sector#mmScheme
+ * Sector.mmScheme}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CreditorRole#mmSchemeIdentification
+ * CreditorRole.mmSchemeIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -126,6 +133,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Scheme {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text nameShort;
 	/**
 	 * Short textual description of the scheme.
 	 * <p>
@@ -139,17 +147,17 @@ public class Scheme {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GenericIdentification1#SchemeName
-	 * GenericIdentification1.SchemeName}</li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification1#mmSchemeName
+	 * GenericIdentification1.mmSchemeName}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GenericIdentification13#SchemeName
-	 * GenericIdentification13.SchemeName}</li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification13#mmSchemeName
+	 * GenericIdentification13.mmSchemeName}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice#Proprietary
-	 * PersonIdentificationSchemeName1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice#mmProprietary
+	 * PersonIdentificationSchemeName1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.GenericIdentification30#SchemeName
-	 * GenericIdentification30.SchemeName}</li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification30#mmSchemeName
+	 * GenericIdentification30.mmSchemeName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -167,20 +175,28 @@ public class Scheme {
 	 * definition} = "Short textual description of the scheme."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NameShort = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNameShort = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GenericIdentification1.SchemeName, com.tools20022.repository.msg.GenericIdentification13.SchemeName,
-					com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice.Proprietary, com.tools20022.repository.msg.GenericIdentification30.SchemeName);
-			elementContext_lazy = () -> Scheme.mmObject();
+			derivation_lazy = () -> Arrays.asList(GenericIdentification1.mmSchemeName, GenericIdentification13.mmSchemeName, PersonIdentificationSchemeName1Choice.mmProprietary, GenericIdentification30.mmSchemeName);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NameShort";
 			definition = "Short textual description of the scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getNameShort", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text code;
 	/**
 	 * Code that represents the enumerated list, for example, ISO 6166 for ISIN.
 	 * <p>
@@ -194,35 +210,35 @@ public class Scheme {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice#Code
-	 * FinancialIdentificationSchemeName1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice#mmCode
+	 * FinancialIdentificationSchemeName1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice#Proprietary
-	 * FinancialIdentificationSchemeName1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice#mmProprietary
+	 * FinancialIdentificationSchemeName1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.AccountSchemeName1Choice#Code
-	 * AccountSchemeName1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.AccountSchemeName1Choice#mmCode
+	 * AccountSchemeName1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.AccountSchemeName1Choice#Proprietary
-	 * AccountSchemeName1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.AccountSchemeName1Choice#mmProprietary
+	 * AccountSchemeName1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice#Code
-	 * OrganisationIdentificationSchemeName1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice#mmCode
+	 * OrganisationIdentificationSchemeName1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice#Proprietary
-	 * OrganisationIdentificationSchemeName1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice#mmProprietary
+	 * OrganisationIdentificationSchemeName1Choice.mmProprietary}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice#Code
-	 * PersonIdentificationSchemeName1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice#mmCode
+	 * PersonIdentificationSchemeName1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.IdentificationSource3Choice#Code
-	 * IdentificationSource3Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.IdentificationSource3Choice#mmCode
+	 * IdentificationSource3Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.MandateStatus1Choice#Code
-	 * MandateStatus1Choice.Code}</li>
+	 * {@linkplain com.tools20022.repository.choice.MandateStatus1Choice#mmCode
+	 * MandateStatus1Choice.mmCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.choice.MandateStatus1Choice#Proprietary
-	 * MandateStatus1Choice.Proprietary}</li>
+	 * {@linkplain com.tools20022.repository.choice.MandateStatus1Choice#mmProprietary
+	 * MandateStatus1Choice.mmProprietary}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -242,22 +258,30 @@ public class Scheme {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Code = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.Code, com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.Proprietary,
-					com.tools20022.repository.choice.AccountSchemeName1Choice.Code, com.tools20022.repository.choice.AccountSchemeName1Choice.Proprietary, com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice.Code,
-					com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice.Proprietary, com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice.Code,
-					com.tools20022.repository.choice.IdentificationSource3Choice.Code, com.tools20022.repository.choice.MandateStatus1Choice.Code, com.tools20022.repository.choice.MandateStatus1Choice.Proprietary);
-			elementContext_lazy = () -> Scheme.mmObject();
+			derivation_lazy = () -> Arrays.asList(FinancialIdentificationSchemeName1Choice.mmCode, FinancialIdentificationSchemeName1Choice.mmProprietary, AccountSchemeName1Choice.mmCode, AccountSchemeName1Choice.mmProprietary,
+					OrganisationIdentificationSchemeName1Choice.mmCode, OrganisationIdentificationSchemeName1Choice.mmProprietary, PersonIdentificationSchemeName1Choice.mmCode, IdentificationSource3Choice.mmCode,
+					MandateStatus1Choice.mmCode, MandateStatus1Choice.mmProprietary);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Code";
 			definition = "Code that represents the enumerated list, for example, ISO 6166 for ISIN.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected List<com.tools20022.repository.entity.GenericIdentification> identification;
 	/**
 	 * Identification information for which a scheme is specified.
 	 * <p>
@@ -266,8 +290,8 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#Scheme
-	 * GenericIdentification.Scheme}</li>
+	 * {@linkplain com.tools20022.repository.entity.GenericIdentification#mmScheme
+	 * GenericIdentification.mmScheme}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -279,8 +303,9 @@ public class Scheme {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.OtherIdentification1#Type
-	 * OtherIdentification1.Type}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OtherIdentification1#mmType
+	 * OtherIdentification1.mmType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -299,20 +324,21 @@ public class Scheme {
 	 * "Identification information for which a scheme is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Identification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.OtherIdentification1.Type);
-			elementContext_lazy = () -> Scheme.mmObject();
+			derivation_lazy = () -> Arrays.asList(OtherIdentification1.mmType);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Identification";
 			definition = "Identification information for which a scheme is specified.";
 			minOccurs = 0;
-			type_lazy = () -> GenericIdentification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.Scheme;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmScheme;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
 		}
 	};
+	protected Rating rating;
 	/**
 	 * Rating for which an identification by scheme is specified.
 	 * <p>
@@ -321,8 +347,8 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Rating#RatingScheme
-	 * Rating.RatingScheme}</li>
+	 * {@linkplain com.tools20022.repository.entity.Rating#mmRatingScheme
+	 * Rating.mmRatingScheme}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -345,20 +371,21 @@ public class Scheme {
 	 * "Rating for which an identification by scheme is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Rating = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRating = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rating";
 			definition = "Rating for which an identification by scheme is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Rating.mmRatingScheme;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Rating.RatingScheme;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CreditorRole creditorRole;
 	/**
 	 * Creditor for which an identification by scheme is specified.
 	 * <p>
@@ -367,8 +394,8 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CreditorRole#SchemeIdentification
-	 * CreditorRole.SchemeIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.CreditorRole#mmSchemeIdentification
+	 * CreditorRole.mmSchemeIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -392,20 +419,21 @@ public class Scheme {
 	 * "Creditor for which an identification by scheme is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CreditorRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCreditorRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CreditorRole";
 			definition = "Creditor for which an identification by scheme is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CreditorRole.mmSchemeIdentification;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CreditorRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CreditorRole.SchemeIdentification;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.InformationPartyRole> informationPartyRole;
 	/**
 	 * Role played by a party as source of a scheme code.
 	 * <p>
@@ -414,8 +442,8 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InformationPartyRole#Scheme
-	 * InformationPartyRole.Scheme}</li>
+	 * {@linkplain com.tools20022.repository.entity.InformationPartyRole#mmScheme
+	 * InformationPartyRole.mmScheme}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -439,19 +467,20 @@ public class Scheme {
 	 * definition} = "Role played by a party as source of a scheme code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InformationPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInformationPartyRole = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InformationPartyRole";
 			definition = "Role played by a party as source of a scheme code.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.mmScheme;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.Scheme;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Max35Text version;
 	/**
 	 * Version number of the scheme.
 	 * <p>
@@ -476,18 +505,27 @@ public class Scheme {
 	 * definition} = "Version number of the scheme."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Version = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmVersion = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Version";
 			definition = "Version number of the scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getVersion", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected DateTimePeriod assessmentValidityPeriod;
 	/**
 	 * Period during which the version of the scheme applies (see ISO-8601).
 	 * <p>
@@ -496,8 +534,8 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#AssessmentValidityScheme
-	 * DateTimePeriod.AssessmentValidityScheme}</li>
+	 * {@linkplain com.tools20022.repository.entity.DateTimePeriod#mmAssessmentValidityScheme
+	 * DateTimePeriod.mmAssessmentValidityScheme}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -521,20 +559,21 @@ public class Scheme {
 	 * "Period during which the version of the scheme applies (see ISO-8601)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssessmentValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssessmentValidityPeriod = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AssessmentValidityPeriod";
 			definition = "Period during which the version of the scheme applies (see ISO-8601).";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> DateTimePeriod.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.AssessmentValidityScheme;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmAssessmentValidityScheme;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 		}
 	};
+	protected Max70Text nameLong;
 	/**
 	 * Long textual description of the scheme.
 	 * <p>
@@ -559,18 +598,27 @@ public class Scheme {
 	 * definition} = "Long textual description of the scheme."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute NameLong = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmNameLong = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NameLong";
 			definition = "Long textual description of the scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getNameLong", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max350Text description;
 	/**
 	 * Textual description of the scheme.
 	 * <p>
@@ -595,18 +643,27 @@ public class Scheme {
 	 * definition} = "Textual description of the scheme."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Description = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Textual description of the scheme.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getDescription", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max35Text domainValueCode;
 	/**
 	 * Code for a specific instance of an entry within the enumerated list, for
 	 * example, ISIN.
@@ -634,18 +691,27 @@ public class Scheme {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DomainValueCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDomainValueCode = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomainValueCode";
 			definition = "Code for a specific instance of an entry within the enumerated list, for example, ISIN.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getDomainValueCode", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max70Text domainValueName;
 	/**
 	 * Textual description of the DomainValueCode, for example, International
 	 * Securities Identification Number.
@@ -673,18 +739,27 @@ public class Scheme {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute DomainValueName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmDomainValueName = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DomainValueName";
 			definition = "Textual description of the DomainValueCode, for example, International Securities Identification Number.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Scheme.class.getMethod("getDomainValueName", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Sector sector;
 	/**
 	 * Specifies the sector to which the scheme applies.
 	 * <p>
@@ -692,8 +767,8 @@ public class Scheme {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Sector#Scheme
-	 * Sector.Scheme}</li>
+	 * opposite} = {@linkplain com.tools20022.repository.entity.Sector#mmScheme
+	 * Sector.mmScheme}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -715,20 +790,21 @@ public class Scheme {
 	 * definition} = "Specifies the sector to which the scheme applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Sector = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Specifies the sector to which the scheme applies.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Sector.mmScheme;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Sector.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Sector.Scheme;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected AssetClassification assetClassification;
 	/**
 	 * Asset for which a classification by scheme is specified.
 	 * <p>
@@ -737,8 +813,8 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.AssetClassification#AssetClassScheme
-	 * AssetClassification.AssetClassScheme}</li>
+	 * {@linkplain com.tools20022.repository.entity.AssetClassification#mmAssetClassScheme
+	 * AssetClassification.mmAssetClassScheme}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -761,39 +837,156 @@ public class Scheme {
 	 * definition} = "Asset for which a classification by scheme is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd AssetClassification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAssetClassification = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Scheme.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AssetClassification";
 			definition = "Asset for which a classification by scheme is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmAssetClassScheme;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassification.AssetClassScheme;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Scheme";
 				definition = "Information regarding an enumerated code list and its owner.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InformationPartyRole.Scheme, com.tools20022.repository.entity.GenericIdentification.Scheme,
-						com.tools20022.repository.entity.DateTimePeriod.AssessmentValidityScheme, com.tools20022.repository.entity.AssetClassification.AssetClassScheme, com.tools20022.repository.entity.Rating.RatingScheme,
-						com.tools20022.repository.entity.Sector.Scheme, com.tools20022.repository.entity.CreditorRole.SchemeIdentification);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Scheme.NameShort, com.tools20022.repository.entity.Scheme.Code, com.tools20022.repository.entity.Scheme.Identification,
-						com.tools20022.repository.entity.Scheme.Rating, com.tools20022.repository.entity.Scheme.CreditorRole, com.tools20022.repository.entity.Scheme.InformationPartyRole, com.tools20022.repository.entity.Scheme.Version,
-						com.tools20022.repository.entity.Scheme.AssessmentValidityPeriod, com.tools20022.repository.entity.Scheme.NameLong, com.tools20022.repository.entity.Scheme.Description,
-						com.tools20022.repository.entity.Scheme.DomainValueCode, com.tools20022.repository.entity.Scheme.DomainValueName, com.tools20022.repository.entity.Scheme.Sector,
-						com.tools20022.repository.entity.Scheme.AssetClassification);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InformationPartyRole.mmScheme, com.tools20022.repository.entity.GenericIdentification.mmScheme,
+						com.tools20022.repository.entity.DateTimePeriod.mmAssessmentValidityScheme, com.tools20022.repository.entity.AssetClassification.mmAssetClassScheme, com.tools20022.repository.entity.Rating.mmRatingScheme,
+						com.tools20022.repository.entity.Sector.mmScheme, com.tools20022.repository.entity.CreditorRole.mmSchemeIdentification);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Scheme.mmNameShort, com.tools20022.repository.entity.Scheme.mmCode, com.tools20022.repository.entity.Scheme.mmIdentification,
+						com.tools20022.repository.entity.Scheme.mmRating, com.tools20022.repository.entity.Scheme.mmCreditorRole, com.tools20022.repository.entity.Scheme.mmInformationPartyRole,
+						com.tools20022.repository.entity.Scheme.mmVersion, com.tools20022.repository.entity.Scheme.mmAssessmentValidityPeriod, com.tools20022.repository.entity.Scheme.mmNameLong,
+						com.tools20022.repository.entity.Scheme.mmDescription, com.tools20022.repository.entity.Scheme.mmDomainValueCode, com.tools20022.repository.entity.Scheme.mmDomainValueName,
+						com.tools20022.repository.entity.Scheme.mmSector, com.tools20022.repository.entity.Scheme.mmAssetClassification);
 				derivationComponent_lazy = () -> Arrays.asList(FinancialIdentificationSchemeName1Choice.mmObject(), AccountSchemeName1Choice.mmObject(), MandateStatus1Choice.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Scheme.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getNameShort() {
+		return nameShort;
+	}
+
+	public void setNameShort(Max35Text nameShort) {
+		this.nameShort = nameShort;
+	}
+
+	public Max35Text getCode() {
+		return code;
+	}
+
+	public void setCode(Max35Text code) {
+		this.code = code;
+	}
+
+	public List<GenericIdentification> getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(List<com.tools20022.repository.entity.GenericIdentification> identification) {
+		this.identification = identification;
+	}
+
+	public Rating getRating() {
+		return rating;
+	}
+
+	public void setRating(com.tools20022.repository.entity.Rating rating) {
+		this.rating = rating;
+	}
+
+	public CreditorRole getCreditorRole() {
+		return creditorRole;
+	}
+
+	public void setCreditorRole(com.tools20022.repository.entity.CreditorRole creditorRole) {
+		this.creditorRole = creditorRole;
+	}
+
+	public List<InformationPartyRole> getInformationPartyRole() {
+		return informationPartyRole;
+	}
+
+	public void setInformationPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> informationPartyRole) {
+		this.informationPartyRole = informationPartyRole;
+	}
+
+	public Max35Text getVersion() {
+		return version;
+	}
+
+	public void setVersion(Max35Text version) {
+		this.version = version;
+	}
+
+	public DateTimePeriod getAssessmentValidityPeriod() {
+		return assessmentValidityPeriod;
+	}
+
+	public void setAssessmentValidityPeriod(com.tools20022.repository.entity.DateTimePeriod assessmentValidityPeriod) {
+		this.assessmentValidityPeriod = assessmentValidityPeriod;
+	}
+
+	public Max70Text getNameLong() {
+		return nameLong;
+	}
+
+	public void setNameLong(Max70Text nameLong) {
+		this.nameLong = nameLong;
+	}
+
+	public Max350Text getDescription() {
+		return description;
+	}
+
+	public void setDescription(Max350Text description) {
+		this.description = description;
+	}
+
+	public Max35Text getDomainValueCode() {
+		return domainValueCode;
+	}
+
+	public void setDomainValueCode(Max35Text domainValueCode) {
+		this.domainValueCode = domainValueCode;
+	}
+
+	public Max70Text getDomainValueName() {
+		return domainValueName;
+	}
+
+	public void setDomainValueName(Max70Text domainValueName) {
+		this.domainValueName = domainValueName;
+	}
+
+	public Sector getSector() {
+		return sector;
+	}
+
+	public void setSector(com.tools20022.repository.entity.Sector sector) {
+		this.sector = sector;
+	}
+
+	public AssetClassification getAssetClassification() {
+		return assetClassification;
+	}
+
+	public void setAssetClassification(com.tools20022.repository.entity.AssetClassification assetClassification) {
+		this.assetClassification = assetClassification;
 	}
 }

@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.PriceValueType1Code;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.SecuritiesPricing;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Choice of value type.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.YieldedOrValueType1Choice#Yielded
- * YieldedOrValueType1Choice.Yielded}</li>
+ * {@linkplain com.tools20022.repository.choice.YieldedOrValueType1Choice#mmYielded
+ * YieldedOrValueType1Choice.mmYielded}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.YieldedOrValueType1Choice#ValueType
- * YieldedOrValueType1Choice.ValueType}</li>
+ * {@linkplain com.tools20022.repository.choice.YieldedOrValueType1Choice#mmValueType
+ * YieldedOrValueType1Choice.mmValueType}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +54,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Choice of value type."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "YieldedOrValueType1Choice", propOrder = {"yielded", "valueType"})
 public class YieldedOrValueType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator yielded;
 	/**
 	 * Indicates whether the price is expressed as a yield.
 	 * <p>
@@ -76,8 +85,8 @@ public class YieldedOrValueType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Yielded
-	 * SecuritiesPricing.Yielded}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmYielded
+	 * SecuritiesPricing.mmYielded}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -96,20 +105,21 @@ public class YieldedOrValueType1Choice {
 	 * definition} = "Indicates whether the price is expressed as a yield."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Yielded = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmYielded = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> SecuritiesPricing.mmYielded;
 			componentContext_lazy = () -> YieldedOrValueType1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Yielded;
 			isDerived = false;
 			xmlTag = "Yldd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Yielded";
 			definition = "Indicates whether the price is expressed as a yield.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 	};
+	protected PriceValueType1Code valueType;
 	/**
 	 * Type of value in which the price is expressed.
 	 * <p>
@@ -123,8 +133,8 @@ public class YieldedOrValueType1Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#TypeOfRate
-	 * SecuritiesPricing.TypeOfRate}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmTypeOfRate
+	 * SecuritiesPricing.mmTypeOfRate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -143,17 +153,17 @@ public class YieldedOrValueType1Choice {
 	 * definition} = "Type of value in which the price is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ValueType = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmValueType = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> SecuritiesPricing.mmTypeOfRate;
 			componentContext_lazy = () -> YieldedOrValueType1Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.TypeOfRate;
 			isDerived = false;
 			xmlTag = "ValTp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ValueType";
 			definition = "Type of value in which the price is expressed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PriceValueType1Code.mmObject();
 		}
 	};
@@ -161,14 +171,32 @@ public class YieldedOrValueType1Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.YieldedOrValueType1Choice.Yielded, com.tools20022.repository.choice.YieldedOrValueType1Choice.ValueType);
+				messageElement_lazy = () -> Arrays.asList(YieldedOrValueType1Choice.mmYielded, YieldedOrValueType1Choice.mmValueType);
 				trace_lazy = () -> SecuritiesPricing.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "YieldedOrValueType1Choice";
 				definition = "Choice of value type.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Yldd", required = true)
+	public YesNoIndicator getYielded() {
+		return yielded;
+	}
+
+	public void setYielded(YesNoIndicator yielded) {
+		this.yielded = yielded;
+	}
+
+	@XmlElement(name = "ValTp", required = true)
+	public PriceValueType1Code getValueType() {
+		return valueType;
+	}
+
+	public void setValueType(PriceValueType1Code valueType) {
+		this.valueType = valueType;
 	}
 }

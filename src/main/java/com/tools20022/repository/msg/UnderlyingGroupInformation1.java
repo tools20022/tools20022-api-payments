@@ -19,10 +19,16 @@ package com.tools20022.repository.msg;
 
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Unique identification, as assigned by the first instructing agent, to
@@ -35,24 +41,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#OriginalMessageIdentification
- * UnderlyingGroupInformation1.OriginalMessageIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#mmOriginalMessageIdentification
+ * UnderlyingGroupInformation1.mmOriginalMessageIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#OriginalMessageNameIdentification
- * UnderlyingGroupInformation1.OriginalMessageNameIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#mmOriginalMessageNameIdentification
+ * UnderlyingGroupInformation1.mmOriginalMessageNameIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#OriginalCreationDateTime
- * UnderlyingGroupInformation1.OriginalCreationDateTime}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#mmOriginalCreationDateTime
+ * UnderlyingGroupInformation1.mmOriginalCreationDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#OriginalMessageDeliveryChannel
- * UnderlyingGroupInformation1.OriginalMessageDeliveryChannel}</li>
+ * {@linkplain com.tools20022.repository.msg.UnderlyingGroupInformation1#mmOriginalMessageDeliveryChannel
+ * UnderlyingGroupInformation1.mmOriginalMessageDeliveryChannel}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,9 +71,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "UnderlyingGroupInformation1", propOrder = {"originalMessageIdentification", "originalMessageNameIdentification", "originalCreationDateTime", "originalMessageDeliveryChannel"})
 public class UnderlyingGroupInformation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text originalMessageIdentification;
 	/**
 	 * Point to point reference, as assigned by the original instructing party,
 	 * to unambiguously identify the original message.
@@ -98,19 +107,20 @@ public class UnderlyingGroupInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalMessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalMessageIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMessageIdentification";
 			definition = "Point to point reference, as assigned by the original instructing party, to unambiguously identify the original message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected Max35Text originalMessageNameIdentification;
 	/**
 	 * Specifies the original message name identifier to which the message
 	 * refers.
@@ -141,19 +151,20 @@ public class UnderlyingGroupInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalMessageNameIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalMessageNameIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgNmId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMessageNameIdentification";
 			definition = "Specifies the original message name identifier to which the message refers.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ISODateTime originalCreationDateTime;
 	/**
 	 * Date and time at which the original message was created.
 	 * <p>
@@ -181,19 +192,20 @@ public class UnderlyingGroupInformation1 {
 	 * definition} = "Date and time at which the original message was created."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalCreationDateTime = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlCreDtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalCreationDateTime";
 			definition = "Date and time at which the original message was created.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	protected Max35Text originalMessageDeliveryChannel;
 	/**
 	 * Original channel used for the delivery of the message, to allow the
 	 * receiver of the request to locate the payment with greater ease.
@@ -224,16 +236,16 @@ public class UnderlyingGroupInformation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute OriginalMessageDeliveryChannel = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmOriginalMessageDeliveryChannel = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> UnderlyingGroupInformation1.mmObject();
 			isDerived = false;
 			xmlTag = "OrgnlMsgDlvryChanl";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OriginalMessageDeliveryChannel";
 			definition = "Original channel used for the delivery of the message, to allow the receiver of the request to locate the payment with greater ease.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -241,14 +253,50 @@ public class UnderlyingGroupInformation1 {
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UnderlyingGroupInformation1.OriginalMessageIdentification, com.tools20022.repository.msg.UnderlyingGroupInformation1.OriginalMessageNameIdentification,
-						com.tools20022.repository.msg.UnderlyingGroupInformation1.OriginalCreationDateTime, com.tools20022.repository.msg.UnderlyingGroupInformation1.OriginalMessageDeliveryChannel);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(UnderlyingGroupInformation1.mmOriginalMessageIdentification, UnderlyingGroupInformation1.mmOriginalMessageNameIdentification, UnderlyingGroupInformation1.mmOriginalCreationDateTime,
+						UnderlyingGroupInformation1.mmOriginalMessageDeliveryChannel);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnderlyingGroupInformation1";
 				definition = "Unique identification, as assigned by the first instructing agent, to unambiguously identify the group of transactions.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "OrgnlMsgId", required = true)
+	public Max35Text getOriginalMessageIdentification() {
+		return originalMessageIdentification;
+	}
+
+	public void setOriginalMessageIdentification(Max35Text originalMessageIdentification) {
+		this.originalMessageIdentification = originalMessageIdentification;
+	}
+
+	@XmlElement(name = "OrgnlMsgNmId", required = true)
+	public Max35Text getOriginalMessageNameIdentification() {
+		return originalMessageNameIdentification;
+	}
+
+	public void setOriginalMessageNameIdentification(Max35Text originalMessageNameIdentification) {
+		this.originalMessageNameIdentification = originalMessageNameIdentification;
+	}
+
+	@XmlElement(name = "OrgnlCreDtTm")
+	public ISODateTime getOriginalCreationDateTime() {
+		return originalCreationDateTime;
+	}
+
+	public void setOriginalCreationDateTime(ISODateTime originalCreationDateTime) {
+		this.originalCreationDateTime = originalCreationDateTime;
+	}
+
+	@XmlElement(name = "OrgnlMsgDlvryChanl")
+	public Max35Text getOriginalMessageDeliveryChannel() {
+		return originalMessageDeliveryChannel;
+	}
+
+	public void setOriginalMessageDeliveryChannel(Max35Text originalMessageDeliveryChannel) {
+		this.originalMessageDeliveryChannel = originalMessageDeliveryChannel;
 	}
 }

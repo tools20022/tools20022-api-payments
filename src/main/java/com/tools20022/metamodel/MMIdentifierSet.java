@@ -17,7 +17,9 @@
 
 package com.tools20022.metamodel;
 
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -32,6 +34,11 @@ import java.util.Optional;
  */
 public class MMIdentifierSet extends MMString {
 
+	/**
+	 * Uniquely identifies a set of identifiers through a Uniform Resource
+	 * Identifier (URI).
+	 */
+	public final static MetamodelAttribute<MMIdentifierSet, String> identificationSchemeAttribute = newAttribute();
 	protected String identificationScheme;
 	protected Integer minLength;
 	protected Integer maxLength;

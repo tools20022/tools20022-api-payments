@@ -19,7 +19,9 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.FrequencyCode;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,23 +34,25 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.codeset.FrequencyCode FrequencyCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Never
- * Frequency10Code.Never}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Annual
- * Frequency10Code.Annual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Rate
- * Frequency10Code.Rate}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#SemiAnnual
- * Frequency10Code.SemiAnnual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#Quarterly
- * Frequency10Code.Quarterly}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#mmNever
+ * Frequency10Code.mmNever}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#mmAnnual
+ * Frequency10Code.mmAnnual}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Frequency10Code#mmRate
+ * Frequency10Code.mmRate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.Frequency10Code#mmSemiAnnual
+ * Frequency10Code.mmSemiAnnual}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.Frequency10Code#mmQuarterly
+ * Frequency10Code.mmQuarterly}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,9 +82,9 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Never"</li>
 	 * </ul>
 	 */
-	public static final MMCode Never = new MMCode() {
+	public static final MMCode mmNever = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Never";
 			owner_lazy = () -> Frequency10Code.mmObject();
 		}
@@ -101,9 +105,9 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Annual"</li>
 	 * </ul>
 	 */
-	public static final MMCode Annual = new MMCode() {
+	public static final MMCode mmAnnual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Annual";
 			owner_lazy = () -> Frequency10Code.mmObject();
 		}
@@ -124,9 +128,9 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Rate"</li>
 	 * </ul>
 	 */
-	public static final MMCode Rate = new MMCode() {
+	public static final MMCode mmRate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Rate";
 			owner_lazy = () -> Frequency10Code.mmObject();
 		}
@@ -147,9 +151,9 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "SemiAnnual"</li>
 	 * </ul>
 	 */
-	public static final MMCode SemiAnnual = new MMCode() {
+	public static final MMCode mmSemiAnnual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SemiAnnual";
 			owner_lazy = () -> Frequency10Code.mmObject();
 		}
@@ -170,9 +174,9 @@ public class Frequency10Code extends FrequencyCode {
 	 * name} = "Quarterly"</li>
 	 * </ul>
 	 */
-	public static final MMCode Quarterly = new MMCode() {
+	public static final MMCode mmQuarterly = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Quarterly";
 			owner_lazy = () -> Frequency10Code.mmObject();
 		}
@@ -181,12 +185,11 @@ public class Frequency10Code extends FrequencyCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency10Code";
 				definition = "Specifies the regularity of an event.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Frequency10Code.Never, com.tools20022.repository.codeset.Frequency10Code.Annual, com.tools20022.repository.codeset.Frequency10Code.Rate,
-						com.tools20022.repository.codeset.Frequency10Code.SemiAnnual, com.tools20022.repository.codeset.Frequency10Code.Quarterly);
+				code_lazy = () -> Arrays.asList(Frequency10Code.mmNever, Frequency10Code.mmAnnual, Frequency10Code.mmRate, Frequency10Code.mmSemiAnnual, Frequency10Code.mmQuarterly);
 				trace_lazy = () -> FrequencyCode.mmObject();
 			}
 		});

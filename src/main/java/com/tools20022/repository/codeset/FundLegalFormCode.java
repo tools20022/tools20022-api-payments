@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,20 +32,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#Contractual
- * FundLegalFormCode.Contractual}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.FundLegalFormCode#Trust
- * FundLegalFormCode.Trust}</li>
+ * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#mmContractual
+ * FundLegalFormCode.mmContractual}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.FundLegalFormCode#mmTrust
+ * FundLegalFormCode.mmTrust}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#Corporate
- * FundLegalFormCode.Corporate}</li>
+ * {@linkplain com.tools20022.repository.codeset.FundLegalFormCode#mmCorporate
+ * FundLegalFormCode.mmCorporate}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -89,9 +91,9 @@ public class FundLegalFormCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Contractual = new MMCode() {
+	public static final MMCode mmContractual = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Contractual";
 			definition = "The fund is constituted under the law of contract. Contractual fund issue units and investors are called unitholders. The fund is run by a management company which may or may not delegate to third agents certain investment and/or administration tasks.";
 			owner_lazy = () -> FundLegalFormCode.mmObject();
@@ -125,9 +127,9 @@ public class FundLegalFormCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Trust = new MMCode() {
+	public static final MMCode mmTrust = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Trust";
 			definition = "The fund is constituted under the trust law. Whereby an independant person (a trustee) holds the assets of the investment fund for the benefit of the underlying investors. The trustee is placed under the fiduciary responsibility to ensure that the fund is managed in accordance with its investment policy and objectives.";
 			owner_lazy = () -> FundLegalFormCode.mmObject();
@@ -160,9 +162,9 @@ public class FundLegalFormCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Corporate = new MMCode() {
+	public static final MMCode mmCorporate = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Corporate";
 			definition = "The fund is constituted as a company . It issues shares and the investors are the shareholders. The fund is run by a management company which may or may not delegate to third agens certain investment and/or administration tasks.";
 			owner_lazy = () -> FundLegalFormCode.mmObject();
@@ -173,12 +175,12 @@ public class FundLegalFormCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CONT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundLegalFormCode";
 				definition = "The legal form of a Fund.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.FundLegalFormCode.Contractual, com.tools20022.repository.codeset.FundLegalFormCode.Trust, com.tools20022.repository.codeset.FundLegalFormCode.Corporate);
+				code_lazy = () -> Arrays.asList(FundLegalFormCode.mmContractual, FundLegalFormCode.mmTrust, FundLegalFormCode.mmCorporate);
 			}
 		});
 		return mmObject_lazy.get();

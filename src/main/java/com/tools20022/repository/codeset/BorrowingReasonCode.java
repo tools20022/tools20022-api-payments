@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,21 +32,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BorrowingReasonCode#SelfConsumption
- * BorrowingReasonCode.SelfConsumption}</li>
+ * {@linkplain com.tools20022.repository.codeset.BorrowingReasonCode#mmSelfConsumption
+ * BorrowingReasonCode.mmSelfConsumption}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BorrowingReasonCode#TransferToThirdParty
- * BorrowingReasonCode.TransferToThirdParty}</li>
+ * {@linkplain com.tools20022.repository.codeset.BorrowingReasonCode#mmTransferToThirdParty
+ * BorrowingReasonCode.mmTransferToThirdParty}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BorrowingReasonCode#MarketMakingPurpose
- * BorrowingReasonCode.MarketMakingPurpose}</li>
+ * {@linkplain com.tools20022.repository.codeset.BorrowingReasonCode#mmMarketMakingPurpose
+ * BorrowingReasonCode.mmMarketMakingPurpose}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class BorrowingReasonCode {
 	 * definition} = "The borrowing reason is for Self consumption."</li>
 	 * </ul>
 	 */
-	public static final MMCode SelfConsumption = new MMCode() {
+	public static final MMCode mmSelfConsumption = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SelfConsumption";
 			definition = "The borrowing reason is for Self consumption.";
 			owner_lazy = () -> BorrowingReasonCode.mmObject();
@@ -115,9 +117,9 @@ public class BorrowingReasonCode {
 	 * definition} = "The borrowing reason is for Transfer to thrid party."</li>
 	 * </ul>
 	 */
-	public static final MMCode TransferToThirdParty = new MMCode() {
+	public static final MMCode mmTransferToThirdParty = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransferToThirdParty";
 			definition = "The borrowing reason is for Transfer to thrid party.";
 			owner_lazy = () -> BorrowingReasonCode.mmObject();
@@ -145,9 +147,9 @@ public class BorrowingReasonCode {
 	 * definition} = "The borrowing reason is for Market making purpose."</li>
 	 * </ul>
 	 */
-	public static final MMCode MarketMakingPurpose = new MMCode() {
+	public static final MMCode mmMarketMakingPurpose = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MarketMakingPurpose";
 			definition = "The borrowing reason is for Market making purpose.";
 			owner_lazy = () -> BorrowingReasonCode.mmObject();
@@ -158,13 +160,12 @@ public class BorrowingReasonCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("SFCT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BorrowingReasonCode";
 				definition = "Identifies the underlying reason for the borrowing.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BorrowingReasonCode.SelfConsumption, com.tools20022.repository.codeset.BorrowingReasonCode.TransferToThirdParty,
-						com.tools20022.repository.codeset.BorrowingReasonCode.MarketMakingPurpose);
+				code_lazy = () -> Arrays.asList(BorrowingReasonCode.mmSelfConsumption, BorrowingReasonCode.mmTransferToThirdParty, BorrowingReasonCode.mmMarketMakingPurpose);
 			}
 		});
 		return mmObject_lazy.get();

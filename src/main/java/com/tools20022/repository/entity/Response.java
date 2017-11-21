@@ -17,11 +17,11 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ResponseCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -37,14 +37,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Response#ResponseReason
- * Response.ResponseReason}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Response#mmResponseReason
+ * Response.mmResponseReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Response#RelatedCardPaymentValidation
- * Response.RelatedCardPaymentValidation}</li>
+ * {@linkplain com.tools20022.repository.entity.Response#mmRelatedCardPaymentValidation
+ * Response.mmRelatedCardPaymentValidation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Response#ResponseToAuthorisation
- * Response.ResponseToAuthorisation}</li>
+ * {@linkplain com.tools20022.repository.entity.Response#mmResponseToAuthorisation
+ * Response.mmResponseToAuthorisation}</li>
  * </ul>
  * </li>
  * <li>
@@ -52,15 +52,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Response
- * CardPaymentValidation.Response}</li>
+ * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmResponse
+ * CardPaymentValidation.mmResponse}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,6 +74,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Response {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text responseReason;
 	/**
 	 * Detailed result of the transaction.
 	 * <p>
@@ -98,18 +99,27 @@ public class Response {
 	 * definition} = "Detailed result of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResponseReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResponseReason = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Response.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResponseReason";
 			definition = "Detailed result of the transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Response.class.getMethod("getResponseReason", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CardPaymentValidation relatedCardPaymentValidation;
 	/**
 	 * Validation process to which a response is given.
 	 * <p>
@@ -118,8 +128,8 @@ public class Response {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#Response
-	 * CardPaymentValidation.Response}</li>
+	 * {@linkplain com.tools20022.repository.entity.CardPaymentValidation#mmResponse
+	 * CardPaymentValidation.mmResponse}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -143,20 +153,21 @@ public class Response {
 	 * definition} = "Validation process to which a response is given."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Response.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedCardPaymentValidation";
 			definition = "Validation process to which a response is given.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> CardPaymentValidation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.Response;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmResponse;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 		}
 	};
+	protected ResponseCode responseToAuthorisation;
 	/**
 	 * Response from the issuer to the authorisation.
 	 * <p>
@@ -181,31 +192,68 @@ public class Response {
 	 * definition} = "Response from the issuer to the authorisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ResponseToAuthorisation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmResponseToAuthorisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Response.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ResponseToAuthorisation";
 			definition = "Response from the issuer to the authorisation.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ResponseCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return Response.class.getMethod("getResponseToAuthorisation", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Response";
 				definition = "Response of a requested service.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentValidation.Response);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Response.ResponseReason, com.tools20022.repository.entity.Response.RelatedCardPaymentValidation,
-						com.tools20022.repository.entity.Response.ResponseToAuthorisation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentValidation.mmResponse);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Response.mmResponseReason, com.tools20022.repository.entity.Response.mmRelatedCardPaymentValidation,
+						com.tools20022.repository.entity.Response.mmResponseToAuthorisation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Response.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max35Text getResponseReason() {
+		return responseReason;
+	}
+
+	public void setResponseReason(Max35Text responseReason) {
+		this.responseReason = responseReason;
+	}
+
+	public CardPaymentValidation getRelatedCardPaymentValidation() {
+		return relatedCardPaymentValidation;
+	}
+
+	public void setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
+		this.relatedCardPaymentValidation = relatedCardPaymentValidation;
+	}
+
+	public ResponseCode getResponseToAuthorisation() {
+		return responseToAuthorisation;
+	}
+
+	public void setResponseToAuthorisation(ResponseCode responseToAuthorisation) {
+		this.responseToAuthorisation = responseToAuthorisation;
 	}
 }

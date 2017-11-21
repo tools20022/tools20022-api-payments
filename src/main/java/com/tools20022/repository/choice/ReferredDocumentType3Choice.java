@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.DocumentType6Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the type of the document referred in the remittance information.
@@ -35,11 +41,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#Code
- * ReferredDocumentType3Choice.Code}</li>
+ * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#mmCode
+ * ReferredDocumentType3Choice.mmCode}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#Proprietary
- * ReferredDocumentType3Choice.Proprietary}</li>
+ * {@linkplain com.tools20022.repository.choice.ReferredDocumentType3Choice#mmProprietary
+ * ReferredDocumentType3Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -47,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -60,9 +66,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies the type of the document referred in the remittance information."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "ReferredDocumentType3Choice", propOrder = {"code", "proprietary"})
 public class ReferredDocumentType3Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected DocumentType6Code code;
 	/**
 	 * Document type in a coded form.
 	 * <p>
@@ -76,8 +85,8 @@ public class ReferredDocumentType3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Type Document.Type}
-	 * </li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmType
+	 * Document.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -96,20 +105,21 @@ public class ReferredDocumentType3Choice {
 	 * definition} = "Document type in a coded form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> ReferredDocumentType3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.Type;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Document type in a coded form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> DocumentType6Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Proprietary identification of the type of the remittance document.
 	 * <p>
@@ -122,8 +132,8 @@ public class ReferredDocumentType3Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Document#Type Document.Type}
-	 * </li>
+	 * {@linkplain com.tools20022.repository.entity.Document#mmType
+	 * Document.mmType}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -143,17 +153,17 @@ public class ReferredDocumentType3Choice {
 	 * "Proprietary identification of the type of the remittance document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Document.mmType;
 			componentContext_lazy = () -> ReferredDocumentType3Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Document.Type;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Proprietary identification of the type of the remittance document.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -161,14 +171,32 @@ public class ReferredDocumentType3Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ReferredDocumentType3Choice.Code, com.tools20022.repository.choice.ReferredDocumentType3Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(ReferredDocumentType3Choice.mmCode, ReferredDocumentType3Choice.mmProprietary);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ReferredDocumentType3Choice";
 				definition = "Specifies the type of the document referred in the remittance information.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public DocumentType6Code getCode() {
+		return code;
+	}
+
+	public void setCode(DocumentType6Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

@@ -20,10 +20,23 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.acmt.*;
+import com.tools20022.repository.area.auth.*;
+import com.tools20022.repository.area.camt.*;
+import com.tools20022.repository.area.pacs.*;
+import com.tools20022.repository.area.pain.*;
+import com.tools20022.repository.area.remt.RemittanceAdviceV03;
+import com.tools20022.repository.area.remt.RemittanceLocationAdviceV01;
 import com.tools20022.repository.datatype.Max350Text;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.other.SupplementaryDataEnvelope1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Additional information that can not be captured in the structured fields
@@ -36,10 +49,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.SupplementaryData1#PlaceAndName
- * SupplementaryData1.PlaceAndName}</li>
- * <li>{@linkplain com.tools20022.repository.msg.SupplementaryData1#Envelope
- * SupplementaryData1.Envelope}</li>
+ * {@linkplain com.tools20022.repository.msg.SupplementaryData1#mmPlaceAndName
+ * SupplementaryData1.mmPlaceAndName}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.SupplementaryData1#mmEnvelope
+ * SupplementaryData1.mmEnvelope}</li>
  * </ul>
  * </li>
  * <li>
@@ -47,243 +60,243 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#SupplementaryData
- * AccountAdditionalInformationRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02#mmSupplementaryData
+ * AccountAdditionalInformationRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#SupplementaryData
- * AccountClosingAdditionalInformationRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02#mmSupplementaryData
+ * AccountClosingAdditionalInformationRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#SupplementaryData
- * AccountClosingAmendmentRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02#mmSupplementaryData
+ * AccountClosingAmendmentRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#SupplementaryData
- * AccountClosingRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountClosingRequestV02#mmSupplementaryData
+ * AccountClosingRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02#SupplementaryData
- * AccountExcludedMandateMaintenanceAmendmentRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02#mmSupplementaryData
+ * AccountExcludedMandateMaintenanceAmendmentRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02#SupplementaryData
- * AccountExcludedMandateMaintenanceRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02#mmSupplementaryData
+ * AccountExcludedMandateMaintenanceRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#SupplementaryData
- * AccountMandateMaintenanceAmendmentRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02#mmSupplementaryData
+ * AccountMandateMaintenanceAmendmentRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02#SupplementaryData
- * AccountMandateMaintenanceRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02#mmSupplementaryData
+ * AccountMandateMaintenanceRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#SupplementaryData
- * AccountOpeningAdditionalInformationRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02#mmSupplementaryData
+ * AccountOpeningAdditionalInformationRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#SupplementaryData
- * AccountOpeningAmendmentRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02#mmSupplementaryData
+ * AccountOpeningAmendmentRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#SupplementaryData
- * AccountOpeningRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountOpeningRequestV02#mmSupplementaryData
+ * AccountOpeningRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#SupplementaryData
- * AccountReportRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountReportRequestV02#mmSupplementaryData
+ * AccountReportRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountReportV02#SupplementaryData
- * AccountReportV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountReportV02#mmSupplementaryData
+ * AccountReportV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#SupplementaryData
- * AccountRequestAcknowledgementV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02#mmSupplementaryData
+ * AccountRequestAcknowledgementV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#SupplementaryData
- * AccountRequestRejectionV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.AccountRequestRejectionV02#mmSupplementaryData
+ * AccountRequestRejectionV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02#SupplementaryData
- * IdentificationModificationAdviceV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02#mmSupplementaryData
+ * IdentificationModificationAdviceV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#SupplementaryData
- * IdentificationVerificationRequestV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02#mmSupplementaryData
+ * IdentificationVerificationRequestV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationReportV02#SupplementaryData
- * IdentificationVerificationReportV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.acmt.IdentificationVerificationReportV02#mmSupplementaryData
+ * IdentificationVerificationReportV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.AccountReportingRequestV03#SupplementaryData
- * AccountReportingRequestV03.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.AccountReportingRequestV03#mmSupplementaryData
+ * AccountReportingRequestV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#SupplementaryData
- * NotificationOfCaseAssignmentV04.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04#mmSupplementaryData
+ * NotificationOfCaseAssignmentV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV04#SupplementaryData
- * RejectInvestigationV04.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.RejectInvestigationV04#mmSupplementaryData
+ * RejectInvestigationV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CancelCaseAssignmentV03#SupplementaryData
- * CancelCaseAssignmentV03.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CancelCaseAssignmentV03#mmSupplementaryData
+ * CancelCaseAssignmentV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RequestForDuplicateV04#SupplementaryData
- * RequestForDuplicateV04.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.RequestForDuplicateV04#mmSupplementaryData
+ * RequestForDuplicateV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.DuplicateV04#SupplementaryData
- * DuplicateV04.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.DuplicateV04#mmSupplementaryData
+ * DuplicateV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.ProprietaryFormatInvestigationV03#SupplementaryData
- * ProprietaryFormatInvestigationV03.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.ProprietaryFormatInvestigationV03#mmSupplementaryData
+ * ProprietaryFormatInvestigationV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV03#SupplementaryData
- * DebitAuthorisationResponseV03.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationResponseV03#mmSupplementaryData
+ * DebitAuthorisationResponseV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportRequestV03#SupplementaryData
- * CaseStatusReportRequestV03.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportRequestV03#mmSupplementaryData
+ * CaseStatusReportRequestV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportV04#SupplementaryData
- * CaseStatusReportV04.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CaseStatusReportV04#mmSupplementaryData
+ * CaseStatusReportV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestOpeningV01#SupplementaryData
- * InformationRequestOpeningV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestOpeningV01#mmSupplementaryData
+ * InformationRequestOpeningV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#SupplementaryData
- * InformationRequestResponseV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestResponseV01#mmSupplementaryData
+ * InformationRequestResponseV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#SupplementaryData
- * InformationRequestStatusChangeNotificationV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01#mmSupplementaryData
+ * InformationRequestStatusChangeNotificationV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.remt.RemittanceLocationAdviceV01#SupplementaryData
- * RemittanceLocationAdviceV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.remt.RemittanceLocationAdviceV01#mmSupplementaryData
+ * RemittanceLocationAdviceV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationStatementRequestV01#SupplementaryData
- * ContractRegistrationStatementRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationStatementRequestV01#mmSupplementaryData
+ * ContractRegistrationStatementRequestV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationAmendmentRequestV01#SupplementaryData
- * ContractRegistrationAmendmentRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationAmendmentRequestV01#mmSupplementaryData
+ * ContractRegistrationAmendmentRequestV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#SupplementaryData
- * ContractRegistrationConfirmationV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01#mmSupplementaryData
+ * ContractRegistrationConfirmationV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationRequestV01#SupplementaryData
- * ContractRegistrationRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationRequestV01#mmSupplementaryData
+ * ContractRegistrationRequestV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01#SupplementaryData
- * CurrencyControlStatusAdviceV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01#mmSupplementaryData
+ * CurrencyControlStatusAdviceV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.CurrencyControlSupportingDocumentDeliveryV01#SupplementaryData
- * CurrencyControlSupportingDocumentDeliveryV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.CurrencyControlSupportingDocumentDeliveryV01#mmSupplementaryData
+ * CurrencyControlSupportingDocumentDeliveryV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationClosureRequestV01#SupplementaryData
- * ContractRegistrationClosureRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationClosureRequestV01#mmSupplementaryData
+ * ContractRegistrationClosureRequestV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationStatementV01#SupplementaryData
- * ContractRegistrationStatementV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.ContractRegistrationStatementV01#mmSupplementaryData
+ * ContractRegistrationStatementV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01#SupplementaryData
- * PaymentRegulatoryInformationNotificationV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01#mmSupplementaryData
+ * PaymentRegulatoryInformationNotificationV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01#SupplementaryData
- * CurrencyControlRequestOrLetterV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01#mmSupplementaryData
+ * CurrencyControlRequestOrLetterV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankToCustomerAccountReportV06#SupplementaryData
- * BankToCustomerAccountReportV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.BankToCustomerAccountReportV06#mmSupplementaryData
+ * BankToCustomerAccountReportV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06#SupplementaryData
- * FinancialInstitutionCreditTransferV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06#mmSupplementaryData
+ * FinancialInstitutionCreditTransferV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#SupplementaryData
- * NotificationToReceiveStatusReportV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05#mmSupplementaryData
+ * NotificationToReceiveStatusReportV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06#SupplementaryData
- * FIToFICustomerCreditTransferV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06#mmSupplementaryData
+ * FIToFICustomerCreditTransferV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveCancellationAdviceV05#SupplementaryData
- * NotificationToReceiveCancellationAdviceV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveCancellationAdviceV05#mmSupplementaryData
+ * NotificationToReceiveCancellationAdviceV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankToCustomerStatementV06#SupplementaryData
- * BankToCustomerStatementV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.BankToCustomerStatementV06#mmSupplementaryData
+ * BankToCustomerStatementV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.BankToCustomerDebitCreditNotificationV06#SupplementaryData
- * BankToCustomerDebitCreditNotificationV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.BankToCustomerDebitCreditNotificationV06#mmSupplementaryData
+ * BankToCustomerDebitCreditNotificationV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveV05#SupplementaryData
- * NotificationToReceiveV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.NotificationToReceiveV05#mmSupplementaryData
+ * NotificationToReceiveV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionDirectDebitV02#SupplementaryData
- * FinancialInstitutionDirectDebitV02.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FinancialInstitutionDirectDebitV02#mmSupplementaryData
+ * FinancialInstitutionDirectDebitV02.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01#SupplementaryData
- * FIToFIPaymentStatusRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01#mmSupplementaryData
+ * FIToFIPaymentStatusRequestV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateAcceptanceReportV05#SupplementaryData
- * MandateAcceptanceReportV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateAcceptanceReportV05#mmSupplementaryData
+ * MandateAcceptanceReportV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateAmendmentRequestV05#SupplementaryData
- * MandateAmendmentRequestV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateAmendmentRequestV05#mmSupplementaryData
+ * MandateAmendmentRequestV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#SupplementaryData
- * UnableToApplyV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.UnableToApplyV05#mmSupplementaryData
+ * UnableToApplyV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV07#SupplementaryData
- * PaymentReturnV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.PaymentReturnV07#mmSupplementaryData
+ * PaymentReturnV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateInitiationRequestV05#SupplementaryData
- * MandateInitiationRequestV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateInitiationRequestV05#mmSupplementaryData
+ * MandateInitiationRequestV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08#SupplementaryData
- * FIToFIPaymentStatusReportV08.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08#mmSupplementaryData
+ * FIToFIPaymentStatusReportV08.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.remt.RemittanceAdviceV03#SupplementaryData
- * RemittanceAdviceV03.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.remt.RemittanceAdviceV03#mmSupplementaryData
+ * RemittanceAdviceV03.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07#SupplementaryData
- * FIToFIPaymentReversalV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07#mmSupplementaryData
+ * FIToFIPaymentReversalV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#SupplementaryData
- * CustomerPaymentCancellationRequestV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06#mmSupplementaryData
+ * CustomerPaymentCancellationRequestV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.AdditionalPaymentInformationV07#SupplementaryData
- * AdditionalPaymentInformationV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.AdditionalPaymentInformationV07#mmSupplementaryData
+ * AdditionalPaymentInformationV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#SupplementaryData
- * ResolutionOfInvestigationV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.ResolutionOfInvestigationV07#mmSupplementaryData
+ * ResolutionOfInvestigationV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07#SupplementaryData
- * FIToFICustomerDirectDebitV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07#mmSupplementaryData
+ * FIToFICustomerDirectDebitV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerCreditTransferInitiationV08#SupplementaryData
- * CustomerCreditTransferInitiationV08.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerCreditTransferInitiationV08#mmSupplementaryData
+ * CustomerCreditTransferInitiationV08.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#SupplementaryData
- * FIToFIPaymentCancellationRequestV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06#mmSupplementaryData
+ * FIToFIPaymentCancellationRequestV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateCancellationRequestV05#SupplementaryData
- * MandateCancellationRequestV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateCancellationRequestV05#mmSupplementaryData
+ * MandateCancellationRequestV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07#SupplementaryData
- * CustomerDirectDebitInitiationV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07#mmSupplementaryData
+ * CustomerDirectDebitInitiationV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationRequestV05#SupplementaryData
- * DebitAuthorisationRequestV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.DebitAuthorisationRequestV05#mmSupplementaryData
+ * DebitAuthorisationRequestV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CreditorPaymentActivationRequestStatusReportV06#SupplementaryData
- * CreditorPaymentActivationRequestStatusReportV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CreditorPaymentActivationRequestStatusReportV06#mmSupplementaryData
+ * CreditorPaymentActivationRequestStatusReportV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#SupplementaryData
- * CustomerPaymentStatusReportV08.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08#mmSupplementaryData
+ * CustomerPaymentStatusReportV08.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CreditorPaymentActivationRequestV06#SupplementaryData
- * CreditorPaymentActivationRequestV06.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CreditorPaymentActivationRequestV06#mmSupplementaryData
+ * CreditorPaymentActivationRequestV06.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.ClaimNonReceiptV05#SupplementaryData
- * ClaimNonReceiptV05.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.ClaimNonReceiptV05#mmSupplementaryData
+ * ClaimNonReceiptV05.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.camt.RequestToModifyPaymentV04#SupplementaryData
- * RequestToModifyPaymentV04.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.camt.RequestToModifyPaymentV04#mmSupplementaryData
+ * RequestToModifyPaymentV04.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentReversalV07#SupplementaryData
- * CustomerPaymentReversalV07.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerPaymentReversalV07#mmSupplementaryData
+ * CustomerPaymentReversalV07.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateSuspensionRequestV01#SupplementaryData
- * MandateSuspensionRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateSuspensionRequestV01#mmSupplementaryData
+ * MandateSuspensionRequestV01.mmSupplementaryData}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.MandateCopyRequestV01#SupplementaryData
- * MandateCopyRequestV01.SupplementaryData}</li>
+ * {@linkplain com.tools20022.repository.area.pain.MandateCopyRequestV01#mmSupplementaryData
+ * MandateCopyRequestV01.mmSupplementaryData}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -296,9 +309,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "SupplementaryData1", propOrder = {"placeAndName", "envelope"})
 public class SupplementaryData1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max350Text placeAndName;
 	/**
 	 * Unambiguous reference to the location where the supplementary data must
 	 * be inserted in the message instance.<br>
@@ -330,19 +346,20 @@ public class SupplementaryData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PlaceAndName = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPlaceAndName = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> SupplementaryData1.mmObject();
 			isDerived = false;
 			xmlTag = "PlcAndNm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PlaceAndName";
 			definition = "Unambiguous reference to the location where the supplementary data must be inserted in the message instance.\r\nIn the case of XML, this is expressed by a valid XPath.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 	};
+	protected SupplementaryDataEnvelope1 envelope;
 	/**
 	 * Technical element wrapping the supplementary data.
 	 * <p>
@@ -370,70 +387,72 @@ public class SupplementaryData1 {
 	 * definition} = "Technical element wrapping the supplementary data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Envelope = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmEnvelope = new MMMessageAssociationEnd() {
 		{
 			componentContext_lazy = () -> SupplementaryData1.mmObject();
 			isDerived = false;
 			xmlTag = "Envlp";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Envelope";
 			definition = "Technical element wrapping the supplementary data.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> SupplementaryDataEnvelope1.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> SupplementaryDataEnvelope1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupplementaryData1.PlaceAndName, com.tools20022.repository.msg.SupplementaryData1.Envelope);
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.acmt.AccountAdditionalInformationRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountClosingAdditionalInformationRequestV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountClosingAmendmentRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountClosingRequestV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceAmendmentRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountExcludedMandateMaintenanceRequestV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountMandateMaintenanceAmendmentRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountMandateMaintenanceRequestV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountOpeningAdditionalInformationRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountOpeningAmendmentRequestV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountOpeningRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountReportRequestV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountReportV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.AccountRequestAcknowledgementV02.SupplementaryData, com.tools20022.repository.area.acmt.AccountRequestRejectionV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.IdentificationModificationAdviceV02.SupplementaryData, com.tools20022.repository.area.acmt.IdentificationVerificationRequestV02.SupplementaryData,
-						com.tools20022.repository.area.acmt.IdentificationVerificationReportV02.SupplementaryData, com.tools20022.repository.area.camt.AccountReportingRequestV03.SupplementaryData,
-						com.tools20022.repository.area.camt.NotificationOfCaseAssignmentV04.SupplementaryData, com.tools20022.repository.area.camt.RejectInvestigationV04.SupplementaryData,
-						com.tools20022.repository.area.camt.CancelCaseAssignmentV03.SupplementaryData, com.tools20022.repository.area.camt.RequestForDuplicateV04.SupplementaryData,
-						com.tools20022.repository.area.camt.DuplicateV04.SupplementaryData, com.tools20022.repository.area.camt.ProprietaryFormatInvestigationV03.SupplementaryData,
-						com.tools20022.repository.area.camt.DebitAuthorisationResponseV03.SupplementaryData, com.tools20022.repository.area.camt.CaseStatusReportRequestV03.SupplementaryData,
-						com.tools20022.repository.area.camt.CaseStatusReportV04.SupplementaryData, com.tools20022.repository.area.auth.InformationRequestOpeningV01.SupplementaryData,
-						com.tools20022.repository.area.auth.InformationRequestResponseV01.SupplementaryData, com.tools20022.repository.area.auth.InformationRequestStatusChangeNotificationV01.SupplementaryData,
-						com.tools20022.repository.area.remt.RemittanceLocationAdviceV01.SupplementaryData, com.tools20022.repository.area.auth.ContractRegistrationStatementRequestV01.SupplementaryData,
-						com.tools20022.repository.area.auth.ContractRegistrationAmendmentRequestV01.SupplementaryData, com.tools20022.repository.area.auth.ContractRegistrationConfirmationV01.SupplementaryData,
-						com.tools20022.repository.area.auth.ContractRegistrationRequestV01.SupplementaryData, com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01.SupplementaryData,
-						com.tools20022.repository.area.auth.CurrencyControlSupportingDocumentDeliveryV01.SupplementaryData, com.tools20022.repository.area.auth.ContractRegistrationClosureRequestV01.SupplementaryData,
-						com.tools20022.repository.area.auth.ContractRegistrationStatementV01.SupplementaryData, com.tools20022.repository.area.auth.PaymentRegulatoryInformationNotificationV01.SupplementaryData,
-						com.tools20022.repository.area.auth.CurrencyControlRequestOrLetterV01.SupplementaryData, com.tools20022.repository.area.camt.BankToCustomerAccountReportV06.SupplementaryData,
-						com.tools20022.repository.area.pacs.FinancialInstitutionCreditTransferV06.SupplementaryData, com.tools20022.repository.area.camt.NotificationToReceiveStatusReportV05.SupplementaryData,
-						com.tools20022.repository.area.pacs.FIToFICustomerCreditTransferV06.SupplementaryData, com.tools20022.repository.area.camt.NotificationToReceiveCancellationAdviceV05.SupplementaryData,
-						com.tools20022.repository.area.camt.BankToCustomerStatementV06.SupplementaryData, com.tools20022.repository.area.camt.BankToCustomerDebitCreditNotificationV06.SupplementaryData,
-						com.tools20022.repository.area.camt.NotificationToReceiveV05.SupplementaryData, com.tools20022.repository.area.pacs.FinancialInstitutionDirectDebitV02.SupplementaryData,
-						com.tools20022.repository.area.pacs.FIToFIPaymentStatusRequestV01.SupplementaryData, com.tools20022.repository.area.pain.MandateAcceptanceReportV05.SupplementaryData,
-						com.tools20022.repository.area.pain.MandateAmendmentRequestV05.SupplementaryData, com.tools20022.repository.area.camt.UnableToApplyV05.SupplementaryData,
-						com.tools20022.repository.area.pacs.PaymentReturnV07.SupplementaryData, com.tools20022.repository.area.pain.MandateInitiationRequestV05.SupplementaryData,
-						com.tools20022.repository.area.pacs.FIToFIPaymentStatusReportV08.SupplementaryData, com.tools20022.repository.area.remt.RemittanceAdviceV03.SupplementaryData,
-						com.tools20022.repository.area.pacs.FIToFIPaymentReversalV07.SupplementaryData, com.tools20022.repository.area.camt.CustomerPaymentCancellationRequestV06.SupplementaryData,
-						com.tools20022.repository.area.camt.AdditionalPaymentInformationV07.SupplementaryData, com.tools20022.repository.area.camt.ResolutionOfInvestigationV07.SupplementaryData,
-						com.tools20022.repository.area.pacs.FIToFICustomerDirectDebitV07.SupplementaryData, com.tools20022.repository.area.pain.CustomerCreditTransferInitiationV08.SupplementaryData,
-						com.tools20022.repository.area.camt.FIToFIPaymentCancellationRequestV06.SupplementaryData, com.tools20022.repository.area.pain.MandateCancellationRequestV05.SupplementaryData,
-						com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07.SupplementaryData, com.tools20022.repository.area.camt.DebitAuthorisationRequestV05.SupplementaryData,
-						com.tools20022.repository.area.pain.CreditorPaymentActivationRequestStatusReportV06.SupplementaryData, com.tools20022.repository.area.pain.CustomerPaymentStatusReportV08.SupplementaryData,
-						com.tools20022.repository.area.pain.CreditorPaymentActivationRequestV06.SupplementaryData, com.tools20022.repository.area.camt.ClaimNonReceiptV05.SupplementaryData,
-						com.tools20022.repository.area.camt.RequestToModifyPaymentV04.SupplementaryData, com.tools20022.repository.area.pain.CustomerPaymentReversalV07.SupplementaryData,
-						com.tools20022.repository.area.pain.MandateSuspensionRequestV01.SupplementaryData, com.tools20022.repository.area.pain.MandateCopyRequestV01.SupplementaryData);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(SupplementaryData1.mmPlaceAndName, SupplementaryData1.mmEnvelope);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AccountAdditionalInformationRequestV02.mmSupplementaryData, AccountClosingAdditionalInformationRequestV02.mmSupplementaryData,
+						AccountClosingAmendmentRequestV02.mmSupplementaryData, AccountClosingRequestV02.mmSupplementaryData, AccountExcludedMandateMaintenanceAmendmentRequestV02.mmSupplementaryData,
+						AccountExcludedMandateMaintenanceRequestV02.mmSupplementaryData, AccountMandateMaintenanceAmendmentRequestV02.mmSupplementaryData, AccountMandateMaintenanceRequestV02.mmSupplementaryData,
+						AccountOpeningAdditionalInformationRequestV02.mmSupplementaryData, AccountOpeningAmendmentRequestV02.mmSupplementaryData, AccountOpeningRequestV02.mmSupplementaryData, AccountReportRequestV02.mmSupplementaryData,
+						AccountReportV02.mmSupplementaryData, AccountRequestAcknowledgementV02.mmSupplementaryData, AccountRequestRejectionV02.mmSupplementaryData, IdentificationModificationAdviceV02.mmSupplementaryData,
+						IdentificationVerificationRequestV02.mmSupplementaryData, IdentificationVerificationReportV02.mmSupplementaryData, AccountReportingRequestV03.mmSupplementaryData, NotificationOfCaseAssignmentV04.mmSupplementaryData,
+						RejectInvestigationV04.mmSupplementaryData, CancelCaseAssignmentV03.mmSupplementaryData, RequestForDuplicateV04.mmSupplementaryData, DuplicateV04.mmSupplementaryData,
+						ProprietaryFormatInvestigationV03.mmSupplementaryData, DebitAuthorisationResponseV03.mmSupplementaryData, CaseStatusReportRequestV03.mmSupplementaryData, CaseStatusReportV04.mmSupplementaryData,
+						InformationRequestOpeningV01.mmSupplementaryData, InformationRequestResponseV01.mmSupplementaryData, InformationRequestStatusChangeNotificationV01.mmSupplementaryData,
+						RemittanceLocationAdviceV01.mmSupplementaryData, ContractRegistrationStatementRequestV01.mmSupplementaryData, ContractRegistrationAmendmentRequestV01.mmSupplementaryData,
+						ContractRegistrationConfirmationV01.mmSupplementaryData, ContractRegistrationRequestV01.mmSupplementaryData, CurrencyControlStatusAdviceV01.mmSupplementaryData,
+						CurrencyControlSupportingDocumentDeliveryV01.mmSupplementaryData, ContractRegistrationClosureRequestV01.mmSupplementaryData, ContractRegistrationStatementV01.mmSupplementaryData,
+						PaymentRegulatoryInformationNotificationV01.mmSupplementaryData, CurrencyControlRequestOrLetterV01.mmSupplementaryData, BankToCustomerAccountReportV06.mmSupplementaryData,
+						FinancialInstitutionCreditTransferV06.mmSupplementaryData, NotificationToReceiveStatusReportV05.mmSupplementaryData, FIToFICustomerCreditTransferV06.mmSupplementaryData,
+						NotificationToReceiveCancellationAdviceV05.mmSupplementaryData, BankToCustomerStatementV06.mmSupplementaryData, BankToCustomerDebitCreditNotificationV06.mmSupplementaryData,
+						NotificationToReceiveV05.mmSupplementaryData, FinancialInstitutionDirectDebitV02.mmSupplementaryData, FIToFIPaymentStatusRequestV01.mmSupplementaryData, MandateAcceptanceReportV05.mmSupplementaryData,
+						MandateAmendmentRequestV05.mmSupplementaryData, UnableToApplyV05.mmSupplementaryData, PaymentReturnV07.mmSupplementaryData, MandateInitiationRequestV05.mmSupplementaryData,
+						FIToFIPaymentStatusReportV08.mmSupplementaryData, RemittanceAdviceV03.mmSupplementaryData, FIToFIPaymentReversalV07.mmSupplementaryData, CustomerPaymentCancellationRequestV06.mmSupplementaryData,
+						AdditionalPaymentInformationV07.mmSupplementaryData, ResolutionOfInvestigationV07.mmSupplementaryData, FIToFICustomerDirectDebitV07.mmSupplementaryData, CustomerCreditTransferInitiationV08.mmSupplementaryData,
+						FIToFIPaymentCancellationRequestV06.mmSupplementaryData, MandateCancellationRequestV05.mmSupplementaryData, CustomerDirectDebitInitiationV07.mmSupplementaryData, DebitAuthorisationRequestV05.mmSupplementaryData,
+						CreditorPaymentActivationRequestStatusReportV06.mmSupplementaryData, CustomerPaymentStatusReportV08.mmSupplementaryData, CreditorPaymentActivationRequestV06.mmSupplementaryData,
+						ClaimNonReceiptV05.mmSupplementaryData, RequestToModifyPaymentV04.mmSupplementaryData, CustomerPaymentReversalV07.mmSupplementaryData, MandateSuspensionRequestV01.mmSupplementaryData,
+						MandateCopyRequestV01.mmSupplementaryData);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupplementaryData1";
 				definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "PlcAndNm")
+	public Max350Text getPlaceAndName() {
+		return placeAndName;
+	}
+
+	public void setPlaceAndName(Max350Text placeAndName) {
+		this.placeAndName = placeAndName;
+	}
+
+	@XmlElement(name = "Envlp", required = true)
+	public SupplementaryDataEnvelope1 getEnvelope() {
+		return envelope;
+	}
+
+	public void setEnvelope(SupplementaryDataEnvelope1 envelope) {
+		this.envelope = envelope;
 	}
 }

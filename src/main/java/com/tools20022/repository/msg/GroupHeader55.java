@@ -20,14 +20,22 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07;
 import com.tools20022.repository.choice.Authorisation1Choice;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.entity.Payment;
+import com.tools20022.repository.entity.*;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Set of characteristics shared by all individual transactions included in the
@@ -40,21 +48,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.GroupHeader55#MessageIdentification
- * GroupHeader55.MessageIdentification}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#CreationDateTime
- * GroupHeader55.CreationDateTime}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#Authorisation
- * GroupHeader55.Authorisation}</li>
+ * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmMessageIdentification
+ * GroupHeader55.mmMessageIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.GroupHeader55#NumberOfTransactions
- * GroupHeader55.NumberOfTransactions}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#ControlSum
- * GroupHeader55.ControlSum}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#InitiatingParty
- * GroupHeader55.InitiatingParty}</li>
- * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#ForwardingAgent
- * GroupHeader55.ForwardingAgent}</li>
+ * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmCreationDateTime
+ * GroupHeader55.mmCreationDateTime}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#mmAuthorisation
+ * GroupHeader55.mmAuthorisation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmNumberOfTransactions
+ * GroupHeader55.mmNumberOfTransactions}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.GroupHeader55#mmControlSum
+ * GroupHeader55.mmControlSum}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmInitiatingParty
+ * GroupHeader55.mmInitiatingParty}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.GroupHeader55#mmForwardingAgent
+ * GroupHeader55.mmForwardingAgent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -64,15 +75,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07#GroupHeader
- * CustomerDirectDebitInitiationV07.GroupHeader}</li>
+ * {@linkplain com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07#mmGroupHeader
+ * CustomerDirectDebitInitiationV07.mmGroupHeader}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,9 +96,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "GroupHeader55", propOrder = {"messageIdentification", "creationDateTime", "authorisation", "numberOfTransactions", "controlSum", "initiatingParty", "forwardingAgent"})
 public class GroupHeader55 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text messageIdentification;
 	/**
 	 * Point to point reference, assigned by the instructing party and sent to
 	 * the next party in the chain, to unambiguously identify the message.
@@ -104,8 +118,8 @@ public class GroupHeader55 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#ExecutionIdentification
-	 * PaymentIdentification.ExecutionIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentIdentification#mmExecutionIdentification
+	 * PaymentIdentification.mmExecutionIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -125,20 +139,21 @@ public class GroupHeader55 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute MessageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmMessageIdentification = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentIdentification.mmExecutionIdentification;
 			componentContext_lazy = () -> GroupHeader55.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentIdentification.ExecutionIdentification;
 			isDerived = false;
 			xmlTag = "MsgId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageIdentification";
 			definition = "Point to point reference, assigned by the instructing party and sent to the next party in the chain, to unambiguously identify the message.\n\nUsage: The instructing party has to make sure that MessageIdentification is unique per instructed party for a pre-agreed period.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected ISODateTime creationDateTime;
 	/**
 	 * Date and time at which a (group of) payment instruction(s) was created by
 	 * the instructing party.
@@ -152,8 +167,8 @@ public class GroupHeader55 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentExecution#CreationDate
-	 * PaymentExecution.CreationDate}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentExecution#mmCreationDate
+	 * PaymentExecution.mmCreationDate}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -173,20 +188,21 @@ public class GroupHeader55 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentExecution.mmCreationDate;
 			componentContext_lazy = () -> GroupHeader55.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentExecution.CreationDate;
 			isDerived = false;
 			xmlTag = "CreDtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreationDateTime";
 			definition = "Date and time at which a (group of) payment instruction(s) was created by the instructing party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	protected List<Authorisation1Choice> authorisation;
 	/**
 	 * User identification or any user key that allows to check if the
 	 * initiating party is allowed to initiate transactions from the account
@@ -224,19 +240,20 @@ public class GroupHeader55 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Authorisation = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmAuthorisation = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> GroupHeader55.mmObject();
 			isDerived = false;
 			xmlTag = "Authstn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Authorisation";
 			definition = "User identification or any user key that allows to check if the initiating party is allowed to initiate transactions from the account specified in the initiation.\n\nUsage: The content is not of a technical nature, but reflects the organisational structure at the initiating side. The authorisation element can typically be used in relay scenarios, payment initiations, payment returns or payment reversals that are initiated on behalf of a different party than the initiating party.";
-			minOccurs = 0;
 			maxOccurs = 2;
+			minOccurs = 0;
 			complexType_lazy = () -> Authorisation1Choice.mmObject();
 		}
 	};
+	protected Max15NumericText numberOfTransactions;
 	/**
 	 * Number of individual transactions contained in the message.
 	 * <p>
@@ -265,19 +282,20 @@ public class GroupHeader55 {
 	 * "Number of individual transactions contained in the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute NumberOfTransactions = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmNumberOfTransactions = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> GroupHeader55.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfTxs";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumberOfTransactions";
 			definition = "Number of individual transactions contained in the message.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 	};
+	protected DecimalNumber controlSum;
 	/**
 	 * Total of all individual amounts included in the message, irrespective of
 	 * currencies.
@@ -308,19 +326,20 @@ public class GroupHeader55 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ControlSum = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmControlSum = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> GroupHeader55.mmObject();
 			isDerived = false;
 			xmlTag = "CtrlSum";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ControlSum";
 			definition = "Total of all individual amounts included in the message, irrespective of currencies.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 	};
+	protected PartyIdentification43 initiatingParty;
 	/**
 	 * Party that initiates the payment.
 	 * 
@@ -335,8 +354,8 @@ public class GroupHeader55 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#Identification
-	 * Party.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmIdentification
+	 * Party.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -356,21 +375,22 @@ public class GroupHeader55 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd InitiatingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmInitiatingParty = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmIdentification;
 			componentContext_lazy = () -> GroupHeader55.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.Identification;
 			isDerived = false;
 			xmlTag = "InitgPty";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InitiatingParty";
 			definition = "Party that initiates the payment.\n\nUsage: This can either be the creditor or a party that initiates the direct debit on behalf of the creditor.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> PartyIdentification43.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PartyIdentification43.mmObject();
 		}
 	};
+	protected BranchAndFinancialInstitutionIdentification5 forwardingAgent;
 	/**
 	 * Financial institution that receives the instruction from the initiating
 	 * party and forwards it to the next agent in the payment chain for
@@ -385,8 +405,8 @@ public class GroupHeader55 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Organisation#OrganisationIdentification
-	 * Organisation.OrganisationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.entity.Organisation#mmOrganisationIdentification
+	 * Organisation.mmOrganisationIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -406,36 +426,98 @@ public class GroupHeader55 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ForwardingAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmForwardingAgent = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Organisation.mmOrganisationIdentification;
 			componentContext_lazy = () -> GroupHeader55.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Organisation.OrganisationIdentification;
 			isDerived = false;
 			xmlTag = "FwdgAgt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ForwardingAgent";
 			definition = "Financial institution that receives the instruction from the initiating party and forwards it to the next agent in the payment chain for execution.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GroupHeader55.MessageIdentification, com.tools20022.repository.msg.GroupHeader55.CreationDateTime,
-						com.tools20022.repository.msg.GroupHeader55.Authorisation, com.tools20022.repository.msg.GroupHeader55.NumberOfTransactions, com.tools20022.repository.msg.GroupHeader55.ControlSum,
-						com.tools20022.repository.msg.GroupHeader55.InitiatingParty, com.tools20022.repository.msg.GroupHeader55.ForwardingAgent);
+				messageElement_lazy = () -> Arrays.asList(GroupHeader55.mmMessageIdentification, GroupHeader55.mmCreationDateTime, GroupHeader55.mmAuthorisation, GroupHeader55.mmNumberOfTransactions, GroupHeader55.mmControlSum,
+						GroupHeader55.mmInitiatingParty, GroupHeader55.mmForwardingAgent);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CustomerDirectDebitInitiationV07.mmGroupHeader);
 				trace_lazy = () -> Payment.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.pain.CustomerDirectDebitInitiationV07.GroupHeader);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GroupHeader55";
 				definition = "Set of characteristics shared by all individual transactions included in the message.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "MsgId", required = true)
+	public Max35Text getMessageIdentification() {
+		return messageIdentification;
+	}
+
+	public void setMessageIdentification(Max35Text messageIdentification) {
+		this.messageIdentification = messageIdentification;
+	}
+
+	@XmlElement(name = "CreDtTm", required = true)
+	public ISODateTime getCreationDateTime() {
+		return creationDateTime;
+	}
+
+	public void setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = creationDateTime;
+	}
+
+	@XmlElement(name = "Authstn")
+	public List<Authorisation1Choice> getAuthorisation() {
+		return authorisation;
+	}
+
+	public void setAuthorisation(List<Authorisation1Choice> authorisation) {
+		this.authorisation = authorisation;
+	}
+
+	@XmlElement(name = "NbOfTxs", required = true)
+	public Max15NumericText getNumberOfTransactions() {
+		return numberOfTransactions;
+	}
+
+	public void setNumberOfTransactions(Max15NumericText numberOfTransactions) {
+		this.numberOfTransactions = numberOfTransactions;
+	}
+
+	@XmlElement(name = "CtrlSum")
+	public DecimalNumber getControlSum() {
+		return controlSum;
+	}
+
+	public void setControlSum(DecimalNumber controlSum) {
+		this.controlSum = controlSum;
+	}
+
+	@XmlElement(name = "InitgPty", required = true)
+	public PartyIdentification43 getInitiatingParty() {
+		return initiatingParty;
+	}
+
+	public void setInitiatingParty(com.tools20022.repository.msg.PartyIdentification43 initiatingParty) {
+		this.initiatingParty = initiatingParty;
+	}
+
+	@XmlElement(name = "FwdgAgt")
+	public BranchAndFinancialInstitutionIdentification5 getForwardingAgent() {
+		return forwardingAgent;
+	}
+
+	public void setForwardingAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 forwardingAgent) {
+		this.forwardingAgent = forwardingAgent;
 	}
 }

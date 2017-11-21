@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,21 +31,21 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#Buy
- * ClearingSideCode.Buy}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#Sell
- * ClearingSideCode.Sell}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#Lend
- * ClearingSideCode.Lend}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#Borrow
- * ClearingSideCode.Borrow}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#mmBuy
+ * ClearingSideCode.mmBuy}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#mmSell
+ * ClearingSideCode.mmSell}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#mmLend
+ * ClearingSideCode.mmLend}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ClearingSideCode#mmBorrow
+ * ClearingSideCode.mmBorrow}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -84,9 +86,9 @@ public class ClearingSideCode {
 	 * definition} = "Clearing member is on the buying side."</li>
 	 * </ul>
 	 */
-	public static final MMCode Buy = new MMCode() {
+	public static final MMCode mmBuy = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Buy";
 			definition = "Clearing member is on the buying side.";
 			owner_lazy = () -> ClearingSideCode.mmObject();
@@ -114,9 +116,9 @@ public class ClearingSideCode {
 	 * definition} = "Clearing member is on the selling side."</li>
 	 * </ul>
 	 */
-	public static final MMCode Sell = new MMCode() {
+	public static final MMCode mmSell = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sell";
 			definition = "Clearing member is on the selling side.";
 			owner_lazy = () -> ClearingSideCode.mmObject();
@@ -144,9 +146,9 @@ public class ClearingSideCode {
 	 * definition} = "Clearing member is on the lending side."</li>
 	 * </ul>
 	 */
-	public static final MMCode Lend = new MMCode() {
+	public static final MMCode mmLend = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Lend";
 			definition = "Clearing member is on the lending side.";
 			owner_lazy = () -> ClearingSideCode.mmObject();
@@ -174,9 +176,9 @@ public class ClearingSideCode {
 	 * definition} = "Clearing member is on the borrowing side."</li>
 	 * </ul>
 	 */
-	public static final MMCode Borrow = new MMCode() {
+	public static final MMCode mmBorrow = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Borrow";
 			definition = "Clearing member is on the borrowing side.";
 			owner_lazy = () -> ClearingSideCode.mmObject();
@@ -187,13 +189,12 @@ public class ClearingSideCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("BUYI");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingSideCode";
 				definition = "Side taken by a party on an order.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ClearingSideCode.Buy, com.tools20022.repository.codeset.ClearingSideCode.Sell, com.tools20022.repository.codeset.ClearingSideCode.Lend,
-						com.tools20022.repository.codeset.ClearingSideCode.Borrow);
+				code_lazy = () -> Arrays.asList(ClearingSideCode.mmBuy, ClearingSideCode.mmSell, ClearingSideCode.mmLend, ClearingSideCode.mmBorrow);
 			}
 		});
 		return mmObject_lazy.get();

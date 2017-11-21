@@ -19,10 +19,16 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Choice between a date or a date and time format.
@@ -33,18 +39,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.DateAndDateTimeChoice#Date
- * DateAndDateTimeChoice.Date}</li>
  * <li>
- * {@linkplain com.tools20022.repository.choice.DateAndDateTimeChoice#DateTime
- * DateAndDateTimeChoice.DateTime}</li>
+ * {@linkplain com.tools20022.repository.choice.DateAndDateTimeChoice#mmDate
+ * DateAndDateTimeChoice.mmDate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.DateAndDateTimeChoice#mmDateTime
+ * DateAndDateTimeChoice.mmDateTime}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -55,9 +62,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Choice between a date or a date and time format."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "DateAndDateTimeChoice", propOrder = {"date", "dateTime"})
 public class DateAndDateTimeChoice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ISODate date;
 	/**
 	 * Specified date.
 	 * <p>
@@ -85,19 +95,20 @@ public class DateAndDateTimeChoice {
 	 * definition} = "Specified date."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Date = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDate = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DateAndDateTimeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "Dt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Date";
 			definition = "Specified date.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected ISODateTime dateTime;
 	/**
 	 * Specified date and time.
 	 * <p>
@@ -125,16 +136,16 @@ public class DateAndDateTimeChoice {
 	 * definition} = "Specified date and time."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute DateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmDateTime = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> DateAndDateTimeChoice.mmObject();
 			isDerived = false;
 			xmlTag = "DtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DateTime";
 			definition = "Specified date and time.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
@@ -142,13 +153,31 @@ public class DateAndDateTimeChoice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.DateAndDateTimeChoice.Date, com.tools20022.repository.choice.DateAndDateTimeChoice.DateTime);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(DateAndDateTimeChoice.mmDate, DateAndDateTimeChoice.mmDateTime);
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DateAndDateTimeChoice";
 				definition = "Choice between a date or a date and time format.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Dt", required = true)
+	public ISODate getDate() {
+		return date;
+	}
+
+	public void setDate(ISODate date) {
+		this.date = date;
+	}
+
+	@XmlElement(name = "DtTm", required = true)
+	public ISODateTime getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(ISODateTime dateTime) {
+		this.dateTime = dateTime;
 	}
 }

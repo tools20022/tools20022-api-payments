@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -31,18 +33,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#Bilateral
- * BalanceCounterpartyCode.Bilateral}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#mmBilateral
+ * BalanceCounterpartyCode.mmBilateral}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#Multilateral
- * BalanceCounterpartyCode.Multilateral}</li>
+ * {@linkplain com.tools20022.repository.codeset.BalanceCounterpartyCode#mmMultilateral
+ * BalanceCounterpartyCode.mmMultilateral}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -85,9 +87,9 @@ public class BalanceCounterpartyCode {
 	 * definition} = "Balance calculated regarding one member in the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Bilateral = new MMCode() {
+	public static final MMCode mmBilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bilateral";
 			definition = "Balance calculated regarding one member in the system.";
 			owner_lazy = () -> BalanceCounterpartyCode.mmObject();
@@ -115,9 +117,9 @@ public class BalanceCounterpartyCode {
 	 * definition} = "Balance calculated regarding all members in the system."</li>
 	 * </ul>
 	 */
-	public static final MMCode Multilateral = new MMCode() {
+	public static final MMCode mmMultilateral = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Multilateral";
 			definition = "Balance calculated regarding all members in the system.";
 			owner_lazy = () -> BalanceCounterpartyCode.mmObject();
@@ -128,12 +130,12 @@ public class BalanceCounterpartyCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("BILA");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BalanceCounterpartyCode";
 				definition = "Specifies the type of counterparty to be taken into account for calculation of the balance.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.BalanceCounterpartyCode.Bilateral, com.tools20022.repository.codeset.BalanceCounterpartyCode.Multilateral);
+				code_lazy = () -> Arrays.asList(BalanceCounterpartyCode.mmBilateral, BalanceCounterpartyCode.mmMultilateral);
 			}
 		});
 		return mmObject_lazy.get();

@@ -20,11 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.ContractClosureReason1Choice;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.RegisteredContract;
+import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Document that a user must file with an authorised servicer for each contract
@@ -37,17 +44,17 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#RegistrationAgent
- * RegisteredContractJournal1.RegistrationAgent}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmRegistrationAgent
+ * RegisteredContractJournal1.mmRegistrationAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#UniqueIdentification
- * RegisteredContractJournal1.UniqueIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmUniqueIdentification
+ * RegisteredContractJournal1.mmUniqueIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#ClosureDate
- * RegisteredContractJournal1.ClosureDate}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmClosureDate
+ * RegisteredContractJournal1.mmClosureDate}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#ClosureReason
- * RegisteredContractJournal1.ClosureReason}</li>
+ * {@linkplain com.tools20022.repository.msg.RegisteredContractJournal1#mmClosureReason
+ * RegisteredContractJournal1.mmClosureReason}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -56,8 +63,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,9 +77,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "RegisteredContractJournal1", propOrder = {"registrationAgent", "uniqueIdentification", "closureDate", "closureReason"})
 public class RegisteredContractJournal1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected BranchAndFinancialInstitutionIdentification5 registrationAgent;
 	/**
 	 * Agent which registers the currency control contract.
 	 * <p>
@@ -85,8 +95,8 @@ public class RegisteredContractJournal1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#RegistrationAgent
-	 * RegisteredContract.RegistrationAgent}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmRegistrationAgent
+	 * RegisteredContract.mmRegistrationAgent}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -105,21 +115,22 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Agent which registers the currency control contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd RegistrationAgent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRegistrationAgent = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.RegistrationAgent;
 			isDerived = false;
 			xmlTag = "RegnAgt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RegistrationAgent";
 			definition = "Agent which registers the currency control contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> BranchAndFinancialInstitutionIdentification5.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5.mmObject();
 		}
 	};
+	protected DocumentIdentification28 uniqueIdentification;
 	/**
 	 * Unique registered contract identification.
 	 * <p>
@@ -132,8 +143,8 @@ public class RegisteredContractJournal1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#Identification
-	 * RegisteredContract.Identification}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmIdentification
+	 * RegisteredContract.mmIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -152,21 +163,22 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Unique registered contract identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd UniqueIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmUniqueIdentification = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmIdentification;
 			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.Identification;
 			isDerived = false;
 			xmlTag = "UnqId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UniqueIdentification";
 			definition = "Unique registered contract identification.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> DocumentIdentification28.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.DocumentIdentification28.mmObject();
 		}
 	};
+	protected ISODate closureDate;
 	/**
 	 * Date of closure of the registered contract.
 	 * <p>
@@ -179,8 +191,8 @@ public class RegisteredContractJournal1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusDateTime
-	 * Status.StatusDateTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusDateTime
+	 * Status.mmStatusDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -199,20 +211,21 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Date of closure of the registered contract."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute ClosureDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmClosureDate = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Status.mmStatusDateTime;
 			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.StatusDateTime;
 			isDerived = false;
 			xmlTag = "ClsrDt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosureDate";
 			definition = "Date of closure of the registered contract.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 	};
+	protected ContractClosureReason1Choice closureReason;
 	/**
 	 * Reason of closure <br>
 	 * <br>
@@ -227,8 +240,8 @@ public class RegisteredContractJournal1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#ClosureReason
-	 * RegisteredContract.ClosureReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.RegisteredContract#mmClosureReason
+	 * RegisteredContract.mmClosureReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -247,34 +260,70 @@ public class RegisteredContractJournal1 {
 	 * definition} = "Reason of closure \r\n\r\nTBD - codes to be defined."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ClosureReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmClosureReason = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> RegisteredContract.mmClosureReason;
 			componentContext_lazy = () -> RegisteredContractJournal1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.RegisteredContract.ClosureReason;
 			isDerived = false;
 			xmlTag = "ClsrRsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ClosureReason";
 			definition = "Reason of closure \r\n\r\nTBD - codes to be defined.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> ContractClosureReason1Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> ContractClosureReason1Choice.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RegisteredContractJournal1.RegistrationAgent, com.tools20022.repository.msg.RegisteredContractJournal1.UniqueIdentification,
-						com.tools20022.repository.msg.RegisteredContractJournal1.ClosureDate, com.tools20022.repository.msg.RegisteredContractJournal1.ClosureReason);
+				messageElement_lazy = () -> Arrays.asList(RegisteredContractJournal1.mmRegistrationAgent, RegisteredContractJournal1.mmUniqueIdentification, RegisteredContractJournal1.mmClosureDate,
+						RegisteredContractJournal1.mmClosureReason);
 				trace_lazy = () -> RegisteredContract.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegisteredContractJournal1";
 				definition = "Document that a user must file with an authorised servicer for each contract that involves foreign currency transactions with non residents.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "RegnAgt", required = true)
+	public BranchAndFinancialInstitutionIdentification5 getRegistrationAgent() {
+		return registrationAgent;
+	}
+
+	public void setRegistrationAgent(com.tools20022.repository.msg.BranchAndFinancialInstitutionIdentification5 registrationAgent) {
+		this.registrationAgent = registrationAgent;
+	}
+
+	@XmlElement(name = "UnqId")
+	public DocumentIdentification28 getUniqueIdentification() {
+		return uniqueIdentification;
+	}
+
+	public void setUniqueIdentification(com.tools20022.repository.msg.DocumentIdentification28 uniqueIdentification) {
+		this.uniqueIdentification = uniqueIdentification;
+	}
+
+	@XmlElement(name = "ClsrDt", required = true)
+	public ISODate getClosureDate() {
+		return closureDate;
+	}
+
+	public void setClosureDate(ISODate closureDate) {
+		this.closureDate = closureDate;
+	}
+
+	@XmlElement(name = "ClsrRsn", required = true)
+	public ContractClosureReason1Choice getClosureReason() {
+		return closureReason;
+	}
+
+	public void setClosureReason(ContractClosureReason1Choice closureReason) {
+		this.closureReason = closureReason;
 	}
 }

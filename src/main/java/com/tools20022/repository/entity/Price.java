@@ -17,17 +17,18 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.UnitOfMeasureCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max15NumericText;
+import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.BillingPrice1;
 import com.tools20022.repository.msg.ProprietaryPrice2;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Amount of money for which goods, services or assets are offered, sold, or
@@ -42,59 +43,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.Price#Amount Price.Amount}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#Option Price.Option}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#UnitPriceProduct
- * Price.UnitPriceProduct}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#NetPriceProduct
- * Price.NetPriceProduct}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#PriceAdjustment
- * Price.PriceAdjustment}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#GrossPriceProduct
- * Price.GrossPriceProduct}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#UnitOfMeasure
- * Price.UnitOfMeasure}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#PriceTolerance
- * Price.PriceTolerance}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#Currency
- * Price.Currency}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#Factor Price.Factor}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#Netting Price.Netting}
- * </li>
- * <li>{@linkplain com.tools20022.repository.entity.Price#SecuritiesPricing
- * Price.SecuritiesPricing}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
- * associationDomain} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.SecuritiesPricing#Price
- * SecuritiesPricing.Price}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#UnitPrice
- * Product.UnitPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#NetPrice
- * Product.NetPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Product#GrossPrice
- * Product.GrossPrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Adjustment#Price
- * Adjustment.Price}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Option#StrikePrice
- * Option.StrikePrice}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Tolerance#Price
- * Tolerance.Price}</li>
- * <li>{@linkplain com.tools20022.repository.entity.Netting#AverageDealPrice
- * Netting.AverageDealPrice}</li>
- * </ul>
- * </li>
- * <li>
- * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
- * derivationElement} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.ProprietaryPrice2#Price
- * ProprietaryPrice2.Price}</li>
- * <li>{@linkplain com.tools20022.repository.msg.BillingPrice1#UnitPrice
- * BillingPrice1.UnitPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmAmount
+ * Price.mmAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmOption
+ * Price.mmOption}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmUnitPriceProduct
+ * Price.mmUnitPriceProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmNetPriceProduct
+ * Price.mmNetPriceProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmPriceAdjustment
+ * Price.mmPriceAdjustment}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmGrossPriceProduct
+ * Price.mmGrossPriceProduct}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmUnitOfMeasure
+ * Price.mmUnitOfMeasure}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmPriceTolerance
+ * Price.mmPriceTolerance}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmCurrency
+ * Price.mmCurrency}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmFactor
+ * Price.mmFactor}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmNetting
+ * Price.mmNetting}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Price#mmSecuritiesPricing
+ * Price.mmSecuritiesPricing}</li>
  * </ul>
  * </li>
  * <li>
@@ -107,10 +79,42 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
+ * associationDomain} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPrice
+ * SecuritiesPricing.mmPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmUnitPrice
+ * Product.mmUnitPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmNetPrice
+ * Product.mmNetPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Product#mmGrossPrice
+ * Product.mmGrossPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Adjustment#mmPrice
+ * Adjustment.mmPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Option#mmStrikePrice
+ * Option.mmStrikePrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Tolerance#mmPrice
+ * Tolerance.mmPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.Netting#mmAverageDealPrice
+ * Netting.mmAverageDealPrice}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ProprietaryPrice2#mmPrice
+ * ProprietaryPrice2.mmPrice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.BillingPrice1#mmUnitPrice
+ * BillingPrice1.mmUnitPrice}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -126,6 +130,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Price {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected CurrencyAndAmount amount;
 	/**
 	 * Price expressed as a currency and value.
 	 * <p>
@@ -151,18 +156,27 @@ public class Price {
 	 * definition} = "Price expressed as a currency and value."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Amount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Amount";
 			definition = "Price expressed as a currency and value.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Price.class.getMethod("getAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Option option;
 	/**
 	 * Option for which a strike price is specified.
 	 * <p>
@@ -171,8 +185,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Option#StrikePrice
-	 * Option.StrikePrice}</li>
+	 * {@linkplain com.tools20022.repository.entity.Option#mmStrikePrice
+	 * Option.mmStrikePrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -194,20 +208,21 @@ public class Price {
 	 * definition} = "Option for which a strike price is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Option = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Option";
 			definition = "Option for which a strike price is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Option.mmStrikePrice;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Option.StrikePrice;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected Product unitPriceProduct;
 	/**
 	 * Product for which a unit price is specified.
 	 * <p>
@@ -216,8 +231,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Product#UnitPrice
-	 * Product.UnitPrice}</li>
+	 * {@linkplain com.tools20022.repository.entity.Product#mmUnitPrice
+	 * Product.mmUnitPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -239,20 +254,21 @@ public class Price {
 	 * definition} = "Product for which a unit price is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd UnitPriceProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmUnitPriceProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitPriceProduct";
 			definition = "Product for which a unit price is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Product.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.UnitPrice;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmUnitPrice;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 		}
 	};
+	protected Product netPriceProduct;
 	/**
 	 * Product for which a net price is specified.
 	 * <p>
@@ -261,8 +277,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Product#NetPrice
-	 * Product.NetPrice}</li>
+	 * {@linkplain com.tools20022.repository.entity.Product#mmNetPrice
+	 * Product.mmNetPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -284,20 +300,21 @@ public class Price {
 	 * definition} = "Product for which a net price is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd NetPriceProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNetPriceProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NetPriceProduct";
 			definition = "Product for which a net price is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Product.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.NetPrice;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmNetPrice;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.entity.Adjustment> priceAdjustment;
 	/**
 	 * Variance on price for the goods and services.
 	 * <p>
@@ -306,8 +323,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Adjustment#Price
-	 * Adjustment.Price}</li>
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmPrice
+	 * Adjustment.mmPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -330,19 +347,20 @@ public class Price {
 	 * definition} = "Variance on price for the goods and services."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PriceAdjustment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPriceAdjustment = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceAdjustment";
 			definition = "Variance on price for the goods and services.";
 			minOccurs = 0;
-			type_lazy = () -> Adjustment.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.Price;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Adjustment.mmPrice;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 		}
 	};
+	protected Product grossPriceProduct;
 	/**
 	 * Product for which a gross price is specified.
 	 * <p>
@@ -351,8 +369,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Product#GrossPrice
-	 * Product.GrossPrice}</li>
+	 * {@linkplain com.tools20022.repository.entity.Product#mmGrossPrice
+	 * Product.mmGrossPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -374,20 +392,21 @@ public class Price {
 	 * definition} = "Product for which a gross price is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd GrossPriceProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmGrossPriceProduct = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GrossPriceProduct";
 			definition = "Product for which a gross price is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> Product.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.GrossPrice;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmGrossPrice;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
 		}
 	};
+	protected UnitOfMeasureCode unitOfMeasure;
 	/**
 	 * Specifies the unit of measurement. For example: kilo, tons.
 	 * <p>
@@ -414,18 +433,27 @@ public class Price {
 	 * "Specifies the unit of measurement. For example: kilo, tons."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute UnitOfMeasure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmUnitOfMeasure = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "UnitOfMeasure";
 			definition = "Specifies the unit of measurement. For example: kilo, tons.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> UnitOfMeasureCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Price.class.getMethod("getUnitOfMeasure", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Tolerance priceTolerance;
 	/**
 	 * Variance allowed on the price of goods.
 	 * <p>
@@ -433,8 +461,9 @@ public class Price {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
-	 * opposite} = {@linkplain com.tools20022.repository.entity.Tolerance#Price
-	 * Tolerance.Price}</li>
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.Tolerance#mmPrice
+	 * Tolerance.mmPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -457,20 +486,21 @@ public class Price {
 	 * definition} = "Variance allowed on the price of goods."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd PriceTolerance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmPriceTolerance = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriceTolerance";
 			definition = "Variance allowed on the price of goods.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Tolerance.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Tolerance.Price;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.Tolerance.mmPrice;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Tolerance.mmObject();
 		}
 	};
+	protected CurrencyCode currency;
 	/**
 	 * Currency code in which the price is expressed.
 	 * <p>
@@ -483,8 +513,8 @@ public class Price {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.BillingPrice1#Currency
-	 * BillingPrice1.Currency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.BillingPrice1#mmCurrency
+	 * BillingPrice1.mmCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -502,19 +532,28 @@ public class Price {
 	 * definition} = "Currency code in which the price is expressed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Currency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
 		{
-			derivation_lazy = () -> Arrays.asList(com.tools20022.repository.msg.BillingPrice1.Currency);
-			elementContext_lazy = () -> Price.mmObject();
+			derivation_lazy = () -> Arrays.asList(BillingPrice1.mmCurrency);
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Currency code in which the price is expressed.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Price.class.getMethod("getCurrency", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Max15NumericText factor;
 	/**
 	 * Multiplication factor of measurement values. For example: 36 pieces.
 	 * <p>
@@ -541,18 +580,27 @@ public class Price {
 	 * "Multiplication factor of measurement values. For example: 36 pieces."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Factor = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmFactor = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Factor";
 			definition = "Multiplication factor of measurement values. For example: 36 pieces.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return Price.class.getMethod("getFactor", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected Netting netting;
 	/**
 	 * Netting for which an average price is specified.
 	 * <p>
@@ -561,8 +609,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Netting#AverageDealPrice
-	 * Netting.AverageDealPrice}</li>
+	 * {@linkplain com.tools20022.repository.entity.Netting#mmAverageDealPrice
+	 * Netting.mmAverageDealPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -584,20 +632,21 @@ public class Price {
 	 * definition} = "Netting for which an average price is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Netting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmNetting = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Netting";
 			definition = "Netting for which an average price is specified.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Netting.mmAverageDealPrice;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Netting.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Netting.AverageDealPrice;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected SecuritiesPricing securitiesPricing;
 	/**
 	 * Pricing parameters for a security.
 	 * <p>
@@ -606,8 +655,8 @@ public class Price {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#Price
-	 * SecuritiesPricing.Price}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmPrice
+	 * SecuritiesPricing.mmPrice}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -630,39 +679,140 @@ public class Price {
 	 * definition} = "Pricing parameters for a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SecuritiesPricing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSecuritiesPricing = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> Price.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesPricing";
 			definition = "Pricing parameters for a security.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPrice;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.Price;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Price";
 				definition = "Amount of money for which goods, services or assets are offered, sold, or bought.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.Price, com.tools20022.repository.entity.Product.UnitPrice, com.tools20022.repository.entity.Product.NetPrice,
-						com.tools20022.repository.entity.Product.GrossPrice, com.tools20022.repository.entity.Adjustment.Price, com.tools20022.repository.entity.Option.StrikePrice, com.tools20022.repository.entity.Tolerance.Price,
-						com.tools20022.repository.entity.Netting.AverageDealPrice);
-				derivationElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProprietaryPrice2.Price, com.tools20022.repository.msg.BillingPrice1.UnitPrice);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Price.Amount, com.tools20022.repository.entity.Price.Option, com.tools20022.repository.entity.Price.UnitPriceProduct,
-						com.tools20022.repository.entity.Price.NetPriceProduct, com.tools20022.repository.entity.Price.PriceAdjustment, com.tools20022.repository.entity.Price.GrossPriceProduct,
-						com.tools20022.repository.entity.Price.UnitOfMeasure, com.tools20022.repository.entity.Price.PriceTolerance, com.tools20022.repository.entity.Price.Currency, com.tools20022.repository.entity.Price.Factor,
-						com.tools20022.repository.entity.Price.Netting, com.tools20022.repository.entity.Price.SecuritiesPricing);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmPrice, com.tools20022.repository.entity.Product.mmUnitPrice, com.tools20022.repository.entity.Product.mmNetPrice,
+						com.tools20022.repository.entity.Product.mmGrossPrice, com.tools20022.repository.entity.Adjustment.mmPrice, com.tools20022.repository.entity.Option.mmStrikePrice, com.tools20022.repository.entity.Tolerance.mmPrice,
+						com.tools20022.repository.entity.Netting.mmAverageDealPrice);
+				derivationElement_lazy = () -> Arrays.asList(ProprietaryPrice2.mmPrice, BillingPrice1.mmUnitPrice);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Price.mmAmount, com.tools20022.repository.entity.Price.mmOption, com.tools20022.repository.entity.Price.mmUnitPriceProduct,
+						com.tools20022.repository.entity.Price.mmNetPriceProduct, com.tools20022.repository.entity.Price.mmPriceAdjustment, com.tools20022.repository.entity.Price.mmGrossPriceProduct,
+						com.tools20022.repository.entity.Price.mmUnitOfMeasure, com.tools20022.repository.entity.Price.mmPriceTolerance, com.tools20022.repository.entity.Price.mmCurrency, com.tools20022.repository.entity.Price.mmFactor,
+						com.tools20022.repository.entity.Price.mmNetting, com.tools20022.repository.entity.Price.mmSecuritiesPricing);
 				derivationComponent_lazy = () -> Arrays.asList(ProprietaryPrice2.mmObject(), BillingPrice1.mmObject());
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return Price.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public CurrencyAndAmount getAmount() {
+		return amount;
+	}
+
+	public void setAmount(CurrencyAndAmount amount) {
+		this.amount = amount;
+	}
+
+	public Option getOption() {
+		return option;
+	}
+
+	public void setOption(com.tools20022.repository.entity.Option option) {
+		this.option = option;
+	}
+
+	public Product getUnitPriceProduct() {
+		return unitPriceProduct;
+	}
+
+	public void setUnitPriceProduct(com.tools20022.repository.entity.Product unitPriceProduct) {
+		this.unitPriceProduct = unitPriceProduct;
+	}
+
+	public Product getNetPriceProduct() {
+		return netPriceProduct;
+	}
+
+	public void setNetPriceProduct(com.tools20022.repository.entity.Product netPriceProduct) {
+		this.netPriceProduct = netPriceProduct;
+	}
+
+	public List<Adjustment> getPriceAdjustment() {
+		return priceAdjustment;
+	}
+
+	public void setPriceAdjustment(List<com.tools20022.repository.entity.Adjustment> priceAdjustment) {
+		this.priceAdjustment = priceAdjustment;
+	}
+
+	public Product getGrossPriceProduct() {
+		return grossPriceProduct;
+	}
+
+	public void setGrossPriceProduct(com.tools20022.repository.entity.Product grossPriceProduct) {
+		this.grossPriceProduct = grossPriceProduct;
+	}
+
+	public UnitOfMeasureCode getUnitOfMeasure() {
+		return unitOfMeasure;
+	}
+
+	public void setUnitOfMeasure(UnitOfMeasureCode unitOfMeasure) {
+		this.unitOfMeasure = unitOfMeasure;
+	}
+
+	public Tolerance getPriceTolerance() {
+		return priceTolerance;
+	}
+
+	public void setPriceTolerance(com.tools20022.repository.entity.Tolerance priceTolerance) {
+		this.priceTolerance = priceTolerance;
+	}
+
+	public CurrencyCode getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(CurrencyCode currency) {
+		this.currency = currency;
+	}
+
+	public Max15NumericText getFactor() {
+		return factor;
+	}
+
+	public void setFactor(Max15NumericText factor) {
+		this.factor = factor;
+	}
+
+	public Netting getNetting() {
+		return netting;
+	}
+
+	public void setNetting(com.tools20022.repository.entity.Netting netting) {
+		this.netting = netting;
+	}
+
+	public SecuritiesPricing getSecuritiesPricing() {
+		return securitiesPricing;
+	}
+
+	public void setSecuritiesPricing(com.tools20022.repository.entity.SecuritiesPricing securitiesPricing) {
+		this.securitiesPricing = securitiesPricing;
 	}
 }

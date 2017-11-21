@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,17 +34,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.UKTaxGroupUnitCode#Group1
- * UKTaxGroupUnitCode.Group1}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.UKTaxGroupUnitCode#Group2
- * UKTaxGroupUnitCode.Group2}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.UKTaxGroupUnitCode#mmGroup1
+ * UKTaxGroupUnitCode.mmGroup1}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.UKTaxGroupUnitCode#mmGroup2
+ * UKTaxGroupUnitCode.mmGroup2}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,9 +90,9 @@ public class UKTaxGroupUnitCode {
 	 * "The units that were purchased prior to the last ex-div date."</li>
 	 * </ul>
 	 */
-	public static final MMCode Group1 = new MMCode() {
+	public static final MMCode mmGroup1 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Group1";
 			definition = "The units that were purchased prior to the last ex-div date.";
 			owner_lazy = () -> UKTaxGroupUnitCode.mmObject();
@@ -119,9 +123,9 @@ public class UKTaxGroupUnitCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Group2 = new MMCode() {
+	public static final MMCode mmGroup2 = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Group2";
 			definition = "The units that were purchased since the ex-div date, and that benefit from the tax exemption.";
 			owner_lazy = () -> UKTaxGroupUnitCode.mmObject();
@@ -132,12 +136,12 @@ public class UKTaxGroupUnitCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("GRP1");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UKTaxGroupUnitCode";
 				definition = "Specifies the UK tax group to which units belong. For UK tax, the first dividend that an investor receives from a funds investment is deemed to be part income and part return of capital. The capital element is 'equalisation', and is exempt from income tax.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UKTaxGroupUnitCode.Group1, com.tools20022.repository.codeset.UKTaxGroupUnitCode.Group2);
+				code_lazy = () -> Arrays.asList(UKTaxGroupUnitCode.mmGroup1, UKTaxGroupUnitCode.mmGroup2);
 			}
 		});
 		return mmObject_lazy.get();

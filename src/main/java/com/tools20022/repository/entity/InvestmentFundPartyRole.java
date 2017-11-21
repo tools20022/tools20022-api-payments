@@ -17,11 +17,15 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies roles played by a party that are linked to the handling of
@@ -38,24 +42,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#Account
- * InvestmentFundPartyRole.Account}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#mmAccount
+ * InvestmentFundPartyRole.mmAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#InvestmentFund
- * InvestmentFundPartyRole.InvestmentFund}</li>
+ * {@linkplain com.tools20022.repository.entity.InvestmentFundPartyRole#mmInvestmentFund
+ * InvestmentFundPartyRole.mmInvestmentFund}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getAssociationDomain
  * associationDomain} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.InvestmentFund#PartyRole
- * InvestmentFund.PartyRole}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.InvestmentFund#mmPartyRole
+ * InvestmentFund.mmPartyRole}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Account#InvestmentFundPartyRole
- * Account.InvestmentFundPartyRole}</li>
+ * {@linkplain com.tools20022.repository.entity.Account#mmInvestmentFundPartyRole
+ * Account.mmInvestmentFundPartyRole}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
+ * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
@@ -63,13 +69,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
- * superType} = {@linkplain com.tools20022.repository.entity.Role Role}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,6 +89,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class InvestmentFundPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Account> account;
 	/**
 	 * Unambiguous identification of the account used in the context of the
 	 * investment fund party role such as intermediary's account, beneficiary's
@@ -95,8 +100,8 @@ public class InvestmentFundPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Account#InvestmentFundPartyRole
-	 * Account.InvestmentFundPartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.Account#mmInvestmentFundPartyRole
+	 * Account.mmInvestmentFundPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -121,19 +126,20 @@ public class InvestmentFundPartyRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd Account = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Account";
 			definition = "Unambiguous identification of the account used in the context of the investment fund party role such as intermediary's account, beneficiary's account...";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmInvestmentFundPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.InvestmentFundPartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<com.tools20022.repository.entity.InvestmentFund> investmentFund;
 	/**
 	 * Specifies the fund for which the party plays a role.
 	 * <p>
@@ -142,8 +148,8 @@ public class InvestmentFundPartyRole extends Role {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.InvestmentFund#PartyRole
-	 * InvestmentFund.PartyRole}</li>
+	 * {@linkplain com.tools20022.repository.entity.InvestmentFund#mmPartyRole
+	 * InvestmentFund.mmPartyRole}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -167,33 +173,54 @@ public class InvestmentFundPartyRole extends Role {
 	 * definition} = "Specifies the fund for which the party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd InvestmentFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> InvestmentFundPartyRole.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.InvestmentFundPartyRole.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InvestmentFund";
 			definition = "Specifies the fund for which the party plays a role.";
 			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmPartyRole;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.PartyRole;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentFundPartyRole";
 				definition = "Specifies roles played by a party that are linked to the handling of investment funds but not related to a specific process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.PartyRole, com.tools20022.repository.entity.Account.InvestmentFundPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.mmPartyRole, com.tools20022.repository.entity.Account.mmInvestmentFundPartyRole);
 				subType_lazy = () -> Arrays.asList(FundOrderDesk.mmObject());
 				superType_lazy = () -> Role.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundPartyRole.Account, com.tools20022.repository.entity.InvestmentFundPartyRole.InvestmentFund);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundPartyRole.mmAccount, com.tools20022.repository.entity.InvestmentFundPartyRole.mmInvestmentFund);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return InvestmentFundPartyRole.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Account> getAccount() {
+		return account;
+	}
+
+	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
+		this.account = account;
+	}
+
+	public List<InvestmentFund> getInvestmentFund() {
+		return investmentFund;
+	}
+
+	public void setInvestmentFund(List<com.tools20022.repository.entity.InvestmentFund> investmentFund) {
+		this.investmentFund = investmentFund;
 	}
 }

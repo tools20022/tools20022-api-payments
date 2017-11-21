@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestmentAccountCategoryCode#RetailAccount
- * InvestmentAccountCategoryCode.RetailAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.InvestmentAccountCategoryCode#mmRetailAccount
+ * InvestmentAccountCategoryCode.mmRetailAccount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.InvestmentAccountCategoryCode#MandateAccount
- * InvestmentAccountCategoryCode.MandateAccount}</li>
+ * {@linkplain com.tools20022.repository.codeset.InvestmentAccountCategoryCode#mmMandateAccount
+ * InvestmentAccountCategoryCode.mmMandateAccount}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,9 +81,9 @@ public class InvestmentAccountCategoryCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode RetailAccount = new MMCode() {
+	public static final MMCode mmRetailAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RetailAccount";
 			definition = "Account is a standard account managed by the investor. The investor issues instructions for the account to the financial institution.";
 			owner_lazy = () -> InvestmentAccountCategoryCode.mmObject();
@@ -113,9 +115,9 @@ public class InvestmentAccountCategoryCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode MandateAccount = new MMCode() {
+	public static final MMCode mmMandateAccount = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MandateAccount";
 			definition = "Account is fully managed by the financial institution, that is, an investor gives a 'mandate' to the financial institution to execute a mutually agreed investment strategy on its behalf.";
 			owner_lazy = () -> InvestmentAccountCategoryCode.mmObject();
@@ -126,11 +128,11 @@ public class InvestmentAccountCategoryCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestmentAccountCategoryCode";
 				definition = "Specifies the investment account category.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.InvestmentAccountCategoryCode.RetailAccount, com.tools20022.repository.codeset.InvestmentAccountCategoryCode.MandateAccount);
+				code_lazy = () -> Arrays.asList(InvestmentAccountCategoryCode.mmRetailAccount, InvestmentAccountCategoryCode.mmMandateAccount);
 			}
 		});
 		return mmObject_lazy.get();

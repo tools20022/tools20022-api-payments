@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,30 +32,30 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#Passed
- * MoneyLaunderingCheckCode.Passed}</li>
+ * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#mmPassed
+ * MoneyLaunderingCheckCode.mmPassed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#NotChecked
- * MoneyLaunderingCheckCode.NotChecked}</li>
+ * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#mmNotChecked
+ * MoneyLaunderingCheckCode.mmNotChecked}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#ExemptBelowLimit
- * MoneyLaunderingCheckCode.ExemptBelowLimit}</li>
+ * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#mmExemptBelowLimit
+ * MoneyLaunderingCheckCode.mmExemptBelowLimit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#ClientMoneyTypeExempt
- * MoneyLaunderingCheckCode.ClientMoneyTypeExempt}</li>
+ * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#mmClientMoneyTypeExempt
+ * MoneyLaunderingCheckCode.mmClientMoneyTypeExempt}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#AuthorisedCredit
- * MoneyLaunderingCheckCode.AuthorisedCredit}</li>
+ * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#mmAuthorisedCredit
+ * MoneyLaunderingCheckCode.mmAuthorisedCredit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#PostalOrElectronicPaymentExempt
- * MoneyLaunderingCheckCode.PostalOrElectronicPaymentExempt}</li>
+ * {@linkplain com.tools20022.repository.codeset.MoneyLaunderingCheckCode#mmPostalOrElectronicPaymentExempt
+ * MoneyLaunderingCheckCode.mmPostalOrElectronicPaymentExempt}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -98,9 +100,9 @@ public class MoneyLaunderingCheckCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Passed = new MMCode() {
+	public static final MMCode mmPassed = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Passed";
 			definition = "Money laundering identification procedures have been carried out by the intermediary.";
 			owner_lazy = () -> MoneyLaunderingCheckCode.mmObject();
@@ -129,9 +131,9 @@ public class MoneyLaunderingCheckCode {
 	 * "Money laundering identification procedures have not been carried out."</li>
 	 * </ul>
 	 */
-	public static final MMCode NotChecked = new MMCode() {
+	public static final MMCode mmNotChecked = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NotChecked";
 			definition = "Money laundering identification procedures have not been carried out.";
 			owner_lazy = () -> MoneyLaunderingCheckCode.mmObject();
@@ -162,9 +164,9 @@ public class MoneyLaunderingCheckCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ExemptBelowLimit = new MMCode() {
+	public static final MMCode mmExemptBelowLimit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExemptBelowLimit";
 			definition = "Money laundering identification procedures have not been carried out because the transaction is below the prescribed limit.";
 			owner_lazy = () -> MoneyLaunderingCheckCode.mmObject();
@@ -197,9 +199,9 @@ public class MoneyLaunderingCheckCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ClientMoneyTypeExempt = new MMCode() {
+	public static final MMCode mmClientMoneyTypeExempt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClientMoneyTypeExempt";
 			definition = "Money laundering identification procedures have not been carried out because of the transaction type, eg, switch, or because the transaction is being funded from an existing investor account held by the intermediary.";
 			owner_lazy = () -> MoneyLaunderingCheckCode.mmObject();
@@ -230,9 +232,9 @@ public class MoneyLaunderingCheckCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode AuthorisedCredit = new MMCode() {
+	public static final MMCode mmAuthorisedCredit = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthorisedCredit";
 			definition = "Money laundering identification procedures have not been carried out because the investor is an authorised credit or financial institution.";
 			owner_lazy = () -> MoneyLaunderingCheckCode.mmObject();
@@ -265,9 +267,9 @@ public class MoneyLaunderingCheckCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PostalOrElectronicPaymentExempt = new MMCode() {
+	public static final MMCode mmPostalOrElectronicPaymentExempt = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PostalOrElectronicPaymentExempt";
 			definition = "Limited money laundering identification procedures have been carried out because it is a one time only transaction and the payment is being made by postal, telephone or electronic transfers from an existing account with an authorised credit or financial institution.";
 			owner_lazy = () -> MoneyLaunderingCheckCode.mmObject();
@@ -278,14 +280,13 @@ public class MoneyLaunderingCheckCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("PASS");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MoneyLaunderingCheckCode";
 				definition = "Specifies the status of money laundering identification procedures.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MoneyLaunderingCheckCode.Passed, com.tools20022.repository.codeset.MoneyLaunderingCheckCode.NotChecked,
-						com.tools20022.repository.codeset.MoneyLaunderingCheckCode.ExemptBelowLimit, com.tools20022.repository.codeset.MoneyLaunderingCheckCode.ClientMoneyTypeExempt,
-						com.tools20022.repository.codeset.MoneyLaunderingCheckCode.AuthorisedCredit, com.tools20022.repository.codeset.MoneyLaunderingCheckCode.PostalOrElectronicPaymentExempt);
+				code_lazy = () -> Arrays.asList(MoneyLaunderingCheckCode.mmPassed, MoneyLaunderingCheckCode.mmNotChecked, MoneyLaunderingCheckCode.mmExemptBelowLimit, MoneyLaunderingCheckCode.mmClientMoneyTypeExempt,
+						MoneyLaunderingCheckCode.mmAuthorisedCredit, MoneyLaunderingCheckCode.mmPostalOrElectronicPaymentExempt);
 			}
 		});
 		return mmObject_lazy.get();

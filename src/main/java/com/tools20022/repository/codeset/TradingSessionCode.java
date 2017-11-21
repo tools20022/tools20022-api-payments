@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -29,18 +31,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.TradingSessionCode#Auction
- * TradingSessionCode.Auction}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TradingSessionCode#Continuous
- * TradingSessionCode.Continuous}</li>
+ * {@linkplain com.tools20022.repository.codeset.TradingSessionCode#mmAuction
+ * TradingSessionCode.mmAuction}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TradingSessionCode#mmContinuous
+ * TradingSessionCode.mmContinuous}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -86,9 +89,9 @@ public class TradingSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Auction = new MMCode() {
+	public static final MMCode mmAuction = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Auction";
 			definition = "Orders that are traded in regularly occuring auctions: orders are accumulated and executed on basis of defined algorithms.";
 			owner_lazy = () -> TradingSessionCode.mmObject();
@@ -119,9 +122,9 @@ public class TradingSessionCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Continuous = new MMCode() {
+	public static final MMCode mmContinuous = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Continuous";
 			definition = "Trading process where orders are executed directly against each others as they hit the marketplace.";
 			owner_lazy = () -> TradingSessionCode.mmObject();
@@ -132,12 +135,12 @@ public class TradingSessionCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("AUCT");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradingSessionCode";
 				definition = "Indicates the factors that are/were applied in the event of pre-allocation.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TradingSessionCode.Auction, com.tools20022.repository.codeset.TradingSessionCode.Continuous);
+				code_lazy = () -> Arrays.asList(TradingSessionCode.mmAuction, TradingSessionCode.mmContinuous);
 			}
 		});
 		return mmObject_lazy.get();

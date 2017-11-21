@@ -20,10 +20,17 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.entity.InterestCalculation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provide further details on transaction specific interest information that
@@ -36,10 +43,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TransactionInterest3#TotalInterestAndTaxAmount
- * TransactionInterest3.TotalInterestAndTaxAmount}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TransactionInterest3#Record
- * TransactionInterest3.Record}</li>
+ * {@linkplain com.tools20022.repository.msg.TransactionInterest3#mmTotalInterestAndTaxAmount
+ * TransactionInterest3.mmTotalInterestAndTaxAmount}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TransactionInterest3#mmRecord
+ * TransactionInterest3.mmRecord}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -48,8 +55,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,9 +69,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "TransactionInterest3", propOrder = {"totalInterestAndTaxAmount", "record"})
 public class TransactionInterest3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected ActiveOrHistoricCurrencyAndAmount totalInterestAndTaxAmount;
 	/**
 	 * Total amount of interests and taxes included in the entry amount.
 	 * <p>
@@ -94,19 +104,20 @@ public class TransactionInterest3 {
 	 * "Total amount of interests and taxes included in the entry amount."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute TotalInterestAndTaxAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmTotalInterestAndTaxAmount = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> TransactionInterest3.mmObject();
 			isDerived = false;
 			xmlTag = "TtlIntrstAndTaxAmt";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TotalInterestAndTaxAmount";
 			definition = "Total amount of interests and taxes included in the entry amount.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.InterestRecord1> record;
 	/**
 	 * Individual interest record.
 	 * <p>
@@ -118,8 +129,8 @@ public class TransactionInterest3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#Interest
-	 * InterestCalculation.Interest}</li>
+	 * {@linkplain com.tools20022.repository.entity.InterestCalculation#mmInterest
+	 * InterestCalculation.mmInterest}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -138,32 +149,50 @@ public class TransactionInterest3 {
 	 * definition} = "Individual interest record."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Record = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRecord = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> InterestCalculation.mmInterest;
 			componentContext_lazy = () -> TransactionInterest3.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.InterestCalculation.Interest;
 			isDerived = false;
 			xmlTag = "Rcrd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Record";
 			definition = "Individual interest record.";
 			minOccurs = 0;
-			type_lazy = () -> InterestRecord1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.InterestRecord1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionInterest3.TotalInterestAndTaxAmount, com.tools20022.repository.msg.TransactionInterest3.Record);
+				messageElement_lazy = () -> Arrays.asList(TransactionInterest3.mmTotalInterestAndTaxAmount, TransactionInterest3.mmRecord);
 				trace_lazy = () -> InterestCalculation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionInterest3";
 				definition = "Provide further details on transaction specific interest information that applies to the underlying transaction.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "TtlIntrstAndTaxAmt")
+	public ActiveOrHistoricCurrencyAndAmount getTotalInterestAndTaxAmount() {
+		return totalInterestAndTaxAmount;
+	}
+
+	public void setTotalInterestAndTaxAmount(ActiveOrHistoricCurrencyAndAmount totalInterestAndTaxAmount) {
+		this.totalInterestAndTaxAmount = totalInterestAndTaxAmount;
+	}
+
+	@XmlElement(name = "Rcrd")
+	public List<InterestRecord1> getRecord() {
+		return record;
+	}
+
+	public void setRecord(List<com.tools20022.repository.msg.InterestRecord1> record) {
+		this.record = record;
 	}
 }

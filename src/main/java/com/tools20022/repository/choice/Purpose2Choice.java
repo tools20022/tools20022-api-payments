@@ -19,11 +19,17 @@ package com.tools20022.repository.choice;
 
 import com.tools20022.metamodel.MMChoiceComponent;
 import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ExternalPurpose1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PaymentObligation;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Specifies the underlying reason for the payment transaction. Usage: Purpose
@@ -38,10 +44,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.choice.Purpose2Choice#Code
- * Purpose2Choice.Code}</li>
- * <li>{@linkplain com.tools20022.repository.choice.Purpose2Choice#Proprietary
- * Purpose2Choice.Proprietary}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Purpose2Choice#mmCode
+ * Purpose2Choice.mmCode}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Purpose2Choice#mmProprietary
+ * Purpose2Choice.mmProprietary}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -50,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,9 +71,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * </li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "Purpose2Choice", propOrder = {"code", "proprietary"})
 public class Purpose2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	protected ExternalPurpose1Code code;
 	/**
 	 * Underlying reason for the payment transaction, as published in an
 	 * external purpose code list.
@@ -81,8 +91,8 @@ public class Purpose2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#Purpose
-	 * PaymentObligation.Purpose}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPurpose
+	 * PaymentObligation.mmPurpose}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -103,20 +113,21 @@ public class Purpose2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Code = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
 			componentContext_lazy = () -> Purpose2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentObligation.Purpose;
 			isDerived = false;
 			xmlTag = "Cd";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Code";
 			definition = "Underlying reason for the payment transaction, as published in an external purpose code list.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ExternalPurpose1Code.mmObject();
 		}
 	};
+	protected Max35Text proprietary;
 	/**
 	 * Purpose, in a proprietary form.
 	 * <p>
@@ -129,8 +140,8 @@ public class Purpose2Choice {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#Purpose
-	 * PaymentObligation.Purpose}</li>
+	 * {@linkplain com.tools20022.repository.entity.PaymentObligation#mmPurpose
+	 * PaymentObligation.mmPurpose}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -149,17 +160,17 @@ public class Purpose2Choice {
 	 * definition} = "Purpose, in a proprietary form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Proprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PaymentObligation.mmPurpose;
 			componentContext_lazy = () -> Purpose2Choice.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PaymentObligation.Purpose;
 			isDerived = false;
 			xmlTag = "Prtry";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Proprietary";
 			definition = "Purpose, in a proprietary form.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
@@ -167,14 +178,32 @@ public class Purpose2Choice {
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Purpose2Choice.Code, com.tools20022.repository.choice.Purpose2Choice.Proprietary);
+				messageElement_lazy = () -> Arrays.asList(Purpose2Choice.mmCode, Purpose2Choice.mmProprietary);
 				trace_lazy = () -> PaymentObligation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Purpose2Choice";
 				definition = "Specifies the underlying reason for the payment transaction.\nUsage: Purpose is used by the end-customers, that is initiating party, (ultimate) debtor, (ultimate) creditor to provide information concerning the nature of the payment. Purpose is a content element, which is not used for processing by any of the agents involved in the payment chain.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Cd", required = true)
+	public ExternalPurpose1Code getCode() {
+		return code;
+	}
+
+	public void setCode(ExternalPurpose1Code code) {
+		this.code = code;
+	}
+
+	@XmlElement(name = "Prtry", required = true)
+	public Max35Text getProprietary() {
+		return proprietary;
+	}
+
+	public void setProprietary(Max35Text proprietary) {
+		this.proprietary = proprietary;
 	}
 }

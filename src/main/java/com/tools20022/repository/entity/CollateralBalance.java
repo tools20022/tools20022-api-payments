@@ -17,12 +17,13 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Specifies the different values taken into account to calculate the current
@@ -38,28 +39,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * element} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#CollateralDescription
- * CollateralBalance.CollateralDescription}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmCollateralDescription
+ * CollateralBalance.mmCollateralDescription}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#HeldAmount
- * CollateralBalance.HeldAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmHeldAmount
+ * CollateralBalance.mmHeldAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#PriorAgreed
- * CollateralBalance.PriorAgreed}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmPriorAgreed
+ * CollateralBalance.mmPriorAgreed}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#VariationMarginRelatedRiskCalculation
- * CollateralBalance.VariationMarginRelatedRiskCalculation}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CollateralBalance#InTransit
- * CollateralBalance.InTransit}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmVariationMarginRelatedRiskCalculation
+ * CollateralBalance.mmVariationMarginRelatedRiskCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#SegregatedIndependentAmountRelatedRiskCalculation
- * CollateralBalance.SegregatedIndependentAmountRelatedRiskCalculation}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmInTransit
+ * CollateralBalance.mmInTransit}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#RelatedCollateralInterestManagement
- * CollateralBalance.RelatedCollateralInterestManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmSegregatedIndependentAmountRelatedRiskCalculation
+ * CollateralBalance.mmSegregatedIndependentAmountRelatedRiskCalculation}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralBalance#CollateralInterestManagement
- * CollateralBalance.CollateralInterestManagement}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmRelatedCollateralInterestManagement
+ * CollateralBalance.mmRelatedCollateralInterestManagement}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CollateralBalance#mmCollateralInterestManagement
+ * CollateralBalance.mmCollateralInterestManagement}</li>
  * </ul>
  * </li>
  * <li>
@@ -67,27 +69,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.Collateral#CollateralBalance
- * Collateral.CollateralBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralBalance
+ * Collateral.mmCollateralBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CurrentVariationMargin
- * ExposureCalculation.CurrentVariationMargin}</li>
+ * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCurrentVariationMargin
+ * ExposureCalculation.mmCurrentVariationMargin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CurrentSegregatedIndependentAmount
- * ExposureCalculation.CurrentSegregatedIndependentAmount}</li>
+ * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCurrentSegregatedIndependentAmount
+ * ExposureCalculation.mmCurrentSegregatedIndependentAmount}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#ClosingCollateralBalance
- * CollateralInterestAdministration.ClosingCollateralBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#mmClosingCollateralBalance
+ * CollateralInterestAdministration.mmClosingCollateralBalance}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#OpeningCollateralBalance
- * CollateralInterestAdministration.OpeningCollateralBalance}</li>
+ * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#mmOpeningCollateralBalance
+ * CollateralInterestAdministration.mmOpeningCollateralBalance}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,6 +105,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CollateralBalance {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<com.tools20022.repository.entity.Collateral> collateralDescription;
 	/**
 	 * Describes the collateral included in the collateral balance,
 	 * <p>
@@ -111,8 +114,8 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.Collateral#CollateralBalance
-	 * Collateral.CollateralBalance}</li>
+	 * {@linkplain com.tools20022.repository.entity.Collateral#mmCollateralBalance
+	 * Collateral.mmCollateralBalance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -137,19 +140,20 @@ public class CollateralBalance {
 	 * "Describes the collateral included in the collateral balance,"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CollateralDescription = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateralDescription = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralDescription";
 			definition = "Describes the collateral included in the collateral balance,";
 			minOccurs = 0;
-			type_lazy = () -> Collateral.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.CollateralBalance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmCollateralBalance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
 		}
 	};
+	protected ActiveCurrencyAndAmount heldAmount;
 	/**
 	 * Specifies the collateral currently held.
 	 * <p>
@@ -176,18 +180,27 @@ public class CollateralBalance {
 	 * definition} = "Specifies the collateral currently held."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute HeldAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmHeldAmount = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "HeldAmount";
 			definition = "Specifies the collateral currently held.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralBalance.class.getMethod("getHeldAmount", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ActiveCurrencyAndAmount priorAgreed;
 	/**
 	 * Specifies the collateral which has been agreed but is not yet
 	 * transferred.
@@ -217,18 +230,27 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute PriorAgreed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPriorAgreed = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PriorAgreed";
 			definition = "Specifies the collateral which has been agreed but is not yet transferred.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralBalance.class.getMethod("getPriorAgreed", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ExposureCalculation variationMarginRelatedRiskCalculation;
 	/**
 	 * Risk coverage for which a current variation margin is provided.
 	 * <p>
@@ -237,8 +259,8 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CurrentVariationMargin
-	 * ExposureCalculation.CurrentVariationMargin}</li>
+	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCurrentVariationMargin
+	 * ExposureCalculation.mmCurrentVariationMargin}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -263,20 +285,21 @@ public class CollateralBalance {
 	 * "Risk coverage for which a current variation margin is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd VariationMarginRelatedRiskCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmVariationMarginRelatedRiskCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VariationMarginRelatedRiskCalculation";
 			definition = "Risk coverage for which a current variation margin is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ExposureCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.CurrentVariationMargin;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCurrentVariationMargin;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 		}
 	};
+	protected ActiveCurrencyAndAmount inTransit;
 	/**
 	 * Specifies the collateral which is being transferred.
 	 * <p>
@@ -303,18 +326,27 @@ public class CollateralBalance {
 	 * definition} = "Specifies the collateral which is being transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute InTransit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmInTransit = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InTransit";
 			definition = "Specifies the collateral which is being transferred.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CollateralBalance.class.getMethod("getInTransit", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation;
 	/**
 	 * Risk coverage for which a collateral balance is provided.
 	 * <p>
@@ -323,8 +355,8 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#CurrentSegregatedIndependentAmount
-	 * ExposureCalculation.CurrentSegregatedIndependentAmount}</li>
+	 * {@linkplain com.tools20022.repository.entity.ExposureCalculation#mmCurrentSegregatedIndependentAmount
+	 * ExposureCalculation.mmCurrentSegregatedIndependentAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -349,20 +381,21 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SegregatedIndependentAmountRelatedRiskCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSegregatedIndependentAmountRelatedRiskCalculation = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SegregatedIndependentAmountRelatedRiskCalculation";
 			definition = "Risk coverage for which a collateral balance is provided.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ExposureCalculation.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.CurrentSegregatedIndependentAmount;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 0;
+			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCurrentSegregatedIndependentAmount;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
 		}
 	};
+	protected CollateralInterestAdministration relatedCollateralInterestManagement;
 	/**
 	 * Collateral interest management for which an opening balance is specified.
 	 * <p>
@@ -371,8 +404,8 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#OpeningCollateralBalance
-	 * CollateralInterestAdministration.OpeningCollateralBalance}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#mmOpeningCollateralBalance
+	 * CollateralInterestAdministration.mmOpeningCollateralBalance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -399,20 +432,21 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd RelatedCollateralInterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmRelatedCollateralInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RelatedCollateralInterestManagement";
 			definition = "Collateral interest management for which an opening balance is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CollateralInterestAdministration.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.OpeningCollateralBalance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmOpeningCollateralBalance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 		}
 	};
+	protected CollateralInterestAdministration collateralInterestManagement;
 	/**
 	 * Collateral interest management for which a closing balance is specified.
 	 * <p>
@@ -421,8 +455,8 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#ClosingCollateralBalance
-	 * CollateralInterestAdministration.ClosingCollateralBalance}</li>
+	 * {@linkplain com.tools20022.repository.entity.CollateralInterestAdministration#mmClosingCollateralBalance
+	 * CollateralInterestAdministration.mmClosingCollateralBalance}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -449,37 +483,106 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd CollateralInterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmCollateralInterestManagement = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CollateralBalance.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CollateralInterestManagement";
 			definition = "Collateral interest management for which a closing balance is specified.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> CollateralInterestAdministration.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.ClosingCollateralBalance;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
+			minOccurs = 1;
+			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmClosingCollateralBalance;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CollateralBalance";
 				definition = "Specifies the different values taken into account to calculate the current collateral.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.CollateralBalance, com.tools20022.repository.entity.ExposureCalculation.CurrentVariationMargin,
-						com.tools20022.repository.entity.ExposureCalculation.CurrentSegregatedIndependentAmount, com.tools20022.repository.entity.CollateralInterestAdministration.ClosingCollateralBalance,
-						com.tools20022.repository.entity.CollateralInterestAdministration.OpeningCollateralBalance);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralBalance.CollateralDescription, com.tools20022.repository.entity.CollateralBalance.HeldAmount,
-						com.tools20022.repository.entity.CollateralBalance.PriorAgreed, com.tools20022.repository.entity.CollateralBalance.VariationMarginRelatedRiskCalculation, com.tools20022.repository.entity.CollateralBalance.InTransit,
-						com.tools20022.repository.entity.CollateralBalance.SegregatedIndependentAmountRelatedRiskCalculation, com.tools20022.repository.entity.CollateralBalance.RelatedCollateralInterestManagement,
-						com.tools20022.repository.entity.CollateralBalance.CollateralInterestManagement);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.mmCollateralBalance, com.tools20022.repository.entity.ExposureCalculation.mmCurrentVariationMargin,
+						com.tools20022.repository.entity.ExposureCalculation.mmCurrentSegregatedIndependentAmount, com.tools20022.repository.entity.CollateralInterestAdministration.mmClosingCollateralBalance,
+						com.tools20022.repository.entity.CollateralInterestAdministration.mmOpeningCollateralBalance);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralBalance.mmCollateralDescription, com.tools20022.repository.entity.CollateralBalance.mmHeldAmount,
+						com.tools20022.repository.entity.CollateralBalance.mmPriorAgreed, com.tools20022.repository.entity.CollateralBalance.mmVariationMarginRelatedRiskCalculation,
+						com.tools20022.repository.entity.CollateralBalance.mmInTransit, com.tools20022.repository.entity.CollateralBalance.mmSegregatedIndependentAmountRelatedRiskCalculation,
+						com.tools20022.repository.entity.CollateralBalance.mmRelatedCollateralInterestManagement, com.tools20022.repository.entity.CollateralBalance.mmCollateralInterestManagement);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CollateralBalance.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<Collateral> getCollateralDescription() {
+		return collateralDescription;
+	}
+
+	public void setCollateralDescription(List<com.tools20022.repository.entity.Collateral> collateralDescription) {
+		this.collateralDescription = collateralDescription;
+	}
+
+	public ActiveCurrencyAndAmount getHeldAmount() {
+		return heldAmount;
+	}
+
+	public void setHeldAmount(ActiveCurrencyAndAmount heldAmount) {
+		this.heldAmount = heldAmount;
+	}
+
+	public ActiveCurrencyAndAmount getPriorAgreed() {
+		return priorAgreed;
+	}
+
+	public void setPriorAgreed(ActiveCurrencyAndAmount priorAgreed) {
+		this.priorAgreed = priorAgreed;
+	}
+
+	public ExposureCalculation getVariationMarginRelatedRiskCalculation() {
+		return variationMarginRelatedRiskCalculation;
+	}
+
+	public void setVariationMarginRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginRelatedRiskCalculation) {
+		this.variationMarginRelatedRiskCalculation = variationMarginRelatedRiskCalculation;
+	}
+
+	public ActiveCurrencyAndAmount getInTransit() {
+		return inTransit;
+	}
+
+	public void setInTransit(ActiveCurrencyAndAmount inTransit) {
+		this.inTransit = inTransit;
+	}
+
+	public ExposureCalculation getSegregatedIndependentAmountRelatedRiskCalculation() {
+		return segregatedIndependentAmountRelatedRiskCalculation;
+	}
+
+	public void setSegregatedIndependentAmountRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation) {
+		this.segregatedIndependentAmountRelatedRiskCalculation = segregatedIndependentAmountRelatedRiskCalculation;
+	}
+
+	public CollateralInterestAdministration getRelatedCollateralInterestManagement() {
+		return relatedCollateralInterestManagement;
+	}
+
+	public void setRelatedCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration relatedCollateralInterestManagement) {
+		this.relatedCollateralInterestManagement = relatedCollateralInterestManagement;
+	}
+
+	public CollateralInterestAdministration getCollateralInterestManagement() {
+		return collateralInterestManagement;
+	}
+
+	public void setCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration collateralInterestManagement) {
+		this.collateralInterestManagement = collateralInterestManagement;
 	}
 }

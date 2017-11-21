@@ -18,10 +18,16 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.RuntimePropertyAware;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
-import com.tools20022.metamodel.constraints.DeriveMMMessageBuildingBlock_memberType;
-import com.tools20022.metamodel.constraints.DeriveMMMessageBuildingBlock_xmlMemberType;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.MessageBuildingBlockHasExactlyOneType;
+import com.tools20022.metamodel.derived.DeriveMMMessageBuildingBlock_memberType;
+import com.tools20022.metamodel.derived.DeriveMMMessageBuildingBlock_xmlMemberType;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,8 +39,25 @@ import java.util.Optional;
  * Characteristic of a MessageDefinition, having a unique meaning within the
  * scope of that MessageDefinition.
  */
-public class MMMessageBuildingBlock implements MMMessageConstruct {
+public class MMMessageBuildingBlock implements RuntimePropertyAware, MMMessageConstruct {
 
+	/**
+	 * The simple content model of a MessageBuildingBlock when it is expressed
+	 * using a DataType
+	 */
+	public final static MetamodelAttribute<MMMessageBuildingBlock, Optional<MMDataType>> simpleTypeAttribute = newAttribute();
+	/**
+	 * the complex content model of a MessageBuildingBlock when it is expressed
+	 * using a MessageComponentType
+	 */
+	public final static MetamodelAttribute<MMMessageBuildingBlock, Optional<MMMessageComponentType>> complexTypeAttribute = newAttribute();
+	/**
+	 * A MessageBuildingBlock must have exactly one of the following: simpleType
+	 * or complexType. complexType-&gt;size() + simpleType-&gt;size() = 1
+	 */
+	public final static MetamodelConstraint<MMMessageBuildingBlock> checkMessageBuildingBlockHasExactlyOneType = newConstraint(b -> {
+		new MessageBuildingBlockHasExactlyOneType().accept(b);
+	});
 	protected MMMessageDefinition container;
 	protected Supplier<MMDataType> simpleType_lazy;
 	protected Supplier<MMMessageComponentType> complexType_lazy;

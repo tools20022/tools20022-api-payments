@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,24 +32,24 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingCustodian
- * SettlingCapacityCode.SettlingCustodian}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingCustodian
+ * SettlingCapacityCode.mmSettlingCustodian}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingAgent
- * SettlingCapacityCode.SettlingAgent}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingAgent
+ * SettlingCapacityCode.mmSettlingAgent}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingPrincipal
- * SettlingCapacityCode.SettlingPrincipal}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingPrincipal
+ * SettlingCapacityCode.mmSettlingPrincipal}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#SettlingRisklessPrincipal
- * SettlingCapacityCode.SettlingRisklessPrincipal}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettlingCapacityCode#mmSettlingRisklessPrincipal
+ * SettlingCapacityCode.mmSettlingRisklessPrincipal}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,9 +94,9 @@ public class SettlingCapacityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SettlingCustodian = new MMCode() {
+	public static final MMCode mmSettlingCustodian = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingCustodian";
 			definition = "Settlement party is a custodian. It receives/delivers the securities and carries out custodial duties.";
 			owner_lazy = () -> SettlingCapacityCode.mmObject();
@@ -125,9 +127,9 @@ public class SettlingCapacityCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode SettlingAgent = new MMCode() {
+	public static final MMCode mmSettlingAgent = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingAgent";
 			definition = "Settlement party is trading and settling transactions in financial instruments on behalf of its client(s).";
 			owner_lazy = () -> SettlingCapacityCode.mmObject();
@@ -155,9 +157,9 @@ public class SettlingCapacityCode {
 	 * definition} = "Settlement party is settling its own trades."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlingPrincipal = new MMCode() {
+	public static final MMCode mmSettlingPrincipal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingPrincipal";
 			definition = "Settlement party is settling its own trades.";
 			owner_lazy = () -> SettlingCapacityCode.mmObject();
@@ -185,9 +187,9 @@ public class SettlingCapacityCode {
 	 * definition} = "Party settles trades that were simultaneously offset."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettlingRisklessPrincipal = new MMCode() {
+	public static final MMCode mmSettlingRisklessPrincipal = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SettlingRisklessPrincipal";
 			definition = "Party settles trades that were simultaneously offset.";
 			owner_lazy = () -> SettlingCapacityCode.mmObject();
@@ -198,13 +200,12 @@ public class SettlingCapacityCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("CUST");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlingCapacityCode";
 				definition = "Specifies the role of the party in the settlement of the transaction.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettlingCapacityCode.SettlingCustodian, com.tools20022.repository.codeset.SettlingCapacityCode.SettlingAgent,
-						com.tools20022.repository.codeset.SettlingCapacityCode.SettlingPrincipal, com.tools20022.repository.codeset.SettlingCapacityCode.SettlingRisklessPrincipal);
+				code_lazy = () -> Arrays.asList(SettlingCapacityCode.mmSettlingCustodian, SettlingCapacityCode.mmSettlingAgent, SettlingCapacityCode.mmSettlingPrincipal, SettlingCapacityCode.mmSettlingRisklessPrincipal);
 			}
 		});
 		return mmObject_lazy.get();

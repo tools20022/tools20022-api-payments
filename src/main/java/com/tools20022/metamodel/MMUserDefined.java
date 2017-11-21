@@ -18,8 +18,10 @@
 package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Derived;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
-import com.tools20022.metamodel.constraints.DeriveMMUserDefined_isTechnical;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import com.tools20022.metamodel.derived.DeriveMMUserDefined_isTechnical;
 import com.tools20022.metamodel.*;
 import java.util.Collections;
 import java.util.Date;
@@ -33,6 +35,21 @@ import java.util.Optional;
  */
 public class MMUserDefined implements MMMessageComponentType {
 
+	/**
+	 * The URN namespace of the referenced external structure definition. The
+	 * allowed values are: ##any, ##other or list. When equal to "list", then
+	 * the value of the property "namespaceList" must be filled.
+	 */
+	public final static MetamodelAttribute<MMUserDefined, MMNamespace> namespaceAttribute = newAttribute();
+	/**
+	 * A list of URN namespaces.
+	 */
+	public final static MetamodelAttribute<MMUserDefined, Optional<String>> namespaceListAttribute = newAttribute();
+	/**
+	 * Indicates the kind of validation which must be performed on the external
+	 * structure.
+	 */
+	public final static MetamodelAttribute<MMUserDefined, MMProcessContent> processContentsAttribute = newAttribute();
 	protected MMNamespace namespace;
 	protected String namespaceList;
 	protected MMProcessContent processContents;

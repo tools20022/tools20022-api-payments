@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,27 +34,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#Domestic
- * GeographicalEnvironmentCode.Domestic}</li>
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmDomestic
+ * GeographicalEnvironmentCode.mmDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#EuroDomestic
- * GeographicalEnvironmentCode.EuroDomestic}</li>
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmEuroDomestic
+ * GeographicalEnvironmentCode.mmEuroDomestic}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#FrenchDomTom
- * GeographicalEnvironmentCode.FrenchDomTom}</li>
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmFrenchDomTom
+ * GeographicalEnvironmentCode.mmFrenchDomTom}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#International
- * GeographicalEnvironmentCode.International}</li>
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmInternational
+ * GeographicalEnvironmentCode.mmInternational}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#NAFTA
- * GeographicalEnvironmentCode.NAFTA}</li>
+ * {@linkplain com.tools20022.repository.codeset.GeographicalEnvironmentCode#mmNAFTA
+ * GeographicalEnvironmentCode.mmNAFTA}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -92,9 +94,9 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Domestic = new MMCode() {
+	public static final MMCode mmDomestic = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Domestic";
 			definition = "Transaction has an origin and a destination in the same country and is made in the currency of that country.";
 			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
@@ -126,9 +128,9 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode EuroDomestic = new MMCode() {
+	public static final MMCode mmEuroDomestic = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EuroDomestic";
 			definition = "Transaction is a credit transfer in Euro with its country of origin and country of destination within the European Union. Origin and destination countries may be one and the same country.";
 			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
@@ -159,9 +161,9 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode FrenchDomTom = new MMCode() {
+	public static final MMCode mmFrenchDomTom = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FrenchDomTom";
 			definition = "Transaction is between a French Overseas Departments and Territories (Dom/Tom) and some country in the European Union (France included).";
 			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
@@ -192,9 +194,9 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode International = new MMCode() {
+	public static final MMCode mmInternational = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "International";
 			definition = "Transaction has an origin in one country and a destination in another and is made in the currency of either the origin or destination country.";
 			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
@@ -226,9 +228,9 @@ public class GeographicalEnvironmentCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode NAFTA = new MMCode() {
+	public static final MMCode mmNAFTA = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NAFTA";
 			definition = "Transaction is a North American Free Trade Association (NAFTA) transaction, ie, the first and final agent are both located in the NAFTA area.";
 			owner_lazy = () -> GeographicalEnvironmentCode.mmObject();
@@ -239,13 +241,12 @@ public class GeographicalEnvironmentCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GeographicalEnvironmentCode";
 				definition = "Specifies the geographic environment, or zone, in which a payment is executed, from the perspective of the forwarding or first agent, eg, international.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.GeographicalEnvironmentCode.Domestic, com.tools20022.repository.codeset.GeographicalEnvironmentCode.EuroDomestic,
-						com.tools20022.repository.codeset.GeographicalEnvironmentCode.FrenchDomTom, com.tools20022.repository.codeset.GeographicalEnvironmentCode.International,
-						com.tools20022.repository.codeset.GeographicalEnvironmentCode.NAFTA);
+				code_lazy = () -> Arrays.asList(GeographicalEnvironmentCode.mmDomestic, GeographicalEnvironmentCode.mmEuroDomestic, GeographicalEnvironmentCode.mmFrenchDomTom, GeographicalEnvironmentCode.mmInternational,
+						GeographicalEnvironmentCode.mmNAFTA);
 			}
 		});
 		return mmObject_lazy.get();

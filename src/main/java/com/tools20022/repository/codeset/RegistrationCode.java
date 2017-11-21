@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -32,28 +34,29 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegistrationCode#StreetName
- * RegistrationCode.StreetName}</li>
+ * {@linkplain com.tools20022.repository.codeset.RegistrationCode#mmStreetName
+ * RegistrationCode.mmStreetName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegistrationCode#Registered
- * RegistrationCode.Registered}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RegistrationCode#PartyHold
- * RegistrationCode.PartyHold}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.RegistrationCode#CSDHold
- * RegistrationCode.CSDHold}</li>
+ * {@linkplain com.tools20022.repository.codeset.RegistrationCode#mmRegistered
+ * RegistrationCode.mmRegistered}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegistrationCode#ConditionalDelivery
- * RegistrationCode.ConditionalDelivery}</li>
+ * {@linkplain com.tools20022.repository.codeset.RegistrationCode#mmPartyHold
+ * RegistrationCode.mmPartyHold}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.RegistrationCode#mmCSDHold
+ * RegistrationCode.mmCSDHold}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.RegistrationCode#CSDValidation
- * RegistrationCode.CSDValidation}</li>
+ * {@linkplain com.tools20022.repository.codeset.RegistrationCode#mmConditionalDelivery
+ * RegistrationCode.mmConditionalDelivery}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.RegistrationCode#mmCSDValidation
+ * RegistrationCode.mmCSDValidation}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -100,9 +103,9 @@ public class RegistrationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode StreetName = new MMCode() {
+	public static final MMCode mmStreetName = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "StreetName";
 			definition = "Hold the securities in street name. If there is a standing instruction in place to register on receipt, then this standing instruction is to be ignored.";
 			owner_lazy = () -> RegistrationCode.mmObject();
@@ -134,9 +137,9 @@ public class RegistrationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode Registered = new MMCode() {
+	public static final MMCode mmRegistered = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Registered";
 			definition = "Register on receipt. If there is a standing instruction in place to hold the securities in street name, then this standing instruction is to be ignored.";
 			owner_lazy = () -> RegistrationCode.mmObject();
@@ -166,9 +169,9 @@ public class RegistrationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode PartyHold = new MMCode() {
+	public static final MMCode mmPartyHold = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PartyHold";
 			definition = "You or your party set the  instruction in a hold/frozen/preadvice mode.";
 			owner_lazy = () -> RegistrationCode.mmObject();
@@ -199,9 +202,9 @@ public class RegistrationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode CSDHold = new MMCode() {
+	public static final MMCode mmCSDHold = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSDHold";
 			definition = "Central securities depository sets the  instruction in a hold/frozen/preadvice mode.";
 			owner_lazy = () -> RegistrationCode.mmObject();
@@ -233,9 +236,9 @@ public class RegistrationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode ConditionalDelivery = new MMCode() {
+	public static final MMCode mmConditionalDelivery = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConditionalDelivery";
 			definition = "Instruction is in a hold/frozen/preadvice mode as it fulfils predefined conditional delivery rules in the market infrastructure platform for conditional delivery.";
 			owner_lazy = () -> RegistrationCode.mmObject();
@@ -267,9 +270,9 @@ public class RegistrationCode {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMCode CSDValidation = new MMCode() {
+	public static final MMCode mmCSDValidation = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CSDValidation";
 			definition = "Instruction is in a hold/frozen/preadvice mode as it fulfils predefined conditions of a restriction processing type in the market infrastructure platform.";
 			owner_lazy = () -> RegistrationCode.mmObject();
@@ -280,13 +283,13 @@ public class RegistrationCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("NREG");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegistrationCode";
 				definition = "Instruction is in a hold/frozen/preadvice mode as it fulfils predefined conditions of a restriction processing type in the market infrastructure platform.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.RegistrationCode.StreetName, com.tools20022.repository.codeset.RegistrationCode.Registered, com.tools20022.repository.codeset.RegistrationCode.PartyHold,
-						com.tools20022.repository.codeset.RegistrationCode.CSDHold, com.tools20022.repository.codeset.RegistrationCode.ConditionalDelivery, com.tools20022.repository.codeset.RegistrationCode.CSDValidation);
+				code_lazy = () -> Arrays.asList(RegistrationCode.mmStreetName, RegistrationCode.mmRegistered, RegistrationCode.mmPartyHold, RegistrationCode.mmCSDHold, RegistrationCode.mmConditionalDelivery,
+						RegistrationCode.mmCSDValidation);
 			}
 		});
 		return mmObject_lazy.get();

@@ -19,8 +19,13 @@ package com.tools20022.metamodel;
 
 import com.tools20022.core.metamodel.Container;
 import com.tools20022.core.metamodel.Containment;
+import com.tools20022.core.metamodel.Metamodel.MetamodelAttribute;
+import com.tools20022.core.metamodel.Metamodel.MetamodelConstraint;
 import com.tools20022.core.metamodel.Metamodel.MetamodelType;
 import com.tools20022.core.metamodel.Opposite;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newAttribute;
+import static com.tools20022.core.metamodel.StaticMemembersBuilder.newConstraint;
+import com.tools20022.metamodel.constraints.DataDictionaryEntriesHaveUniqueName;
 import com.tools20022.metamodel.MMModelEntity;
 import com.tools20022.metamodel.MMRepository;
 import com.tools20022.metamodel.MMTopLevelDictionaryEntry;
@@ -36,6 +41,22 @@ import java.util.Optional;
  */
 public class MMDataDictionary implements MMModelEntity {
 
+	/**
+	 * a TopLevelDictionaryEntry in the DataDictionary
+	 */
+	public final static MetamodelAttribute<MMDataDictionary, List<MMTopLevelDictionaryEntry>> topLevelDictionaryEntryAttribute = newAttribute();
+	/**
+	 * The Repository that owns the DataDictionary.
+	 */
+	public final static MetamodelAttribute<MMDataDictionary, MMRepository> repositoryAttribute = newAttribute();
+	/**
+	 * All TopLevelDictionaryEntries of a DataDictionary must have different
+	 * names topLevelDictionaryEntry-&gt;forAll(entry1,entry2 | entry1 &lt;&gt;
+	 * entry2 implies entry1.name &lt;&gt; entry2.name)
+	 */
+	public final static MetamodelConstraint<MMDataDictionary> checkEntriesHaveUniqueName = newConstraint(b -> {
+		new DataDictionaryEntriesHaveUniqueName().accept(b);
+	});
 	protected Supplier<List<MMTopLevelDictionaryEntry>> topLevelDictionaryEntry_lazy;
 	protected Supplier<MMRepository> repository_lazy;
 	protected Supplier<List<MMModelEntity>> nextVersions_lazy;

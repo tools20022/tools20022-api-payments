@@ -20,11 +20,20 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01;
 import com.tools20022.repository.codeset.StatisticalReportingStatus1Code;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.Status;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Provides the details of each package of currency control records.
@@ -36,20 +45,20 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#PackageIdentification
- * CurrencyControlPackageStatus1.PackageIdentification}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#mmPackageIdentification
+ * CurrencyControlPackageStatus1.mmPackageIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#Status
- * CurrencyControlPackageStatus1.Status}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#mmStatus
+ * CurrencyControlPackageStatus1.mmStatus}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#StatusReason
- * CurrencyControlPackageStatus1.StatusReason}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#mmStatusReason
+ * CurrencyControlPackageStatus1.mmStatusReason}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#StatusDateTime
- * CurrencyControlPackageStatus1.StatusDateTime}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#mmStatusDateTime
+ * CurrencyControlPackageStatus1.mmStatusDateTime}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#RecordStatus
- * CurrencyControlPackageStatus1.RecordStatus}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyControlPackageStatus1#mmRecordStatus
+ * CurrencyControlPackageStatus1.mmRecordStatus}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -59,15 +68,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01#PackageStatus
- * CurrencyControlStatusAdviceV01.PackageStatus}</li>
+ * {@linkplain com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01#mmPackageStatus
+ * CurrencyControlStatusAdviceV01.mmPackageStatus}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,9 +88,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Provides the details of each package of currency control records."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "CurrencyControlPackageStatus1", propOrder = {"packageIdentification", "status", "statusReason", "statusDateTime", "recordStatus"})
 public class CurrencyControlPackageStatus1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max35Text packageIdentification;
 	/**
 	 * Unique and unambiguous identification of each package of transactions and
 	 * optionally the entry/record within the package of transactions.
@@ -112,19 +124,20 @@ public class CurrencyControlPackageStatus1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute PackageIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmPackageIdentification = new MMMessageAttribute() {
 		{
 			componentContext_lazy = () -> CurrencyControlPackageStatus1.mmObject();
 			isDerived = false;
 			xmlTag = "PackgId";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PackageIdentification";
 			definition = "Unique and unambiguous identification of each package of transactions and optionally the entry/record within the package of transactions.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 	};
+	protected StatisticalReportingStatus1Code status;
 	/**
 	 * Defines the status of the reported transaction.
 	 * <p>
@@ -138,8 +151,8 @@ public class CurrencyControlPackageStatus1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#InstructionProcessingStatus
-	 * Status.InstructionProcessingStatus}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmInstructionProcessingStatus
+	 * Status.mmInstructionProcessingStatus}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -158,20 +171,21 @@ public class CurrencyControlPackageStatus1 {
 	 * definition} = "Defines the status of the reported transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Status = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmStatus = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Status.mmInstructionProcessingStatus;
 			componentContext_lazy = () -> CurrencyControlPackageStatus1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.InstructionProcessingStatus;
 			isDerived = false;
 			xmlTag = "Sts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Status";
 			definition = "Defines the status of the reported transaction.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> StatisticalReportingStatus1Code.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.ValidationStatusReason1> statusReason;
 	/**
 	 * Provides detailed information on the status reason.
 	 * <p>
@@ -184,8 +198,8 @@ public class CurrencyControlPackageStatus1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusReason
-	 * Status.StatusReason}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusReason
+	 * Status.mmStatusReason}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -204,20 +218,21 @@ public class CurrencyControlPackageStatus1 {
 	 * definition} = "Provides detailed information on the status reason."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd StatusReason = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmStatusReason = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Status.mmStatusReason;
 			componentContext_lazy = () -> CurrencyControlPackageStatus1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.StatusReason;
 			isDerived = false;
 			xmlTag = "StsRsn";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatusReason";
 			definition = "Provides detailed information on the status reason.";
 			minOccurs = 0;
-			type_lazy = () -> ValidationStatusReason1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ValidationStatusReason1.mmObject();
 		}
 	};
+	protected ISODateTime statusDateTime;
 	/**
 	 * Provides the date and time when the status was issued.
 	 * <p>
@@ -230,8 +245,8 @@ public class CurrencyControlPackageStatus1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Status#StatusDateTime
-	 * Status.StatusDateTime}</li>
+	 * {@linkplain com.tools20022.repository.entity.Status#mmStatusDateTime
+	 * Status.mmStatusDateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -250,20 +265,21 @@ public class CurrencyControlPackageStatus1 {
 	 * definition} = "Provides the date and time when the status was issued."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute StatusDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmStatusDateTime = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Status.mmStatusDateTime;
 			componentContext_lazy = () -> CurrencyControlPackageStatus1.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Status.StatusDateTime;
 			isDerived = false;
 			xmlTag = "StsDtTm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StatusDateTime";
 			definition = "Provides the date and time when the status was issued.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 	};
+	protected List<com.tools20022.repository.msg.CurrencyControlRecordStatus1> recordStatus;
 	/**
 	 * Provides the status of the individual records in the package.
 	 * <p>
@@ -296,35 +312,79 @@ public class CurrencyControlPackageStatus1 {
 	 * "Provides the status of the individual records in the package."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd RecordStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmRecordStatus = new MMMessageAssociationEnd() {
 		{
+			businessComponentTrace_lazy = () -> Status.mmObject();
 			componentContext_lazy = () -> CurrencyControlPackageStatus1.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 			isDerived = false;
 			xmlTag = "RcrdSts";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RecordStatus";
 			definition = "Provides the status of the individual records in the package.";
 			minOccurs = 0;
-			type_lazy = () -> CurrencyControlRecordStatus1.mmObject();
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.CurrencyControlRecordStatus1.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CurrencyControlPackageStatus1.PackageIdentification, com.tools20022.repository.msg.CurrencyControlPackageStatus1.Status,
-						com.tools20022.repository.msg.CurrencyControlPackageStatus1.StatusReason, com.tools20022.repository.msg.CurrencyControlPackageStatus1.StatusDateTime,
-						com.tools20022.repository.msg.CurrencyControlPackageStatus1.RecordStatus);
-				trace_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
-				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.auth.CurrencyControlStatusAdviceV01.PackageStatus);
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				messageElement_lazy = () -> Arrays.asList(CurrencyControlPackageStatus1.mmPackageIdentification, CurrencyControlPackageStatus1.mmStatus, CurrencyControlPackageStatus1.mmStatusReason,
+						CurrencyControlPackageStatus1.mmStatusDateTime, CurrencyControlPackageStatus1.mmRecordStatus);
+				messageBuildingBlock_lazy = () -> Arrays.asList(CurrencyControlStatusAdviceV01.mmPackageStatus);
+				trace_lazy = () -> Status.mmObject();
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyControlPackageStatus1";
 				definition = "Provides the details of each package of currency control records.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "PackgId", required = true)
+	public Max35Text getPackageIdentification() {
+		return packageIdentification;
+	}
+
+	public void setPackageIdentification(Max35Text packageIdentification) {
+		this.packageIdentification = packageIdentification;
+	}
+
+	@XmlElement(name = "Sts", required = true)
+	public StatisticalReportingStatus1Code getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatisticalReportingStatus1Code status) {
+		this.status = status;
+	}
+
+	@XmlElement(name = "StsRsn")
+	public List<ValidationStatusReason1> getStatusReason() {
+		return statusReason;
+	}
+
+	public void setStatusReason(List<com.tools20022.repository.msg.ValidationStatusReason1> statusReason) {
+		this.statusReason = statusReason;
+	}
+
+	@XmlElement(name = "StsDtTm")
+	public ISODateTime getStatusDateTime() {
+		return statusDateTime;
+	}
+
+	public void setStatusDateTime(ISODateTime statusDateTime) {
+		this.statusDateTime = statusDateTime;
+	}
+
+	@XmlElement(name = "RcrdSts")
+	public List<CurrencyControlRecordStatus1> getRecordStatus() {
+		return recordStatus;
+	}
+
+	public void setRecordStatus(List<com.tools20022.repository.msg.CurrencyControlRecordStatus1> recordStatus) {
+		this.recordStatus = recordStatus;
 	}
 }

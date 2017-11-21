@@ -20,12 +20,18 @@ package com.tools20022.repository.msg;
 import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.Party13Choice;
 import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.datatype.Max140Text;
-import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.entity.*;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * Describes the details of an organisation.
@@ -36,23 +42,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
  * messageElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification58#Name
- * PartyIdentification58.Name}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification58#mmName
+ * PartyIdentification58.mmName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification58#LegalName
- * PartyIdentification58.LegalName}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmLegalName
+ * PartyIdentification58.mmLegalName}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification58#PostalAddress
- * PartyIdentification58.PostalAddress}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmPostalAddress
+ * PartyIdentification58.mmPostalAddress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification58#Identification
- * PartyIdentification58.Identification}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmIdentification
+ * PartyIdentification58.mmIdentification}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification58#CountryOfResidence
- * PartyIdentification58.CountryOfResidence}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmCountryOfResidence
+ * PartyIdentification58.mmCountryOfResidence}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification58#ContactDetails
- * PartyIdentification58.ContactDetails}</li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification58#mmContactDetails
+ * PartyIdentification58.mmContactDetails}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
@@ -62,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,9 +80,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * definition} = "Describes the details of an organisation."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "PartyIdentification58", propOrder = {"name", "legalName", "postalAddress", "identification", "countryOfResidence", "contactDetails"})
 public class PartyIdentification58 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected Max140Text name;
 	/**
 	 * Name by which a party is known and which is usually used to identify that
 	 * party.
@@ -90,8 +99,8 @@ public class PartyIdentification58 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.PartyName#Name
-	 * PartyName.Name}</li>
+	 * {@linkplain com.tools20022.repository.entity.PartyName#mmName
+	 * PartyName.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -112,20 +121,21 @@ public class PartyIdentification58 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute Name = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> PartyName.mmName;
 			componentContext_lazy = () -> PartyIdentification58.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.PartyName.Name;
 			isDerived = false;
 			xmlTag = "Nm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Name by which a party is known and which is usually used to identify that party.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected Max140Text legalName;
 	/**
 	 * Name by which a party is known and which is usually used to identify that
 	 * party.
@@ -139,8 +149,8 @@ public class PartyIdentification58 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.OrganisationName#LegalName
-	 * OrganisationName.LegalName}</li>
+	 * {@linkplain com.tools20022.repository.entity.OrganisationName#mmLegalName
+	 * OrganisationName.mmLegalName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -161,20 +171,21 @@ public class PartyIdentification58 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute LegalName = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmLegalName = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> OrganisationName.mmLegalName;
 			componentContext_lazy = () -> PartyIdentification58.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.OrganisationName.LegalName;
 			isDerived = false;
 			xmlTag = "LglNm";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LegalName";
 			definition = "Name by which a party is known and which is usually used to identify that party.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
 	};
+	protected PostalAddress11 postalAddress;
 	/**
 	 * Information that locates and identifies a specific address, as defined by
 	 * postal services.
@@ -209,21 +220,22 @@ public class PartyIdentification58 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd PostalAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmPostalAddress = new MMMessageAssociationEnd() {
 		{
+			businessComponentTrace_lazy = () -> PostalAddress.mmObject();
 			componentContext_lazy = () -> PartyIdentification58.mmObject();
-			businessComponentTrace_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			isDerived = false;
 			xmlTag = "PstlAdr";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostalAddress";
 			definition = "Information that locates and identifies a specific address, as defined by postal services.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> PostalAddress11.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.PostalAddress11.mmObject();
 		}
 	};
+	protected Party13Choice identification;
 	/**
 	 * Unique and unambiguous way to identify the party.
 	 * <p>
@@ -255,21 +267,22 @@ public class PartyIdentification58 {
 	 * definition} = "Unique and unambiguous way to identify the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd Identification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
 		{
-			componentContext_lazy = () -> PartyIdentification58.mmObject();
 			businessComponentTrace_lazy = () -> PartyIdentificationInformation.mmObject();
+			componentContext_lazy = () -> PartyIdentification58.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Identification";
 			definition = "Unique and unambiguous way to identify the party.";
-			minOccurs = 1;
 			maxOccurs = 1;
-			type_lazy = () -> Party13Choice.mmObject();
+			minOccurs = 1;
 			isComposite = true;
+			type_lazy = () -> Party13Choice.mmObject();
 		}
 	};
+	protected CountryCode countryOfResidence;
 	/**
 	 * Country in which a person resides (the place of a person's home). In the
 	 * case of a company, it is the country from which the affairs of that
@@ -284,7 +297,8 @@ public class PartyIdentification58 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Country#Code Country.Code}</li>
+	 * {@linkplain com.tools20022.repository.entity.Country#mmCode
+	 * Country.mmCode}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -305,20 +319,21 @@ public class PartyIdentification58 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute CountryOfResidence = new MMMessageAttribute() {
+	public static final MMMessageAttribute mmCountryOfResidence = new MMMessageAttribute() {
 		{
+			businessElementTrace_lazy = () -> Country.mmCode;
 			componentContext_lazy = () -> PartyIdentification58.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Country.Code;
 			isDerived = false;
 			xmlTag = "CtryOfRes";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CountryOfResidence";
 			definition = "Country in which a person resides (the place of a person's home). In the case of a company, it is the country from which the affairs of that company are directed.";
-			minOccurs = 0;
 			maxOccurs = 1;
+			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 	};
+	protected ContactDetails3 contactDetails;
 	/**
 	 * Indicate how to contact the party.
 	 * <p>
@@ -330,8 +345,8 @@ public class PartyIdentification58 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
 	 * businessElementTrace} =
-	 * {@linkplain com.tools20022.repository.entity.Party#ContactPoint
-	 * Party.ContactPoint}</li>
+	 * {@linkplain com.tools20022.repository.entity.Party#mmContactPoint
+	 * Party.mmContactPoint}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
 	 * componentContext} =
@@ -350,35 +365,88 @@ public class PartyIdentification58 {
 	 * definition} = "Indicate how to contact the party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd ContactDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd mmContactDetails = new MMMessageAssociationEnd() {
 		{
+			businessElementTrace_lazy = () -> Party.mmContactPoint;
 			componentContext_lazy = () -> PartyIdentification58.mmObject();
-			businessElementTrace_lazy = () -> com.tools20022.repository.entity.Party.ContactPoint;
 			isDerived = false;
 			xmlTag = "CtctDtls";
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContactDetails";
 			definition = "Indicate how to contact the party.";
-			minOccurs = 0;
 			maxOccurs = 1;
-			type_lazy = () -> ContactDetails3.mmObject();
+			minOccurs = 0;
 			isComposite = true;
+			type_lazy = () -> com.tools20022.repository.msg.ContactDetails3.mmObject();
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PartyIdentification58.Name, com.tools20022.repository.msg.PartyIdentification58.LegalName,
-						com.tools20022.repository.msg.PartyIdentification58.PostalAddress, com.tools20022.repository.msg.PartyIdentification58.Identification, com.tools20022.repository.msg.PartyIdentification58.CountryOfResidence,
-						com.tools20022.repository.msg.PartyIdentification58.ContactDetails);
+				messageElement_lazy = () -> Arrays.asList(PartyIdentification58.mmName, PartyIdentification58.mmLegalName, PartyIdentification58.mmPostalAddress, PartyIdentification58.mmIdentification,
+						PartyIdentification58.mmCountryOfResidence, PartyIdentification58.mmContactDetails);
 				trace_lazy = () -> PartyIdentificationInformation.mmObject();
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyIdentification58";
 				definition = "Describes the details of an organisation.";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "Nm", required = true)
+	public Max140Text getName() {
+		return name;
+	}
+
+	public void setName(Max140Text name) {
+		this.name = name;
+	}
+
+	@XmlElement(name = "LglNm")
+	public Max140Text getLegalName() {
+		return legalName;
+	}
+
+	public void setLegalName(Max140Text legalName) {
+		this.legalName = legalName;
+	}
+
+	@XmlElement(name = "PstlAdr")
+	public PostalAddress11 getPostalAddress() {
+		return postalAddress;
+	}
+
+	public void setPostalAddress(com.tools20022.repository.msg.PostalAddress11 postalAddress) {
+		this.postalAddress = postalAddress;
+	}
+
+	@XmlElement(name = "Id", required = true)
+	public Party13Choice getIdentification() {
+		return identification;
+	}
+
+	public void setIdentification(Party13Choice identification) {
+		this.identification = identification;
+	}
+
+	@XmlElement(name = "CtryOfRes")
+	public CountryCode getCountryOfResidence() {
+		return countryOfResidence;
+	}
+
+	public void setCountryOfResidence(CountryCode countryOfResidence) {
+		this.countryOfResidence = countryOfResidence;
+	}
+
+	@XmlElement(name = "CtctDtls")
+	public ContactDetails3 getContactDetails() {
+		return contactDetails;
+	}
+
+	public void setContactDetails(com.tools20022.repository.msg.ContactDetails3 contactDetails) {
+		this.contactDetails = contactDetails;
 	}
 }

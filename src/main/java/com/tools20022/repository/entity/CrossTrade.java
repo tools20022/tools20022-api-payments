@@ -17,15 +17,16 @@
 
 package com.tools20022.repository.entity;
 
-import com.tools20022.metamodel.MMBusinessAssociationEnd;
-import com.tools20022.metamodel.MMBusinessAttribute;
-import com.tools20022.metamodel.MMBusinessComponent;
+import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CrossTradeExecutionCode;
 import com.tools20022.repository.codeset.CrossTypeCode;
 import com.tools20022.repository.codeset.PrioritisationCode;
 import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.GeneratedRepository;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
 /**
  * Transaction where either the buy-broker and the sell-broker are the same, or
@@ -40,16 +41,16 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getElement
  * element} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#BuySideOrder
- * CrossTrade.BuySideOrder}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#SellSideOrder
- * CrossTrade.SellSideOrder}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#ExecutionType
- * CrossTrade.ExecutionType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#CrossType
- * CrossTrade.CrossType}</li>
- * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#Prioritisation
- * CrossTrade.Prioritisation}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#mmBuySideOrder
+ * CrossTrade.mmBuySideOrder}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#mmSellSideOrder
+ * CrossTrade.mmSellSideOrder}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#mmExecutionType
+ * CrossTrade.mmExecutionType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#mmCrossType
+ * CrossTrade.mmCrossType}</li>
+ * <li>{@linkplain com.tools20022.repository.entity.CrossTrade#mmPrioritisation
+ * CrossTrade.mmPrioritisation}</li>
  * </ul>
  * </li>
  * <li>
@@ -57,11 +58,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * associationDomain} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#BuySideRelatedCrossTrade
- * SecuritiesOrder.BuySideRelatedCrossTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmBuySideRelatedCrossTrade
+ * SecuritiesOrder.mmBuySideRelatedCrossTrade}</li>
  * <li>
- * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#SellSideRelatedCrossTrade
- * SecuritiesOrder.SellSideRelatedCrossTrade}</li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmSellSideRelatedCrossTrade
+ * SecuritiesOrder.mmSellSideRelatedCrossTrade}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSuperType
@@ -70,8 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,6 +88,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CrossTrade extends SecuritiesOrder {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
+	protected List<SecuritiesOrder> buySideOrder;
 	/**
 	 * Buyside order details.
 	 * <p>
@@ -95,8 +97,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#BuySideRelatedCrossTrade
-	 * SecuritiesOrder.BuySideRelatedCrossTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmBuySideRelatedCrossTrade
+	 * SecuritiesOrder.mmBuySideRelatedCrossTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -119,19 +121,20 @@ public class CrossTrade extends SecuritiesOrder {
 	 * definition} = "Buyside order details."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd BuySideOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmBuySideOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CrossTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BuySideOrder";
 			definition = "Buyside order details.";
 			minOccurs = 0;
+			opposite_lazy = () -> SecuritiesOrder.mmBuySideRelatedCrossTrade;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.BuySideRelatedCrossTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected List<SecuritiesOrder> sellSideOrder;
 	/**
 	 * Sell side order details.
 	 * <p>
@@ -140,8 +143,8 @@ public class CrossTrade extends SecuritiesOrder {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
 	 * opposite} =
-	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#SellSideRelatedCrossTrade
-	 * SecuritiesOrder.SellSideRelatedCrossTrade}</li>
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesOrder#mmSellSideRelatedCrossTrade
+	 * SecuritiesOrder.mmSellSideRelatedCrossTrade}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
 	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
@@ -164,19 +167,20 @@ public class CrossTrade extends SecuritiesOrder {
 	 * definition} = "Sell side order details."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd SellSideOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd mmSellSideOrder = new MMBusinessAssociationEnd() {
 		{
-			elementContext_lazy = () -> CrossTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SellSideOrder";
 			definition = "Sell side order details.";
 			minOccurs = 0;
+			opposite_lazy = () -> SecuritiesOrder.mmSellSideRelatedCrossTrade;
+			aggregation = MMAggregation.NONE;
 			type_lazy = () -> SecuritiesOrder.mmObject();
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.SellSideRelatedCrossTrade;
-			aggregation = com.tools20022.metamodel.MMAggregation.NONE;
 		}
 	};
+	protected CrossTradeExecutionCode executionType;
 	/**
 	 * Identifies the type of execution of a cross trade.
 	 * <p>
@@ -202,18 +206,27 @@ public class CrossTrade extends SecuritiesOrder {
 	 * definition} = "Identifies the type of execution of a cross trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute ExecutionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmExecutionType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CrossTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ExecutionType";
 			definition = "Identifies the type of execution of a cross trade.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CrossTradeExecutionCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CrossTrade.class.getMethod("getExecutionType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected CrossTypeCode crossType;
 	/**
 	 * Type of cross being submitted to a market.
 	 * <p>
@@ -239,18 +252,27 @@ public class CrossTrade extends SecuritiesOrder {
 	 * definition} = "Type of cross being submitted to a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute CrossType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmCrossType = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CrossTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CrossType";
 			definition = "Type of cross being submitted to a market.";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> CrossTypeCode.mmObject();
 		}
+
+		public Method getGetterMethod() {
+			try {
+				return CrossTrade.class.getMethod("getCrossType", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}
 	};
+	protected PrioritisationCode prioritisation;
 	/**
 	 * Indicates whether one side or the other of a cross order should be
 	 * prioritized.<br>
@@ -284,32 +306,85 @@ public class CrossTrade extends SecuritiesOrder {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute Prioritisation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute mmPrioritisation = new MMBusinessAttribute() {
 		{
-			elementContext_lazy = () -> CrossTrade.mmObject();
+			elementContext_lazy = () -> com.tools20022.repository.entity.CrossTrade.mmObject();
 			isDerived = false;
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Prioritisation";
 			definition = "Indicates whether one side or the other of a cross order should be prioritized.\r\nThe definition of prioritization depends on the market. In some markets prioritization means which side of the cross order is applied to the market first. In other markets, prioritization may mean that the prioritized side is fully executed (sometimes referred to as the side being protected).";
-			minOccurs = 1;
 			maxOccurs = 1;
+			minOccurs = 1;
 			simpleType_lazy = () -> PrioritisationCode.mmObject();
+		}
+
+		public Method getGetterMethod() {
+			try {
+				return CrossTrade.class.getMethod("getPrioritisation", new Class[]{});
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CrossTrade";
 				definition = "Transaction where either the buy-broker and the sell-broker are the same, or the buy-broker and the sell-broker belong to the same firm.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrder.BuySideRelatedCrossTrade, com.tools20022.repository.entity.SecuritiesOrder.SellSideRelatedCrossTrade);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesOrder.mmBuySideRelatedCrossTrade, SecuritiesOrder.mmSellSideRelatedCrossTrade);
 				superType_lazy = () -> SecuritiesOrder.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CrossTrade.BuySideOrder, com.tools20022.repository.entity.CrossTrade.SellSideOrder, com.tools20022.repository.entity.CrossTrade.ExecutionType,
-						com.tools20022.repository.entity.CrossTrade.CrossType, com.tools20022.repository.entity.CrossTrade.Prioritisation);
+				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CrossTrade.mmBuySideOrder, com.tools20022.repository.entity.CrossTrade.mmSellSideOrder, com.tools20022.repository.entity.CrossTrade.mmExecutionType,
+						com.tools20022.repository.entity.CrossTrade.mmCrossType, com.tools20022.repository.entity.CrossTrade.mmPrioritisation);
+			}
+
+			@Override
+			public Class<?> getInstanceClass() {
+				return CrossTrade.class;
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public List<SecuritiesOrder> getBuySideOrder() {
+		return buySideOrder;
+	}
+
+	public void setBuySideOrder(List<SecuritiesOrder> buySideOrder) {
+		this.buySideOrder = buySideOrder;
+	}
+
+	public List<SecuritiesOrder> getSellSideOrder() {
+		return sellSideOrder;
+	}
+
+	public void setSellSideOrder(List<SecuritiesOrder> sellSideOrder) {
+		this.sellSideOrder = sellSideOrder;
+	}
+
+	public CrossTradeExecutionCode getExecutionType() {
+		return executionType;
+	}
+
+	public void setExecutionType(CrossTradeExecutionCode executionType) {
+		this.executionType = executionType;
+	}
+
+	public CrossTypeCode getCrossType() {
+		return crossType;
+	}
+
+	public void setCrossType(CrossTypeCode crossType) {
+		this.crossType = crossType;
+	}
+
+	public PrioritisationCode getPrioritisation() {
+		return prioritisation;
+	}
+
+	public void setPrioritisation(PrioritisationCode prioritisation) {
+		this.prioritisation = prioritisation;
 	}
 }

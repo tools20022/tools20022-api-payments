@@ -19,6 +19,8 @@ package com.tools20022.repository.codeset;
 
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -30,18 +32,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettleStyleCode#SettleOnOpen
- * SettleStyleCode.SettleOnOpen}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettleStyleCode#mmSettleOnOpen
+ * SettleStyleCode.mmSettleOnOpen}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.SettleStyleCode#SettleOnClose
- * SettleStyleCode.SettleOnClose}</li>
+ * {@linkplain com.tools20022.repository.codeset.SettleStyleCode#mmSettleOnClose
+ * SettleStyleCode.mmSettleOnClose}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
- * GeneratedRepository.dataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -83,9 +85,9 @@ public class SettleStyleCode {
 	 * "Settlement is only allowed on the opening of the future contract."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettleOnOpen = new MMCode() {
+	public static final MMCode mmSettleOnOpen = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettleOnOpen";
 			definition = "Settlement is only allowed on the opening of the future contract.";
 			owner_lazy = () -> SettleStyleCode.mmObject();
@@ -114,9 +116,9 @@ public class SettleStyleCode {
 	 * "Settlement is only allowed on the closing of the future contract."</li>
 	 * </ul>
 	 */
-	public static final MMCode SettleOnClose = new MMCode() {
+	public static final MMCode mmSettleOnClose = new MMCode() {
 		{
-			registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettleOnClose";
 			definition = "Settlement is only allowed on the closing of the future contract.";
 			owner_lazy = () -> SettleStyleCode.mmObject();
@@ -127,12 +129,12 @@ public class SettleStyleCode {
 	static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> com.tools20022.repository.GeneratedRepository.dataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
 				example = Arrays.asList("SETO");
-				registrationStatus = com.tools20022.metamodel.MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettleStyleCode";
 				definition = "Specifies when the option contract settles.";
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.SettleStyleCode.SettleOnOpen, com.tools20022.repository.codeset.SettleStyleCode.SettleOnClose);
+				code_lazy = () -> Arrays.asList(SettleStyleCode.mmSettleOnOpen, SettleStyleCode.mmSettleOnClose);
 			}
 		});
 		return mmObject_lazy.get();
