@@ -44,6 +44,16 @@
 		<plugins>
 			<!-- Add source and javadoc -->
 			<plugin>
+    				<groupId>org.apache.maven.plugins</groupId>
+    				<artifactId>maven-compiler-plugin</artifactId>
+    				<version>3.7.0</version>
+    				<configuration>
+      					<fork>true</fork>
+      					<meminitial>1024m</meminitial>
+      					<maxmem>4096m</maxmem>
+    				</configuration>
+  			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<executions>
@@ -104,6 +114,7 @@
 
 					<nohelp>true</nohelp>
 					<splitindex>true</splitindex>
+					<quiet>true</quiet>
 					<validateLinks>true</validateLinks>
 					<version>${project.version}</version>
 					<windowtitle>Tools20022 - Java API for ISO 20022</windowtitle>
