@@ -79,7 +79,6 @@ Desktop.ini
 /build/**
 /bin/**
 /spring_loaded/**
-/deploy/**
 
 ######################
 # Logs

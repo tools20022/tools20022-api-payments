@@ -106,7 +106,7 @@
 					</header>
 					<footer></footer>
 					<bottom><![CDATA[This software is licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL</a> | Copyright 2017, <a href="https://tools20022.com">Tools20022<a>, László Bukodi | (Commercial licence also available)]]></bottom>
-					<doctitle>Java API for ISO 20022</doctitle>
+					<doctitle>${project.description}</doctitle>
 					<subpackages>com.tools20022.core:com.tools20022.metamodel:com.tools20022.repository</subpackages>
 					<groups>
 						<group>
@@ -131,7 +131,7 @@
 					<quiet>true</quiet>
 					<validateLinks>true</validateLinks>
 					<version>${project.version}</version>
-					<windowtitle>Tools20022 - Java API for ISO 20022</windowtitle>
+					<windowtitle>${project.description}</windowtitle>
 					<validateLinks>true</validateLinks>
 				</configuration>
 				<executions>
@@ -155,50 +155,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<profiles>
-		<profile>
-			<id>travis</id>			
-			<properties>
-				<gpg.defaultKeyring>false</gpg.defaultKeyring>
-				<gpg.publicKeyring>deploy/pubring.gpg</gpg.publicKeyring>
-				<gpg.secretKeyring>deploy/secring.gpg</gpg.secretKeyring>
-				<gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.5</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>deploy</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-								<configuration>
-									<keyname>bukodi@tools20022.com</keyname>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.8</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>false</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
-
-
 </project>
